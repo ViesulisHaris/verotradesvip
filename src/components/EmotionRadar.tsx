@@ -20,7 +20,12 @@ export default function EmotionRadar({ data }: Props) {
         <PolarGrid stroke="rgba(255,255,255,0.1)" />
         <PolarAngleAxis dataKey="subject" tick={{ fill: 'white' }} />
         <Radar name="Emotion" dataKey="value" stroke="#9f7aea" fill="#9f7aea" fillOpacity={0.6} />
-        <Tooltip formatter={(value: number) => [data.find(d => d.subject === value)?.percent || '0%', 'Trades']} />
+        <Tooltip 
+          formatter={(value: number, subject: string) => {
+            const item = data.find(d => d.subject === subject);
+            return [item?.percent || '0%', 'Trades'];
+          }} 
+        />
         <Legend />
       </RadarChart>
     </ResponsiveContainer>
