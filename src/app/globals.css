@@ -4,10 +4,12 @@
 
 @layer base {
   html {
-    background: radial-gradient(ellipse at top, #ff9a9e 0%, #fecfef 30%, #fecfef 40%, #fad0c4 70%, #ffd1ff 100%), radial-gradient(ellipse at bottom, #a8edea 0%, #fed6e3 100%);
+    @apply h-full;
+    background: radial-gradient(ellipse at top, #ff9a9e 0%, #fecfef 30%, #fad0c4 60%, #a8edea 100%),
+                radial-gradient(ellipse at bottom, #fed6e3 0%, #ffd1ff 100%);
     background-attachment: fixed;
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 18s ease infinite;
   }
 }
 
@@ -19,21 +21,14 @@
 @layer components {
   .glass {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
   }
-  .metallic-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(192, 192, 192, 0.3);
-    color: #C0C0C0;
-  }
-  .metallic-input:focus {
-    border-color: #C0C0C0;
-    box-shadow: 0 0 0 3px rgba(192, 192, 192, 0.1);
-  }
-}
 
-.dark body {
-  background: #0a0a0a;
+  .metallic-input {
+    @apply bg-white/5 border border-white/20 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
 }
