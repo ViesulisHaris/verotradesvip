@@ -111,7 +111,7 @@ export default function TradeForm({ onSuccess }: Props) {
             <label className="block text-sm font-medium mb-1 text-white">{label}</label>
             {type === 'select' ? (
               <select value={form[key as keyof FormState] as string} onChange={(e) => setForm({ ...form, [key]: e.target.value })} required={required} className="metallic-input w-full">
-                {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                {options!.map(opt => <option key={opt} value={opt}>{opt}</option>)}
               </select>
             ) : (
               <input type={type} value={form[key as keyof FormState] as string} onChange={(e) => setForm({ ...form, [key]: e.target.value })} required={required} className="metallic-input w-full" />
