@@ -3,7 +3,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Sidebar from '@/components/Sidebar';
-import ThemeToggle from '@/components/ThemeToggle';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase/client';
 import { useRouter, usePathname } from 'next/navigation';
@@ -26,7 +25,6 @@ export default function RootLayout({
       setUser(data.session?.user ?? null);
       setLoading(false);
 
-      // Redirect to login if not auth and not on auth pages
       if (!data.session && !['/login', '/register'].includes(pathname)) {
         router.replace('/login');
       }
@@ -47,9 +45,9 @@ export default function RootLayout({
 
   if (loading) {
     return (
-      <html lang="en" className="h-full">
-        <body className={`${inter.className} h-full flex items-center justify-center`}>
-          <div className="text-white text-xl">Loading...</div>
+      <html lang="en" className="h-full bg-black">
+        <body className={`${inter.className} h-full flex items-center justify-center text-white`}>
+          Loading...
         </body>
       </html>
     );
@@ -60,23 +58,20 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="h-full">
-      <body className={`${inter.className} flex h-full bg-gradient-to-br from-pink-100 via-purple-50 to-blue-50`}>
+    <html lang="en" className="h-full bg-black">
+      <body className={`${inter.className} flex h-full text-white bg-gradient-to-br from-gray-900 via-black to-gray-800`}>
         {user && <Sidebar onLogout={handleLogout} />}
         <div className="flex-1 flex flex-col">
-          <header className="glass p-4 flex justify-between items-center border-b border-white/20">
-            <h1 className="text-2xl font-bold text-white">VeroTrade</h1>
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-              {user && (
-                <button
-                  onClick={handleLogout}
-                  className="px-4 py-2 bg-red-500/20 text-red-300 rounded-xl hover:bg-red-500/30 transition"
-                >
-                  Logout
-                </button>
-              )}
-            </div>
+          <header className="glass p-4 flex justify-between items-center border-b border-white/10">
+            <h1 className="text-2xl font-bold">VeroTrade</h1>
+            {user && (
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 bg-red-900/50 text-red-300 rounded-xl hover:bg-red-900/70"
+              >
+                Logout
+              </button>
+            )}
           </header>
           <main className="flex-1 p-6 overflow-auto">{children}</main>
         </div>
