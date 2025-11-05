@@ -1,3 +1,5 @@
+'use client';
+
 import TradeForm from '@/components/TradeForm';
 import { useRouter } from 'next/navigation';
 
