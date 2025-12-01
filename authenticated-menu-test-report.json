@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-11-24T15:08:35.934Z",
+  "summary": {
+    "totalTests": 1,
+    "passedTests": 0,
+    "failedTests": 1
+  },
+  "tradesFreezingIssue": {
+    "reproduced": false,
+    "fixed": false,
+    "details": []
+  },
+  "details": [
+    {
+      "testName": "Trades Link Found",
+      "passed": false,
+      "details": "Trades menu item not found",
+      "timestamp": "2025-11-24T15:08:35.933Z"
+    }
+  ],
+  "recommendations": [
+    "Some menu functionality tests failed - authentication may be required"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-17T15:01:07.980Z",
+  "testTrade": {
+    "symbol": "TEST",
+    "market": "Stock",
+    "side": "Buy",
+    "quantity": 100,
+    "entryPrice": 50,
+    "exitPrice": 55,
+    "tradeDate": "2025-11-17",
+    "emotionalState": [
+      "FOMO",
+      "CONFIDENT"
+    ],
+    "strategy": "Test Strategy",
+    "notes": "Test trade for emotional analysis verification"
+  },
+  "results": {
+    "initialDashboardEmotions": 0,
+    "updatedDashboardEmotions": 0,
+    "initialConfluenceEmotions": 0,
+    "updatedConfluenceEmotions": 0,
+    "dashboardUpdated": false,
+    "confluenceUpdated": false,
+    "overallSuccess": false
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "timestamp": "2025-11-17T22:04:18.799Z",
+  "tests": [
+    {
+      "name": "Filter Controls Detection",
+      "status": "FAIL",
+      "details": "Found 0 filter controls: ",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:24.366Z"
+    },
+    {
+      "name": "Sort Controls Detection",
+      "status": "FAIL",
+      "details": "Found 0 sort controls: ",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:24.366Z"
+    },
+    {
+      "name": "Initial Trade Count",
+      "status": "PASS",
+      "details": "Found 1 trades on page",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:24.371Z"
+    },
+    {
+      "name": "Market Type Filtering",
+      "status": "FAIL",
+      "details": "Market filter control not found",
+      "duration": 3,
+      "timestamp": "2025-11-17T22:04:24.376Z"
+    },
+    {
+      "name": "Symbol Filtering",
+      "status": "FAIL",
+      "details": "Symbol filter control not found",
+      "duration": 4,
+      "timestamp": "2025-11-17T22:04:24.380Z"
+    },
+    {
+      "name": "Date Range Filtering",
+      "status": "FAIL",
+      "details": "Date filter controls not found",
+      "duration": 3,
+      "timestamp": "2025-11-17T22:04:24.384Z"
+    },
+    {
+      "name": "Win/Loss Filtering",
+      "status": "FAIL",
+      "details": "Win/Loss filter control not found",
+      "duration": 3,
+      "timestamp": "2025-11-17T22:04:24.388Z"
+    },
+    {
+      "name": "Emotional State Filtering",
+      "status": "FAIL",
+      "details": "Emotional state filter control not found",
+      "duration": 4,
+      "timestamp": "2025-11-17T22:04:24.392Z"
+    },
+    {
+      "name": "Combined Filtering",
+      "status": "FAIL",
+      "details": "Not enough filter controls available for combined testing",
+      "duration": 4,
+      "timestamp": "2025-11-17T22:04:24.396Z"
+    },
+    {
+      "name": "Sorting by Date",
+      "status": "FAIL",
+      "details": "Date sort control not found",
+      "duration": 6,
+      "timestamp": "2025-11-17T22:04:24.403Z"
+    },
+    {
+      "name": "Sorting by P&L",
+      "status": "FAIL",
+      "details": "P&L sort control not found",
+      "duration": 8,
+      "timestamp": "2025-11-17T22:04:24.411Z"
+    },
+    {
+      "name": "Sorting by Symbol",
+      "status": "FAIL",
+      "details": "Symbol sort control not found",
+      "duration": 9,
+      "timestamp": "2025-11-17T22:04:24.421Z"
+    },
+    {
+      "name": "Performance - Page Load",
+      "status": "PASS",
+      "details": "Completed in 1289ms",
+      "duration": 1289,
+      "timestamp": "2025-11-17T22:04:25.710Z"
+    },
+    {
+      "name": "Performance - Market Filter",
+      "status": "FAIL",
+      "details": "Error: locator.selectOption: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('select[name=\"market\"]').first()\u001b[22m\n",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.941Z"
+    },
+    {
+      "name": "Performance - Symbol Filter",
+      "status": "FAIL",
+      "details": "Error: locator.fill: Target page, context or browser has been closed",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.942Z"
+    },
+    {
+      "name": "Performance - Date Filter",
+      "status": "FAIL",
+      "details": "Error: locator.fill: Target page, context or browser has been closed",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.942Z"
+    },
+    {
+      "name": "Performance - Sort by Date",
+      "status": "FAIL",
+      "details": "Error: locator.selectOption: Target page, context or browser has been closed",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.943Z"
+    },
+    {
+      "name": "Performance - Sort by P&L",
+      "status": "FAIL",
+      "details": "Error: locator.selectOption: Target page, context or browser has been closed",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.943Z"
+    },
+    {
+      "name": "Dashboard Filtering",
+      "status": "FAIL",
+      "details": "Error: page.goto: Target page, context or browser has been closed",
+      "duration": 0,
+      "timestamp": "2025-11-17T22:04:44.944Z"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 2,
+    "failed": 17,
+    "skipped": 0,
+    "passRate": "10.53%"
+  },
+  "performance": {
+    "filterTimes": [],
+    "sortTimes": [],
+    "averageFilterTime": 0,
+    "averageSortTime": 0
+  },
+  "issues": [
+    {
+      "test": "Filter Controls Detection",
+      "issue": "Found 0 filter controls: "
+    },
+    {
+      "test": "Sort Controls Detection",
+      "issue": "Found 0 sort controls: "
+    },
+    {
+      "test": "Market Type Filtering",
+      "issue": "Market filter control not found"
+    },
+    {
+      "test": "Symbol Filtering",
+      "issue": "Symbol filter control not found"
+    },
+    {
+      "test": "Date Range Filtering",
+      "issue": "Date filter controls not found"
+    },
+    {
+      "test": "Win/Loss Filtering",
+      "issue": "Win/Loss filter control not found"
+    },
+    {
+      "test": "Emotional State Filtering",
+      "issue": "Emotional state filter control not found"
+    },
+    {
+      "test": "Combined Filtering",
+      "issue": "Not enough filter controls available for combined testing"
+    },
+    {
+      "test": "Sorting by Date",
+      "issue": "Date sort control not found"
+    },
+    {
+      "test": "Sorting by P&L",
+      "issue": "P&L sort control not found"
+    },
+    {
+      "test": "Sorting by Symbol",
+      "issue": "Symbol sort control not found"
+    },
+    {
+      "test": "Performance - Market Filter",
+      "issue": "Error: locator.selectOption: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('select[name=\"market\"]').first()\u001b[22m\n"
+    },
+    {
+      "test": "Performance - Symbol Filter",
+      "issue": "Error: locator.fill: Target page, context or browser has been closed"
+    },
+    {
+      "test": "Performance - Date Filter",
+      "issue": "Error: locator.fill: Target page, context or browser has been closed"
+    },
+    {
+      "test": "Performance - Sort by Date",
+      "issue": "Error: locator.selectOption: Target page, context or browser has been closed"
+    },
+    {
+      "test": "Performance - Sort by P&L",
+      "issue": "Error: locator.selectOption: Target page, context or browser has been closed"
+    },
+    {
+      "test": "Dashboard Filtering",
+      "issue": "Error: page.goto: Target page, context or browser has been closed"
+    }
+  ],
+  "recommendations": [
+    "Implement missing filtering and sorting controls based on test failures",
+    "Implement comprehensive filtering functionality across all trade attributes",
+    "Implement comprehensive sorting functionality for all trade columns"
+  ]
+}

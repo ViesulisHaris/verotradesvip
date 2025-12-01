@@ -80,12 +80,12 @@ export default function TradeForm({ onSuccess }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="glass space-y-6 p-6">
+    <form onSubmit={handleSubmit} className="glass space-y-form-group p-card-inner">
       <div>
-        <label className="block text-sm font-medium mb-2 text-white">Market</label>
-        <div className="flex gap-4 flex-wrap">
+        <label className="block text-sm font-medium mb-input-label text-white">Market</label>
+        <div className="flex gap-button-group flex-wrap">
           {(['stock', 'crypto', 'forex', 'futures'] as const).map(m => (
-            <label key={m} className="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+            <label key={m} className="flex items-center gap-element p-element rounded-lg bg-white/5">
               <input type="checkbox" checked={form.market[m]} onChange={(e) => setForm({ ...form, market: { ...form.market, [m]: e.target.checked } })} className="accent-primary" />
               <span className="text-white capitalize">{m}</span>
             </label>
@@ -93,7 +93,7 @@ export default function TradeForm({ onSuccess }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-component">
         {[
           { label: 'Symbol', key: 'symbol', type: 'text', required: true },
           { label: 'Strategy', key: 'strategy_id', type: 'select', options: ['None', ...strategies.map(s => s.name)] },
@@ -108,7 +108,7 @@ export default function TradeForm({ onSuccess }: Props) {
           { label: 'Emotional State', key: 'emotional_state', type: 'select', options: ['Neutral', 'Greed', 'Fear', 'Confidence', 'Frustration'] },
         ].map(({ label, key, type, options, required }) => (
           <div key={key}>
-            <label className="block text-sm font-medium mb-1 text-white">{label}</label>
+            <label className="block text-sm font-medium mb-input-label text-white">{label}</label>
             {type === 'select' ? (
               <select value={form[key as keyof FormState] as string} onChange={(e) => setForm({ ...form, [key]: e.target.value })} required={required} className="metallic-input w-full">
                 {options!.map(opt => <option key={opt} value={opt}>{opt}</option>)}

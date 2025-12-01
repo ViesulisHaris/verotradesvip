@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Tab Freezing Manual Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #28a745; }
+        .error { background: #dc3545; }
+        .warning { background: #ffc107; color: #000; }
+        .debug-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .overlay-test {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Trades Tab Freezing Manual Test</h1>
+        
+        <div class="test-section">
+            <h2>Test Instructions</h2>
+            <p>This test helps diagnose the Trades tab freezing issue. Follow these steps:</p>
+            <ol>
+                <li>Open the application in a new tab: <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+                <li>Log in to your account</li>
+                <li>Click on the "Trades" tab in the sidebar</li>
+                <li>Wait for the Trades page to load completely</li>
+                <li>Try to click on any other navigation item (Dashboard, Strategies, etc.)</li>
+                <li>Observe if the menu freezes and navigation doesn't work</li>
+            </ol>
+            
+            <button class="button" onclick="startDiagnostic()">Start Diagnostic Mode</button>
+            <button class="button" onclick="checkOverlays()">Check for Overlays</button>
+            <button class="button" onclick="checkBodyStyles()">Check Body Styles</button>
+            <button class="button" onclick="forceCleanup()">Force Cleanup</button>
+        </div>
+
+        <div id="status" class="status"></div>
+        <div id="debug-info" class="debug-info"></div>
+
+        <div class="test-section">
+            <h2>Potential Issues Based on Code Analysis</h2>
+            
+            <h3>1. Modal Overlay Issues</h3>
+            <p>The Trades page has extensive modal cleanup code that suggests modal overlays might not be properly removed.</p>
+            <ul>
+                <li>Edit modal (z-index: 40)</li>
+                <li>Delete confirmation modal (z-index: 40)</li>
+                <li>Navigation safety cleanup tries to remove overlays with z-index > 100</li>
+            </ul>
+
+            <h3>2. Debug Panel Z-Index Issues</h3>
+            <p>ZoomAwareLayout creates a debug panel with z-index manipulation:</p>
+            <ul>
+                <li>Debug panel gets z-index: 10 (should be low)</li>
+                <li>But navigation safety tries to lower z-index if > 100</li>
+                <li>There might be conflicts in z-index management</li>
+            </ul>
+
+            <h3>3. Event Listener Problems</h3>
+            <p>Multiple event listeners that might interfere with navigation:</p>
+            <ul>
+                <li>Navigation safety global click handler (capture phase)</li>
+                <li>Zoom detection listeners</li>
+                <li>Modal cleanup listeners</li>
+                <li>Beforeunload/visibility change handlers</li>
+            </ul>
+
+            <h3>4. Body Style Manipulation</h3>
+            <p>Code frequently manipulates body styles which might block interactions:</p>
+            <ul>
+                <li>pointer-events: none</li>
+                <li>overflow: hidden</li>
+                <li>touch-action: none</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Test overlay that simulates the problem -->
+    <div id="test-overlay" class="overlay-test">
+        <div style="background: white; padding: 20px; border-radius: 8px;">
+            <h3>Test Overlay Active</h3>
+            <p>This simulates an overlay that might be blocking navigation.</p>
+            <button class="button" onclick="removeTestOverlay()">Remove Test Overlay</button>
+        </div>
+    </div>
+
+    <script>
+        function updateStatus(message, type = 'success') {
+            const status = document.getElementById('status');
+            status.innerHTML = `<div class="${type}">${message}</div>`;
+        }
+
+        function updateDebug(info) {
+            const debug = document.getElementById('debug-info');
+            debug.innerHTML = `<pre>${JSON.stringify(info, null, 2)}</pre>`;
+        }
+
+        function startDiagnostic() {
+            updateStatus('Diagnostic mode started. Open the app and follow the test instructions.', 'warning');
+            
+            // Start monitoring for issues
+            setInterval(() => {
+                checkForIssues();
+            }, 2000);
+        }
+
+        function checkForIssues() {
+            const issues = [];
+            
+            // Check for overlays
+            const overlays = document.querySelectorAll('*');
+            let blockingOverlays = [];
+            
+            overlays.forEach(el => {
+                const style = window.getComputedStyle(el);
+                const rect = el.getBoundingClientRect();
+                
+                if (parseInt(style.zIndex) > 50 && 
+                    style.position === 'fixed' && 
+                    rect.width > window.innerWidth * 0.8 && 
+                    rect.height > window.innerHeight * 0.8) {
+                    blockingOverlays.push({
+                        element: el.tagName,
+                        className: el.className,
+                        zIndex: style.zIndex,
+                        pointerEvents: style.pointerEvents
+                    });
+                }
+            });
+            
+            if (blockingOverlays.length > 0) {
+                issues.push(`Found ${blockingOverlays.length} blocking overlays`);
+            }
+            
+            // Check body styles
+            const body = document.body;
+            const bodyStyle = window.getComputedStyle(body);
+            
+            if (bodyStyle.pointerEvents === 'none') {
+                issues.push('Body has pointer-events: none');
+            }
+            
+            if (bodyStyle.overflow === 'hidden') {
+                issues.push('Body has overflow: hidden');
+            }
+            
+            // Check for excessive event listeners
+            const totalElements = document.querySelectorAll('*').length;
+            if (totalElements > 5000) {
+                issues.push(`High DOM node count: ${totalElements}`);
+            }
+            
+            if (issues.length > 0) {
+                updateStatus(`Issues detected: ${issues.join(', ')}`, 'error');
+                updateDebug({
+                    timestamp: new Date().toISOString(),
+                    issues: issues,
+                    overlays: blockingOverlays,
+                    bodyStyles: {
+                        pointerEvents: bodyStyle.pointerEvents,
+                        overflow: bodyStyle.overflow,
+                        userSelect: bodyStyle.userSelect
+                    },
+                    domNodes: totalElements
+                });
+            } else {
+                updateStatus('No issues detected', 'success');
+            }
+        }
+
+        function checkOverlays() {
+            const overlays = [];
+            document.querySelectorAll('*').forEach(el => {
+                const style = window.getComputedStyle(el);
+                const rect = el.getBoundingClientRect();
+                
+                if (parseInt(style.zIndex) > 50 && 
+                    style.position === 'fixed' && 
+                    rect.width > window.innerWidth * 0.8) {
+                    overlays.push({
+                        element: el.tagName,
+                        className: el.className,
+                        zIndex: style.zIndex,
+                        pointerEvents: style.pointerEvents
+                    });
+                }
+            });
+            
+            updateDebug({
+                type: 'overlay_check',
+                overlays: overlays,
+                timestamp: new Date().toISOString()
+            });
+            
+            if (overlays.length > 0) {
+                updateStatus(`Found ${overlays.length} potential blocking overlays`, 'warning');
+            } else {
+                updateStatus('No blocking overlays found', 'success');
+            }
+        }
+
+        function checkBodyStyles() {
+            const body = document.body;
+            const style = window.getComputedStyle(body);
+            
+            const bodyInfo = {
+                pointerEvents: style.pointerEvents,
+                overflow: style.overflow,
+                userSelect: style.userSelect,
+                touchAction: style.touchAction,
+                classList: Array.from(body.classList),
+                hasInlineStyles: body.hasAttribute('style'),
+                inlineStyles: body.getAttribute('style')
+            };
+            
+            updateDebug({
+                type: 'body_styles_check',
+                bodyStyles: bodyInfo,
+                timestamp: new Date().toISOString()
+            });
+            
+            const issues = [];
+            if (style.pointerEvents === 'none') issues.push('pointer-events: none');
+            if (style.overflow === 'hidden') issues.push('overflow: hidden');
+            if (style.userSelect === 'none') issues.push('user-select: none');
+            
+            if (issues.length > 0) {
+                updateStatus(`Body style issues: ${issues.join(', ')}`, 'warning');
+            } else {
+                updateStatus('No body style issues found', 'success');
+            }
+        }
+
+        function forceCleanup() {
+            updateStatus('Attempting to force cleanup of navigation blockers...', 'warning');
+            
+            // Remove overlays with high z-index
+            document.querySelectorAll('*').forEach(el => {
+                const style = window.getComputedStyle(el);
+                const zIndex = parseInt(style.zIndex) || 0;
+                
+                if (zIndex > 100 && style.position === 'fixed') {
+                    console.log('Removing potential blocking overlay:', el);
+                    if (el.parentNode) {
+                        el.parentNode.removeChild(el);
+                    }
+                }
+            });
+            
+            // Reset body styles
+            document.body.style.pointerEvents = '';
+            document.body.style.overflow = '';
+            document.body.style.userSelect = '';
+            document.body.style.touchAction = '';
+            document.body.classList.remove('modal-open', 'overflow-hidden');
+            
+            updateStatus('Force cleanup completed', 'success');
+        }
+
+        function removeTestOverlay() {
+            document.getElementById('test-overlay').style.display = 'none';
+        }
+
+        // Auto-check for issues when page loads
+        window.addEventListener('load', () => {
+            setTimeout(checkForIssues, 3000);
+        });
+    </script>
+</body>
+</html>

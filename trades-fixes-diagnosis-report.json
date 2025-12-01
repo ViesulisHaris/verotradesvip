@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-11-24T13:59:05.220Z",
+  "diagnosis": {
+    "debugPanelIssues": [
+      {
+        "issue": "Debug panel z-index is too high",
+        "current": "9999",
+        "expected": "≤ 100",
+        "severity": "high"
+      },
+      {
+        "issue": "Debug panel missing pointer-events: none in inline styles",
+        "severity": "high"
+      },
+      {
+        "issue": "Debug panel missing user-select: none in inline styles",
+        "severity": "medium"
+      },
+      {
+        "issue": "Debug panel missing z-index: 10 in inline styles",
+        "severity": "high"
+      }
+    ],
+    "modalOverlayIssues": [
+      {
+        "issue": "Modal cleanup functions not found in page scripts",
+        "severity": "high"
+      }
+    ],
+    "navigationIssues": [],
+    "recommendations": [
+      {
+        "category": "Debug Panel Fix",
+        "priority": "high",
+        "action": "Update ZoomAwareLayout.tsx to ensure debug panel has z-index: 10, pointer-events: none, and user-select: none",
+        "code": "\n// In ZoomAwareLayout.tsx, line 113, update the debug panel:\n<div className=\"zoom-debug-panel fixed bottom-4 left-4 z-10 bg-elevated border border-gold text-primary p-3 rounded-lg text-xs font-mono max-w-xs pointer-events-none user-select-none\">\n"
+      },
+      {
+        "category": "Modal Overlay Fix",
+        "priority": "high",
+        "action": "Ensure cleanupModalOverlays function is properly implemented and called on component unmount",
+        "code": "\n// In trades/page.tsx, ensure the cleanup function is exported and available:\nwindow.cleanupModalOverlays = cleanupModalOverlays;\n\n// And add proper cleanup on unmount:\nuseEffect(() => {\n  return () => {\n    cleanupModalOverlays();\n  };\n}, [cleanupModalOverlays]);\n"
+      }
+    ]
+  },
+  "summary": {
+    "totalIssues": 5,
+    "highSeverityIssues": 4,
+    "needsAttention": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-17T17:00:27.195Z",
+  "testPhase": "failed",
+  "authenticationTest": {
+    "status": "PASS",
+    "url": "http://localhost:3000/dashboard"
+  },
+  "basicEndpointTest": {
+    "status": "FAIL",
+    "error": "Authentication required",
+    "details": "Invalid API key"
+  },
+  "statisticalAccuracyTest": null,
+  "dataCompletenessTest": null,
+  "errorHandlingTest": null,
+  "overallAssessment": null,
+  "verificationData": null,
+  "error": "page is not defined"
+}

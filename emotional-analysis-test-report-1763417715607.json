@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-11-17T22:15:15.605Z",
+  "testType": "Emotional Analysis Verification",
+  "environment": {
+    "url": "http://localhost:3000",
+    "browser": "Puppeteer",
+    "testUser": "test@example.com"
+  },
+  "expectedEmotions": [
+    "FOMO",
+    "REVENGE",
+    "TILT",
+    "OVERRISK",
+    "PATIENCE",
+    "REGRET",
+    "DISCIPLINE",
+    "CONFIDENT",
+    "ANXIOUS",
+    "NEUTRAL"
+  ],
+  "results": {
+    "confluencePageAnalysis": {},
+    "emotionalStateDisplay": {},
+    "emotionBasedInsights": {},
+    "emotionalDataIntegration": {},
+    "emotionalDataHandling": {
+      "jsonParsingWorks": false,
+      "multipleEmotionsDisplay": false,
+      "performanceWith200Trades": false,
+      "errors": [
+        "Database error: TypeError: fetch failed",
+        "Database error for multi-emotions: TypeError: fetch failed",
+        "Performance test error: TypeError: fetch failed"
+      ]
+    },
+    "summary": {
+      "totalTests": 3,
+      "passedTests": 0,
+      "failedTests": 3,
+      "issues": [
+        "Confluence page test failed: Navigation timeout of 30000 ms exceeded",
+        "Emotional state display test failed: Navigation timeout of 30000 ms exceeded",
+        "Emotion-based insights test failed: Navigation timeout of 30000 ms exceeded"
+      ]
+    }
+  },
+  "summary": {
+    "totalTests": 3,
+    "passedTests": 0,
+    "failedTests": 3,
+    "issues": [
+      "Confluence page test failed: Navigation timeout of 30000 ms exceeded",
+      "Emotional state display test failed: Navigation timeout of 30000 ms exceeded",
+      "Emotion-based insights test failed: Navigation timeout of 30000 ms exceeded"
+    ],
+    "successRate": "0.00%"
+  }
+}

@@ -1,0 +1,733 @@
+{
+  "timestamp": "2025-11-26T15:32:44.333Z",
+  "summary": {
+    "totalTests": 33,
+    "passedTests": 23,
+    "failedTests": 10,
+    "criticalFailures": 7
+  },
+  "files": {
+    "designSystem": {
+      "tests": [
+        {
+          "file": "designSystem",
+          "category": "Color",
+          "test": "Deep Charcoal Variable",
+          "expected": "#121212",
+          "actual": "#121212",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.325Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Color",
+          "test": "Soft Graphite Variable",
+          "expected": "#202020",
+          "actual": "#202020",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Color",
+          "test": "Dusty Gold Variable",
+          "expected": "#B89B5E",
+          "actual": "#B89B5E",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Border Radius",
+          "test": "Card Border Radius Variable",
+          "expected": "12px",
+          "actual": "0.75rem",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Spacing",
+          "test": "Section Spacing Variable",
+          "expected": "32px",
+          "actual": "2rem",
+          "passed": false,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Spacing",
+          "test": "Card Spacing Variable",
+          "expected": "16px",
+          "actual": "1rem",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Typography",
+          "test": "H1 Font Size Variable",
+          "expected": "32px",
+          "actual": "2rem",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        },
+        {
+          "file": "designSystem",
+          "category": "Typography",
+          "test": "H1 Font Weight Variable",
+          "expected": "600",
+          "actual": "600",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.327Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 4,
+      "critical": 3,
+      "accuracy": "50.00%",
+      "criticalAccuracy": "62.50%"
+    },
+    "dashboard": {
+      "tests": [
+        {
+          "file": "dashboard",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Colors)",
+          "expected": "No hardcoded colors",
+          "actual": "No hardcoded colors found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.329Z"
+        },
+        {
+          "file": "dashboard",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+          "expected": "No hardcoded spacing",
+          "actual": "No hardcoded spacing found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.329Z"
+        },
+        {
+          "file": "dashboard",
+          "category": "Border Radius",
+          "test": "No 16px Border Radius (Should be 12px)",
+          "expected": "No 16px border radius",
+          "actual": "No 16px border radius found",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.329Z"
+        },
+        {
+          "file": "dashboard",
+          "category": "Implementation",
+          "test": "Uses Correct CSS Classes",
+          "expected": "Uses design system classes",
+          "actual": "Uses correct classes",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.329Z"
+        },
+        {
+          "file": "dashboard",
+          "category": "Typography",
+          "test": "Uses Inter Font Family",
+          "expected": "Inter font family",
+          "actual": "Missing Inter font",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.329Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "80.00%",
+      "criticalAccuracy": "80.00%"
+    },
+    "trades": {
+      "tests": [
+        {
+          "file": "trades",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Colors)",
+          "expected": "No hardcoded colors",
+          "actual": "No hardcoded colors found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.331Z"
+        },
+        {
+          "file": "trades",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+          "expected": "No hardcoded spacing",
+          "actual": "No hardcoded spacing found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.331Z"
+        },
+        {
+          "file": "trades",
+          "category": "Border Radius",
+          "test": "No 16px Border Radius (Should be 12px)",
+          "expected": "No 16px border radius",
+          "actual": "No 16px border radius found",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.331Z"
+        },
+        {
+          "file": "trades",
+          "category": "Implementation",
+          "test": "Uses Correct CSS Classes",
+          "expected": "Uses design system classes",
+          "actual": "Uses correct classes",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.331Z"
+        },
+        {
+          "file": "trades",
+          "category": "Typography",
+          "test": "Uses Inter Font Family",
+          "expected": "Inter font family",
+          "actual": "Uses Inter font",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.331Z"
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "critical": 0,
+      "accuracy": "100.00%",
+      "criticalAccuracy": "100.00%"
+    },
+    "strategies": {
+      "tests": [
+        {
+          "file": "strategies",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Colors)",
+          "expected": "No hardcoded colors",
+          "actual": "No hardcoded colors found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "strategies",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+          "expected": "No hardcoded spacing",
+          "actual": "No hardcoded spacing found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "strategies",
+          "category": "Border Radius",
+          "test": "No 16px Border Radius (Should be 12px)",
+          "expected": "No 16px border radius",
+          "actual": "No 16px border radius found",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "strategies",
+          "category": "Implementation",
+          "test": "Uses Correct CSS Classes",
+          "expected": "Uses design system classes",
+          "actual": "Uses correct classes",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "strategies",
+          "category": "Typography",
+          "test": "Uses Inter Font Family",
+          "expected": "Inter font family",
+          "actual": "Missing Inter font",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "80.00%",
+      "criticalAccuracy": "80.00%"
+    },
+    "login": {
+      "tests": [
+        {
+          "file": "login",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Colors)",
+          "expected": "No hardcoded colors",
+          "actual": "No hardcoded colors found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "login",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+          "expected": "No hardcoded spacing",
+          "actual": "No hardcoded spacing found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "login",
+          "category": "Border Radius",
+          "test": "No 16px Border Radius (Should be 12px)",
+          "expected": "No 16px border radius",
+          "actual": "No 16px border radius found",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "login",
+          "category": "Implementation",
+          "test": "Uses Correct CSS Classes",
+          "expected": "Uses design system classes",
+          "actual": "Missing correct class usage",
+          "passed": false,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        },
+        {
+          "file": "login",
+          "category": "Typography",
+          "test": "Uses Inter Font Family",
+          "expected": "Inter font family",
+          "actual": "Missing Inter font",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.332Z"
+        }
+      ],
+      "passed": 3,
+      "failed": 2,
+      "critical": 1,
+      "accuracy": "60.00%",
+      "criticalAccuracy": "80.00%"
+    },
+    "register": {
+      "tests": [
+        {
+          "file": "register",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Colors)",
+          "expected": "No hardcoded colors",
+          "actual": "No hardcoded colors found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.333Z"
+        },
+        {
+          "file": "register",
+          "category": "Implementation",
+          "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+          "expected": "No hardcoded spacing",
+          "actual": "No hardcoded spacing found",
+          "passed": true,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.333Z"
+        },
+        {
+          "file": "register",
+          "category": "Border Radius",
+          "test": "No 16px Border Radius (Should be 12px)",
+          "expected": "No 16px border radius",
+          "actual": "No 16px border radius found",
+          "passed": true,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.333Z"
+        },
+        {
+          "file": "register",
+          "category": "Implementation",
+          "test": "Uses Correct CSS Classes",
+          "expected": "Uses design system classes",
+          "actual": "Missing correct class usage",
+          "passed": false,
+          "critical": false,
+          "timestamp": "2025-11-26T15:32:44.333Z"
+        },
+        {
+          "file": "register",
+          "category": "Typography",
+          "test": "Uses Inter Font Family",
+          "expected": "Inter font family",
+          "actual": "Missing Inter font",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:32:44.333Z"
+        }
+      ],
+      "passed": 3,
+      "failed": 2,
+      "critical": 1,
+      "accuracy": "60.00%",
+      "criticalAccuracy": "80.00%"
+    }
+  },
+  "details": [
+    {
+      "file": "designSystem",
+      "category": "Color",
+      "test": "Deep Charcoal Variable",
+      "expected": "#121212",
+      "actual": "#121212",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.325Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Color",
+      "test": "Soft Graphite Variable",
+      "expected": "#202020",
+      "actual": "#202020",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Color",
+      "test": "Dusty Gold Variable",
+      "expected": "#B89B5E",
+      "actual": "#B89B5E",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Border Radius",
+      "test": "Card Border Radius Variable",
+      "expected": "12px",
+      "actual": "0.75rem",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Spacing",
+      "test": "Section Spacing Variable",
+      "expected": "32px",
+      "actual": "2rem",
+      "passed": false,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Spacing",
+      "test": "Card Spacing Variable",
+      "expected": "16px",
+      "actual": "1rem",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Typography",
+      "test": "H1 Font Size Variable",
+      "expected": "32px",
+      "actual": "2rem",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "designSystem",
+      "category": "Typography",
+      "test": "H1 Font Weight Variable",
+      "expected": "600",
+      "actual": "600",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.327Z"
+    },
+    {
+      "file": "dashboard",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Colors)",
+      "expected": "No hardcoded colors",
+      "actual": "No hardcoded colors found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.329Z"
+    },
+    {
+      "file": "dashboard",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+      "expected": "No hardcoded spacing",
+      "actual": "No hardcoded spacing found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.329Z"
+    },
+    {
+      "file": "dashboard",
+      "category": "Border Radius",
+      "test": "No 16px Border Radius (Should be 12px)",
+      "expected": "No 16px border radius",
+      "actual": "No 16px border radius found",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.329Z"
+    },
+    {
+      "file": "dashboard",
+      "category": "Implementation",
+      "test": "Uses Correct CSS Classes",
+      "expected": "Uses design system classes",
+      "actual": "Uses correct classes",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.329Z"
+    },
+    {
+      "file": "dashboard",
+      "category": "Typography",
+      "test": "Uses Inter Font Family",
+      "expected": "Inter font family",
+      "actual": "Missing Inter font",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.329Z"
+    },
+    {
+      "file": "trades",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Colors)",
+      "expected": "No hardcoded colors",
+      "actual": "No hardcoded colors found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.331Z"
+    },
+    {
+      "file": "trades",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+      "expected": "No hardcoded spacing",
+      "actual": "No hardcoded spacing found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.331Z"
+    },
+    {
+      "file": "trades",
+      "category": "Border Radius",
+      "test": "No 16px Border Radius (Should be 12px)",
+      "expected": "No 16px border radius",
+      "actual": "No 16px border radius found",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.331Z"
+    },
+    {
+      "file": "trades",
+      "category": "Implementation",
+      "test": "Uses Correct CSS Classes",
+      "expected": "Uses design system classes",
+      "actual": "Uses correct classes",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.331Z"
+    },
+    {
+      "file": "trades",
+      "category": "Typography",
+      "test": "Uses Inter Font Family",
+      "expected": "Inter font family",
+      "actual": "Uses Inter font",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.331Z"
+    },
+    {
+      "file": "strategies",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Colors)",
+      "expected": "No hardcoded colors",
+      "actual": "No hardcoded colors found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "strategies",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+      "expected": "No hardcoded spacing",
+      "actual": "No hardcoded spacing found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "strategies",
+      "category": "Border Radius",
+      "test": "No 16px Border Radius (Should be 12px)",
+      "expected": "No 16px border radius",
+      "actual": "No 16px border radius found",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "strategies",
+      "category": "Implementation",
+      "test": "Uses Correct CSS Classes",
+      "expected": "Uses design system classes",
+      "actual": "Uses correct classes",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "strategies",
+      "category": "Typography",
+      "test": "Uses Inter Font Family",
+      "expected": "Inter font family",
+      "actual": "Missing Inter font",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "login",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Colors)",
+      "expected": "No hardcoded colors",
+      "actual": "No hardcoded colors found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "login",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+      "expected": "No hardcoded spacing",
+      "actual": "No hardcoded spacing found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "login",
+      "category": "Border Radius",
+      "test": "No 16px Border Radius (Should be 12px)",
+      "expected": "No 16px border radius",
+      "actual": "No 16px border radius found",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "login",
+      "category": "Implementation",
+      "test": "Uses Correct CSS Classes",
+      "expected": "Uses design system classes",
+      "actual": "Missing correct class usage",
+      "passed": false,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "login",
+      "category": "Typography",
+      "test": "Uses Inter Font Family",
+      "expected": "Inter font family",
+      "actual": "Missing Inter font",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.332Z"
+    },
+    {
+      "file": "register",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Colors)",
+      "expected": "No hardcoded colors",
+      "actual": "No hardcoded colors found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.333Z"
+    },
+    {
+      "file": "register",
+      "category": "Implementation",
+      "test": "Uses CSS Variables (Not Hardcoded Spacing)",
+      "expected": "No hardcoded spacing",
+      "actual": "No hardcoded spacing found",
+      "passed": true,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.333Z"
+    },
+    {
+      "file": "register",
+      "category": "Border Radius",
+      "test": "No 16px Border Radius (Should be 12px)",
+      "expected": "No 16px border radius",
+      "actual": "No 16px border radius found",
+      "passed": true,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.333Z"
+    },
+    {
+      "file": "register",
+      "category": "Implementation",
+      "test": "Uses Correct CSS Classes",
+      "expected": "Uses design system classes",
+      "actual": "Missing correct class usage",
+      "passed": false,
+      "critical": false,
+      "timestamp": "2025-11-26T15:32:44.333Z"
+    },
+    {
+      "file": "register",
+      "category": "Typography",
+      "test": "Uses Inter Font Family",
+      "expected": "Inter font family",
+      "actual": "Missing Inter font",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:32:44.333Z"
+    }
+  ],
+  "recommendations": [
+    "CRITICAL: Fix critical failures immediately - these affect core mockup compliance",
+    "Review typography system - multiple font size/weight inaccuracies detected",
+    "Review spacing system - multiple spacing inaccuracies detected",
+    "CRITICAL: Review border radius - ensure 12px for cards (not 16px)"
+  ]
+}

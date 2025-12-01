@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Color Scheme Responsive Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Warm color scheme
+                        'dusty-gold': '#B89B5E',
+                        'warm-sand': '#D6C7B2',
+                        'muted-olive': '#4F5B4A',
+                        'rust-red': '#A7352D',
+                        'warm-off-white': '#EAE6DD',
+                        'soft-graphite': '#1A1A1A',
+                        'deep-charcoal': '#121212',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #EAE6DD;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .card {
+            background-color: #1A1A1A;
+            border: 1px solid #333;
+        }
+        
+        .text-primary {
+            color: #B89B5E;
+        }
+        
+        .text-secondary {
+            color: #D6C7B2;
+        }
+        
+        .text-tertiary {
+            color: #4F5B4A;
+        }
+        
+        .text-warning {
+            color: #A7352D;
+        }
+        
+        .bg-primary {
+            background-color: #B89B5E;
+        }
+        
+        .bg-secondary {
+            background-color: #D6C7B2;
+        }
+        
+        .bg-tertiary {
+            background-color: #4F5B4A;
+        }
+        
+        .bg-warning {
+            background-color: #A7352D;
+        }
+        
+        /* Responsive utilities */
+        .mobile-only {
+            display: block;
+        }
+        
+        .tablet-only {
+            display: none;
+        }
+        
+        .desktop-only {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-only {
+                display: none;
+            }
+            
+            .tablet-only {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .tablet-only {
+                display: none;
+            }
+            
+            .desktop-only {
+                display: block;
+            }
+        }
+        
+        /* Test components */
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+        
+        @media (min-width: 768px) {
+            .sidebar.collapsed {
+                transform: translateX(0);
+                width: 4rem;
+            }
+        }
+        
+        .chart-container {
+            min-height: 200px;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .market-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .form-input {
+            background-color: #2A2A2A;
+            border: 1px solid #444;
+            color: #EAE6DD;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            width: 100%;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #B89B5E;
+            box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: #B89B5E;
+            color: #121212;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #A08A4F;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .viewport-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #B89B5E;
+            color: #121212;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="viewport-indicator" id="viewport-indicator">Loading...</div>
+    
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <aside class="sidebar w-64 h-screen card p-4 fixed md:relative z-10" id="sidebar">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl font-bold text-primary">Trading Journal</h2>
+                <button class="md:hidden text-primary" onclick="toggleSidebar()">✕</button>
+            </div>
+            
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-gray-800 transition">
+                    <span class="text-primary">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-gray-800 transition">
+                    <span class="text-secondary">📈</span>
+                    <span>Trades</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-gray-800 transition">
+                    <span class="text-tertiary">📝</span>
+                    <span>Strategies</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 p-2 rounded hover:bg-gray-800 transition">
+                    <span class="text-warning">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- Mobile menu button -->
+        <button class="mobile-only fixed top-4 left-4 z-20 p-2 card rounded" onclick="toggleSidebar()">
+            <span class="text-primary">☰</span>
+        </button>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header -->
+                <header class="mb-8">
+                    <h1 class="text-3xl font-bold text-primary mb-2">Warm Color Scheme Test</h1>
+                    <p class="text-secondary">Testing responsive behavior with new warm color palette</p>
+                </header>
+                
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid mb-8">
+                    <!-- PnL Card -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-primary mb-2">Total P&L</h3>
+                        <p class="text-3xl font-bold text-primary">+$12,450</p>
+                        <p class="text-sm text-secondary mt-1">+15.3% this month</p>
+                    </div>
+                    
+                    <!-- Win Rate Card -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-tertiary mb-2">Win Rate</h3>
+                        <p class="text-3xl font-bold text-tertiary">68.5%</p>
+                        <p class="text-sm text-secondary mt-1">42/61 trades</p>
+                    </div>
+                    
+                    <!-- Profit Factor Card -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-secondary mb-2">Profit Factor</h3>
+                        <p class="text-3xl font-bold text-secondary">2.34</p>
+                        <p class="text-sm text-secondary mt-1">Above target</p>
+                    </div>
+                    
+                    <!-- Total Trades Card -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-warning mb-2">Total Trades</h3>
+                        <p class="text-3xl font-bold text-warning">156</p>
+                        <p class="text-sm text-secondary mt-1">All time</p>
+                    </div>
+                </div>
+                
+                <!-- Charts Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- PnL Chart -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-primary mb-4">P&L Chart</h3>
+                        <div class="chart-container">
+                            <p class="text-secondary">Chart visualization with warm colors</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Emotion Radar -->
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-tertiary mb-4">Emotion Radar</h3>
+                        <div class="chart-container">
+                            <p class="text-secondary">Emotion analysis with muted olive</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Market Badges -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-primary mb-4">Market Badges</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="market-badge bg-primary text-black">Stocks</span>
+                        <span class="market-badge bg-warning text-white">Crypto</span>
+                        <span class="market-badge bg-tertiary text-white">Forex</span>
+                        <span class="market-badge bg-secondary text-black">Options</span>
+                        <span class="market-badge bg-primary text-black">Futures</span>
+                    </div>
+                </div>
+                
+                <!-- Trade Form -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-primary mb-4">New Trade Form</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-secondary mb-1">Symbol</label>
+                                <input type="text" class="form-input" placeholder="AAPL" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-secondary mb-1">Type</label>
+                                <select class="form-input">
+                                    <option>Buy</option>
+                                    <option>Sell</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-secondary mb-1">Entry Price</label>
+                                <input type="number" class="form-input" placeholder="150.00" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-secondary mb-1">Quantity</label>
+                                <input type="number" class="form-input" placeholder="100" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-secondary mb-1">Strategy</label>
+                            <select class="form-input">
+                                <option>Breakout</option>
+                                <option>Swing</option>
+                                <option>Scalping</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-secondary mb-1">Notes</label>
+                            <textarea class="form-input" rows="3" placeholder="Trade notes..."></textarea>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <button type="submit" class="btn-primary">Save Trade</button>
+                            <button type="button" class="px-4 py-2 card rounded hover:bg-gray-800 transition">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Responsive Test Info -->
+                <div class="mt-8 p-4 card rounded-lg">
+                    <h3 class="text-lg font-semibold text-primary mb-2">Responsive Test Information</h3>
+                    <p class="text-secondary mb-2">This page tests the warm color scheme across different viewport sizes:</p>
+                    <ul class="text-sm text-secondary space-y-1">
+                        <li>• Mobile: < 768px (320px-768px)</li>
+                        <li>• Tablet: 768px-1024px</li>
+                        <li>• Desktop: 1024px-1920px</li>
+                        <li>• Large Desktop: > 1920px</li>
+                    </ul>
+                    <p class="text-sm text-secondary mt-2">Resize your browser window to test different breakpoints.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function updateViewportIndicator() {
+            const width = window.innerWidth;
+            const indicator = document.getElementById('viewport-indicator');
+            
+            if (width < 768) {
+                indicator.textContent = `Mobile (${width}px)`;
+            } else if (width < 1024) {
+                indicator.textContent = `Tablet (${width}px)`;
+            } else if (width < 1920) {
+                indicator.textContent = `Desktop (${width}px)`;
+            } else {
+                indicator.textContent = `Large Desktop (${width}px)`;
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateViewportIndicator();
+            
+            // Update on resize
+            window.addEventListener('resize', updateViewportIndicator);
+            
+            // Close sidebar on mobile when clicking outside
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isMenuButton = event.target.closest('button[onclick="toggleSidebar()"]');
+                
+                if (window.innerWidth < 768 && !isClickInsideSidebar && !isMenuButton && !sidebar.classList.contains('collapsed')) {
+                    sidebar.classList.add('collapsed');
+                }
+            });
+            
+            // Start with collapsed sidebar on mobile
+            if (window.innerWidth < 768) {
+                document.getElementById('sidebar').classList.add('collapsed');
+            }
+        });
+    </script>
+</body>
+</html>

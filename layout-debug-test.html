@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Debug Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind config to match the project
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    screens: {
+                        '2xl': '1536px',
+                    },
+                    maxWidth: {
+                        'screen-2xl': '1536px',
+                    },
+                    colors: {
+                        primary: '#C0C0C0',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Include the project's CSS variables and styles */
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #151515;
+            --bg-card: #202020;
+            --bg-elevated: #232323;
+            --border-primary: #2B2B2B;
+            --text-primary: #EAE6DD;
+            --text-secondary: #9A9A9A;
+            --gold-primary: #B89B5E;
+            --gold-secondary: #D6C7B2;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .card-luxury {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+        }
+        
+        .container-luxury {
+            max-width: 1536px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Layout Debug Test Page</h1>
+        <p>This page simulates the dashboard layout for debugging.</p>
+        
+        <!-- Simulate the dashboard structure -->
+        <div class="min-h-screen bg-primary flex">
+            <!-- Desktop Sidebar -->
+            <aside class="fixed top-0 left-0 h-full bg-secondary border-r border-primary hidden lg:flex w-64 z-50">
+                <div class="p-4">
+                    <h3>Sidebar</h3>
+                </div>
+            </aside>
+            
+            <!-- Main Content -->
+            <div class="flex-1 lg:ml-64 ml-0">
+                <!-- Top Navigation -->
+                <header class="h-16 flex items-center justify-between px-6 border-b border-primary bg-elevated">
+                    <h1>Trading Dashboard</h1>
+                </header>
+
+                <!-- Dashboard Content -->
+                <main class="flex-1 w-full px-4 sm:px-6 lg:px-8 py-12">
+                    <div class="max-w-screen-2xl !max-w-none mx-auto w-full">
+                        <div class="text-center mb-12">
+                            <p>Track your performance and analyze your trading patterns</p>
+                        </div>
+
+                        <!-- Key Metrics Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-6 gap-6 mb-8">
+                            <div class="card-luxury">
+                                <div class="text-secondary text-base font-medium mb-2">Total P&L</div>
+                                <div class="text-2xl font-bold text-green-500">$12,450</div>
+                                <div class="text-sm text-muted mt-2">25 trades</div>
+                            </div>
+                            
+                            <div class="card-luxury">
+                                <div class="text-secondary text-base font-medium mb-2">Win Rate</div>
+                                <div class="text-2xl font-bold text-yellow-500">68%</div>
+                                <div class="text-sm text-muted mt-2">17 of 25 wins</div>
+                            </div>
+                            
+                            <div class="card-luxury">
+                                <div class="text-secondary text-base font-medium mb-2">Avg Trade</div>
+                                <div class="text-2xl font-bold text-primary">$498</div>
+                                <div class="text-sm text-muted mt-2">Average performance</div>
+                            </div>
+                            
+                            <div class="card-luxury">
+                                <div class="text-secondary text-base font-medium mb-2">Total Trades</div>
+                                <div class="text-2xl font-bold text-primary">25</div>
+                                <div class="text-sm text-muted mt-2">All time records</div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Sections -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="card-luxury">
+                                <h3 class="text-lg font-semibold text-yellow-500 mb-4">VRating Performance</h3>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-yellow-500">85.2</div>
+                                    <div class="text-base mt-2">Overall Score</div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-luxury">
+                                <h3 class="text-lg font-semibold text-yellow-500 mb-4">Sharpe Ratio</h3>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-yellow-500">1.45</div>
+                                    <div class="text-base mt-2">Risk-Adjusted Returns</div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-luxury">
+                                <h3 class="text-lg font-semibold text-yellow-500 mb-4">Dominant Emotion</h3>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-yellow-500">Confident</div>
+                                    <div class="text-base mt-2">Trading Psychology</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the debugging script -->
+    <script src="comprehensive-layout-debug.js"></script>
+    
+    <script>
+        // Additional debugging info
+        console.log('📋 Layout Debug Test Page Loaded');
+        console.log('🌐 Current URL:', window.location.href);
+        console.log('📱 User Agent:', navigator.userAgent);
+        
+        // Add visual indicators for debugging
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add border to main elements for visual debugging
+            const main = document.querySelector('main');
+            if (main) {
+                main.style.border = '2px solid red';
+                main.style.position = 'relative';
+            }
+            
+            const container = document.querySelector('.max-w-screen-2xl');
+            if (container) {
+                container.style.border = '2px solid blue';
+                container.style.position = 'relative';
+            }
+            
+            const grid = document.querySelector('.grid-cols-4');
+            if (grid) {
+                grid.style.border = '2px solid green';
+                grid.style.position = 'relative';
+            }
+            
+            // Add info panel
+            const infoPanel = document.createElement('div');
+            infoPanel.style.cssText = `
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                background: rgba(0, 0, 0, 0.9);
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 12px;
+                z-index: 9999;
+                max-width: 300px;
+            `;
+            
+            function updateInfo() {
+                infoPanel.innerHTML = `
+                    <strong>Live Debug Info:</strong><br>
+                    Viewport: ${window.innerWidth}x${window.innerHeight}px<br>
+                    Device: ${window.innerWidth >= 1024 ? 'Desktop' : window.innerWidth >= 640 ? 'Tablet' : 'Mobile'}<br>
+                    Main width: ${main ? main.getBoundingClientRect().width + 'px' : 'N/A'}<br>
+                    Container width: ${container ? container.getBoundingClientRect().width + 'px' : 'N/A'}<br>
+                    Grid width: ${grid ? grid.getBoundingClientRect().width + 'px' : 'N/A'}<br>
+                    <br>
+                    <strong>Expected:</strong><br>
+                    Desktop should use full width<br>
+                    Container should be 1536px max<br>
+                    Grid should have 4+ columns
+                `;
+            }
+            
+            updateInfo();
+            window.addEventListener('resize', updateInfo);
+            
+            document.body.appendChild(infoPanel);
+        });
+    </script>
+</body>
+</html>

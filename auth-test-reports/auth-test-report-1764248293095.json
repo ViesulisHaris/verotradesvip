@@ -1,0 +1,376 @@
+{
+  "timestamp": "2025-11-27T12:58:13.094Z",
+  "baseUrl": "http://localhost:3000",
+  "summary": {
+    "total": 22,
+    "passed": 3,
+    "failed": 19,
+    "passRate": "13.64%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-27T12:49:27.953Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-27T12:49:27.955Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-27T12:49:29.445Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:49:38.578Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-page-loaded-1764247778341.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:49:39.911Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-valid-1764247779694.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:49:50.720Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-error-message-1764247790529.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:49:50.728Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Login failed: No error message found"
+    },
+    {
+      "timestamp": "2025-11-27T12:49:50.729Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:50:03.464Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-invalid-1764247803271.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:09.064Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[class*=\"red\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:09.064Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:50:14.162Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-empty-form-submission-1764247813984.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:14.162Z",
+      "type": "success",
+      "message": "✅ Empty form validation: PASSED - Correctly prevented empty form submission"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:16.479Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-password-1764247816264.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:19.324Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-email-1764247819126.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:19.325Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:50:42.298Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1764247842208.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:43.428Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-form-filled-valid-1764247843358.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:46.047Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-submission-result-1764247845985.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:46.052Z",
+      "type": "error",
+      "message": "❌ Registration with valid data: FAILED - Registration failed"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:46.052Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:50:55.127Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-invalid-email-1764247855054.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:50:57.806Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-short-password-1764247857739.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:00.500Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-empty-form-1764247860427.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:00.500Z",
+      "type": "success",
+      "message": "✅ Registration with invalid data: PASSED - Invalid data validation tested"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:00.500Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:51:07.013Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\remember-me-option-not-found-1764247866752.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:07.013Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Remember me option not found"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:07.013Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:51:24.885Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\network-error-simulation-1764247884687.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:24.893Z",
+      "type": "error",
+      "message": "❌ Error handling: FAILED - No error handling found"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:24.893Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:51:50.527Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n  navigated to \"http://localhost:3000/login\"\n  navigated to \"http://localhost:3000/login\"\n  navigated to \"http://localhost:3000/login\"\n  navigated to \"http://localhost:3000/login\"\n============================================================"
+    },
+    {
+      "timestamp": "2025-11-27T12:51:50.527Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:52:14.285Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n  navigated to \"http://localhost:3000/login\"\n  navigated to \"http://localhost:3000/login\"\n  navigated to \"http://localhost:3000/login\"\n============================================================"
+    },
+    {
+      "timestamp": "2025-11-27T12:52:14.286Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:52:25.848Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--dashboard-1764247943810.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:52:25.848Z",
+      "type": "success",
+      "message": "✅ Protected route /dashboard: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-27T12:52:48.830Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--trades-1764247968722.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:52:48.831Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-27T12:53:06.534Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-1764247986427.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:53:06.535Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-27T12:53:38.379Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-create-1764248017969.png"
+    },
+    {
+      "timestamp": "2025-11-27T12:53:38.379Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/create: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-27T12:54:08.896Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/edit/[id]: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/edit/1\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:54:39.431Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/performance/[id]: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/performance/1\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:55:09.971Z",
+      "type": "error",
+      "message": "❌ Protected route /log-trade: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/log-trade\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:55:40.488Z",
+      "type": "error",
+      "message": "❌ Protected route /confluence: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/confluence\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:56:11.016Z",
+      "type": "error",
+      "message": "❌ Protected route /calendar: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/calendar\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:56:41.545Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/analytics\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:56:41.546Z",
+      "type": "info",
+      "message": "\n=== Testing Public Routes ==="
+    },
+    {
+      "timestamp": "2025-11-27T12:57:12.072Z",
+      "type": "error",
+      "message": "❌ Public route /login: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:57:42.584Z",
+      "type": "error",
+      "message": "❌ Public route /register: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-27T12:58:13.093Z",
+      "type": "error",
+      "message": "❌ Public route / (home): FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "protectedRoutes": [
+    {
+      "route": "/dashboard",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login"
+    },
+    {
+      "route": "/trades",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/trades"
+    },
+    {
+      "route": "/strategies",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/strategies"
+    },
+    {
+      "route": "/strategies/create",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/strategies/create"
+    },
+    {
+      "route": "/strategies/edit/[id]",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/edit/1\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/strategies/performance/[id]",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/performance/1\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/log-trade",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/log-trade\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/confluence",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/confluence\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/calendar",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/calendar\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/analytics",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/analytics\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    }
+  ],
+  "publicRoutes": [
+    {
+      "route": "/login",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/register",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/register\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/ (home)",
+      "success": false,
+      "message": "Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "screenshotsDir": "./auth-test-screenshots",
+    "reportsDir": "./auth-test-reports"
+  }
+}

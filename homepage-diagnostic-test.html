@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Diagnostic Test</title>
+    <style>
+        :root {
+            --deep-charcoal: #121212;
+            --warm-off-white: #EAE6DD;
+            --dusty-gold: #B89B5E;
+            --gold-secondary: #D4B87F;
+            --font-family-primary: 'Inter', system-ui, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--deep-charcoal);
+            color: var(--warm-off-white);
+            font-family: var(--font-family-primary);
+        }
+        
+        .diagnostic-container {
+            min-height: 100vh;
+            background-color: var(--deep-charcoal);
+            color: var(--warm-off-white);
+            font-family: var(--font-family-primary);
+            padding: 2rem;
+        }
+        
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--dusty-gold);
+            border-radius: 8px;
+        }
+        
+        .homepage-content {
+            min-height: 100vh;
+            background-color: var(--deep-charcoal);
+            color: var(--warm-off-white);
+            font-family: var(--font-family-primary);
+            padding: 2rem;
+        }
+        
+        .homepage-content .title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dusty-gold), var(--gold-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .homepage-content .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagnostic-container">
+        <h1>🔧 Homepage Diagnostic Test</h1>
+        
+        <div class="test-section">
+            <h2>CSS Variables Test</h2>
+            <p>Deep Charcoal: <span style="background: var(--deep-charcoal); padding: 4px;">■</span> #121212</p>
+            <p>Warm Off White: <span style="background: var(--warm-off-white); padding: 4px;">■</span> #EAE6DD</p>
+            <p>Dusty Gold: <span style="background: var(--dusty-gold); padding: 4px;">■</span> #B89B5E</p>
+            <p>Font Family: <code>var(--font-family-primary)</code></p>
+        </div>
+        
+        <div class="test-section">
+            <h2>Homepage Content Test</h2>
+            <div class="homepage-content">
+                <div class="title">VeroTrade</div>
+                <p class="subtitle">Professional Trading Journal Platform</p>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Diagnosis Results</h2>
+            <p><strong>Issue Identified:</strong> Homepage component is NOT wrapped with AuthContext or AuthGuard</p>
+            <p><strong>Root Cause:</strong> The homepage (src/app/page.tsx) is outside the (auth) route group, so it doesn't get AuthContextProvider or AuthGuard</p>
+            <p><strong>Symptoms:</strong> Blank page because CSS variables and authentication context are missing</p>
+            <p><strong>Fix Required:</strong> Wrap homepage with AuthContextProvider and add proper authentication logic</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,691 @@
+{
+  "timestamp": "2025-11-24T07-50-55-595Z",
+  "summary": {
+    "totalTests": 55,
+    "passed": 12,
+    "failed": 43,
+    "warnings": 0
+  },
+  "viewportTests": [
+    {
+      "name": "Mobile Small",
+      "width": 375,
+      "height": 667,
+      "expectedBreakpoint": "sm",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": true,
+          "expected": "Desktop: false, Mobile: true",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-mobile-small.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Mobile Large",
+      "width": 414,
+      "height": 896,
+      "expectedBreakpoint": "sm",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": true,
+          "expected": "Desktop: false, Mobile: true",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-mobile-large.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024,
+      "expectedBreakpoint": "md",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": true,
+          "expected": "Desktop: false, Mobile: true",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-tablet.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Tablet Large",
+      "width": 1024,
+      "height": 768,
+      "expectedBreakpoint": "lg",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": false,
+          "expected": "Desktop: true, Mobile: false",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-tablet-large.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Desktop Small",
+      "width": 1280,
+      "height": 720,
+      "expectedBreakpoint": "xl",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": false,
+          "expected": "Desktop: true, Mobile: false",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-desktop-small.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Desktop Large",
+      "width": 1536,
+      "height": 864,
+      "expectedBreakpoint": "2xl",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": false,
+          "expected": "Desktop: true, Mobile: false",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-desktop-large.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    },
+    {
+      "name": "Desktop Ultra",
+      "width": 1920,
+      "height": 1080,
+      "expectedBreakpoint": "2xl",
+      "tests": [
+        {
+          "name": "Zoom detection",
+          "passed": true,
+          "details": "Zoom level: 1, Percentage: 100%"
+        },
+        {
+          "name": "Sidebar visibility",
+          "passed": false,
+          "expected": "Desktop: true, Mobile: false",
+          "actual": "Desktop: false, Mobile: false",
+          "details": {
+            "desktopVisible": false,
+            "mobileVisible": false,
+            "desktopClasses": "not-found",
+            "mobileClasses": "not-found"
+          }
+        },
+        {
+          "name": "Grid layouts",
+          "passed": false,
+          "details": "Found 0 grid elements"
+        },
+        {
+          "name": "Container luxury responsive",
+          "passed": false,
+          "details": "Found 0 container-luxury elements"
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\viewport-desktop-ultra.png",
+      "activeBreakpoints": {
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary",
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0
+      },
+      "gridState": [],
+      "containerState": []
+    }
+  ],
+  "zoomTests": [
+    {
+      "zoomLevel": 0.75,
+      "zoomPercentage": 75,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": false,
+          "expected": "75%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": false,
+          "expected": "visible",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-0-75.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    },
+    {
+      "zoomLevel": 0.9,
+      "zoomPercentage": 90,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": false,
+          "expected": "90%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": false,
+          "expected": "visible",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-0-9.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    },
+    {
+      "zoomLevel": 1,
+      "zoomPercentage": 100,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": true,
+          "expected": "100%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": true,
+          "expected": "hidden",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-1.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    },
+    {
+      "zoomLevel": 1.1,
+      "zoomPercentage": 110.00000000000001,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": false,
+          "expected": "110.00000000000001%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": false,
+          "expected": "visible",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-1-1.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    },
+    {
+      "zoomLevel": 1.25,
+      "zoomPercentage": 125,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": false,
+          "expected": "125%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": false,
+          "expected": "visible",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-1-25.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    },
+    {
+      "zoomLevel": 1.5,
+      "zoomPercentage": 150,
+      "tests": [
+        {
+          "name": "Zoom detection accuracy",
+          "passed": false,
+          "expected": "150%",
+          "actual": "100%",
+          "details": {
+            "zoomLevel": 1,
+            "zoomPercentage": 100,
+            "effectiveWidth": 0,
+            "actualWidth": 0,
+            "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+          }
+        },
+        {
+          "name": "Zoom-aware classes",
+          "passed": false,
+          "details": "Found 0 zoom-aware elements"
+        },
+        {
+          "name": "Zoom indicator",
+          "passed": false,
+          "expected": "visible",
+          "actual": "hidden",
+          "details": {
+            "visible": false
+          }
+        }
+      ],
+      "screenshot": "responsive-test-results\\responsive-test-2025-11-24T07-50-55-595Z\\zoom-1-5.png",
+      "zoomState": {
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 0,
+        "actualWidth": 0,
+        "bodyClasses": "__className_f367f3 flex h-full bg-primary"
+      },
+      "zoomClasses": []
+    }
+  ],
+  "componentTests": [
+    {
+      "name": "Desktop navigation",
+      "passed": false,
+      "details": {
+        "desktopSidebar": {
+          "exists": false,
+          "visible": false,
+          "width": "0px"
+        },
+        "mobileSidebar": {
+          "exists": false,
+          "visible": false
+        },
+        "topNav": {
+          "exists": false,
+          "visible": false
+        }
+      }
+    },
+    {
+      "name": "Mobile navigation",
+      "passed": false,
+      "details": {
+        "desktopSidebar": {
+          "exists": false,
+          "visible": false
+        },
+        "mobileSidebar": {
+          "exists": false,
+          "visible": false,
+          "width": "0px"
+        },
+        "topNav": {
+          "exists": false,
+          "visible": false
+        }
+      }
+    },
+    {
+      "name": "Mobile menu toggle",
+      "passed": false,
+      "details": {
+        "exists": false
+      }
+    },
+    {
+      "name": "Mobile Dashboard layout",
+      "passed": false,
+      "details": {
+        "cardCount": 0,
+        "cardInfo": [],
+        "gridCount": 0,
+        "gridInfo": [],
+        "viewportWidth": 375,
+        "viewportHeight": 667
+      }
+    },
+    {
+      "name": "Tablet Dashboard layout",
+      "passed": false,
+      "details": {
+        "cardCount": 0,
+        "cardInfo": [],
+        "gridCount": 0,
+        "gridInfo": [],
+        "viewportWidth": 768,
+        "viewportHeight": 1024
+      }
+    },
+    {
+      "name": "Desktop Dashboard layout",
+      "passed": false,
+      "details": {
+        "cardCount": 0,
+        "cardInfo": [],
+        "gridCount": 0,
+        "gridInfo": [],
+        "viewportWidth": 1280,
+        "viewportHeight": 720
+      }
+    }
+  ],
+  "utilityTests": [
+    {
+      "name": "Container luxury utility",
+      "passed": false,
+      "details": {
+        "count": 0,
+        "details": []
+      }
+    },
+    {
+      "name": "Zoom-aware classes",
+      "passed": false,
+      "details": {
+        "totalElements": 0,
+        "uniqueClasses": [],
+        "classes": []
+      }
+    },
+    {
+      "name": "Tabular nums utility",
+      "passed": false,
+      "details": {
+        "count": 0,
+        "details": []
+      }
+    }
+  ],
+  "issues": []
+}

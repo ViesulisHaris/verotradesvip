@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-11-26T16:01:58.165Z",
+  "tests": [],
+  "screenshots": [],
+  "errors": [
+    "page.waitForTimeout is not a function"
+  ],
+  "success": false
+}

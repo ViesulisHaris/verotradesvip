@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-11-22T22:14:45.106Z",
+  "tests": [
+    {
+      "name": "Navigate to login page",
+      "status": "PASS",
+      "details": "Login page loaded: true"
+    },
+    {
+      "name": "Login form filled",
+      "status": "PASS",
+      "details": "Email and password entered successfully"
+    },
+    {
+      "name": "Login form submitted",
+      "status": "PASS",
+      "details": "Login submission processed"
+    },
+    {
+      "name": "Dashboard accessible after login",
+      "status": "PASS",
+      "details": "Dashboard accessible: true"
+    },
+    {
+      "name": "Logout functionality",
+      "status": "PARTIAL",
+      "details": "No explicit logout button found, but this may be by design"
+    },
+    {
+      "name": "Authentication state persistence",
+      "status": "PASS",
+      "details": "Still can access dashboard: true"
+    },
+    {
+      "name": "No 500 errors in workflow",
+      "status": "PASS",
+      "details": "All workflow routes accessible without 500 errors"
+    }
+  ],
+  "errors": [],
+  "screenshots": [],
+  "summary": {
+    "total": 7,
+    "passed": 6,
+    "failed": 0,
+    "partial": 1,
+    "skipped": 0,
+    "successRate": "85.71%"
+  }
+}

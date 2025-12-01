@@ -1,0 +1,1251 @@
+{
+  "timestamp": "2025-11-18T12:05:11.482Z",
+  "testLocation": "test-page",
+  "authentication": {
+    "wasAuthenticated": false,
+    "loginAttempted": true
+  },
+  "summary": {
+    "strategyCardsFound": false,
+    "modalDebugMessages": 0,
+    "doubleModalEvidence": 0,
+    "positioningEvidence": 0,
+    "multipleBackdrops": 0,
+    "modalBackdropVisible": false,
+    "cardModalWrapperVisible": false,
+    "cardBackdropVisible": false
+  },
+  "evidence": {
+    "modalDebugMessages": [],
+    "doubleModalEvidence": [],
+    "positioningEvidence": [],
+    "consoleMessages": [
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:19.062Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:19.425Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:19.546Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:19.547Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:19.549Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:19.551Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:19.548Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:19.552Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:19.554Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:19.554Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2025-11-18T12:04:19.589Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:19.595Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:19.595Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:19.595Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:19.656Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:19.658Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:19.665Z}",
+        "timestamp": "2025-11-18T12:04:19.666Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:19.667Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:04:19.667Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:19.672Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:19.684Z}",
+        "timestamp": "2025-11-18T12:04:19.685Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:04:19.844Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:19.861Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:19.866Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:19.866Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:19.866Z}",
+        "timestamp": "2025-11-18T12:04:19.867Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:19.970Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight validation...",
+        "timestamp": "2025-11-18T12:04:19.971Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:04:20.215Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+        "timestamp": "2025-11-18T12:04:20.216Z"
+      },
+      {
+        "type": "log",
+        "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+        "timestamp": "2025-11-18T12:04:20.216Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:04:20.380Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:04:20.396Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [CACHE] Comprehensive cache clear completed",
+        "timestamp": "2025-11-18T12:04:20.396Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+        "timestamp": "2025-11-18T12:04:20.397Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:23.706Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:23.810Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:23.810Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:23.814Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:23.814Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:23.814Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:23.814Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:23.815Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:23.815Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:23.816Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:23.817Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:23.817Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:23.821Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:23.997Z}",
+        "timestamp": "2025-11-18T12:04:23.998Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:24.020Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:24.025Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:24.032Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:24.032Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:24.037Z}",
+        "timestamp": "2025-11-18T12:04:24.038Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:24.145Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:04:24.145Z"
+      },
+      {
+        "type": "log",
+        "text": "🚀 Login form submission started",
+        "timestamp": "2025-11-18T12:04:28.247Z"
+      },
+      {
+        "type": "log",
+        "text": "📧 Email: test@example.com",
+        "timestamp": "2025-11-18T12:04:28.248Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Password length: 11",
+        "timestamp": "2025-11-18T12:04:28.248Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 Attempting Supabase authentication...",
+        "timestamp": "2025-11-18T12:04:28.248Z"
+      },
+      {
+        "type": "log",
+        "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+        "timestamp": "2025-11-18T12:04:28.248Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Supabase Key present: YES",
+        "timestamp": "2025-11-18T12:04:28.248Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()",
+        "timestamp": "2025-11-18T12:04:28.517Z"
+      },
+      {
+        "type": "log",
+        "text": "📥 Supabase response received",
+        "timestamp": "2025-11-18T12:04:28.517Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Error: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:28.518Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ Success: YES",
+        "timestamp": "2025-11-18T12:04:28.518Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Authentication failed: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:28.518Z"
+      },
+      {
+        "type": "log",
+        "text": "🏁 Login process completed",
+        "timestamp": "2025-11-18T12:04:28.518Z"
+      },
+      {
+        "type": "log",
+        "text": "🚀 Login form submission started",
+        "timestamp": "2025-11-18T12:04:32.842Z"
+      },
+      {
+        "type": "log",
+        "text": "📧 Email: admin@example.com",
+        "timestamp": "2025-11-18T12:04:32.843Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Password length: 8",
+        "timestamp": "2025-11-18T12:04:32.843Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 Attempting Supabase authentication...",
+        "timestamp": "2025-11-18T12:04:32.843Z"
+      },
+      {
+        "type": "log",
+        "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+        "timestamp": "2025-11-18T12:04:32.844Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Supabase Key present: YES",
+        "timestamp": "2025-11-18T12:04:32.844Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()",
+        "timestamp": "2025-11-18T12:04:32.975Z"
+      },
+      {
+        "type": "log",
+        "text": "📥 Supabase response received",
+        "timestamp": "2025-11-18T12:04:32.976Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Error: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:32.976Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ Success: YES",
+        "timestamp": "2025-11-18T12:04:32.977Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Authentication failed: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:32.977Z"
+      },
+      {
+        "type": "log",
+        "text": "🏁 Login process completed",
+        "timestamp": "2025-11-18T12:04:32.977Z"
+      },
+      {
+        "type": "log",
+        "text": "🚀 Login form submission started",
+        "timestamp": "2025-11-18T12:04:37.452Z"
+      },
+      {
+        "type": "log",
+        "text": "📧 Email: user@example.com",
+        "timestamp": "2025-11-18T12:04:37.453Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Password length: 7",
+        "timestamp": "2025-11-18T12:04:37.453Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 Attempting Supabase authentication...",
+        "timestamp": "2025-11-18T12:04:37.453Z"
+      },
+      {
+        "type": "log",
+        "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+        "timestamp": "2025-11-18T12:04:37.453Z"
+      },
+      {
+        "type": "log",
+        "text": "🔑 Supabase Key present: YES",
+        "timestamp": "2025-11-18T12:04:37.453Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()",
+        "timestamp": "2025-11-18T12:04:37.610Z"
+      },
+      {
+        "type": "log",
+        "text": "📥 Supabase response received",
+        "timestamp": "2025-11-18T12:04:37.610Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Error: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:37.613Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ Success: YES",
+        "timestamp": "2025-11-18T12:04:37.614Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ Authentication failed: Invalid login credentials",
+        "timestamp": "2025-11-18T12:04:37.614Z"
+      },
+      {
+        "type": "log",
+        "text": "🏁 Login process completed",
+        "timestamp": "2025-11-18T12:04:37.614Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:41.528Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:41.643Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:41.662Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:41.662Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:41.666Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:41.667Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:41.666Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:41.668Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:41.670Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:41.670Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:41.671Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:41.672Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:41.672Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:41.785Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:41.789Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:41.793Z}",
+        "timestamp": "2025-11-18T12:04:41.796Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:41.805Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:04:41.805Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:41.811Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:41.826Z}",
+        "timestamp": "2025-11-18T12:04:41.828Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:04:41.922Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:41.935Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:41.940Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:41.941Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:41.940Z}",
+        "timestamp": "2025-11-18T12:04:41.941Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:42.046Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:04:42.046Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:04:46.204Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 445ms",
+        "timestamp": "2025-11-18T12:04:46.539Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:46.761Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:46.878Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:46.878Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:46.881Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:46.881Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:46.881Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:46.882Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:46.883Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:46.883Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:46.883Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:46.884Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:46.884Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:46.889Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:46.985Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:46.985Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:46.991Z}",
+        "timestamp": "2025-11-18T12:04:46.991Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:46.992Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:04:46.992Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:46.997Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:47.010Z}",
+        "timestamp": "2025-11-18T12:04:47.012Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:04:47.087Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:47.095Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:47.097Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:47.097Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:47.098Z}",
+        "timestamp": "2025-11-18T12:04:47.098Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:47.360Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:04:47.360Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:04:51.530Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 649ms",
+        "timestamp": "2025-11-18T12:04:52.073Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:52.283Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:52.372Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:52.431Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:52.431Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:52.435Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:52.435Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:52.429Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:52.435Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:52.436Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:52.436Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:52.446Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:52.447Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:52.447Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:52.478Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:52.482Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:52.488Z}",
+        "timestamp": "2025-11-18T12:04:52.490Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:52.490Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:04:52.490Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:52.495Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:04:52.504Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:52.504Z}",
+        "timestamp": "2025-11-18T12:04:52.505Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 145ms",
+        "timestamp": "2025-11-18T12:04:52.549Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:04:52.584Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:52.593Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:52.597Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:52.598Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:52.598Z}",
+        "timestamp": "2025-11-18T12:04:52.599Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:52.811Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:04:52.811Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:04:56.983Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 721ms",
+        "timestamp": "2025-11-18T12:04:57.594Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:04:57.766Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:04:57.880Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:04:57.881Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:04:57.881Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:04:57.882Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:04:57.880Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:04:57.882Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:04:57.882Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:04:57.882Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:04:57.884Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:04:57.884Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:04:57.884Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:04:57.889Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:04:57.998Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:57.999Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:04:58.005Z}",
+        "timestamp": "2025-11-18T12:04:58.006Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:58.010Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:04:58.010Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:58.015Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:04:58.025Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:58.026Z}",
+        "timestamp": "2025-11-18T12:04:58.027Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 145ms",
+        "timestamp": "2025-11-18T12:04:58.067Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:04:58.097Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:04:58.109Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:04:58.116Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:04:58.116Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:04:58.118Z}",
+        "timestamp": "2025-11-18T12:04:58.119Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:04:58.230Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:04:58.230Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] rebuilding",
+        "timestamp": "2025-11-18T12:05:02.396Z"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 602ms",
+        "timestamp": "2025-11-18T12:05:02.886Z"
+      },
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:05:03.009Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:05:03.098Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:05:03.098Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:05:03.103Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:05:03.104Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:05:03.102Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:05:03.104Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:05:03.104Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:05:03.104Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:05:03.105Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:05:03.105Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:05:03.105Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:05:03.111Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:05:03.192Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:05:03.192Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:05:03.197Z}",
+        "timestamp": "2025-11-18T12:05:03.198Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:05:03.198Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:05:03.198Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:05:03.202Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:05:03.211Z}",
+        "timestamp": "2025-11-18T12:05:03.211Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:05:03.302Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:05:03.310Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:05:03.312Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:05:03.313Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:05:03.313Z}",
+        "timestamp": "2025-11-18T12:05:03.313Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:05:03.379Z"
+      },
+      {
+        "type": "log",
+        "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+        "timestamp": "2025-11-18T12:05:03.379Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Single modal test triggered",
+        "timestamp": "2025-11-18T12:05:08.469Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Single modal test triggered",
+        "timestamp": "2025-11-18T12:05:08.470Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Performance button clicked",
+        "timestamp": "2025-11-18T12:05:08.470Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Performance button clicked",
+        "timestamp": "2025-11-18T12:05:08.470Z"
+      }
+    ],
+    "errors": [],
+    "visualAnalysis": {
+      "modalElements": {
+        "modalBackdrop": false,
+        "cardModalWrapper": false,
+        "cardBackdrop": false,
+        "totalBackdrops": 0,
+        "totalModals": 0,
+        "totalFixedElements": 1
+      },
+      "zIndexHierarchy": [
+        {
+          "element": "DIV",
+          "className": "",
+          "testId": null,
+          "zIndex": "1000",
+          "position": "fixed",
+          "top": "540px",
+          "left": "960px",
+          "width": "613.487px",
+          "height": "193.2px"
+        }
+      ],
+      "positioningConflicts": [],
+      "trappedInBoxIndicators": {
+        "hasMultipleBackdrops": false,
+        "hasNestedModals": null,
+        "hasConflictingZIndex": false,
+        "hasOverflowHidden": false,
+        "hasTransformConflicts": true
+      },
+      "viewportInfo": {
+        "width": 1920,
+        "height": 1080,
+        "scrollX": 0,
+        "scrollY": 0
+      }
+    }
+  },
+  "diagnosis": {
+    "hasDoubleModalStructure": false,
+    "hasMultipleBackdrops": false,
+    "hasPositioningConflicts": false,
+    "hasTrappedInBoxBehavior": true,
+    "rootCause": "Unknown - needs further investigation"
+  },
+  "screenshot": "./modal-glitch-diagnostic-screenshot-1763467510993.png"
+}

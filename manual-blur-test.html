@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blur Effect Manual Test</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 0.5rem;
+        }
+        .result {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 0.25rem;
+        }
+        .success {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+        }
+        .warning {
+            background: rgba(250, 204, 21, 0.2);
+            border: 1px solid rgba(250, 204, 21, 0.5);
+        }
+        .error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+        }
+        .btn {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(6, 182, 212, 0.7));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .metric {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        .metric-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Blur Effect Manual Test</h1>
+        <p>This test will verify the blur effect on the Balatro background and its interaction with glass morphism elements.</p>
+        
+        <div class="test-section">
+            <h2>Test Controls</h2>
+            <button class="btn" onclick="runTests()">Run All Tests</button>
+            <button class="btn" onclick="testBlurEffect()">Test Blur Effect</button>
+            <button class="btn" onclick="testGlassElements()">Test Glass Elements</button>
+            <button class="btn" onclick="testPerformance()">Test Performance</button>
+            <button class="btn" onclick="testVisualQuality()">Test Visual Quality</button>
+            <button class="btn" onclick="openMainWindow()">Open Main App</button>
+        </div>
+        
+        <div id="test-results">
+            <div class="test-section">
+                <h2>Test Results</h2>
+                <div id="results-container">Click "Run All Tests" to start testing...</div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Performance Metrics</h2>
+            <div class="performance-metrics" id="performance-metrics">
+                <div class="metric">
+                    <div class="metric-value" id="fps-value">--</div>
+                    <div class="metric-label">FPS</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="memory-value">--</div>
+                    <div class="metric-label">Memory (MB)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="blur-value">--</div>
+                    <div class="metric-label">Blur Intensity</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="glass-count">--</div>
+                    <div class="metric-label">Glass Elements</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Recommendations</h2>
+            <div id="recommendations">Run tests to see recommendations...</div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = {
+            blurEffect: false,
+            glassElements: false,
+            performance: false,
+            visualQuality: false
+        };
+
+        function addResult(test, status, message) {
+            const container = document.getElementById('results-container');
+            const result = document.createElement('div');
+            result.className = `result ${status}`;
+            result.innerHTML = `<strong>${test}:</strong> ${message}`;
+            container.appendChild(result);
+            testResults[test] = status === 'success';
+        }
+
+        function updateMetrics(metrics) {
+            if (metrics.fps !== undefined) {
+                document.getElementById('fps-value').textContent = metrics.fps.toFixed(1);
+            }
+            if (metrics.memory !== undefined) {
+                document.getElementById('memory-value').textContent = metrics.memory;
+            }
+            if (metrics.blur !== undefined) {
+                document.getElementById('blur-value').textContent = metrics.blur;
+            }
+            if (metrics.glassCount !== undefined) {
+                document.getElementById('glass-count').textContent = metrics.glassCount;
+            }
+        }
+
+        function testBlurEffect() {
+            // This would need to be run in the context of the main application
+            // For now, we'll provide instructions
+            addResult('Blur Effect', 'warning', 'Test needs to be run in main application context');
+            
+            const instructions = `
+                <div class="result warning">
+                    <strong>Manual Test Instructions:</strong><br>
+                    1. Open the main application (click "Open Main App")<br>
+                    2. Open browser console (F12)<br>
+                    3. Run this code in console:<br>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin: 0.5rem 0;">
+                        const balatroCanvas = document.querySelector('.balatro-canvas');<br>
+                        if (balatroCanvas) {<br>
+                        &nbsp;&nbsp;const style = window.getComputedStyle(balatroCanvas);<br>
+                        &nbsp;&nbsp;console.log('Blur effect:', style.filter);<br>
+                        &nbsp;&nbsp;console.log('Backdrop filter:', style.backdropFilter);<br>
+                        }
+                    </code>
+                </div>
+            `;
+            
+            document.getElementById('results-container').innerHTML += instructions;
+        }
+
+        function testGlassElements() {
+            addResult('Glass Elements', 'warning', 'Test needs to be run in main application context');
+            
+            const instructions = `
+                <div class="result warning">
+                    <strong>Manual Test Instructions:</strong><br>
+                    1. Open the main application<br>
+                    2. Open browser console (F12)<br>
+                    3. Run this code in console:<br>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin: 0.5rem 0;">
+                        const glassElements = {<br>
+                        &nbsp;&nbsp;glass: document.querySelectorAll('.glass'),<br>
+                        &nbsp;&nbsp;glassEnhanced: document.querySelectorAll('.glass-enhanced'),<br>
+                        &nbsp;&nbsp;sidebar: document.querySelector('.sidebar-overlay'),<br>
+                        &nbsp;&nbsp;cards: document.querySelectorAll('.card-stat')<br>
+                        };<br>
+                        console.log('Glass elements:', glassElements);<br>
+                        Object.entries(glassElements).forEach(([key, elems]) => {<br>
+                        &nbsp;&nbsp;if (elems.length > 0) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const style = window.getComputedStyle(elems[0]);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(key + ' backdrop-filter:', style.backdropFilter);<br>
+                        &nbsp;&nbsp;}<br>
+                        });
+                    </code>
+                </div>
+            `;
+            
+            document.getElementById('results-container').innerHTML += instructions;
+        }
+
+        function testPerformance() {
+            // Test current page performance
+            let frameCount = 0;
+            let lastTime = performance.now();
+            const duration = 2000; // 2 seconds
+            
+            function countFrames() {
+                frameCount++;
+                const currentTime = performance.now();
+                if (currentTime - lastTime >= duration) {
+                    const fps = frameCount / (duration / 1000);
+                    updateMetrics({ fps });
+                    
+                    if (fps > 30) {
+                        addResult('Performance', 'success', `Good performance: ${fps.toFixed(1)} FPS`);
+                    } else if (fps > 20) {
+                        addResult('Performance', 'warning', `Acceptable performance: ${fps.toFixed(1)} FPS`);
+                    } else {
+                        addResult('Performance', 'error', `Poor performance: ${fps.toFixed(1)} FPS`);
+                    }
+                    return;
+                }
+                requestAnimationFrame(countFrames);
+            }
+            countFrames();
+            
+            // Memory usage
+            if (performance.memory) {
+                const memoryMB = Math.round(performance.memory.usedJSHeapSize / 1048576);
+                updateMetrics({ memory: memoryMB });
+            }
+        }
+
+        function testVisualQuality() {
+            addResult('Visual Quality', 'warning', 'Manual visual inspection required');
+            
+            const instructions = `
+                <div class="result warning">
+                    <strong>Visual Quality Checklist:</strong><br>
+                    □ Background is properly blurred and less distracting<br>
+                    □ Glass morphism elements remain readable<br>
+                    □ No visual artifacts or rendering issues<br>
+                    □ Blur effect doesn't interfere with UI interactions<br>
+                    □ Color contrast remains sufficient for accessibility<br>
+                    □ Animation smoothness is maintained<br>
+                    □ No performance degradation during interactions
+                </div>
+            `;
+            
+            document.getElementById('results-container').innerHTML += instructions;
+        }
+
+        function openMainWindow() {
+            window.open('http://localhost:3000', '_blank');
+        }
+
+        function generateRecommendations() {
+            const recommendations = document.getElementById('recommendations');
+            let html = '';
+            
+            // Count passed tests
+            const passedTests = Object.values(testResults).filter(Boolean).length;
+            const totalTests = Object.keys(testResults).length;
+            
+            if (passedTests === totalTests) {
+                html = '<div class="result success">✅ All tests passed! The blur effect is working optimally.</div>';
+            } else if (passedTests >= totalTests * 0.75) {
+                html = '<div class="result success">✅ Most tests passed. The blur effect is working well with minor issues.</div>';
+            } else if (passedTests >= totalTests * 0.5) {
+                html = '<div class="result warning">⚠️ Some issues detected. Consider reviewing the blur implementation.</div>';
+            } else {
+                html = '<div class="result error">❌ Significant issues found. The blur effect needs attention.</div>';
+            }
+            
+            // Specific recommendations
+            html += `
+                <div style="margin-top: 1rem;">
+                    <h3>Specific Recommendations:</h3>
+                    <ul>
+                        <li><strong>Blur Intensity:</strong> 3px is generally optimal for background blur effects</li>
+                        <li><strong>Performance:</strong> Monitor FPS when multiple glass elements are visible</li>
+                        <li><strong>Visual Hierarchy:</strong> Ensure blur doesn't obscure important background elements</li>
+                        <li><strong>Accessibility:</strong> Maintain sufficient contrast for text readability</li>
+                        <li><strong>Mobile:</strong> Test on smaller screens where blur effects can be more resource-intensive</li>
+                    </ul>
+                </div>
+            `;
+            
+            recommendations.innerHTML = html;
+        }
+
+        function runTests() {
+            // Clear previous results
+            document.getElementById('results-container').innerHTML = '';
+            
+            // Run all tests
+            testBlurEffect();
+            testGlassElements();
+            testPerformance();
+            testVisualQuality();
+            
+            // Generate recommendations
+            setTimeout(generateRecommendations, 1000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMetrics({
+                fps: '--',
+                memory: '--',
+                blur: '--',
+                glassCount: '--'
+            });
+        });
+    </script>
+</body>
+</html>

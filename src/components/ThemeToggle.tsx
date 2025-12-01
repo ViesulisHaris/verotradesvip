@@ -20,7 +20,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggle} className="p-2 rounded hover:bg-white/10 text-white">
+    <button onClick={toggle} className="p-element rounded hover:bg-white/10 text-white">
       {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
     </button>
   );

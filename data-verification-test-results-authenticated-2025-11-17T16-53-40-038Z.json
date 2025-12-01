@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-17T16:53:40.040Z",
+  "testResults": {
+    "authenticationTest": {
+      "status": "PASS",
+      "userId": "d9f7982d-f49b-4766-a8e8-827a1d176d5e",
+      "email": "testuser@verotrade.com"
+    },
+    "basicEndpointTest": {
+      "status": "FAIL",
+      "statusCode": 401,
+      "error": "Authentication required"
+    },
+    "statisticalAccuracyTest": null,
+    "dataCompletenessTest": null,
+    "errorHandlingTest": {
+      "status": "FAIL",
+      "issues": [
+        "Invalid action should return 400, got 401",
+        "Missing action should return 400, got 401"
+      ]
+    },
+    "overallAssessment": {
+      "status": "FAIL",
+      "message": "1/3 test categories passed",
+      "passedTests": 1,
+      "totalTests": 3,
+      "failedTests": 2
+    }
+  },
+  "verificationData": null
+}

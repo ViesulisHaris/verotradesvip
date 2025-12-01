@@ -1,0 +1,77 @@
+{
+  "startTime": "2025-11-21T14:35:26.149Z",
+  "tests": [
+    {
+      "name": "Environment Variables",
+      "status": "FAIL",
+      "details": {
+        "supabaseUrl": "NOT FOUND",
+        "supabaseKey": "MISSING",
+        "nodeEnv": "NOT FOUND"
+      }
+    },
+    {
+      "name": "Login Page Load",
+      "status": "PASS",
+      "details": {
+        "loaded": true
+      }
+    },
+    {
+      "name": "Empty Form Validation",
+      "status": "FAIL",
+      "details": {
+        "errorShown": false
+      }
+    },
+    {
+      "name": "Invalid Credentials",
+      "status": "PASS",
+      "details": {
+        "errorShown": true
+      }
+    },
+    {
+      "name": "Valid Authentication",
+      "status": "FAIL",
+      "details": {
+        "redirectUrl": "http://localhost:3000/login?redirectedFrom=%2Fdashboard",
+        "authRequests": 1
+      }
+    },
+    {
+      "name": "Session Persistence",
+      "status": "PASS",
+      "details": {
+        "totalCookies": 1,
+        "authCookies": 1,
+        "cookieNames": [
+          "sb-auth-token"
+        ]
+      }
+    },
+    {
+      "name": "Middleware Authentication",
+      "status": "FAIL",
+      "details": {
+        "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fdashboard",
+        "accessGranted": false
+      }
+    },
+    {
+      "name": "Session Validation",
+      "status": "FAIL",
+      "details": {
+        "status": "error",
+        "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      }
+    }
+  ],
+  "summary": {
+    "totalTests": 8,
+    "passedTests": 3,
+    "failedTests": 5,
+    "successRate": 38,
+    "endTime": "2025-11-21T14:35:41.339Z"
+  }
+}

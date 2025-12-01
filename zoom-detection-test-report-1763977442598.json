@@ -1,0 +1,281 @@
+{
+  "testTimestamp": "2025-11-24T09:43:31.589Z",
+  "summary": {
+    "zoomDetection": 0,
+    "layoutResponsiveness": 33,
+    "hydration": 100,
+    "authentication": 0,
+    "screenshots": 2
+  },
+  "detailedResults": {
+    "zoomDetection": {
+      "zoom_100": {
+        "level": 100,
+        "tests": {
+          "detector": {
+            "passed": false,
+            "error": "Zoom detector not found"
+          }
+        }
+      },
+      "zoom_125": {
+        "level": 125,
+        "tests": {
+          "detector": {
+            "passed": false,
+            "detected": {
+              "level": 1.0052734404802324,
+              "percentage": 101,
+              "actualWidth": 1024,
+              "effectiveWidth": 1029.400003051758,
+              "actualHeight": 576,
+              "effectiveHeight": 579.0375017166139,
+              "breakpoint": "unknown"
+            },
+            "expected": {
+              "level": 1.25,
+              "percentage": 125
+            }
+          },
+          "indicator": {
+            "passed": false,
+            "visible": null,
+            "expected": true
+          }
+        }
+      },
+      "zoom_150": {
+        "level": 150,
+        "tests": {
+          "detector": {
+            "passed": false,
+            "detected": {
+              "level": 1.0461358343619653,
+              "percentage": 105,
+              "actualWidth": 854,
+              "effectiveWidth": 893.4000025451184,
+              "actualHeight": 480,
+              "effectiveHeight": 502.14520049374335,
+              "breakpoint": "unknown"
+            },
+            "expected": {
+              "level": 1.5,
+              "percentage": 150
+            }
+          },
+          "indicator": {
+            "passed": false,
+            "visible": null,
+            "expected": true
+          }
+        }
+      }
+    },
+    "layoutResponsiveness": {
+      "layout_100": {
+        "zoomLevel": 100,
+        "tests": {
+          "centering": {
+            "passed": false,
+            "details": {
+              "containerWidth": 354.1125183105469,
+              "containerHeight": 612,
+              "containerLeft": 0,
+              "containerTop": 54,
+              "windowWidth": 1280,
+              "windowHeight": 720,
+              "horizontallyCentered": false,
+              "verticallyCentered": true
+            }
+          },
+          "formFields": {
+            "passed": true,
+            "details": {
+              "fieldCount": 2,
+              "fields": [
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 290.8000183105469
+                },
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 382.8000183105469
+                }
+              ],
+              "allVisible": true
+            }
+          },
+          "registerCard": {
+            "passed": false,
+            "details": {
+              "cardWidth": 448,
+              "cardHeight": 357.6000061035156,
+              "cardLeft": 0,
+              "cardTop": 181.1999969482422,
+              "windowWidth": 1280,
+              "windowHeight": 720,
+              "horizontallyCentered": false,
+              "verticallyCentered": true
+            }
+          }
+        }
+      },
+      "layout_125": {
+        "zoomLevel": 125,
+        "tests": {
+          "centering": {
+            "passed": false,
+            "details": {
+              "containerWidth": 354.1125183105469,
+              "containerHeight": 612,
+              "containerLeft": 0,
+              "containerTop": 0,
+              "windowWidth": 1024,
+              "windowHeight": 576,
+              "horizontallyCentered": false,
+              "verticallyCentered": false
+            }
+          },
+          "formFields": {
+            "passed": true,
+            "details": {
+              "fieldCount": 2,
+              "fields": [
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 236.8000030517578
+                },
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 328.8000183105469
+                }
+              ],
+              "allVisible": true
+            }
+          },
+          "registerCard": {
+            "passed": false,
+            "details": {
+              "cardWidth": 448,
+              "cardHeight": 357.6000061035156,
+              "cardLeft": 0,
+              "cardTop": 109.20000457763672,
+              "windowWidth": 1024,
+              "windowHeight": 576,
+              "horizontallyCentered": false,
+              "verticallyCentered": true
+            }
+          }
+        }
+      },
+      "layout_150": {
+        "zoomLevel": 150,
+        "tests": {
+          "centering": {
+            "passed": false,
+            "details": {
+              "containerWidth": 354.1125183105469,
+              "containerHeight": 612,
+              "containerLeft": 0,
+              "containerTop": 0,
+              "windowWidth": 854,
+              "windowHeight": 480,
+              "horizontallyCentered": false,
+              "verticallyCentered": false
+            }
+          },
+          "formFields": {
+            "passed": true,
+            "details": {
+              "fieldCount": 2,
+              "fields": [
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 236.8000030517578
+                },
+                {
+                  "width": 272.51251220703125,
+                  "height": 76,
+                  "left": 40.79999923706055,
+                  "top": 328.8000183105469
+                }
+              ],
+              "allVisible": true
+            }
+          },
+          "registerCard": {
+            "passed": false,
+            "details": {
+              "cardWidth": 448,
+              "cardHeight": 357.6000061035156,
+              "cardLeft": 0,
+              "cardTop": 61.20000076293945,
+              "windowWidth": 854,
+              "windowHeight": 480,
+              "horizontallyCentered": false,
+              "verticallyCentered": true
+            }
+          }
+        }
+      }
+    },
+    "cardCentering": {},
+    "hydration": {
+      "noErrors": true
+    },
+    "authentication": {
+      "tests": {
+        "submitButton": {
+          "passed": true,
+          "enabled": true
+        },
+        "registerSubmitButton": {
+          "passed": true,
+          "enabled": true
+        },
+        "registerToLoginNav": {
+          "passed": true,
+          "currentUrl": "http://localhost:3000/login"
+        }
+      }
+    },
+    "screenshots": [
+      {
+        "zoomLevel": 125,
+        "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\zoom-test-125-1763977421032.png",
+        "timestamp": "2025-11-24T09:43:41.512Z"
+      },
+      {
+        "zoomLevel": 150,
+        "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\zoom-test-150-1763977428679.png",
+        "timestamp": "2025-11-24T09:43:48.801Z"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "type": "zoom_detection",
+      "priority": "high",
+      "issue": "Zoom detection accuracy issues",
+      "details": "Zoom detection failed at: zoom_100, zoom_125, zoom_150",
+      "recommendation": "Review zoom detection algorithm and calibration"
+    },
+    {
+      "type": "layout",
+      "priority": "high",
+      "issue": "Layout centering issues",
+      "details": "Centering failed at: layout_100, layout_125, layout_150",
+      "recommendation": "Review CSS flexbox and centering logic"
+    }
+  ]
+}

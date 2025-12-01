@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-11-12T22:42:32.305Z",
+  "checks": {
+    "tableExistence": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "viewsCheck": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "functionsCheck": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "triggersCheck": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "constraintsCheck": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "policiesCheck": {
+      "success": false,
+      "error": "Invalid API key"
+    },
+    "strategiesQuery": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false
+    },
+    "strategiesJoinQuery": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false
+    },
+    "complexQuery": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false
+    },
+    "queryPlanCache": {
+      "success": false,
+      "error": "Invalid API key",
+      "note": "Requires admin privileges"
+    }
+  }
+}

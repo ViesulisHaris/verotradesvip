@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Modal Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .test-button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .test-button:hover {
+            background: #2563eb;
+        }
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999999;
+            display: none;
+        }
+        .modal-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+            max-width: 90vw;
+            max-height: 90vh;
+            z-index: 1000000;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success { background: #10b981; color: white; }
+        .error { background: #ef4444; color: white; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Manual Modal Glitch Test</h1>
+        <p>This page allows manual testing of the modal functionality to verify the glitch fix.</p>
+        
+        <button class="test-button" onclick="openModal()">Open Modal</button>
+        <button class="test-button" onclick="openModal()">Open Second Modal</button>
+        <button class="test-button" onclick="checkBackdropCount()">Check Backdrop Count</button>
+        <button class="test-button" onclick="closeModal()">Close Modal</button>
+        <button class="test-button" onclick="closeModal()">Close Second Modal</button>
+        
+        <div id="status" class="status"></div>
+    </div>
+
+    <div id="modal-backdrop" class="modal-backdrop" onclick="closeModalOnBackdropClick()"></div>
+    <div id="modal-content" class="modal-content">
+        <h2>Test Modal</h2>
+        <p>This is a test modal to verify the glitch fix works correctly.</p>
+        <button class="test-button" onclick="closeModal()">Close Modal</button>
+    </div>
+
+    <script>
+        let modalCount = 0;
+        
+        function openModal() {
+            modalCount++;
+            document.getElementById('modal-backdrop').style.display = 'block';
+            document.getElementById('modal-content').style.display = 'block';
+            updateStatus(`Modal opened (count: ${modalCount})`);
+        }
+        
+        function closeModal() {
+            document.getElementById('modal-backdrop').style.display = 'none';
+            document.getElementById('modal-content').style.display = 'none';
+            updateStatus('Modal closed');
+        }
+        
+        function closeModalOnBackdropClick() {
+            closeModal();
+        }
+        
+        function checkBackdropCount() {
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            updateStatus(`Found ${backdrops.length} backdrop elements`);
+        }
+        
+        function updateStatus(message) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<p>${message}</p>`;
+            statusDiv.className = 'status';
+        }
+        
+        // Check for multiple backdrops on load
+        window.addEventListener('load', checkBackdropCount);
+    </script>
+</body>
+</html>

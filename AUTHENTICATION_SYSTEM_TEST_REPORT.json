@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-11-25T21:35:27.649Z",
+  "summary": {
+    "totalTests": 8,
+    "passedTests": 1,
+    "failedTests": 7,
+    "successRate": "12.50%",
+    "overallSuccess": false
+  },
+  "testResults": {
+    "homePageRedirect": {
+      "passed": false,
+      "details": ""
+    },
+    "loginValidCredentials": {
+      "passed": false,
+      "details": ""
+    },
+    "loginInvalidCredentials": {
+      "passed": false,
+      "details": ""
+    },
+    "registrationForm": {
+      "passed": false,
+      "details": ""
+    },
+    "authCookies": {
+      "passed": false,
+      "details": ""
+    },
+    "protectedRoutesRedirect": {
+      "passed": true,
+      "details": "All protected routes correctly redirected to login when not authenticated"
+    },
+    "loginRedirectToDashboard": {
+      "passed": false,
+      "details": ""
+    },
+    "consoleLogging": {
+      "passed": false,
+      "details": ""
+    },
+    "overallSuccess": false
+  },
+  "conclusion": "Some authentication system tests failed. The authentication system needs attention."
+}

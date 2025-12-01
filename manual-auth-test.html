@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Auth Routing Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .failure {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Manual Authentication Routing Test</h1>
+    
+    <div class="test-section">
+        <h2>📋 Test Instructions</h2>
+        <p>This test will verify that unauthenticated users are automatically redirected from the home page to the login page.</p>
+        
+        <div class="result info">
+            <strong>Expected Behavior:</strong><br>
+            1. When you visit http://localhost:3000 without being logged in<br>
+            2. You should be automatically redirected to http://localhost:3000/login<br>
+            3. You should NOT see a loading spinner or stay on the home page
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Test Steps</h2>
+        <ol>
+            <li>Open a new browser window or incognito window</li>
+            <li>Navigate to <strong>http://localhost:3000</strong></li>
+            <li>Observe what happens:</li>
+            <ul>
+                <li>✅ SUCCESS: You are redirected to http://localhost:3000/login</li>
+                <li>❌ FAILURE: You stay on http://localhost:3000 or see a loading spinner</li>
+            </ul>
+        </ol>
+        
+        <button class="test-button" onclick="window.open('http://localhost:3000', '_blank')">
+            Open http://localhost:3000 in New Tab
+        </button>
+        
+        <button class="test-button" onclick="window.open('http://localhost:3000/login', '_blank')">
+            Open http://localhost:3000/login in New Tab
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 Test Results</h2>
+        <div id="test-results">
+            <div class="result info">
+                Click the buttons above to test the authentication routing, then report your results below.
+            </div>
+        </div>
+        
+        <h3>Report Your Results:</h3>
+        <button class="test-button" onclick="reportResult('success')">
+            ✅ Redirected to Login (SUCCESS)
+        </button>
+        <button class="test-button" onclick="reportResult('failure')">
+            ❌ Stuck on Home Page (FAILURE)
+        </button>
+        <button class="test-button" onclick="reportResult('loading')">
+            ⏳ Saw Loading Spinner (ISSUE)
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>🔍 Debug Information</h2>
+        <p>If the test fails, check the browser console for these log messages:</p>
+        <ul>
+            <li><code>🔧 [AUTH_GUARD_FIX]</code> - AuthGuard debug messages</li>
+            <li><code>🔧 [AUTH_ROUTING_FIX]</code> - HomePage routing debug messages</li>
+            <li><code>🔧 [GRAY_SCREEN_FIX]</code> - HomePage debug messages</li>
+        </ul>
+        
+        <p><strong>To open browser console:</strong></p>
+        <ul>
+            <li>Chrome/Edge: F12 → Console tab</li>
+            <li>Firefox: F12 → Web Console</li>
+            <li>Safari: Develop → Show JavaScript Console</li>
+        </ul>
+    </div>
+
+    <script>
+        function reportResult(result) {
+            const resultsDiv = document.getElementById('test-results');
+            const timestamp = new Date().toLocaleString();
+            
+            let resultHtml = '';
+            if (result === 'success') {
+                resultHtml = `
+                    <div class="result success">
+                        <strong>✅ SUCCESS - ${timestamp}</strong><br>
+                        Authentication routing is working correctly!<br>
+                        Users are automatically redirected from home page to login.
+                    </div>
+                `;
+            } else if (result === 'failure') {
+                resultHtml = `
+                    <div class="result failure">
+                        <strong>❌ FAILURE - ${timestamp}</strong><br>
+                        Authentication routing is NOT working.<br>
+                        Users are stuck on the home page instead of being redirected to login.
+                    </div>
+                `;
+            } else if (result === 'loading') {
+                resultHtml = `
+                    <div class="result failure">
+                        <strong>⏳ LOADING ISSUE - ${timestamp}</strong><br>
+                        Users see a loading spinner instead of being redirected.<br>
+                        The AuthGuard may be stuck in initialization.
+                    </div>
+                `;
+            }
+            
+            resultsDiv.innerHTML = resultHtml + resultsDiv.innerHTML;
+        }
+    </script>
+</body>
+</html>

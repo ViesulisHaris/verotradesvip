@@ -1,0 +1,59 @@
+{
+  "containerAnalysis": {
+    "found": true,
+    "tagName": "DIV",
+    "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden",
+    "dimensions": {
+      "width": 818.4000244140625,
+      "height": 400,
+      "top": 393.6000061035156,
+      "left": 136.8000030517578
+    },
+    "styles": {
+      "display": "block",
+      "visibility": "visible",
+      "opacity": "1",
+      "position": "relative",
+      "overflow": "hidden",
+      "minHeight": "300px",
+      "minWidth": "0px",
+      "height": "400px",
+      "width": "818.4px"
+    }
+  },
+  "svgAnalysis": {
+    "found": true,
+    "dimensions": {
+      "width": 0,
+      "height": 0
+    },
+    "styles": {
+      "width": "24px",
+      "height": "24px",
+      "display": "block"
+    },
+    "childElements": {
+      "total": 3,
+      "defs": 0,
+      "gradients": 0,
+      "filters": 0,
+      "paths": 3,
+      "areas": 0,
+      "gridLines": 0,
+      "dots": 0
+    }
+  },
+  "stylingAnalysis": {},
+  "dataAnalysis": {
+    "pnlChartElementsFound": 0,
+    "debugMessages": [
+      "Check browser console for PnL Chart debug messages"
+    ]
+  },
+  "renderingIssues": [
+    "SVG has zero or negative dimensions"
+  ],
+  "recommendations": [
+    "Check ResponsiveContainer configuration"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "serverRunning": false,
+  "authErrorFixed": false,
+  "authInitialized": false,
+  "metricsPositionedCorrectly": false,
+  "navigationWorking": false,
+  "tradesFunctionalityWorking": false,
+  "consoleErrors": [
+    {
+      "type": "test-error",
+      "message": "Server not running",
+      "stack": "Error: Server not running\n    at testCalendarFixes (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-calendar-fixes.js:64:13)"
+    }
+  ],
+  "responsiveLayoutWorking": false,
+  "overallStatus": "FAILED"
+}

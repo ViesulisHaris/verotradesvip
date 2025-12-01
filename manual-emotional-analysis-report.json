@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-11-17T14:31:10.577Z",
+  "dashboard": {
+    "emotionSectionFound": false,
+    "emotionLogs": [],
+    "screenshot": "test-screenshots/dashboard-emotional-analysis.png"
+  },
+  "confluence": {
+    "emotionSectionFound": false,
+    "emotionLogs": [],
+    "filterState": {
+      "activeFilterCount": 0,
+      "activeFilters": []
+    },
+    "screenshot": "test-screenshots/confluence-emotional-analysis.png"
+  },
+  "network": [
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:30:47.665Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "OPTIONS",
+      "timestamp": "2025-11-17T14:30:47.668Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:30:47.786Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:30:47.904Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:30:47.906Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "method": "OPTIONS",
+      "timestamp": "2025-11-17T14:30:47.907Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "status": 200,
+      "timestamp": "2025-11-17T14:30:47.940Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "status": 404,
+      "timestamp": "2025-11-17T14:30:48.026Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:30:48.032Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:30:48.144Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:30:57.810Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:30:57.949Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:31:04.551Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:31:04.670Z"
+    }
+  ],
+  "console": {
+    "totalErrors": 5,
+    "totalWarnings": 0,
+    "emotionRelatedLogs": 0
+  }
+}

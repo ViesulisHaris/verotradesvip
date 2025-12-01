@@ -1,0 +1,1306 @@
+{
+  "timestamp": "2025-11-19T07:37:16.405Z",
+  "summary": {
+    "totalTests": 24,
+    "passedTests": 12,
+    "failedTests": 6,
+    "skippedTests": 0
+  },
+  "viewportResults": {
+    "Desktop": {
+      "viewport": {
+        "name": "Desktop",
+        "width": 1920,
+        "height": 1080
+      },
+      "pageResults": {
+        "Dashboard": {
+          "testId": "Desktop-Dashboard",
+          "viewport": "Desktop",
+          "page": "Dashboard",
+          "timestamp": "2025-11-19T07:37:18.692Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 20,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 20,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537845870
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537846444
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537847018
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537847596
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537848175
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-final.png"
+              }
+            }
+          ]
+        },
+        "Confluence": {
+          "testId": "Desktop-Confluence",
+          "viewport": "Desktop",
+          "page": "Confluence",
+          "timestamp": "2025-11-19T07:37:39.493Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 20,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 20,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537865034
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537865611
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537866188
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537866766
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537867341
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-final.png"
+              }
+            }
+          ]
+        }
+      },
+      "summary": {
+        "passed": 4,
+        "failed": 2,
+        "skipped": 0,
+        "totalTests": 8
+      }
+    },
+    "Tablet": {
+      "viewport": {
+        "name": "Tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "pageResults": {
+        "Dashboard": {
+          "testId": "Tablet-Dashboard",
+          "viewport": "Tablet",
+          "page": "Dashboard",
+          "timestamp": "2025-11-19T07:37:48.269Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 20,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 20,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537872483
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537873057
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537873634
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537874203
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537874787
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-final.png"
+              }
+            }
+          ]
+        },
+        "Confluence": {
+          "testId": "Tablet-Confluence",
+          "viewport": "Tablet",
+          "page": "Confluence",
+          "timestamp": "2025-11-19T07:37:55.451Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 20,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 20,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537879315
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537879899
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537880495
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537881073
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537881661
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-final.png"
+              }
+            }
+          ]
+        }
+      },
+      "summary": {
+        "passed": 4,
+        "failed": 2,
+        "skipped": 0,
+        "totalTests": 8
+      }
+    },
+    "Mobile": {
+      "viewport": {
+        "name": "Mobile",
+        "width": 375,
+        "height": 667
+      },
+      "pageResults": {
+        "Dashboard": {
+          "testId": "Mobile-Dashboard",
+          "viewport": "Mobile",
+          "page": "Dashboard",
+          "timestamp": "2025-11-19T07:38:02.404Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 50,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 50,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537886453
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537887037
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537887622
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537888208
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537888780
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-final.png"
+              }
+            }
+          ]
+        },
+        "Confluence": {
+          "testId": "Mobile-Confluence",
+          "viewport": "Mobile",
+          "page": "Confluence",
+          "timestamp": "2025-11-19T07:38:09.475Z",
+          "tests": [
+            {
+              "name": "Initial State Capture",
+              "status": "completed",
+              "details": {
+                "emotionRadarMetrics": null,
+                "pnlChartMetrics": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-initial.png"
+              }
+            },
+            {
+              "name": "Single Menu Toggle",
+              "status": "passed",
+              "details": {
+                "positionStability": {
+                  "emotionRadar": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  },
+                  "pnlChart": {
+                    "xShift": 0,
+                    "yShift": 0,
+                    "widthChange": 0,
+                    "heightChange": 0
+                  }
+                },
+                "thresholds": 50,
+                "beforeMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "afterMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-after-toggle.png"
+              }
+            },
+            {
+              "name": "Multiple Rapid Menu Toggles",
+              "status": "passed",
+              "details": {
+                "rapidStability": {
+                  "emotionRadar": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  },
+                  "pnlChart": {
+                    "maxXShift": 0,
+                    "maxYShift": 0
+                  }
+                },
+                "thresholds": 50,
+                "metricsHistory": [
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537893345
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537893919
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537894498
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537895092
+                  },
+                  {
+                    "emotionRadar": null,
+                    "pnlChart": null,
+                    "timestamp": 1763537895674
+                  }
+                ],
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-after-rapid-toggles.png"
+              }
+            },
+            {
+              "name": "Chart Rendering After Transitions",
+              "status": "failed",
+              "details": {
+                "finalMetrics": {
+                  "emotionRadar": null,
+                  "pnlChart": null
+                },
+                "chartsRendered": null,
+                "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-final.png"
+              }
+            }
+          ]
+        }
+      },
+      "summary": {
+        "passed": 4,
+        "failed": 2,
+        "skipped": 0,
+        "totalTests": 8
+      }
+    }
+  },
+  "detailedResults": [
+    {
+      "testId": "Desktop-Dashboard",
+      "viewport": "Desktop",
+      "page": "Dashboard",
+      "timestamp": "2025-11-19T07:37:18.692Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 20,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 20,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537845870
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537846444
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537847018
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537847596
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537848175
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Dashboard-final.png"
+          }
+        }
+      ]
+    },
+    {
+      "testId": "Desktop-Confluence",
+      "viewport": "Desktop",
+      "page": "Confluence",
+      "timestamp": "2025-11-19T07:37:39.493Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 20,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 20,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537865034
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537865611
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537866188
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537866766
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537867341
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Desktop-Confluence-final.png"
+          }
+        }
+      ]
+    },
+    {
+      "testId": "Tablet-Dashboard",
+      "viewport": "Tablet",
+      "page": "Dashboard",
+      "timestamp": "2025-11-19T07:37:48.269Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 20,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 20,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537872483
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537873057
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537873634
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537874203
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537874787
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Dashboard-final.png"
+          }
+        }
+      ]
+    },
+    {
+      "testId": "Tablet-Confluence",
+      "viewport": "Tablet",
+      "page": "Confluence",
+      "timestamp": "2025-11-19T07:37:55.451Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 20,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 20,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537879315
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537879899
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537880495
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537881073
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537881661
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Tablet-Confluence-final.png"
+          }
+        }
+      ]
+    },
+    {
+      "testId": "Mobile-Dashboard",
+      "viewport": "Mobile",
+      "page": "Dashboard",
+      "timestamp": "2025-11-19T07:38:02.404Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 50,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 50,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537886453
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537887037
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537887622
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537888208
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537888780
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Dashboard-final.png"
+          }
+        }
+      ]
+    },
+    {
+      "testId": "Mobile-Confluence",
+      "viewport": "Mobile",
+      "page": "Confluence",
+      "timestamp": "2025-11-19T07:38:09.475Z",
+      "tests": [
+        {
+          "name": "Initial State Capture",
+          "status": "completed",
+          "details": {
+            "emotionRadarMetrics": null,
+            "pnlChartMetrics": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-initial.png"
+          }
+        },
+        {
+          "name": "Single Menu Toggle",
+          "status": "passed",
+          "details": {
+            "positionStability": {
+              "emotionRadar": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              },
+              "pnlChart": {
+                "xShift": 0,
+                "yShift": 0,
+                "widthChange": 0,
+                "heightChange": 0
+              }
+            },
+            "thresholds": 50,
+            "beforeMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "afterMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-after-toggle.png"
+          }
+        },
+        {
+          "name": "Multiple Rapid Menu Toggles",
+          "status": "passed",
+          "details": {
+            "rapidStability": {
+              "emotionRadar": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              },
+              "pnlChart": {
+                "maxXShift": 0,
+                "maxYShift": 0
+              }
+            },
+            "thresholds": 50,
+            "metricsHistory": [
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537893345
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537893919
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537894498
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537895092
+              },
+              {
+                "emotionRadar": null,
+                "pnlChart": null,
+                "timestamp": 1763537895674
+              }
+            ],
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-after-rapid-toggles.png"
+          }
+        },
+        {
+          "name": "Chart Rendering After Transitions",
+          "status": "failed",
+          "details": {
+            "finalMetrics": {
+              "emotionRadar": null,
+              "pnlChart": null
+            },
+            "chartsRendered": null,
+            "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\graph-stability-screenshots\\Mobile-Confluence-final.png"
+          }
+        }
+      ]
+    }
+  ]
+}

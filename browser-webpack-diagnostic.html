@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack Chunk Loading Diagnostic</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .warning { color: #ffc107; }
+        .info { color: #17a2b8; }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Webpack Chunk Loading Diagnostic</h1>
+        <p>This page will diagnose the webpack chunk loading issues and check for main-app.js 404 errors.</p>
+        
+        <div class="section">
+            <h2>Diagnostic Controls</h2>
+            <button onclick="runDiagnostics()">Run Full Diagnostic</button>
+            <button onclick="checkWebpackRuntime()">Check Webpack Runtime</button>
+            <button onclick="testChunkLoading()">Test Chunk Loading</button>
+            <button onclick="checkMainAppJs()">Check main-app.js</button>
+            <button onclick="clearResults()">Clear Results</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `section ${type}`;
+            div.innerHTML = `<h3 class="${type}">${new Date().toLocaleTimeString()} - ${type.toUpperCase()}</h3><pre>${message}</pre>`;
+            results.appendChild(div);
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        function checkWebpackRuntime() {
+            let output = '';
+            
+            // Check if webpack runtime exists
+            if (typeof window.__webpack_require__ !== 'undefined') {
+                output += '✅ Webpack runtime found\n\n';
+                
+                // Check for chunk URL function
+                if (typeof window.__webpack_require__.u === 'function') {
+                    output += '✅ __webpack_require__.u is a function\n';
+                    
+                    // Test the function with a sample chunk ID
+                    try {
+                        const testChunkId = 'main-app';
+                        const chunkUrl = window.__webpack_require__.u(testChunkId);
+                        if (chunkUrl) {
+                            output += `✅ Chunk URL function returns: ${chunkUrl}\n`;
+                        } else {
+                            output += '❌ Chunk URL function returns undefined/null\n';
+                        }
+                    } catch (error) {
+                        output += `❌ Error testing chunk URL function: ${error.message}\n`;
+                    }
+                } else {
+                    output += '❌ __webpack_require__.u is not a function\n';
+                }
+                
+                // Check for public path
+                if (window.__webpack_require__.p) {
+                    output += `✅ Public path: ${window.__webpack_require__.p}\n`;
+                } else {
+                    output += '❌ Public path not found\n';
+                }
+                
+                // Check installed chunks
+                if (window.__webpack_require__.cache) {
+                    const chunkCount = Object.keys(window.__webpack_require__.cache).length;
+                    output += `✅ Installed chunks: ${chunkCount}\n`;
+                    
+                    // List some chunk IDs
+                    const chunkIds = Object.keys(window.__webpack_require__.cache).slice(0, 10);
+                    output += `Sample chunk IDs: ${chunkIds.join(', ')}\n`;
+                } else {
+                    output += '❌ Chunk cache not found\n';
+                }
+                
+            } else {
+                output += '❌ Webpack runtime not found\n';
+                output += 'This suggests the application is not properly loaded\n';
+            }
+            
+            log(output, window.__webpack_require__ ? 'success' : 'error');
+        }
+
+        function testChunkLoading() {
+            let output = '';
+            
+            // Test loading main-app.js
+            output += 'Testing chunk loading...\n\n';
+            
+            // Try to fetch main-app.js
+            const testUrls = [
+                '/_next/static/chunks/main-app.js',
+                '/_next/static/chunks/app/main-app.js',
+                '/_next/static/chunks/app/page.js'
+            ];
+            
+            testUrls.forEach(url => {
+                output += `Testing: ${url}\n`;
+            });
+            
+            log(output, 'info');
+            
+            // Actually test the URLs
+            Promise.all(testUrls.map(url => 
+                fetch(url)
+                    .then(response => {
+                        const status = response.status;
+                        const statusText = response.statusText;
+                        return { url, status, statusText, success: response.ok };
+                    })
+                    .catch(error => {
+                        return { url, error: error.message, success: false };
+                    })
+            )).then(results => {
+                let resultOutput = 'Chunk Loading Test Results:\n\n';
+                
+                results.forEach(result => {
+                    if (result.success) {
+                        resultOutput += `✅ ${result.url} - ${result.status} ${result.statusText}\n`;
+                    } else {
+                        resultOutput += `❌ ${result.url} - ${result.error || `${result.status} ${result.statusText}`}\n`;
+                    }
+                });
+                
+                log(resultOutput, results.some(r => r.success) ? 'warning' : 'error');
+            });
+        }
+
+        function checkMainAppJs() {
+            let output = '';
+            
+            output += 'Checking for main-app.js issues...\n\n';
+            
+            // Check if main-app.js is referenced in the page
+            const scripts = document.querySelectorAll('script');
+            let mainAppReferenced = false;
+            
+            scripts.forEach(script => {
+                if (script.src && script.src.includes('main-app')) {
+                    mainAppReferenced = true;
+                    output += `✅ Found main-app.js reference: ${script.src}\n`;
+                }
+            });
+            
+            if (!mainAppReferenced) {
+                output += '❌ No main-app.js references found in page scripts\n';
+            }
+            
+            // Check network tab for 404 errors
+            if (window.performance && window.performance.getEntriesByType) {
+                const resources = window.performance.getEntriesByType('resource');
+                const mainAppResources = resources.filter(r => r.name.includes('main-app'));
+                
+                if (mainAppResources.length > 0) {
+                    output += '\nPerformance entries for main-app.js:\n';
+                    mainAppResources.forEach(resource => {
+                        output += `- ${resource.name}: ${resource.transferSize} bytes, ${resource.duration}ms\n`;
+                    });
+                } else {
+                    output += '\n❌ No performance entries found for main-app.js\n';
+                }
+            }
+            
+            log(output, mainAppReferenced ? 'warning' : 'error');
+        }
+
+        function runDiagnostics() {
+            clearResults();
+            log('Starting comprehensive webpack chunk loading diagnostic...', 'info');
+            
+            setTimeout(() => checkWebpackRuntime(), 100);
+            setTimeout(() => testChunkLoading(), 500);
+            setTimeout(() => checkMainAppJs(), 1000);
+            setTimeout(() => {
+                log('Diagnostic complete. Check the results above.', 'info');
+            }, 1500);
+        }
+
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            setTimeout(runDiagnostics, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-11-15T21:48:27.291Z",
+  "tests": [
+    {
+      "name": "Navigate to Strategies Page",
+      "passed": false,
+      "message": "Expected to be on strategies page, but URL is: http://localhost:3000/login",
+      "details": {
+        "url": "http://localhost:3000/login"
+      }
+    },
+    {
+      "name": "Check Strategy Loading",
+      "passed": true,
+      "message": "Page loaded without persistent loading states",
+      "details": {
+        "strategyElements": 0,
+        "loadingElements": 0
+      }
+    },
+    {
+      "name": "Test Strategy Functionality",
+      "passed": true,
+      "message": "No strategies found (empty state), but page loaded without errors",
+      "details": {
+        "strategyCards": 0,
+        "viewButtons": 0,
+        "editButtons": 0,
+        "deleteButtons": 0
+      }
+    },
+    {
+      "name": "Check Console for Errors",
+      "passed": true,
+      "message": "No strategy-related console errors found",
+      "details": {
+        "totalErrors": 0,
+        "strategyErrors": []
+      }
+    },
+    {
+      "name": "Test Navigation to Other Pages",
+      "passed": false,
+      "message": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard\"], nav a:has-text(\"Dashboard\")')\u001b[22m\n",
+      "details": {
+        "stack": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard\"], nav a:has-text(\"Dashboard\")')\u001b[22m\n\n    at c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-strategy-fix-verification.js:175:16\n    at runTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-strategy-fix-verification.js:24:28)\n    at testStrategyFix (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-strategy-fix-verification.js:173:9)"
+      }
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5
+  }
+}

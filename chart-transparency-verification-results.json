@@ -1,0 +1,127 @@
+{
+  "timestamp": "2025-11-19T22:01:00.039Z",
+  "overallStatus": "WARNING",
+  "balatroIntegration": {
+    "balatroInLayout": true,
+    "transparentBody": true,
+    "issues": [],
+    "status": "PASS",
+    "findings": [
+      "✅ Balatro component included in layout",
+      "✅ Body background set to transparent",
+      "✅ Glass-enhanced styles with transparent background"
+    ]
+  },
+  "chartAnalyses": [
+    {
+      "componentName": "FixedPnLChart",
+      "filePath": "./src/components/ui/FixedPnLChart.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Uses transparent CSS class: chart-container-enhanced",
+        "✅ Contains explicit transparency indicator"
+      ]
+    },
+    {
+      "componentName": "PnLChart",
+      "filePath": "./src/components/ui/PnLChart.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Uses transparent CSS class: chart-container-enhanced",
+        "✅ Contains explicit transparency indicator"
+      ]
+    },
+    {
+      "componentName": "EmotionRadar",
+      "filePath": "./src/components/ui/EmotionRadar.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Uses transparent CSS class: chart-container-enhanced",
+        "✅ Contains explicit transparency indicator"
+      ]
+    },
+    {
+      "componentName": "PerformanceChart",
+      "filePath": "./src/components/ui/PerformanceChart.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Contains explicit transparency indicator"
+      ]
+    },
+    {
+      "componentName": "EquityGraph",
+      "filePath": "./src/components/ui/EquityGraph.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Contains explicit transparency indicator"
+      ]
+    },
+    {
+      "componentName": "MarketDistributionChart",
+      "filePath": "./src/components/ui/MarketDistributionChart.tsx",
+      "hasTransparentBackground": false,
+      "backgroundStyle": null,
+      "issues": [
+        "⚠️  Background style not clearly identified"
+      ],
+      "status": "WARNING",
+      "findings": [
+        "⚠️  Background style unclear - manual review needed",
+        "✅ Uses transparent CSS class: chart-container-enhanced"
+      ]
+    },
+    {
+      "componentName": "PerformanceTrendChart",
+      "filePath": "./src/components/ui/PerformanceTrendChart.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "gradient",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found gradient background (should have transparency)",
+        "✅ Gradient includes transparency",
+        "✅ Uses transparent CSS class: chart-container-enhanced"
+      ]
+    },
+    {
+      "componentName": "StrategyPerformanceChart",
+      "filePath": "./src/components/ui/StrategyPerformanceChart.tsx",
+      "hasTransparentBackground": true,
+      "backgroundStyle": "transparent",
+      "issues": [],
+      "status": "PASS",
+      "findings": [
+        "✅ Found transparent background setting",
+        "✅ Uses transparent CSS class: chart-container",
+        "✅ Contains explicit transparency indicator"
+      ]
+    }
+  ],
+  "summary": {
+    "totalCharts": 8,
+    "passedCharts": 7,
+    "failedCharts": 0,
+    "warningCharts": 1,
+    "errorCharts": 0
+  }
+}

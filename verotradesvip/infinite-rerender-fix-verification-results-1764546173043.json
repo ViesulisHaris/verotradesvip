@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-11-30T23:42:31.126Z",
+  "tests": [
+    {
+      "name": "Infinite Re-rendering Check",
+      "status": "PASSED",
+      "details": {
+        "initialErrorCount": 0,
+        "finalErrorCount": 0,
+        "maxUpdateDepthErrors": []
+      }
+    },
+    {
+      "name": "Trades Page Load",
+      "status": "PASSED",
+      "details": {
+        "pageLoaded": true,
+        "hasTradesContent": false
+      }
+    }
+  ],
+  "consoleMessages": [],
+  "errorMessages": [],
+  "maxUpdateDepthErrors": [],
+  "performanceMetrics": {},
+  "finalStatus": "ERROR",
+  "error": "error is not defined"
+}

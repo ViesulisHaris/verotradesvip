@@ -1,0 +1,371 @@
+{
+  "timestamp": "2025-11-25T22:42:41.566Z",
+  "summary": {
+    "total": 27,
+    "passed": 4,
+    "failed": 23,
+    "skipped": 0
+  },
+  "categories": {
+    "general": {
+      "tests": [
+        {
+          "name": "Page loads successfully",
+          "passed": "",
+          "details": "Page failed to load: No page title found",
+          "timestamp": "2025-11-25T22:42:46.309Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1
+    },
+    "navigation": {
+      "tests": [
+        {
+          "name": "Navigation menu visible",
+          "passed": false,
+          "details": "Navigation menu not found",
+          "timestamp": "2025-11-25T22:42:46.313Z"
+        },
+        {
+          "name": "Navigation link \"Home\" exists",
+          "passed": false,
+          "details": "Link \"Home\" not found",
+          "timestamp": "2025-11-25T22:42:46.316Z"
+        },
+        {
+          "name": "Navigation link \"Dashboard\" exists",
+          "passed": false,
+          "details": "Link \"Dashboard\" not found",
+          "timestamp": "2025-11-25T22:42:46.319Z"
+        },
+        {
+          "name": "Navigation link \"Trades\" exists",
+          "passed": false,
+          "details": "Link \"Trades\" not found",
+          "timestamp": "2025-11-25T22:42:46.321Z"
+        },
+        {
+          "name": "Navigation link \"Analytics\" exists",
+          "passed": false,
+          "details": "Link \"Analytics\" not found",
+          "timestamp": "2025-11-25T22:42:46.323Z"
+        },
+        {
+          "name": "Navigation link \"Strategies\" exists",
+          "passed": false,
+          "details": "Link \"Strategies\" not found",
+          "timestamp": "2025-11-25T22:42:46.324Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 6
+    },
+    "sidebar": {
+      "tests": [
+        {
+          "name": "Sidebar element exists",
+          "passed": false,
+          "details": "Sidebar element not found",
+          "timestamp": "2025-11-25T22:42:46.328Z"
+        },
+        {
+          "name": "Mobile menu button exists",
+          "passed": false,
+          "details": "Mobile menu button not found",
+          "timestamp": "2025-11-25T22:42:46.330Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 2
+    },
+    "responsive": {
+      "tests": [
+        {
+          "name": "No horizontal scroll on Mobile",
+          "passed": true,
+          "details": "Good responsive design on Mobile (359px <= 375px)",
+          "timestamp": "2025-11-25T22:42:47.383Z"
+        },
+        {
+          "name": "No horizontal scroll on Tablet",
+          "passed": true,
+          "details": "Good responsive design on Tablet (752px <= 768px)",
+          "timestamp": "2025-11-25T22:42:48.462Z"
+        },
+        {
+          "name": "No horizontal scroll on Laptop",
+          "passed": true,
+          "details": "Good responsive design on Laptop (1008px <= 1024px)",
+          "timestamp": "2025-11-25T22:42:49.538Z"
+        },
+        {
+          "name": "No horizontal scroll on Desktop",
+          "passed": true,
+          "details": "Good responsive design on Desktop (1264px <= 1280px)",
+          "timestamp": "2025-11-25T22:42:50.615Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 0
+    },
+    "authentication": {
+      "tests": [
+        {
+          "name": "Email input exists",
+          "passed": false,
+          "details": "Email input not found",
+          "timestamp": "2025-11-25T22:42:54.477Z"
+        },
+        {
+          "name": "Password input exists",
+          "passed": false,
+          "details": "Password input not found",
+          "timestamp": "2025-11-25T22:42:54.477Z"
+        },
+        {
+          "name": "Submit button exists",
+          "passed": false,
+          "details": "Submit button not found",
+          "timestamp": "2025-11-25T22:42:54.477Z"
+        },
+        {
+          "name": "Logout button available",
+          "passed": false,
+          "details": "Logout button not found",
+          "timestamp": "2025-11-25T22:42:54.480Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 4
+    },
+    "dashboard": {
+      "tests": [
+        {
+          "name": "Dashboard container exists",
+          "passed": false,
+          "details": "Dashboard container not found",
+          "timestamp": "2025-11-25T22:43:00.258Z"
+        },
+        {
+          "name": "Stats cards",
+          "passed": false,
+          "details": "Stats cards not found",
+          "timestamp": "2025-11-25T22:43:00.260Z"
+        },
+        {
+          "name": "Charts",
+          "passed": false,
+          "details": "Charts not found",
+          "timestamp": "2025-11-25T22:43:00.262Z"
+        },
+        {
+          "name": "Recent trades",
+          "passed": false,
+          "details": "Recent trades not found",
+          "timestamp": "2025-11-25T22:43:00.263Z"
+        },
+        {
+          "name": "Performance metrics",
+          "passed": false,
+          "details": "Performance metrics not found",
+          "timestamp": "2025-11-25T22:43:00.265Z"
+        },
+        {
+          "name": "Dashboard properly centered",
+          "passed": false,
+          "details": "Dashboard may not be properly centered",
+          "timestamp": "2025-11-25T22:43:00.267Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 6
+    },
+    "interactive": {
+      "tests": [
+        {
+          "name": "Buttons present",
+          "passed": false,
+          "details": "Found 0 buttons on the page",
+          "timestamp": "2025-11-25T22:43:00.268Z"
+        },
+        {
+          "name": "Forms present",
+          "passed": false,
+          "details": "Found 0 forms on the page",
+          "timestamp": "2025-11-25T22:43:00.270Z"
+        },
+        {
+          "name": "Input fields present",
+          "passed": false,
+          "details": "Found 0 input fields on the page",
+          "timestamp": "2025-11-25T22:43:00.272Z"
+        },
+        {
+          "name": "Clickable elements present",
+          "passed": false,
+          "details": "Found 0 clickable elements on the page",
+          "timestamp": "2025-11-25T22:43:00.274Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 4
+    }
+  },
+  "screenshots": [
+    {
+      "name": "initial-load",
+      "category": "general",
+      "filename": "general-initial-load-1764110566210.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-initial-load-1764110566210.png",
+      "timestamp": "2025-11-25T22:42:46.293Z"
+    },
+    {
+      "name": "responsive-mobile",
+      "category": "responsive",
+      "filename": "responsive-responsive-mobile-1764110567345.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-mobile-1764110567345.png",
+      "timestamp": "2025-11-25T22:42:47.379Z"
+    },
+    {
+      "name": "responsive-tablet",
+      "category": "responsive",
+      "filename": "responsive-responsive-tablet-1764110568406.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-tablet-1764110568406.png",
+      "timestamp": "2025-11-25T22:42:48.460Z"
+    },
+    {
+      "name": "responsive-laptop",
+      "category": "responsive",
+      "filename": "responsive-responsive-laptop-1764110569483.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-laptop-1764110569483.png",
+      "timestamp": "2025-11-25T22:42:49.535Z"
+    },
+    {
+      "name": "responsive-desktop",
+      "category": "responsive",
+      "filename": "responsive-responsive-desktop-1764110570561.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-desktop-1764110570561.png",
+      "timestamp": "2025-11-25T22:42:50.613Z"
+    },
+    {
+      "name": "login-page",
+      "category": "authentication",
+      "filename": "authentication-login-page-1764110574410.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-page-1764110574410.png",
+      "timestamp": "2025-11-25T22:42:54.471Z"
+    },
+    {
+      "name": "dashboard-full",
+      "category": "dashboard",
+      "filename": "dashboard-dashboard-full-1764110578209.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\dashboard-dashboard-full-1764110578209.png",
+      "timestamp": "2025-11-25T22:43:00.256Z"
+    },
+    {
+      "name": "final-state",
+      "category": "general",
+      "filename": "general-final-state-1764110580277.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-final-state-1764110580277.png",
+      "timestamp": "2025-11-25T22:43:00.333Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-25T22:42:46.309Z",
+      "message": "Test FAILED: Page loads successfully - Page failed to load: No page title found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.309Z",
+      "message": "Page failed to load: No page title found. Continuing with limited tests..."
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.313Z",
+      "message": "Test FAILED: Navigation menu visible - Navigation menu not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.316Z",
+      "message": "Test FAILED: Navigation link \"Home\" exists - Link \"Home\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.319Z",
+      "message": "Test FAILED: Navigation link \"Dashboard\" exists - Link \"Dashboard\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.321Z",
+      "message": "Test FAILED: Navigation link \"Trades\" exists - Link \"Trades\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.323Z",
+      "message": "Test FAILED: Navigation link \"Analytics\" exists - Link \"Analytics\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.324Z",
+      "message": "Test FAILED: Navigation link \"Strategies\" exists - Link \"Strategies\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.328Z",
+      "message": "Test FAILED: Sidebar element exists - Sidebar element not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:46.330Z",
+      "message": "Test FAILED: Mobile menu button exists - Mobile menu button not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:54.477Z",
+      "message": "Test FAILED: Email input exists - Email input not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:54.477Z",
+      "message": "Test FAILED: Password input exists - Password input not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:54.477Z",
+      "message": "Test FAILED: Submit button exists - Submit button not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:54.480Z",
+      "message": "Test FAILED: Logout button available - Logout button not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.258Z",
+      "message": "Test FAILED: Dashboard container exists - Dashboard container not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.260Z",
+      "message": "Test FAILED: Stats cards - Stats cards not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.262Z",
+      "message": "Test FAILED: Charts - Charts not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.263Z",
+      "message": "Test FAILED: Recent trades - Recent trades not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.265Z",
+      "message": "Test FAILED: Performance metrics - Performance metrics not found"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.267Z",
+      "message": "Test FAILED: Dashboard properly centered - Dashboard may not be properly centered"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.268Z",
+      "message": "Test FAILED: Buttons present - Found 0 buttons on the page"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.270Z",
+      "message": "Test FAILED: Forms present - Found 0 forms on the page"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.272Z",
+      "message": "Test FAILED: Input fields present - Found 0 input fields on the page"
+    },
+    {
+      "timestamp": "2025-11-25T22:43:00.274Z",
+      "message": "Test FAILED: Clickable elements present - Found 0 clickable elements on the page"
+    }
+  ]
+}

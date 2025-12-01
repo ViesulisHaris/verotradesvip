@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-11-17T17:11:31.873Z",
+  "phases": {
+    "AUTH": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:11:32.582Z",
+          "level": "info",
+          "message": "Starting user authentication"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:35.785Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-page-loaded-1763399495407.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:38.115Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-form-filled-1763399497851.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:39.408Z",
+          "level": "success",
+          "message": "✅ Authentication successful"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:39.699Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-post-login-success-1763399499408.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:48.647Z",
+          "level": "info",
+          "message": "Extracting JWT token from Supabase client session"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:48.655Z",
+          "level": "error",
+          "message": "❌ No JWT token found in session"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:11:32.582Z",
+      "endTime": "2025-11-17T17:11:42.710Z"
+    },
+    "ACCESS": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:11:42.710Z",
+          "level": "info",
+          "message": "Accessing test page at /test-comprehensive-data"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:46.323Z",
+          "level": "success",
+          "message": "✅ Test page loaded successfully"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:46.564Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/ACCESS-test-page-loaded-1763399506323.png"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:11:42.710Z",
+      "endTime": "2025-11-17T17:11:46.323Z"
+    },
+    "WORKFLOW": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:11:46.564Z",
+          "level": "info",
+          "message": "Starting complete workflow execution"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:46.565Z",
+          "level": "info",
+          "message": "Executing action: delete-all"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:48.647Z",
+          "level": "info",
+          "message": "Executing API request: delete-all"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:48.655Z",
+          "level": "error",
+          "message": "❌ delete-all failed: No JWT token available for API authentication"
+        },
+        {
+          "timestamp": "2025-11-17T17:11:48.655Z",
+          "level": "error",
+          "message": "❌ delete-all failed: API request for delete-all failed"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:11:46.564Z"
+    },
+    "FATAL": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:11:48.655Z",
+          "level": "error",
+          "message": "Test failed with error: Delete all data step failed"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:11:48.655Z"
+    }
+  },
+  "overallSuccess": false,
+  "errors": [
+    {
+      "phase": "AUTH",
+      "message": "❌ No JWT token found in session",
+      "timestamp": "2025-11-17T17:11:48.655Z"
+    },
+    {
+      "phase": "WORKFLOW",
+      "message": "❌ delete-all failed: No JWT token available for API authentication",
+      "timestamp": "2025-11-17T17:11:48.655Z"
+    },
+    {
+      "phase": "WORKFLOW",
+      "message": "❌ delete-all failed: API request for delete-all failed",
+      "timestamp": "2025-11-17T17:11:48.655Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Test failed with error: Delete all data step failed",
+      "timestamp": "2025-11-17T17:11:48.655Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Delete all data step failed",
+      "timestamp": "2025-11-17T17:11:48.655Z"
+    }
+  ],
+  "warnings": []
+}

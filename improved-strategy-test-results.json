@@ -1,0 +1,2198 @@
+{
+  "timestamp": "2025-11-15T23:05:52.748Z",
+  "testUser": "test@example.com",
+  "results": {
+    "login": {
+      "status": "passed",
+      "details": "Successfully logged in and redirected to dashboard",
+      "errors": []
+    },
+    "strategyListLoading": {
+      "status": "passed",
+      "details": {
+        "pageTitle": "Trading Strategies",
+        "hasStrategies": true,
+        "strategyCount": 11
+      },
+      "errors": []
+    },
+    "strategyCreation": {
+      "status": "failed",
+      "details": null,
+      "errors": [
+        "page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder*=\"Strategy Name\"]')\u001b[22m\n"
+      ]
+    },
+    "strategyPerformanceViewing": {
+      "status": "failed",
+      "details": null,
+      "errors": [
+        "No strategy performance links found"
+      ]
+    },
+    "strategyModification": {
+      "status": "failed",
+      "details": null,
+      "errors": [
+        "page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/strategies/edit/**\" until \"load\"\n============================================================"
+      ]
+    },
+    "strategyDeletion": {
+      "status": "failed",
+      "details": null,
+      "errors": [
+        "No delete buttons found"
+      ]
+    },
+    "consoleErrors": {
+      "status": "passed",
+      "details": {
+        "totalConsoleErrors": 19,
+        "paramsErrors": 0,
+        "criticalErrors": 0,
+        "noNextJsParamsError": true
+      },
+      "errors": []
+    }
+  },
+  "consoleLogs": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.277Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.428Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.428Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.433Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:53.489Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.519Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.533Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:53.760Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.761Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.762Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.762Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.762Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.763Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.763Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.764Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.958Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.959Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T23:05:53.958Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.962Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:53.962Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.962Z"
+    },
+    {
+      "type": "log",
+      "text": "🚀 Login form submission started",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.584Z"
+    },
+    {
+      "type": "log",
+      "text": "📧 Email: test@example.com",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.585Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Password length: 15",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.585Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 Attempting Supabase authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.585Z"
+    },
+    {
+      "type": "log",
+      "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.585Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Supabase Key present: YES",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.585Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: SIGNED_IN 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:57.859Z"
+    },
+    {
+      "type": "log",
+      "text": "📥 Supabase response received",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.171Z"
+    },
+    {
+      "type": "log",
+      "text": "❌ Error: NONE",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.171Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ Success: YES",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.172Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ Authentication successful!",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.173Z"
+    },
+    {
+      "type": "log",
+      "text": "👤 User ID: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.174Z"
+    },
+    {
+      "type": "log",
+      "text": "📧 User email: test@example.com",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.174Z"
+    },
+    {
+      "type": "log",
+      "text": "🎫 Session created: YES",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.174Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.265Z"
+    },
+    {
+      "type": "log",
+      "text": "Fetching trades for user: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.464Z"
+    },
+    {
+      "type": "log",
+      "text": "Fetching trades for user: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.560Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.567Z"
+    },
+    {
+      "type": "error",
+      "text": "Error fetching trades: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…t:3000/_next/static/chunks/_7f6ce494._.js:740:41), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.649Z"
+    },
+    {
+      "type": "error",
+      "text": "Error fetching trades: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…t:3000/_next/static/chunks/_7f6ce494._.js:740:41), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.650Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.727Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.754Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.754Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.755Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.773Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Starting fetchStrategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.804Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Checking user authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.805Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Starting fetchStrategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.807Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Checking user authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.807Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.812Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:58.935Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.935Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.936Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.936Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.936Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.936Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.937Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.938Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User authenticated successfully: {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.939Z"
+    },
+    {
+      "type": "info",
+      "text": "[AUTH] User authenticated successfully {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Validating user ID...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calling getStrategiesWithStats...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] getStrategiesWithStats called with userId: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Fetching strategies for user {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Executing strategies query...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:58.940Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User authenticated successfully: {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.037Z"
+    },
+    {
+      "type": "info",
+      "text": "[AUTH] User authenticated successfully {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Validating user ID...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calling getStrategiesWithStats...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] getStrategiesWithStats called with userId: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Fetching strategies for user {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Executing strategies query...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.038Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.060Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.061Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.061Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T23:05:59.061Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.062Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.062Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:59.062Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Strategies query completed: {strategiesFound: 3, error: No error}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Strategies query successful: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Successfully fetched strategies {count: 3}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for 3 strategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 Test Strategy 1763212151857",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 Test Strategy 1763210823814",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.210Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 User Test Strategy",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.211Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Strategies query completed: {strategiesFound: 3, error: No error}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.211Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Strategies query successful: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.211Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Successfully fetched strategies {count: 3}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.211Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for 3 strategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.211Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 Test Strategy 1763212151857",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.212Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 Test Strategy 1763210823814",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.212Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 User Test Strategy",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.212Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.386Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.394Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.398Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.405Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] All stats calculated, returning strategies with stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] getStrategiesWithStats returned: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] All stats calculated, returning strategies with stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] getStrategiesWithStats returned: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:05:59.406Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:01.161Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.200Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.228Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.228Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.230Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.243Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Starting fetchStrategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.267Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Checking user authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.268Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Starting fetchStrategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.269Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Checking user authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.269Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.274Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:06:33.458Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.460Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.461Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.463Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.463Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.464Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.466Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.466Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User authenticated successfully: {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.467Z"
+    },
+    {
+      "type": "info",
+      "text": "[AUTH] User authenticated successfully {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.467Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Validating user ID...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.467Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.467Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calling getStrategiesWithStats...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.468Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] getStrategiesWithStats called with userId: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.468Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.468Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Fetching strategies for user {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.468Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Executing strategies query...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.468Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User authenticated successfully: {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.588Z"
+    },
+    {
+      "type": "info",
+      "text": "[AUTH] User authenticated successfully {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37, email: test@example.com}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.588Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Validating user ID...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.588Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.588Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calling getStrategiesWithStats...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.588Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] getStrategiesWithStats called with userId: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.589Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] User ID validated: 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.589Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Fetching strategies for user {userId: 2df81203-0563-4d58-a4de-8f66a02f1c37}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.589Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Executing strategies query...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.589Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.589Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.591Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.591Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T23:06:33.588Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.591Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.592Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.592Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Strategies query completed: {strategiesFound: 3, error: No error}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.703Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Strategies query successful: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.703Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Successfully fetched strategies {count: 3}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for 3 strategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 Test Strategy 1763212151857",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 Test Strategy 1763210823814",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 User Test Strategy",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Strategies query completed: {strategiesFound: 3, error: No error}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.712Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Strategies query successful: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.713Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] Successfully fetched strategies {count: 3}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.713Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for 3 strategies...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.713Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 Test Strategy 1763212151857",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.713Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 Test Strategy 1763210823814",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.714Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Calculating stats for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 User Test Strategy",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.714Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.866Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.878Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.879Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: f0e035a6-b2c9-482e-8411-d1bb881c2ab2 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] All stats calculated, returning strategies with stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] getStrategiesWithStats returned: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: b38553a5-4b54-43c4-976a-c4c104d3a386 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Stats calculated for strategy: 29d14e40-a426-4b3f-b897-1ba22bb9a727 no stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] All stats calculated, returning strategies with stats",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.905Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] getStrategiesWithStats returned: 3 strategies",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:33.906Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.629Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.655Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.656Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.657Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.680Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION 2df81203-0563-4d58-a4de-8f66a02f1c37",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.734Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:06:35.843Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.844Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.844Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.844Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.844Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.845Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_fc63703f._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_fc63703f._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.845Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_fc63703f._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_fc63703f._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.845Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.984Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.986Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.986Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T23:06:35.984Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.986Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T23:06:35.987Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.987Z"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:53.489Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:53.760Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.763Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.764Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:53.962Z"
+    },
+    {
+      "type": "error",
+      "text": "Error fetching trades: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…t:3000/_next/static/chunks/_7f6ce494._.js:740:41), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.649Z"
+    },
+    {
+      "type": "error",
+      "text": "Error fetching trades: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch\n    at http://localhost…t:3000/_next/static/chunks/_7f6ce494._.js:740:41), hint: , code: }",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.650Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:05:58.935Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.937Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:58.938Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:05:59.062Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:06:33.458Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.466Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.466Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:33.592Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T23:06:35.843Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_fc63703f._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_fc63703f._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.845Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_fc63703f._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_fc63703f._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.845Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T23:06:35.987Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 7,
+    "passed": 3,
+    "failed": 4,
+    "overallStatus": "FAILED"
+  }
+}

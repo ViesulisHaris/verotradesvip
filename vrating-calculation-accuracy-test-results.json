@@ -1,0 +1,235 @@
+{
+  "timestamp": "2025-11-19T16:48:55.159Z",
+  "summary": {
+    "total": 8,
+    "passed": 6,
+    "failed": 2,
+    "successRate": "75.0"
+  },
+  "testResults": [
+    {
+      "name": "High Performer Test",
+      "description": "Should score 9.0-10.0 for profitability",
+      "result": {
+        "overallRating": 6.56,
+        "categoryScores": {
+          "profitability": 9.9,
+          "riskManagement": 2.76,
+          "consistency": 2,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "profitability": [
+          9,
+          10
+        ],
+        "overall": [
+          7,
+          10
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "Poor Performer Test",
+      "description": "Should score 1.0-1.9 for profitability",
+      "result": {
+        "overallRating": 3.97,
+        "categoryScores": {
+          "profitability": 1.9,
+          "riskManagement": 2,
+          "consistency": 2,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "profitability": [
+          1,
+          1.9
+        ],
+        "overall": [
+          1,
+          3
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "Low Risk Test",
+      "description": "Should score 8.0-10.0 for risk management",
+      "result": {
+        "overallRating": 8.4,
+        "categoryScores": {
+          "profitability": 10,
+          "riskManagement": 10,
+          "consistency": 2,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "riskManagement": [
+          8,
+          10
+        ],
+        "overall": [
+          6,
+          10
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "High Risk Test",
+      "description": "Should score 2.0-3.9 for risk management",
+      "result": {
+        "overallRating": 3.4,
+        "categoryScores": {
+          "profitability": 0,
+          "riskManagement": 2,
+          "consistency": 2,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "riskManagement": [
+          2,
+          3.9
+        ],
+        "overall": [
+          1,
+          5
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "High Emotional Discipline Test",
+      "description": "Should score 8.0-10.0 for emotional discipline",
+      "result": {
+        "overallRating": 6.61,
+        "categoryScores": {
+          "profitability": 10,
+          "riskManagement": 2.84,
+          "consistency": 2,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "emotionalDiscipline": [
+          8,
+          10
+        ],
+        "overall": [
+          6,
+          10
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "Low Emotional Discipline Test",
+      "description": "Should score 2.0-3.9 for emotional discipline",
+      "result": {
+        "overallRating": 2.77,
+        "categoryScores": {
+          "profitability": 1.9,
+          "riskManagement": 2,
+          "consistency": 2,
+          "emotionalDiscipline": 2,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "emotionalDiscipline": [
+          2,
+          3.9
+        ],
+        "overall": [
+          1,
+          5
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "Excellent Journaling Test",
+      "description": "Should score 8.0-10.0 for journaling adherence",
+      "result": {
+        "overallRating": 10,
+        "categoryScores": {
+          "profitability": 10,
+          "riskManagement": 10,
+          "consistency": 10,
+          "emotionalDiscipline": 10,
+          "journalingAdherence": 10
+        },
+        "tradeCount": 20
+      },
+      "expectedRanges": {
+        "journalingAdherence": [
+          8,
+          10
+        ],
+        "overall": [
+          6,
+          10
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "name": "Empty Trades Test",
+      "description": "Should handle empty array gracefully",
+      "result": {
+        "overallRating": 0,
+        "categoryScores": {
+          "profitability": 0,
+          "riskManagement": 0,
+          "consistency": 0,
+          "emotionalDiscipline": 0,
+          "journalingAdherence": 0
+        },
+        "tradeCount": 0
+      },
+      "expectedRanges": {
+        "overall": [
+          0,
+          0
+        ],
+        "profitability": [
+          0,
+          0
+        ],
+        "riskManagement": [
+          0,
+          0
+        ],
+        "consistency": [
+          0,
+          0
+        ],
+        "emotionalDiscipline": [
+          0,
+          0
+        ],
+        "journalingAdherence": [
+          0,
+          0
+        ]
+      },
+      "status": "completed"
+    }
+  ]
+}

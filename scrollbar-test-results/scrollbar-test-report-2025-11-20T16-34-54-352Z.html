@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Testing Report</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .summary-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .test-item {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .test-item.passed {
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+        .test-item.failed {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .status.passed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        .status.failed {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .details {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+        h1, h2, h3 {
+            color: #60a5fa;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="gradient-text">Scrollbar Implementation Testing Report</h1>
+            <p>Generated on Invalid Date</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Total Tests</h3>
+                <div style="font-size: 2rem; font-weight: bold;">1</div>
+            </div>
+            <div class="summary-card">
+                <h3>Passed</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #22c55e;">1</div>
+            </div>
+            <div class="summary-card">
+                <h3>Failed</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #ef4444;">0</div>
+            </div>
+            <div class="summary-card">
+                <h3>Success Rate</h3>
+                <div style="font-size: 2rem; font-weight: bold;">100%</div>
+            </div>
+        </div>
+        
+        <h2>Test Results</h2>
+        
+            <div class="test-item passed">
+                <h3>Main Page Scrollbar <span class="status passed">PASSED</span></h3>
+                <p><strong>Selector:</strong> <code>body</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-global</code></p>
+                
+                <img src="main-page-scrollbar-2025-11-20T16-34-54-352Z.png" alt="Main Page Scrollbar" class="screenshot">
+                
+                    <div class="details">
+                        <strong>Scrollbar Info:</strong><br>
+                        {
+  "exists": true,
+  "hasCustomScrollbar": true,
+  "hasWebkitScrollbar": false,
+  "scrollbarWidth": 0,
+  "overflow": "visible",
+  "overflowY": "visible",
+  "overflowX": "visible",
+  "scrollbarClass": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+}
+                    </div>
+                
+                
+                    <div class="details">
+                        <strong>Hover Info:</strong><br>
+                        {
+  "hasHoverStyles": true,
+  "hoverTransform": "",
+  "hoverBoxShadow": ""
+}
+                    </div>
+                
+            </div>
+        
+    </div>
+</body>
+</html>
+  

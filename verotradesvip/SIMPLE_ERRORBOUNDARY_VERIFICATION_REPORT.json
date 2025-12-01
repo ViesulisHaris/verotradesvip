@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-11-27T21:13:49.505Z",
+  "summary": {
+    "serverResponding": false,
+    "mainAppAccessible": false,
+    "errorBoundaryPageAccessible": false,
+    "hasErrorBoundaryComponent": false,
+    "hasUseClientDirective": false,
+    "overallSuccess": false
+  },
+  "details": {
+    "serverResponding": false,
+    "mainAppAccessible": false,
+    "errorBoundaryPageAccessible": false,
+    "hasErrorBoundaryComponent": false,
+    "hasUseClientDirective": false,
+    "errors": [
+      "Verification failed: Request timeout"
+    ]
+  },
+  "recommendations": [
+    "Development server is not responding - check if server is running",
+    "Main application is not accessible - check routing and server configuration",
+    "ErrorBoundary test page is not accessible - verify file exists and routing works",
+    "ErrorBoundary component is missing - create the component file",
+    "\"use client\" directive is missing or misplaced - ensure it's at the very top of the file"
+  ]
+}

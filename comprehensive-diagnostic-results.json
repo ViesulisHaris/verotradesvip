@@ -1,0 +1,516 @@
+{
+  "timestamp": "2025-11-23T22:18:06.581Z",
+  "pages": {
+    "Dashboard": {
+      "viewports": {
+        "Mobile": {
+          "status": "failed",
+          "issues": 2,
+          "issueList": [
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 18.399999618530273px < 44px",
+              "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+              "actual": 18.399999618530273,
+              "expected": "44px+"
+            },
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 16.80000114440918px < 44px",
+              "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+              "actual": 16.80000114440918,
+              "expected": "44px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 18.399999618530273px < 44px",
+                "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+                "actual": 18.399999618530273,
+                "expected": "44px+"
+              },
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 16.80000114440918px < 44px",
+                "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+                "actual": 16.80000114440918,
+                "expected": "44px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 375,
+                "viewportWidth": 375,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 264.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 2
+              }
+            }
+          }
+        },
+        "Tablet": {
+          "status": "passed",
+          "issues": 0,
+          "analysis": {
+            "issues": [],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 768,
+                "viewportWidth": 768,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 279.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        },
+        "Desktop": {
+          "status": "failed",
+          "issues": 1,
+          "issueList": [
+            {
+              "type": "desktop_font_too_small",
+              "severity": "major",
+              "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+              "element": "body",
+              "actual": "14.0625px",
+              "expected": "16px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "desktop_font_too_small",
+                "severity": "major",
+                "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+                "element": "body",
+                "actual": "14.0625px",
+                "expected": "16px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 1920,
+                "viewportWidth": 1920,
+                "hasHorizontalScroll": false,
+                "containers": [],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 0,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        }
+      },
+      "overallStatus": "passed"
+    },
+    "Trades": {
+      "viewports": {
+        "Mobile": {
+          "status": "failed",
+          "issues": 2,
+          "issueList": [
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 18.399999618530273px < 44px",
+              "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+              "actual": 18.399999618530273,
+              "expected": "44px+"
+            },
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 16.80000114440918px < 44px",
+              "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+              "actual": 16.80000114440918,
+              "expected": "44px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 18.399999618530273px < 44px",
+                "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+                "actual": 18.399999618530273,
+                "expected": "44px+"
+              },
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 16.80000114440918px < 44px",
+                "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+                "actual": 16.80000114440918,
+                "expected": "44px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 375,
+                "viewportWidth": 375,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 264.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 2
+              }
+            }
+          }
+        },
+        "Tablet": {
+          "status": "passed",
+          "issues": 0,
+          "analysis": {
+            "issues": [],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 768,
+                "viewportWidth": 768,
+                "hasHorizontalScroll": false,
+                "containers": [],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 0,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        },
+        "Desktop": {
+          "status": "failed",
+          "issues": 2,
+          "issueList": [
+            {
+              "type": "desktop_font_too_small",
+              "severity": "major",
+              "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+              "element": "body",
+              "actual": "14.0625px",
+              "expected": "16px+"
+            },
+            {
+              "type": "desktop_container_too_narrow",
+              "severity": "major",
+              "description": "Desktop container too narrow: 279.1125183105469px",
+              "element": "w-full max-w-md px-4",
+              "actual": 279.1125183105469,
+              "expected": "1200px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "desktop_font_too_small",
+                "severity": "major",
+                "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+                "element": "body",
+                "actual": "14.0625px",
+                "expected": "16px+"
+              },
+              {
+                "type": "desktop_container_too_narrow",
+                "severity": "major",
+                "description": "Desktop container too narrow: 279.1125183105469px",
+                "element": "w-full max-w-md px-4",
+                "actual": 279.1125183105469,
+                "expected": "1200px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 1920,
+                "viewportWidth": 1920,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 279.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        }
+      },
+      "overallStatus": "passed"
+    },
+    "Strategies": {
+      "viewports": {
+        "Mobile": {
+          "status": "failed",
+          "issues": 2,
+          "issueList": [
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 18.399999618530273px < 44px",
+              "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+              "actual": 18.399999618530273,
+              "expected": "44px+"
+            },
+            {
+              "type": "touch_target_too_small",
+              "severity": "critical",
+              "description": "Touch target too small: 16.80000114440918px < 44px",
+              "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+              "actual": 16.80000114440918,
+              "expected": "44px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 18.399999618530273px < 44px",
+                "element": "A.text-gold hover:text-gold-secondary transition-luxury",
+                "actual": 18.399999618530273,
+                "expected": "44px+"
+              },
+              {
+                "type": "touch_target_too_small",
+                "severity": "critical",
+                "description": "Touch target too small: 16.80000114440918px < 44px",
+                "element": "A.text-muted hover:text-gold transition-luxury text-sm",
+                "actual": 16.80000114440918,
+                "expected": "44px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 375,
+                "viewportWidth": 375,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 264.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 2
+              }
+            }
+          }
+        },
+        "Tablet": {
+          "status": "passed",
+          "issues": 0,
+          "analysis": {
+            "issues": [],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 768,
+                "viewportWidth": 768,
+                "hasHorizontalScroll": false,
+                "containers": [
+                  {
+                    "element": "w-full max-w-md px-4",
+                    "width": 279.1125183105469,
+                    "maxWidth": "none",
+                    "padding": "0px"
+                  }
+                ],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 3,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        },
+        "Desktop": {
+          "status": "failed",
+          "issues": 1,
+          "issueList": [
+            {
+              "type": "desktop_font_too_small",
+              "severity": "major",
+              "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+              "element": "body",
+              "actual": "14.0625px",
+              "expected": "16px+"
+            }
+          ],
+          "analysis": {
+            "issues": [
+              {
+                "type": "desktop_font_too_small",
+                "severity": "major",
+                "description": "Desktop font size too small: 14.0625px (should be 16px+)",
+                "element": "body",
+                "actual": "14.0625px",
+                "expected": "16px+"
+              }
+            ],
+            "analysis": {
+              "typography": {
+                "baseFontSize": 14.0625,
+                "fontFamily": "__Inter_f367f3, __Inter_Fallback_f367f3",
+                "lineHeight": "21.0938px"
+              },
+              "layout": {
+                "bodyWidth": 1920,
+                "viewportWidth": 1920,
+                "hasHorizontalScroll": false,
+                "containers": [],
+                "grids": []
+              },
+              "navigation": {
+                "hasSidebar": false,
+                "hasMobileMenu": false,
+                "sidebarWidth": null
+              },
+              "components": {
+                "totalClickableElements": 0,
+                "smallTouchTargets": 0
+              }
+            }
+          }
+        }
+      },
+      "overallStatus": "passed"
+    }
+  },
+  "summary": {
+    "totalIssues": 10,
+    "criticalIssues": 6,
+    "majorIssues": 4,
+    "minorIssues": 0
+  }
+}

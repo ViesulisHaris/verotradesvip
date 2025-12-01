@@ -1,0 +1,207 @@
+{
+  "timestamp": "2025-11-18T12:00:33.708Z",
+  "summary": {
+    "strategyCardsFound": 0,
+    "modalDebugMessages": 0,
+    "doubleModalEvidence": 0,
+    "positioningEvidence": 0,
+    "multipleBackdrops": 0,
+    "modalBackdropVisible": false,
+    "cardModalWrapperVisible": false,
+    "cardBackdropVisible": false
+  },
+  "evidence": {
+    "modalDebugMessages": [],
+    "doubleModalEvidence": [],
+    "positioningEvidence": [],
+    "consoleMessages": [
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:00:25.806Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:00:26.178Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:00:26.178Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:00:26.185Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:00:26.186Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:00:26.182Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:00:26.188Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:00:26.192Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:00:26.193Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:00:26.194Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:00:26.196Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:00:26.196Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:00:26.214Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2025-11-18T12:00:26.339Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:00:26.354Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:00:26.370Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:00:26.406Z}",
+        "timestamp": "2025-11-18T12:00:26.409Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:00:26.422Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:00:26.422Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:00:26.428Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:00:26.443Z}",
+        "timestamp": "2025-11-18T12:00:26.444Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:00:26.611Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:00:26.629Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:00:26.636Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:00:26.636Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:00:26.638Z}",
+        "timestamp": "2025-11-18T12:00:26.640Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:00:26.750Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight validation...",
+        "timestamp": "2025-11-18T12:00:26.750Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:00:26.909Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+        "timestamp": "2025-11-18T12:00:26.910Z"
+      },
+      {
+        "type": "log",
+        "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+        "timestamp": "2025-11-18T12:00:26.911Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:00:27.052Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:00:27.056Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [CACHE] Comprehensive cache clear completed",
+        "timestamp": "2025-11-18T12:00:27.057Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+        "timestamp": "2025-11-18T12:00:27.057Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [TEST] Modal diagnostic trigger clicked",
+        "timestamp": "2025-11-18T12:00:31.658Z"
+      }
+    ],
+    "errors": [
+      {
+        "message": "Failed to execute 'querySelectorAll' on 'Document': 'button[class*=\"Performance\"], text=\"View Performance Details\"]' is not a valid selector.",
+        "stack": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'button[class*=\"Performance\"], text=\"View Performance Details\"]' is not a valid selector.\n    at HTMLButtonElement.eval (eval at evaluate (:290:30), <anonymous>:26:47)",
+        "timestamp": "2025-11-18T12:00:31.659Z"
+      }
+    ]
+  },
+  "diagnosis": {
+    "hasDoubleModalStructure": false,
+    "hasMultipleBackdrops": false,
+    "hasPositioningConflicts": false
+  }
+}

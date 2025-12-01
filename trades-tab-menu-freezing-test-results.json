@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-11-24T20:12:00.742Z",
+  "menuFrozen": true,
+  "visibleNavigationItems": 0,
+  "interactiveNavigationItems": 0,
+  "totalNavigationItems": 5,
+  "consoleMessages": [
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety: Global scope initialized with enhanced cleanup access",
+      "timestamp": "2025-11-24T20:11:56.939Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 TradesPage: Modal cleanup function exported to global scope",
+      "timestamp": "2025-11-24T20:11:57.035Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety: Initializing...",
+      "timestamp": "2025-11-24T20:11:57.036Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ NavigationSafetyProvider: Initializing navigation safety...",
+      "timestamp": "2025-11-24T20:11:57.051Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety: Initializing...",
+      "timestamp": "2025-11-24T20:11:57.051Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ NavigationSafetyProvider: Trades page cleanup function is available",
+      "timestamp": "2025-11-24T20:11:57.053Z"
+    },
+    {
+      "type": "log",
+      "text": "🗑️ TradesPage: Modal cleanup function removed from global scope",
+      "timestamp": "2025-11-24T20:11:57.053Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage unmounting - performing comprehensive cleanup",
+      "timestamp": "2025-11-24T20:11:57.053Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage: Cleaning up modal overlays for navigation safety...",
+      "timestamp": "2025-11-24T20:11:57.053Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 TradesPage: Modal cleanup function exported to global scope",
+      "timestamp": "2025-11-24T20:11:57.055Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety: Initializing...",
+      "timestamp": "2025-11-24T20:11:57.055Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ NavigationSafetyProvider: Initializing navigation safety...",
+      "timestamp": "2025-11-24T20:11:57.056Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety: Initializing...",
+      "timestamp": "2025-11-24T20:11:57.056Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ NavigationSafetyProvider: Trades page cleanup function is available",
+      "timestamp": "2025-11-24T20:11:57.056Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety: Initializing...",
+      "timestamp": "2025-11-24T20:11:57.117Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ NavigationSafetyProvider: Trades page cleanup function is available",
+      "timestamp": "2025-11-24T20:11:59.055Z"
+    }
+  ],
+  "success": false
+}

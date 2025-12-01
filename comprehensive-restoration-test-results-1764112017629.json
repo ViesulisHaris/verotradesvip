@@ -1,0 +1,392 @@
+{
+  "timestamp": "2025-11-25T23:06:31.698Z",
+  "summary": {
+    "total": 33,
+    "passed": 19,
+    "failed": 14,
+    "skipped": 0
+  },
+  "categories": {
+    "general": {
+      "tests": [
+        {
+          "name": "Page loads successfully",
+          "passed": "",
+          "details": "Page failed to load: No page title found",
+          "timestamp": "2025-11-25T23:06:36.495Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1
+    },
+    "navigation": {
+      "tests": [
+        {
+          "name": "Navigation menu visible",
+          "passed": false,
+          "details": "Navigation menu not found",
+          "timestamp": "2025-11-25T23:06:36.507Z"
+        },
+        {
+          "name": "Navigation link \"Home\" exists",
+          "passed": false,
+          "details": "Link \"Home\" not found",
+          "timestamp": "2025-11-25T23:06:36.515Z"
+        },
+        {
+          "name": "Navigation link \"Dashboard\" exists",
+          "passed": false,
+          "details": "Link \"Dashboard\" not found",
+          "timestamp": "2025-11-25T23:06:36.522Z"
+        },
+        {
+          "name": "Navigation link \"Trades\" exists",
+          "passed": false,
+          "details": "Link \"Trades\" not found",
+          "timestamp": "2025-11-25T23:06:36.529Z"
+        },
+        {
+          "name": "Navigation link \"Analytics\" exists",
+          "passed": false,
+          "details": "Link \"Analytics\" not found",
+          "timestamp": "2025-11-25T23:06:36.535Z"
+        },
+        {
+          "name": "Navigation link \"Strategies\" exists",
+          "passed": false,
+          "details": "Link \"Strategies\" not found",
+          "timestamp": "2025-11-25T23:06:36.542Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 6
+    },
+    "sidebar": {
+      "tests": [
+        {
+          "name": "Sidebar element exists",
+          "passed": false,
+          "details": "Sidebar element not found",
+          "timestamp": "2025-11-25T23:06:36.558Z"
+        },
+        {
+          "name": "Mobile menu button exists",
+          "passed": false,
+          "details": "Mobile menu button not found",
+          "timestamp": "2025-11-25T23:06:36.564Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 2
+    },
+    "responsive": {
+      "tests": [
+        {
+          "name": "No horizontal scroll on Mobile",
+          "passed": true,
+          "details": "Good responsive design on Mobile (375px <= 375px)",
+          "timestamp": "2025-11-25T23:06:37.685Z"
+        },
+        {
+          "name": "Main content visible on Mobile",
+          "passed": true,
+          "details": "Main content visible on Mobile",
+          "timestamp": "2025-11-25T23:06:37.691Z"
+        },
+        {
+          "name": "No horizontal scroll on Tablet",
+          "passed": true,
+          "details": "Good responsive design on Tablet (768px <= 768px)",
+          "timestamp": "2025-11-25T23:06:38.858Z"
+        },
+        {
+          "name": "Main content visible on Tablet",
+          "passed": true,
+          "details": "Main content visible on Tablet",
+          "timestamp": "2025-11-25T23:06:38.863Z"
+        },
+        {
+          "name": "No horizontal scroll on Laptop",
+          "passed": true,
+          "details": "Good responsive design on Laptop (1024px <= 1024px)",
+          "timestamp": "2025-11-25T23:06:40.043Z"
+        },
+        {
+          "name": "Main content visible on Laptop",
+          "passed": true,
+          "details": "Main content visible on Laptop",
+          "timestamp": "2025-11-25T23:06:40.049Z"
+        },
+        {
+          "name": "No horizontal scroll on Desktop",
+          "passed": true,
+          "details": "Good responsive design on Desktop (1280px <= 1280px)",
+          "timestamp": "2025-11-25T23:06:41.256Z"
+        },
+        {
+          "name": "Main content visible on Desktop",
+          "passed": true,
+          "details": "Main content visible on Desktop",
+          "timestamp": "2025-11-25T23:06:41.262Z"
+        }
+      ],
+      "passed": 8,
+      "failed": 0
+    },
+    "authentication": {
+      "tests": [
+        {
+          "name": "Email input exists",
+          "passed": true,
+          "details": "Email input found",
+          "timestamp": "2025-11-25T23:06:45.383Z"
+        },
+        {
+          "name": "Password input exists",
+          "passed": true,
+          "details": "Password input found",
+          "timestamp": "2025-11-25T23:06:45.383Z"
+        },
+        {
+          "name": "Submit button exists",
+          "passed": true,
+          "details": "Submit button found",
+          "timestamp": "2025-11-25T23:06:45.383Z"
+        },
+        {
+          "name": "Login with valid credentials",
+          "passed": true,
+          "details": "Login successful",
+          "timestamp": "2025-11-25T23:06:50.148Z"
+        },
+        {
+          "name": "Logout functionality",
+          "passed": true,
+          "details": "Logout successful",
+          "timestamp": "2025-11-25T23:06:52.834Z"
+        }
+      ],
+      "passed": 5,
+      "failed": 0
+    },
+    "dashboard": {
+      "tests": [
+        {
+          "name": "Dashboard container exists",
+          "passed": true,
+          "details": "Dashboard container found",
+          "timestamp": "2025-11-25T23:06:57.149Z"
+        },
+        {
+          "name": "Dashboard visible",
+          "passed": true,
+          "details": "Dashboard is visible",
+          "timestamp": "2025-11-25T23:06:57.151Z"
+        },
+        {
+          "name": "Stats cards",
+          "passed": false,
+          "details": "Stats cards not found",
+          "timestamp": "2025-11-25T23:06:57.153Z"
+        },
+        {
+          "name": "Charts",
+          "passed": false,
+          "details": "Charts not found",
+          "timestamp": "2025-11-25T23:06:57.156Z"
+        },
+        {
+          "name": "Recent trades",
+          "passed": false,
+          "details": "Recent trades not found",
+          "timestamp": "2025-11-25T23:06:57.158Z"
+        },
+        {
+          "name": "Performance metrics",
+          "passed": false,
+          "details": "Performance metrics not found",
+          "timestamp": "2025-11-25T23:06:57.160Z"
+        },
+        {
+          "name": "Dashboard properly centered",
+          "passed": false,
+          "details": "Dashboard may not be properly centered",
+          "timestamp": "2025-11-25T23:06:57.162Z"
+        }
+      ],
+      "passed": 2,
+      "failed": 5
+    },
+    "interactive": {
+      "tests": [
+        {
+          "name": "Buttons present",
+          "passed": true,
+          "details": "Found 2 buttons on the page",
+          "timestamp": "2025-11-25T23:06:57.164Z"
+        },
+        {
+          "name": "Forms present",
+          "passed": true,
+          "details": "Found 1 forms on the page",
+          "timestamp": "2025-11-25T23:06:57.166Z"
+        },
+        {
+          "name": "Input fields present",
+          "passed": true,
+          "details": "Found 2 input fields on the page",
+          "timestamp": "2025-11-25T23:06:57.167Z"
+        },
+        {
+          "name": "Clickable elements present",
+          "passed": true,
+          "details": "Found 3 clickable elements on the page",
+          "timestamp": "2025-11-25T23:06:57.169Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 0
+    }
+  },
+  "screenshots": [
+    {
+      "name": "initial-load",
+      "category": "general",
+      "filename": "general-initial-load-1764111996200.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-initial-load-1764111996200.png",
+      "timestamp": "2025-11-25T23:06:36.471Z"
+    },
+    {
+      "name": "responsive-mobile",
+      "category": "responsive",
+      "filename": "responsive-responsive-mobile-1764111997593.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-mobile-1764111997593.png",
+      "timestamp": "2025-11-25T23:06:37.680Z"
+    },
+    {
+      "name": "responsive-tablet",
+      "category": "responsive",
+      "filename": "responsive-responsive-tablet-1764111998702.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-tablet-1764111998702.png",
+      "timestamp": "2025-11-25T23:06:38.856Z"
+    },
+    {
+      "name": "responsive-laptop",
+      "category": "responsive",
+      "filename": "responsive-responsive-laptop-1764111999873.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-laptop-1764111999873.png",
+      "timestamp": "2025-11-25T23:06:40.040Z"
+    },
+    {
+      "name": "responsive-desktop",
+      "category": "responsive",
+      "filename": "responsive-responsive-desktop-1764112001069.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\responsive-responsive-desktop-1764112001069.png",
+      "timestamp": "2025-11-25T23:06:41.254Z"
+    },
+    {
+      "name": "login-page",
+      "category": "authentication",
+      "filename": "authentication-login-page-1764112005187.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-page-1764112005187.png",
+      "timestamp": "2025-11-25T23:06:45.374Z"
+    },
+    {
+      "name": "login-form-filled",
+      "category": "authentication",
+      "filename": "authentication-login-form-filled-1764112006422.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-form-filled-1764112006422.png",
+      "timestamp": "2025-11-25T23:06:46.607Z"
+    },
+    {
+      "name": "login-success",
+      "category": "authentication",
+      "filename": "authentication-login-success-1764112010149.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-success-1764112010149.png",
+      "timestamp": "2025-11-25T23:06:50.278Z"
+    },
+    {
+      "name": "logout-success",
+      "category": "authentication",
+      "filename": "authentication-logout-success-1764112012834.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-logout-success-1764112012834.png",
+      "timestamp": "2025-11-25T23:06:53.015Z"
+    },
+    {
+      "name": "dashboard-full",
+      "category": "dashboard",
+      "filename": "dashboard-dashboard-full-1764112016961.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\dashboard-dashboard-full-1764112016961.png",
+      "timestamp": "2025-11-25T23:06:57.146Z"
+    },
+    {
+      "name": "final-state",
+      "category": "general",
+      "filename": "general-final-state-1764112017173.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-final-state-1764112017173.png",
+      "timestamp": "2025-11-25T23:06:57.351Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-25T23:06:36.495Z",
+      "message": "Test FAILED: Page loads successfully - Page failed to load: No page title found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.495Z",
+      "message": "Page failed to load: No page title found. Continuing with limited tests..."
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.507Z",
+      "message": "Test FAILED: Navigation menu visible - Navigation menu not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.515Z",
+      "message": "Test FAILED: Navigation link \"Home\" exists - Link \"Home\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.522Z",
+      "message": "Test FAILED: Navigation link \"Dashboard\" exists - Link \"Dashboard\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.529Z",
+      "message": "Test FAILED: Navigation link \"Trades\" exists - Link \"Trades\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.535Z",
+      "message": "Test FAILED: Navigation link \"Analytics\" exists - Link \"Analytics\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.542Z",
+      "message": "Test FAILED: Navigation link \"Strategies\" exists - Link \"Strategies\" not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.558Z",
+      "message": "Test FAILED: Sidebar element exists - Sidebar element not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:36.564Z",
+      "message": "Test FAILED: Mobile menu button exists - Mobile menu button not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:57.153Z",
+      "message": "Test FAILED: Stats cards - Stats cards not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:57.156Z",
+      "message": "Test FAILED: Charts - Charts not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:57.158Z",
+      "message": "Test FAILED: Recent trades - Recent trades not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:57.160Z",
+      "message": "Test FAILED: Performance metrics - Performance metrics not found"
+    },
+    {
+      "timestamp": "2025-11-25T23:06:57.162Z",
+      "message": "Test FAILED: Dashboard properly centered - Dashboard may not be properly centered"
+    }
+  ]
+}

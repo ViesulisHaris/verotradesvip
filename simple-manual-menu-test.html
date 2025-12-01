@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Menu Freezing Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .test-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .results {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .instructions {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .iframe-container {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Manual Menu Freezing Diagnosis Tool</h1>
+    
+    <div class="instructions">
+        <h2>📋 Instructions</h2>
+        <ol>
+            <li>Open this page in your browser</li>
+            <li>The application will load in the iframe below</li>
+            <li>Use the test buttons to systematically test menu functionality</li>
+            <li>Watch the results panel for diagnostic information</li>
+            <li>Test manually by clicking menu items in the iframe</li>
+            <li>Document any freezing or unresponsive behavior</li>
+        </ol>
+    </div>
+
+    <div class="test-container">
+        <h2>🧪 Automated Tests</h2>
+        <button class="test-button" onclick="runInitialDiagnostics()">🔍 Run Initial Diagnostics</button>
+        <button class="test-button" onclick="testMenuElements()">🔘 Test Menu Elements</button>
+        <button class="test-button" onclick="checkOverlays()">🚫 Check for Overlays</button>
+        <button class="test-button" onclick="testTradesNavigation()">🎯 Test Trades Navigation</button>
+        <button class="test-button" onclick="testViewportSizes()">📱 Test Viewport Sizes</button>
+        <button class="test-button" onclick="runCompleteTest()">🚀 Run Complete Test</button>
+        <button class="test-button" onclick="clearResults()">🗑️ Clear Results</button>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        <div id="results" class="results"></div>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="app-frame" src="http://localhost:3000" title="Trading Journal Application"></iframe>
+    </div>
+
+    <div class="test-container">
+        <h2>📝 Manual Testing Checklist</h2>
+        <div id="checklist">
+            <label><input type="checkbox" id="check1"> Navigate to Trades page</label><br>
+            <label><input type="checkbox" id="check2"> Try to click other menu items from Trades</label><br>
+            <label><input type="checkbox" id="check3"> Test navigation: Trades → Dashboard</label><br>
+            <label><input type="checkbox" id="check4"> Test navigation: Dashboard → Trades</label><br>
+            <label><input type="checkbox" id="check5"> Test navigation: Trades → Strategies</label><br>
+            <label><input type="checkbox" id="check6"> Test navigation: Strategies → Trades</label><br>
+            <label><input type="checkbox" id="check7"> Test on mobile viewport</label><br>
+            <label><input type="checkbox" id="check8"> Check for visual overlays blocking menu</label><br>
+            <label><input type="checkbox" id="check9"> Monitor console for errors</label><br>
+            <label><input type="checkbox" id="check10"> Document exact freezing behavior</label><br>
+        </div>
+    </div>
+
+    <script>
+        let testResults = [];
+        let iframe = null;
+        let iframeWindow = null;
+        let iframeDocument = null;
+
+        // Initialize when page loads
+        window.onload = function() {
+            iframe = document.getElementById('app-frame');
+            iframe.onload = initializeIframe;
+        };
+
+        function initializeIframe() {
+            try {
+                iframeWindow = iframe.contentWindow;
+                iframeDocument = iframe.contentDocument || iframeWindow.document;
+                log('✅ Iframe initialized successfully');
+                showStatus('Iframe loaded and ready for testing', 'success');
+            } catch (error) {
+                log('❌ Failed to initialize iframe: ' + error.message);
+                showStatus('Failed to initialize iframe: ' + error.message, 'error');
+            }
+        }
+
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+            testResults.push(logEntry);
+            
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML += logEntry + '\n';
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+            
+            console.log(logEntry);
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function clearResults() {
+            testResults = [];
+            document.getElementById('results').innerHTML = '';
+            log('📋 Results cleared');
+        }
+
+        function executeInIframe(script) {
+            return new Promise((resolve, reject) => {
+                try {
+                    const result = iframeWindow.eval(script);
+                    resolve(result);
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        async function runInitialDiagnostics() {
+            log('🔍 Running initial diagnostics...');
+            
+            try {
+                // Check if we can access the iframe
+                if (!iframeWindow) {
+                    throw new Error('Iframe not accessible');
+                }
+
+                // Get current URL
+                const currentUrl = iframeWindow.location.href;
+                log(`📍 Current URL: ${currentUrl}`);
+
+                // Check for console errors
+                const consoleErrors = await executeInIframe(`
+                    (function() {
+                        const errors = [];
+                        const originalError = console.error;
+                        console.error = function(...args) {
+                            errors.push(args.join(' '));
+                            originalError.apply(console, args);
+                        };
+                        return errors;
+                    })()
+                `);
+
+                if (consoleErrors.length > 0) {
+                    log(`⚠️ Found ${consoleErrors.length} console errors`);
+                    consoleErrors.forEach(error => log(`   ${error}`));
+                } else {
+                    log('✅ No console errors detected');
+                }
+
+                // Check for menu elements
+                const menuElements = await executeInIframe(`
+                    document.querySelectorAll('nav a, .nav-item-luxury, .nav-link, button[onclick*="navigate"]').length
+                `);
+
+                log(`📊 Found ${menuElements} menu elements`);
+
+                showStatus('Initial diagnostics completed', 'success');
+
+            } catch (error) {
+                log(`❌ Initial diagnostics failed: ${error.message}`);
+                showStatus('Initial diagnostics failed: ' + error.message, 'error');
+            }
+        }
+
+        async function testMenuElements() {
+            log('🔘 Testing menu elements...');
+            
+            try {
+                const menuAnalysis = await executeInIframe(`
+                    (function() {
+                        const elements = [];
+                        const selectors = ['nav a', '.nav-item-luxury', '.nav-link', 'button[onclick*="navigate"]'];
+                        
+                        selectors.forEach(selector => {
+                            const nodeList = document.querySelectorAll(selector);
+                            nodeList.forEach(element => {
+                                const computedStyle = window.getComputedStyle(element);
+                                const rect = element.getBoundingClientRect();
+                                
+                                elements.push({
+                                    selector: selector,
+                                    tagName: element.tagName,
+                                    textContent: element.textContent?.trim(),
+                                    href: element.href,
+                                    visible: rect.width > 0 && rect.height > 0,
+                                    pointerEvents: computedStyle.pointerEvents,
+                                    zIndex: computedStyle.zIndex,
+                                    position: computedStyle.position,
+                                    display: computedStyle.display,
+                                    visibility: computedStyle.visibility,
+                                    opacity: computedStyle.opacity,
+                                    disabled: element.disabled,
+                                    rect: {
+                                        width: rect.width,
+                                        height: rect.height,
+                                        top: rect.top,
+                                        left: rect.left
+                                    }
+                                });
+                            });
+                        });
+                        
+                        return elements;
+                    })()
+                `);
+
+                log(`📊 Analyzed ${menuAnalysis.length} menu elements:`);
+                menuAnalysis.forEach((element, index) => {
+                    log(`   ${index + 1}. ${element.tagName} (${element.selector})`);
+                    log(`      Text: "${element.textContent}"`);
+                    log(`      Visible: ${element.visible}, Pointer Events: ${element.pointerEvents}`);
+                    log(`      Z-Index: ${element.zIndex}, Position: ${element.position}`);
+                    
+                    if (!element.visible || element.pointerEvents === 'none') {
+                        log(`      ⚠️ POTENTIAL ISSUE: Element may not be clickable`);
+                    }
+                });
+
+                showStatus('Menu elements analysis completed', 'success');
+
+            } catch (error) {
+                log(`❌ Menu elements test failed: ${error.message}`);
+                showStatus('Menu elements test failed: ' + error.message, 'error');
+            }
+        }
+
+        async function checkOverlays() {
+            log('🚫 Checking for blocking overlays...');
+            
+            try {
+                const overlayAnalysis = await executeInIframe(`
+                    (function() {
+                        const overlays = [];
+                        const allElements = document.querySelectorAll('*');
+                        
+                        allElements.forEach(element => {
+                            const computedStyle = window.getComputedStyle(element);
+                            const rect = element.getBoundingClientRect();
+                            
+                            if (computedStyle.position === 'fixed' && 
+                                parseInt(computedStyle.zIndex) > 5 &&
+                                rect.width > window.innerWidth * 0.5 &&
+                                rect.height > window.innerHeight * 0.5) {
+                                
+                                overlays.push({
+                                    element: element.tagName,
+                                    className: element.className,
+                                    id: element.id,
+                                    zIndex: computedStyle.zIndex,
+                                    pointerEvents: computedStyle.pointerEvents,
+                                    dimensions: {
+                                        width: rect.width,
+                                        height: rect.height,
+                                        top: rect.top,
+                                        left: rect.left
+                                    },
+                                    coversScreen: rect.width > window.innerWidth * 0.9 && 
+                                                 rect.height > window.innerHeight * 0.9
+                                });
+                            }
+                        });
+                        
+                        return overlays;
+                    })()
+                `);
+
+                if (overlayAnalysis.length > 0) {
+                    log(`🚫 Found ${overlayAnalysis.length} potential blocking overlays:`);
+                    overlayAnalysis.forEach((overlay, index) => {
+                        log(`   ${index + 1}. ${overlay.element} (${overlay.className})`);
+                        log(`      Z-Index: ${overlay.zIndex}, Pointer Events: ${overlay.pointerEvents}`);
+                        log(`      Covers Screen: ${overlay.coversScreen}`);
+                        log(`      Dimensions: ${overlay.dimensions.width}x${overlay.dimensions.height}`);
+                    });
+                    showStatus('Found potential blocking overlays', 'warning');
+                } else {
+                    log('✅ No blocking overlays detected');
+                    showStatus('No blocking overlays found', 'success');
+                }
+
+            } catch (error) {
+                log(`❌ Overlay check failed: ${error.message}`);
+                showStatus('Overlay check failed: ' + error.message, 'error');
+            }
+        }
+
+        async function testTradesNavigation() {
+            log('🎯 Testing Trades navigation issue...');
+            
+            try {
+                // First, try to find and click the Trades link
+                const tradesTest = await executeInIframe(`
+                    (function() {
+                        const results = [];
+                        
+                        // Find Trades navigation element
+                        const tradesElement = document.querySelector('a[href="/trades"], .nav-link[href*="trades"]');
+                        
+                        if (tradesElement) {
+                            const computedStyle = window.getComputedStyle(tradesElement);
+                            const rect = tradesElement.getBoundingClientRect();
+                            
+                            results.push({
+                                found: true,
+                                element: tradesElement.tagName,
+                                href: tradesElement.href,
+                                visible: rect.width > 0 && rect.height > 0,
+                                pointerEvents: computedStyle.pointerEvents,
+                                zIndex: computedStyle.zIndex,
+                                clickable: computedStyle.pointerEvents !== 'none' && 
+                                          computedStyle.display !== 'none' && 
+                                          computedStyle.visibility !== 'hidden' &&
+                                          !tradesElement.disabled
+                            });
+                            
+                            // Try to click it
+                            if (results[0].clickable) {
+                                tradesElement.click();
+                                results[0].clicked = true;
+                            } else {
+                                results[0].clicked = false;
+                                results[0].reason = 'Element not clickable';
+                            }
+                        } else {
+                            results.push({
+                                found: false,
+                                reason: 'Trades navigation element not found'
+                            });
+                        }
+                        
+                        return results;
+                    })()
+                `);
+
+                log(`🎯 Trades navigation test results:`);
+                tradesTest.forEach((result, index) => {
+                    if (result.found) {
+                        log(`   ${index + 1}. Found ${result.element} with href: ${result.href}`);
+                        log(`      Visible: ${result.visible}, Clickable: ${result.clickable}`);
+                        log(`      Click attempted: ${result.clicked}`);
+                        
+                        if (!result.clickable) {
+                            log(`      ⚠️ ISSUE: ${result.reason}`);
+                        }
+                    } else {
+                        log(`   ${index + 1}. ❌ ${result.reason}`);
+                    }
+                });
+
+                // Wait a moment and check if navigation occurred
+                setTimeout(async () => {
+                    const currentUrl = await executeInIframe('window.location.href');
+                    log(`📍 Current URL after navigation attempt: ${currentUrl}`);
+                    
+                    if (currentUrl.includes('trades')) {
+                        log('✅ Navigation to Trades page successful');
+                        showStatus('Trades navigation successful', 'success');
+                    } else {
+                        log('❌ Navigation to Trades page failed');
+                        showStatus('Trades navigation failed', 'error');
+                    }
+                }, 2000);
+
+            } catch (error) {
+                log(`❌ Trades navigation test failed: ${error.message}`);
+                showStatus('Trades navigation test failed: ' + error.message, 'error');
+            }
+        }
+
+        async function testViewportSizes() {
+            log('📱 Testing viewport sizes...');
+            
+            const viewports = [
+                { name: 'Desktop', width: 1920, height: 1080 },
+                { name: 'Tablet', width: 768, height: 1024 },
+                { name: 'Mobile', width: 375, height: 667 }
+            ];
+
+            for (const viewport of viewports) {
+                log(`🖥️ Testing ${viewport.name} viewport (${viewport.width}x${viewport.height})...`);
+                
+                try {
+                    // Set iframe viewport
+                    iframe.style.width = viewport.width + 'px';
+                    iframe.style.height = viewport.height + 'px';
+                    
+                    // Wait for resize to take effect
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Test menu elements in this viewport
+                    const menuCount = await executeInIframe(`
+                        document.querySelectorAll('nav a, .nav-item-luxury, .nav-link, button[onclick*="navigate"]').length
+                    `);
+                    
+                    log(`   Found ${menuCount} menu elements in ${viewport.name} viewport`);
+                    
+                    // Check for overlays
+                    const overlayCount = await executeInIframe(`
+                        document.querySelectorAll('.fixed, [style*="position: fixed"]').length
+                    `);
+                    
+                    log(`   Found ${overlayCount} fixed elements in ${viewport.name} viewport`);
+                    
+                } catch (error) {
+                    log(`   ❌ Viewport test failed: ${error.message}`);
+                }
+            }
+
+            // Reset to original size
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            
+            showStatus('Viewport testing completed', 'success');
+        }
+
+        async function runCompleteTest() {
+            log('🚀 Running complete menu freezing diagnosis...');
+            
+            showStatus('Running complete test suite...', 'warning');
+            
+            await runInitialDiagnostics();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            await testMenuElements();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            await checkOverlays();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            await testTradesNavigation();
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            
+            await testViewportSizes();
+            
+            log('✅ Complete test suite finished');
+            showStatus('Complete test suite finished', 'success');
+            
+            // Generate summary
+            const summary = {
+                totalTests: 5,
+                timestamp: new Date().toISOString(),
+                results: testResults.slice(-10) // Last 10 results
+            };
+            
+            log('📊 Test Summary: ' + JSON.stringify(summary, null, 2));
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey || event.metaKey) {
+                switch(event.key) {
+                    case '1':
+                        event.preventDefault();
+                        runInitialDiagnostics();
+                        break;
+                    case '2':
+                        event.preventDefault();
+                        testMenuElements();
+                        break;
+                    case '3':
+                        event.preventDefault();
+                        checkOverlays();
+                        break;
+                    case '4':
+                        event.preventDefault();
+                        testTradesNavigation();
+                        break;
+                    case '5':
+                        event.preventDefault();
+                        testViewportSizes();
+                        break;
+                    case '0':
+                        event.preventDefault();
+                        runCompleteTest();
+                        break;
+                }
+            }
+        });
+
+        log('🔍 Menu Freezing Diagnosis Tool loaded');
+        log('💡 Use Ctrl+1-5 for quick tests, Ctrl+0 for complete test');
+    </script>
+</body>
+</html>

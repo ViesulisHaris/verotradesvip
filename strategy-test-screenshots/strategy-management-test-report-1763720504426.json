@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "testName": "Strategy Management Comprehensive Test",
+    "startTime": "2025-11-21T10:21:40.988Z",
+    "endTime": "2025-11-21T10:21:44.425Z",
+    "totalTests": 1,
+    "passedTests": 0,
+    "failedTests": 1,
+    "successRate": "0.00%"
+  },
+  "testResults": {
+    "totalTests": 1,
+    "passedTests": 0,
+    "failedTests": 1,
+    "errors": [
+      {
+        "test": "User authentication",
+        "error": "Authentication failed"
+      }
+    ],
+    "screenshots": [],
+    "startTime": "2025-11-21T10:21:40.988Z",
+    "endTime": "2025-11-21T10:21:44.425Z"
+  },
+  "recommendations": [
+    "Review failed tests and fix identified issues",
+    "Address critical errors that prevented test execution"
+  ]
+}

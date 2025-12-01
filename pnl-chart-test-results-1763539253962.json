@@ -1,0 +1,251 @@
+{
+  "timestamp": "2025-11-19T08:00:53.961Z",
+  "testStatus": "PASSED",
+  "findings": {
+    "containerVisible": true,
+    "chartVisible": true,
+    "emptyStateHidden": true,
+    "sampleDataUsed": true,
+    "chartRendered": true,
+    "emptyStateDiagnosed": false
+  },
+  "evidence": {
+    "screenshotPath": "pnl-chart-test-screenshot-1763539253176.png",
+    "chartScreenshotPath": "pnl-chart-closeup-1763539253604.png",
+    "consoleLogs": [
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Processing PnL data: {totalTrades: 92, tradesWithPnL: 92, sampleTrades: Array(3)}",
+        "timestamp": "2025-11-19T08:00:51.401Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 92, sampleData: Array(3), finalCumulative: 5085.3899999999985}",
+        "timestamp": "2025-11-19T08:00:51.401Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] About to render PnLChart with processed data",
+        "timestamp": "2025-11-19T08:00:51.401Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Filtered valid trades: {totalTrades: 92, validTrades: 92, invalidTrades: 0, allTradesHaveNullPnL: false, sampleTradePnLs: Array(5)}",
+        "timestamp": "2025-11-19T08:00:51.402Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 92, sampleData: Array(3), finalCumulative: 5085.3899999999985}",
+        "timestamp": "2025-11-19T08:00:51.402Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Processing PnL data: {totalTrades: 92, tradesWithPnL: 92, sampleTrades: Array(3)}",
+        "timestamp": "2025-11-19T08:00:51.403Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 92, sampleData: Array(3), finalCumulative: 5085.3899999999985}",
+        "timestamp": "2025-11-19T08:00:51.403Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] About to render PnLChart with processed data",
+        "timestamp": "2025-11-19T08:00:51.403Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Filtered valid trades: {totalTrades: 92, validTrades: 92, invalidTrades: 0, allTradesHaveNullPnL: false, sampleTradePnLs: Array(5)}",
+        "timestamp": "2025-11-19T08:00:51.404Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 92, sampleData: Array(3), finalCumulative: 5085.3899999999985}",
+        "timestamp": "2025-11-19T08:00:51.405Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] PnLChart component rendered: {dataReceived: true, dataLength: 92, height: 300, timestamp: 2025-11-19T08:00:51.408Z, isSampleData: false}",
+        "timestamp": "2025-11-19T08:00:51.409Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Processing chart data: {hasData: true, dataLength: 92, sampleData: Array(3), diagnosis: Object}",
+        "timestamp": "2025-11-19T08:00:51.410Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Using provided data - chart should render normally",
+        "timestamp": "2025-11-19T08:00:51.410Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Processing chart data: {hasData: true, dataLength: 92, sampleData: Array(3), diagnosis: Object}",
+        "timestamp": "2025-11-19T08:00:51.410Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Using provided data - chart should render normally",
+        "timestamp": "2025-11-19T08:00:51.410Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Rendering actual chart with data: {dataPoints: 92, finalValue: 5085.3899999999985, isPositive: true}",
+        "timestamp": "2025-11-19T08:00:51.410Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] PnLChart component rendered: {dataReceived: true, dataLength: 92, height: 300, timestamp: 2025-11-19T08:00:51.410Z, isSampleData: false}",
+        "timestamp": "2025-11-19T08:00:51.411Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [PNL CHART DEBUG] Rendering actual chart with data: {dataPoints: 92, finalValue: 5085.3899999999985, isPositive: true}",
+        "timestamp": "2025-11-19T08:00:51.411Z"
+      }
+    ],
+    "networkRequests": [
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_a0ff3932._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.406Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/turbopack-verotradesvip_c9662cc4._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.423Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_supabase_client_ts_452621c1._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.424Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_59e50fb8._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.424Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_layout_tsx_5ce5bf72._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.424Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_a86ba833._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.424Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_dashboard_page_tsx_c5608ec8._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.425Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_dashboard_loading_tsx_22402bab._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.425Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_dashboard_loading_tsx_c5608ec8._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.426Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_supabase_client_ts_2293eef0._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.829Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_supabase_client_ts_0639056e._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.829Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.874Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_32b4a761._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.918Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_c5608ec8._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:42.918Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_32b4a761._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:43.000Z"
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_c5608ec8._.js",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:43.000Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:43.173Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql",
+        "method": "POST",
+        "timestamp": "2025-11-19T08:00:43.364Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:43.364Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:43.364Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+        "method": "POST",
+        "timestamp": "2025-11-19T08:00:50.148Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/user",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:50.822Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/user",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:50.973Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=*&user_id=eq.2df81203-0563-4d58-a4de-8f66a02f1c37",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:51.078Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=*&user_id=eq.2df81203-0563-4d58-a4de-8f66a02f1c37",
+        "method": "GET",
+        "timestamp": "2025-11-19T08:00:51.080Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=*&user_id=eq.2df81203-0563-4d58-a4de-8f66a02f1c37",
+        "method": "HEAD",
+        "timestamp": "2025-11-19T08:00:51.242Z"
+      },
+      {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=*&user_id=eq.2df81203-0563-4d58-a4de-8f66a02f1c37",
+        "method": "HEAD",
+        "timestamp": "2025-11-19T08:00:51.264Z"
+      }
+    ]
+  },
+  "summary": {
+    "chartAlwaysRenders": true,
+    "noEmptyStateMessage": true,
+    "debugLogsWorking": true,
+    "sampleDataFallback": true
+  }
+}

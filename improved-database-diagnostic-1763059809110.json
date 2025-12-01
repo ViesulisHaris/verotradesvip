@@ -1,0 +1,147 @@
+{
+  "timestamp": "2025-11-13T18:50:07.652Z",
+  "environment": {
+    "url": "Set",
+    "anonKey": "Set",
+    "serviceKey": "Set"
+  },
+  "tests": {
+    "Anon Strategies Query": {
+      "success": true,
+      "message": "Found 0 strategies",
+      "data": [],
+      "timestamp": "2025-11-13T18:50:08.197Z"
+    },
+    "Anon Trades Query": {
+      "success": true,
+      "message": "Found 0 trades",
+      "data": [],
+      "timestamp": "2025-11-13T18:50:08.341Z"
+    },
+    "Anon Profiles Query": {
+      "success": false,
+      "error": "Could not find the table 'public.profiles' in the schema cache",
+      "timestamp": "2025-11-13T18:50:08.456Z"
+    },
+    "Anon Strategies Join Query": {
+      "success": false,
+      "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache",
+      "hasComplianceError": false,
+      "hasCacheError": true,
+      "errorType": "CACHE",
+      "timestamp": "2025-11-13T18:50:08.555Z"
+    },
+    "Anon Complex Join Query": {
+      "success": false,
+      "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache",
+      "hasComplianceError": false,
+      "hasCacheError": true,
+      "errorType": "CACHE",
+      "timestamp": "2025-11-13T18:50:08.673Z"
+    },
+    "Service Strategies Query": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false,
+      "hasPermissionError": false,
+      "hasCacheError": false,
+      "errorType": "OTHER",
+      "timestamp": "2025-11-13T18:50:08.721Z"
+    },
+    "Service Trades Query": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false,
+      "errorType": "OTHER",
+      "timestamp": "2025-11-13T18:50:08.774Z"
+    },
+    "Service Profiles Query": {
+      "success": false,
+      "error": "Invalid API key",
+      "timestamp": "2025-11-13T18:50:08.848Z"
+    },
+    "Service Strategies Join Query": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false,
+      "hasCacheError": false,
+      "errorType": "OTHER",
+      "timestamp": "2025-11-13T18:50:08.887Z"
+    },
+    "Service Complex Join Query": {
+      "success": false,
+      "error": "Invalid API key",
+      "hasComplianceError": false,
+      "hasCacheError": false,
+      "errorType": "OTHER",
+      "timestamp": "2025-11-13T18:50:08.937Z"
+    },
+    "Schema - Table Existence Check": {
+      "success": false,
+      "error": "Invalid API key",
+      "timestamp": "2025-11-13T18:50:08.999Z"
+    },
+    "Schema - Views Check": {
+      "success": false,
+      "error": "Invalid API key",
+      "timestamp": "2025-11-13T18:50:09.045Z"
+    },
+    "Schema - RLS Policies Check": {
+      "success": false,
+      "error": "Invalid API key",
+      "timestamp": "2025-11-13T18:50:09.109Z"
+    }
+  },
+  "analysis": {
+    "complianceErrors": [],
+    "permissionErrors": [],
+    "cacheErrors": [
+      {
+        "test": "Anon Profiles Query",
+        "error": "Could not find the table 'public.profiles' in the schema cache"
+      },
+      {
+        "test": "Anon Strategies Join Query",
+        "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache"
+      },
+      {
+        "test": "Anon Complex Join Query",
+        "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache"
+      }
+    ],
+    "otherErrors": [
+      {
+        "test": "Service Strategies Query",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Service Trades Query",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Service Profiles Query",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Service Strategies Join Query",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Service Complex Join Query",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Schema - Table Existence Check",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Schema - Views Check",
+        "error": "Invalid API key"
+      },
+      {
+        "test": "Schema - RLS Policies Check",
+        "error": "Invalid API key"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "startTime": "2025-11-27T11:29:42.698Z",
+  "tests": [
+    {
+      "name": "AuthContext Initialization",
+      "status": "INCONCLUSIVE",
+      "details": "No clear AuthContext initialization evidence",
+      "evidence": {
+        "authLogs": []
+      },
+      "timestamp": "2025-11-27T11:29:51.344Z"
+    },
+    {
+      "name": "Test Credentials",
+      "status": "FAIL",
+      "details": "Exception during test: Cannot set properties of null (setting 'value')",
+      "evidence": {
+        "error": "Cannot set properties of null (setting 'value')"
+      },
+      "timestamp": "2025-11-27T11:29:52.379Z"
+    },
+    {
+      "name": "Supabase Configuration",
+      "status": "FAIL",
+      "details": "Supabase configuration issues detected",
+      "evidence": {
+        "supabaseConfig": {
+          "supabaseAvailable": false,
+          "supabaseKeys": [],
+          "windowKeys": 239
+        },
+        "networkRequests": []
+      },
+      "timestamp": "2025-11-27T11:29:58.903Z"
+    }
+  ],
+  "hypotheses": {
+    "authContextInitialization": "INCONCLUSIVE",
+    "testCredentials": "ERROR",
+    "supabaseConfiguration": "FAILED"
+  },
+  "finalDiagnosis": "PRIMARY ISSUE: Supabase configuration problems. The Supabase client is not properly configured or accessible.",
+  "recommendations": [
+    "Verify Supabase URL and API key in .env file",
+    "Check network connectivity to Supabase",
+    "Ensure CORS is properly configured in Supabase project"
+  ],
+  "endTime": "2025-11-27T11:29:58.904Z",
+  "duration": 16206
+}

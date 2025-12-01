@@ -1,0 +1,16 @@
+{
+  "authentication": {
+    "success": false,
+    "error": "Navigation timeout of 30000 ms exceeded"
+  },
+  "dashboardVisualEnhancements": {},
+  "pnlGraphVisibility": {},
+  "existingFunctionality": {},
+  "performance": {},
+  "crossBrowserCompatibility": {},
+  "summary": {
+    "passed": 0,
+    "failed": 0,
+    "total": 0
+  }
+}

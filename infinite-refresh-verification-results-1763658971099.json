@@ -1,0 +1,822 @@
+{
+  "timestamp": "2025-11-20T17:15:27.612Z",
+  "tests": [
+    {
+      "name": "Strategies Performance Details Page Navigation",
+      "status": "warning",
+      "details": [
+        "📝 Login form detected, attempting login...",
+        "✅ Strategies page loaded successfully"
+      ],
+      "errors": [
+        "⚠️ No strategy cards found - may need to create test data"
+      ]
+    },
+    {
+      "name": "Infinite Refresh Loop Detection",
+      "status": "passed",
+      "details": [
+        "✅ Normal request frequency: 0.00 req/sec",
+        "✅ Low loop indicators: 0",
+        "📊 Total requests: 0",
+        "📊 Refresh requests: 0",
+        "📊 Unique URLs: 0"
+      ],
+      "errors": [],
+      "metrics": {
+        "totalRequests": 0,
+        "refreshRequests": 0,
+        "uniqueUrls": {},
+        "requestFrequency": []
+      }
+    },
+    {
+      "name": "Edge Cases Testing",
+      "status": "passed",
+      "details": [
+        "🔄 Testing navigation between different strategies...",
+        "🔄 Testing tab switching...",
+        "🔄 Testing page refresh...",
+        "✅ Page refreshed successfully",
+        "🔄 Testing browser navigation...",
+        "✅ Browser back/forward navigation successful"
+      ],
+      "errors": []
+    },
+    {
+      "name": "Functionality Preservation",
+      "status": "warning",
+      "details": [
+        "🔍 Testing data loading...",
+        "🔍 Testing chart rendering...",
+        "✅ Found 2 chart element(s)",
+        "🔍 Testing interactive elements...",
+        "✅ Found 2 buttons and 1 links",
+        "🔍 Testing error handling...",
+        "✅ No error elements found"
+      ],
+      "errors": [
+        "⚠️ No performance metrics found"
+      ]
+    }
+  ],
+  "networkRequests": [
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_client_components_builtin_global-error_5ce5bf72.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_6a3f9dcc._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_a939ab56._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_realtime-js_dist_module_4d3180c1._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_storage-js_dist_module_3fa7fdb8._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_auth-js_dist_module_28f3f423._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_ogl_src_452d4f6b._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_85b5030f._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_layout_tsx_5ce5bf72._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_32b4a761._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_9fde63ef._.js",
+      "method": "GET",
+      "timestamp": 1763658965937
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "timestamp": 1763658965948
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "timestamp": 1763658965956
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "timestamp": 1763658966037
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1e8f33f4._.js",
+      "method": "GET",
+      "timestamp": 1763658966037
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_2293eef0._.js",
+      "method": "GET",
+      "timestamp": 1763658966118
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_3bc2d6f5._.js",
+      "method": "GET",
+      "timestamp": 1763658966119
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": 1763658966134
+    },
+    {
+      "url": "http://localhost:3001/login",
+      "method": "GET",
+      "timestamp": 1763658966781
+    },
+    {
+      "url": "http://localhost:3001/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "timestamp": 1763658966870
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__8c47ac2d._.css",
+      "method": "GET",
+      "timestamp": 1763658966873
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_ccd75c84._.js",
+      "method": "GET",
+      "timestamp": 1763658966875
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_compiled_react-dom_711b02c2._.js",
+      "method": "GET",
+      "timestamp": 1763658966875
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_compiled_react-server-dom-turbopack_1a8cf750._.js",
+      "method": "GET",
+      "timestamp": 1763658966875
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_compiled_next-devtools_index_23c9937b.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_compiled_cd93a7be._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_client_4b768334._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40swc_helpers_cjs_839513fb._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_a0ff3932._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/turbopack-verotradesvip_c9662cc4._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_a5bd97f8._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_client_components_builtin_global-error_5ce5bf72.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_6a3f9dcc._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_a939ab56._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_realtime-js_dist_module_4d3180c1._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_storage-js_dist_module_3fa7fdb8._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_%40supabase_auth-js_dist_module_28f3f423._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_ogl_src_452d4f6b._.js",
+      "method": "GET",
+      "timestamp": 1763658966876
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/ccca7_85b5030f._.js",
+      "method": "GET",
+      "timestamp": 1763658966877
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_layout_tsx_5ce5bf72._.js",
+      "method": "GET",
+      "timestamp": 1763658966877
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_32b4a761._.js",
+      "method": "GET",
+      "timestamp": 1763658966877
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_app_(auth)_login_page_tsx_9fde63ef._.js",
+      "method": "GET",
+      "timestamp": 1763658966877
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "timestamp": 1763658966892
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "timestamp": 1763658966900
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "timestamp": 1763658966971
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1e8f33f4._.js",
+      "method": "GET",
+      "timestamp": 1763658966971
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_2293eef0._.js",
+      "method": "GET",
+      "timestamp": 1763658967062
+    },
+    {
+      "url": "http://localhost:3001/_next/static/chunks/verotradesvip_src_supabase_client_ts_3bc2d6f5._.js",
+      "method": "GET",
+      "timestamp": 1763658967062
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": 1763658967089
+    }
+  ],
+  "consoleLogs": [
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "timestamp": 1763658931958
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658931958
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": 1763658931997
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "timestamp": 1763658931997
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": 1763658964911
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": 1763658964941
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": 1763658964946
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": 1763658964946
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": 1763658964946
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "timestamp": 1763658964946
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T17:16:04.947Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": 1763658964946
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "timestamp": 1763658964947
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "timestamp": 1763658964947
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": 1763658964947
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": 1763658964947
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+      "timestamp": 1763658964947
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658964972
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "timestamp": 1763658964975
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "timestamp": 1763658964978
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "timestamp": 1763658964978
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "timestamp": 1763658964978
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "timestamp": 1763658965005
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "timestamp": 1763658965005
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "timestamp": 1763658965005
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "timestamp": 1763658965005
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "timestamp": 1763658965005
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "timestamp": 1763658965006
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "timestamp": 1763658965008
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "timestamp": 1763658965009
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658965010
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "timestamp": 1763658965011
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-20T17:16:05.030Z}",
+      "timestamp": 1763658965032
+    },
+    {
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: {hasSession: false, userId: undefined, sessionExpiresAt: no expiry}",
+      "timestamp": 1763658965035
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, sessionExpiresAt: no expiry, timestamp: 2025-11-20T17:16:05.044Z}",
+      "timestamp": 1763658965048
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": 1763658965313
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "timestamp": 1763658965313
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": 1763658966021
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": 1763658966049
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": 1763658966053
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": 1763658966053
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": 1763658966054
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "timestamp": 1763658966054
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T17:16:06.054Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": 1763658966054
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "timestamp": 1763658966054
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "timestamp": 1763658966054
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": 1763658966055
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": 1763658966055
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+      "timestamp": 1763658966055
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658966080
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "timestamp": 1763658966084
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "timestamp": 1763658966087
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "timestamp": 1763658966087
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "timestamp": 1763658966087
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "timestamp": 1763658966110
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "timestamp": 1763658966110
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "timestamp": 1763658966110
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "timestamp": 1763658966110
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "timestamp": 1763658966111
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "timestamp": 1763658966111
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "timestamp": 1763658966116
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "timestamp": 1763658966117
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658966117
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "timestamp": 1763658966117
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-20T17:16:06.131Z}",
+      "timestamp": 1763658966131
+    },
+    {
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: {hasSession: false, userId: undefined, sessionExpiresAt: no expiry}",
+      "timestamp": 1763658966132
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, sessionExpiresAt: no expiry, timestamp: 2025-11-20T17:16:06.134Z}",
+      "timestamp": 1763658966135
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": 1763658966266
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "timestamp": 1763658966266
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": 1763658966956
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": 1763658966983
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": 1763658966995
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": 1763658966995
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": 1763658966996
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "timestamp": 1763658966996
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T17:16:06.996Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": 1763658966996
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "timestamp": 1763658966996
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "timestamp": 1763658966996
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": 1763658966998
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": 1763658966998
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+      "timestamp": 1763658966998
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658967020
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "timestamp": 1763658967022
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "timestamp": 1763658967026
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "timestamp": 1763658967027
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "timestamp": 1763658967027
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "timestamp": 1763658967053
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "timestamp": 1763658967054
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "timestamp": 1763658967054
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "timestamp": 1763658967054
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "timestamp": 1763658967054
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "timestamp": 1763658967055
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "timestamp": 1763658967058
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "timestamp": 1763658967058
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "timestamp": 1763658967060
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "timestamp": 1763658967060
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-20T17:16:07.085Z}",
+      "timestamp": 1763658967085
+    },
+    {
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: {hasSession: false, userId: undefined, sessionExpiresAt: no expiry}",
+      "timestamp": 1763658967085
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, sessionExpiresAt: no expiry, timestamp: 2025-11-20T17:16:07.088Z}",
+      "timestamp": 1763658967090
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": 1763658967223
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "timestamp": 1763658967224
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0,
+    "total": 4
+  }
+}

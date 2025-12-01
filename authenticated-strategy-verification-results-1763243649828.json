@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-11-15T21:54:01.958Z",
+  "tests": [
+    {
+      "name": "Strategy Page Load (Authenticated)",
+      "status": "PASSED",
+      "details": "Strategy page loads without errors after authentication"
+    }
+  ],
+  "screenshots": [
+    "strategies-authenticated-1763243647363.png",
+    "strategies-final-auth-1763243649118.png"
+  ],
+  "errors": [
+    "Create strategy button not accessible"
+  ],
+  "success": false
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-15T21:53:02.542Z",
+  "tests": [
+    {
+      "name": "Page Navigation",
+      "status": "PASSED",
+      "details": "Strategies page loads correctly after navigation"
+    }
+  ],
+  "screenshots": [
+    "strategies-initial-load-1763243584657.png",
+    "strategies-final-state-1763243587797.png"
+  ],
+  "errors": [
+    "No strategies or empty state displayed",
+    "Create strategy button not accessible"
+  ],
+  "success": false
+}

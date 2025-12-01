@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Transition Smoothness Test</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .test-container {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 256px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(59, 130, 246, 0.2);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0);
+            will-change: width;
+            backface-visibility: hidden;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .sidebar.collapsed {
+            width: 64px;
+        }
+
+        .sidebar.transitioning {
+            contain: layout style paint;
+            will-change: width, transform;
+            pointer-events: none;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0);
+            will-change: margin-left;
+            backface-visibility: hidden;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .chart-container {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            contain: layout style paint;
+            will-change: transform, width;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            min-width: 250px;
+            min-height: 300px;
+            width: 100%;
+            height: 400px;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(20, 184, 166, 0.1), rgba(6, 182, 212, 0.1));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            padding: 0.75rem 1.5rem;
+            background: rgba(59, 130, 246, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .toggle-button:hover {
+            background: rgba(59, 130, 246, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .performance-indicator {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            z-index: 1000;
+        }
+
+        .metric {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            min-width: 200px;
+        }
+
+        .metric-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .metric-value {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .glitch-detector {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .glitch-detector.active {
+            border-color: rgba(239, 68, 68, 0.5);
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="sidebar" id="sidebar">
+            <div style="padding: 1rem; text-align: center;">
+                <div style="width: 32px; height: 32px; background: rgba(59, 130, 246, 0.3); border-radius: 0.5rem; margin: 0 auto 1rem;"></div>
+                <div style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.7);">Sidebar</div>
+            </div>
+        </div>
+        
+        <div class="main-content" id="mainContent">
+            <h1 style="margin-bottom: 2rem;">Sidebar Transition Smoothness Test</h1>
+            
+            <div class="chart-container">
+                <div class="glitch-detector" id="chart1Detector"></div>
+                <div class="chart-placeholder">Emotion Radar Chart</div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="glitch-detector" id="chart2Detector"></div>
+                <div class="chart-placeholder">P&L Chart</div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem;">
+                <h3 style="margin-bottom: 1rem;">Test Instructions:</h3>
+                <ol style="line-height: 1.6;">
+                    <li>Click the "Toggle Sidebar" button multiple times rapidly</li>
+                    <li>Watch for any visual glitches, jumps, or layout shifts</li>
+                    <li>Observe the performance metrics in the top-left corner</li>
+                    <li>Charts should resize smoothly without any flickering</li>
+                    <li>All animations should be synchronized and buttery smooth</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <button class="toggle-button" id="toggleButton">Toggle Sidebar</button>
+    
+    <div class="performance-indicator">
+        <div class="metric">
+            <span class="metric-label">Frame Rate:</span>
+            <span class="metric-value" id="fps">60 FPS</span>
+        </div>
+        <div class="metric">
+            <span class="metric-label">Transition Time:</span>
+            <span class="metric-value" id="transitionTime">0ms</span>
+        </div>
+        <div class="metric">
+            <span class="metric-label">Layout Shifts:</span>
+            <span class="metric-value" id="layoutShifts">0</span>
+        </div>
+        <div class="metric">
+            <span class="metric-label">Glitches:</span>
+            <span class="metric-value" id="glitches">0</span>
+        </div>
+    </div>
+
+    <script>
+        let isCollapsed = false;
+        let isTransitioning = false;
+        let layoutShiftCount = 0;
+        let glitchCount = 0;
+        let transitionStartTime = 0;
+        let lastFrameTime = performance.now();
+        let frameCount = 0;
+        let fps = 60;
+
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleButton = document.getElementById('toggleButton');
+        const fpsElement = document.getElementById('fps');
+        const transitionTimeElement = document.getElementById('transitionTime');
+        const layoutShiftsElement = document.getElementById('layoutShifts');
+        const glitchesElement = document.getElementById('glitches');
+        const chart1Detector = document.getElementById('chart1Detector');
+        const chart2Detector = document.getElementById('chart2Detector');
+
+        // Performance monitoring
+        function updateFPS() {
+            frameCount++;
+            const currentTime = performance.now();
+            const deltaTime = currentTime - lastFrameTime;
+            
+            if (deltaTime >= 1000) {
+                fps = Math.round((frameCount * 1000) / deltaTime);
+                fpsElement.textContent = `${fps} FPS`;
+                frameCount = 0;
+                lastFrameTime = currentTime;
+            }
+            
+            requestAnimationFrame(updateFPS);
+        }
+
+        // Layout shift detection
+        function detectLayoutShifts() {
+            const charts = document.querySelectorAll('.chart-container');
+            charts.forEach((chart, index) => {
+                const rect = chart.getBoundingClientRect();
+                const detector = index === 0 ? chart1Detector : chart2Detector;
+                
+                // Simple layout shift detection
+                if (Math.abs(rect.width - parseFloat(chart.style.width || rect.width)) > 1) {
+                    layoutShiftCount++;
+                    layoutShiftsElement.textContent = layoutShiftCount;
+                    detector.classList.add('active');
+                    setTimeout(() => detector.classList.remove('active'), 500);
+                }
+            });
+        }
+
+        // Toggle sidebar function
+        function toggleSidebar() {
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            transitionStartTime = performance.now();
+            
+            // Add transitioning class
+            sidebar.classList.add('transitioning');
+            
+            // Toggle collapsed state
+            isCollapsed = !isCollapsed;
+            if (isCollapsed) {
+                sidebar.classList.add('collapsed');
+                mainContent.style.marginLeft = '64px';
+            } else {
+                sidebar.classList.remove('collapsed');
+                mainContent.style.marginLeft = '256px';
+            }
+            
+            // Monitor for layout shifts during transition
+            const shiftMonitor = setInterval(detectLayoutShifts, 16);
+            
+            // Complete transition
+            setTimeout(() => {
+                clearInterval(shiftMonitor);
+                isTransitioning = false;
+                sidebar.classList.remove('transitioning');
+                
+                const transitionDuration = performance.now() - transitionStartTime;
+                transitionTimeElement.textContent = `${Math.round(transitionDuration)}ms`;
+                
+                // Check for glitches
+                if (transitionDuration > 350) {
+                    glitchCount++;
+                    glitchesElement.textContent = glitchCount;
+                }
+            }, 300);
+        }
+
+        // Event listeners
+        toggleButton.addEventListener('click', toggleSidebar);
+        
+        // Keyboard shortcut
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'b') {
+                e.preventDefault();
+                toggleSidebar();
+            }
+        });
+
+        // Start performance monitoring
+        requestAnimationFrame(updateFPS);
+        
+        // Initial setup
+        mainContent.style.marginLeft = '256px';
+    </script>
+</body>
+</html>

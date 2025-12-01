@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu Manual Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to match the app */
+        .glass {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .sidebar-overlay {
+            transition: transform 0.3s ease-out;
+            transform: translateX(-100%);
+        }
+        
+        .sidebar-overlay.open {
+            transform: translateX(0);
+        }
+        
+        .sidebar-backdrop {
+            background: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .sidebar-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .hamburger-button {
+            background: #B89B5E;
+            color: #EAE6DD;
+            min-height: 48px;
+            min-width: 48px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .hamburger-button:active {
+            transform: scale(0.95);
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+        
+        .nav-item:hover {
+            background: linear-gradient(135deg, rgba(184, 155, 94, 0.3), rgba(184, 155, 94, 0.2));
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="min-h-screen">
+        <!-- Top Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 h-[60px] bg-[#121212]">
+            <div class="h-full px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between">
+                <!-- Left side - Hamburger menu and logo -->
+                <div class="flex items-center gap-3">
+                    <!-- Hamburger Menu Button - Only visible on mobile -->
+                    <button
+                        id="hamburgerButton"
+                        onclick="toggleSidebar()"
+                        class="lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button"
+                        title="Toggle mobile menu"
+                        aria-label="Toggle mobile menu"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Logo -->
+                    <div class="block sm:hidden">
+                        <span class="text-lg font-bold text-white">VT</span>
+                    </div>
+                    <div class="hidden sm:block md:hidden">
+                        <span class="text-lg font-bold text-white">Vero</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <span class="text-lg font-bold text-white">VeroTrade</span>
+                    </div>
+                </div>
+
+                <!-- Logout Button -->
+                <button class="group relative flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#1A1A1A] hover:bg-[#2A2A2A] text-[#EAE6DD] rounded-full transition-all duration-300 text-sm font-medium hover:scale-105 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 focus:ring-offset-2 focus:ring-offset-[#121212] touch-manipulation" style="border-radius: 20px; border: 1px solid rgba(184, 155, 94, 0.3)">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4 4m4-4H9a6 6 0 00-6 6v8a6 6 0 006 6h7"></path>
+                    </svg>
+                    <span class="hidden xs:inline sm:inline">Logout</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Overlay -->
+        <div
+            id="sidebarBackdrop"
+            onclick="closeSidebar()"
+            class="fixed inset-0 z-[55] sidebar-backdrop"
+            aria-hidden="true"
+        />
+
+        <!-- Sidebar -->
+        <aside
+            id="sidebar"
+            class="fixed top-0 left-0 h-full w-80 sm:w-72 sidebar-overlay z-[60] lg:hidden glass"
+            style="backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); background-color: #1A1A1A;"
+        >
+            <!-- Sidebar content -->
+            <div class="flex flex-col h-full">
+                <!-- Sidebar Header -->
+                <div class="flex items-center justify-between p-6 border-b border-dusty-gold/30 glass-enhanced" style="border-color: rgba(184, 155, 94, 0.3);">
+                    <span class="text-lg font-bold text-white">VeroTrade</span>
+                    <button
+                        onclick="closeSidebar()"
+                        class="p-2 rounded-lg hover:bg-white/10 transition-all group sidebar-toggle-button"
+                        title="Close menu"
+                        aria-label="Close menu"
+                    >
+                        <svg class="w-5 h-5 text-white group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex-1 p-4 sm:p-4 space-y-3 sm:space-y-2 overflow-y-auto scrollbar-glass bg-soft-graphite/50" style="background-color: rgba(55, 65, 81, 0.5);">
+                    <a href="#" class="sidebar-menu-item flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation nav-item" style="background: linear-gradient(135deg, rgba(184, 155, 94, 0.3), rgba(184, 155, 94, 0.2)); border: 1px solid rgba(184, 155, 94, 0.5); box-shadow: 0 4px 20px rgba(184, 155, 94, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
+                        <svg class="w-6 h-6 sm:w-5 sm:h-5 transition-all flex-shrink-0 relative z-10 text-yellow-400 scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 00-1 1v4a1 1 0 001 1h3m-6 0h6"></path>
+                        </svg>
+                        <span class="font-medium transition-all relative z-10 text-white">Dashboard</span>
+                    </a>
+                    
+                    <a href="#" class="sidebar-menu-item flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation nav-item text-white/80 hover:text-white">
+                        <svg class="w-6 h-6 sm:w-5 sm:h-5 transition-all flex-shrink-0 relative z-10 text-white/80 group-hover:text-yellow-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        <span class="font-medium transition-all relative z-10 text-white/80 group-hover:text-white">Log Trade</span>
+                    </a>
+                    
+                    <a href="#" class="sidebar-menu-item flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation nav-item text-white/80 hover:text-white">
+                        <svg class="w-6 h-6 sm:w-5 sm:h-5 transition-all flex-shrink-0 relative z-10 text-white/80 group-hover:text-yellow-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332-.477 4.5-1.253M12 6.253V9"></path>
+                        </svg>
+                        <span class="font-medium transition-all relative z-10 text-white/80 group-hover:text-white">Strategies</span>
+                    </a>
+                    
+                    <a href="#" class="sidebar-menu-item flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation nav-item text-white/80 hover:text-white">
+                        <svg class="w-6 h-6 sm:w-5 sm:h-5 transition-all flex-shrink-0 relative z-10 text-white/80 group-hover:text-yellow-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-medium transition-all relative z-10 text-white/80 group-hover:text-white">Trades</span>
+                    </a>
+                    
+                    <a href="#" class="sidebar-menu-item flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation nav-item text-white/80 hover:text-white">
+                        <svg class="w-6 h-6 sm:w-5 sm:h-5 transition-all flex-shrink-0 relative z-10 text-white/80 group-hover:text-yellow-400 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-medium transition-all relative z-10 text-white/80 group-hover:text-white">Calendar</span>
+                    </a>
+                </nav>
+
+                <!-- Sidebar Footer -->
+                <div class="p-4 border-t border-dusty-gold/30 glass-enhanced" style="border-color: rgba(184, 155, 94, 0.3);">
+                    <div class="flex items-center gap-2 text-xs text-white/60">
+                        <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                        <span>Connected</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="pt-[60px] p-6 lg:ml-0">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-bold text-white mb-8">Hamburger Menu Manual Test</h1>
+                
+                <!-- Test Controls -->
+                <div class="bg-gray-800 rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-semibold text-white mb-4">Test Controls</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <button onclick="testViewport(320, 568)" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Mobile Small (320x568)
+                        </button>
+                        <button onclick="testViewport(375, 667)" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Mobile Medium (375x667)
+                        </button>
+                        <button onclick="testViewport(414, 896)" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Mobile Large (414x896)
+                        </button>
+                        <button onclick="testViewport(768, 1024)" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Tablet (768x1024)
+                        </button>
+                        <button onclick="testViewport(1024, 768)" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Desktop Small (1024x768)
+                        </button>
+                        <button onclick="testViewport(1280, 800)" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition-colors">
+                            Test Desktop Medium (1280x800)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Test Results -->
+                <div class="bg-gray-800 rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-semibold text-white mb-4">Test Results</h2>
+                    <div id="testResults" class="space-y-2">
+                        <p class="text-gray-400">Click the test buttons above to begin testing...</p>
+                    </div>
+                </div>
+
+                <!-- Manual Test Instructions -->
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-white mb-4">Manual Test Instructions</h2>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <li>Resize your browser window using the test buttons above</li>
+                        <li>On mobile sizes (<1024px), the hamburger menu should be visible</li>
+                        <li>On desktop sizes (≥1024px), the hamburger menu should be hidden</li>
+                        <li>Click the hamburger menu to open the sidebar</li>
+                        <li>Click the overlay or close button to close the sidebar</li>
+                        <li>Test navigation links in the sidebar</li>
+                        <li>Verify touch-friendly sizing (minimum 44x44px)</li>
+                        <li>Check accessibility attributes (aria-label, title, etc.)</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let sidebarOpen = false;
+
+        function toggleSidebar() {
+            sidebarOpen = !sidebarOpen;
+            updateSidebarState();
+            logTest(`Hamburger menu clicked - Sidebar ${sidebarOpen ? 'opened' : 'closed'}`);
+        }
+
+        function closeSidebar() {
+            sidebarOpen = false;
+            updateSidebarState();
+            logTest('Sidebar closed via overlay/close button');
+        }
+
+        function updateSidebarState() {
+            const sidebar = document.getElementById('sidebar');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            const hamburgerButton = document.getElementById('hamburgerButton');
+            
+            if (sidebarOpen) {
+                sidebar.classList.add('open');
+                backdrop.classList.add('open');
+                hamburgerButton.setAttribute('aria-expanded', 'true');
+            } else {
+                sidebar.classList.remove('open');
+                backdrop.classList.remove('open');
+                hamburgerButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        function testViewport(width, height) {
+            // Set viewport size
+            document.body.style.width = width + 'px';
+            document.body.style.maxWidth = width + 'px';
+            document.body.style.height = height + 'px';
+            document.body.style.maxHeight = height + 'px';
+            document.body.style.overflow = 'hidden';
+            
+            // Close sidebar when changing viewport
+            closeSidebar();
+            
+            // Run tests after a short delay
+            setTimeout(() => {
+                runTests(width, height);
+            }, 100);
+        }
+
+        function runTests(width, height) {
+            const results = [];
+            const hamburgerButton = document.getElementById('hamburgerButton');
+            const sidebar = document.getElementById('sidebar');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            
+            // Test 1: Hamburger menu visibility
+            const shouldBeVisible = width < 1024;
+            const isVisible = hamburgerButton && window.getComputedStyle(hamburgerButton).display !== 'none';
+            const visibilityCorrect = isVisible === shouldBeVisible;
+            
+            results.push({
+                test: 'Hamburger Menu Visibility',
+                expected: shouldBeVisible ? 'Visible' : 'Hidden',
+                actual: isVisible ? 'Visible' : 'Hidden',
+                status: visibilityCorrect ? 'PASS' : 'FAIL',
+                details: `Screen: ${width}x${height}, Expected: ${shouldBeVisible ? 'Visible' : 'Hidden'}`
+            });
+            
+            // Test 2: Touch-friendly sizing
+            if (isVisible) {
+                const rect = hamburgerButton.getBoundingClientRect();
+                const isTouchFriendly = rect.width >= 44 && rect.height >= 44;
+                
+                results.push({
+                    test: 'Touch-Friendly Sizing',
+                    expected: '≥44x44px',
+                    actual: `${Math.round(rect.width)}x${Math.round(rect.height)}px`,
+                    status: isTouchFriendly ? 'PASS' : 'FAIL',
+                    details: `Button size: ${Math.round(rect.width)}x${Math.round(rect.height)}px`
+                });
+            }
+            
+            // Test 3: Accessibility attributes
+            if (isVisible) {
+                const hasAriaLabel = hamburgerButton.hasAttribute('aria-label');
+                const hasTitle = hamburgerButton.hasAttribute('title');
+                const hasAriaExpanded = hamburgerButton.hasAttribute('aria-expanded');
+                
+                results.push({
+                    test: 'Accessibility Attributes',
+                    expected: 'aria-label, title, aria-expanded',
+                    actual: `aria-label: ${hasAriaLabel}, title: ${hasTitle}, aria-expanded: ${hasAriaExpanded}`,
+                    status: (hasAriaLabel && hasTitle && hasAriaExpanded) ? 'PASS' : 'FAIL',
+                    details: `Accessibility check passed: ${hasAriaLabel && hasTitle && hasAriaExpanded}`
+                });
+            }
+            
+            // Test 4: Sidebar functionality
+            if (isVisible) {
+                // Test opening
+                toggleSidebar();
+                const sidebarOpenAfterClick = sidebar.classList.contains('open');
+                const backdropVisibleAfterClick = backdrop.classList.contains('open');
+                
+                results.push({
+                    test: 'Sidebar Opens on Click',
+                    expected: 'Sidebar and backdrop visible',
+                    actual: `Sidebar: ${sidebarOpenAfterClick}, Backdrop: ${backdropVisibleAfterClick}`,
+                    status: (sidebarOpenAfterClick && backdropVisibleAfterClick) ? 'PASS' : 'FAIL',
+                    details: 'Click functionality test'
+                });
+                
+                // Test closing
+                setTimeout(() => {
+                    closeSidebar();
+                    const sidebarClosedAfterClose = !sidebar.classList.contains('open');
+                    const backdropHiddenAfterClose = !backdrop.classList.contains('open');
+                    
+                    results.push({
+                        test: 'Sidebar Closes on Close',
+                        expected: 'Sidebar and backdrop hidden',
+                        actual: `Sidebar: ${!sidebarClosedAfterClose}, Backdrop: ${!backdropHiddenAfterClose}`,
+                        status: (sidebarClosedAfterClose && backdropHiddenAfterClose) ? 'PASS' : 'FAIL',
+                        details: 'Close functionality test'
+                    });
+                    
+                    displayResults(results);
+                }, 500);
+            } else {
+                displayResults(results);
+            }
+        }
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('testResults');
+            const timestamp = new Date().toLocaleString();
+            
+            let html = `<p class="text-gray-400 mb-4">Test completed at: ${timestamp}</p>`;
+            
+            results.forEach(result => {
+                const statusColor = result.status === 'PASS' ? 'text-green-400' : 'text-red-400';
+                const statusIcon = result.status === 'PASS' ? '✅' : '❌';
+                
+                html += `
+                    <div class="border border-gray-700 rounded p-3">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-medium text-white">${result.test}</span>
+                            <span class="${statusColor}">${statusIcon} ${result.status}</span>
+                        </div>
+                        <div class="text-sm text-gray-400">
+                            <div>Expected: ${result.expected}</div>
+                            <div>Actual: ${result.actual}</div>
+                            <div>${result.details}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        function logTest(message) {
+            console.log(`[HAMBURGER MENU TEST] ${message}`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            logTest('Test page loaded');
+            updateSidebarState();
+        });
+    </script>
+</body>
+</html>

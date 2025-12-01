@@ -1,0 +1,35 @@
+{
+  "startTime": "2025-11-27T13:12:09.480Z",
+  "tests": [
+    {
+      "name": "Home page accessible",
+      "passed": false,
+      "details": "Page failed to load",
+      "timestamp": "2025-11-27T13:12:42.687Z"
+    },
+    {
+      "name": "Login page accessible",
+      "passed": false,
+      "details": "Login page failed",
+      "timestamp": "2025-11-27T13:12:53.086Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "home-page",
+      "path": "focused-auth-screenshots\\home-page-1764249140939.png"
+    },
+    {
+      "name": "login-page",
+      "path": "focused-auth-screenshots\\login-page-1764249173014.png"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 2,
+    "total": 2
+  },
+  "endTime": "2025-11-27T13:12:53.087Z",
+  "duration": "43607ms",
+  "passRate": "0.00%"
+}

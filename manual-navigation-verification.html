@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Navigation Verification - Trades Tab Freeze Issue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-step {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .status {
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .pending { background: #ffc107; color: #000; }
+        .pass { background: #28a745; color: #fff; }
+        .fail { background: #dc3545; color: #fff; }
+        .info { background: #17a2b8; color: #fff; }
+        .debug-info {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .iframe-container {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Manual Navigation Verification - Trades Tab Freeze Issue</h1>
+    
+    <div class="test-section">
+        <h2>📋 Test Instructions</h2>
+        <p>This manual test will help verify if the Trades tab navigation freeze issue has been resolved. Follow these steps systematically:</p>
+        
+        <div class="test-step">
+            <strong>Step 1:</strong> Open the application in the iframe below and login with test credentials
+            <span class="status pending" id="step1-status">PENDING</span>
+        </div>
+        
+        <div class="test-step">
+            <strong>Step 2:</strong> Navigate to the Trades page
+            <span class="status pending" id="step2-status">PENDING</span>
+        </div>
+        
+        <div class="test-step">
+            <strong>Step 3:</strong> Test navigation to other pages (Dashboard, Strategies, Analytics, etc.)
+            <span class="status pending" id="step3-status">PENDING</span>
+        </div>
+        
+        <div class="test-step">
+            <strong>Step 4:</strong> Check debug panel z-index and pointer-events
+            <span class="status pending" id="step4-status">PENDING</span>
+        </div>
+        
+        <div class="test-step">
+            <strong>Step 5:</strong> Test modal cleanup functionality
+            <span class="status pending" id="step5-status">PENDING</span>
+        </div>
+        
+        <div class="test-step">
+            <strong>Step 6:</strong> Test edge cases (filtering, sorting, page visibility changes)
+            <span class="status pending" id="step6-status">PENDING</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🛠️ Debug Tools</h2>
+        
+        <button onclick="checkDebugPanel()">Check Debug Panel</button>
+        <button onclick="checkNavigationSafety()">Check Navigation Safety</button>
+        <button onclick="checkModalCleanup()">Check Modal Cleanup</button>
+        <button onclick="runAllChecks()">Run All Checks</button>
+        
+        <div id="debug-output" class="debug-info" style="display: none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 Application</h2>
+        <div class="iframe-container">
+            <iframe src="http://localhost:3000/login" id="app-frame"></iframe>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 Manual Test Results</h2>
+        <textarea id="manual-results" rows="10" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" 
+                  placeholder="Enter your manual test results here..."></textarea>
+        <br><br>
+        <button onclick="saveResults()">Save Results</button>
+        <button onclick="copyResults()">Copy to Clipboard</button>
+    </div>
+
+    <script>
+        let testResults = {
+            timestamp: new Date().toISOString(),
+            steps: {},
+            debugInfo: {},
+            manualNotes: ''
+        };
+
+        function updateStatus(stepId, status, details = '') {
+            const statusElement = document.getElementById(stepId + '-status');
+            if (statusElement) {
+                statusElement.className = 'status ' + status;
+                statusElement.textContent = status.toUpperCase();
+                if (details) {
+                    statusElement.title = details;
+                }
+            }
+            
+            testResults.steps[stepId] = {
+                status: status,
+                details: details,
+                timestamp: new Date().toISOString()
+            };
+        }
+
+        function showDebugOutput(message) {
+            const debugElement = document.getElementById('debug-output');
+            debugElement.style.display = 'block';
+            debugElement.innerHTML += '<div>' + new Date().toLocaleTimeString() + ': ' + message + '</div>';
+        }
+
+        function checkDebugPanel() {
+            try {
+                const iframe = document.getElementById('app-frame');
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                const debugPanel = iframeDoc.querySelector('.zoom-debug-panel');
+                if (debugPanel) {
+                    const computedStyle = iframe.contentWindow.getComputedStyle(debugPanel);
+                    const zIndex = computedStyle.zIndex;
+                    const pointerEvents = computedStyle.pointerEvents;
+                    
+                    const result = `Debug Panel Found: z-index=${zIndex}, pointer-events=${pointerEvents}`;
+                    showDebugOutput(result);
+                    
+                    testResults.debugInfo.debugPanel = {
+                        found: true,
+                        zIndex: zIndex,
+                        pointerEvents: pointerEvents
+                    };
+                    
+                    const isFixed = parseInt(zIndex) <= 100 && pointerEvents === 'none';
+                    updateStatus('step4', isFixed ? 'pass' : 'fail', result);
+                } else {
+                    showDebugOutput('Debug panel not found');
+                    updateStatus('step4', 'fail', 'Debug panel not found');
+                    testResults.debugInfo.debugPanel = { found: false };
+                }
+            } catch (error) {
+                showDebugOutput('Error checking debug panel: ' + error.message);
+                updateStatus('step4', 'fail', 'Error: ' + error.message);
+            }
+        }
+
+        function checkNavigationSafety() {
+            try {
+                const iframe = document.getElementById('app-frame');
+                const iframeWindow = iframe.contentWindow;
+                
+                const hasCleanupFunc = typeof iframeWindow.cleanupModalOverlays === 'function';
+                const hasNavSafety = typeof iframeWindow.navigationSafety === 'object';
+                const hasForceCleanup = hasNavSafety && typeof iframeWindow.navigationSafety.forceCleanupNavigationBlockers === 'function';
+                
+                const result = `Navigation Safety: cleanupModalOverlays=${hasCleanupFunc}, navigationSafety=${hasNavSafety}, forceCleanup=${hasForceCleanup}`;
+                showDebugOutput(result);
+                
+                testResults.debugInfo.navigationSafety = {
+                    hasCleanupFunc,
+                    hasNavSafety,
+                    hasForceCleanup
+                };
+                
+                const isFixed = hasCleanupFunc && hasNavSafety && hasForceCleanup;
+                updateStatus('step5', isFixed ? 'pass' : 'fail', result);
+            } catch (error) {
+                showDebugOutput('Error checking navigation safety: ' + error.message);
+                updateStatus('step5', 'fail', 'Error: ' + error.message);
+            }
+        }
+
+        function checkModalCleanup() {
+            try {
+                const iframe = document.getElementById('app-frame');
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                const overlays = iframeDoc.querySelectorAll('.fixed.inset-0, .modal-backdrop, [style*="position: fixed"], .modal-overlay');
+                
+                const result = `Modal Overlays Found: ${overlays.length}`;
+                showDebugOutput(result);
+                
+                testResults.debugInfo.modalOverlays = overlays.length;
+                
+                // Try to trigger cleanup
+                if (iframe.contentWindow.cleanupModalOverlays) {
+                    iframe.contentWindow.cleanupModalOverlays();
+                    showDebugOutput('Cleanup function executed');
+                }
+                
+                updateStatus('step5', overlays.length === 0 ? 'pass' : 'fail', result);
+            } catch (error) {
+                showDebugOutput('Error checking modal cleanup: ' + error.message);
+                updateStatus('step5', 'fail', 'Error: ' + error.message);
+            }
+        }
+
+        function runAllChecks() {
+            checkDebugPanel();
+            checkNavigationSafety();
+            checkModalCleanup();
+        }
+
+        function saveResults() {
+            testResults.manualNotes = document.getElementById('manual-results').value;
+            
+            const dataStr = JSON.stringify(testResults, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'manual-navigation-verification-results.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showDebugOutput('Results saved to file');
+        }
+
+        function copyResults() {
+            testResults.manualNotes = document.getElementById('manual-results').value;
+            
+            const dataStr = JSON.stringify(testResults, null, 2);
+            navigator.clipboard.writeText(dataStr).then(() => {
+                showDebugOutput('Results copied to clipboard');
+            }).catch(err => {
+                showDebugOutput('Failed to copy: ' + err.message);
+            });
+        }
+
+        // Auto-run checks when iframe loads
+        document.getElementById('app-frame').onload = function() {
+            setTimeout(() => {
+                showDebugOutput('Iframe loaded, ready for testing');
+                updateStatus('step1', 'pass', 'Application loaded');
+            }, 2000);
+        };
+    </script>
+</body>
+</html>

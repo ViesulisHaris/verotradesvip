@@ -1,0 +1,54 @@
+{
+  "containerAnalysis": {
+    "found": true,
+    "dimensions": {
+      "width": 818.4000244140625,
+      "height": 400
+    }
+  },
+  "svgAnalysis": {
+    "found": true,
+    "dimensions": {
+      "width": 768.7999877929688,
+      "height": 350.3999938964844
+    },
+    "childElements": {
+      "total": 16,
+      "defs": 2,
+      "gradients": 5,
+      "filters": 2,
+      "areas": 0,
+      "gridLines": 0,
+      "dots": 0
+    }
+  },
+  "stylingAnalysis": {
+    "gradient": {
+      "id": "tealGradient",
+      "stops": [
+        {
+          "offset": "5%",
+          "color": "#14b8a6",
+          "opacity": "0.8"
+        },
+        {
+          "offset": "50%",
+          "color": "#0f766e",
+          "opacity": "0.6"
+        },
+        {
+          "offset": "95%",
+          "color": "#0d9488",
+          "opacity": "0.4"
+        }
+      ]
+    }
+  },
+  "visualImprovements": {
+    "smoothSpline": false,
+    "verticalGradient": true,
+    "noDataPointMarkers": false,
+    "thickGlowingLine": false,
+    "transparentGrid": false
+  }
+}

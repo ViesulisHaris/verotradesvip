@@ -1,0 +1,138 @@
+{
+  "timestamp": "2025-11-20T16-37-19-806Z",
+  "summary": {
+    "total": 10,
+    "passed": 2,
+    "failed": 8,
+    "skipped": 0
+  },
+  "details": [
+    {
+      "test": "Main Page Scrollbar",
+      "selector": "body",
+      "class": "scrollbar-global",
+      "info": {
+        "exists": true,
+        "hasCustomScrollbar": true,
+        "hasWebkitScrollbar": false,
+        "scrollbarWidth": 0,
+        "overflow": "visible",
+        "overflowY": "visible",
+        "overflowX": "visible",
+        "scrollbarClass": "scrollbar-global",
+        "className": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+      },
+      "hover": {
+        "hasHoverStyles": true,
+        "hoverTransform": "",
+        "hoverBoxShadow": ""
+      },
+      "screenshot": "main-page-scrollbar-2025-11-20T16-37-19-806Z.png",
+      "passed": true
+    },
+    {
+      "test": "Sidebar Navigation Scrollbar",
+      "selector": "nav",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Navigation element not found"
+    },
+    {
+      "test": "Trade Modal Scrollbar",
+      "selector": ".glass.max-w-5xl",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Add Trade button not found"
+    },
+    {
+      "test": "Dropdown Scrollbar",
+      "selector": ".dropdown-options-container",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "No dropdown elements found"
+    },
+    {
+      "test": "Table Overflow Scrollbar",
+      "selector": ".overflow-x-auto",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "No table elements found"
+    },
+    {
+      "test": "Calendar Scrollbar",
+      "selector": ".max-h-[70vh]",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Calendar elements not found"
+    },
+    {
+      "test": "Strategy Performance Modal Scrollbar",
+      "selector": ".glass.w-full.max-w-4xl",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Strategy modal not found after clicking strategy card"
+    },
+    {
+      "test": "Confluence Page Scrollbar",
+      "selector": ".overflow-x-auto",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Confluence page elements not found"
+    },
+    {
+      "test": "Enhanced Strategy Card Scrollbar",
+      "selector": ".max-h-[80px]",
+      "class": "scrollbar-glass",
+      "info": null,
+      "hover": null,
+      "screenshot": null,
+      "passed": false,
+      "note": "Enhanced Strategy Card elements not found"
+    },
+    {
+      "test": "Scrollbar Class: scrollbar-global",
+      "selector": ".scrollbar-global",
+      "class": "scrollbar-global",
+      "info": {
+        "exists": true,
+        "hasCustomScrollbar": true,
+        "hasWebkitScrollbar": false,
+        "scrollbarWidth": 0,
+        "overflow": "visible",
+        "overflowY": "visible",
+        "overflowX": "visible",
+        "scrollbarClass": "scrollbar-global",
+        "className": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+      },
+      "hover": {
+        "hasHoverStyles": true,
+        "hoverTransform": "",
+        "hoverBoxShadow": ""
+      },
+      "screenshot": "class-scrollbar-global-2025-11-20T16-37-19-806Z.png",
+      "passed": true,
+      "elementCount": 1
+    }
+  ]
+}

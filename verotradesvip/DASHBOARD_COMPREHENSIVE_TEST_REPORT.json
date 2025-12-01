@@ -1,0 +1,109 @@
+{
+  "timestamp": "2025-11-30T19:13:35.566Z",
+  "summary": {
+    "total": 9,
+    "passed": 3,
+    "partial": 3,
+    "failed": 2
+  },
+  "results": {
+    "pageLoading": {
+      "status": "passed",
+      "details": "Load time: 1121ms, Title: , Content length: 4766",
+      "errors": []
+    },
+    "authentication": {
+      "status": "passed",
+      "details": "Current URL: http://localhost:3000/dashboard, Auth elements: {\"hasLoginForm\":false,\"hasAuthButtons\":false,\"hasUserElements\":false}",
+      "errors": []
+    },
+    "tradingStatistics": {
+      "status": "partial",
+      "details": "Cards: 0, Values: 0, Charts: 0",
+      "errors": [
+        "No trading statistics components found"
+      ]
+    },
+    "emotionalAnalysis": {
+      "status": "partial",
+      "details": "Emotion cards: 0, Radar charts: 0, Data elements: 0",
+      "errors": [
+        "No emotional analysis components found"
+      ]
+    },
+    "dataFetching": {
+      "status": "failed",
+      "details": "Data fetching test failed",
+      "errors": [
+        "this.page.waitForTimeout is not a function"
+      ]
+    },
+    "errorHandling": {
+      "status": "passed",
+      "details": "Errors: 0, Loading: 0, Fallbacks: 0",
+      "errors": []
+    },
+    "navigation": {
+      "status": "partial",
+      "details": "Nav links: 0, Sidebar: 0, Quick actions: 0",
+      "errors": [
+        "No navigation elements found"
+      ]
+    },
+    "consoleErrors": {
+      "status": "pending",
+      "details": "",
+      "errors": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ]
+    },
+    "responsiveDesign": {
+      "status": "failed",
+      "details": "Responsive design test failed",
+      "errors": [
+        "this.page.waitForTimeout is not a function"
+      ]
+    }
+  },
+  "recommendations": [
+    "Implement trading statistics components - add DashboardCard components for P&L, win rate, etc.",
+    "Implement emotional analysis components - add EmotionRadar and related components",
+    "Implement Supabase data fetching - add data loading logic for trades and statistics",
+    "Fix console errors - address JavaScript errors and warnings"
+  ]
+}

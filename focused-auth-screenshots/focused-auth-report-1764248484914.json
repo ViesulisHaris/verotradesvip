@@ -1,0 +1,26 @@
+{
+  "startTime": "2025-11-27T13:00:03.252Z",
+  "tests": [
+    {
+      "name": "Home page accessible",
+      "passed": false,
+      "details": "Page failed to load",
+      "timestamp": "2025-11-27T13:00:44.571Z"
+    },
+    {
+      "name": "Login page accessible",
+      "passed": false,
+      "details": "Login page failed",
+      "timestamp": "2025-11-27T13:01:24.914Z"
+    }
+  ],
+  "screenshots": [],
+  "summary": {
+    "passed": 0,
+    "failed": 2,
+    "total": 2
+  },
+  "endTime": "2025-11-27T13:01:24.914Z",
+  "duration": "81662ms",
+  "passRate": "0.00%"
+}

@@ -1,0 +1,201 @@
+{
+  "timestamp": "2025-11-19T17:48:27.618Z",
+  "testConfig": {
+    "baseUrl": "http://localhost:3000",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "timeout": 30000,
+    "screenshotPath": "./visual-enhancement-test-screenshots",
+    "performanceThreshold": 300
+  },
+  "results": {
+    "emotionRadar": {
+      "passed": 0,
+      "failed": 5,
+      "details": [
+        {
+          "test": "Enhanced gradients visible",
+          "passed": false,
+          "details": "Found no gradient definitions",
+          "timestamp": "2025-11-19T17:48:06.961Z"
+        },
+        {
+          "test": "Glow effects applied",
+          "passed": false,
+          "details": "Found 0 glow filters and 0 elements with glow",
+          "timestamp": "2025-11-19T17:48:06.962Z"
+        },
+        {
+          "test": "Animated gradient visible",
+          "passed": false,
+          "details": "No pulse animation detected",
+          "timestamp": "2025-11-19T17:48:06.963Z"
+        },
+        {
+          "test": "Hover effects on data points",
+          "passed": false,
+          "details": "Error: No element found for selector: .recharts-radar-dot",
+          "timestamp": "2025-11-19T17:48:06.973Z"
+        },
+        {
+          "test": "Component loading",
+          "passed": false,
+          "details": "Error: actionName is not defined",
+          "timestamp": "2025-11-19T17:48:06.975Z"
+        }
+      ]
+    },
+    "pnlChart": {
+      "passed": 0,
+      "failed": 5,
+      "details": [
+        {
+          "test": "Enhanced gradient colors",
+          "passed": false,
+          "details": "Incorrect or missing gradient colors",
+          "timestamp": "2025-11-19T17:48:10.949Z"
+        },
+        {
+          "test": "Animated gradient visual depth",
+          "passed": false,
+          "details": "No visual depth detected",
+          "timestamp": "2025-11-19T17:48:10.950Z"
+        },
+        {
+          "test": "Enhanced glow effects",
+          "passed": false,
+          "details": "Filter exists: false, Glow effect: false",
+          "timestamp": "2025-11-19T17:48:10.951Z"
+        },
+        {
+          "test": "Cursor styling improvements",
+          "passed": false,
+          "details": "Error: No element found for selector: .recharts-area-area",
+          "timestamp": "2025-11-19T17:48:10.955Z"
+        },
+        {
+          "test": "Increased stroke width",
+          "passed": false,
+          "details": "Stroke width not increased",
+          "timestamp": "2025-11-19T17:48:10.956Z"
+        }
+      ]
+    },
+    "dashboardCard": {
+      "passed": 0,
+      "failed": 5,
+      "details": [
+        {
+          "test": "Backdrop blur glass effect",
+          "passed": false,
+          "details": "No backdrop blur detected",
+          "timestamp": "2025-11-19T17:48:15.314Z"
+        },
+        {
+          "test": "Background transparency",
+          "passed": false,
+          "details": "No transparency detected",
+          "timestamp": "2025-11-19T17:48:15.315Z"
+        },
+        {
+          "test": "Animated background patterns",
+          "passed": false,
+          "details": "No animated patterns found",
+          "timestamp": "2025-11-19T17:48:15.315Z"
+        },
+        {
+          "test": "Enhanced glass morphism hover effects",
+          "passed": false,
+          "details": "No enhanced hover effects",
+          "timestamp": "2025-11-19T17:48:15.322Z"
+        },
+        {
+          "test": "Tooltip enhancements",
+          "passed": false,
+          "details": "No tooltip enhancements",
+          "timestamp": "2025-11-19T17:48:15.322Z"
+        }
+      ]
+    },
+    "sharpeRatioGauge": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Component presence",
+          "passed": false,
+          "details": "SharpeRatioGauge not found on page",
+          "timestamp": "2025-11-19T17:48:19.736Z"
+        }
+      ]
+    },
+    "dominantEmotionCard": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Component presence",
+          "passed": false,
+          "details": "DominantEmotionCard not found on page",
+          "timestamp": "2025-11-19T17:48:23.670Z"
+        }
+      ]
+    },
+    "vRatingCard": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Component presence",
+          "passed": false,
+          "details": "VRatingCard not found on page",
+          "timestamp": "2025-11-19T17:48:27.604Z"
+        }
+      ]
+    },
+    "performance": {
+      "sidebarTransition": 0,
+      "animations": 0
+    },
+    "summary": {
+      "totalPassed": 0,
+      "totalFailed": 18,
+      "issues": [
+        "emotionRadar - Enhanced gradients visible: Found no gradient definitions",
+        "emotionRadar - Glow effects applied: Found 0 glow filters and 0 elements with glow",
+        "emotionRadar - Animated gradient visible: No pulse animation detected",
+        "emotionRadar - Hover effects on data points: Error: No element found for selector: .recharts-radar-dot",
+        "emotionRadar - Component loading: Error: actionName is not defined",
+        "pnlChart - Enhanced gradient colors: Incorrect or missing gradient colors",
+        "pnlChart - Animated gradient visual depth: No visual depth detected",
+        "pnlChart - Enhanced glow effects: Filter exists: false, Glow effect: false",
+        "pnlChart - Cursor styling improvements: Error: No element found for selector: .recharts-area-area",
+        "pnlChart - Increased stroke width: Stroke width not increased",
+        "dashboardCard - Backdrop blur glass effect: No backdrop blur detected",
+        "dashboardCard - Background transparency: No transparency detected",
+        "dashboardCard - Animated background patterns: No animated patterns found",
+        "dashboardCard - Enhanced glass morphism hover effects: No enhanced hover effects",
+        "dashboardCard - Tooltip enhancements: No tooltip enhancements",
+        "sharpeRatioGauge - Component presence: SharpeRatioGauge not found on page",
+        "dominantEmotionCard - Component presence: DominantEmotionCard not found on page",
+        "vRatingCard - Component presence: VRatingCard not found on page"
+      ]
+    }
+  },
+  "coverage": {
+    "css": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+        "totalBytes": 9884,
+        "usedBytes": 0
+      },
+      {
+        "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__fe9ef132._.css",
+        "totalBytes": 121830,
+        "usedBytes": 8704
+      }
+    ]
+  }
+}

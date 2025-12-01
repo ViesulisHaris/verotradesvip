@@ -1,0 +1,151 @@
+{
+  "chartContainer": {
+    "found": true,
+    "tagName": "DIV",
+    "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden",
+    "rect": {
+      "width": 810.7999877929688,
+      "height": 425.6000061035156,
+      "top": 429.6000061035156,
+      "left": 136.8000030517578,
+      "bottom": 855.2000122070312,
+      "right": 947.5999908447266
+    },
+    "styles": {
+      "display": "block",
+      "visibility": "visible",
+      "opacity": "1",
+      "overflow": "hidden",
+      "position": "relative",
+      "zIndex": "auto"
+    },
+    "isVisible": true
+  },
+  "svgElements": {
+    "found": true,
+    "rect": {
+      "width": 24,
+      "height": 24
+    },
+    "styles": {
+      "display": "block",
+      "visibility": "visible",
+      "opacity": "1"
+    },
+    "children": [
+      {
+        "index": 0,
+        "tagName": "path",
+        "className": {},
+        "id": "",
+        "rect": {
+          "width": 16,
+          "height": 0,
+          "top": 33.79999923706055,
+          "left": 32.79999923706055
+        },
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": "1",
+          "fill": "none",
+          "stroke": "rgb(255, 255, 255)",
+          "strokeWidth": "2px"
+        },
+        "isVisible": false,
+        "attributes": {
+          "d": "M4 5h16"
+        }
+      },
+      {
+        "index": 1,
+        "tagName": "path",
+        "className": {},
+        "id": "",
+        "rect": {
+          "width": 16,
+          "height": 0,
+          "top": 40.79999923706055,
+          "left": 32.79999923706055
+        },
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": "1",
+          "fill": "none",
+          "stroke": "rgb(255, 255, 255)",
+          "strokeWidth": "2px"
+        },
+        "isVisible": false,
+        "attributes": {
+          "d": "M4 12h16"
+        }
+      },
+      {
+        "index": 2,
+        "tagName": "path",
+        "className": {},
+        "id": "",
+        "rect": {
+          "width": 16,
+          "height": 0,
+          "top": 47.79999923706055,
+          "left": 32.79999923706055
+        },
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": "1",
+          "fill": "none",
+          "stroke": "rgb(255, 255, 255)",
+          "strokeWidth": "2px"
+        },
+        "isVisible": false,
+        "attributes": {
+          "d": "M4 19h16"
+        }
+      }
+    ]
+  },
+  "areaElements": [],
+  "pathAnalysis": [
+    {
+      "index": 0,
+      "hasPathData": true,
+      "pathLength": 7,
+      "pathPreview": "M4 5h16...",
+      "boundingBox": {},
+      "isVisible": false
+    },
+    {
+      "index": 1,
+      "hasPathData": true,
+      "pathLength": 8,
+      "pathPreview": "M4 12h16...",
+      "boundingBox": {},
+      "isVisible": false
+    },
+    {
+      "index": 2,
+      "hasPathData": true,
+      "pathLength": 8,
+      "pathPreview": "M4 19h16...",
+      "boundingBox": {},
+      "isVisible": false
+    }
+  ],
+  "dataFlow": {
+    "hasChartData": true,
+    "chartDataPoints": 0,
+    "dataProcessing": false
+  },
+  "stylingIssues": [
+    "Chart container has overflow:hidden - may clip content"
+  ],
+  "visibilityChecks": {
+    "containerInViewport": true,
+    "svgInViewport": false,
+    "hasVisiblePaths": false,
+    "hasVisibleAreas": false
+  }
+}

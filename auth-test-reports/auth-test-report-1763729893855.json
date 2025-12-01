@@ -1,0 +1,192 @@
+{
+  "timestamp": "2025-11-21T12:58:13.855Z",
+  "summary": {
+    "total": 22,
+    "passed": 0,
+    "failed": 22,
+    "passRate": "0.00%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-21T12:57:09.089Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:09.091Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:10.489Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:13.364Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:13.366Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:16.258Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:16.258Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:19.133Z",
+      "type": "error",
+      "message": "❌ Form validation: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:19.133Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:22.032Z",
+      "type": "error",
+      "message": "❌ Registration with valid data: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/register\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:22.033Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:24.938Z",
+      "type": "error",
+      "message": "❌ Registration with invalid data: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/register\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:24.938Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:27.817Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:27.817Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:30.708Z",
+      "type": "error",
+      "message": "❌ Error handling: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:30.709Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:33.589Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:33.589Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:36.459Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:36.459Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:57:39.369Z",
+      "type": "error",
+      "message": "❌ Protected route /dashboard: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/dashboard\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:42.270Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/trades\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/trades\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:45.135Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/strategies\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/strategies\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:48.022Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/create: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/strategies/create\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/strategies/create\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:50.907Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/edit/1: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/strategies/edit/1\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/strategies/edit/1\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:53.755Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/performance/1: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/strategies/performance/1\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/strategies/performance/1\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:56.637Z",
+      "type": "error",
+      "message": "❌ Protected route /log-trade: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/log-trade\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/log-trade\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:57:59.501Z",
+      "type": "error",
+      "message": "❌ Protected route /confluence: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/confluence\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/confluence\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:58:02.346Z",
+      "type": "error",
+      "message": "❌ Protected route /calendar: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/calendar\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/calendar\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:58:05.224Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/analytics\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/analytics\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:58:05.225Z",
+      "type": "info",
+      "message": "\n=== Testing Public Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T12:58:08.083Z",
+      "type": "error",
+      "message": "❌ Public route /login: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:58:10.983Z",
+      "type": "error",
+      "message": "❌ Public route /register: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/register\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T12:58:13.855Z",
+      "type": "error",
+      "message": "❌ Public route / (home): FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ]
+}

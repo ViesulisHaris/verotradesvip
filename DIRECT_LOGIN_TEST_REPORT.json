@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "startTime": "2025-11-29T17:56:41.762Z",
+    "endTime": "2025-11-29T17:56:47.045Z",
+    "duration": 5283,
+    "totalTests": 8,
+    "passedTests": 3,
+    "failedTests": 5,
+    "successRate": "37.50%"
+  },
+  "testResults": [
+    {
+      "testName": "Application Health",
+      "status": "PASS",
+      "details": "Status: 200, Has content: true",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:43.489Z"
+    },
+    {
+      "testName": "Login Page Load",
+      "status": "FAIL",
+      "details": "Status: 200, Has form: false",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:43.636Z"
+    },
+    {
+      "testName": "Protected Route Redirect",
+      "status": "FAIL",
+      "details": "Status: 200, Redirected to login: false",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:44.012Z"
+    },
+    {
+      "testName": "Invalid Credentials",
+      "status": "PASS",
+      "details": "Status: 404, Error shown: true",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:44.525Z"
+    },
+    {
+      "testName": "Supabase Authentication Endpoint",
+      "status": "FAIL",
+      "details": "Status: 403, Auth endpoint accessible: true",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:44.774Z"
+    },
+    {
+      "testName": "API Routes",
+      "status": "PASS",
+      "details": "Accessible routes: 3/3",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:46.693Z"
+    },
+    {
+      "testName": "Authentication State Management",
+      "status": "FAIL",
+      "details": "Has auth context: true, Has client auth: false",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:46.938Z"
+    },
+    {
+      "testName": "Environment Configuration",
+      "status": "FAIL",
+      "details": "Supabase URL: false, Supabase Key: false",
+      "error": null,
+      "timestamp": "2025-11-29T17:56:47.045Z"
+    }
+  ],
+  "errors": [],
+  "testConfiguration": {
+    "baseUrl": "http://localhost:3000",
+    "timeout": 10000
+  },
+  "recommendations": [
+    "Fix failing tests before proceeding with user authentication",
+    "Check Supabase environment variables configuration"
+  ]
+}

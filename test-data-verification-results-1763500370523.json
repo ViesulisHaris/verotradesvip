@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-11-18T21:12:50.523Z",
+  "userId": "d9f7982d-f49b-4766-a8e8-827a1d176d5e",
+  "expectedSpecs": {
+    "TOTAL_TRADES": 100,
+    "WIN_RATE": 0.71,
+    "WINNING_TRADES": 71,
+    "LOSING_TRADES": 29,
+    "STRATEGY_DISTRIBUTION": {
+      "Momentum Breakout": 20,
+      "Mean Reversion": 20,
+      "Scalping": 20,
+      "Swing Trading": 20,
+      "Options Income": 20
+    },
+    "MARKET_DISTRIBUTION": {
+      "Stock": 0.4,
+      "Crypto": 0.3,
+      "Forex": 0.2,
+      "Futures": 0.1
+    },
+    "EMOTIONS": [
+      "FOMO",
+      "REVENGE",
+      "TILT",
+      "OVERRISK",
+      "PATIENCE",
+      "REGRET",
+      "DISCIPLINE",
+      "CONFIDENT",
+      "ANXIOUS",
+      "NEUTRAL"
+    ]
+  },
+  "verificationResults": {
+    "tradeCount": false,
+    "winRate": true,
+    "marketDistribution": true,
+    "strategyDistribution": true,
+    "emotionalStates": false,
+    "pnlRanges": true,
+    "dateRange": true,
+    "dataQuality": true
+  },
+  "summary": {
+    "passedChecks": 6,
+    "totalChecks": 8,
+    "overallStatus": "FAIL"
+  }
+}

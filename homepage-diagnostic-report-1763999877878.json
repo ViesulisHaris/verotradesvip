@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-24T15:57:57.877Z",
+  "loadTime": 1165,
+  "response": {
+    "status": 200,
+    "url": "http://localhost:3000/"
+  },
+  "pageContent": {
+    "title": "",
+    "bodyText": "Trading Journal\n\nWelcome to your trading journal application",
+    "bodyHTML": "<div class=\"flex items-center justify-center bg-[#121212]\" style=\"height:100vh;width:100vw\"><div class=\"text-center\"><h1 class=\"text-3xl font-bold text-[#B89B5E] mb-4\">Trading Journal</h1><p class=\"text-[#EAE6DD]\">Welcome to your trading journal application</p></div></div><script src=\"/_next/static/chunks/webpack.js?v=1763999873665\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,\"1:HL[\\\"/_next/static/css/ap",
+    "hasWelcomeText": true,
+    "hasBackground": "rgb(18, 18, 18)",
+    "authGuardExists": false,
+    "hasLoadingSpinner": false,
+    "allElements": 24,
+    "visibleElements": 7
+  },
+  "authState": {
+    "localStorage": {},
+    "sessionStorage": {},
+    "hasSupabaseAuth": false,
+    "cookies": ""
+  },
+  "jsErrors": [],
+  "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\homepage-diagnostic-1763999877723.png"
+}

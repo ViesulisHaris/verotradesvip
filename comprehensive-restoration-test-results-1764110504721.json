@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-11-25T22:41:37.696Z",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "categories": {
+    "navigation": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "sidebar": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "responsive": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "authentication": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "dashboard": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "interactive": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    }
+  },
+  "screenshots": [
+    {
+      "name": "initial-load",
+      "category": "general",
+      "filename": "general-initial-load-1764110504161.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-initial-load-1764110504161.png",
+      "timestamp": "2025-11-25T22:41:44.277Z"
+    },
+    {
+      "name": "final-state",
+      "category": "general",
+      "filename": "general-final-state-1764110504280.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-final-state-1764110504280.png",
+      "timestamp": "2025-11-25T22:41:44.339Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-25T22:41:44.280Z",
+      "message": "Test execution failed: Cannot read properties of undefined (reading 'tests')"
+    },
+    {
+      "timestamp": "2025-11-25T22:41:44.280Z",
+      "message": "Test execution failed: Cannot read properties of undefined (reading 'tests')",
+      "stack": "TypeError: Cannot read properties of undefined (reading 'tests')\n    at recordTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-restoration-test.js:55:36)\n    at runComprehensiveTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-restoration-test.js:543:5)"
+    }
+  ]
+}

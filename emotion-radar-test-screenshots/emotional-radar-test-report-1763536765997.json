@@ -1,0 +1,190 @@
+{
+  "summary": {
+    "totalTests": 14,
+    "passedTests": 12,
+    "failedTests": 2,
+    "startTime": "2025-11-19T07:18:45.945Z",
+    "endTime": "2025-11-19T07:19:25.997Z",
+    "duration": 40052
+  },
+  "dashboard": {
+    "componentLoaded": false,
+    "hasData": false,
+    "visualEnhancements": {
+      "gradients": false,
+      "smoothCurves": false,
+      "glowEffects": false
+    },
+    "responsiveness": {
+      "desktop": false,
+      "tablet": true,
+      "mobile": true
+    },
+    "interactivity": {
+      "tooltips": false,
+      "hoverEffects": false
+    },
+    "errors": []
+  },
+  "confluence": {
+    "componentLoaded": false,
+    "hasData": false,
+    "visualEnhancements": {
+      "gradients": false,
+      "smoothCurves": false,
+      "glowEffects": false
+    },
+    "responsiveness": {
+      "desktop": false,
+      "tablet": true,
+      "mobile": true
+    },
+    "interactivity": {
+      "tooltips": false,
+      "hoverEffects": false
+    },
+    "errors": []
+  },
+  "screenshots": [
+    {
+      "filename": "dashboard-1920x1080.png",
+      "path": "emotion-radar-test-screenshots\\dashboard-1920x1080.png",
+      "description": "Dashboard page at 1920x1080",
+      "timestamp": "2025-11-19T07:18:54.220Z"
+    },
+    {
+      "filename": "dashboard-768x1024.png",
+      "path": "emotion-radar-test-screenshots\\dashboard-768x1024.png",
+      "description": "Dashboard page at 768x1024",
+      "timestamp": "2025-11-19T07:18:58.605Z"
+    },
+    {
+      "filename": "dashboard-375x667.png",
+      "path": "emotion-radar-test-screenshots\\dashboard-375x667.png",
+      "description": "Dashboard page at 375x667",
+      "timestamp": "2025-11-19T07:19:03.111Z"
+    },
+    {
+      "filename": "confluence-1920x1080.png",
+      "path": "emotion-radar-test-screenshots\\confluence-1920x1080.png",
+      "description": "Confluence page at 1920x1080",
+      "timestamp": "2025-11-19T07:19:11.130Z"
+    },
+    {
+      "filename": "confluence-768x1024.png",
+      "path": "emotion-radar-test-screenshots\\confluence-768x1024.png",
+      "description": "Confluence page at 768x1024",
+      "timestamp": "2025-11-19T07:19:18.886Z"
+    },
+    {
+      "filename": "confluence-375x667.png",
+      "path": "emotion-radar-test-screenshots\\confluence-375x667.png",
+      "description": "Confluence page at 375x667",
+      "timestamp": "2025-11-19T07:19:25.981Z"
+    }
+  ],
+  "detailedResults": [
+    {
+      "testName": "Dashboard - Component loaded at 1920x1080",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-11-19T07:18:54.225Z"
+    },
+    {
+      "testName": "Dashboard - Component loaded at 768x1024",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:18:58.607Z"
+    },
+    {
+      "testName": "Dashboard - Responsive container at 768x1024",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:18:58.608Z"
+    },
+    {
+      "testName": "Dashboard - Has emotional data at 768x1024",
+      "passed": true,
+      "details": "Data points: 22, Emotions: ANXIOUS, CONFIDENT",
+      "timestamp": "2025-11-19T07:18:58.610Z"
+    },
+    {
+      "testName": "Dashboard - Component loaded at 375x667",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:03.115Z"
+    },
+    {
+      "testName": "Dashboard - Responsive container at 375x667",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:03.116Z"
+    },
+    {
+      "testName": "Dashboard - Has emotional data at 375x667",
+      "passed": true,
+      "details": "Data points: 14, Emotions: ANXIOUS, CONFIDENT",
+      "timestamp": "2025-11-19T07:19:03.120Z"
+    },
+    {
+      "testName": "Confluence - Component loaded at 1920x1080",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:11.140Z"
+    },
+    {
+      "testName": "Confluence - Component loaded at 768x1024",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:18.887Z"
+    },
+    {
+      "testName": "Confluence - Responsive container at 768x1024",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:18.894Z"
+    },
+    {
+      "testName": "Confluence - Has emotional data at 768x1024",
+      "passed": true,
+      "details": "Data points: 34, Emotions: CONFIDENT, ANXIOUS",
+      "timestamp": "2025-11-19T07:19:18.896Z"
+    },
+    {
+      "testName": "Confluence - Component loaded at 375x667",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:25.983Z"
+    },
+    {
+      "testName": "Confluence - Responsive container at 375x667",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-19T07:19:25.985Z"
+    },
+    {
+      "testName": "Confluence - Has emotional data at 375x667",
+      "passed": true,
+      "details": "Data points: 34, Emotions: CONFIDENT, ANXIOUS",
+      "timestamp": "2025-11-19T07:19:25.997Z"
+    }
+  ],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "puppeteerVersion": "24.30.0",
+    "testUrl": "http://localhost:3000",
+    "viewports": {
+      "desktop": "1920x1080",
+      "tablet": "768x1024",
+      "mobile": "375x667"
+    }
+  },
+  "recommendations": [
+    "Dashboard EmotionRadar component failed to load - check component imports and error handling",
+    "Confluence EmotionRadar component failed to load - check component imports and error handling",
+    "Dashboard EmotionRadar has no data - check data fetching and processing logic",
+    "Confluence EmotionRadar has no data - check data fetching and processing logic",
+    "Gradients not rendering properly - check SVG gradient definitions",
+    "Glow effects not working - check SVG filter definitions"
+  ]
+}

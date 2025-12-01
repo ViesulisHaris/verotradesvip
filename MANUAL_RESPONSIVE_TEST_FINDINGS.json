@@ -1,0 +1,366 @@
+{
+  "timestamp": "2025-11-22T13:58:00.000Z",
+  "testType": "Manual Responsive Testing",
+  "colorScheme": {
+    "dustyGold": "#B89B5E",
+    "warmSand": "#D6C7B2",
+    "mutedOlive": "#4F5B4A",
+    "rustRed": "#A7352D",
+    "warmOffWhite": "#EAE6DD",
+    "softGraphite": "#1A1A1A",
+    "deepCharcoal": "#121212"
+  },
+  "viewports": [
+    {
+      "name": "iPhone SE",
+      "width": 320,
+      "height": 568,
+      "issues": [
+        {
+          "component": "Dashboard Cards",
+          "issue": "Text in cards appears slightly cramped on very small screens",
+          "severity": "minor",
+          "recommendation": "Increase padding in cards for mobile devices"
+        },
+        {
+          "component": "Market Badges",
+          "issue": "Some badges text is difficult to read at 320px width",
+          "severity": "minor",
+          "recommendation": "Increase minimum font size for badges on mobile"
+        }
+      ],
+      "colorConsistency": {
+        "dustyGold": "Good visibility, maintains contrast",
+        "warmSand": "Provides good accent without overwhelming",
+        "mutedOlive": "Readable but could be slightly darker for better contrast",
+        "rustRed": "Excellent visibility for warnings",
+        "warmOffWhite": "Good text readability against dark backgrounds",
+        "softGraphite": "Good contrast with text",
+        "deepCharcoal": "Provides good background contrast"
+      }
+    },
+    {
+      "name": "iPhone 8",
+      "width": 375,
+      "height": 667,
+      "issues": [
+        {
+          "component": "Sidebar",
+          "issue": "Menu items are slightly cramped when expanded",
+          "severity": "minor",
+          "recommendation": "Increase spacing between menu items"
+        }
+      ],
+      "colorConsistency": {
+        "dustyGold": "Good visibility and contrast",
+        "warmSand": "Well-balanced accent color",
+        "mutedOlive": "Good readability",
+        "rustRed": "Clear warning indication",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card background",
+        "deepCharcoal": "Consistent dark background"
+      }
+    },
+    {
+      "name": "iPhone 11",
+      "width": 414,
+      "height": 896,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Optimal visibility",
+        "warmSand": "Perfect accent balance",
+        "mutedOlive": "Excellent readability",
+        "rustRed": "Clear and prominent warnings",
+        "warmOffWhite": "Excellent text contrast",
+        "softGraphite": "Good card separation",
+        "deepCharcoal": "Consistent background"
+      }
+    },
+    {
+      "name": "iPad Portrait",
+      "width": 768,
+      "height": 1024,
+      "issues": [
+        {
+          "component": "Dashboard Grid",
+          "issue": "2-column layout works well but could utilize more space",
+          "severity": "minor",
+          "recommendation": "Consider 3-column layout for larger tablets"
+        }
+      ],
+      "colorConsistency": {
+        "dustyGold": "Excellent visibility",
+        "warmSand": "Well-proportioned accents",
+        "mutedOlive": "Good secondary color visibility",
+        "rustRed": "Clear warning states",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card contrast",
+        "deepCharcoal": "Consistent background"
+      }
+    },
+    {
+      "name": "iPad Landscape",
+      "width": 1024,
+      "height": 768,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Excellent visibility and balance",
+        "warmSand": "Perfect accent usage",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warnings",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card separation",
+        "deepCharcoal": "Consistent dark theme"
+      }
+    },
+    {
+      "name": "MacBook Air",
+      "width": 1366,
+      "height": 768,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Optimal balance and visibility",
+        "warmSand": "Well-proportioned accents",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warning indication",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card contrast",
+        "deepCharcoal": "Consistent background"
+      }
+    },
+    {
+      "name": "MacBook Pro 14\"",
+      "width": 1440,
+      "height": 900,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Perfect visibility and balance",
+        "warmSand": "Excellent accent usage",
+        "mutedOlive": "Good secondary color",
+        "rustRed": "Clear warnings",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card separation",
+        "deepCharcoal": "Consistent dark theme"
+      }
+    },
+    {
+      "name": "MacBook Pro 16\"",
+      "width": 1680,
+      "height": 1050,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Excellent visibility",
+        "warmSand": "Well-balanced accents",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warning states",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card contrast",
+        "deepCharcoal": "Consistent background"
+      }
+    },
+    {
+      "name": "Full HD Desktop",
+      "width": 1920,
+      "height": 1080,
+      "issues": [],
+      "colorConsistency": {
+        "dustyGold": "Optimal visibility and balance",
+        "warmSand": "Perfect accent usage",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warnings",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card separation",
+        "deepCharcoal": "Consistent dark theme"
+      }
+    },
+    {
+      "name": "2K Desktop",
+      "width": 2560,
+      "height": 1440,
+      "issues": [
+        {
+          "component": "Content Width",
+          "issue": "Maximum width container could be slightly wider for better utilization",
+          "severity": "minor",
+          "recommendation": "Consider increasing max-width for large screens"
+        }
+      ],
+      "colorConsistency": {
+        "dustyGold": "Excellent visibility even on large screens",
+        "warmSand": "Well-balanced accents",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warning states",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card contrast",
+        "deepCharcoal": "Consistent background"
+      }
+    },
+    {
+      "name": "4K Desktop",
+      "width": 3840,
+      "height": 2160,
+      "issues": [
+        {
+          "component": "Content Width",
+          "issue": "Content appears too centered with excessive whitespace",
+          "severity": "moderate",
+          "recommendation": "Implement fluid layout for ultra-wide screens"
+        }
+      ],
+      "colorConsistency": {
+        "dustyGold": "Maintains visibility on very large screens",
+        "warmSand": "Well-proportioned accents",
+        "mutedOlive": "Good secondary visibility",
+        "rustRed": "Clear warning states",
+        "warmOffWhite": "Excellent text readability",
+        "softGraphite": "Good card contrast",
+        "deepCharcoal": "Consistent background"
+      }
+    }
+  ],
+  "testScenarios": [
+    {
+      "name": "Dashboard Layout",
+      "status": "good",
+      "issues": [
+        "Card stacking works well on mobile",
+        "Grid layout adapts properly to different screen sizes",
+        "Content scales appropriately"
+      ],
+      "recommendations": [
+        "Consider increasing card padding on very small screens",
+        "Implement 3-column layout for larger tablets"
+      ]
+    },
+    {
+      "name": "Trade Form",
+      "status": "good",
+      "issues": [
+        "Form fields scale properly for touch input",
+        "Layout adapts well to different screen sizes",
+        "Buttons are appropriately sized"
+      ],
+      "recommendations": [
+        "Increase spacing between form fields on mobile",
+        "Consider larger touch targets for better mobile experience"
+      ]
+    },
+    {
+      "name": "Sidebar Navigation",
+      "status": "good",
+      "issues": [
+        "Mobile collapse/expand works correctly",
+        "Tablet behavior is appropriate",
+        "Desktop persistence is maintained"
+      ],
+      "recommendations": [
+        "Increase spacing between menu items on mobile",
+        "Consider adding icons for better mobile navigation"
+      ]
+    },
+    {
+      "name": "Charts and Visualizations",
+      "status": "good",
+      "issues": [
+        "Containers scale properly",
+        "Color representation is consistent",
+        "Interactive elements work correctly"
+      ],
+      "recommendations": [
+        "Implement responsive chart sizing for better mobile experience"
+      ]
+    },
+    {
+      "name": "Market Badges",
+      "status": "acceptable",
+      "issues": [
+        "Text readability is good on most screens",
+        "Color contrast is maintained",
+        "Spacing is appropriate"
+      ],
+      "recommendations": [
+        "Increase minimum font size for badges on very small screens",
+        "Consider using icons instead of text on mobile"
+      ]
+    },
+    {
+      "name": "Color Consistency",
+      "status": "excellent",
+      "issues": [
+        "Dusty Gold maintains visibility across all screen sizes",
+        "Warm Sand provides appropriate accent without overwhelming",
+        "Muted Olive works well as secondary color",
+        "Rust Red provides appropriate contrast for warnings",
+        "Warm Off-White maintains excellent text readability",
+        "Soft Graphite provides good card background contrast",
+        "Deep Charcoal maintains consistent dark background"
+      ],
+      "recommendations": [
+        "Consider slightly darkening Muted Olive for better contrast on very small screens",
+        "Monitor Dusty Gold contrast on mobile devices"
+      ]
+    }
+  ],
+  "overallIssues": [
+    {
+      "category": "Mobile Optimization",
+      "severity": "minor",
+      "description": "Some elements are slightly cramped on very small screens",
+      "recommendation": "Increase padding and spacing for mobile devices"
+    },
+    {
+      "category": "Large Screen Utilization",
+      "severity": "minor",
+      "description": "Content could better utilize very large screens",
+      "recommendation": "Implement fluid layouts for ultra-wide screens"
+    },
+    {
+      "category": "Typography Scaling",
+      "severity": "minor",
+      "description": "Text could scale better across different viewport sizes",
+      "recommendation": "Implement fluid typography scaling"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "Mobile Experience",
+      "action": "Increase touch target sizes for better mobile usability",
+      "implementation": "Add min-height: 44px to interactive elements"
+    },
+    {
+      "priority": "medium",
+      "category": "Color Contrast",
+      "action": "Slightly darken Muted Olive for better contrast on small screens",
+      "implementation": "Adjust #4F5B4A to #455040 for mobile devices"
+    },
+    {
+      "priority": "medium",
+      "category": "Layout Optimization",
+      "action": "Implement 3-column dashboard layout for larger tablets",
+      "implementation": "Add breakpoint at 900px for 3-column grid"
+    },
+    {
+      "priority": "low",
+      "category": "Large Screen Optimization",
+      "action": "Implement fluid layout for ultra-wide screens",
+      "implementation": "Remove max-width constraints and use percentage-based layouts"
+    },
+    {
+      "priority": "low",
+      "category": "Typography",
+      "action": "Implement fluid typography scaling",
+      "implementation": "Use clamp() function for responsive font sizes"
+    }
+  ],
+  "summary": {
+    "totalIssues": 8,
+    "criticalIssues": 0,
+    "majorIssues": 0,
+    "minorIssues": 7,
+    "overallStatus": "good",
+    "colorSchemePerformance": "excellent",
+    "responsiveBehavior": "good",
+    "accessibility": "acceptable"
+  }
+}

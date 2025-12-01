@@ -1,0 +1,24 @@
+{
+  "startTime": "2025-11-17T12:13:40.686Z",
+  "tradesLogged": [],
+  "errors": [
+    "Failed to log FOMO Trade - AAPL Stock: new row violates row-level security policy for table \"trades\"",
+    "Failed to log REVENGE Trade - BTCUSD Crypto: new row violates row-level security policy for table \"trades\"",
+    "Failed to log CONFIDENT Trade - EURUSD Forex: new row violates row-level security policy for table \"trades\"",
+    "Failed to log Multiple Emotions Trade - TSLA Stock: new row violates row-level security policy for table \"trades\"",
+    "Failed to log No Emotions Control Trade - SPY Stock: new row violates row-level security policy for table \"trades\"",
+    "FOMO filter failed - expected 2, got 0",
+    "REVENGE filter failed - expected 1, got 0",
+    "CONFIDENT filter failed - expected 1, got 0",
+    "ANXIOUS filter failed - expected 1, got 0",
+    "Multi-select filter failed - expected 3, got 0"
+  ],
+  "endTime": "2025-11-17T12:13:41.643Z",
+  "duration": 957,
+  "summary": {
+    "totalTradesAttempted": 5,
+    "successfulTradesLogged": 0,
+    "tradeSuccessRate": "0.0%",
+    "totalErrors": 10
+  }
+}

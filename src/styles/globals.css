@@ -1,0 +1,23 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global styles to hide scrollbars */
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari, Chrome, Edge */
+}
+
+/* Ensure content doesn't jump when scrollbar is hidden */
+html {
+  overflow: -moz-scrollbars-none; /* Firefox */
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #e0e0e0;
+}

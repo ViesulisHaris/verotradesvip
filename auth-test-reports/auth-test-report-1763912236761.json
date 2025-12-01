@@ -1,0 +1,307 @@
+{
+  "timestamp": "2025-11-23T15:37:16.761Z",
+  "baseUrl": "http://localhost:3000",
+  "summary": {
+    "total": 16,
+    "passed": 11,
+    "failed": 5,
+    "passRate": "68.75%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-23T15:35:46.043Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-23T15:35:46.045Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-23T15:35:46.820Z",
+      "type": "info",
+      "message": "\n=== Testing Home Page Redirects ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:35:46.820Z",
+      "type": "info",
+      "message": "Testing non-authenticated user redirect..."
+    },
+    {
+      "timestamp": "2025-11-23T15:35:48.165Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\home-page-non-auth-1763912148040.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:35:51.182Z",
+      "type": "success",
+      "message": "✅ Home page redirect for non-authenticated user: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:35:51.182Z",
+      "type": "info",
+      "message": "Testing authenticated user redirect..."
+    },
+    {
+      "timestamp": "2025-11-23T15:36:02.492Z",
+      "type": "error",
+      "message": "❌ Home page redirects: FAILED - Exception: Waiting failed: 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:02.493Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:36:03.698Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-page-loaded-1763912163611.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:04.146Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-valid-1763912164008.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:14.305Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-error-message-1763912174175.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:14.307Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Login failed: No error message found"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:14.307Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:36:21.210Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: Waiting for selector `input[type=\"email\"]` failed"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:21.210Z",
+      "type": "info",
+      "message": "\n=== Testing Registration Form ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:36:22.335Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1763912182233.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:22.806Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-form-filled-1763912182715.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:25.943Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-submission-result-1763912185872.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:25.944Z",
+      "type": "success",
+      "message": "✅ Registration form submission: PASSED - Registration processed successfully"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:25.944Z",
+      "type": "info",
+      "message": "\n=== Testing Authentication Cookies ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:36:28.683Z",
+      "type": "error",
+      "message": "❌ Authentication cookies: FAILED - Exception: page.waitForURL is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:28.683Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:36:31.548Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--dashboard-1763912190386.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:31.548Z",
+      "type": "success",
+      "message": "✅ Protected route /dashboard: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:36.631Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--trades-1763912193563.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:36.632Z",
+      "type": "success",
+      "message": "✅ Protected route /trades: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:40.660Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-1763912198615.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:40.661Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:45.025Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-create-1763912202586.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:45.026Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies/create: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:49.328Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--log-trade-1763912206936.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:49.328Z",
+      "type": "success",
+      "message": "✅ Protected route /log-trade: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:54.375Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--confluence-1763912211320.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:54.376Z",
+      "type": "success",
+      "message": "✅ Protected route /confluence: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:59.812Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--calendar-1763912216369.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:36:59.812Z",
+      "type": "success",
+      "message": "✅ Protected route /calendar: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:37:04.863Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--analytics-1763912221798.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:37:04.863Z",
+      "type": "success",
+      "message": "✅ Protected route /analytics: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-23T15:37:04.863Z",
+      "type": "info",
+      "message": "\n=== Testing Login Redirect ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:37:11.747Z",
+      "type": "error",
+      "message": "❌ Login redirect to dashboard: FAILED - Exception: Waiting for selector `input[type=\"email\"]` failed"
+    },
+    {
+      "timestamp": "2025-11-23T15:37:11.747Z",
+      "type": "info",
+      "message": "\n=== Testing Middleware Logging ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:37:16.760Z",
+      "type": "success",
+      "message": "✅ Middleware excessive logging: PASSED - Found 0 middleware logs (acceptable)"
+    }
+  ],
+  "protectedRoutes": [
+    {
+      "route": "/dashboard",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fdashboard"
+    },
+    {
+      "route": "/trades",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Ftrades"
+    },
+    {
+      "route": "/strategies",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fstrategies"
+    },
+    {
+      "route": "/strategies/create",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fstrategies%2Fcreate"
+    },
+    {
+      "route": "/log-trade",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Flog-trade"
+    },
+    {
+      "route": "/confluence",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fconfluence"
+    },
+    {
+      "route": "/calendar",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fcalendar"
+    },
+    {
+      "route": "/analytics",
+      "success": true,
+      "message": "Correctly redirected to login",
+      "finalUrl": "http://localhost:3000/login?redirectedFrom=%2Fanalytics"
+    }
+  ],
+  "middlewareLogs": [],
+  "screenshots": [
+    "auth-test-screenshots\\home-page-non-auth-1763912148040.png",
+    "auth-test-screenshots\\login-page-loaded-1763912163611.png",
+    "auth-test-screenshots\\login-form-filled-valid-1763912164008.png",
+    "auth-test-screenshots\\login-error-message-1763912174175.png",
+    "auth-test-screenshots\\register-page-loaded-1763912182233.png",
+    "auth-test-screenshots\\register-form-filled-1763912182715.png",
+    "auth-test-screenshots\\register-submission-result-1763912185872.png",
+    "auth-test-screenshots\\protected-route--dashboard-1763912190386.png",
+    "auth-test-screenshots\\protected-route--trades-1763912193563.png",
+    "auth-test-screenshots\\protected-route--strategies-1763912198615.png",
+    "auth-test-screenshots\\protected-route--strategies-create-1763912202586.png",
+    "auth-test-screenshots\\protected-route--log-trade-1763912206936.png",
+    "auth-test-screenshots\\protected-route--confluence-1763912211320.png",
+    "auth-test-screenshots\\protected-route--calendar-1763912216369.png",
+    "auth-test-screenshots\\protected-route--analytics-1763912221798.png"
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "screenshotsDir": "./auth-test-screenshots",
+    "reportsDir": "./auth-test-reports"
+  }
+}

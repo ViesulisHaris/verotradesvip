@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-11-16T12:13:27.288Z",
+  "summary": {
+    "total": 12,
+    "passed": 2,
+    "failed": 10
+  },
+  "tests": [
+    {
+      "name": "User Login",
+      "passed": false,
+      "details": "Error: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"email\"]') to be visible\u001b[22m\n",
+      "timestamp": "2025-11-16T12:13:59.740Z"
+    },
+    {
+      "name": "Schema Validation Page Load",
+      "passed": false,
+      "details": "Page title: VeroTrade",
+      "timestamp": "2025-11-16T12:14:02.274Z"
+    },
+    {
+      "name": "Schema Validation Fix",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Execute Schema Validation Fix\")')\u001b[22m\n",
+      "timestamp": "2025-11-16T12:14:32.286Z"
+    },
+    {
+      "name": "Strategy List Page Load",
+      "passed": false,
+      "details": "Loaded URL: http://localhost:3000/login",
+      "timestamp": "2025-11-16T12:14:35.696Z"
+    },
+    {
+      "name": "Strategy List Display",
+      "passed": false,
+      "details": "No strategy list detected",
+      "timestamp": "2025-11-16T12:14:35.708Z"
+    },
+    {
+      "name": "Strategy Loading State",
+      "passed": true,
+      "details": "Loading completed",
+      "timestamp": "2025-11-16T12:14:35.711Z"
+    },
+    {
+      "name": "Strategy Performance View",
+      "passed": false,
+      "details": "No strategies found to view",
+      "timestamp": "2025-11-16T12:14:35.881Z"
+    },
+    {
+      "name": "Strategy Edit Button",
+      "passed": false,
+      "details": "No edit button found",
+      "timestamp": "2025-11-16T12:14:35.886Z"
+    },
+    {
+      "name": "Strategy Deletion",
+      "passed": false,
+      "details": "No delete button found",
+      "timestamp": "2025-11-16T12:14:38.069Z"
+    },
+    {
+      "name": "Strategy Creation Navigation",
+      "passed": false,
+      "details": "Navigated to: http://localhost:3000/register",
+      "timestamp": "2025-11-16T12:14:40.121Z"
+    },
+    {
+      "name": "Browser Console Errors",
+      "passed": true,
+      "details": "Found 0 console errors",
+      "timestamp": "2025-11-16T12:14:42.283Z"
+    },
+    {
+      "name": "Application Stability",
+      "passed": false,
+      "details": "Some pages have stability issues",
+      "timestamp": "2025-11-16T12:14:53.782Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-16T12:13:59.740Z",
+      "message": "❌ FAIL: User Login - Error: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"email\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:02.274Z",
+      "message": "❌ FAIL: Schema Validation Page Load - Page title: VeroTrade"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:32.286Z",
+      "message": "❌ FAIL: Schema Validation Fix - Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Execute Schema Validation Fix\")')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:35.696Z",
+      "message": "❌ FAIL: Strategy List Page Load - Loaded URL: http://localhost:3000/login"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:35.708Z",
+      "message": "❌ FAIL: Strategy List Display - No strategy list detected"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:35.881Z",
+      "message": "❌ FAIL: Strategy Performance View - No strategies found to view"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:35.886Z",
+      "message": "❌ FAIL: Strategy Edit Button - No edit button found"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:38.069Z",
+      "message": "❌ FAIL: Strategy Deletion - No delete button found"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:40.121Z",
+      "message": "❌ FAIL: Strategy Creation Navigation - Navigated to: http://localhost:3000/register"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:44.941Z",
+      "message": "Page stability issue: /dashboard - Current URL: http://localhost:3000/login"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:47.343Z",
+      "message": "Page stability issue: /trades - Current URL: http://localhost:3000/login"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:50.871Z",
+      "message": "Page stability issue: /analytics - Current URL: http://localhost:3000/login"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:53.782Z",
+      "message": "Page stability issue: /strategies - Current URL: http://localhost:3000/login"
+    },
+    {
+      "timestamp": "2025-11-16T12:14:53.782Z",
+      "message": "❌ FAIL: Application Stability - Some pages have stability issues"
+    }
+  ]
+}

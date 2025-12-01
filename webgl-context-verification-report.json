@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-19T22:35:47.284Z",
+  "webglStatus": {
+    "hasCanvas": true,
+    "hasWebGL": true,
+    "webGLInfo": {
+      "vendor": "WebKit",
+      "renderer": "WebKit WebGL",
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "isContextLost": false
+    }
+  },
+  "backgroundVisible": true,
+  "consoleLogs": [],
+  "contextLossHandling": {
+    "implemented": true,
+    "events": []
+  }
+}

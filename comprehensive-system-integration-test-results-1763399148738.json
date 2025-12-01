@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-11-17T17:05:48.738Z",
+  "phases": {
+    "ACCESS": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:05:49.683Z",
+          "level": "info",
+          "message": "Accessing test page at /test-comprehensive-data"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:05:49.683Z"
+    },
+    "FATAL": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:05:51.840Z",
+          "level": "error",
+          "message": "Test failed with error: Test page did not load correctly"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:05:51.840Z"
+    }
+  },
+  "overallSuccess": false,
+  "errors": [
+    {
+      "phase": "FATAL",
+      "message": "Test failed with error: Test page did not load correctly",
+      "timestamp": "2025-11-17T17:05:51.840Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Test page did not load correctly",
+      "timestamp": "2025-11-17T17:05:51.840Z"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual User Flow Test - VeroTrade</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #121212;
+            color: #EAE6DD;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .test-step {
+            background: rgba(184, 155, 94, 0.1);
+            border-left: 4px solid #B89B5E;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #A7352D; }
+        .warning { color: #FF9800; }
+        .info { color: #2196F3; }
+        .button {
+            background: linear-gradient(135deg, #B89B5E, #D4B87F);
+            color: #121212;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 155, 94, 0.4);
+        }
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+        .status.pending {
+            background: rgba(255, 152, 0, 0.2);
+            border: 1px solid rgba(255, 152, 0, 0.5);
+            color: #FF9800;
+        }
+        .status.pass {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            color: #4CAF50;
+        }
+        .status.fail {
+            background: rgba(167, 53, 45, 0.2);
+            border: 1px solid rgba(167, 53, 45, 0.5);
+            color: #A7352D;
+        }
+        .credentials {
+            background: rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #B89B5E;
+            margin: 1rem 0;
+        }
+        .screenshot-guide {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Manual User Flow Test - VeroTrade</h1>
+    <p>This guide will help you manually verify the complete user flow from homepage to authenticated dashboard.</p>
+
+    <div class="test-section">
+        <h2>📋 Test Overview</h2>
+        <div class="test-step">
+            <h3>🎯 Objective</h3>
+            <p>Verify complete end-to-end user flow with visible content and no gray spaces</p>
+        </div>
+        <div class="test-step">
+            <h3>⏱️ Performance Targets</h3>
+            <ul>
+                <li>Homepage load: < 2 seconds</li>
+                <li>Login page load: < 2 seconds</li>
+                <li>Authentication: < 3 seconds</li>
+                <li>Dashboard load: < 4 seconds</li>
+                <li>Total flow time: < 10 seconds</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔑 Test Credentials</h2>
+        <div class="credentials">
+            <p><strong>Email:</strong> testuser1000@verotrade.com</p>
+            <p><strong>Password:</strong> TestPassword123!</p>
+            <p class="info">✅ These credentials have been verified and are active</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🧪 Step-by-Step Test</h2>
+        
+        <div class="test-step">
+            <h3>Step 1: Homepage Access</h3>
+            <p><strong>Action:</strong> Navigate to <a href="http://localhost:3000" target="_blank" class="button">http://localhost:3000</a></p>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ Page loads within 2 seconds</li>
+                <li>✅ VeroTrade logo is visible</li>
+                <li>✅ Login button is visible and clickable</li>
+                <li>✅ Register button is visible and clickable</li>
+                <li>✅ No gray spaces - proper content visible</li>
+                <li>✅ Proper styling with deep charcoal background</li>
+            </ul>
+            <div class="status pending" id="homepage-status">⏳ Pending</div>
+        </div>
+
+        <div class="test-step">
+            <h3>Step 2: Login Page Access</h3>
+            <p><strong>Action:</strong> Click Login button OR navigate to <a href="http://localhost:3000/login" target="_blank" class="button">http://localhost:3000/login</a></p>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ Login form loads within 2 seconds</li>
+                <li>✅ Email input field is visible</li>
+                <li>✅ Password input field is visible</li>
+                <li>✅ Sign In button is visible</li>
+                <li>✅ VeroTrade branding is visible</li>
+                <li>✅ No gray spaces - proper form content visible</li>
+                <li>✅ Glass morphism styling is applied</li>
+            </ul>
+            <div class="status pending" id="login-status">⏳ Pending</div>
+        </div>
+
+        <div class="test-step">
+            <h3>Step 3: Authentication Process</h3>
+            <p><strong>Action:</strong> Enter credentials and click Sign In</p>
+            <ul>
+                <li>Email: testuser1000@verotrade.com</li>
+                <li>Password: TestPassword123!</li>
+            </ul>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ Authentication completes within 3 seconds</li>
+                <li>✅ Loading spinner appears briefly</li>
+                <li>✅ Automatic redirect to dashboard</li>
+                <li>✅ No error messages displayed</li>
+                <li>✅ User session is established</li>
+            </ul>
+            <div class="status pending" id="auth-status">⏳ Pending</div>
+        </div>
+
+        <div class="test-step">
+            <h3>Step 4: Dashboard Access</h3>
+            <p><strong>Action:</strong> Verify dashboard loads after successful login</p>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ Dashboard loads within 4 seconds</li>
+                <li>✅ UnifiedSidebar is visible on the left</li>
+                <li>✅ Main dashboard content is visible</li>
+                <li>✅ User information is displayed</li>
+                <li>✅ Navigation menu items are visible</li>
+                <li>✅ No gray spaces - proper dashboard content</li>
+                <li>✅ Responsive design works correctly</li>
+            </ul>
+            <div class="status pending" id="dashboard-status">⏳ Pending</div>
+        </div>
+
+        <div class="test-step">
+            <h3>Step 5: Authentication State Persistence</h3>
+            <p><strong>Action:</strong> Refresh the dashboard page</p>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ User remains logged in after refresh</li>
+                <li>✅ No redirect to login page</li>
+                <li>✅ Dashboard content loads immediately</li>
+                <li>✅ User session is persistent</li>
+            </ul>
+            <div class="status pending" id="persistence-status">⏳ Pending</div>
+        </div>
+
+        <div class="test-step">
+            <h3>Step 6: Logout Functionality</h3>
+            <p><strong>Action:</strong> Click logout button in sidebar/user menu</p>
+            <p><strong>Expected Results:</strong></p>
+            <ul>
+                <li>✅ Logout button is visible and clickable</li>
+                <li>✅ Logout process completes successfully</li>
+                <li>✅ Redirect to homepage</li>
+                <li>✅ User session is cleared</li>
+                <li>✅ Homepage shows Login/Register buttons again</li>
+            </ul>
+            <div class="status pending" id="logout-status">⏳ Pending</div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>⏱️ Performance Measurement</h2>
+        <div class="timer" id="timer">Total Time: 0s</div>
+        <button class="button" onclick="startTimer()">Start Timer</button>
+        <button class="button" onclick="stopTimer()">Stop Timer</button>
+        <button class="button" onclick="resetTimer()">Reset Timer</button>
+        
+        <div class="screenshot-guide">
+            <h3>📸 Screenshot Guide</h3>
+            <p>Take screenshots at each step to document the flow:</p>
+            <ul>
+                <li>Homepage after load</li>
+                <li>Login page with form</li>
+                <li>Dashboard with sidebar</li>
+                <li>After logout (homepage)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 Test Results Summary</h2>
+        <div id="results">
+            <p class="info">Complete the test steps above and update the status indicators:</p>
+            <ul>
+                <li>Homepage: <span class="status pending" id="homepage-result">⏳ Pending</span></li>
+                <li>Login Page: <span class="status pending" id="login-result">⏳ Pending</span></li>
+                <li>Authentication: <span class="status pending" id="auth-result">⏳ Pending</span></li>
+                <li>Dashboard: <span class="status pending" id="dashboard-result">⏳ Pending</span></li>
+                <li>Persistence: <span class="status pending" id="persistence-result">⏳ Pending</span></li>
+                <li>Logout: <span class="status pending" id="logout-result">⏳ Pending</span></li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <h3>🎯 Overall Result</h3>
+            <div class="status pending" id="overall-result">⏳ Test In Progress</div>
+        </div>
+    </div>
+
+    <script>
+        let startTime = null;
+        let timerInterval = null;
+
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 100);
+            console.log('⏱️ Timer started');
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                console.log('⏱️ Timer stopped');
+            }
+        }
+
+        function resetTimer() {
+            stopTimer();
+            startTime = null;
+            document.getElementById('timer').textContent = 'Total Time: 0s';
+        }
+
+        function updateTimer() {
+            if (startTime) {
+                const elapsed = (Date.now() - startTime) / 1000;
+                document.getElementById('timer').textContent = `Total Time: ${elapsed.toFixed(1)}s`;
+            }
+        }
+
+        function updateStatus(step, status) {
+            const element = document.getElementById(step + '-status');
+            const resultElement = document.getElementById(step + '-result');
+            
+            if (element) {
+                element.className = `status ${status}`;
+                element.textContent = status === 'pass' ? '✅ Pass' : status === 'fail' ? '❌ Fail' : '⏳ Pending';
+            }
+            
+            if (resultElement) {
+                resultElement.className = `status ${status}`;
+                resultElement.textContent = status === 'pass' ? '✅ Pass' : status === 'fail' ? '❌ Fail' : '⏳ Pending';
+            }
+            
+            checkOverallStatus();
+        }
+
+        function checkOverallStatus() {
+            const steps = ['homepage', 'login', 'auth', 'dashboard', 'persistence', 'logout'];
+            const overallElement = document.getElementById('overall-result');
+            
+            let allPass = true;
+            let anyFail = false;
+            
+            steps.forEach(step => {
+                const element = document.getElementById(step + '-result');
+                if (element) {
+                    if (element.classList.contains('fail')) {
+                        anyFail = true;
+                        allPass = false;
+                    } else if (element.classList.contains('pending')) {
+                        allPass = false;
+                    }
+                }
+            });
+            
+            if (anyFail) {
+                overallElement.className = 'status fail';
+                overallElement.textContent = '❌ Test Failed';
+            } else if (allPass) {
+                overallElement.className = 'status pass';
+                overallElement.textContent = '✅ All Tests Passed';
+            } else {
+                overallElement.className = 'status pending';
+                overallElement.textContent = '⏳ Test In Progress';
+            }
+        }
+
+        // Auto-update functions for manual testing
+        window.updateStatus = updateStatus;
+        
+        console.log('🧪 Manual User Flow Test loaded');
+        console.log('💡 Use updateStatus("step", "pass/fail") to update results');
+    </script>
+</body>
+</html>

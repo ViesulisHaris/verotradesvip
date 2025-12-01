@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-11-24T14:09:07.171Z",
+  "summary": {
+    "totalTests": 5,
+    "passed": 0,
+    "failed": 5,
+    "skipped": 0
+  },
+  "categories": {
+    "navigationFlow": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "category": "navigationFlow",
+          "testName": "Navigation flow test",
+          "passed": false,
+          "details": "Navigation timeout of 30000 ms exceeded",
+          "timestamp": "2025-11-24T14:09:41.249Z"
+        }
+      ]
+    },
+    "debugPanel": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "category": "debugPanel",
+          "testName": "Debug panel test",
+          "passed": false,
+          "details": "Navigation timeout of 30000 ms exceeded",
+          "timestamp": "2025-11-24T14:10:12.793Z"
+        }
+      ]
+    },
+    "modalCleanup": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "category": "modalCleanup",
+          "testName": "Modal cleanup test",
+          "passed": false,
+          "details": "Navigation timeout of 30000 ms exceeded",
+          "timestamp": "2025-11-24T14:10:44.253Z"
+        }
+      ]
+    },
+    "edgeCases": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "category": "edgeCases",
+          "testName": "Edge cases test",
+          "passed": false,
+          "details": "Navigation timeout of 30000 ms exceeded",
+          "timestamp": "2025-11-24T14:11:15.680Z"
+        }
+      ]
+    },
+    "performance": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "category": "performance",
+          "testName": "Performance test",
+          "passed": false,
+          "details": "Navigation timeout of 30000 ms exceeded",
+          "timestamp": "2025-11-24T14:11:47.201Z"
+        }
+      ]
+    }
+  },
+  "details": [
+    {
+      "category": "navigationFlow",
+      "testName": "Navigation flow test",
+      "passed": false,
+      "details": "Navigation timeout of 30000 ms exceeded",
+      "timestamp": "2025-11-24T14:09:41.249Z"
+    },
+    {
+      "category": "debugPanel",
+      "testName": "Debug panel test",
+      "passed": false,
+      "details": "Navigation timeout of 30000 ms exceeded",
+      "timestamp": "2025-11-24T14:10:12.793Z"
+    },
+    {
+      "category": "modalCleanup",
+      "testName": "Modal cleanup test",
+      "passed": false,
+      "details": "Navigation timeout of 30000 ms exceeded",
+      "timestamp": "2025-11-24T14:10:44.253Z"
+    },
+    {
+      "category": "edgeCases",
+      "testName": "Edge cases test",
+      "passed": false,
+      "details": "Navigation timeout of 30000 ms exceeded",
+      "timestamp": "2025-11-24T14:11:15.680Z"
+    },
+    {
+      "category": "performance",
+      "testName": "Performance test",
+      "passed": false,
+      "details": "Navigation timeout of 30000 ms exceeded",
+      "timestamp": "2025-11-24T14:11:47.201Z"
+    }
+  ]
+}

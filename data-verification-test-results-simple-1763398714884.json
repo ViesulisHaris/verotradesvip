@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-17T16:58:22.216Z",
+  "testPhase": "completed",
+  "authenticationTest": {
+    "status": "PASS",
+    "url": "http://localhost:3000/dashboard"
+  },
+  "basicEndpointTest": {
+    "status": "FAIL",
+    "error": "Authentication required",
+    "details": "Auth session missing!"
+  },
+  "statisticalAccuracyTest": null,
+  "dataCompletenessTest": null,
+  "errorHandlingTest": {
+    "status": "FAIL",
+    "issues": [
+      "Error testing invalid action: page is not defined",
+      "Error testing missing action: page is not defined"
+    ]
+  },
+  "overallAssessment": {
+    "status": "FAIL",
+    "message": "1/3 test categories passed",
+    "passedTests": 1,
+    "totalTests": 3,
+    "failedTests": 2
+  },
+  "verificationData": null
+}

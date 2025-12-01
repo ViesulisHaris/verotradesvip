@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-11-15T22:16:06.045Z",
+  "tests": [
+    {
+      "test": "Strategy Error Resolution",
+      "status": "PASS",
+      "details": "Error message no longer appears on strategies page"
+    },
+    {
+      "test": "Create Strategy Button",
+      "status": "PASS",
+      "details": "Create Strategy button is visible"
+    },
+    {
+      "test": "Strategy Content",
+      "status": "PASS",
+      "details": "Found 28 strategy cards"
+    },
+    {
+      "test": "Create Strategy Navigation",
+      "status": "PASS",
+      "details": "Successfully navigated to strategy creation page"
+    },
+    {
+      "test": "Session Persistence",
+      "status": "PASS",
+      "details": "User remained authenticated after navigation"
+    },
+    {
+      "test": "Error Resolution Persistence",
+      "status": "PASS",
+      "details": "Error remains resolved after navigation"
+    }
+  ],
+  "screenshots": [
+    "detailed-strategy-verification.png"
+  ],
+  "errors": [],
+  "pageContent": {
+    "title": "Trading Strategies",
+    "createButtonVisible": true,
+    "emptyStateVisible": false,
+    "strategyCardsCount": 28
+  },
+  "success": true
+}

@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-11-19T06:59:33.563Z",
+  "authentication": {
+    "loginSuccessful": true,
+    "testCredentials": {
+      "email": "testuser@verotrade.com",
+      "password": "TestPassword123!"
+    }
+  },
+  "dashboard": {
+    "emotionRadarExists": true,
+    "chartContainer": true,
+    "rechartsWrapper": true,
+    "rechartsRadar": true,
+    "radarSvg": true,
+    "noDataMessage": false,
+    "chartVisible": true,
+    "consoleErrors": false
+  },
+  "confluence": {
+    "emotionRadarExists": true,
+    "chartContainer": true,
+    "rechartsWrapper": true,
+    "rechartsRadar": true,
+    "radarSvg": true,
+    "noDataMessage": false,
+    "chartVisible": true
+  },
+  "functionality": {
+    "tooltips": true,
+    "responsiveness": true,
+    "menuTransition": false
+  },
+  "menuTransition": {
+    "menuToggleFound": false,
+    "menuActuallyToggled": false
+  },
+  "overallSuccess": false
+}

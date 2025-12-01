@@ -1,0 +1,38 @@
+{
+  "authentication": {
+    "currentUrl": "http://localhost:3000/login",
+    "redirectedToLogin": true,
+    "loginFormExists": true,
+    "authErrors": []
+  },
+  "componentRendering": {
+    "dashboardContainerExists": false,
+    "chartContainerExists": false,
+    "cardCount": 0,
+    "animatedElementCount": 77
+  },
+  "dataLoading": {
+    "networkRequests": [],
+    "dataRequests": [],
+    "failedRequests": []
+  },
+  "errorStates": {},
+  "performance": {
+    "metrics": {
+      "Timestamp": 516303.019832,
+      "Documents": 3,
+      "Frames": 1,
+      "JSEventListeners": 613,
+      "Nodes": 190,
+      "LayoutCount": 7,
+      "RecalcStyleCount": 10,
+      "LayoutDuration": 0.047492,
+      "RecalcStyleDuration": 0.012018,
+      "ScriptDuration": 0.152089,
+      "TaskDuration": 0.456557,
+      "JSHeapUsedSize": 11643940,
+      "JSHeapTotalSize": 15204352
+    },
+    "hasIssues": false
+  }
+}

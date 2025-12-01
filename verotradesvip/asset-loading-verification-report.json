@@ -1,0 +1,235 @@
+{
+  "timestamp": "2025-11-27T21:46:05.605Z",
+  "url": "http://localhost:3001",
+  "tests": {
+    "initialLoad": {
+      "passed": true,
+      "status": 200,
+      "statusText": "OK",
+      "loadTime": 1764279968234
+    },
+    "grayScreenCheck": {
+      "passed": true,
+      "details": {
+        "backgroundColor": "rgb(18, 18, 18)",
+        "hasBackground": true,
+        "hasContent": true,
+        "hasElements": true,
+        "innerTextLength": 64,
+        "childrenCount": 10
+      }
+    },
+    "assetLoading": {
+      "passed": true,
+      "cssLoaded": 1,
+      "jsLoaded": 46,
+      "css404s": 0,
+      "js404s": 0
+    },
+    "cssVariables": {
+      "passed": true,
+      "details": {
+        "hasCssVariables": true,
+        "cssVariablesCount": 103,
+        "cssVariables": [
+          {
+            "property": "--tw-ring-offset-shadow",
+            "value": "0 0 #0000"
+          },
+          {
+            "property": "--font-weight-h3",
+            "value": "600"
+          },
+          {
+            "property": "--tw-inset-shadow-alpha",
+            "value": "100%"
+          },
+          {
+            "property": "--soft-graphite",
+            "value": "#202020"
+          },
+          {
+            "property": "--menu-shadow",
+            "value": "rgba(0, 0, 0, 0.25)"
+          },
+          {
+            "property": "--tw-ring-shadow",
+            "value": "0 0 #0000"
+          },
+          {
+            "property": "--sidebar-collapsed-width",
+            "value": "4rem"
+          },
+          {
+            "property": "--dusty-gold",
+            "value": "#B89B5E"
+          },
+          {
+            "property": "--spacing-card",
+            "value": "1rem"
+          },
+          {
+            "property": "--rust-red",
+            "value": "#A7352D"
+          }
+        ]
+      }
+    },
+    "navigation": {
+      "passed": false,
+      "details": {
+        "hasNavElements": false,
+        "navElementsCount": 0,
+        "linksCount": 0,
+        "buttonsCount": 2,
+        "hasInternalLinks": false
+      }
+    },
+    "loginPage": {
+      "passed": true,
+      "details": {
+        "hasLoginForm": true,
+        "hasInputFields": true,
+        "hasButtons": true
+      }
+    },
+    "dashboardPage": {
+      "passed": false,
+      "details": {
+        "hasContent": false,
+        "hasElements": true
+      }
+    },
+    "errorBoundary": {
+      "passed": true,
+      "errorCount": 0,
+      "errors": []
+    },
+    "apiKey": {
+      "passed": true,
+      "errorCount": 0,
+      "errors": []
+    }
+  },
+  "summary": {
+    "totalTests": 9,
+    "passedTests": 7,
+    "failedTests": 2
+  },
+  "assets": {
+    "cssLoaded": [
+      "http://localhost:3001/_next/static/css/app/layout.css?v=1764279970358"
+    ],
+    "jsLoaded": [
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_c.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_O.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-db60cc9f.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_c.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_f.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_a.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_d.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_su.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/main-app.js?v=1764279966582",
+      "http://localhost:3001/_next/static/chunks/app-pages-internals.js",
+      "http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext-simple_tsx.js",
+      "http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_AuthGuard_tsx.js",
+      "http://localhost:3001/_next/static/chunks/app/page.js",
+      "http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_ErrorBoundary_tsx.js",
+      "http://localhost:3001/_next/static/chunks/app/layout.js",
+      "http://localhost:3001/_next/static/chunks/app/error.js",
+      "http://localhost:3001/_next/static/chunks/app/not-found.js",
+      "http://localhost:3001/_next/static/chunks/app/global-error.js",
+      "http://localhost:3001/_next/static/chunks/polyfills.js",
+      "http://localhost:3001/_next/static/chunks/webpack.js?v=1764279966582"
+    ],
+    "css404s": [],
+    "js404s": []
+  },
+  "errors": {
+    "consoleErrors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2025-11-27T21:46:08.664Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to fetch RSC payload for http://localhost:3001/login. Falling back to browser navigation. JSHandle@error",
+        "timestamp": "2025-11-27T21:46:16.895Z"
+      }
+    ],
+    "networkErrors": [
+      {
+        "url": "http://localhost:3001/?_rsc=1p60s",
+        "method": "GET",
+        "failure": {
+          "errorText": "net::ERR_ABORTED"
+        },
+        "timestamp": "2025-11-27T21:46:09.551Z"
+      },
+      {
+        "url": "http://localhost:3001/?_rsc=1p60s",
+        "method": "GET",
+        "failure": {
+          "errorText": "net::ERR_ABORTED"
+        },
+        "timestamp": "2025-11-27T21:46:10.373Z"
+      },
+      {
+        "url": "http://localhost:3001/?_rsc=1p60s",
+        "method": "GET",
+        "failure": {
+          "errorText": "net::ERR_ABORTED"
+        },
+        "timestamp": "2025-11-27T21:46:11.450Z"
+      },
+      {
+        "url": "http://localhost:3001/login?_rsc=1c5gs",
+        "method": "GET",
+        "failure": {
+          "errorText": "net::ERR_ABORTED"
+        },
+        "timestamp": "2025-11-27T21:46:16.894Z"
+      }
+    ],
+    "resourceErrors": [
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 404,
+        "statusText": "Not Found",
+        "timestamp": "2025-11-27T21:46:08.663Z"
+      }
+    ]
+  },
+  "screenshots": [
+    "test-initial-load.png",
+    "test-login-page.png",
+    "test-dashboard-page.png"
+  ]
+}

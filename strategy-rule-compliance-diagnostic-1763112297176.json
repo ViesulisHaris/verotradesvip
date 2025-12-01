@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-11-14T09:24:54.774Z",
+  "tests": [
+    {
+      "testName": "Direct strategies table access",
+      "timestamp": "2025-11-14T09:24:56.021Z",
+      "data": {
+        "primary": {
+          "success": true,
+          "count": 0,
+          "error": null
+        },
+        "cacheBypass": {
+          "success": true,
+          "count": 0,
+          "error": null
+        },
+        "fresh": {
+          "success": true,
+          "count": 0,
+          "error": null
+        }
+      },
+      "error": null
+    },
+    {
+      "testName": "Strategies query with user filter",
+      "timestamp": "2025-11-14T09:24:56.514Z",
+      "data": {
+        "primary": {
+          "success": false,
+          "count": 0,
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        },
+        "cacheBypass": {
+          "success": false,
+          "count": 0,
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        },
+        "fresh": {
+          "success": false,
+          "count": 0,
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        }
+      },
+      "error": null
+    },
+    {
+      "testName": "Complex strategies join query",
+      "timestamp": "2025-11-14T09:24:56.873Z",
+      "data": {
+        "primary": {
+          "success": true,
+          "count": 0,
+          "error": null,
+          "hasStrategyRuleComplianceError": false
+        },
+        "cacheBypass": {
+          "success": true,
+          "count": 0,
+          "error": null,
+          "hasStrategyRuleComplianceError": false
+        },
+        "fresh": {
+          "success": true,
+          "count": 0,
+          "error": null,
+          "hasStrategyRuleComplianceError": false
+        }
+      },
+      "error": null
+    },
+    {
+      "testName": "Trade insertion simulation",
+      "timestamp": "2025-11-14T09:24:57.175Z",
+      "data": {
+        "primary": {
+          "success": false,
+          "step": "strategies_query",
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        },
+        "cacheBypass": {
+          "success": false,
+          "step": "strategies_query",
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        },
+        "fresh": {
+          "success": false,
+          "step": "strategies_query",
+          "error": "invalid input syntax for type uuid: \"test-user-id\"",
+          "hasStrategyRuleComplianceError": false
+        }
+      },
+      "error": null
+    }
+  ],
+  "errors": [],
+  "queryPlans": [],
+  "cacheInfo": {
+    "tableExists": [],
+    "tableError": "Could not find the function public.exec_sql(sql_query) in the schema cache",
+    "dependencies": [],
+    "dependenciesError": "Could not find the function public.exec_sql(sql_query) in the schema cache",
+    "cachedQueries": [],
+    "cachedQueriesError": "Could not find the function public.exec_sql(sql_query) in the schema cache"
+  }
+}

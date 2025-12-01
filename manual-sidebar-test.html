@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Visibility Manual Test</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+            color: #EAE6DD;
+            margin: 0;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: #1c1c1c;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-button {
+            background: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .test-button:hover {
+            background: #A68A4E;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .pass { background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e; color: #22c55e; }
+        .fail { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; }
+        .pending { background: rgba(59, 130, 246, 0.1); border: 1px solid #3b82f6; color: #3b82f6; }
+        .instructions {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .results {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Sidebar Visibility Manual Test</h1>
+        
+        <div class="test-section">
+            <h2>Test Instructions</h2>
+            <div class="instructions">
+                <h3>Step 1: Login Test</h3>
+                <ol>
+                    <li>Open <a href="http://localhost:3000/login" target="_blank" class="test-button">Login Page</a></li>
+                    <li>Login with credentials: testuser1000@verotrade.com / TestPassword123!</li>
+                    <li>Verify you're redirected to dashboard</li>
+                </ol>
+                
+                <h3>Step 2: Sidebar Visibility Test</h3>
+                <ol>
+                    <li>Open <a href="http://localhost:3000/test-sidebar-visibility-fix" target="_blank" class="test-button">Sidebar Test Page</a></li>
+                    <li>Check if sidebar is visible on the left side</li>
+                    <li>Check browser console for authentication logs</li>
+                    <li>Verify sidebar render time is positive (not -1ms)</li>
+                </ol>
+                
+                <h3>Step 3: Navigation Test</h3>
+                <ol>
+                    <li>Click on different navigation items in sidebar</li>
+                    <li>Verify navigation works correctly</li>
+                    <li>Check if sidebar remains visible on all pages</li>
+                </ol>
+                
+                <h3>Step 4: Mobile Test</h3>
+                <ol>
+                    <li>Resize browser window to mobile width (less than 768px)</li>
+                    <li>Check if mobile menu button appears</li>
+                    <li>Test mobile menu toggle functionality</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Quick Test Links</h2>
+            <div>
+                <a href="http://localhost:3000/login" target="_blank" class="test-button">Login</a>
+                <a href="http://localhost:3000/test-sidebar-visibility-fix" target="_blank" class="test-button">Sidebar Test</a>
+                <a href="http://localhost:3000/dashboard" target="_blank" class="test-button">Dashboard</a>
+                <a href="http://localhost:3000/trades" target="_blank" class="test-button">Trades</a>
+                <a href="http://localhost:3000/strategies" target="_blank" class="test-button">Strategies</a>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Expected Results</h2>
+            <div class="results">
+                <div>✅ Sidebar should be visible for authenticated users</div>
+                <div>✅ Sidebar render time should be positive (not -1ms)</div>
+                <div>✅ Authentication state should be properly detected</div>
+                <div>✅ Navigation links should work correctly</div>
+                <div>✅ Mobile menu should appear on small screens</div>
+                <div>✅ Toggle functionality should work on desktop</div>
+                <div>✅ Logout button should work correctly</div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Console Debug Information</h2>
+            <div class="instructions">
+                <h3>Look for these console logs:</h3>
+                <ul>
+                    <li><code>🔧 [UnifiedSidebar-DEBUG] Auth state changed:</code> - Should show user info</li>
+                    <li><code>✅ Sidebar element found in DOM</code> - Should appear</li>
+                    <li><code>✅ Sidebar is visible</code> - Should be true</li>
+                    <li><code>✅ Sidebar render time: X.XXms</code> - Should be positive</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test Results</h2>
+            <div id="test-results">
+                <div class="status pending">Waiting for test results...</div>
+                <p>Complete the manual tests above and check the results.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-update test results based on console logs
+        let testResults = {
+            sidebarVisible: false,
+            renderTime: null,
+            authState: null,
+            navigationWorking: false
+        };
+        
+        // Listen for console messages from the test page
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'sidebarTestResult') {
+                testResults = { ...testResults, ...event.data.results };
+                updateResultsDisplay();
+            }
+        });
+        
+        function updateResultsDisplay() {
+            const resultsDiv = document.getElementById('test-results');
+            let html = '';
+            
+            for (const [key, value] of Object.entries(testResults)) {
+                const status = value === true || (typeof value === 'number' && value > 0) ? 'pass' : 
+                              value === false || value === -1 ? 'fail' : 'pending';
+                html += `<div class="status ${status}">${key}: ${value}</div>`;
+            }
+            
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

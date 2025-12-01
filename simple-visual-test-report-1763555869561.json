@@ -1,0 +1,183 @@
+{
+  "title": "Simple Visual Enhancement Testing Report",
+  "timestamp": "2025-11-19T12:37:49.561Z",
+  "duration": "11398ms",
+  "summary": {
+    "passed": 10,
+    "failed": 6,
+    "total": 16
+  },
+  "results": {
+    "dashboardVisualEnhancements": {
+      "Page Visual Style": {
+        "passed": true
+      },
+      "Card Elements Presence": {
+        "passed": true
+      },
+      "Interactive Elements Styling": {
+        "passed": true
+      }
+    },
+    "pnlGraphVisibility": {
+      "Chart Elements Presence": {
+        "passed": false,
+        "reason": "No chart elements found"
+      },
+      "Chart Container Styling": {
+        "passed": true
+      },
+      "Chart Axes and Labels": {
+        "passed": false,
+        "reason": "No chart axes found"
+      },
+      "Chart Responsive Behavior": {
+        "passed": false,
+        "reason": "Chart has zero dimensions"
+      }
+    },
+    "existingFunctionality": {
+      "Navigation Elements": {
+        "passed": false,
+        "reason": "No navigation elements found"
+      },
+      "Interactive Elements": {
+        "passed": true
+      },
+      "Form Elements": {
+        "passed": true
+      }
+    },
+    "performance": {
+      "Page Load Performance": {
+        "passed": true,
+        "data": {
+          "metrics": {
+            "Timestamp": 516211.218077,
+            "Documents": 3,
+            "Frames": 1,
+            "JSEventListeners": 620,
+            "Nodes": 288,
+            "LayoutCount": 73,
+            "RecalcStyleCount": 110,
+            "LayoutDuration": 0.083958,
+            "RecalcStyleDuration": 0.042499,
+            "ScriptDuration": 0.257204,
+            "TaskDuration": 0.928953,
+            "JSHeapUsedSize": 12667552,
+            "JSHeapTotalSize": 15728640
+          }
+        }
+      },
+      "Resource Loading": {
+        "passed": true,
+        "data": {
+          "resourceCount": 45
+        }
+      },
+      "Animation Performance": {
+        "passed": false,
+        "reason": "Too many animated elements: 77"
+      }
+    },
+    "crossBrowserCompatibility": {
+      "Mobile Viewport": {
+        "passed": true
+      },
+      "Tablet Viewport": {
+        "passed": false,
+        "reason": "Elements not properly visible on tablet"
+      },
+      "Touch-Friendly Elements": {
+        "passed": true,
+        "data": {
+          "touchFriendlyPercentage": 100
+        }
+      }
+    },
+    "summary": {
+      "passed": 10,
+      "failed": 6,
+      "total": 16
+    }
+  },
+  "screenshots": [
+    {
+      "name": "initial-page-state",
+      "filename": "screenshot-initial-page-state-2025-11-19T12-37-43-035Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-initial-page-state-2025-11-19T12-37-43-035Z.png"
+    },
+    {
+      "name": "dashboard-page-visual-style",
+      "filename": "screenshot-dashboard-page-visual-style-2025-11-19T12-37-43-392Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-dashboard-page-visual-style-2025-11-19T12-37-43-392Z.png"
+    },
+    {
+      "name": "dashboard-card-elements-presence",
+      "filename": "screenshot-dashboard-card-elements-presence-2025-11-19T12-37-43-852Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-dashboard-card-elements-presence-2025-11-19T12-37-43-852Z.png"
+    },
+    {
+      "name": "dashboard-interactive-elements-styling",
+      "filename": "screenshot-dashboard-interactive-elements-styling-2025-11-19T12-37-44-760Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-dashboard-interactive-elements-styling-2025-11-19T12-37-44-760Z.png"
+    },
+    {
+      "name": "pnl-chart-elements-presence",
+      "filename": "screenshot-pnl-chart-elements-presence-2025-11-19T12-37-45-123Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-pnl-chart-elements-presence-2025-11-19T12-37-45-123Z.png"
+    },
+    {
+      "name": "pnl-chart-container-styling",
+      "filename": "screenshot-pnl-chart-container-styling-2025-11-19T12-37-45-524Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-pnl-chart-container-styling-2025-11-19T12-37-45-524Z.png"
+    },
+    {
+      "name": "pnl-chart-axes-and-labels",
+      "filename": "screenshot-pnl-chart-axes-and-labels-2025-11-19T12-37-45-896Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-pnl-chart-axes-and-labels-2025-11-19T12-37-45-896Z.png"
+    },
+    {
+      "name": "pnl-chart-responsive-behavior",
+      "filename": "screenshot-pnl-chart-responsive-behavior-2025-11-19T12-37-46-314Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-pnl-chart-responsive-behavior-2025-11-19T12-37-46-314Z.png"
+    },
+    {
+      "name": "functionality-navigation-elements",
+      "filename": "screenshot-functionality-navigation-elements-2025-11-19T12-37-46-725Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-functionality-navigation-elements-2025-11-19T12-37-46-725Z.png"
+    },
+    {
+      "name": "functionality-interactive-elements",
+      "filename": "screenshot-functionality-interactive-elements-2025-11-19T12-37-47-089Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-functionality-interactive-elements-2025-11-19T12-37-47-089Z.png"
+    },
+    {
+      "name": "functionality-form-elements",
+      "filename": "screenshot-functionality-form-elements-2025-11-19T12-37-47-501Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-functionality-form-elements-2025-11-19T12-37-47-501Z.png"
+    },
+    {
+      "name": "compatibility-mobile-viewport",
+      "filename": "screenshot-compatibility-mobile-viewport-2025-11-19T12-37-48-393Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-compatibility-mobile-viewport-2025-11-19T12-37-48-393Z.png"
+    },
+    {
+      "name": "compatibility-tablet-viewport",
+      "filename": "screenshot-compatibility-tablet-viewport-2025-11-19T12-37-49-173Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-compatibility-tablet-viewport-2025-11-19T12-37-49-173Z.png"
+    },
+    {
+      "name": "compatibility-touch-friendly-elements",
+      "filename": "screenshot-compatibility-touch-friendly-elements-2025-11-19T12-37-49-379Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\screenshot-compatibility-touch-friendly-elements-2025-11-19T12-37-49-379Z.png"
+    }
+  ],
+  "recommendations": [
+    "Address P&L graph visibility issues, focusing on chart rendering and label display.",
+    "Fix existing functionality issues, particularly interactive elements and navigation.",
+    "Optimize performance issues, focusing on page load times and resource usage.",
+    "Improve cross-browser and device compatibility, especially for mobile views.",
+    "High failure rate detected. Consider a thorough code review and refactoring."
+  ]
+}

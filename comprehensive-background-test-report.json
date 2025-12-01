@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-11-19T21:00:49.800Z",
+  "balatroInfo": {
+    "error": "Balatro container not found"
+  },
+  "pixelAnalysis": {
+    "error": "Canvas not found for pixel analysis"
+  },
+  "mouseTestPositions": [
+    {
+      "x": 200,
+      "y": 200
+    },
+    {
+      "x": 800,
+      "y": 300
+    },
+    {
+      "x": 1400,
+      "y": 700
+    },
+    {
+      "x": 960,
+      "y": 540
+    }
+  ],
+  "conclusion": "FAILURE: Balatro component did not load properly"
+}

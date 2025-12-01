@@ -1,0 +1,116 @@
+{
+  "timestamp": "2025-11-17T14:49:11.311Z",
+  "testResults": {
+    "dashboardLoaded": true,
+    "confluenceLoaded": true,
+    "dataMatch": true,
+    "filtersFound": true,
+    "filterTested": true,
+    "emotionalDataFound": {
+      "dashboard": false,
+      "confluence": false
+    },
+    "authStatus": {
+      "hasUserData": false,
+      "hasTradeData": false,
+      "tradeCount": 0
+    }
+  },
+  "emotionalAnalysisData": {
+    "dashboard": [],
+    "confluence": []
+  },
+  "consoleLogs": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "networkRequests": [
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_701fbbd8._.js"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_b069762d._.js"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_8349675c._.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1"
+    },
+    {
+      "method": "GET",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc"
+    },
+    {
+      "method": "POST",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql"
+    },
+    {
+      "method": "GET",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1"
+    },
+    {
+      "method": "GET",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_701fbbd8._.js"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_b069762d._.js"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_8349675c._.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1"
+    }
+  ],
+  "screenshots": {
+    "dashboard": "verification-screenshots/dashboard-emotional-analysis.png",
+    "confluenceNoFilters": "verification-screenshots/confluence-emotional-analysis-no-filters.png",
+    "confluenceWithFilters": "verification-screenshots/confluence-emotional-analysis-with-filters.png"
+  }
+}

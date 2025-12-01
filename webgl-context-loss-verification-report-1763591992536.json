@@ -1,0 +1,490 @@
+{
+  "summary": {
+    "status": "FAILED",
+    "timestamp": "2025-11-19T22:39:48.949Z",
+    "testDuration": 3587,
+    "screenshots": 0,
+    "consoleLogs": 46
+  },
+  "results": {
+    "timestamp": "2025-11-19T22:39:48.949Z",
+    "browserInfo": {
+      "version": "Chrome/142.0.7444.162",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "platform": "Win32"
+    },
+    "webglInfo": {},
+    "initialRender": {},
+    "contextLossTest": {},
+    "contextRestoreTest": {},
+    "visualVerification": {},
+    "performanceMetrics": {},
+    "overallStatus": "FAILED",
+    "error": {
+      "message": "this.page.waitForTimeout is not a function",
+      "stack": "TypeError: this.page.waitForTimeout is not a function\n    at WebGLContextLossVerification.navigateToTestPage (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\webgl-context-loss-final-verification.js:94:21)\n    at async WebGLContextLossVerification.runFullTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\webgl-context-loss-final-verification.js:624:7)",
+      "timestamp": "2025-11-19T22:39:52.536Z"
+    }
+  },
+  "screenshots": [],
+  "consoleLogs": [
+    {
+      "timestamp": "2025-11-19T22:39:51.019Z",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.127Z",
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.147Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.148Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.150Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.151Z",
+      "type": "warn",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.152Z",
+      "type": "warn",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-19T22:39:51.150Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.154Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.154Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.162Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.163Z",
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.163Z",
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.195Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico"
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.197Z",
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.203Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.215Z",
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.217Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.217Z",
+      "type": "log",
+      "text": "🔄 [AUTH] No session found, redirecting to login",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.222Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.230Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.373Z",
+      "type": "warn",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.383Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.384Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.384Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.384Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.385Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.488Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.488Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.488Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.489Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.489Z",
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.490Z",
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.543Z",
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.543Z",
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.554Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.554Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.593Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.663Z",
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.664Z",
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight validation...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.844Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc"
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.844Z",
+      "type": "warn",
+      "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:51.844Z",
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:52.118Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1"
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:52.145Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql"
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:52.146Z",
+      "type": "log",
+      "text": "✅ [CACHE] Comprehensive cache clear completed",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    },
+    {
+      "timestamp": "2025-11-19T22:39:52.146Z",
+      "type": "log",
+      "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      }
+    }
+  ],
+  "recommendations": [
+    "Initial render failed - check WebGL initialization and shader compilation",
+    "Context loss simulation failed - verify context loss event handling",
+    "Context restore failed - verify context restoration mechanism",
+    "Post-restore rendering failed - check resource recreation logic"
+  ]
+}

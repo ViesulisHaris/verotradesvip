@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "startTime": "2025-11-18T21:33:26.276Z",
+    "endTime": "2025-11-18T21:33:57.863Z",
+    "duration": 31587
+  },
+  "overviewTab": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "performanceTab": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "rulesTab": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "tabNavigation": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "dataConsistency": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "multiStrategy": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "issues": [
+    {
+      "test": "Critical Error",
+      "category": "system",
+      "message": "Critical error during test execution: Authentication failed - cannot proceed with tests",
+      "details": {
+        "error": "Error: Authentication failed - cannot proceed with tests\n    at runAllTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\strategy-modal-tabs-verification.js:1259:13)"
+      }
+    }
+  ],
+  "recommendations": [
+    "All strategy performance modal tabs appear to be working correctly"
+  ]
+}

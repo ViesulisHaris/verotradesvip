@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-11-25T22:42:05.529Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 0
+  },
+  "categories": {
+    "navigation": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "sidebar": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "responsive": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "authentication": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "dashboard": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "interactive": {
+      "tests": [],
+      "passed": 0,
+      "failed": 0
+    },
+    "general": {
+      "tests": [
+        {
+          "name": "Page loads successfully",
+          "passed": "",
+          "details": "Page failed to load",
+          "timestamp": "2025-11-25T22:42:10.138Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1
+    }
+  },
+  "screenshots": [
+    {
+      "name": "initial-load",
+      "category": "general",
+      "filename": "general-initial-load-1764110530039.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-initial-load-1764110530039.png",
+      "timestamp": "2025-11-25T22:42:10.134Z"
+    },
+    {
+      "name": "final-state",
+      "category": "general",
+      "filename": "general-final-state-1764110530138.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\general-final-state-1764110530138.png",
+      "timestamp": "2025-11-25T22:42:10.186Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-25T22:42:10.138Z",
+      "message": "Invalid category \"general\" for test \"Page loads successfully\". Using \"general\" instead."
+    },
+    {
+      "timestamp": "2025-11-25T22:42:10.138Z",
+      "message": "Test FAILED: Page loads successfully - Page failed to load"
+    },
+    {
+      "timestamp": "2025-11-25T22:42:10.138Z",
+      "message": "Page failed to load, aborting tests..."
+    }
+  ]
+}

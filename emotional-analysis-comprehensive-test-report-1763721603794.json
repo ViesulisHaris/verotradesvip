@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-11-21T10:40:03.792Z",
+  "testType": "Comprehensive Emotional Analysis Verification",
+  "environment": {
+    "url": "http://localhost:3000",
+    "browser": "Playwright",
+    "testUser": "testuser@verotrade.com"
+  },
+  "expectedEmotions": [
+    "FOMO",
+    "REVENGE",
+    "TILT",
+    "OVERRISK",
+    "PATIENCE",
+    "REGRET",
+    "DISCIPLINE",
+    "CONFIDENT",
+    "ANXIOUS",
+    "NEUTRAL"
+  ],
+  "emotionColors": {
+    "FOMO": "#ff6b6b",
+    "REVENGE": "#ff4757",
+    "TILT": "#ee5a6f",
+    "OVERRISK": "#ffa502",
+    "PATIENCE": "#26de81",
+    "REGRET": "#778ca3",
+    "DISCIPLINE": "#2d98da",
+    "CONFIDENT": "#20bf6b",
+    "ANXIOUS": "#fd79a8",
+    "NEUTRAL": "#a29bfe"
+  },
+  "results": {
+    "emotionalStateInput": {
+      "allEmotionsAvailable": false,
+      "multiSelectWorks": false,
+      "colorCodedTags": false,
+      "addRemoveDynamically": false,
+      "visualFeedback": false,
+      "screenshotTaken": false,
+      "errors": [
+        "General error in emotional state input test: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.modal, .dialog, form, [role=\"dialog\"]') to be visible\u001b[22m\n"
+      ]
+    },
+    "emotionRadarChart": {
+      "visualRepresentation": true,
+      "frequencyAnalysis": false,
+      "buySellLeaning": false,
+      "dynamicScaling": false,
+      "interactiveTooltips": false,
+      "chartRendering": false,
+      "screenshotTaken": true,
+      "errors": [
+        "Radar chart found but not rendered",
+        "No frequency analysis elements found",
+        "No buy/sell leaning indicators found",
+        "No dynamic scaling behavior found",
+        "Error testing interactive tooltips: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"flex items-start justify-between mb-4\">…</div> from <div class=\"min-h-screen p-6\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"flex items-start justify-between mb-4\">…</div> from <div class=\"min-h-screen p-6\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"flex items-start justify-between mb-4\">…</div> from <div class=\"min-h-screen p-6\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      ]
+    },
+    "dominantEmotionCard": {
+      "mostFrequentEmotion": false,
+      "emotionalTrendAnalysis": false,
+      "performanceCorrelation": false,
+      "expandableFunctionality": false,
+      "screenshotTaken": true,
+      "errors": [
+        "No dominant emotion card found",
+        "No emotional trend analysis found",
+        "No performance correlation with emotions found",
+        "No expandable elements found in dominant emotion card"
+      ]
+    },
+    "emotionalDataProcessing": {
+      "storageFormats": false,
+      "retrievalParsing": false,
+      "associationWithTrades": false,
+      "analysisAcrossTrades": false,
+      "screenshotTaken": true,
+      "errors": [
+        "Database error: TypeError: fetch failed",
+        "Database retrieval error: TypeError: fetch failed",
+        "Database association error: TypeError: fetch failed",
+        "No cross-trade emotional analysis found"
+      ]
+    },
+    "emotionalDataStorage": {
+      "persistenceWithTrades": false,
+      "dataIntegrity": false,
+      "formatConsistency": false,
+      "errorHandling": false,
+      "screenshotTaken": true,
+      "errors": [
+        "Error testing persistence: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form, .modal, [role=\"dialog\"]') to be visible\u001b[22m\n",
+        "Data integrity check error: TypeError: fetch failed",
+        "Format consistency check error: TypeError: fetch failed",
+        "Error handling check error: TypeError: fetch failed"
+      ]
+    },
+    "emotionalStateTags": {
+      "tagsDisplayed": false,
+      "colorCoding": false,
+      "multipleEmotions": false,
+      "filtering": false,
+      "screenshotTaken": true,
+      "errors": [
+        "No emotion tags found in trades list",
+        "No properly colored emotion tags found",
+        "No trades with multiple emotions found",
+        "Filter controls found but no emotion-specific filters"
+      ]
+    },
+    "edgeCases": {
+      "emptyEmotionalData": false,
+      "invalidEmotionalData": false,
+      "mixedEmotionalStates": false,
+      "nullEmotionalValues": false,
+      "largeDataset": false,
+      "screenshotTaken": true,
+      "errors": [
+        "Error testing empty emotional data: TypeError: fetch failed",
+        "Error creating test trade with invalid data: TypeError: fetch failed",
+        "Error testing mixed emotional states: TypeError: fetch failed",
+        "Error testing null emotional values: TypeError: fetch failed",
+        "Error testing large dataset: TypeError: fetch failed"
+      ]
+    },
+    "summary": {
+      "totalTests": 32,
+      "passedTests": 1,
+      "failedTests": 31,
+      "issues": []
+    }
+  },
+  "summary": {
+    "totalTests": 32,
+    "passedTests": 1,
+    "failedTests": 31,
+    "issues": [],
+    "successRate": "3.13%"
+  }
+}

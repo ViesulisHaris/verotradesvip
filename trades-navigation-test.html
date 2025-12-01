@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Navigation Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .test-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #333;
+        }
+        .success {
+            color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .warning {
+            color: #ff9800;
+            border-color: #ff9800;
+        }
+        .error {
+            color: #f44336;
+            border-color: #f44336;
+        }
+        .nav-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .nav-button:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            background: #444;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔧 Trades Tab Navigation Fix Test</h1>
+        
+        <div class="instructions">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Navigate to the Trades page in the application</li>
+                <li>Try clicking on menu buttons (Dashboard, Strategies, Analytics, etc.)</li>
+                <li>Verify that navigation works smoothly without freezing</li>
+                <li>Check that debug panel doesn't interfere with navigation</li>
+                <li>Ensure modal overlays are properly cleaned up</li>
+            </ol>
+        </div>
+
+        <div class="test-step">
+            <h3>✅ Fixes Applied:</h3>
+            <ul>
+                <li><strong>Debug Panel Z-Index Fixed:</strong> Lowered to z-index: 5, moved higher to avoid mobile nav</li>
+                <li><strong>Pointer Events Disabled:</strong> Debug panel no longer blocks clicks</li>
+                <li><strong>Enhanced Modal Cleanup:</strong> Comprehensive overlay removal with better selectors</li>
+                <li><strong>Navigation Safety:</strong> Pre-navigation cleanup with 25ms delay</li>
+                <li><strong>Reduced Cleanup Frequency:</strong> Debounced cleanup to prevent interference</li>
+            </ul>
+        </div>
+
+        <div class="test-step success">
+            <h3>🎯 Expected Results:</h3>
+            <ul>
+                <li>Menu buttons remain responsive after visiting Trades page</li>
+                <li>No navigation freezing or blocking</li>
+                <li>Debug panel is visible but non-intrusive</li>
+                <li>Modal overlays are properly removed when closing</li>
+                <li>Smooth navigation between all pages</li>
+            </ul>
+        </div>
+
+        <div class="test-step">
+            <h3>🔍 Quick Test Links:</h3>
+            <p>Use these buttons to test navigation:</p>
+            <button class="nav-button" onclick="window.open('/trades', '_blank')">Trades Page</button>
+            <button class="nav-button" onclick="window.open('/dashboard', '_blank')">Dashboard</button>
+            <button class="nav-button" onclick="window.open('/strategies', '_blank')">Strategies</button>
+            <button class="nav-button" onclick="window.open('/analytics', '_blank')">Analytics</button>
+        </div>
+
+        <div class="test-step warning">
+            <h3>⚠️ If Issues Persist:</h3>
+            <ul>
+                <li>Check browser console for error messages</li>
+                <li>Look for "Navigation Safety" logs</li>
+                <li>Verify debug panel z-index in dev tools</li>
+                <li>Check for lingering modal overlays</li>
+            </ul>
+        </div>
+
+        <div class="test-step">
+            <h3>📊 Test Results:</h3>
+            <div id="test-results">
+                <p>Run the test in the main application and record results here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple test result tracker
+        function recordResult(test, status, notes) {
+            const resultsDiv = document.getElementById('test-results');
+            const result = document.createElement('div');
+            result.className = `test-step ${status}`;
+            result.innerHTML = `
+                <h4>${test}: ${status.toUpperCase()}</h4>
+                <p>${notes}</p>
+                <small>Tested at: ${new Date().toLocaleTimeString()}</small>
+            `;
+            resultsDiv.appendChild(result);
+        }
+
+        // Auto-load test instructions
+        window.addEventListener('load', () => {
+            recordResult('Test Ready', 'success', 'Open the main application and navigate to Trades page to begin testing');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+{
+  "timestamp": "2025-11-21T13:57:08.849Z",
+  "summary": {
+    "total": 23,
+    "passed": 17,
+    "failed": 6,
+    "passRate": "73.91%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-21T13:55:04.632Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:04.634Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:05.103Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:07.734Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-page-loaded-1763733307499.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:08.957Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-valid-1763733308792.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:19.696Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-error-message-1763733319523.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:19.702Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Login failed: No error message found"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:19.702Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:22.010Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-invalid-1763733321840.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:22.751Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-invalid-credentials-error-1763733322565.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:22.763Z",
+      "type": "success",
+      "message": "✅ Login with invalid credentials: PASSED - Correctly showed error: Invalid login credentials"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:22.763Z",
+      "type": "success",
+      "message": "✅ Stay on login page after invalid login: PASSED - Correctly stayed on login page"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:22.764Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:25.674Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-empty-form-submission-1763733325463.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:25.674Z",
+      "type": "success",
+      "message": "✅ Empty form validation: PASSED - Correctly prevented empty form submission"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:27.896Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-password-1763733327740.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:30.640Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-email-1763733330484.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:30.641Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:32.412Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1763733332235.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:33.603Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-form-filled-valid-1763733333443.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:36.315Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-submission-result-1763733336145.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:36.318Z",
+      "type": "success",
+      "message": "✅ Registration with valid data: PASSED - Registration processed successfully"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:36.319Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:40.173Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-invalid-email-1763733340016.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:42.912Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-short-password-1763733342747.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:45.656Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-empty-form-1763733345483.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:45.656Z",
+      "type": "success",
+      "message": "✅ Registration with invalid data: PASSED - Invalid data validation tested"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:45.656Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:55:46.793Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\remember-me-option-found-1763733346631.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:58.906Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Exception: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n  navigated to \"http://localhost:3000/login?redirectedFrom=%2Fdashboard\"\n============================================================"
+    },
+    {
+      "timestamp": "2025-11-21T13:55:58.906Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:56:04.468Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\network-error-simulation-1763733364281.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:04.474Z",
+      "type": "success",
+      "message": "✅ Error handling: PASSED - Error handled gracefully"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:04.474Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:56:16.840Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n  navigated to \"http://localhost:3000/login?redirectedFrom=%2Fdashboard\"\n============================================================"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:16.840Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:56:29.238Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n  navigated to \"http://localhost:3000/login?redirectedFrom=%2Fdashboard\"\n============================================================"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:29.238Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:56:32.218Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--dashboard-1763733392042.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:32.218Z",
+      "type": "success",
+      "message": "✅ Protected route /dashboard: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:35.189Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--trades-1763733395019.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:35.189Z",
+      "type": "success",
+      "message": "✅ Protected route /trades: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:38.164Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-1763733397989.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:38.164Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:41.146Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-create-1763733400977.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:41.147Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies/create: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:44.070Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-edit-1-1763733403903.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:44.070Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies/edit/1: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:47.014Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-performance-1-1763733406846.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:47.014Z",
+      "type": "success",
+      "message": "✅ Protected route /strategies/performance/1: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:49.895Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--log-trade-1763733409733.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:49.895Z",
+      "type": "success",
+      "message": "✅ Protected route /log-trade: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:52.884Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--confluence-1763733412722.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:52.884Z",
+      "type": "success",
+      "message": "✅ Protected route /confluence: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:55.828Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--calendar-1763733415654.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:55.828Z",
+      "type": "success",
+      "message": "✅ Protected route /calendar: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:58.739Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--analytics-1763733418568.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:58.739Z",
+      "type": "success",
+      "message": "✅ Protected route /analytics: PASSED - Correctly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:56:58.740Z",
+      "type": "info",
+      "message": "\n=== Testing Public Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T13:57:01.649Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route--login-1763733421482.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:57:01.650Z",
+      "type": "success",
+      "message": "✅ Public route /login: PASSED - Correctly accessible without authentication"
+    },
+    {
+      "timestamp": "2025-11-21T13:57:04.610Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route--register-1763733424440.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:57:04.610Z",
+      "type": "error",
+      "message": "❌ Public route /register: FAILED - Incorrectly redirected to login"
+    },
+    {
+      "timestamp": "2025-11-21T13:57:08.848Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route---1763733428672.png"
+    },
+    {
+      "timestamp": "2025-11-21T13:57:08.848Z",
+      "type": "error",
+      "message": "❌ Public route / (home): FAILED - Incorrectly redirected to login"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ]
+}

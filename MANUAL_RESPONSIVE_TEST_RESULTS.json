@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-11-22T12:11:19.813Z",
+  "testType": "Manual Responsive Testing",
+  "colorScheme": {
+    "dustyGold": "#B89B5E",
+    "warmSand": "#D6C7B2",
+    "mutedOlive": "#4F5B4A",
+    "rustRed": "#A7352D",
+    "warmOffWhite": "#EAE6DD",
+    "softGraphite": "#1A1A1A",
+    "deepCharcoal": "#121212"
+  },
+  "viewports": [
+    {
+      "name": "iPhone SE",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "name": "iPhone 8",
+      "width": 375,
+      "height": 667
+    },
+    {
+      "name": "iPhone 11",
+      "width": 414,
+      "height": 896
+    },
+    {
+      "name": "iPad Portrait",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "iPad Landscape",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "MacBook Air",
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "name": "MacBook Pro 14\"",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "MacBook Pro 16\"",
+      "width": 1680,
+      "height": 1050
+    },
+    {
+      "name": "Full HD Desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "name": "2K Desktop",
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "name": "4K Desktop",
+      "width": 3840,
+      "height": 2160
+    }
+  ],
+  "testScenarios": [
+    "Dashboard Layout",
+    "Trade Form",
+    "Sidebar Navigation",
+    "Charts and Visualizations",
+    "Market Badges",
+    "Color Consistency",
+    "Text Readability",
+    "Navigation Accessibility"
+  ],
+  "issues": [],
+  "recommendations": []
+}

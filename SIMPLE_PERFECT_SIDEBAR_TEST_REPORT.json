@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-11-19T10:50:22.663Z",
+  "testType": "SIMPLE_PERFECT_SIDEBAR_TRANSITION_TEST",
+  "summary": {
+    "totalTests": 2,
+    "passedTests": 0,
+    "failedTests": 2,
+    "microPerfectionAchieved": false
+  },
+  "testResults": [
+    {
+      "testName": "Perfect Sidebar Transition (Ctrl+B)",
+      "timestamp": "2025-11-19T10:49:47.358Z",
+      "metrics": {},
+      "passed": false,
+      "details": [
+        "Error: page.waitForFunction: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "testName": "Rapid Toggle Stress Test (Ctrl+B)",
+      "timestamp": "2025-11-19T10:50:17.442Z",
+      "metrics": {
+        "totalToggles": 10,
+        "successfulToggles": 0,
+        "failedToggles": 10,
+        "avgTransitionTime": 421.1334300000002,
+        "maxTransitionTime": 423.5816999999952,
+        "minTransitionTime": 417.6301999999996,
+        "frameDrops": 0,
+        "microGlitches": 10
+      },
+      "passed": false,
+      "details": [
+        "Success rate: 0.0% (0/10)",
+        "Average transition time: 421.13ms",
+        "Frame drops: 0",
+        "Micro-glitches: 10"
+      ]
+    }
+  ],
+  "thresholds": {
+    "maxTransitionTime": 310,
+    "maxFrameDrop": 0,
+    "maxLayoutShift": 0.01,
+    "maxRenderTime": 16.67,
+    "maxMicroGlitch": 0
+  },
+  "recommendations": [
+    "⚠️  Micro-perfection not achieved. Review the following:"
+  ]
+}

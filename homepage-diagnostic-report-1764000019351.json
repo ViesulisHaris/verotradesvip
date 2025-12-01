@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-24T16:00:19.349Z",
+  "loadTime": 1231,
+  "response": {
+    "status": 200,
+    "url": "http://localhost:3000/"
+  },
+  "pageContent": {
+    "title": "",
+    "bodyText": "Trading Journal\n\nWelcome to your trading journal application\n\nGet Started\n\nChoose an option below to continue:\n\nSign In to Your AccountCreate New Account",
+    "bodyHTML": "<div class=\"flex items-center justify-center min-h-screen bg-primary w-full\"><div class=\"text-center p-8\"><h1 class=\"text-4xl font-bold text-gold mb-6 heading-luxury\">Trading Journal</h1><p class=\"text-lg text-secondary body-text\">Welcome to your trading journal application</p><div class=\"mt-8 space-y-4\"><div class=\"card-luxury p-6 max-w-md mx-auto\"><h2 class=\"heading-3 mb-4\">Get Started</h2><p class=\"text-secondary mb-6\">Choose an option below to continue:</p><div class=\"space-y-3\"><a href=\"/lo",
+    "hasWelcomeText": true,
+    "hasBackground": "rgb(18, 18, 18)",
+    "authGuardExists": false,
+    "hasLoadingSpinner": false,
+    "allElements": 31,
+    "visibleElements": 14
+  },
+  "authState": {
+    "localStorage": {},
+    "sessionStorage": {},
+    "hasSupabaseAuth": false,
+    "cookies": ""
+  },
+  "jsErrors": [],
+  "screenshot": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\homepage-diagnostic-1764000019195.png"
+}

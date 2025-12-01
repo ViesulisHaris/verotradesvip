@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Performance Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #1e3a8a 50%, #1e293b 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-enhanced {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 256px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 50;
+            transform: translateX(0);
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-256px);
+        }
+        
+        .main-content {
+            margin-left: 256px;
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+        }
+        
+        .main-content.sidebar-collapsed {
+            margin-left: 0;
+        }
+        
+        .chart-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .performance-metrics {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 100;
+        }
+        
+        .metric {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .metric-label {
+            color: #94a3b8;
+        }
+        
+        .metric-value {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script>
+        const { useState, useEffect, useRef, useCallback } = React;
+        
+        function SidebarPerformanceTest() {
+            const [isCollapsed, setIsCollapsed] = useState(false);
+            const [isTransitioning, setIsTransitioning] = useState(false);
+            const [performanceData, setPerformanceData] = useState({
+                rafCalls: 0,
+                resizeEvents: 0,
+                domReflows: 0,
+                transitionDuration: 0,
+                lastToggleTime: 0
+            });
+            
+            const rafCountRef = useRef(0);
+            const resizeCountRef = useRef(0);
+            const reflowCountRef = useRef(0);
+            const transitionStartRef = useRef(0);
+            
+            // Enhanced monitoring setup
+            useEffect(() => {
+                // Monitor RAF calls
+                const originalRAF = window.requestAnimationFrame;
+                window.requestAnimationFrame = function(callback) {
+                    rafCountRef.current++;
+                    setPerformanceData(prev => ({ ...prev, rafCalls: rafCountRef.current }));
+                    
+                    return originalRAF(function() {
+                        const result = callback.apply(this, arguments);
+                        return result;
+                    });
+                };
+                
+                // Monitor resize events
+                const handleResize = () => {
+                    resizeCountRef.current++;
+                    setPerformanceData(prev => ({ ...prev, resizeEvents: resizeCountRef.current }));
+                    console.log(`📏 [PERF] Resize event #${resizeCountRef.current}: ${window.innerWidth}x${window.innerHeight}`);
+                };
+                
+                window.addEventListener('resize', handleResize);
+                
+                // Monitor DOM reflows
+                const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
+                Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+                    get() {
+                        reflowCountRef.current++;
+                        setPerformanceData(prev => ({ ...prev, domReflows: reflowCountRef.current }));
+                        return originalOffsetHeight.get.call(this);
+                    }
+                });
+                
+                console.log('🔧 [PERF] Enhanced monitoring setup complete');
+                
+                return () => {
+                    window.removeEventListener('resize', handleResize);
+                    window.requestAnimationFrame = originalRAF;
+                };
+            }, []);
+            
+            const toggleSidebar = useCallback(() => {
+                if (isTransitioning) return;
+                
+                console.log(`🚀 [PERF] Sidebar toggle started - Current state: ${isCollapsed ? 'collapsed' : 'expanded'}`);
+                
+                setIsTransitioning(true);
+                transitionStartRef.current = performance.now();
+                
+                // Reset counters for this transition
+                rafCountRef.current = 0;
+                resizeCountRef.current = 0;
+                reflowCountRef.current = 0;
+                
+                // Simulate the sidebar state change
+                setIsCollapsed(prev => !prev);
+                
+                // Monitor transition completion
+                setTimeout(() => {
+                    const transitionEnd = performance.now();
+                    const duration = transitionEnd - transitionStartRef.current;
+                    
+                    setPerformanceData(prev => ({
+                        ...prev,
+                        transitionDuration: duration,
+                        lastToggleTime: Date.now()
+                    }));
+                    
+                    console.log(`✅ [PERF] Sidebar toggle completed in ${duration.toFixed(2)}ms`);
+                    console.log(`📊 [PERF] RAF calls during transition: ${rafCountRef.current}`);
+                    console.log(`📏 [PERF] Resize events during transition: ${resizeCountRef.current}`);
+                    console.log(`🔄 [PERF] DOM reflows during transition: ${reflowCountRef.current}`);
+                    
+                    // Performance analysis
+                    if (duration > 2000) {
+                        console.error('❌ [PERF] CRITICAL: Sidebar toggle took > 2 seconds!');
+                        if (rafCountRef.current > 20) {
+                            console.error('❌ [PERF] CAUSE: Excessive RAF calls detected');
+                        }
+                        if (resizeCountRef.current > 5) {
+                            console.error('❌ [PERF] CAUSE: Excessive resize events detected');
+                        }
+                        if (reflowCountRef.current > 50) {
+                            console.error('❌ [PERF] CAUSE: Excessive DOM reflows detected');
+                        }
+                    }
+                    
+                    setIsTransitioning(false);
+                }, 500); // Wait for transition to complete
+            }, [isCollapsed, isTransitioning]);
+            
+            return React.createElement('div', { className: 'min-h-screen' }, [
+                // Sidebar
+                React.createElement('div', {
+                    key: 'sidebar',
+                    className: `sidebar ${isCollapsed ? 'collapsed' : ''}`,
+                    style: {
+                        transform: `translateX(${isCollapsed ? '-256px' : '0px'})`
+                    }
+                }, [
+                    React.createElement('div', {
+                        key: 'sidebar-content',
+                        className: 'p-6',
+                        style: { color: 'white' }
+                    }, [
+                        React.createElement('h2', { key: 'title', className: 'text-xl font-bold mb-4' }, 'Test Sidebar'),
+                        React.createElement('p', { key: 'desc', className: 'text-white/80' }, 
+                            `Status: ${isCollapsed ? 'Collapsed' : 'Expanded'}${isTransitioning ? ' (Transitioning...)' : ''}`),
+                        React.createElement('div', { key: 'nav', className: 'mt-8 space-y-2' }, 
+                            ['Dashboard', 'Trades', 'Analytics', 'Strategies'].map(item =>
+                                React.createElement('div', {
+                                    key: item,
+                                    className: 'p-3 rounded hover:bg-white/10 cursor-pointer transition-colors'
+                                }, item)
+                            )
+                        )
+                    ])
+                ]),
+                
+                // Main Content
+                React.createElement('div', {
+                    key: 'main',
+                    className: `main-content ${isCollapsed ? 'sidebar-collapsed' : ''}`
+                }, [
+                    React.createElement('div', { key: 'header', className: 'glass-enhanced p-8 rounded-xl mb-8' }, [
+                        React.createElement('h1', { 
+                            key: 'title',
+                            className: 'text-3xl font-bold text-white mb-6' 
+                        }, 'Sidebar Performance Diagnosis'),
+                        
+                        React.createElement('div', { 
+                            key: 'controls',
+                            className: 'grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8' 
+                        }, [
+                            React.createElement('div', { key: 'test-controls', className: 'glass p-6 rounded-xl' }, [
+                                React.createElement('h2', { 
+                                    key: 'title',
+                                    className: 'text-xl font-semibold text-white mb-4' 
+                                }, 'Test Controls'),
+                                
+                                React.createElement('button', {
+                                    key: 'toggle-btn',
+                                    onClick: toggleSidebar,
+                                    disabled: isTransitioning,
+                                    className: 'btn-primary text-lg py-4 w-full'
+                                }, 
+                                    isTransitioning ? 'Transitioning...' : `Toggle Sidebar (${isCollapsed ? 'Collapsed' : 'Expanded'})`)
+                            ]),
+                            
+                            React.createElement('div', { key: 'instructions', className: 'glass p-6 rounded-xl' }, [
+                                React.createElement('h2', { 
+                                    key: 'title',
+                                    className: 'text-xl font-semibold text-white mb-4' 
+                                }, 'Performance Metrics'),
+                                
+                                React.createElement('div', { 
+                                    key: 'metrics',
+                                    className: 'space-y-2 text-white/80 text-sm' 
+                                }, [
+                                    React.createElement('p', { key: 'raf' }, `RAF Calls: ${performanceData.rafCalls}`),
+                                    React.createElement('p', { key: 'resize' }, `Resize Events: ${performanceData.resizeEvents}`),
+                                    React.createElement('p', { key: 'reflows' }, `DOM Reflows: ${performanceData.domReflows}`),
+                                    React.createElement('p', { key: 'duration' }, `Last Transition: ${performanceData.transitionDuration.toFixed(2)}ms`)
+                                ])
+                            ])
+                        ])
+                    ]),
+                    
+                    // Test Charts
+                    React.createElement('div', { 
+                        key: 'charts',
+                        className: 'grid grid-cols-1 lg:grid-cols-2 gap-8' 
+                    }, [
+                        React.createElement('div', { key: 'chart1', className: 'glass-enhanced p-6 rounded-xl' }, [
+                            React.createElement('h2', { 
+                                key: 'title',
+                                className: 'text-xl font-semibold text-white mb-4' 
+                            }, 'Test Chart 1'),
+                            React.createElement('div', { 
+                                key: 'container',
+                                className: 'chart-container' 
+                            }, [
+                                React.createElement('div', { 
+                                    key: 'content',
+                                    className: 'text-white/60 text-center relative z-10' 
+                                }, [
+                                    React.createElement('div', { 
+                                        key: 'icon',
+                                        className: 'w-16 h-16 bg-blue-500/30 rounded-lg mb-2 mx-auto' 
+                                    }),
+                                    React.createElement('p', { key: 'label' }, 'EmotionRadar Test Area'),
+                                    React.createElement('p', { 
+                                        key: 'desc',
+                                        className: 'text-xs text-white/40 mt-1' 
+                                    }, 'Should resize with sidebar')
+                                ])
+                            ])
+                        ]),
+                        
+                        React.createElement('div', { key: 'chart2', className: 'glass-enhanced p-6 rounded-xl' }, [
+                            React.createElement('h2', { 
+                                key: 'title',
+                                className: 'text-xl font-semibold text-white mb-4' 
+                            }, 'Test Chart 2'),
+                            React.createElement('div', { 
+                                key: 'container',
+                                className: 'chart-container' 
+                            }, [
+                                React.createElement('div', { 
+                                    key: 'content',
+                                    className: 'text-white/60 text-center relative z-10' 
+                                }, [
+                                    React.createElement('div', { 
+                                        key: 'icon',
+                                        className: 'w-16 h-16 bg-teal-500/30 rounded-lg mb-2 mx-auto' 
+                                    }),
+                                    React.createElement('p', { key: 'label' }, 'PnLChart Test Area'),
+                                    React.createElement('p', { 
+                                        key: 'desc',
+                                        className: 'text-xs text-white/40 mt-1' 
+                                    }, 'Should resize with sidebar')
+                                ])
+                            ])
+                        ])
+                    ])
+                ]),
+                
+                // Performance Monitor Overlay
+                React.createElement('div', { 
+                    key: 'monitor',
+                    className: 'performance-metrics' 
+                }, [
+                    React.createElement('h3', { 
+                        key: 'title',
+                        className: 'font-bold mb-3 text-green-400' 
+                    }, '🔍 Live Performance Monitor'),
+                    
+                    React.createElement('div', { key: 'metrics', className: 'space-y-1' }, [
+                        React.createElement('div', { key: 'raf', className: 'metric' }, [
+                            React.createElement('span', { key: 'label', className: 'metric-label' }, 'RAF Calls:'),
+                            React.createElement('span', { key: 'value', className: 'metric-value' }, performanceData.rafCalls)
+                        ]),
+                        React.createElement('div', { key: 'resize', className: 'metric' }, [
+                            React.createElement('span', { key: 'label', className: 'metric-label' }, 'Resize Events:'),
+                            React.createElement('span', { key: 'value', className: 'metric-value' }, performanceData.resizeEvents)
+                        ]),
+                        React.createElement('div', { key: 'reflows', className: 'metric' }, [
+                            React.createElement('span', { key: 'label', className: 'metric-label' }, 'DOM Reflows:'),
+                            React.createElement('span', { key: 'value', className: 'metric-value' }, performanceData.domReflows)
+                        ]),
+                        React.createElement('div', { key: 'duration', className: 'metric' }, [
+                            React.createElement('span', { key: 'label', className: 'metric-label' }, 'Transition:'),
+                            React.createElement('span', { key: 'value', className: 'metric-value' }, `${performanceData.transitionDuration.toFixed(2)}ms`)
+                        ])
+                    ])
+                ])
+            ]);
+        }
+        
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(SidebarPerformanceTest));
+        
+        console.log('🔍 [PERF] Sidebar performance test initialized');
+        console.log('📊 [PERF] Click the "Toggle Sidebar" button to start diagnosis');
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-11-17T18:30:20.996Z",
+  "testResults": {
+    "dashboard": {
+      "emotionData": null,
+      "debugMessages": [],
+      "totalConsoleMessages": 0
+    },
+    "confluence": {
+      "emotionData": null,
+      "debugMessages": [],
+      "totalConsoleMessages": 0
+    }
+  },
+  "analysis": {
+    "dataConsistency": true,
+    "dashboardDataPoints": 0,
+    "confluenceDataPoints": 0
+  }
+}

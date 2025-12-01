@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "testName": "Strategy Management Comprehensive Test",
+    "startTime": "2025-11-21T10:33:32.647Z",
+    "endTime": "2025-11-21T10:33:52.456Z",
+    "totalTests": 17,
+    "passedTests": 11,
+    "failedTests": 6,
+    "successRate": "64.71%"
+  },
+  "testResults": {
+    "totalTests": 17,
+    "passedTests": 11,
+    "failedTests": 6,
+    "errors": [
+      {
+        "test": "Performance metrics visualization",
+        "error": "No performance metrics found"
+      },
+      {
+        "test": "Edit existing strategy functionality",
+        "error": "Could not test edit functionality (no strategies found)"
+      },
+      {
+        "test": "Delete strategy with confirmation",
+        "error": "Could not test delete functionality (no strategies found)"
+      },
+      {
+        "test": "Navigate to performance details",
+        "error": "Could not test performance navigation (no strategies found)"
+      },
+      {
+        "test": "Find strategy to edit",
+        "error": "No strategies found to edit"
+      },
+      {
+        "test": "Find strategy for performance view",
+        "error": "No strategies found to view performance"
+      }
+    ],
+    "screenshots": [
+      {
+        "filename": "login-page-loaded-1763721215402.png",
+        "filepath": "strategy-test-screenshots\\login-page-loaded-1763721215402.png",
+        "description": "Login page loaded",
+        "timestamp": 1763721215402
+      },
+      {
+        "filename": "login-form-filled-1763721216046.png",
+        "filepath": "strategy-test-screenshots\\login-form-filled-1763721216046.png",
+        "description": "Login form filled with credentials",
+        "timestamp": 1763721216046
+      },
+      {
+        "filename": "login-success-1763721217007.png",
+        "filepath": "strategy-test-screenshots\\login-success-1763721217007.png",
+        "description": "Successful login redirect",
+        "timestamp": 1763721217007
+      },
+      {
+        "filename": "strategies-list-loaded-1763721219403.png",
+        "filepath": "strategy-test-screenshots\\strategies-list-loaded-1763721219403.png",
+        "description": "Strategies list page loaded",
+        "timestamp": 1763721219403
+      },
+      {
+        "filename": "create-strategy-page-loaded-1763721223380.png",
+        "filepath": "strategy-test-screenshots\\create-strategy-page-loaded-1763721223380.png",
+        "description": "Create strategy page loaded",
+        "timestamp": 1763721223380
+      },
+      {
+        "filename": "form-validation-errors-1763721224757.png",
+        "filepath": "strategy-test-screenshots\\form-validation-errors-1763721224757.png",
+        "description": "Form validation errors displayed",
+        "timestamp": 1763721224757
+      },
+      {
+        "filename": "create-form-filled-1763721225177.png",
+        "filepath": "strategy-test-screenshots\\create-form-filled-1763721225177.png",
+        "description": "Create strategy form filled with test data",
+        "timestamp": 1763721225177
+      },
+      {
+        "filename": "strategy-creation-success-1763721228646.png",
+        "filepath": "strategy-test-screenshots\\strategy-creation-success-1763721228646.png",
+        "description": "Strategy creation successful",
+        "timestamp": 1763721228646
+      }
+    ],
+    "startTime": "2025-11-21T10:33:32.647Z",
+    "endTime": "2025-11-21T10:33:52.456Z"
+  },
+  "recommendations": [
+    "Review failed tests and fix identified issues",
+    "Address critical errors that prevented test execution"
+  ]
+}

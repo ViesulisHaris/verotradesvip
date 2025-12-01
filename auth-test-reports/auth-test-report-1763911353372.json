@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-11-23T15:22:33.372Z",
+  "baseUrl": "http://localhost:3000",
+  "summary": {
+    "total": 15,
+    "passed": 0,
+    "failed": 15,
+    "passRate": "0.00%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-23T15:22:14.632Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:14.634Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:15.614Z",
+      "type": "info",
+      "message": "\n=== Testing Home Page Redirects ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:15.615Z",
+      "type": "info",
+      "message": "Testing non-authenticated user redirect..."
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.383Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\home-page-non-auth-1763911344254.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.384Z",
+      "type": "error",
+      "message": "❌ Home page redirects: FAILED - Exception: page.waitForTimeout is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.385Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.385Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.385Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.385Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:24.386Z",
+      "type": "info",
+      "message": "\n=== Testing Registration Form ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:29.669Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1763911349548.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.076Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-form-filled-1763911349987.png"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.119Z",
+      "type": "error",
+      "message": "❌ Registration form functionality: FAILED - Exception: page.waitForTimeout is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.120Z",
+      "type": "info",
+      "message": "\n=== Testing Authentication Cookies ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.120Z",
+      "type": "error",
+      "message": "❌ Authentication cookies: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "error",
+      "message": "❌ Protected route /dashboard: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/create: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.121Z",
+      "type": "error",
+      "message": "❌ Protected route /log-trade: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "error",
+      "message": "❌ Protected route /confluence: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "error",
+      "message": "❌ Protected route /calendar: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "info",
+      "message": "\n=== Testing Login Redirect ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "error",
+      "message": "❌ Login redirect to dashboard: FAILED - Exception: page.clearCookie is not a function"
+    },
+    {
+      "timestamp": "2025-11-23T15:22:30.122Z",
+      "type": "info",
+      "message": "\n=== Testing Middleware Logging ==="
+    },
+    {
+      "timestamp": "2025-11-23T15:22:33.372Z",
+      "type": "error",
+      "message": "❌ Middleware logging test: FAILED - Exception: page.waitForTimeout is not a function"
+    }
+  ],
+  "protectedRoutes": [
+    {
+      "route": "/dashboard",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/trades",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/strategies",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/strategies/create",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/log-trade",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/confluence",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/calendar",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/analytics",
+      "success": false,
+      "message": "Exception: page.clearCookie is not a function",
+      "finalUrl": "N/A"
+    }
+  ],
+  "middlewareLogs": [],
+  "screenshots": [
+    "auth-test-screenshots\\home-page-non-auth-1763911344254.png",
+    "auth-test-screenshots\\register-page-loaded-1763911349548.png",
+    "auth-test-screenshots\\register-form-filled-1763911349987.png"
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "screenshotsDir": "./auth-test-screenshots",
+    "reportsDir": "./auth-test-reports"
+  }
+}

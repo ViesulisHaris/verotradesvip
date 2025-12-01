@@ -1,0 +1,309 @@
+{
+  "timestamp": "2025-11-23T23:22:13.898Z",
+  "summary": {
+    "totalTests": 13,
+    "passedTests": 7,
+    "failedTests": 6,
+    "skippedTests": 0,
+    "overallStatus": "FAILED"
+  },
+  "viewportTests": {
+    "mobile": {
+      "totalTests": 2,
+      "passedTests": 1,
+      "failedTests": 1,
+      "details": {
+        "noHorizontalScroll": true,
+        "minFontSize": 13.3333,
+        "typographyAccessible": false
+      },
+      "passed": false
+    },
+    "tablet": {
+      "totalTests": 2,
+      "passedTests": 1,
+      "failedTests": 1,
+      "details": {
+        "noHorizontalScroll": true,
+        "minFontSize": 13.3333,
+        "typographyAccessible": false
+      },
+      "passed": false
+    },
+    "desktop": {
+      "totalTests": 3,
+      "passedTests": 2,
+      "failedTests": 1,
+      "details": {
+        "noHorizontalScroll": true,
+        "minFontSize": 13.3333,
+        "typographyAccessible": false,
+        "sidebarVisible": true
+      },
+      "passed": false
+    },
+    "largeDesktop": {
+      "totalTests": 3,
+      "passedTests": 2,
+      "failedTests": 1,
+      "details": {
+        "noHorizontalScroll": true,
+        "minFontSize": 13.3333,
+        "typographyAccessible": false,
+        "sidebarVisible": true
+      },
+      "passed": false
+    }
+  },
+  "sidebarTests": {
+    "totalTests": 4,
+    "passedTests": 1,
+    "failedTests": 3,
+    "details": {
+      "sidebarExists": false,
+      "sidebarWidth": 154,
+      "correctWidth": false,
+      "toggleWorks": false,
+      "navLinks": [
+        {
+          "href": "/dashboard",
+          "text": "Dashboard"
+        },
+        {
+          "href": "/log-trade",
+          "text": "Log Trade"
+        },
+        {
+          "href": "/strategies",
+          "text": "Strategies"
+        },
+        {
+          "href": "/trades",
+          "text": "Trades"
+        },
+        {
+          "href": "/calendar",
+          "text": "Calendar"
+        },
+        {
+          "href": "/confluence",
+          "text": "Confluence"
+        },
+        {
+          "href": "/dashboard",
+          "text": "Dashboard"
+        },
+        {
+          "href": "/log-trade",
+          "text": "Log Trade"
+        },
+        {
+          "href": "/strategies",
+          "text": "Strategies"
+        },
+        {
+          "href": "/trades",
+          "text": "Trades"
+        },
+        {
+          "href": "/calendar",
+          "text": "Calendar"
+        },
+        {
+          "href": "/confluence",
+          "text": "Confluence"
+        },
+        {
+          "href": "/dashboard",
+          "text": "Dashboard"
+        },
+        {
+          "href": "/log-trade",
+          "text": "Log Trade"
+        },
+        {
+          "href": "/strategies",
+          "text": "Strategies"
+        },
+        {
+          "href": "/trades",
+          "text": "Trades"
+        },
+        {
+          "href": "/calendar",
+          "text": "Calendar"
+        },
+        {
+          "href": "/confluence",
+          "text": "Confluence"
+        }
+      ],
+      "hasNavLinks": true
+    },
+    "passed": false
+  },
+  "gridTests": {
+    "totalTests": 3,
+    "passedTests": 3,
+    "failedTests": 0,
+    "details": {
+      "metricGrid": {
+        "display": "grid",
+        "gridTemplateColumns": "408.438px",
+        "childCount": 9
+      },
+      "has4ColumnGrid": true,
+      "performanceGrid": {
+        "display": "grid",
+        "gridTemplateColumns": "408.438px",
+        "childCount": 3
+      },
+      "has3ColumnGrid": true,
+      "bottomGrid": {
+        "display": "grid",
+        "gridTemplateColumns": "408.438px",
+        "childCount": 2
+      },
+      "has2ColumnGrid": true
+    },
+    "passed": true
+  },
+  "containerTests": {
+    "totalTests": 3,
+    "passedTests": 1,
+    "failedTests": 2,
+    "details": {
+      "containerConstraint": {
+        "hasMaxW7xl": false,
+        "computedMaxWidth": "none",
+        "actualWidth": 416,
+        "classes": [
+          "flex-1",
+          "p-6",
+          "overflow-auto"
+        ]
+      },
+      "hasConstraint": false,
+      "widthCheck": {
+        "width": 416,
+        "maxWidth": 1280,
+        "withinLimit": true
+      },
+      "withinLimit": true,
+      "centerCheck": {
+        "marginLeft": "0px",
+        "marginRight": "0px",
+        "isAutoCentered": false,
+        "classes": [
+          "flex-1",
+          "p-6",
+          "overflow-auto"
+        ]
+      },
+      "isCentered": false
+    },
+    "passed": false
+  },
+  "responsiveTests": {
+    "totalTests": 3,
+    "passedTests": 2,
+    "failedTests": 1,
+    "details": {
+      "mobileToDesktop": {
+        "mobileState": {
+          "visible": true,
+          "width": 154,
+          "transform": "none"
+        },
+        "desktopState": {
+          "visible": true,
+          "width": 154,
+          "transform": "none"
+        },
+        "transitionWorks": false
+      },
+      "gridTransition": {
+        "mobileGrid": {
+          "gridTemplateColumns": "367.2px",
+          "childCount": 4
+        },
+        "desktopGrid": {
+          "gridTemplateColumns": "408.438px",
+          "childCount": 4
+        },
+        "transitionWorks": true
+      },
+      "transitions": {
+        "totalElements": 37,
+        "elementsWithTransitions": 37,
+        "transitionPercentage": 100
+      },
+      "hasGoodTransitions": true
+    },
+    "passed": false
+  },
+  "screenshots": [
+    {
+      "type": "viewport",
+      "name": "Mobile",
+      "path": "desktop-layout-screenshots\\viewport-mobile-1763940149639.png",
+      "viewport": {
+        "width": 375,
+        "height": 667,
+        "name": "Mobile"
+      }
+    },
+    {
+      "type": "viewport",
+      "name": "Tablet",
+      "path": "desktop-layout-screenshots\\viewport-tablet-1763940150824.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "name": "Tablet"
+      }
+    },
+    {
+      "type": "viewport",
+      "name": "Desktop",
+      "path": "desktop-layout-screenshots\\viewport-desktop-1763940151948.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768,
+        "name": "Desktop"
+      }
+    },
+    {
+      "type": "viewport",
+      "name": "Large Desktop",
+      "path": "desktop-layout-screenshots\\viewport-largeDesktop-1763940153070.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "name": "Large Desktop"
+      }
+    },
+    {
+      "type": "grid",
+      "name": "Grid Layout",
+      "path": "desktop-layout-screenshots\\grid-layout-1763940155339.png"
+    },
+    {
+      "type": "container",
+      "name": "Container Constraint",
+      "path": "desktop-layout-screenshots\\container-constraint-1763940156442.png"
+    }
+  ],
+  "issues": [
+    "Typography too small on Mobile: 13.3333px",
+    "Typography too small on Tablet: 13.3333px",
+    "Typography too small on Desktop: 13.3333px",
+    "Typography too small on Large Desktop: 13.3333px",
+    "Desktop sidebar not found or not visible",
+    "Sidebar width incorrect: 154px",
+    "Sidebar toggle button not found",
+    "Main content container missing max-w-7xl constraint",
+    "Container not properly centered on large screens",
+    "Mobile to desktop sidebar transition not working"
+  ]
+}

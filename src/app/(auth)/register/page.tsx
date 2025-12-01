@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '../../../../supabase/client';
+import { supabase } from '@/supabase/client';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -25,33 +25,56 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 p-4">
-      <div className="glass w-full max-w-md p-8 space-y-6">
-        <h2 className="text-2xl font-bold text-center text-white">Register</h2>
-        <form onSubmit={handleRegister} className="space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="metallic-input w-full"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password (min 6 chars)"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="metallic-input w-full"
-            minLength={6}
-            required
-          />
-          <button type="submit" className="w-full py-3 bg-white/20 text-white rounded-xl hover:bg-white/30">
+    <div className="verotrade-min-h-screen verotrade-flex verotrade-items-center verotrade-justify-center" style={{ backgroundColor: 'var(--deep-charcoal)' }}>
+      <div className="verotrade-w-full verotrade-max-w-md verotrade-p-8 verotrade-space-y-6 glass-morphism verotrade-rounded-xl" style={{ maxWidth: '448px' }}>
+        <div className="verotrade-text-center verotrade-mb-section">
+          <h1 className="h1-dashboard verotrade-mb-element">Register</h1>
+          <p className="body-text verotrade-mb-element" style={{color: 'var(--muted-gray)'}}>Create your trading journal account</p>
+        </div>
+        <form onSubmit={handleRegister} className="verotrade-gap-form-group verotrade-mb-section">
+          <div>
+            <label className="label-text verotrade-block verotrade-mb-input-label">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field verotrade-w-full"
+              required
+            />
+          </div>
+          <div>
+            <label className="label-text verotrade-block verotrade-mb-input-label">Password</label>
+            <input
+              type="password"
+              placeholder="Create a password (min 6 chars)"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-field verotrade-w-full"
+              minLength={6}
+              required
+            />
+          </div>
+          <div>
+            <label className="label-text verotrade-block verotrade-mb-input-label">Confirm Password</label>
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              className="input-field verotrade-w-full"
+              minLength={6}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="button-primary verotrade-w-full"
+            style={{ minHeight: '44px' }}
+          >
             Register
           </button>
         </form>
-        <p className="text-center text-white/80">
-          Have an account? <Link href="/login" className="text-primary hover:underline">Login</Link>
+        <p className="verotrade-text-center body-text" style={{color: 'var(--muted-gray)'}}>
+          Have an account? <Link href="/login" style={{color: 'var(--dusty-gold)', textDecoration: 'none', fontWeight: '500'}} className="hover:underline">Login</Link>
         </p>
       </div>
     </div>

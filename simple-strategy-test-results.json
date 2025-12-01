@@ -1,0 +1,88 @@
+{
+  "startTime": "2025-11-15T12:46:59.367Z",
+  "endTime": "2025-11-15T12:47:52.489Z",
+  "summary": {
+    "total": 14,
+    "passed": 10,
+    "failed": 4,
+    "errors": [
+      "Performance Page Loads: Page title contains strategy name",
+      "Navigate to Edit Page: Current URL: http://localhost:3000/strategies",
+      "Strategy Deleted Successfully: Strategy still exists: true",
+      "Error Handling Test: Error: page.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n"
+    ]
+  },
+  "tests": {
+    "Strategy Page Loads": {
+      "passed": true,
+      "details": "Page title: \"Trading Strategies\"",
+      "timestamp": "2025-11-15T12:47:03.249Z"
+    },
+    "Strategy Elements Found": {
+      "passed": true,
+      "details": "Found 9 strategy elements",
+      "timestamp": "2025-11-15T12:47:03.252Z"
+    },
+    "Create Button Present": {
+      "passed": true,
+      "details": "Create button found: true",
+      "timestamp": "2025-11-15T12:47:03.254Z"
+    },
+    "Create Strategy Page Loads": {
+      "passed": true,
+      "details": "Page title: \"Create Trading Strategy\"",
+      "timestamp": "2025-11-15T12:47:03.814Z"
+    },
+    "Strategy Name Field Filled": {
+      "passed": true,
+      "details": "Used selector: input[placeholder*=\"e.g., London Breakout Strategy\"]",
+      "timestamp": "2025-11-15T12:47:09.155Z"
+    },
+    "Description Field Filled": {
+      "passed": true,
+      "details": "Description filled successfully",
+      "timestamp": "2025-11-15T12:47:09.480Z"
+    },
+    "Form Submitted": {
+      "passed": true,
+      "details": "Submit button clicked",
+      "timestamp": "2025-11-15T12:47:12.001Z"
+    },
+    "New Strategy Appears in List": {
+      "passed": true,
+      "details": "Strategy \"Test Strategy 1763210823814\" found: true",
+      "timestamp": "2025-11-15T12:47:13.208Z"
+    },
+    "Performance Page Loads": {
+      "passed": false,
+      "details": "Page title contains strategy name",
+      "timestamp": "2025-11-15T12:47:14.534Z"
+    },
+    "Performance Statistics Displayed": {
+      "passed": true,
+      "details": "Found 15 stat elements",
+      "timestamp": "2025-11-15T12:47:14.537Z"
+    },
+    "Interactive Elements Found": {
+      "passed": true,
+      "details": "Found 12 interactive elements",
+      "timestamp": "2025-11-15T12:47:14.538Z"
+    },
+    "Navigate to Edit Page": {
+      "passed": false,
+      "details": "Current URL: http://localhost:3000/strategies",
+      "timestamp": "2025-11-15T12:47:17.348Z"
+    },
+    "Strategy Deleted Successfully": {
+      "passed": false,
+      "details": "Strategy still exists: true",
+      "timestamp": "2025-11-15T12:47:20.933Z"
+    },
+    "Error Handling Test": {
+      "passed": false,
+      "details": "Error: page.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('h2')\u001b[22m\n",
+      "timestamp": "2025-11-15T12:47:52.489Z"
+    }
+  },
+  "duration": "53 seconds"
+}

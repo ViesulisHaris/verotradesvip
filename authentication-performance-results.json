@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-11-27T13:38:49.838Z",
+  "metrics": {
+    "loginPageLoad": 12175,
+    "authenticationTime": 5643,
+    "dashboardLoad": 20024,
+    "sidebarRender": -1,
+    "totalTime": 37842
+  },
+  "performanceGoals": {
+    "loginPageLoad": "< 3000ms",
+    "authenticationTime": "< 5000ms",
+    "dashboardLoad": "< 3000ms",
+    "sidebarRender": "< 3000ms",
+    "totalTime": "< 5000ms"
+  }
+}

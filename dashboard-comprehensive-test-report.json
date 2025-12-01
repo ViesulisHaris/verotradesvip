@@ -1,0 +1,368 @@
+{
+  "timestamp": "2025-11-22T14:54:38.005Z",
+  "summary": {
+    "totalTests": 26,
+    "passedTests": 6,
+    "failedTests": 10,
+    "warnings": 10
+  },
+  "categories": {
+    "layout": {
+      "tests": [
+        {
+          "name": "Top Navigation Height",
+          "expected": "60px",
+          "actual": null,
+          "passed": false,
+          "description": "Top navigation should be exactly 60px high"
+        },
+        {
+          "name": "Dashboard Title Size",
+          "expected": "32px",
+          "actual": null,
+          "passed": false,
+          "description": "Dashboard title should be 32px font size"
+        },
+        {
+          "name": "Grid Gap Size",
+          "expected": "16px",
+          "actual": null,
+          "passed": false,
+          "description": "Grid gaps should be 16px"
+        },
+        {
+          "name": "Card Border Radius",
+          "expected": "12px",
+          "actual": "16px",
+          "passed": false,
+          "description": "Cards should have 12px border radius"
+        },
+        {
+          "name": "Component Structure",
+          "expected": "All components present",
+          "actual": {
+            "keyMetricCards": 0,
+            "performanceSections": 0,
+            "bottomSections": 0,
+            "vRatingCard": 0,
+            "sharpeRatioGauge": 0,
+            "dominantEmotionCard": 0
+          },
+          "passed": true,
+          "description": "Dashboard should contain all required components"
+        }
+      ],
+      "passed": 1,
+      "failed": 2,
+      "warnings": 2
+    },
+    "colors": {
+      "tests": [
+        {
+          "name": "Primary Background Color",
+          "expected": "#121212",
+          "actual": "",
+          "passed": false,
+          "description": "Primary background should be #121212"
+        },
+        {
+          "name": "Card Surface Color",
+          "expected": "#202020",
+          "actual": "",
+          "passed": false,
+          "description": "Card surfaces should be #202020"
+        },
+        {
+          "name": "Primary Text Color",
+          "expected": "#EAE6DD",
+          "actual": null,
+          "passed": false,
+          "description": "Primary text should be #EAE6DD"
+        },
+        {
+          "name": "Secondary Text Color",
+          "expected": "#9A9A9A",
+          "actual": "#D6C7B2",
+          "passed": false,
+          "description": "Secondary text should be #9A9A9A"
+        },
+        {
+          "name": "Accent Colors Present",
+          "expected": "All accent colors present",
+          "actual": {
+            "dustyGold": true,
+            "warmSand": true,
+            "mutedOlive": false,
+            "rustRed": false
+          },
+          "passed": false,
+          "description": "Dashboard should use all specified accent colors"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "warnings": 4
+    },
+    "hoverStates": {
+      "tests": [
+        {
+          "name": "Card Hover Effects",
+          "expected": "Visual change on hover",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Button Hover Effects",
+          "expected": "Visual change on hover",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Transition Smoothness",
+          "expected": "Smooth transitions",
+          "actual": "0.3s",
+          "passed": true,
+          "description": "Interactive elements should have smooth transitions"
+        }
+      ],
+      "passed": 1,
+      "failed": 2,
+      "warnings": 0
+    },
+    "responsive": {
+      "tests": [
+        {
+          "name": "Responsive Layout - mobile",
+          "expected": "Proper responsive adaptation",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Responsive Layout - tablet",
+          "expected": "Proper responsive adaptation",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Responsive Layout - laptop",
+          "expected": "Proper responsive adaptation",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Responsive Layout - desktop",
+          "expected": "Proper responsive adaptation",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        }
+      ],
+      "passed": 0,
+      "failed": 4,
+      "warnings": 0
+    },
+    "accessibility": {
+      "tests": [
+        {
+          "name": "Semantic HTML Structure",
+          "expected": "Proper semantic elements",
+          "actual": {
+            "hasNav": false,
+            "hasMain": false,
+            "hasHeader": false,
+            "hasLandmarks": false
+          },
+          "passed": false,
+          "description": "Page should use semantic HTML elements"
+        },
+        {
+          "name": "ARIA Labels and Roles",
+          "expected": "Proper ARIA implementation",
+          "actual": {
+            "hasAriaLabels": false,
+            "count": 0,
+            "labels": []
+          },
+          "passed": false,
+          "description": "Interactive elements should have proper ARIA labels"
+        },
+        {
+          "name": "Keyboard Navigation",
+          "expected": "Focusable elements",
+          "actual": "Error",
+          "passed": false,
+          "error": "page.waitForTimeout is not a function"
+        },
+        {
+          "name": "Color Contrast Ratios",
+          "expected": "WCAG AA compliance (4.5:1)",
+          "actual": {
+            "allPass": true,
+            "averageRatio": "12.23",
+            "ratios": [
+              {
+                "element": "P",
+                "ratio": "13.97",
+                "passes": true
+              },
+              {
+                "element": "P",
+                "ratio": "10.50",
+                "passes": true
+              }
+            ]
+          },
+          "passed": true,
+          "description": "Text should have sufficient color contrast"
+        }
+      ],
+      "passed": 1,
+      "failed": 1,
+      "warnings": 2
+    },
+    "functionality": {
+      "tests": [
+        {
+          "name": "Key Metric Cards Data Display",
+          "expected": "Cards with labels and values",
+          "actual": {
+            "hasValidCards": true,
+            "cards": [
+              {
+                "index": 0,
+                "hasValue": true,
+                "hasLabel": true,
+                "textContent": "Test Credentialstestuser@verotrade.com / TestPassword123!"
+              }
+            ]
+          },
+          "passed": true,
+          "description": "Metric cards should display both labels and values"
+        },
+        {
+          "name": "Performance Sections Rendering",
+          "expected": "Sections with performance data",
+          "actual": {
+            "hasValidSections": false,
+            "sections": [
+              {
+                "index": 0,
+                "hasPerformanceData": false,
+                "hasNumbers": true,
+                "textContent": "Test Credentialstestuser@verotrade.com / TestPassword123!"
+              }
+            ]
+          },
+          "passed": false,
+          "description": "Performance sections should display relevant metrics"
+        },
+        {
+          "name": "Chart Components",
+          "expected": "Rendered chart elements",
+          "actual": {
+            "hasValidCharts": true,
+            "charts": [
+              {
+                "index": 0,
+                "hasCanvas": true,
+                "hasSvg": false,
+                "hasData": false,
+                "tagName": "CANVAS"
+              },
+              {
+                "index": 1,
+                "hasCanvas": true,
+                "hasSvg": false,
+                "hasData": false,
+                "tagName": "CANVAS"
+              },
+              {
+                "index": 2,
+                "hasCanvas": false,
+                "hasSvg": false,
+                "hasData": true,
+                "tagName": "svg"
+              }
+            ]
+          },
+          "passed": true,
+          "description": "Charts should be properly rendered"
+        },
+        {
+          "name": "Navigation Functionality",
+          "expected": "Working navigation elements",
+          "actual": {
+            "hasLogoutButton": true
+          },
+          "passed": true,
+          "description": "Navigation should have functional elements"
+        },
+        {
+          "name": "Data Integration and Loading States",
+          "expected": "Proper data loading and display",
+          "actual": {
+            "hasLoadingStates": false,
+            "loadingCount": 0,
+            "hasDataElements": false,
+            "dataCount": 0
+          },
+          "passed": false,
+          "description": "Dashboard should handle data loading and display properly"
+        }
+      ],
+      "passed": 3,
+      "failed": 0,
+      "warnings": 2
+    }
+  },
+  "screenshots": [
+    {
+      "filename": "initial-load-desktop-2025-11-22T14-54-46-473Z.png",
+      "description": "initial-load",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\initial-load-desktop-2025-11-22T14-54-46-473Z.png"
+    },
+    {
+      "filename": "layout-structure-test-desktop-2025-11-22T14-54-48-046Z.png",
+      "description": "layout-structure-test",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\layout-structure-test-desktop-2025-11-22T14-54-48-046Z.png"
+    },
+    {
+      "filename": "color-scheme-test-desktop-2025-11-22T14-54-51-201Z.png",
+      "description": "color-scheme-test",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\color-scheme-test-desktop-2025-11-22T14-54-51-201Z.png"
+    },
+    {
+      "filename": "hover-states-test-desktop-2025-11-22T14-54-54-688Z.png",
+      "description": "hover-states-test",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\hover-states-test-desktop-2025-11-22T14-54-54-688Z.png"
+    },
+    {
+      "filename": "accessibility-test-desktop-2025-11-22T14-54-56-083Z.png",
+      "description": "accessibility-test",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\accessibility-test-desktop-2025-11-22T14-54-56-083Z.png"
+    },
+    {
+      "filename": "functionality-test-desktop-2025-11-22T14-54-57-297Z.png",
+      "description": "functionality-test",
+      "breakpoint": "desktop",
+      "path": "dashboard-test-screenshots\\functionality-test-desktop-2025-11-22T14-54-57-297Z.png"
+    }
+  ],
+  "recommendations": [
+    "Address failed tests before deploying to production",
+    "Review warnings for potential improvements",
+    "Ensure color scheme matches design specifications exactly",
+    "Improve accessibility features for WCAG compliance",
+    "Fix responsive design issues across all breakpoints"
+  ]
+}

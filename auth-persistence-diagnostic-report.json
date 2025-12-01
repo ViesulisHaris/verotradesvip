@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-11-27T15:43:04.339Z",
+  "tests": [
+    {
+      "testName": "Test Execution",
+      "status": "fail",
+      "details": "Overall test execution failed: startTime is not defined",
+      "duration": "0.00ms",
+      "timestamp": "2025-11-27T15:43:39.253Z"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "warnings": 0
+  },
+  "issues": [
+    {
+      "testName": "Test Execution",
+      "details": "Overall test execution failed: startTime is not defined"
+    }
+  ],
+  "recommendations": [
+    {
+      "issue": "AuthContext initialization timing",
+      "solution": "Implement proper loading states and prevent race conditions during auth initialization",
+      "priority": "MEDIUM"
+    },
+    {
+      "issue": "Session refresh token management",
+      "solution": "Ensure automatic token refresh is properly configured and handled",
+      "priority": "MEDIUM"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-11-21T15:08:04.652Z",
+  "summary": {
+    "overall": "FAIL",
+    "middlewareDisabled": "PASS",
+    "authenticationFlow": "PASS",
+    "sessionPersistence": "PASS",
+    "userRetrieval": "FAIL",
+    "protectedRoutesAccess": "FAIL"
+  },
+  "details": {
+    "middleware": {
+      "disabled": true,
+      "details": "Middleware is properly disabled (middleware.ts.disabled exists, middleware.ts does not)"
+    },
+    "authentication": {
+      "login": true,
+      "sessionPersistence": true,
+      "userRetrieval": false,
+      "details": [
+        {
+          "timestamp": "2025-11-21T15:07:52.692Z",
+          "type": "info",
+          "message": "🚀 Starting Comprehensive Authentication Tests"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:52.693Z",
+          "type": "info",
+          "message": "Testing with credentials: testuser@verotrade.com"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:52.693Z",
+          "type": "info",
+          "message": "Base URL: http://localhost:3000"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:54.599Z",
+          "type": "info",
+          "message": "=== Testing Middleware Status ==="
+        },
+        {
+          "timestamp": "2025-11-21T15:07:54.600Z",
+          "type": "success",
+          "message": "✅ Middleware is properly disabled"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:54.600Z",
+          "type": "info",
+          "message": "=== Testing Direct Supabase Authentication ==="
+        },
+        {
+          "timestamp": "2025-11-21T15:07:54.600Z",
+          "type": "info",
+          "message": "Testing direct Supabase sign in..."
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.184Z",
+          "type": "success",
+          "message": "✅ Direct Supabase authentication successful"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.184Z",
+          "type": "info",
+          "message": "User ID: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.184Z",
+          "type": "info",
+          "message": "User email: testuser@verotrade.com"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.184Z",
+          "type": "success",
+          "message": "✅ Session retrieval successful"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.347Z",
+          "type": "info",
+          "message": "=== Testing Authentication Flow ==="
+        },
+        {
+          "timestamp": "2025-11-21T15:07:55.484Z",
+          "type": "info",
+          "message": "Navigating to login page..."
+        },
+        {
+          "timestamp": "2025-11-21T15:07:58.783Z",
+          "type": "info",
+          "message": "Screenshot saved: c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\auth-test-login-page-1763737678425.png"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:58.837Z",
+          "type": "success",
+          "message": "✅ Login page loaded successfully"
+        },
+        {
+          "timestamp": "2025-11-21T15:07:58.837Z",
+          "type": "info",
+          "message": "Filling in login credentials..."
+        },
+        {
+          "timestamp": "2025-11-21T15:07:59.655Z",
+          "type": "info",
+          "message": "Submitting login form..."
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.825Z",
+          "type": "info",
+          "message": "Screenshot saved: c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\auth-test-after-login-1763737680307.png"
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.825Z",
+          "type": "success",
+          "message": "✅ Login successful - redirected to dashboard"
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.825Z",
+          "type": "info",
+          "message": "Testing session persistence..."
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.835Z",
+          "type": "success",
+          "message": "✅ Session persistence working - found 1 auth cookies"
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.851Z",
+          "type": "info",
+          "message": "Testing user retrieval..."
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.875Z",
+          "type": "error",
+          "message": "❌ User retrieval failed: Supabase client not available"
+        },
+        {
+          "timestamp": "2025-11-21T15:08:01.947Z",
+          "type": "info",
+          "message": "=== Testing Protected Routes Access ==="
+        },
+        {
+          "timestamp": "2025-11-21T15:08:02.191Z",
+          "type": "info",
+          "message": "Logging in to test protected routes..."
+        },
+        {
+          "timestamp": "2025-11-21T15:08:04.590Z",
+          "type": "error",
+          "message": "Protected routes test error: No element found for selector: input[type=\"email\"]"
+        }
+      ]
+    },
+    "protectedRoutes": {
+      "dashboard": false,
+      "trades": false,
+      "strategies": false,
+      "analytics": false,
+      "details": []
+    },
+    "summary": {
+      "overall": false,
+      "issues": [
+        "❌ User retrieval failed: Supabase client not available",
+        "Protected routes test error: No element found for selector: input[type=\"email\"]"
+      ],
+      "recommendations": [
+        "✅ Middleware is properly disabled",
+        "✅ Direct Supabase authentication successful",
+        "✅ Session retrieval successful",
+        "✅ Login page loaded successfully",
+        "✅ Login successful - redirected to dashboard",
+        "✅ Session persistence working - found 1 auth cookies"
+      ]
+    }
+  },
+  "recommendations": [
+    "User retrieval is failing - check Supabase client configuration",
+    "Protected routes are not accessible - check AuthProvider and route protection logic"
+  ]
+}

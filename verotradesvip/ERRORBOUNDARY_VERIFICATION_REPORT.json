@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-27T21:11:27.246Z",
+  "summary": {
+    "mainAppLoad": false,
+    "errorBoundaryPage": false,
+    "errorBoundaryFunctionality": false,
+    "errorCatching": false,
+    "errorRecovery": false,
+    "noWhiteScreen": false,
+    "overallSuccess": false
+  },
+  "details": {
+    "mainAppLoad": false,
+    "errorBoundaryPage": false,
+    "errorBoundaryFunctionality": false,
+    "errorCatching": false,
+    "errorRecovery": false,
+    "noWhiteScreen": false,
+    "screenshots": [],
+    "errors": [
+      "Verification error: Navigation timeout of 30000 ms exceeded"
+    ]
+  },
+  "recommendations": [
+    "Main application is not loading properly - check for server-side errors",
+    "ErrorBoundary test page is not accessible - verify routing",
+    "ErrorBoundary is not functioning - check component implementation",
+    "ErrorBoundary is not catching errors - verify error handling logic",
+    "Error recovery is not working - check retry mechanism",
+    "White screen issue persists - investigate CSS/JS loading issues"
+  ]
+}

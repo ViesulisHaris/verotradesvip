@@ -22,42 +22,53 @@ export default function Sidebar({ onLogout }: Props) {
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="fixed top-4 left-4 z-50 p-2 rounded-full bg-white/10 text-white lg:hidden">
+      <button
+        onClick={() => setOpen(true)}
+        className="verotrade-mobile-menu-btn lg:hidden"
+      >
         <Menu className="w-5 h-5" />
       </button>
 
-      {open && <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setOpen(false)} />}
+      {open && <div className="verotrade-mobile-overlay" onClick={() => setOpen(false)} />}
 
       <aside className={`
-        fixed inset-y-0 left-0 z-40 w-64 glass border-r border-white/10 transform transition-transform duration-300
-        ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0
+        verotrade-sidebar
+        ${open ? 'mobile-visible' : 'mobile-hidden'} lg:translate-x-0
       `}>
-        <div className="flex items-center justify-between p-4 border-b border-white/10">
-          <h2 className="text-lg font-bold text-white">Menu</h2>
-          <button onClick={() => setOpen(false)} className="p-1 rounded hover:bg-white/10 lg:hidden">
-            <X className="w-5 h-5 text-white" />
+        <div className="verotrade-sidebar-header">
+          <div className="verotrade-logo">
+            <div className="verotrade-logo-icon">V</div>
+            <span className="verotrade-logo-text">VeroTrade</span>
+          </div>
+          <button onClick={() => setOpen(false)} className="unified-toggle-btn lg:hidden">
+            <X className="w-5 h-5" />
           </button>
         </div>
-        <nav className="p-4 space-y-2">
+        <nav className="verotrade-sidebar-nav">
           {links.map(({ href, label, icon: Icon }) => (
             <Link
               key={href}
               href={href}
               className={`
-                flex items-center gap-3 px-4 py-3 rounded-xl transition-all
-                ${pathname.startsWith(href) ? 'bg-white/10 text-primary' : 'text-white/80 hover:bg-white/10'}
+                verotrade-nav-item
+                ${pathname === href ? 'active' : ''}
               `}
               onClick={() => setOpen(false)}
             >
-              <Icon className="w-5 h-5" />
+              <Icon className="verotrade-nav-icon" />
               {label}
             </Link>
           ))}
-          <button onClick={onLogout} className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-red-400 hover:bg-red-500/10">
-            <LogOut className="w-5 h-5" />
-            Logout
-          </button>
         </nav>
+        <div className="verotrade-sidebar-footer">
+          <div className="verotrade-user-area">
+            <div className="verotrade-user-avatar">U</div>
+            <div className="verotrade-user-info">
+              <div className="verotrade-user-name">User</div>
+              <div className="verotrade-user-role">Trader</div>
+            </div>
+          </div>
+        </div>
       </aside>
     </>
   );

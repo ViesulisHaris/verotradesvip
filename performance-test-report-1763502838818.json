@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-11-18T21:53:58.816Z",
+  "testConfig": {
+    "tradeVolumes": [
+      100,
+      500,
+      1000,
+      2000
+    ],
+    "pageSizes": [
+      10,
+      25,
+      50,
+      100
+    ],
+    "scenarios": [
+      "trades_page_load",
+      "dashboard_load",
+      "strategy_modal_load",
+      "pagination_performance",
+      "cache_effectiveness"
+    ]
+  },
+  "results": [
+    {
+      "testName": "database_query_100",
+      "duration": 254.0589,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    {
+      "testName": "database_query_500",
+      "duration": 512.766,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    {
+      "testName": "database_query_1000",
+      "duration": 843.8742000000001,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    {
+      "testName": "database_query_2000",
+      "duration": 1484.2686999999999,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    {
+      "testName": "cache_effectiveness",
+      "duration": 407.6301000000003,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    }
+  ],
+  "summary": {
+    "totalTests": 5,
+    "averageDuration": 700.51958,
+    "slowestTest": {
+      "testName": "database_query_2000",
+      "duration": 1484.2686999999999,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    "fastestTest": {
+      "testName": "database_query_100",
+      "duration": 254.0589,
+      "entries": [],
+      "metrics": {
+        "totalDuration": 0,
+        "averageDuration": 0,
+        "longestEntry": null,
+        "shortestEntry": null,
+        "memoryUsage": 0,
+        "renderCount": 0,
+        "performanceScore": 100
+      }
+    },
+    "performanceIssues": [
+      {
+        "type": "info",
+        "test": "database_query_100",
+        "message": "Moderate performance: 254.06ms",
+        "recommendation": "Room for improvement"
+      },
+      {
+        "type": "warning",
+        "test": "database_query_500",
+        "message": "Slow performance: 512.77ms",
+        "recommendation": "Consider optimization - performance is below acceptable"
+      },
+      {
+        "type": "warning",
+        "test": "database_query_1000",
+        "message": "Slow performance: 843.87ms",
+        "recommendation": "Consider optimization - performance is below acceptable"
+      },
+      {
+        "type": "critical",
+        "test": "database_query_2000",
+        "message": "Very slow performance: 1484.27ms",
+        "recommendation": "Investigate immediately - performance is unacceptable"
+      },
+      {
+        "type": "info",
+        "test": "cache_effectiveness",
+        "message": "Moderate performance: 407.63ms",
+        "recommendation": "Room for improvement"
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "timestamp": "2025-11-27T12:58:24.352Z",
+  "supabaseConfig": {
+    "url": "https://bzmixuxautbmqbrqtufx.supabase.co",
+    "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+    "serviceRoleKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjI4MDYzMiwiZXhwIjoyMDc3ODU2NjMyfQ.pFRbi-LADHU1cdrZjulUIm0NAQWvevCa5QYERbZyI6E"
+  },
+  "testCredentials": {
+    "email": "testuser1000@verotrade.com",
+    "password": "TestPassword123!"
+  },
+  "phases": {
+    "environment": {
+      "passed": 0,
+      "failed": 2,
+      "details": [
+        {
+          "timestamp": "2025-11-27T12:58:26.156Z",
+          "type": "info",
+          "message": "\n🔧 PHASE 1: Environment and Configuration Verification"
+        },
+        {
+          "timestamp": "2025-11-27T12:58:26.156Z",
+          "type": "info",
+          "message": "Testing Supabase configuration loading..."
+        },
+        {
+          "timestamp": "2025-11-27T12:58:26.271Z",
+          "type": "error",
+          "message": "❌ Supabase configuration loaded: FAILED - Supabase client not found or not initialized"
+        },
+        {
+          "timestamp": "2025-11-27T12:58:56.796Z",
+          "type": "error",
+          "message": "❌ Environment configuration: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n"
+        }
+      ],
+      "total": 2
+    },
+    "authentication": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "timestamp": "2025-11-27T12:58:56.797Z",
+          "type": "info",
+          "message": "\n🔐 PHASE 2: Authentication Flow Testing"
+        },
+        {
+          "timestamp": "2025-11-27T12:59:27.307Z",
+          "type": "error",
+          "message": "❌ Authentication flow: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+        }
+      ],
+      "total": 1
+    },
+    "dashboard": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "timestamp": "2025-11-27T12:59:27.308Z",
+          "type": "info",
+          "message": "\n📊 PHASE 3: Dashboard Functionality Testing"
+        },
+        {
+          "timestamp": "2025-11-27T12:59:57.828Z",
+          "type": "error",
+          "message": "❌ Dashboard functionality: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/dashboard\", waiting until \"load\"\u001b[22m\n"
+        }
+      ],
+      "total": 1
+    },
+    "sidebar": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "timestamp": "2025-11-27T12:59:57.829Z",
+          "type": "info",
+          "message": "\n📋 PHASE 4: Sidebar Visibility and Functionality Testing"
+        },
+        {
+          "timestamp": "2025-11-27T13:02:13.033Z",
+          "type": "error",
+          "message": "❌ Sidebar functionality: FAILED - Exception: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "total": 1
+    },
+    "session": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "timestamp": "2025-11-27T13:02:13.034Z",
+          "type": "info",
+          "message": "\n🔄 PHASE 5: Session Management Testing"
+        },
+        {
+          "timestamp": "2025-11-27T13:02:43.559Z",
+          "type": "error",
+          "message": "❌ Session management: FAILED - Exception: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+        }
+      ],
+      "total": 1
+    }
+  },
+  "screenshots": [],
+  "networkRequests": [],
+  "consoleErrors": [],
+  "summary": {
+    "total": 6,
+    "passed": 0,
+    "failed": 6,
+    "passRate": "0.00%"
+  },
+  "testConfiguration": {
+    "baseUrl": "http://localhost:3000",
+    "testUser": "testuser1000@verotrade.com",
+    "supabaseUrl": "https://bzmixuxautbmqbrqtufx.supabase.co",
+    "testDuration": 259207
+  },
+  "phaseSummaries": {
+    "environment": {
+      "passed": 0,
+      "failed": 2,
+      "total": 2,
+      "passRate": "0.00%"
+    },
+    "authentication": {
+      "passed": 0,
+      "failed": 1,
+      "total": 1,
+      "passRate": "0.00%"
+    },
+    "dashboard": {
+      "passed": 0,
+      "failed": 1,
+      "total": 1,
+      "passRate": "0.00%"
+    },
+    "sidebar": {
+      "passed": 0,
+      "failed": 1,
+      "total": 1,
+      "passRate": "0.00%"
+    },
+    "session": {
+      "passed": 0,
+      "failed": 1,
+      "total": 1,
+      "passRate": "0.00%"
+    }
+  },
+  "recommendations": [
+    "🔧 Address the failed tests to ensure proper authentication functionality.",
+    "Fix environment configuration issues before testing other components.",
+    "Review authentication flow and Supabase configuration.",
+    "Check sidebar component implementation and authentication state integration.",
+    "Regularly run this definitive test to ensure authentication system reliability.",
+    "Monitor Supabase service status and API key validity."
+  ],
+  "overallStatus": "FAILED"
+}

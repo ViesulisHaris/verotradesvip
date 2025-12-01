@@ -1,0 +1,416 @@
+{
+  "timestamp": "2025-11-18T14:55:01.001Z",
+  "summary": {
+    "totalTests": 54,
+    "passedTests": 0,
+    "failedTests": 54,
+    "browsers": 3,
+    "viewports": 3
+  },
+  "browserResults": {
+    "chromium": {
+      "Desktop": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Tablet": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Mobile": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      }
+    },
+    "firefox": {
+      "Desktop": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Tablet": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Mobile": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      }
+    },
+    "webkit": {
+      "Desktop": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Tablet": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      },
+      "Mobile": {
+        "Basic Modal Open/Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Rapid Modal Operations": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Tab Switching Within Modal": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "ESC Key Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Backdrop Click Close": {
+          "passed": false,
+          "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"View Performance Details\")')\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        },
+        "Multiple Strategy Modals": {
+          "passed": false,
+          "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"strategy-card\"]') to be visible\u001b[22m\n",
+          "verificationResults": {},
+          "consoleLogs": [],
+          "screenshotPath": []
+        }
+      }
+    }
+  },
+  "screenshots": [],
+  "errors": []
+}

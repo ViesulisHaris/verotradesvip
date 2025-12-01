@@ -1,0 +1,83 @@
+{
+  "testRun": "2025-11-17T11:59:49.287Z",
+  "summary": {
+    "total": 12,
+    "passed": 6,
+    "failed": 6,
+    "successRate": "50.0"
+  },
+  "results": [
+    {
+      "testName": "Authentication",
+      "passed": true,
+      "details": "Successfully logged in and redirected",
+      "timestamp": "13:56:29"
+    },
+    {
+      "testName": "Page Navigation",
+      "passed": true,
+      "details": "Successfully navigated to emotion filtering test page",
+      "timestamp": "13:56:32"
+    },
+    {
+      "testName": "Create Test Trades",
+      "passed": true,
+      "details": "Test trades created successfully. Current Trades (28 total, 28 filtered)",
+      "timestamp": "13:56:35"
+    },
+    {
+      "testName": "Single Emotion Filter (FOMO)",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Test FOMO Filter\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg\">Test FOMO Filter</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "timestamp": "13:57:05"
+    },
+    {
+      "testName": "Multiple Emotion Filter",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Test Multiple Emotions\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg\">Test Multiple Emotions</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "timestamp": "13:57:35"
+    },
+    {
+      "testName": "Case Insensitive Filter",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Test Case Insensitive\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg\">Test Case Insensitive</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+      "timestamp": "13:58:05"
+    },
+    {
+      "testName": "Manual Emotion Selection",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Search Emotions\"]')\u001b[22m\n",
+      "timestamp": "13:58:36"
+    },
+    {
+      "testName": "Clear Filters",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Clear Filters\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg\">Clear Filters</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    6 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  20 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+      "timestamp": "13:59:06"
+    },
+    {
+      "testName": "Emotion Filter Pills (FOMO)",
+      "passed": true,
+      "details": "FOMO pill activated successfully",
+      "timestamp": "13:59:13"
+    },
+    {
+      "testName": "Statistics Update",
+      "passed": true,
+      "details": "Statistics cards displayed: 11",
+      "timestamp": "13:59:15"
+    },
+    {
+      "testName": "Filtered Trades Display",
+      "passed": true,
+      "details": "Trades table displayed with 8 rows",
+      "timestamp": "13:59:15"
+    },
+    {
+      "testName": "Debug Logging",
+      "passed": false,
+      "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Test FOMO Filter\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg\">Test FOMO Filter</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    11 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"glass-enhanced p-6 rounded-xl\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "timestamp": "13:59:49"
+    }
+  ]
+}

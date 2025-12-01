@@ -1,0 +1,66 @@
+{
+  "testResults": {
+    "mobileMenuToggle": {
+      "working": false,
+      "details": "Mobile menu toggle button not found"
+    },
+    "desktopButtons": {
+      "Dashboard": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Log Trade": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Strategies": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Trades": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Calendar": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Confluence": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      }
+    },
+    "mobileButtons": {
+      "Dashboard": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Log Trade": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Strategies": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Trades": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Calendar": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Confluence": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      }
+    },
+    "logoutButtons": {
+      "working": false,
+      "details": ""
+    }
+  },
+  "consoleLogs": [],
+  "timestamp": "2025-11-24T11:57:37.691Z"
+}

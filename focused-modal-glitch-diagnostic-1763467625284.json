@@ -1,0 +1,256 @@
+{
+  "timestamp": "2025-11-18T12:07:05.284Z",
+  "testType": "focused-modal-analysis",
+  "summary": {
+    "doubleModalStructureConfirmed": true,
+    "nestedBackdropsDetected": true,
+    "conflictingZIndexDetected": false,
+    "rootCause": "EnhancedStrategyCard creates wrapper modal + StrategyPerformanceModal creates its own backdrop"
+  },
+  "evidence": {
+    "consoleMessages": [
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+        "timestamp": "2025-11-18T12:06:47.703Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+        "timestamp": "2025-11-18T12:06:47.823Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+        "timestamp": "2025-11-18T12:06:47.824Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+        "timestamp": "2025-11-18T12:06:47.825Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+        "timestamp": "2025-11-18T12:06:47.826Z"
+      },
+      {
+        "type": "warning",
+        "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T12:06:47.825Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+        "timestamp": "2025-11-18T12:06:47.828Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+        "timestamp": "2025-11-18T12:06:47.828Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+        "timestamp": "2025-11-18T12:06:47.829Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+        "timestamp": "2025-11-18T12:06:47.830Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+        "timestamp": "2025-11-18T12:06:47.830Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+        "timestamp": "2025-11-18T12:06:47.831Z"
+      },
+      {
+        "type": "log",
+        "text": "[HMR] connected",
+        "timestamp": "2025-11-18T12:06:48.020Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2025-11-18T12:06:48.144Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-18T12:06:48.161Z}",
+        "timestamp": "2025-11-18T12:06:48.168Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+        "timestamp": "2025-11-18T12:06:48.168Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:06:48.174Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:06:48.195Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] No session found, redirecting to login",
+        "timestamp": "2025-11-18T12:06:48.195Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:06:48.202Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:06:48.215Z}",
+        "timestamp": "2025-11-18T12:06:48.217Z"
+      },
+      {
+        "type": "warning",
+        "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+        "timestamp": "2025-11-18T12:06:48.355Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Getting initial session...",
+        "timestamp": "2025-11-18T12:06:48.369Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Initial session result: {hasSession: false, userId: undefined, sessionExpiresAt: undefined}",
+        "timestamp": "2025-11-18T12:06:48.372Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH] Setting up auth state listener...",
+        "timestamp": "2025-11-18T12:06:48.372Z"
+      },
+      {
+        "type": "log",
+        "text": "🔄 [AUTH] Auth state change: {event: INITIAL_SESSION, userId: undefined, sessionExpiresAt: undefined, timestamp: 2025-11-18T12:06:48.372Z}",
+        "timestamp": "2025-11-18T12:06:48.373Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+        "timestamp": "2025-11-18T12:06:48.560Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [STARTUP] Running lightweight validation...",
+        "timestamp": "2025-11-18T12:06:48.560Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:06:48.753Z"
+      },
+      {
+        "type": "warning",
+        "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+        "timestamp": "2025-11-18T12:06:48.753Z"
+      },
+      {
+        "type": "log",
+        "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+        "timestamp": "2025-11-18T12:06:48.753Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:06:48.920Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()",
+        "timestamp": "2025-11-18T12:06:48.925Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [CACHE] Comprehensive cache clear completed",
+        "timestamp": "2025-11-18T12:06:48.926Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+        "timestamp": "2025-11-18T12:06:48.926Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Analyzing current page modal structure...",
+        "timestamp": "2025-11-18T12:06:52.968Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Modal structure analysis: {totalModals: 0, totalBackdrops: 0, totalFixedElements: 1, modalElements: Array(0), backdropElements: Array(0)}",
+        "timestamp": "2025-11-18T12:06:52.969Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Testing double modal structure (CURRENT BUG)",
+        "timestamp": "2025-11-18T12:06:55.024Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Double modal structure created - this demonstrates the \"trapped in a box\" effect",
+        "timestamp": "2025-11-18T12:06:55.025Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [DIAGNOSTIC] Testing single modal structure (CORRECT)",
+        "timestamp": "2025-11-18T12:06:59.582Z"
+      }
+    ],
+    "errors": [],
+    "finalAnalysis": {
+      "diagnosticMessages": [
+        "✅ Single Modal Structure:",
+        "\n            One backdrop container\n            One modal content container\n            Proper z-index hierarchy\n            No \"trapped in a box\" effect\n          ",
+        "One backdrop container",
+        "One modal content container",
+        "Proper z-index hierarchy",
+        "No \"trapped in a box\" effect"
+      ],
+      "zIndexHierarchy": [
+        {
+          "element": "DIV",
+          "className": "",
+          "testId": null,
+          "zIndex": "999999",
+          "position": "fixed"
+        }
+      ],
+      "issueIdentified": {
+        "hasDoubleModalStructure": true,
+        "hasNestedBackdrops": true,
+        "hasConflictingZIndex": false,
+        "rootCause": "EnhancedStrategyCard creates wrapper modal + StrategyPerformanceModal creates its own backdrop"
+      }
+    },
+    "zIndexHierarchy": [
+      {
+        "element": "DIV",
+        "className": "",
+        "testId": null,
+        "zIndex": "999999",
+        "position": "fixed"
+      }
+    ]
+  },
+  "diagnosis": {
+    "confirmed": true,
+    "issue": "Double Modal Structure",
+    "description": "EnhancedStrategyCard creates a wrapper modal (lines 450-485) and StrategyPerformanceModal creates its own backdrop (lines 308-314), creating nested modal containers",
+    "visualEffect": "\"Trapped in a box\" appearance due to overlapping backdrop containers",
+    "componentsInvolved": [
+      "EnhancedStrategyCard.tsx (lines 450-485)",
+      "StrategyPerformanceModal.tsx (lines 308-314)"
+    ],
+    "recommendation": "Remove duplicate modal wrapper from EnhancedStrategyCard, let StrategyPerformanceModal handle its own backdrop"
+  },
+  "screenshot": "./focused-modal-glitch-diagnostic-1763467624110.png"
+}

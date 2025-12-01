@@ -1,0 +1,304 @@
+{
+  "summary": {
+    "totalTests": 35,
+    "passed": 13,
+    "failed": 22,
+    "timestamp": "2025-11-25T22:36:41.359Z",
+    "successRate": "37.1"
+  },
+  "categories": {
+    "navigation": {
+      "passed": 0,
+      "failed": 8,
+      "tests": [
+        {
+          "name": "Sidebar visibility",
+          "passed": false,
+          "details": "Sidebar not found",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:45.702Z"
+        },
+        {
+          "name": "Navigate to Dashboard",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:48.033Z"
+        },
+        {
+          "name": "Navigate to Log Trade",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:50.720Z"
+        },
+        {
+          "name": "Navigate to Trades",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:53.018Z"
+        },
+        {
+          "name": "Navigate to Calendar",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:55.575Z"
+        },
+        {
+          "name": "Navigate to Strategies",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:57.776Z"
+        },
+        {
+          "name": "Navigate to Analytics",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:36:59.992Z"
+        },
+        {
+          "name": "Navigate to Settings",
+          "passed": false,
+          "details": "Navigation failed",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:02.252Z"
+        }
+      ],
+      "total": 8,
+      "successRate": "0.0"
+    },
+    "sidebar": {
+      "passed": 0,
+      "failed": 2,
+      "tests": [
+        {
+          "name": "Desktop sidebar visibility",
+          "passed": false,
+          "details": "Sidebar visible: false, Mobile menu hidden: true",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:04.449Z"
+        },
+        {
+          "name": "Mobile initial state",
+          "passed": false,
+          "details": "Mobile menu visible: false, Sidebar hidden: true",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:06.648Z"
+        }
+      ],
+      "total": 2,
+      "successRate": "0.0"
+    },
+    "responsive": {
+      "passed": 3,
+      "failed": 2,
+      "tests": [
+        {
+          "name": "Dashboard layout on desktop",
+          "passed": true,
+          "details": "Main content visible: true",
+          "screenshot": "restoration-test-screenshots\\responsive-dashboard-desktop-1764110228938.png",
+          "timestamp": "2025-11-25T22:37:09.465Z"
+        },
+        {
+          "name": "Desktop sidebar visibility",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:09.468Z"
+        },
+        {
+          "name": "Dashboard layout on tablet",
+          "passed": true,
+          "details": "Main content visible: true",
+          "screenshot": "restoration-test-screenshots\\responsive-dashboard-tablet-1764110231709.png",
+          "timestamp": "2025-11-25T22:37:12.877Z"
+        },
+        {
+          "name": "Dashboard layout on mobile",
+          "passed": true,
+          "details": "Main content visible: true",
+          "screenshot": "restoration-test-screenshots\\responsive-dashboard-mobile-1764110235174.png",
+          "timestamp": "2025-11-25T22:37:15.271Z"
+        },
+        {
+          "name": "Mobile menu button visibility",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:15.273Z"
+        }
+      ],
+      "total": 5,
+      "successRate": "60.0"
+    },
+    "authentication": {
+      "passed": 3,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "Login page elements",
+          "passed": true,
+          "details": "Form visible: true, All elements visible: true",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:17.416Z"
+        },
+        {
+          "name": "Registration page elements",
+          "passed": true,
+          "details": "Form visible: true, All elements visible: true",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:20.281Z"
+        },
+        {
+          "name": "Protected route redirect",
+          "passed": true,
+          "details": "Correctly redirected to login",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:22.421Z"
+        },
+        {
+          "name": "Login functionality",
+          "passed": false,
+          "details": "Login failed - could not test logout",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:25.521Z"
+        }
+      ],
+      "total": 4,
+      "successRate": "75.0"
+    },
+    "dashboard": {
+      "passed": 4,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "Dashboard header visibility",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:27.639Z"
+        },
+        {
+          "name": "Stats cards visibility",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:27.642Z"
+        },
+        {
+          "name": "Emotional patterns section",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:27.643Z"
+        },
+        {
+          "name": "Dashboard centering",
+          "passed": true,
+          "details": "Dashboard properly centered",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:27.644Z"
+        },
+        {
+          "name": "Layout on desktop",
+          "passed": true,
+          "details": "Main content visible on desktop",
+          "screenshot": "restoration-test-screenshots\\dashboard-dashboard-layout-desktop-1764110248169.png",
+          "timestamp": "2025-11-25T22:37:28.558Z"
+        },
+        {
+          "name": "Layout on tablet",
+          "passed": true,
+          "details": "Main content visible on tablet",
+          "screenshot": "restoration-test-screenshots\\dashboard-dashboard-layout-tablet-1764110249074.png",
+          "timestamp": "2025-11-25T22:37:29.231Z"
+        },
+        {
+          "name": "Layout on mobile",
+          "passed": true,
+          "details": "Main content visible on mobile",
+          "screenshot": "restoration-test-screenshots\\dashboard-dashboard-layout-mobile-1764110249749.png",
+          "timestamp": "2025-11-25T22:37:29.815Z"
+        }
+      ],
+      "total": 7,
+      "successRate": "57.1"
+    },
+    "interactive": {
+      "passed": 3,
+      "failed": 6,
+      "tests": [
+        {
+          "name": "Log Trade form visibility",
+          "passed": true,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:31.985Z"
+        },
+        {
+          "name": "Symbol input field",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:31.987Z"
+        },
+        {
+          "name": "Market checkboxes",
+          "passed": false,
+          "details": "Found 0 market checkboxes",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:31.990Z"
+        },
+        {
+          "name": "Submit button",
+          "passed": true,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:31.992Z"
+        },
+        {
+          "name": "Calendar grid visibility",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:34.142Z"
+        },
+        {
+          "name": "Trades list visibility",
+          "passed": true,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:36.281Z"
+        },
+        {
+          "name": "Filter controls",
+          "passed": false,
+          "details": "Found 0 filter controls",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:36.284Z"
+        },
+        {
+          "name": "Analytics page button",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:38.451Z"
+        },
+        {
+          "name": "Settings page button",
+          "passed": false,
+          "details": "",
+          "screenshot": "",
+          "timestamp": "2025-11-25T22:37:40.637Z"
+        }
+      ],
+      "total": 9,
+      "successRate": "33.3"
+    }
+  }
+}

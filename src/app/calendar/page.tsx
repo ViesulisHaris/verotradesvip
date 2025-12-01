@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay } from 'date-fns';
-import { supabase } from '../../../supabase/client';
+import { supabase } from '@/supabase/client';
 import TradeModal from '@/components/TradeModal';
 import { Calendar as CalendarIcon, Plus } from 'lucide-react';
 import Link from 'next/link';
+import UnifiedLayout from '@/components/layout/UnifiedLayout';
 
 interface Trade {
   id: string;
@@ -56,11 +57,12 @@ export default function CalendarPage() {
   const handleDateClick = (day: Date) => {
     const dateStr = format(day, 'yyyy-MM-dd');
     const dayTrades = tradesByDate[dateStr] || [];
-    if (dayTrades.length > 0) setSelectedTrade(dayTrades[0]);
+    if (dayTrades.length > 0) setSelectedTrade(dayTrades[0] || null);
   };
 
   return (
-    <div className="space-y-6 p-6">
+    <UnifiedLayout>
+      <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold text-white flex items-center gap-2">
           <CalendarIcon className="w-8 h-8" />
@@ -115,6 +117,7 @@ export default function CalendarPage() {
       )}
 
       {selectedTrade && <TradeModal trade={selectedTrade} onClose={() => setSelectedTrade(null)} />}
-    </div>
+      </div>
+    </UnifiedLayout>
   );
 }

@@ -1,0 +1,59 @@
+{
+  "startTime": "2025-11-24T14:29:24.910Z",
+  "tests": [
+    {
+      "testName": "Navigate to Trades page",
+      "passed": false,
+      "details": "Error: Waiting for selector `a[href=\"/trades\"], nav a[href*=\"trades\"]` failed",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate to Trades page_error_1763994579250.png",
+      "timestamp": "2025-11-24T14:29:39.380Z"
+    },
+    {
+      "testName": "Navigate away from Trades page",
+      "passed": false,
+      "details": "Error: Waiting for selector `a[href=\"/dashboard\"], nav a[href*=\"dashboard\"]` failed",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate away from Trades page_error_1763994589020.png",
+      "timestamp": "2025-11-24T14:29:49.178Z"
+    },
+    {
+      "testName": "Menu responsiveness after Trades",
+      "passed": false,
+      "details": "Error: Waiting for selector `a[href=\"/dashboard\"], nav a[href*=\"dashboard\"]` failed",
+      "screenshot": "trades-navigation-test-screenshots\\Menu responsiveness after Trades_error_1763994598569.png",
+      "timestamp": "2025-11-24T14:29:58.711Z"
+    },
+    {
+      "testName": "Complete navigation cycle",
+      "passed": false,
+      "details": "Error: Waiting for selector `a[href=\"/trades\"], nav a[href*=\"trades\"]` failed",
+      "screenshot": "trades-navigation-test-screenshots\\Complete navigation cycle_error_1763994607149.png",
+      "timestamp": "2025-11-24T14:30:07.307Z"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 4,
+    "total": 4
+  },
+  "endTime": "2025-11-24T14:30:07.307Z",
+  "duration": 42397,
+  "testResults": [
+    {
+      "test": "Navigation to Trades",
+      "passed": false
+    },
+    {
+      "test": "Navigation away from Trades",
+      "passed": false
+    },
+    {
+      "test": "Menu responsiveness after Trades",
+      "passed": false
+    },
+    {
+      "test": "Complete navigation cycle",
+      "passed": false
+    }
+  ],
+  "overallSuccess": false
+}

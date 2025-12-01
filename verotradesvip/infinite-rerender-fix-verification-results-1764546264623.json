@@ -1,0 +1,880 @@
+{
+  "timestamp": "2025-11-30T23:44:03.927Z",
+  "tests": [
+    {
+      "name": "Infinite Re-rendering Check",
+      "status": "PASSED",
+      "details": {
+        "initialErrorCount": 0,
+        "finalErrorCount": 0,
+        "maxUpdateDepthErrors": []
+      }
+    },
+    {
+      "name": "Trades Page Load",
+      "status": "PASSED",
+      "details": {
+        "pageLoaded": true,
+        "hasTradesContent": false
+      }
+    },
+    {
+      "name": "Filtering Functionality",
+      "status": "PASSED",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "Sorting Functionality",
+      "status": "PASSED",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "Pagination Functionality",
+      "status": "PASSED",
+      "details": {
+        "error": null
+      }
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-30T23:44:04.565Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "timestamp": "2025-11-30T23:44:04.634Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "timestamp": "2025-11-30T23:44:04.635Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "timestamp": "2025-11-30T23:44:04.636Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "timestamp": "2025-11-30T23:44:04.636Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-11-30T23:44:04.633Z}",
+      "timestamp": "2025-11-30T23:44:04.636Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-11-30T23:44:04.636Z}",
+      "timestamp": "2025-11-30T23:44:04.637Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [GRAY_SCREEN_DEBUG] Home page module loading - START",
+      "timestamp": "2025-11-30T23:44:04.637Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [WEBPACK_DEBUG] Module loading context: {timestamp: 2025-11-30T23:44:04.637Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36, isClient: true, moduleLoaded: true}",
+      "timestamp": "2025-11-30T23:44:04.638Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [WEBPACK_DEBUG] Adding webpack module factory debugging...",
+      "timestamp": "2025-11-30T23:44:04.638Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 8ore2klrk, timestamp: 2025-11-30T23:44:05.019Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-11-30T23:44:05.020Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 8ore2klrk, timestamp: 2025-11-30T23:44:05.020Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-11-30T23:44:05.022Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.021Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.023Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.022Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.023Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.023Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.024Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.024Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.024Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [GRAY_SCREEN_DEBUG] HomePage wrapper rendering with AuthGuard",
+      "timestamp": "2025-11-30T23:44:05.027Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [GRAY_SCREEN_DEBUG] HomePage wrapper rendering with AuthGuard",
+      "timestamp": "2025-11-30T23:44:05.028Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.027Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.028Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.030Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.031Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-11-30T23:44:05.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: fdmqeftlv, pathname: /, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: fdmqeftlv, pathname: /, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: fdmqeftlv, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:05.044Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: fdmqeftlv, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-11-30T23:44:05.045Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: fdmqeftlv, authInitialized: false, requireAuth: true}",
+      "timestamp": "2025-11-30T23:44:05.045Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-11-30T23:44:05.044Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-11-30T23:44:05.046Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: fdmqeftlv, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:05.050Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: fdmqeftlv, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-11-30T23:44:05.051Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: fdmqeftlv, authInitialized: false, requireAuth: true}",
+      "timestamp": "2025-11-30T23:44:05.052Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-11-30T23:44:05.049Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-11-30T23:44:05.052Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "timestamp": "2025-11-30T23:44:05.152Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+      "timestamp": "2025-11-30T23:44:05.154Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "timestamp": "2025-11-30T23:44:05.155Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "timestamp": "2025-11-30T23:44:05.156Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 8ore2klrk, timestamp: 2025-11-30T23:44:05.154Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:05.156Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 8ore2klrk, timestamp: 2025-11-30T23:44:05.155Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:05.156Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: fdmqeftlv, pathname: /, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.157Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: fdmqeftlv, pathname: /, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.157Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.156Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.158Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:05.156Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.159Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent component rendering {timestamp: 2025-11-30T23:44:05.157Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.159Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent state: {user: null, loading: false, authInitialized: true, isClient: false, timestamp: 2025-11-30T23:44:05.157Z}",
+      "timestamp": "2025-11-30T23:44:05.160Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] Server-side rendering - showing minimal loader",
+      "timestamp": "2025-11-30T23:44:05.160Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent component rendering {timestamp: 2025-11-30T23:44:05.158Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.160Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent state: {user: null, loading: false, authInitialized: true, isClient: false, timestamp: 2025-11-30T23:44:05.158Z}",
+      "timestamp": "2025-11-30T23:44:05.161Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] Server-side rendering - showing minimal loader",
+      "timestamp": "2025-11-30T23:44:05.161Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] Client-side detected, setting isClient to true {timestamp: 2025-11-30T23:44:05.171Z, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.173Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: fdmqeftlv, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:05.174Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: fdmqeftlv, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "timestamp": "2025-11-30T23:44:05.174Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: fdmqeftlv, reason: requireAuth && !user && authInitialized && !loading}",
+      "timestamp": "2025-11-30T23:44:05.175Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] Client-side detected, setting isClient to true {timestamp: 2025-11-30T23:44:05.179Z, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.181Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent component rendering {timestamp: 2025-11-30T23:44:05.186Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.188Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent state: {user: null, loading: false, authInitialized: true, isClient: true, timestamp: 2025-11-30T23:44:05.186Z}",
+      "timestamp": "2025-11-30T23:44:05.189Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent component rendering {timestamp: 2025-11-30T23:44:05.187Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb…KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36, isClient: true}",
+      "timestamp": "2025-11-30T23:44:05.190Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [GRAY_SCREEN_FIX] HomePageContent state: {user: null, loading: false, authInitialized: true, isClient: true, timestamp: 2025-11-30T23:44:05.188Z}",
+      "timestamp": "2025-11-30T23:44:05.190Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 8ore2klrk, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-11-30T23:44:05.193Z}",
+      "timestamp": "2025-11-30T23:44:05.194Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_ROUTING_FIX] User not authenticated, redirecting to login",
+      "timestamp": "2025-11-30T23:44:05.195Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-11-30T23:44:05.615Z}",
+      "timestamp": "2025-11-30T23:44:05.616Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-11-30T23:44:05.615Z}",
+      "timestamp": "2025-11-30T23:44:05.616Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: vtw9m8cce, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.617Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: vtw9m8cce, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-11-30T23:44:05.617Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-11-30T23:44:05.631Z}",
+      "timestamp": "2025-11-30T23:44:05.633Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-11-30T23:44:05.632Z}",
+      "timestamp": "2025-11-30T23:44:05.634Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: vtw9m8cce, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-11-30T23:44:05.635Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-11-30T23:44:05.635Z}",
+      "timestamp": "2025-11-30T23:44:05.635Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-11-30T23:44:05.635Z}",
+      "timestamp": "2025-11-30T23:44:05.636Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: vtw9m8cce, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-11-30T23:44:05.636Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "timestamp": "2025-11-30T23:44:05.643Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "timestamp": "2025-11-30T23:44:05.643Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-11-30T23:44:05.642Z}",
+      "timestamp": "2025-11-30T23:44:05.643Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-11-30T23:44:05.643Z}",
+      "timestamp": "2025-11-30T23:44:05.644Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "timestamp": "2025-11-30T23:44:05.747Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-30T23:44:08.517Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "timestamp": "2025-11-30T23:44:08.659Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "timestamp": "2025-11-30T23:44:08.667Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "timestamp": "2025-11-30T23:44:08.668Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "timestamp": "2025-11-30T23:44:08.669Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-11-30T23:44:08.666Z}",
+      "timestamp": "2025-11-30T23:44:08.669Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-11-30T23:44:08.670Z}",
+      "timestamp": "2025-11-30T23:44:08.670Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "timestamp": "2025-11-30T23:44:08.702Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.768Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-11-30T23:44:08.768Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.768Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-11-30T23:44:08.769Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.770Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.771Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.771Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.771Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.771Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.772Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.771Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.772Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: lwk00aca1, pathname: /trades, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:08.775Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: lwk00aca1, pathname: /trades, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:08.775Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: lwk00aca1, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:08.783Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: lwk00aca1, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-11-30T23:44:08.783Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: lwk00aca1, authInitialized: false, requireAuth: true}",
+      "timestamp": "2025-11-30T23:44:08.784Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-11-30T23:44:08.784Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-11-30T23:44:08.784Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: lwk00aca1, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:08.788Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: lwk00aca1, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-11-30T23:44:08.788Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: lwk00aca1, authInitialized: false, requireAuth: true}",
+      "timestamp": "2025-11-30T23:44:08.788Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-11-30T23:44:08.787Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-11-30T23:44:08.788Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "timestamp": "2025-11-30T23:44:08.891Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+      "timestamp": "2025-11-30T23:44:08.892Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "timestamp": "2025-11-30T23:44:08.892Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "timestamp": "2025-11-30T23:44:08.892Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.892Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:08.893Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.893Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:08.893Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: lwk00aca1, pathname: /trades, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:08.893Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: lwk00aca1, pathname: /trades, requireAuth: true, authState: Object}",
+      "timestamp": "2025-11-30T23:44:08.894Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.894Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.894Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.894Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.895Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.895Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.896Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-11-30T23:44:08.896Z, isClient: true}",
+      "timestamp": "2025-11-30T23:44:08.896Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 INFINITE RENDER DEBUG: cleanupModalOverlays function recreated {showEditModal: false, showDeleteConfirm: false, editingTrade: false, deletingTradeId: null, timestamp: 1764546248931}",
+      "timestamp": "2025-11-30T23:44:08.933Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 TradesPage: Modal cleanup function exported to global scope",
+      "timestamp": "2025-11-30T23:44:08.935Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "timestamp": "2025-11-30T23:44:08.935Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [INFO]: Menu freezing logger started ",
+      "timestamp": "2025-11-30T23:44:08.936Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 0, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.936Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 1, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.937Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 2, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.938Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 3, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.938Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 4, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.940Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 5, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.941Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGGER [DEBUG]: Navigation element initial state {index: 6, pointerEvents: auto, zIndex: 1, position: relative, visible: true}",
+      "timestamp": "2025-11-30T23:44:08.943Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 INFINITE RENDER DEBUG: useEffect for fetching trades triggered {currentPage: 1, filters: Object, sortConfig: Object, userId: undefined, timestamp: 1764546248942}",
+      "timestamp": "2025-11-30T23:44:08.944Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: lwk00aca1, reason: Auth state changes trigger re-renders automatically}",
+      "timestamp": "2025-11-30T23:44:08.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: lwk00aca1, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "timestamp": "2025-11-30T23:44:08.946Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: lwk00aca1, reason: requireAuth && !user && authInitialized && !loading}",
+      "timestamp": "2025-11-30T23:44:08.947Z"
+    },
+    {
+      "type": "log",
+      "text": "🗑️ TradesPage: Modal cleanup function removed from global scope",
+      "timestamp": "2025-11-30T23:44:08.952Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGS EXPORTED: {timestamp: 2025-11-30T23:44:08.951Z, events: Array(8), summary: Object}",
+      "timestamp": "2025-11-30T23:44:08.953Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage unmounting - performing comprehensive cleanup",
+      "timestamp": "2025-11-30T23:44:08.953Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage: On Trades page - running cleanup",
+      "timestamp": "2025-11-30T23:44:08.953Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage: Cleaning up modal overlays for navigation safety...",
+      "timestamp": "2025-11-30T23:44:08.954Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 TRADES PAGE DEBUG: cleanupModalOverlays called - FIXED VERSION",
+      "timestamp": "2025-11-30T23:44:08.954Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 INFINITE RENDER DEBUG: cleanupModalOverlays function called {timestamp: 1764546248952, showEditModal: false, showDeleteConfirm: false, editingTrade: false, deletingTradeId: null}",
+      "timestamp": "2025-11-30T23:44:08.955Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Cleanup triggered - checking navigation state",
+      "timestamp": "2025-11-30T23:44:08.955Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Current pathname: /trades",
+      "timestamp": "2025-11-30T23:44:08.955Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Is on trades page: true",
+      "timestamp": "2025-11-30T23:44:08.956Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Navigation in progress: false",
+      "timestamp": "2025-11-30T23:44:08.956Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Active element: BODY h-full",
+      "timestamp": "2025-11-30T23:44:08.956Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: Modal states: {showEditModal: false, showDeleteConfirm: false, editingTrade: false, deletingTradeId: null}",
+      "timestamp": "2025-11-30T23:44:08.956Z"
+    },
+    {
+      "type": "log",
+      "text": "🚨 TRADES PAGE DIAGNOSTIC: No open modals detected - SKIPPING CLEANUP to prevent navigation interference",
+      "timestamp": "2025-11-30T23:44:08.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 INFINITE RENDER DEBUG: cleanupModalOverlays function recreated {showEditModal: false, showDeleteConfirm: false, editingTrade: false, deletingTradeId: null, timestamp: 1764546248954}",
+      "timestamp": "2025-11-30T23:44:08.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 TradesPage: Modal cleanup function exported to global scope",
+      "timestamp": "2025-11-30T23:44:08.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "timestamp": "2025-11-30T23:44:08.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 INFINITE RENDER DEBUG: useEffect for fetching trades triggered {currentPage: 1, filters: Object, sortConfig: Object, userId: undefined, timestamp: 1764546248954}",
+      "timestamp": "2025-11-30T23:44:08.957Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: a1k7zwcvf, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-11-30T23:44:08.963Z}",
+      "timestamp": "2025-11-30T23:44:08.964Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.965Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:08.965Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: a1k7zwcvf, timestamp: 2025-11-30T23:44:08.965Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-11-30T23:44:08.966Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-11-30T23:44:09.251Z}",
+      "timestamp": "2025-11-30T23:44:09.251Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-11-30T23:44:09.251Z}",
+      "timestamp": "2025-11-30T23:44:09.252Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w9h0kbq3d, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-11-30T23:44:09.252Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w9h0kbq3d, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-11-30T23:44:09.252Z"
+    },
+    {
+      "type": "log",
+      "text": "🗑️ TradesPage: Modal cleanup function removed from global scope",
+      "timestamp": "2025-11-30T23:44:09.268Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 MENU FREEZING LOGS EXPORTED: {timestamp: 2025-11-30T23:44:09.267Z, events: Array(8), summary: Object}",
+      "timestamp": "2025-11-30T23:44:09.268Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage unmounting - performing comprehensive cleanup",
+      "timestamp": "2025-11-30T23:44:09.268Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 TradesPage: NOT on Trades page - SKIPPING cleanup to prevent navigation interference",
+      "timestamp": "2025-11-30T23:44:09.269Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-11-30T23:44:09.268Z}",
+      "timestamp": "2025-11-30T23:44:09.270Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-11-30T23:44:09.269Z}",
+      "timestamp": "2025-11-30T23:44:09.271Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: w9h0kbq3d, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-11-30T23:44:09.271Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-11-30T23:44:09.271Z}",
+      "timestamp": "2025-11-30T23:44:09.272Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-11-30T23:44:09.272Z}",
+      "timestamp": "2025-11-30T23:44:09.276Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: w9h0kbq3d, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-11-30T23:44:09.276Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-11-30T23:44:09.281Z}",
+      "timestamp": "2025-11-30T23:44:09.282Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "timestamp": "2025-11-30T23:44:09.392Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "timestamp": "2025-11-30T23:44:09.686Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "timestamp": "2025-11-30T23:44:09.686Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-11-30T23:44:09.686Z}",
+      "timestamp": "2025-11-30T23:44:09.686Z"
+    }
+  ],
+  "errorMessages": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "maxUpdateDepthErrors": [],
+  "performanceMetrics": {
+    "domContentLoaded": 0.20000001788139343,
+    "loadComplete": 0,
+    "totalLoadTime": 763.6000000238419,
+    "memoryUsage": {
+      "usedJSHeapSize": 108708696,
+      "totalJSHeapSize": 113727624,
+      "jsHeapSizeLimit": 4294967296
+    }
+  },
+  "finalStatus": "PASSED"
+}

@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-11-26T15:29:02.092Z",
+  "summary": {
+    "totalTests": 5,
+    "passedTests": 0,
+    "failedTests": 5,
+    "criticalFailures": 5
+  },
+  "pages": {
+    "dashboard": {
+      "tests": [
+        {
+          "page": "dashboard",
+          "category": "Page Load",
+          "test": "Page Load Success",
+          "expected": "Success",
+          "actual": "Error: page.waitForTimeout is not a function",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:28:50.691Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "0.00%",
+      "criticalAccuracy": "0.00%"
+    },
+    "trades": {
+      "tests": [
+        {
+          "page": "trades",
+          "category": "Page Load",
+          "test": "Page Load Success",
+          "expected": "Success",
+          "actual": "Error: page.waitForTimeout is not a function",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:28:53.882Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "0.00%",
+      "criticalAccuracy": "0.00%"
+    },
+    "strategies": {
+      "tests": [
+        {
+          "page": "strategies",
+          "category": "Page Load",
+          "test": "Page Load Success",
+          "expected": "Success",
+          "actual": "Error: page.waitForTimeout is not a function",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:28:56.779Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "0.00%",
+      "criticalAccuracy": "0.00%"
+    },
+    "login": {
+      "tests": [
+        {
+          "page": "login",
+          "category": "Page Load",
+          "test": "Page Load Success",
+          "expected": "Success",
+          "actual": "Error: page.waitForTimeout is not a function",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:28:59.291Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "0.00%",
+      "criticalAccuracy": "0.00%"
+    },
+    "register": {
+      "tests": [
+        {
+          "page": "register",
+          "category": "Page Load",
+          "test": "Page Load Success",
+          "expected": "Success",
+          "actual": "Error: page.waitForTimeout is not a function",
+          "passed": false,
+          "critical": true,
+          "timestamp": "2025-11-26T15:29:01.793Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "critical": 1,
+      "accuracy": "0.00%",
+      "criticalAccuracy": "0.00%"
+    }
+  },
+  "details": [
+    {
+      "page": "dashboard",
+      "category": "Page Load",
+      "test": "Page Load Success",
+      "expected": "Success",
+      "actual": "Error: page.waitForTimeout is not a function",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:28:50.691Z"
+    },
+    {
+      "page": "trades",
+      "category": "Page Load",
+      "test": "Page Load Success",
+      "expected": "Success",
+      "actual": "Error: page.waitForTimeout is not a function",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:28:53.882Z"
+    },
+    {
+      "page": "strategies",
+      "category": "Page Load",
+      "test": "Page Load Success",
+      "expected": "Success",
+      "actual": "Error: page.waitForTimeout is not a function",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:28:56.779Z"
+    },
+    {
+      "page": "login",
+      "category": "Page Load",
+      "test": "Page Load Success",
+      "expected": "Success",
+      "actual": "Error: page.waitForTimeout is not a function",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:28:59.291Z"
+    },
+    {
+      "page": "register",
+      "category": "Page Load",
+      "test": "Page Load Success",
+      "expected": "Success",
+      "actual": "Error: page.waitForTimeout is not a function",
+      "passed": false,
+      "critical": true,
+      "timestamp": "2025-11-26T15:29:01.793Z"
+    }
+  ],
+  "recommendations": [
+    "CRITICAL: Fix critical failures immediately - these affect core mockup compliance"
+  ]
+}

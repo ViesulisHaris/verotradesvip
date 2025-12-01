@@ -1,0 +1,2930 @@
+{
+  "timestamp": "2025-11-27T16:36:28.444Z",
+  "performance": {
+    "homepageLoad": 4762,
+    "loginPageLoad": 4166,
+    "dashboardLoad": 7226,
+    "logoutProcess": 10524,
+    "totalFlowTime": 40875
+  },
+  "functionality": {
+    "homepageAccessible": false,
+    "homepageHasContent": false,
+    "loginButtonVisible": false,
+    "registerButtonVisible": false,
+    "loginPageAccessible": false,
+    "loginFormComplete": false,
+    "dashboardAccessible": false,
+    "dashboardHasContent": false,
+    "sidebarVisible": false,
+    "navigationElements": [],
+    "authDataStored": {
+      "localStorage": {
+        "auth": null,
+        "token": null,
+        "user": null
+      },
+      "sessionStorage": {
+        "auth": null,
+        "token": null,
+        "user": null
+      }
+    },
+    "authCookies": [],
+    "userStateAccessible": false,
+    "logoutSuccessful": false,
+    "totalFlowWithinThreshold": false
+  },
+  "screenshots": {
+    "homepage": "user-flow-test-homepage-1764261393990.png",
+    "login-page": "user-flow-test-login-page-1764261408439.png",
+    "dashboard": "user-flow-test-dashboard-1764261417029.png",
+    "dashboard-with-sidebar": "user-flow-test-dashboard-with-sidebar-1764261417193.png",
+    "after-logout": "user-flow-test-after-logout-1764261427892.png"
+  },
+  "errors": [
+    "[2025-11-27T16:36:48.438Z] [ERROR] Element not found: button[type=\"submit\"], button:contains(\"Login\") - Waiting for selector `button[type=\"submit\"], button:contains(\"Login\")` failed",
+    "[2025-11-27T16:36:49.801Z] [ERROR] Login process test failed: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button[type=\"submit\"], button:contains(\"Login\")' is not a valid selector."
+  ],
+  "summary": {
+    "totalTests": 7,
+    "passedTests": 0,
+    "failedTests": 7,
+    "successRate": "0.00%",
+    "status": "SOME TESTS FAILED"
+  },
+  "detailedResults": {
+    "homepage": {
+      "success": false,
+      "loadTime": 4762,
+      "hasContent": false,
+      "loginButtonExists": false,
+      "registerButtonExists": false
+    },
+    "loginPage": {
+      "success": false,
+      "loadTime": 4166,
+      "formElements": {
+        "emailInput": true,
+        "passwordInput": true,
+        "submitButton": false
+      }
+    },
+    "loginProcess": {
+      "success": false,
+      "error": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button[type=\"submit\"], button:contains(\"Login\")' is not a valid selector."
+    },
+    "dashboard": {
+      "success": false,
+      "loadTime": 7226,
+      "hasContent": false
+    },
+    "sidebar": {
+      "success": false,
+      "sidebarFound": false,
+      "sidebarSelector": null,
+      "navElements": []
+    },
+    "authState": {
+      "success": false,
+      "authData": {
+        "localStorage": {
+          "auth": null,
+          "token": null,
+          "user": null
+        },
+        "sessionStorage": {
+          "auth": null,
+          "token": null,
+          "user": null
+        }
+      },
+      "authCookies": [],
+      "userState": null
+    },
+    "logout": {
+      "success": false,
+      "logoutTime": 10524,
+      "redirectedUrl": "http://localhost:3000/logout",
+      "logoutButtonFound": false
+    }
+  },
+  "requests": [
+    {
+      "url": "http://localhost:3000/",
+      "method": "GET",
+      "timestamp": 1764261389238
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390470
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390477
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390478
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390479
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390479
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390480
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390480
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390481
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390482
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390482
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390482
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390483
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390483
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390484
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390484
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390484
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390485
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390485
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390485
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390486
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390486
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390486
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390487
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390487
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390487
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390488
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390488
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390488
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390488
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390489
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390489
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390489
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390490
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390490
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390490
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390491
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390491
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390491
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390492
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390492
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390493
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390493
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390493
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390494
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390494
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390494
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390494
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390495
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390495
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390495
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390496
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390496
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390496
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390497
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390497
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390497
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390498
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390498
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261390401",
+      "method": "GET",
+      "timestamp": 1764261390499
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261390499
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext-simple_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261390500
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_components_AuthGuard_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261390500
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/page.js",
+      "method": "GET",
+      "timestamp": 1764261390501
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261390501
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261390503
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261390504
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261390504
+    },
+    {
+      "url": "http://localhost:3000/favicon.ico",
+      "method": "GET",
+      "timestamp": 1764261393466
+    },
+    {
+      "url": "http://localhost:3000/login",
+      "method": "GET",
+      "timestamp": 1764261394217
+    },
+    {
+      "url": "http://localhost:3000/?_rsc=1p60s",
+      "method": "GET",
+      "timestamp": 1764261394800
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/33da86562f5cf069.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261394801
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.33da86562f5cf069.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261394830
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.33da86562f5cf069.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261394830
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/ec9c5a858badd658.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261394876
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394941
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394941
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261394945
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext-simple_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261394946
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_components_AuthGuard_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261394947
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261394947
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261394948
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261394949
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261394949
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394950
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394951
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394952
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394952
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394952
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394953
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394953
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394954
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394954
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394957
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394960
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394961
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394962
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394962
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394963
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394964
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394965
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394965
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394966
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394966
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394967
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394967
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394968
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394968
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394968
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394969
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394969
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394969
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394969
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394970
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394970
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394970
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394971
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394971
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394971
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394972
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394972
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394972
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394973
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394973
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394973
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394974
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394976
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394976
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394976
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394977
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394977
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394977
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394978
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394978
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394978
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394979
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261394847",
+      "method": "GET",
+      "timestamp": 1764261394979
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/(auth)/login/page.js",
+      "method": "GET",
+      "timestamp": 1764261394979
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/lucide-react.js",
+      "method": "GET",
+      "timestamp": 1764261394979
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261394980
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_components_layout_UnifiedLayout_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261394980
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/(auth)/layout.js",
+      "method": "GET",
+      "timestamp": 1764261394980
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261397913
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261397916
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261399277
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/a0310f9650bd6bef.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261399279
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.a0310f9650bd6bef.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399316
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.a0310f9650bd6bef.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399316
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/b59d83febd6810af.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261399335
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.b59d83febd6810af.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399365
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.b59d83febd6810af.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399365
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261399368",
+      "method": "GET",
+      "timestamp": 1764261399385
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/e21bbbbfb545f627.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261399391
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.e21bbbbfb545f627.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399430
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.e21bbbbfb545f627.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261399430
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261400858
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/02d92f0da6795e51.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261400859
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.02d92f0da6795e51.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261400910
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.02d92f0da6795e51.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261400910
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261400946",
+      "method": "GET",
+      "timestamp": 1764261400961
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261402307
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/bff21ab26047f665.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261402308
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.bff21ab26047f665.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261402338
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.bff21ab26047f665.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261402338
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261402386",
+      "method": "GET",
+      "timestamp": 1764261402400
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261403691
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/148943cff0ac223b.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261403691
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.148943cff0ac223b.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261403735
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.148943cff0ac223b.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261403736
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261403781",
+      "method": "GET",
+      "timestamp": 1764261403794
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261405095
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/065318b531449591.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261405095
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.065318b531449591.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261405128
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.065318b531449591.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261405129
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261405181",
+      "method": "GET",
+      "timestamp": 1764261405189
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261406510
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/992f7743d3d57dc1.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261406510
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.992f7743d3d57dc1.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261406542
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.992f7743d3d57dc1.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261406542
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261406586",
+      "method": "GET",
+      "timestamp": 1764261406615
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261408032
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/c46c7edd69f977be.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261408033
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.c46c7edd69f977be.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261408075
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.c46c7edd69f977be.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261408075
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261408113",
+      "method": "GET",
+      "timestamp": 1764261408121
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261409492
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/b169a76aeb73fee6.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261409493
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.b169a76aeb73fee6.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261409794
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.b169a76aeb73fee6.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261409795
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261409579",
+      "method": "GET",
+      "timestamp": 1764261409796
+    },
+    {
+      "url": "http://localhost:3000/dashboard",
+      "method": "GET",
+      "timestamp": 1764261409808
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/770eb06e5f065d25.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261411048
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.770eb06e5f065d25.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261411072
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.770eb06e5f065d25.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261411072
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261412802
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/f75200f0d995f9b6.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261412802
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.f75200f0d995f9b6.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261412850
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.f75200f0d995f9b6.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261412850
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413101
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261413103
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/lucide-react.js",
+      "method": "GET",
+      "timestamp": 1764261413105
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext-simple_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261413105
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_contexts_AuthContext_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261413106
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_components_layout_UnifiedLayout_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261413106
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/default-_app-pages-browser_src_components_AuthGuard_tsx.js",
+      "method": "GET",
+      "timestamp": 1764261413106
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/(auth)/layout.js",
+      "method": "GET",
+      "timestamp": 1764261413107
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261413107
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261413108
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261413108
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261413109
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413110
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/(auth)/dashboard/page.css?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413111
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413113
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413113
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413114
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413114
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413115
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413115
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413115
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413115
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413116
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413116
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413120
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413121
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413121
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413121
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413122
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413122
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413122
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413122
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413123
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413124
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413125
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413125
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413126
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413126
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413126
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413127
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413127
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413128
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413128
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413128
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413129
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413129
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413129
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413130
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413130
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413130
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413130
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413131
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413131
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413131
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413132
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413132
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413132
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413132
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413133
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413133
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413133
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413134
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413134
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413136
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413136
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413136
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413136
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413137
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413137
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413137
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261412917",
+      "method": "GET",
+      "timestamp": 1764261413138
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/(auth)/dashboard/page.js",
+      "method": "GET",
+      "timestamp": 1764261413138
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261414196
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=fd642",
+      "method": "GET",
+      "timestamp": 1764261416042
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/3b3dd80028c116cb.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261417030
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.3b3dd80028c116cb.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417047
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.3b3dd80028c116cb.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417047
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261417055
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/68da58bd58f6cac9.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261417058
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.68da58bd58f6cac9.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417166
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.68da58bd58f6cac9.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417167
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/(auth)/login/page.js",
+      "method": "GET",
+      "timestamp": 1764261417214
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261417139",
+      "method": "GET",
+      "timestamp": 1764261417230
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/c07aa9527b8f9dd8.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261417232
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.c07aa9527b8f9dd8.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417363
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.c07aa9527b8f9dd8.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261417363
+    },
+    {
+      "url": "http://localhost:3000/logout",
+      "method": "GET",
+      "timestamp": 1764261417393
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/be4ac69e08c3dc3b.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261418534
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.be4ac69e08c3dc3b.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261418553
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.be4ac69e08c3dc3b.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261418553
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=1c5gs",
+      "method": "GET",
+      "timestamp": 1764261420150
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/41656a0b36f81a51.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261420150
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.41656a0b36f81a51.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261420189
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.41656a0b36f81a51.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261420189
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261420362
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261420362
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261420362
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261420363
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261420363
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420364
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420364
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420365
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420367
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420367
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420368
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420368
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420368
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420368
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420369
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420369
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420369
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420369
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420369
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420370
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420370
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420370
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420371
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420371
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420371
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420371
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420373
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420373
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420373
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420373
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420374
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420374
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420374
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420374
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420375
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420375
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420375
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420375
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420376
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420376
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420376
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420376
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420376
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420377
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420377
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420377
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420378
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420378
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420378
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420378
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420379
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420379
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420379
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420380
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420380
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420380
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420380
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420381
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261420232",
+      "method": "GET",
+      "timestamp": 1764261420381
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261420433
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=checkForUnmatchedText&arguments=&lineNumber=32797&column=11",
+      "method": "GET",
+      "timestamp": 1764261423204
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=didNotMatchHydratedTextInstance&arguments=&lineNumber=36222&column=5",
+      "method": "GET",
+      "timestamp": 1764261423205
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=prepareToHydrateHostTextInstance&arguments=&lineNumber=7288&column=13",
+      "method": "GET",
+      "timestamp": 1764261423205
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeWork&arguments=&lineNumber=19821&column=17",
+      "method": "GET",
+      "timestamp": 1764261423206
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeUnitOfWork&arguments=&lineNumber=25963&column=14",
+      "method": "GET",
+      "timestamp": 1764261423206
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performUnitOfWork&arguments=&lineNumber=25759&column=5",
+      "method": "GET",
+      "timestamp": 1764261423208
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=workLoopConcurrent&arguments=&lineNumber=25734&column=5",
+      "method": "GET",
+      "timestamp": 1764261423208
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=renderRootConcurrent&arguments=&lineNumber=25690&column=9",
+      "method": "GET",
+      "timestamp": 1764261423209
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performConcurrentWorkOnRoot&arguments=&lineNumber=24504&column=38",
+      "method": "GET",
+      "timestamp": 1764261423209
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=workLoop&arguments=&lineNumber=256&column=34",
+      "method": "GET",
+      "timestamp": 1764261423209
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=flushWork&arguments=&lineNumber=225&column=14",
+      "method": "GET",
+      "timestamp": 1764261423210
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=MessagePort.performWorkUntilDeadline&arguments=&lineNumber=534&column=21",
+      "method": "GET",
+      "timestamp": 1764261423210
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=checkForUnmatchedText&arguments=&lineNumber=32797&column=11",
+      "method": "GET",
+      "timestamp": 1764261423210
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=didNotMatchHydratedTextInstance&arguments=&lineNumber=36222&column=5",
+      "method": "GET",
+      "timestamp": 1764261423210
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=prepareToHydrateHostTextInstance&arguments=&lineNumber=7288&column=13",
+      "method": "GET",
+      "timestamp": 1764261423210
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeWork&arguments=&lineNumber=19821&column=17",
+      "method": "GET",
+      "timestamp": 1764261423211
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeUnitOfWork&arguments=&lineNumber=25963&column=14",
+      "method": "GET",
+      "timestamp": 1764261423211
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performUnitOfWork&arguments=&lineNumber=25759&column=5",
+      "method": "GET",
+      "timestamp": 1764261423211
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=workLoopConcurrent&arguments=&lineNumber=25734&column=5",
+      "method": "GET",
+      "timestamp": 1764261423211
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=renderRootConcurrent&arguments=&lineNumber=25690&column=9",
+      "method": "GET",
+      "timestamp": 1764261423212
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performConcurrentWorkOnRoot&arguments=&lineNumber=24504&column=38",
+      "method": "GET",
+      "timestamp": 1764261423212
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=workLoop&arguments=&lineNumber=256&column=34",
+      "method": "GET",
+      "timestamp": 1764261423212
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=flushWork&arguments=&lineNumber=225&column=14",
+      "method": "GET",
+      "timestamp": 1764261423213
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=MessagePort.performWorkUntilDeadline&arguments=&lineNumber=534&column=21",
+      "method": "GET",
+      "timestamp": 1764261423213
+    },
+    {
+      "url": "http://localhost:3000/logout?_rsc=1kfer",
+      "method": "GET",
+      "timestamp": 1764261424370
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/62c55882e1d54149.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261424372
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.62c55882e1d54149.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424390
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.62c55882e1d54149.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424390
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/48a78f8160d986ea.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261424415
+    },
+    {
+      "url": "http://localhost:3000/logout",
+      "method": "GET",
+      "timestamp": 1764261424415
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.48a78f8160d986ea.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424430
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.48a78f8160d986ea.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424430
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/44300e5c4b2f0294.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261424441
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.44300e5c4b2f0294.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424455
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.44300e5c4b2f0294.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261424455
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424473
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424474
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261424475
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261424475
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261424475
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261424476
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261424476
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424476
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424495
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424497
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424503
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261424507
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424517
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424518
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424919
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424925
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424929
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424983
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424987
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261424992
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425067
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425120
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425270
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425270
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425275
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425798
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425855
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425861
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425900
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425903
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425917
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425920
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425924
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425958
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425962
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425966
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425968
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425972
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425975
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425979
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425984
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425990
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425991
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261425997
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426018
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426021
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426046
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426047
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426087
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426089
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426094
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426098
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426101
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426110
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426128
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426132
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426135
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426139
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426233
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426759
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426807
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426811
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426833
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261424443",
+      "method": "GET",
+      "timestamp": 1764261426849
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=checkForUnmatchedText&arguments=&lineNumber=32797&column=11",
+      "method": "GET",
+      "timestamp": 1764261427261
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=didNotMatchHydratedTextInstance&arguments=&lineNumber=36222&column=5",
+      "method": "GET",
+      "timestamp": 1764261427261
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=prepareToHydrateHostTextInstance&arguments=&lineNumber=7288&column=13",
+      "method": "GET",
+      "timestamp": 1764261427262
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeWork&arguments=&lineNumber=19821&column=17",
+      "method": "GET",
+      "timestamp": 1764261427262
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeUnitOfWork&arguments=&lineNumber=25963&column=14",
+      "method": "GET",
+      "timestamp": 1764261427262
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performUnitOfWork&arguments=&lineNumber=25759&column=5",
+      "method": "GET",
+      "timestamp": 1764261427263
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=workLoopConcurrent&arguments=&lineNumber=25734&column=5",
+      "method": "GET",
+      "timestamp": 1764261427263
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=renderRootConcurrent&arguments=&lineNumber=25690&column=9",
+      "method": "GET",
+      "timestamp": 1764261427263
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performConcurrentWorkOnRoot&arguments=&lineNumber=24504&column=38",
+      "method": "GET",
+      "timestamp": 1764261427264
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=workLoop&arguments=&lineNumber=256&column=34",
+      "method": "GET",
+      "timestamp": 1764261427264
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=flushWork&arguments=&lineNumber=225&column=14",
+      "method": "GET",
+      "timestamp": 1764261427264
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=MessagePort.performWorkUntilDeadline&arguments=&lineNumber=534&column=21",
+      "method": "GET",
+      "timestamp": 1764261427265
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=checkForUnmatchedText&arguments=&lineNumber=32797&column=11",
+      "method": "GET",
+      "timestamp": 1764261427265
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=didNotMatchHydratedTextInstance&arguments=&lineNumber=36222&column=5",
+      "method": "GET",
+      "timestamp": 1764261427265
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=prepareToHydrateHostTextInstance&arguments=&lineNumber=7288&column=13",
+      "method": "GET",
+      "timestamp": 1764261427266
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeWork&arguments=&lineNumber=19821&column=17",
+      "method": "GET",
+      "timestamp": 1764261427266
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=completeUnitOfWork&arguments=&lineNumber=25963&column=14",
+      "method": "GET",
+      "timestamp": 1764261427266
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performUnitOfWork&arguments=&lineNumber=25759&column=5",
+      "method": "GET",
+      "timestamp": 1764261427267
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=workLoopConcurrent&arguments=&lineNumber=25734&column=5",
+      "method": "GET",
+      "timestamp": 1764261427268
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=renderRootConcurrent&arguments=&lineNumber=25690&column=9",
+      "method": "GET",
+      "timestamp": 1764261427268
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Freact-dom%2Fcjs%2Freact-dom.development.js&methodName=performConcurrentWorkOnRoot&arguments=&lineNumber=24504&column=38",
+      "method": "GET",
+      "timestamp": 1764261427269
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=workLoop&arguments=&lineNumber=256&column=34",
+      "method": "GET",
+      "timestamp": 1764261427269
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=flushWork&arguments=&lineNumber=225&column=14",
+      "method": "GET",
+      "timestamp": 1764261427269
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+Text+content+does+not+match+server-rendered+HTML.%0ASee+more+info+here%3A+https%3A%2F%2Fnextjs.org%2Fdocs%2Fmessages%2Freact-hydration-error&file=webpack-internal%3A%2F%2F%2F%28app-pages-browser%29%2F.%2Fnode_modules%2Fnext%2Fdist%2Fcompiled%2Fscheduler%2Fcjs%2Fscheduler.development.js&methodName=MessagePort.performWorkUntilDeadline&arguments=&lineNumber=534&column=21",
+      "method": "GET",
+      "timestamp": 1764261427270
+    },
+    {
+      "url": "http://localhost:3000/logout?_rsc=1kfer",
+      "method": "GET",
+      "timestamp": 1764261427898
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/668d8b076a339e2d.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261427898
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.668d8b076a339e2d.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261427916
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.668d8b076a339e2d.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261427916
+    },
+    {
+      "url": "http://localhost:3000/logout",
+      "method": "GET",
+      "timestamp": 1764261427934
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/c7e3d16b8a3c05b7.webpack.hot-update.json",
+      "method": "GET",
+      "timestamp": 1764261427940
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/app/layout.c7e3d16b8a3c05b7.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261427960
+    },
+    {
+      "url": "http://localhost:3000/_next/static/webpack/webpack.c7e3d16b8a3c05b7.hot-update.js",
+      "method": "GET",
+      "timestamp": 1764261427960
+    },
+    {
+      "url": "http://localhost:3000/_next/static/css/app/layout.css?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428010
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/webpack.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428010
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app-pages-internals.js",
+      "method": "GET",
+      "timestamp": 1764261428015
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/not-found.js",
+      "method": "GET",
+      "timestamp": 1764261428016
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/layout.js",
+      "method": "GET",
+      "timestamp": 1764261428016
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/error.js",
+      "method": "GET",
+      "timestamp": 1764261428017
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/app/global-error.js",
+      "method": "GET",
+      "timestamp": 1764261428017
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_c.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428018
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-b.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428020
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_app-l.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428023
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ac.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428032
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_b.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428033
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_layout-router_js-4906aef6.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428033
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_m.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428033
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_p.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428034
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_C.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428034
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_O.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428034
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_i.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428035
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Overlay_style-2c5d5d32.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428035
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_ShadowPortal_-70e52b8a.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428035
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_Te.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428036
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_components_V.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428036
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_c.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428037
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_helpers_h.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428037
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_h.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428037
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_internal_styles_B.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428037
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_E.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428038
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_pages_b.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428038
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_react-dev-overlay_shared_js-b.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428038
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_redirect-.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428038
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_ren.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428039
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_a.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428039
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_router-reducer_p.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428039
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_components_s.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428040
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_d.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428040
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_g.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428040
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_h.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428041
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_client_l.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428041
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_anser_index_js-42.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428041
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_b.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428041
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_m.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428042
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_js-3041f41d.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428042
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react-d.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428042
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_react_c.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428043
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_r.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428043
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_compiled_s.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428043
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_lib_c.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428043
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_pages__a.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428043
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_se.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428044
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_m.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428044
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_p.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428044
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_router_router_js-5c4ac711.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428044
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_ro.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428044
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_dist_shared_lib_seg.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428045
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_d.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428045
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_next_node_modules_styled-jsx_d.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428045
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_react-dom_cjs_react-dom_development_js-ac892209.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428045
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_r.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428045
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_auth-js_dist_module_A.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428046
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_supabase_f.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428046
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_su.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428046
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tailwind-merge_dist_bundle-mjs_mjs-a19ea93e.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428046
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/vendors-node_modules_tslib_tslib_es6_mjs-95a11992.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428047
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/main-app.js?v=1764261427963",
+      "method": "GET",
+      "timestamp": 1764261428047
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "method": "GET",
+      "timestamp": 1764261428509
+    }
+  ],
+  "performanceComparison": {
+    "homepage": {
+      "actual": 4762,
+      "threshold": 2000,
+      "passed": false
+    },
+    "loginPage": {
+      "actual": 4166,
+      "threshold": 2000,
+      "passed": false
+    },
+    "authentication": {
+      "threshold": 3000,
+      "passed": false
+    },
+    "dashboard": {
+      "actual": 7226,
+      "threshold": 4000,
+      "passed": false
+    },
+    "totalFlow": {
+      "actual": 40875,
+      "threshold": 10000,
+      "passed": false
+    }
+  }
+}

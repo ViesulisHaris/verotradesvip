@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Dropdown Height Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .dropdown-options-container {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.95));
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 0.75rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
+                        0 0 0 1px rgba(59, 130, 246, 0.2),
+                        0 0 20px rgba(59, 130, 246, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .dropdown-option {
+            position: relative;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            z-index: 1;
+            padding: 0.75rem 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <div class="max-w-md mx-auto space-y-4">
+        <h1 class="text-2xl font-bold mb-4">Emotion Dropdown Height Test</h1>
+        
+        <div class="space-y-2">
+            <h2 class="text-lg font-semibold">Current Implementation (max-h-60 = 240px)</h2>
+            <div class="dropdown-options-container max-h-60 overflow-auto">
+                <div class="p-2 space-y-1">
+                    <div class="dropdown-option">FOMO</div>
+                    <div class="dropdown-option">Revenge</div>
+                    <div class="dropdown-option">Tilt</div>
+                    <div class="dropdown-option">Over Risk</div>
+                    <div class="dropdown-option">Patience</div>
+                    <div class="dropdown-option">Regret</div>
+                    <div class="dropdown-option">Discipline</div>
+                    <div class="dropdown-option">Confident</div>
+                    <div class="dropdown-option">Anxious</div>
+                    <div class="dropdown-option">Neutral</div>
+                </div>
+            </div>
+            
+            <h2 class="text-lg font-semibold mt-6">Proposed Fix (max-h-96 = 384px)</h2>
+            <div class="dropdown-options-container max-h-96 overflow-auto">
+                <div class="p-2 space-y-1">
+                    <div class="dropdown-option">FOMO</div>
+                    <div class="dropdown-option">Revenge</div>
+                    <div class="dropdown-option">Tilt</div>
+                    <div class="dropdown-option">Over Risk</div>
+                    <div class="dropdown-option">Patience</div>
+                    <div class="dropdown-option">Regret</div>
+                    <div class="dropdown-option">Discipline</div>
+                    <div class="dropdown-option">Confident</div>
+                    <div class="dropdown-option">Anxious</div>
+                    <div class="dropdown-option">Neutral</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 p-4 bg-gray-800 rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Analysis:</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm">
+                <li>Each emotion option is approximately 36-40px tall (padding + text)</li>
+                <li>10 emotions × 40px = 400px total height needed</li>
+                <li>Current max-h-60 (240px) only shows ~6 emotions without scrolling</li>
+                <li>Proposed max-h-96 (384px) shows all 10 emotions comfortably</li>
+                <li>Users may not notice the scrollbar, thinking emotions are missing</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+{
+  "timestamp": "2025-11-24T07:20:30.677Z",
+  "summary": {
+    "zoomDetectionAvailable": false,
+    "zoomAwareLayoutUsed": null,
+    "zoomTests": [
+      {
+        "zoomLevel": 0.5,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      },
+      {
+        "zoomLevel": 0.75,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      },
+      {
+        "zoomLevel": 1,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      },
+      {
+        "zoomLevel": 1.25,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      },
+      {
+        "zoomLevel": 1.5,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      },
+      {
+        "zoomLevel": 2,
+        "detected": false,
+        "info": {
+          "detected": false
+        }
+      }
+    ],
+    "responsiveTests": [
+      {
+        "viewport": "Mobile",
+        "zoomDetected": false,
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 375,
+        "breakpoint": "unknown",
+        "isDesktop": false,
+        "isTablet": false,
+        "isMobile": false,
+        "bodyClasses": [
+          "__className_f367f3",
+          "flex",
+          "h-full",
+          "bg-primary"
+        ],
+        "zoomVars": {
+          "zoomLevel": "",
+          "zoomPercentage": "",
+          "actualWidth": "",
+          "effectiveWidth": ""
+        }
+      },
+      {
+        "viewport": "Tablet",
+        "zoomDetected": false,
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 768,
+        "breakpoint": "unknown",
+        "isDesktop": false,
+        "isTablet": false,
+        "isMobile": false,
+        "bodyClasses": [
+          "__className_f367f3",
+          "flex",
+          "h-full",
+          "bg-primary"
+        ],
+        "zoomVars": {
+          "zoomLevel": "",
+          "zoomPercentage": "",
+          "actualWidth": "",
+          "effectiveWidth": ""
+        }
+      },
+      {
+        "viewport": "Desktop",
+        "zoomDetected": false,
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 1024,
+        "breakpoint": "unknown",
+        "isDesktop": false,
+        "isTablet": false,
+        "isMobile": false,
+        "bodyClasses": [
+          "__className_f367f3",
+          "flex",
+          "h-full",
+          "bg-primary"
+        ],
+        "zoomVars": {
+          "zoomLevel": "",
+          "zoomPercentage": "",
+          "actualWidth": "",
+          "effectiveWidth": ""
+        }
+      },
+      {
+        "viewport": "Large Desktop",
+        "zoomDetected": false,
+        "zoomLevel": 1,
+        "zoomPercentage": 100,
+        "effectiveWidth": 1920,
+        "breakpoint": "unknown",
+        "isDesktop": false,
+        "isTablet": false,
+        "isMobile": false,
+        "bodyClasses": [
+          "__className_f367f3",
+          "flex",
+          "h-full",
+          "bg-primary"
+        ],
+        "zoomVars": {
+          "zoomLevel": "",
+          "zoomPercentage": "",
+          "actualWidth": "",
+          "effectiveWidth": ""
+        }
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "sidebarTest": {
+      "present": false
+    }
+  },
+  "issues": [
+    "Zoom detection is not available in the application",
+    "ZoomAwareLayout component is not integrated into the application",
+    "Zoom detection failed at some zoom levels"
+  ]
+}

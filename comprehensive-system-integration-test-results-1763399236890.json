@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-11-17T17:07:16.890Z",
+  "phases": {
+    "AUTH": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:07:17.441Z",
+          "level": "info",
+          "message": "Starting user authentication"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:19.881Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-page-loaded-1763399239552.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:22.281Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-form-filled-1763399241957.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:23.562Z",
+          "level": "success",
+          "message": "✅ Authentication successful"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:23.861Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-post-login-success-1763399243562.png"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:07:17.442Z",
+      "endTime": "2025-11-17T17:07:23.861Z"
+    },
+    "ACCESS": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:07:23.861Z",
+          "level": "info",
+          "message": "Accessing test page at /test-comprehensive-data"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:27.563Z",
+          "level": "success",
+          "message": "✅ Test page loaded successfully"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:27.716Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/ACCESS-test-page-loaded-1763399247563.png"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:07:23.861Z",
+      "endTime": "2025-11-17T17:07:27.563Z"
+    },
+    "WORKFLOW": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:07:27.716Z",
+          "level": "info",
+          "message": "Starting complete workflow execution"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:27.717Z",
+          "level": "info",
+          "message": "Executing action: delete-all"
+        },
+        {
+          "timestamp": "2025-11-17T17:07:58.793Z",
+          "level": "error",
+          "message": "❌ delete-all failed: Timeout waiting for delete-all API response"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:07:27.717Z"
+    },
+    "FATAL": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:07:58.793Z",
+          "level": "error",
+          "message": "Test failed with error: Delete all data step failed"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:07:58.793Z"
+    }
+  },
+  "overallSuccess": false,
+  "errors": [
+    {
+      "phase": "WORKFLOW",
+      "message": "❌ delete-all failed: Timeout waiting for delete-all API response",
+      "timestamp": "2025-11-17T17:07:58.793Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Test failed with error: Delete all data step failed",
+      "timestamp": "2025-11-17T17:07:58.793Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Delete all data step failed",
+      "timestamp": "2025-11-17T17:07:58.794Z"
+    }
+  ],
+  "warnings": []
+}

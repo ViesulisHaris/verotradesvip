@@ -1,0 +1,208 @@
+{
+  "timestamp": "2025-11-27T22:33:04.514Z",
+  "summary": {
+    "passed": 24,
+    "failed": 0,
+    "total": 24
+  },
+  "environment": {
+    "envFileLoading": {
+      "test": "envFileLoading",
+      "passed": true,
+      "details": "Environment variables loaded successfully",
+      "timestamp": "2025-11-27T22:33:04.524Z"
+    },
+    "supabaseUrlPresence": {
+      "test": "supabaseUrlPresence",
+      "passed": true,
+      "details": "URL found: https://bzmixuxautbmqbrqtufx.supabase.co",
+      "timestamp": "2025-11-27T22:33:04.524Z"
+    },
+    "supabaseUrlFormat": {
+      "test": "supabaseUrlFormat",
+      "passed": true,
+      "details": "URL format is valid",
+      "timestamp": "2025-11-27T22:33:04.524Z"
+    },
+    "supabaseAnonKeyPresence": {
+      "test": "supabaseAnonKeyPresence",
+      "passed": true,
+      "details": "Anon key found",
+      "timestamp": "2025-11-27T22:33:04.525Z"
+    },
+    "supabaseAnonKeyFormat": {
+      "test": "supabaseAnonKeyFormat",
+      "passed": true,
+      "details": "Anon key has valid JWT format",
+      "timestamp": "2025-11-27T22:33:04.525Z"
+    },
+    "supabaseServiceKeyPresence": {
+      "test": "supabaseServiceKeyPresence",
+      "passed": true,
+      "details": "Service role key found",
+      "timestamp": "2025-11-27T22:33:04.525Z"
+    },
+    "supabaseServiceKeyFormat": {
+      "test": "supabaseServiceKeyFormat",
+      "passed": true,
+      "details": "Service role key has valid JWT format",
+      "timestamp": "2025-11-27T22:33:04.525Z"
+    },
+    "loaded": {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co",
+      "anonKey": "eyJhbGciOiJIUzI1NiIs...",
+      "serviceKey": "eyJhbGciOiJIUzI1NiIs...",
+      "keyValidation": {
+        "valid": true,
+        "header": {
+          "alg": "HS256",
+          "typ": "JWT"
+        },
+        "payload": {
+          "iss": "supabase",
+          "ref": "bzmixuxautbmqbrqtufx",
+          "role": "anon",
+          "iat": 1762280632,
+          "exp": 2077856632
+        }
+      },
+      "serviceKeyValidation": {
+        "valid": true,
+        "header": {
+          "alg": "HS256",
+          "typ": "JWT"
+        },
+        "payload": {
+          "iss": "supabase",
+          "ref": "bzmixuxautbmqbrqtufx",
+          "role": "service_role",
+          "iat": 1762280632,
+          "exp": 2077856632
+        }
+      }
+    }
+  },
+  "clientInitialization": {
+    "clientCreation": {
+      "test": "clientCreation",
+      "passed": true,
+      "details": "Supabase client created successfully",
+      "timestamp": "2025-11-27T22:33:04.571Z"
+    },
+    "properties": {
+      "hasAuth": true,
+      "hasFunctions": true,
+      "hasStorage": true,
+      "hasFrom": true
+    }
+  },
+  "apiConnectivity": {
+    "systemTable": {
+      "error": "Could not find the table 'public.information_schema.tables' in the schema cache",
+      "result": null
+    },
+    "auth": {
+      "result": {
+        "session": null
+      }
+    },
+    "nonExistentTable": {
+      "error": "Could not find the table 'public._test_non_existent_table_xyz' in the schema cache"
+    }
+  },
+  "authentication": {
+    "getSession": {
+      "test": "getSession",
+      "passed": true,
+      "details": "Get session successful: No session (expected)",
+      "timestamp": "2025-11-27T22:33:05.035Z"
+    },
+    "signInWithInvalidCredentials": {
+      "test": "signInWithInvalidCredentials",
+      "passed": true,
+      "details": "Expected \"Invalid login credentials\" error: Invalid login credentials",
+      "timestamp": "2025-11-27T22:33:05.147Z"
+    },
+    "signUp": {
+      "test": "signUp",
+      "passed": true,
+      "details": "Sign up completed (no API key error): User already registered",
+      "timestamp": "2025-11-27T22:33:05.275Z"
+    },
+    "getCurrentUser": {
+      "test": "getCurrentUser",
+      "passed": true,
+      "details": "Get current user successful: No user (expected)",
+      "timestamp": "2025-11-27T22:33:05.276Z"
+    }
+  },
+  "databaseOperations": {
+    "listTables": {
+      "test": "listTables",
+      "passed": true,
+      "details": "Expected permission error (not API key): Could not find the function public.get_table_info without parameters in the schema cache",
+      "timestamp": "2025-11-27T22:33:05.489Z"
+    },
+    "commonTableAccess": {
+      "test": "commonTableAccess",
+      "passed": true,
+      "details": "All table accesses completed without API key errors",
+      "timestamp": "2025-11-27T22:33:06.079Z"
+    },
+    "tableAccess": [
+      {
+        "table": "trades",
+        "success": true,
+        "result": "Data retrieved"
+      },
+      {
+        "table": "strategies",
+        "success": true,
+        "result": "Data retrieved"
+      },
+      {
+        "table": "users",
+        "success": true,
+        "error": "Could not find the table 'public.users' in the schema cache"
+      },
+      {
+        "table": "profiles",
+        "success": true,
+        "error": "Could not find the table 'public.profiles' in the schema cache"
+      },
+      {
+        "table": "auth.users",
+        "success": true,
+        "error": "Could not find the table 'public.auth.users' in the schema cache"
+      }
+    ]
+  },
+  "errorHandling": {
+    "invalidTable": {
+      "test": "invalidTable",
+      "passed": true,
+      "details": "Error handled properly: Could not find the table 'public._invalid_table_name' in the schema cache",
+      "timestamp": "2025-11-27T22:33:06.191Z"
+    },
+    "invalidAuth": {
+      "test": "invalidAuth",
+      "passed": true,
+      "details": "Error handled properly: missing email or phone",
+      "timestamp": "2025-11-27T22:33:06.299Z"
+    },
+    "invalidRPC": {
+      "test": "invalidRPC",
+      "passed": true,
+      "details": "Error handled properly: Could not find the function public._nonexistent_function without parameters in the schema cache",
+      "timestamp": "2025-11-27T22:33:06.408Z"
+    }
+  },
+  "recommendations": [
+    "All tests passed - API key fix appears successful"
+  ],
+  "conclusion": {
+    "status": "FAILURE",
+    "message": "API key error persists or new issues introduced.",
+    "confidence": "Low"
+  }
+}

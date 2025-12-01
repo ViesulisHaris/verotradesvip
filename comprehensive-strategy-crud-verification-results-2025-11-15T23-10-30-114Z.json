@@ -1,0 +1,28 @@
+{
+  "strategyPerformanceViewing": {
+    "status": "skipped",
+    "details": [
+      "No strategies available to test"
+    ]
+  },
+  "strategyModification": {
+    "status": "skipped",
+    "details": [
+      "No strategies available to edit"
+    ]
+  },
+  "strategyDeletion": {
+    "status": "skipped",
+    "details": [
+      "Not enough strategies to test deletion"
+    ]
+  },
+  "strategyCreation": {
+    "status": "skipped",
+    "details": [
+      "Create button not found"
+    ]
+  },
+  "consoleErrors": "29 console errors detected",
+  "summary": "Tests completed: 0 passed, 0 failed, 4 skipped"
+}

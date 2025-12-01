@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supabase Key Test</title>
+</head>
+<body>
+    <h1>Supabase Key Test</h1>
+    <div id="results"></div>
+    
+    <script type="module">
+        async function testSupabase() {
+            const results = document.getElementById('results');
+            
+            try {
+                // Test environment variables
+                results.innerHTML += '<p>Testing environment variables...</p>';
+                
+                // Test 1: Check if we can access Next.js public env vars
+                const response = await fetch('/api/debug-env');
+                const serverEnv = await response.json();
+                results.innerHTML += `<pre>Server Environment: ${JSON.stringify(serverEnv, null, 2)}</pre>`;
+                
+                // Test 2: Try to import Supabase client
+                results.innerHTML += '<p>Testing Supabase client import...</p>';
+                
+                // This will test if the client-side modules load properly
+                const testImport = async () => {
+                    try {
+                        const modules = await Promise.all([
+                            import('/_next/static/chunks/src_supabase_client_ts.js'),
+                            import('/_next/static/chunks/src_lib_schema-validation_ts.js'),
+                            import('/_next/static/chunks/src_lib_schema-cache-fallback_ts.js')
+                        ]);
+                        
+                        results.innerHTML += '<p>✅ All modules imported successfully</p>';
+                        
+                        // Test 3: Try to create a Supabase client
+                        const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2');
+                        const client = createClient(
+                            'https://bzmixuxautbmqbrqtufx.supabase.co',
+                            'sb_publishable_p_kFlPj1v5_qaypk8YWCLA_sEY8NVOP'
+                        );
+                        
+                        results.innerHTML += '<p>✅ Supabase client created successfully</p>';
+                        
+                    } catch (error) {
+                        results.innerHTML += `<p>❌ Import error: ${error.message}</p>`;
+                    }
+                };
+                
+                testImport();
+                
+            } catch (error) {
+                results.innerHTML += `<p>❌ Test failed: ${error.message}</p>`;
+                results.innerHTML += `<p>Stack: ${error.stack}</p>`;
+            }
+        }
+        
+        testSupabase();
+    </script>
+</body>
+</html>

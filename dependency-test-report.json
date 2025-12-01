@@ -1,0 +1,186 @@
+{
+  "timestamp": "2025-11-14T06:59:52.156Z",
+  "config": {
+    "supabaseUrl": "https://your-project.supabase.co",
+    "supabaseServiceKey": "your-service-key",
+    "scripts": [
+      {
+        "name": "SCHEMA_CACHE_CLEAR.sql",
+        "path": "./SCHEMA_CACHE_CLEAR.sql",
+        "order": 1,
+        "description": "Clears schema cache and references to deleted strategy_rule_compliance table"
+      },
+      {
+        "name": "RELATIONSHIP_REBUILD.sql",
+        "path": "./RELATIONSHIP_REBUILD.sql",
+        "order": 2,
+        "description": "Rebuilds foreign key relationships between strategies and related tables"
+      },
+      {
+        "name": "VERIFICATION.sql",
+        "path": "./VERIFICATION.sql",
+        "order": 3,
+        "description": "Comprehensive verification of schema and relationship fixes"
+      }
+    ]
+  },
+  "results": [
+    {
+      "script": "SCHEMA_CACHE_CLEAR.sql",
+      "success": true,
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 10,
+        "doBlocks": 7,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "clearsCache": true,
+        "rebuildsStats": true,
+        "refreshesViews": true
+      }
+    },
+    {
+      "script": "RELATIONSHIP_REBUILD.sql",
+      "success": true,
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 10,
+        "doBlocks": 8,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "rebuildsFK": true,
+        "createsIndexes": true,
+        "configuresRLS": true
+      }
+    },
+    {
+      "script": "VERIFICATION.sql",
+      "success": true,
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 1,
+        "doBlocks": 10,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "verifiesPrerequisites": true,
+        "testsStructure": true,
+        "testsRelationships": true,
+        "testsOperations": true
+      }
+    }
+  ],
+  "executionLog": [
+    {
+      "script": "SCHEMA_CACHE_CLEAR.sql",
+      "status": "STARTED",
+      "timestamp": "2025-11-14T06:59:45.722Z",
+      "message": "Started execution of SCHEMA_CACHE_CLEAR.sql"
+    },
+    {
+      "script": "SCHEMA_CACHE_CLEAR.sql",
+      "status": "SUCCESS",
+      "timestamp": "2025-11-14T06:59:47.715Z",
+      "duration": 1993,
+      "message": "Successfully executed SCHEMA_CACHE_CLEAR.sql",
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 10,
+        "doBlocks": 7,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "clearsCache": true,
+        "rebuildsStats": true,
+        "refreshesViews": true
+      }
+    },
+    {
+      "script": "RELATIONSHIP_REBUILD.sql",
+      "status": "STARTED",
+      "timestamp": "2025-11-14T06:59:47.715Z",
+      "message": "Started execution of RELATIONSHIP_REBUILD.sql"
+    },
+    {
+      "script": "RELATIONSHIP_REBUILD.sql",
+      "status": "SUCCESS",
+      "timestamp": "2025-11-14T06:59:50.128Z",
+      "duration": 2413,
+      "message": "Successfully executed RELATIONSHIP_REBUILD.sql",
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 10,
+        "doBlocks": 8,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "rebuildsFK": true,
+        "createsIndexes": true,
+        "configuresRLS": true
+      }
+    },
+    {
+      "script": "VERIFICATION.sql",
+      "status": "STARTED",
+      "timestamp": "2025-11-14T06:59:50.129Z",
+      "message": "Started execution of VERIFICATION.sql"
+    },
+    {
+      "script": "VERIFICATION.sql",
+      "status": "SUCCESS",
+      "timestamp": "2025-11-14T06:59:52.155Z",
+      "duration": 2026,
+      "message": "Successfully executed VERIFICATION.sql",
+      "analysis": {
+        "hasTransaction": true,
+        "hasSavepoint": true,
+        "hasErrorHandling": true,
+        "hasPrerequisites": true,
+        "hasDependencyComments": true,
+        "stepCount": 1,
+        "doBlocks": 10,
+        "hasRollback": false,
+        "hasReleaseSavepoint": true,
+        "verifiesPrerequisites": true,
+        "testsStructure": true,
+        "testsRelationships": true,
+        "testsOperations": true
+      }
+    }
+  ],
+  "validation": {
+    "order": {
+      "valid": true,
+      "errors": []
+    },
+    "dependencies": {
+      "valid": true,
+      "issues": []
+    }
+  },
+  "summary": {
+    "totalScripts": 3,
+    "successfulExecutions": 3,
+    "failedExecutions": 0,
+    "executionOrderValid": true,
+    "dependenciesValid": true,
+    "overallSuccess": true
+  }
+}

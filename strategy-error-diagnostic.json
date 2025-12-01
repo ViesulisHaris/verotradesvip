@@ -1,0 +1,3004 @@
+{
+  "timestamp": "2025-11-15T22:00:41.290Z",
+  "consoleLogs": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:19.753Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:19.931Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:19.932Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:19.937Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T22:00:20.023Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.087Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.134Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.210Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 133ms",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.240Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.382Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T22:00:20.393Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.400Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.402Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.402Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.403Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.404Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:20.409Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:20.410Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.479Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.622Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.623Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.624Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T22:00:20.622Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.627Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:20.628Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:20.628Z"
+    },
+    {
+      "type": "log",
+      "text": "🚀 Login form submission started",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.319Z"
+    },
+    {
+      "type": "log",
+      "text": "📧 Email: test@example.com",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.321Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Password length: 11",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.321Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 Attempting Supabase authentication...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.322Z"
+    },
+    {
+      "type": "log",
+      "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.322Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Supabase Key present: YES",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.322Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T22:00:29.585Z"
+    },
+    {
+      "type": "log",
+      "text": "📥 Supabase response received",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.589Z"
+    },
+    {
+      "type": "log",
+      "text": "❌ Error: Invalid login credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.590Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ Success: YES",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.590Z"
+    },
+    {
+      "type": "log",
+      "text": "❌ Authentication failed: Invalid login credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🏁 Login process completed",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:29.590Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.573Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.621Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.621Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.625Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.643Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.688Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.780Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-15T22:00:33.784Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.791Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.791Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.792Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:33.792Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:33.793Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.821Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.926Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.927Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.927Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T22:00:33.925Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.928Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-15T22:00:33.928Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "location": {
+        "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+        "lineNumber": 3124,
+        "columnNumber": 31
+      },
+      "timestamp": "2025-11-15T22:00:33.928Z"
+    }
+  ],
+  "jsErrors": [],
+  "networkRequests": [
+    {
+      "url": "http://localhost:3000/strategies",
+      "method": "GET",
+      "headers": {
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "timestamp": "2025-11-15T22:00:19.305Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.424Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.425Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.426Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.426Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.426Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.426Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.426Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.427Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.430Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.430Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.430Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.430Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.431Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.431Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.431Z"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.465Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.896Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:19.896Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.076Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.076Z"
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "method": "GET",
+      "headers": {
+        "rsc": "1",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "x-nextjs-request-id": "8026eed7",
+        "referer": "http://localhost:3000/strategies",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%22strategies%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D",
+        "next-url": "/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "x-nextjs-html-request-id": "DQBr7dhBVCMLghr6Ign21"
+      },
+      "timestamp": "2025-11-15T22:00:20.113Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "referer": "http://localhost:3000/",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web",
+        "expires": "0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk"
+      },
+      "timestamp": "2025-11-15T22:00:20.133Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.242Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.242Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.381Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.381Z"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.381Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.423Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.461Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "referer": "http://localhost:3000/",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web",
+        "expires": "0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk"
+      },
+      "timestamp": "2025-11-15T22:00:20.466Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:20.658Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+      "method": "POST",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "x-supabase-api-version": "2024-01-01",
+        "referer": "http://localhost:3000/",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web",
+        "expires": "0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "content-type": "application/json;charset=UTF-8",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk"
+      },
+      "timestamp": "2025-11-15T22:00:29.330Z"
+    },
+    {
+      "url": "http://localhost:3000/strategies",
+      "method": "GET",
+      "headers": {
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+      },
+      "timestamp": "2025-11-15T22:00:33.351Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.418Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.418Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.418Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.418Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.421Z"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.429Z"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.433Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.595Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.595Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "method": "GET",
+      "headers": {
+        "origin": "http://localhost:3000",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.629Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.640Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.641Z"
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "method": "GET",
+      "headers": {
+        "rsc": "1",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "x-nextjs-request-id": "33d83a6d",
+        "referer": "http://localhost:3000/strategies",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%22strategies%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D",
+        "next-url": "/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "x-nextjs-html-request-id": "RH4_FBBLiY2bd2GGMCPdC"
+      },
+      "timestamp": "2025-11-15T22:00:33.679Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "referer": "http://localhost:3000/",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web",
+        "expires": "0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk"
+      },
+      "timestamp": "2025-11-15T22:00:33.686Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.740Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/strategies",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.741Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.780Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.780Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.805Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "referer": "http://localhost:3000/",
+        "pragma": "no-cache",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web",
+        "expires": "0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk"
+      },
+      "timestamp": "2025-11-15T22:00:33.806Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "timestamp": "2025-11-15T22:00:33.932Z"
+    }
+  ],
+  "networkResponses": [
+    {
+      "url": "http://localhost:3000/strategies",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "link": "</_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\""
+      },
+      "timestamp": "2025-11-15T22:00:19.393Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"e8e6-19a87946540\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:54:00 GMT",
+        "content-type": "text/css; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.451Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"29f-19a7a22f0ef\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "671",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.470Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"28c07-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.492Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"2341b-19a7a22f0d8\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.500Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "etag": "W/\"bd30-19a7a22f0db\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "48432",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "font/woff2"
+      },
+      "timestamp": "2025-11-15T22:00:19.509Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"7bb-19a7a22f0d8\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.514Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"30f-19a7a22f0e3\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "783",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.518Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"32560-19a7a22f0ef\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.546Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"106-19a7a22f0ec\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "262",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.577Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"1214d-19a7a22f0e3\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.593Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"1d205-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.610Z"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-encoding": "gzip",
+        "x-content-type-options": "nosniff",
+        "expires": "Sat, 15 Nov 2025 22:00:18 GMT",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "date": "Sat, 15 Nov 2025 22:00:18 GMT",
+        "content-type": "text/css; charset=utf-8",
+        "vary": "Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site",
+        "last-modified": "Sat, 15 Nov 2025 20:53:13 GMT",
+        "x-frame-options": "SAMEORIGIN",
+        "strict-transport-security": "max-age=31536000",
+        "link": "<https://fonts.gstatic.com>; rel=preconnect; crossorigin",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "timing-allow-origin": "*",
+        "cross-origin-opener-policy": "same-origin-allow-popups",
+        "cross-origin-resource-policy": "cross-origin",
+        "access-control-allow-origin": "*",
+        "x-xss-protection": "0",
+        "server": "ESF"
+      },
+      "timestamp": "2025-11-15T22:00:19.625Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"9b9df-19a7a22f0da\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.636Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"24b-19a82e08c5f\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "587",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:05 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.640Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"191-19a82fb0f4a\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "401",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:28:02 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.645Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"187a7-19a82e22c15\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:00:51 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.657Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"fed90-19a7a22f0de\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.662Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f0-19a82e137bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "240",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:49 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.667Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"21d61-19a87979796\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:57:30 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.670Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"c3ef4-19a8794653f\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:54:00 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.671Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"c9913-19a7dab0b9c\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Thu, 13 Nov 2025 14:42:32 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.899Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"120-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "288",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.901Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"3c49-19a7a22f0f0\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:19.907Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"106-19a82e08c61\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "262",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:05 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.088Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"66c2-19a82e1bbc0\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:00:23 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.090Z"
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "content-type": "text/x-component",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.228Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f3-19a82f4a9bf\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "243",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.253Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"acef-19a82f4a9bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.267Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f3-19a82f4a9bf\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "243",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.388Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"acef-19a82f4a9bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:20.391Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "proxy-status": "PostgREST; error=PGRST205",
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "content-encoding": "gzip",
+        "cf-cache-status": "DYNAMIC",
+        "sb-request-id": "019a8988-8e18-76f8-b96c-c920e0f692d2",
+        "x-envoy-attempt-count": "1",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "priority": "u=1,i",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-envoy-upstream-service-time": "1",
+        "cf-ray": "99f205501dcce4cd-RIX",
+        "access-control-allow-origin": "http://localhost:3000",
+        "server": "cloudflare",
+        "sb-gateway-version": "1"
+      },
+      "timestamp": "2025-11-15T22:00:20.392Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-encoding": "gzip",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "content-type": "application/json",
+        "vary": "Accept-Encoding",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:20.467Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "public, max-age=31536000, immutable",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "content-type": "font/woff2",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:20.479Z"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "age": "251040",
+        "report-to": "{\"group\":\"apps-themes\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/apps-themes\"}]}",
+        "x-content-type-options": "nosniff",
+        "expires": "Fri, 13 Nov 2026 00:16:19 GMT",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "date": "Thu, 13 Nov 2025 00:16:19 GMT",
+        "last-modified": "Tue, 09 Sep 2025 18:33:53 GMT",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "timing-allow-origin": "*",
+        "cross-origin-opener-policy": "same-origin; report-to=\"apps-themes\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "content-security-policy-report-only": "require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes",
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "content-length": "48256",
+        "x-xss-protection": "0",
+        "server": "sffe"
+      },
+      "timestamp": "2025-11-15T22:00:20.548Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "cf-cache-status": "DYNAMIC",
+        "sb-request-id": "019a8988-8f04-7acc-b3d6-e50bbbc3b8a2",
+        "x-envoy-attempt-count": "1",
+        "x-content-type-options": "nosniff",
+        "content-location": "/strategies?limit=1&select=id",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "priority": "u=1,i",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "content-profile": "public",
+        "x-envoy-upstream-service-time": "18",
+        "content-range": "*/*",
+        "cf-ray": "99f205519ec8e4cd-RIX",
+        "access-control-allow-origin": "http://localhost:3000",
+        "content-length": "2",
+        "server": "cloudflare",
+        "sb-gateway-version": "1"
+      },
+      "timestamp": "2025-11-15T22:00:20.621Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-encoding": "gzip",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "content-type": "application/json",
+        "vary": "Accept-Encoding",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:20.664Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+      "status": 400,
+      "statusText": "",
+      "headers": {
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "x-sb-error-code": "invalid_credentials",
+        "access-control-expose-headers": "X-Total-Count, Link, X-Supabase-Api-Version",
+        "cf-cache-status": "DYNAMIC",
+        "sb-request-id": "019a8988-b1a0-7e9f-9c60-946fa6a09a17",
+        "x-envoy-attempt-count": "1",
+        "x-content-type-options": "nosniff",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Sat, 15 Nov 2025 22:00:28 GMT",
+        "content-type": "application/json",
+        "vary": "Origin, Accept-Encoding",
+        "priority": "u=1,i",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-supabase-api-version": "2024-01-01",
+        "x-envoy-upstream-service-time": "93",
+        "access-control-allow-credentials": "true",
+        "cf-ray": "99f20588fd1be4cd-RIX",
+        "access-control-allow-origin": "http://localhost:3000",
+        "content-length": "68",
+        "server": "cloudflare",
+        "sb-gateway-version": "1"
+      },
+      "timestamp": "2025-11-15T22:00:29.584Z"
+    },
+    {
+      "url": "http://localhost:3000/strategies",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "link": "</_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\""
+      },
+      "timestamp": "2025-11-15T22:00:33.400Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "etag": "W/\"bd30-19a7a22f0db\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "48432",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:19 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "font/woff2"
+      },
+      "timestamp": "2025-11-15T22:00:33.418Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"e8e6-19a87946540\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:54:00 GMT",
+        "content-type": "text/css; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.428Z"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-encoding": "gzip",
+        "x-content-type-options": "nosniff",
+        "expires": "Sat, 15 Nov 2025 22:00:18 GMT",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "date": "Sat, 15 Nov 2025 22:00:18 GMT",
+        "content-type": "text/css; charset=utf-8",
+        "vary": "Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site",
+        "last-modified": "Sat, 15 Nov 2025 20:53:13 GMT",
+        "x-frame-options": "SAMEORIGIN",
+        "strict-transport-security": "max-age=31536000",
+        "link": "<https://fonts.gstatic.com>; rel=preconnect; crossorigin",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "timing-allow-origin": "*",
+        "cross-origin-opener-policy": "same-origin-allow-popups",
+        "cross-origin-resource-policy": "cross-origin",
+        "access-control-allow-origin": "*",
+        "x-xss-protection": "0",
+        "server": "ESF"
+      },
+      "timestamp": "2025-11-15T22:00:33.429Z"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "age": "251040",
+        "report-to": "{\"group\":\"apps-themes\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/apps-themes\"}]}",
+        "x-content-type-options": "nosniff",
+        "expires": "Fri, 13 Nov 2026 00:16:19 GMT",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "date": "Thu, 13 Nov 2025 00:16:19 GMT",
+        "last-modified": "Tue, 09 Sep 2025 18:33:53 GMT",
+        "content-type": "font/woff2",
+        "cache-control": "public, max-age=31536000",
+        "timing-allow-origin": "*",
+        "cross-origin-opener-policy": "same-origin; report-to=\"apps-themes\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "content-security-policy-report-only": "require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes",
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "content-length": "48256",
+        "x-xss-protection": "0",
+        "server": "sffe"
+      },
+      "timestamp": "2025-11-15T22:00:33.435Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"29f-19a7a22f0ef\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "671",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.435Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"28c07-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.454Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"2341b-19a7a22f0d8\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.455Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"32560-19a7a22f0ef\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.472Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"30f-19a7a22f0e3\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "783",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.474Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"7bb-19a7a22f0d8\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.478Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"106-19a7a22f0ec\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "262",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.501Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"1214d-19a7a22f0e3\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.507Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"1d205-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.521Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"24b-19a82e08c5f\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "587",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:05 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.528Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"9b9df-19a7a22f0da\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.533Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"191-19a82fb0f4a\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "401",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:28:02 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.537Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"187a7-19a82e22c15\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:00:51 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.541Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f0-19a82e137bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "240",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:49 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.550Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"21d61-19a87979796\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:57:30 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.553Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"fed90-19a7a22f0de\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.566Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"c3ef4-19a8794653f\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Sat, 15 Nov 2025 12:54:00 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.568Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"c9913-19a7dab0b9c\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Thu, 13 Nov 2025 14:42:32 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.600Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"120-19a7a22f0e5\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "288",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.612Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"3c49-19a7a22f0f0\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Wed, 12 Nov 2025 22:15:01 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.612Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "public, max-age=31536000, immutable",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:20 GMT",
+        "content-type": "font/woff2",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:33.629Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"106-19a82e08c61\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "262",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 14:59:05 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.661Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"66c2-19a82e1bbc0\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:00:23 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.662Z"
+    },
+    {
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "content-type": "text/x-component",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.728Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f3-19a82f4a9bf\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "243",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.751Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"acef-19a82f4a9bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.754Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "proxy-status": "PostgREST; error=PGRST205",
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "content-encoding": "gzip",
+        "cf-cache-status": "DYNAMIC",
+        "sb-request-id": "019a8988-c275-7420-9753-9e9e187988e3",
+        "x-envoy-attempt-count": "1",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Sat, 15 Nov 2025 22:00:32 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "priority": "u=1,i",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-envoy-upstream-service-time": "2",
+        "cf-ray": "99f205a3ec6be4cd-RIX",
+        "access-control-allow-origin": "http://localhost:3000",
+        "server": "cloudflare",
+        "sb-gateway-version": "1"
+      },
+      "timestamp": "2025-11-15T22:00:33.783Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "etag": "W/\"f3-19a82f4a9bf\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "content-length": "243",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.786Z"
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "cache-control": "no-store, must-revalidate",
+        "content-encoding": "gzip",
+        "etag": "W/\"acef-19a82f4a9bb\"",
+        "connection": "keep-alive",
+        "accept-ranges": "bytes",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "last-modified": "Fri, 14 Nov 2025 15:21:03 GMT",
+        "content-type": "application/javascript; charset=UTF-8",
+        "vary": "Accept-Encoding"
+      },
+      "timestamp": "2025-11-15T22:00:33.786Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-encoding": "gzip",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "content-type": "application/json",
+        "vary": "Accept-Encoding",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:33.816Z"
+    },
+    {
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "cf-cache-status": "DYNAMIC",
+        "sb-request-id": "019a8988-c2ed-7104-9b2b-9dc0aa4dfe51",
+        "x-envoy-attempt-count": "1",
+        "x-content-type-options": "nosniff",
+        "content-location": "/strategies?limit=1&select=id",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Sat, 15 Nov 2025 22:00:32 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "priority": "u=1,i",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "content-profile": "public",
+        "x-envoy-upstream-service-time": "20",
+        "content-range": "*/*",
+        "cf-ray": "99f205a4acd8e4cd-RIX",
+        "access-control-allow-origin": "http://localhost:3000",
+        "content-length": "2",
+        "server": "cloudflare",
+        "sb-gateway-version": "1"
+      },
+      "timestamp": "2025-11-15T22:00:33.925Z"
+    },
+    {
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-encoding": "gzip",
+        "keep-alive": "timeout=5",
+        "date": "Sat, 15 Nov 2025 22:00:33 GMT",
+        "content-type": "application/json",
+        "vary": "Accept-Encoding",
+        "connection": "keep-alive"
+      },
+      "timestamp": "2025-11-15T22:00:33.941Z"
+    }
+  ],
+  "summary": {
+    "totalConsoleLogs": 59,
+    "totalJSErrors": 0,
+    "totalNetworkRequests": 75,
+    "totalNetworkResponses": 75
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-11-19T08:17:21.313Z",
+  "pnlChartDimensions": null,
+  "emotionRadarDimensions": null,
+  "stylingAnalysis": {
+    "hasGradient": false,
+    "hasGlow": false,
+    "hasSmoothSpline": false,
+    "hasDataPoints": false,
+    "chartHeightRatio": 0,
+    "containerHeightRatio": 0
+  },
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-11-19T08:17:01.734Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-19T08:17:02.596Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-19T08:17:02.796Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-19T08:17:02.811Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 ()",
+      "timestamp": "2025-11-19T08:17:07.131Z"
+    }
+  ],
+  "diagnosis": {
+    "isStretched": false,
+    "dimensionMismatch": false,
+    "visualIssues": {
+      "missingGradient": true,
+      "missingGlow": true,
+      "hasDataPoints": false,
+      "notSmooth": true
+    }
+  }
+}

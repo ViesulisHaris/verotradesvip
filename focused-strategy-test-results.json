@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-11-16T12:16:16.283Z",
+  "summary": {
+    "total": 11,
+    "passed": 8,
+    "failed": 3
+  },
+  "tests": [
+    {
+      "name": "User Login",
+      "passed": true,
+      "details": "Redirected to: http://localhost:3000/dashboard",
+      "timestamp": "2025-11-16T12:16:18.756Z"
+    },
+    {
+      "name": "Schema Validation Fix",
+      "passed": false,
+      "details": "Error: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button') to be visible\u001b[22m\n\u001b[2m    6 × locator resolved to 7 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n\u001b[2m    57 × locator resolved to 9 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n",
+      "timestamp": "2025-11-16T12:16:49.162Z"
+    },
+    {
+      "name": "Strategy List Page Load",
+      "passed": true,
+      "details": "Loaded URL: http://localhost:3000/strategies",
+      "timestamp": "2025-11-16T12:16:52.536Z"
+    },
+    {
+      "name": "Strategy List Display",
+      "passed": true,
+      "details": "Strategy list found",
+      "timestamp": "2025-11-16T12:16:52.554Z"
+    },
+    {
+      "name": "Strategy Loading State",
+      "passed": true,
+      "details": "Loading completed",
+      "timestamp": "2025-11-16T12:16:52.560Z"
+    },
+    {
+      "name": "Strategy Error State",
+      "passed": true,
+      "details": "No errors",
+      "timestamp": "2025-11-16T12:16:52.563Z"
+    },
+    {
+      "name": "Strategy Creation Button Navigation",
+      "passed": true,
+      "details": "From: http://localhost:3000/strategies To: http://localhost:3000/strategies/create",
+      "timestamp": "2025-11-16T12:16:54.802Z"
+    },
+    {
+      "name": "Strategy Edit Button",
+      "passed": false,
+      "details": "No edit button found in strategy card",
+      "timestamp": "2025-11-16T12:16:57.168Z"
+    },
+    {
+      "name": "Strategy Deletion",
+      "passed": false,
+      "details": "No delete button found in strategy card",
+      "timestamp": "2025-11-16T12:16:59.338Z"
+    },
+    {
+      "name": "Browser Console Errors",
+      "passed": true,
+      "details": "Found 0 console errors",
+      "timestamp": "2025-11-16T12:17:01.339Z"
+    },
+    {
+      "name": "Application Stability",
+      "passed": true,
+      "details": "All main pages load correctly",
+      "timestamp": "2025-11-16T12:17:07.819Z"
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2025-11-16T12:16:49.162Z",
+      "message": "❌ FAIL: Schema Validation Fix - Error: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button') to be visible\u001b[22m\n\u001b[2m    6 × locator resolved to 7 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n\u001b[2m    57 × locator resolved to 9 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-16T12:16:57.168Z",
+      "message": "❌ FAIL: Strategy Edit Button - No edit button found in strategy card"
+    },
+    {
+      "timestamp": "2025-11-16T12:16:59.338Z",
+      "message": "❌ FAIL: Strategy Deletion - No delete button found in strategy card"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-11-17T16:25:58.855Z",
+  "testPhase": "failed",
+  "passed": [
+    "Starting trade generation browser test (FINAL)...",
+    "Navigating to login page...",
+    "Page title: VeroTrade - Trading Journal",
+    "Attempting to authenticate with test credentials...",
+    "Post-login URL: http://localhost:3000/dashboard",
+    "Successfully authenticated and redirected to dashboard",
+    "Extracting authentication token from localStorage...",
+    "Auth data extraction result: {\"hasToken\":false}"
+  ],
+  "failed": [
+    "Test failed: Failed to extract authentication token: No token found"
+  ],
+  "warnings": [],
+  "tradeData": null,
+  "detailedAnalysis": {},
+  "error": "Failed to extract authentication token: No token found"
+}

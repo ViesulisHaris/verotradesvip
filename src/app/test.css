@@ -1,0 +1,8 @@
+/* Test CSS file to verify CSS extraction */
+.test-css {
+  background-color: #121212;
+  color: #EAE6DD;
+  padding: 20px;
+  border: 1px solid #B89B5E;
+  border-radius: 8px;
+}

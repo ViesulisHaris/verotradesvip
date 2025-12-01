@@ -1,0 +1,159 @@
+{
+  "startTime": "2025-11-27T19:18:21.727Z",
+  "endTime": "2025-11-27T19:18:56.102Z",
+  "totalFlowTime": 34375,
+  "steps": {
+    "homepage": {
+      "startTime": "2025-11-27T19:18:22.834Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 6094,
+      "graySpaceCheck": {
+        "hasContent": true,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 64,
+        "elementCount": 8
+      },
+      "contentCheck": {
+        "hasLoginButton": false,
+        "hasRegisterButton": false,
+        "hasNavigation": false,
+        "hasMainContent": false,
+        "pageTitle": "",
+        "url": "http://localhost:3000/"
+      },
+      "endTime": "2025-11-27T19:18:31.069Z"
+    },
+    "loginPage": {
+      "startTime": "2025-11-27T19:18:31.070Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 5715,
+      "graySpaceCheck": {
+        "hasContent": true,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 110,
+        "elementCount": 9
+      },
+      "contentCheck": {
+        "hasEmailInput": true,
+        "hasPasswordInput": true,
+        "hasSubmitButton": true,
+        "hasForm": true,
+        "pageTitle": "",
+        "url": "http://localhost:3000/login"
+      },
+      "endTime": "2025-11-27T19:18:39.369Z"
+    },
+    "loginProcess": {
+      "startTime": "2025-11-27T19:18:39.370Z",
+      "status": "failed",
+      "details": {},
+      "authenticationTime": 8400,
+      "authCheck": {
+        "currentUrl": "http://localhost:3000/login",
+        "hasDashboard": false,
+        "hasSidebar": false,
+        "hasUserMenu": false,
+        "pageTitle": "",
+        "localStorage": {
+          "hasAuthData": false
+        }
+      },
+      "endTime": "2025-11-27T19:18:47.999Z"
+    },
+    "dashboard": {
+      "startTime": "2025-11-27T19:18:47.999Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 7948,
+      "graySpaceCheck": {
+        "hasContent": true,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 121,
+        "elementCount": 10
+      },
+      "contentCheck": {
+        "hasSidebar": false,
+        "hasMainContent": false,
+        "hasDashboardElement": false,
+        "hasUserInfo": false,
+        "sidebarDetails": null,
+        "pageTitle": "",
+        "url": "http://localhost:3000/dashboard",
+        "bodyTextLength": 121
+      },
+      "endTime": "2025-11-27T19:18:56.089Z"
+    },
+    "logout": {
+      "startTime": "2025-11-27T19:18:56.089Z",
+      "status": "error",
+      "details": {},
+      "error": "Logout button not found"
+    }
+  },
+  "performance": {
+    "homepage": {
+      "loadTime": 0,
+      "domContentLoaded": 0.19999999925494194,
+      "firstPaint": 2268,
+      "firstContentfulPaint": 7616,
+      "timestamp": "2025-11-27T19:18:31.066Z"
+    },
+    "loginPage": {
+      "loadTime": 0,
+      "domContentLoaded": 0.19999999925494194,
+      "firstPaint": 2028,
+      "firstContentfulPaint": 8044,
+      "timestamp": "2025-11-27T19:18:39.365Z"
+    },
+    "dashboard": {
+      "loadTime": 0,
+      "domContentLoaded": 0.19999999925494194,
+      "firstPaint": 1216,
+      "firstContentfulPaint": 6316,
+      "timestamp": "2025-11-27T19:18:56.086Z"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "path": "final-user-flow-homepage-1764271110940.png",
+      "description": "Homepage after load",
+      "timestamp": "2025-11-27T19:18:31.063Z"
+    },
+    "login-page": {
+      "path": "final-user-flow-login-page-1764271118798.png",
+      "description": "Login page with form",
+      "timestamp": "2025-11-27T19:18:39.363Z"
+    },
+    "login-form-filled": {
+      "path": "final-user-flow-login-form-filled-1764271124118.png",
+      "description": "Login form filled with credentials",
+      "timestamp": "2025-11-27T19:18:44.731Z"
+    },
+    "login-attempt-result": {
+      "path": "final-user-flow-login-attempt-result-1764271127771.png",
+      "description": "Result after login attempt",
+      "timestamp": "2025-11-27T19:18:47.997Z"
+    },
+    "dashboard": {
+      "path": "final-user-flow-dashboard-1764271135947.png",
+      "description": "Dashboard with sidebar",
+      "timestamp": "2025-11-27T19:18:56.085Z"
+    }
+  },
+  "errors": [
+    "Homepage test failed: {\"hasLoginButton\":false,\"hasRegisterButton\":false,\"hasNavigation\":false,\"hasMainContent\":false,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/\"}",
+    "Login page test failed: {\"hasEmailInput\":true,\"hasPasswordInput\":true,\"hasSubmitButton\":true,\"hasForm\":true,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/login\"}",
+    "Login process failed: {\"currentUrl\":\"http://localhost:3000/login\",\"hasDashboard\":false,\"hasSidebar\":false,\"hasUserMenu\":false,\"pageTitle\":\"\",\"localStorage\":{\"hasAuthData\":false}}",
+    "Dashboard test failed: {\"hasSidebar\":false,\"hasMainContent\":false,\"hasDashboardElement\":false,\"hasUserInfo\":false,\"sidebarDetails\":null,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/dashboard\",\"bodyTextLength\":121}",
+    "Logout error: Logout button not found"
+  ],
+  "success": false
+}

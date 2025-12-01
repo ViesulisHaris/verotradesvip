@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-11-20T15:57:36.777Z",
+  "testType": "Dropdown Form Integration Test",
+  "summary": {
+    "total": 6,
+    "passed": 0,
+    "failed": 6,
+    "passRate": "0.0%"
+  },
+  "details": [
+    "Initial state verification error: locator.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-haspopup=\"listbox\"]').first()\u001b[22m\n",
+    "Strategy loading error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-haspopup=\"listbox\"]').first()\u001b[22m\n",
+    "Strategy selection error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-haspopup=\"listbox\"]').first()\u001b[22m\n",
+    "\"None\" selection error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-haspopup=\"listbox\"]').first()\u001b[22m\n",
+    "Form submission error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-haspopup=\"listbox\"]').first()\u001b[22m\n",
+    "Form validation error: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"e.g., AAPL, BTCUSD\"]')\u001b[22m\n"
+  ]
+}

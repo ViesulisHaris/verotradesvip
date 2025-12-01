@@ -1,0 +1,406 @@
+{
+  "timestamp": "2025-11-23T14:56:36.134Z",
+  "baseUrl": "http://localhost:3000",
+  "summary": {
+    "total": 23,
+    "passed": 7,
+    "failed": 16,
+    "passRate": "30.43%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-23T14:53:29.412Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:29.414Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-23T14:53:30.534Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:53:31.711Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-page-loaded-1763909611611.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:32.833Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-valid-1763909612761.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:35.040Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-success-redirect-1763909614813.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:35.040Z",
+      "type": "success",
+      "message": "✅ Login with valid credentials: PASSED - Successfully redirected to dashboard"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:35.040Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:53:38.073Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-invalid-1763909618017.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:43.621Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div[class*=\"red\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:43.622Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:53:46.259Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-empty-form-submission-1763909626191.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:46.259Z",
+      "type": "success",
+      "message": "✅ Empty form validation: PASSED - Correctly prevented empty form submission"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:48.377Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-password-1763909628327.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:51.004Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-missing-email-1763909630950.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:51.004Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:53:53.051Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1763909632986.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:54.147Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-form-filled-valid-1763909634084.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:56.737Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-submission-result-1763909636685.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:56.741Z",
+      "type": "success",
+      "message": "✅ Registration with valid data: PASSED - Registration processed successfully"
+    },
+    {
+      "timestamp": "2025-11-23T14:53:56.741Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:54:28.843Z",
+      "type": "error",
+      "message": "❌ Registration with invalid data: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-23T14:54:28.844Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:54:29.855Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\remember-me-option-not-found-1763909669809.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:54:29.855Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Remember me option not found"
+    },
+    {
+      "timestamp": "2025-11-23T14:54:29.855Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:54:36.265Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\network-error-simulation-1763909676207.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:54:36.268Z",
+      "type": "error",
+      "message": "❌ Error handling: FAILED - No error handling found"
+    },
+    {
+      "timestamp": "2025-11-23T14:54:36.268Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:55:08.439Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:08.440Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:55:10.935Z",
+      "type": "success",
+      "message": "✅ Redirect after login: PASSED - Correctly redirected to dashboard"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:41.467Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - element is outside of the viewport\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:41.467Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:55:44.433Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--dashboard-1763909744373.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:44.433Z",
+      "type": "error",
+      "message": "❌ Protected route /dashboard: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:49.193Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--trades-1763909749026.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:49.193Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:53.458Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-1763909753399.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:53.458Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:57.522Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-create-1763909757458.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:55:57.522Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/create: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:02.128Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--strategies-edit--id--1763909762059.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:02.128Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/edit/[id]: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:03.115Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies/performance/[id]: FAILED - Exception: page.goto: net::ERR_ABORTED at http://localhost:3000/strategies/performance/1\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/performance/1\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:08.620Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--log-trade-1763909768544.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:08.621Z",
+      "type": "error",
+      "message": "❌ Protected route /log-trade: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:13.928Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--confluence-1763909773837.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:13.929Z",
+      "type": "error",
+      "message": "❌ Protected route /confluence: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:18.655Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--calendar-1763909778551.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:18.655Z",
+      "type": "error",
+      "message": "❌ Protected route /calendar: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:23.161Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route--analytics-1763909783099.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:23.161Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:23.161Z",
+      "type": "info",
+      "message": "\n=== Testing Public Routes ==="
+    },
+    {
+      "timestamp": "2025-11-23T14:56:27.302Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route--login-1763909787235.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:27.302Z",
+      "type": "success",
+      "message": "✅ Public route /login: PASSED - Correctly accessible without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:31.652Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route--register-1763909791590.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:31.652Z",
+      "type": "success",
+      "message": "✅ Public route /register: PASSED - Correctly accessible without authentication"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:36.134Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\public-route---1763909796057.png"
+    },
+    {
+      "timestamp": "2025-11-23T14:56:36.134Z",
+      "type": "success",
+      "message": "✅ Public route / (home): PASSED - Correctly accessible without authentication"
+    }
+  ],
+  "protectedRoutes": [
+    {
+      "route": "/dashboard",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/dashboard"
+    },
+    {
+      "route": "/trades",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/trades"
+    },
+    {
+      "route": "/strategies",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/strategies"
+    },
+    {
+      "route": "/strategies/create",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/strategies/create"
+    },
+    {
+      "route": "/strategies/edit/[id]",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/strategies/edit/1"
+    },
+    {
+      "route": "/strategies/performance/[id]",
+      "success": false,
+      "message": "Exception: page.goto: net::ERR_ABORTED at http://localhost:3000/strategies/performance/1\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies/performance/1\", waiting until \"load\"\u001b[22m\n",
+      "finalUrl": "N/A"
+    },
+    {
+      "route": "/log-trade",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/log-trade"
+    },
+    {
+      "route": "/confluence",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/confluence"
+    },
+    {
+      "route": "/calendar",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/calendar"
+    },
+    {
+      "route": "/analytics",
+      "success": false,
+      "message": "Allowed access without authentication",
+      "finalUrl": "http://localhost:3000/analytics"
+    }
+  ],
+  "publicRoutes": [
+    {
+      "route": "/login",
+      "success": true,
+      "message": "Correctly accessible without authentication",
+      "finalUrl": "http://localhost:3000/login"
+    },
+    {
+      "route": "/register",
+      "success": true,
+      "message": "Correctly accessible without authentication",
+      "finalUrl": "http://localhost:3000/register"
+    },
+    {
+      "route": "/ (home)",
+      "success": true,
+      "message": "Correctly accessible without authentication",
+      "finalUrl": "http://localhost:3000/dashboard"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "screenshotsDir": "./auth-test-screenshots",
+    "reportsDir": "./auth-test-reports"
+  }
+}

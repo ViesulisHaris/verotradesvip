@@ -1,0 +1,72 @@
+{
+  "pages": {
+    "/dashboard": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/settings": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/trades": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/strategies": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/analytics": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/calendar": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    },
+    "/log-trade": {
+      "sidebarExists": false,
+      "settingsLinkExists": false,
+      "hasUnifiedStyling": false,
+      "hasNoDuplicates": false,
+      "navItems": 0,
+      "sidebarCount": 0,
+      "passed": false
+    }
+  },
+  "summary": {
+    "total": 7,
+    "passed": 0,
+    "failed": 7
+  }
+}

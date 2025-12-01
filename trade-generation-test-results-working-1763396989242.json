@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-11-17T16:29:37.744Z",
+  "testPhase": "failed",
+  "passed": [
+    "Starting trade generation browser test (WORKING)...",
+    "Navigating to login page...",
+    "Page title: VeroTrade - Trading Journal",
+    "Attempting to authenticate with test credentials...",
+    "Post-login URL: http://localhost:3000/dashboard",
+    "Successfully authenticated and redirected to dashboard",
+    "Extracting authentication token from localStorage...",
+    "Auth data extraction result: {\"hasToken\":true,\"accessToken\":\"eyJhbGciOiJIUzI1NiIsImtpZCI6IlRHNWEyVm00U3d6VUFQd1kiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2J6bWl4dXhhdXRibXFicnF0dWZ4LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJkOWY3OTgyZC1mNDliLTQ3NjYtYThlOC04MjdhMWQxNzZkNWUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzYzNDAwNTgzLCJpYXQiOjE3NjMzOTY5ODMsImVtYWlsIjoidGVzdHVzZXJAdmVyb3RyYWRlLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJ0ZXN0dXNlckB2ZXJvdHJhZGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiZDlmNzk4MmQtZjQ5Yi00NzY2LWE4ZTgtODI3YTFkMTc2ZDVlIn0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjMzOTY5ODN9XSwic2Vzc2lvbl9pZCI6IjY4NDkxZmNjLTY4MjItNDkzZC04YmMyLWYyYzM2YzhjYzE2MiIsImlzX2Fub255bW91cyI6ZmFsc2V9.RYQTOfI968TRoWzQZeJ1j1P1L-XevC_myLz_woOpzMs\",\"refreshToken\":\"tjwvqjpnpml7\",\"userId\":\"d9f7982d-f49b-4766-a8e8-827a1d176d5e\",\"userEmail\":\"testuser@verotrade.com\"}",
+    "Making API request to generate test trades..."
+  ],
+  "failed": [
+    "Test failed: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+  ],
+  "warnings": [],
+  "tradeData": null,
+  "detailedAnalysis": {},
+  "error": "Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+}

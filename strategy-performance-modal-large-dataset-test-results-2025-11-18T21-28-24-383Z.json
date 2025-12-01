@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "startTime": "2025-11-18T21:28:24.202Z",
+    "endTime": "2025-11-18T21:28:24.383Z",
+    "duration": 181
+  },
+  "modalLoadingPerformance": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "performanceMetricsAccuracy": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "dataRenderingPerformance": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "individualStrategyAccuracy": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "scalabilityIssues": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "issues": [
+    {
+      "test": "Critical Error",
+      "category": "system",
+      "message": "Critical error during test execution: Authentication error: Authentication failed: fetch failed",
+      "details": {
+        "error": "Error: Authentication error: Authentication failed: fetch failed\n    at authenticateTestUser (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\strategy-performance-modal-large-dataset-test.js:149:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async testModalLoadingPerformance (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\strategy-performance-modal-large-dataset-test.js:155:16)\n    at async runAllTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\strategy-performance-modal-large-dataset-test.js:917:5)"
+      }
+    }
+  ],
+  "recommendations": [
+    "Consider implementing data archiving for very old trades to maintain performance",
+    "Add performance monitoring to track modal loading times in production",
+    "Implement progressive loading for strategy performance data"
+  ]
+}

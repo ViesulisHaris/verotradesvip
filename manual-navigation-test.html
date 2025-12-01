@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Navigation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #1a1a1a;
+            color: #eae6dd;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        .pass { color: #4CAF50; }
+        .fail { color: #f44336; }
+        .pending { color: #ff9800; }
+        button {
+            background: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #d6c7b2;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .results {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .test-log {
+            font-family: monospace;
+            font-size: 12px;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Manual Sidebar Navigation Test</h1>
+    
+    <div class="test-section">
+        <h2>📋 Test Instructions</h2>
+        <p>This manual test will help verify sidebar navigation functionality. Follow these steps:</p>
+        <ol>
+            <li>Open the application in the iframe below</li>
+            <li>Log in to the application</li>
+            <li>Follow the test checklist systematically</li>
+            <li>Record results in the form below</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 Application Test Window</h2>
+        <button onclick="openApp()">Open Application</button>
+        <button onclick="resizeDesktop()">Desktop View (1920x1080)</button>
+        <button onclick="resizeTablet()">Tablet View (768x1024)</button>
+        <button onclick="resizeMobile()">Mobile View (375x667)</button>
+        
+        <div class="iframe-container">
+            <iframe id="appFrame" src="http://localhost:3000" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>✅ Test Checklist</h2>
+        
+        <div class="test-item">
+            <h3>1. Sidebar Visibility Test</h3>
+            <label><input type="radio" name="sidebar1" value="pass" onchange="updateResult('sidebar1', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="sidebar1" value="fail" onchange="updateResult('sidebar1', this.value)"> ❌ Fail</label>
+            <p>Is the sidebar visible on the dashboard page after login?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>2. Navigation Links Test</h3>
+            <label><input type="radio" name="navlinks" value="pass" onchange="updateResult('navlinks', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="navlinks" value="fail" onchange="updateResult('navlinks', this.value)"> ❌ Fail</label>
+            <p>Can you click all navigation links (Dashboard, Trades, Log Trade, Calendar, Strategy, Confluence, Settings)?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>3. Page Navigation Test</h3>
+            <label><input type="radio" name="pagenav" value="pass" onchange="updateResult('pagenav', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="pagenav" value="fail" onchange="updateResult('pagenav', this.value)"> ❌ Fail</label>
+            <p>Do navigation links successfully navigate to the correct pages?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>4. Sidebar Persistence Test</h3>
+            <label><input type="radio" name="persistence" value="pass" onchange="updateResult('persistence', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="persistence" value="fail" onchange="updateResult('persistence', this.value)"> ❌ Fail</label>
+            <p>Does the sidebar remain visible when navigating between pages?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>5. Sidebar Toggle Test</h3>
+            <label><input type="radio" name="toggle" value="pass" onchange="updateResult('toggle', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="toggle" value="fail" onchange="updateResult('toggle', this.value)"> ❌ Fail</label>
+            <p>Does the sidebar toggle button work correctly on desktop?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>6. Mobile Menu Test</h3>
+            <label><input type="radio" name="mobile" value="pass" onchange="updateResult('mobile', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="mobile" value="fail" onchange="updateResult('mobile', this.value)"> ❌ Fail</label>
+            <p>Does the mobile menu button appear and work correctly on mobile view?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>7. Responsive Behavior Test</h3>
+            <label><input type="radio" name="responsive" value="pass" onchange="updateResult('responsive', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="responsive" value="fail" onchange="updateResult('responsive', this.value)"> ❌ Fail</label>
+            <p>Does the sidebar adapt correctly to different screen sizes?</p>
+        </div>
+
+        <div class="test-item">
+            <h3>8. Console Errors Test</h3>
+            <label><input type="radio" name="console" value="pass" onchange="updateResult('console', this.value)"> ✅ Pass</label>
+            <label><input type="radio" name="console" value="fail" onchange="updateResult('console', this.value)"> ❌ Fail</label>
+            <p>Are there any console errors during navigation?</p>
+        </div>
+    </div>
+
+    <div class="results">
+        <h2>📊 Test Results</h2>
+        <div id="testResults">
+            <p>Complete the tests above to see results here...</p>
+        </div>
+        
+        <button onclick="generateReport()">Generate Report</button>
+        <button onclick="clearResults()">Clear Results</button>
+        
+        <div class="test-log" id="testLog"></div>
+    </div>
+
+    <script>
+        let testResults = {};
+        
+        function openApp() {
+            const iframe = document.getElementById('appFrame');
+            iframe.src = 'http://localhost:3000';
+            log('🚀 Opening application...');
+        }
+        
+        function resizeDesktop() {
+            const iframe = document.getElementById('appFrame');
+            iframe.style.width = '1920px';
+            iframe.style.height = '1080px';
+            log('📐 Resized to Desktop view (1920x1080)');
+        }
+        
+        function resizeTablet() {
+            const iframe = document.getElementById('appFrame');
+            iframe.style.width = '768px';
+            iframe.style.height = '1024px';
+            log('📐 Resized to Tablet view (768x1024)');
+        }
+        
+        function resizeMobile() {
+            const iframe = document.getElementById('appFrame');
+            iframe.style.width = '375px';
+            iframe.style.height = '667px';
+            log('📐 Resized to Mobile view (375x667)');
+        }
+        
+        function updateResult(testName, result) {
+            testResults[testName] = result;
+            log(`📝 ${testName}: ${result}`);
+            updateResultsDisplay();
+        }
+        
+        function updateResultsDisplay() {
+            const resultsDiv = document.getElementById('testResults');
+            const totalTests = Object.keys(testResults).length;
+            const passedTests = Object.values(testResults).filter(r => r === 'pass').length;
+            const failedTests = Object.values(testResults).filter(r => r === 'fail').length;
+            
+            resultsDiv.innerHTML = `
+                <h3>Summary</h3>
+                <p>Total Tests: ${totalTests}</p>
+                <p class="pass">Passed: ${passedTests}</p>
+                <p class="fail">Failed: ${failedTests}</p>
+                <p>Success Rate: ${totalTests > 0 ? Math.round((passedTests / totalTests) * 100) : 0}%</p>
+                
+                <h4>Detailed Results:</h4>
+                <ul>
+                    ${Object.entries(testResults).map(([test, result]) => 
+                        `<li class="${result}">${test}: ${result.toUpperCase()}</li>`
+                    ).join('')}
+                </ul>
+            `;
+        }
+        
+        function generateReport() {
+            const report = {
+                timestamp: new Date().toISOString(),
+                summary: {
+                    totalTests: Object.keys(testResults).length,
+                    passedTests: Object.values(testResults).filter(r => r === 'pass').length,
+                    failedTests: Object.values(testResults).filter(r => r === 'fail').length,
+                    successRate: Object.keys(testResults).length > 0 ? 
+                        Math.round((Object.values(testResults).filter(r => r === 'pass').length / Object.keys(testResults).length) * 100) : 0
+                },
+                details: testResults
+            };
+            
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `navigation-test-report-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            log('📄 Report generated and downloaded');
+        }
+        
+        function clearResults() {
+            testResults = {};
+            updateResultsDisplay();
+            document.getElementById('testLog').innerHTML = '';
+            
+            // Clear radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+            
+            log('🧹 Results cleared');
+        }
+        
+        function log(message) {
+            const logDiv = document.getElementById('testLog');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        // Initialize
+        log('🧪 Manual Navigation Test loaded');
+        log('📋 Follow the test checklist to verify sidebar functionality');
+    </script>
+</body>
+</html>

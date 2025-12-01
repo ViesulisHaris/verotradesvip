@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-11-22T22:11:59.839Z",
+  "tests": [
+    {
+      "name": "Main page loads",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Login page loads",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Login form elements present",
+      "status": "FAIL",
+      "details": "Email: false, Password: false, Button: true"
+    },
+    {
+      "name": "Route / status",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Route /login status",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Route /dashboard status",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Route /trades status",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Route /strategies status",
+      "status": "PASS",
+      "details": "Status: 200"
+    },
+    {
+      "name": "Route /analytics status",
+      "status": "PASS",
+      "details": "Status: 200"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "test-main-page-load.png",
+    "test-login-page-load.png"
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 8,
+    "failed": 1,
+    "partial": 0,
+    "skipped": 0,
+    "successRate": "88.89%"
+  }
+}

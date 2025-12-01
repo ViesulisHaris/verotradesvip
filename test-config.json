@@ -1,0 +1,182 @@
+{
+  "development": {
+    "name": "Development Environment",
+    "description": "Configuration for testing in development environment",
+    "database": {
+      "url": "${NEXT_PUBLIC_SUPABASE_URL}",
+      "serviceKey": "${SUPABASE_SERVICE_ROLE_KEY}",
+      "anonKey": "${NEXT_PUBLIC_SUPABASE_ANON_KEY}"
+    },
+    "testUsers": [
+      {
+        "email": "test-user-dev@example.com",
+        "password": "test-password-123",
+        "role": "regular",
+        "description": "Regular test user for development"
+      },
+      {
+        "email": "test-admin-dev@example.com",
+        "password": "test-admin-123",
+        "role": "admin",
+        "description": "Admin test user for development"
+      },
+      {
+        "email": "test-user2-dev@example.com",
+        "password": "test-password-456",
+        "role": "regular",
+        "description": "Second regular test user for development"
+      }
+    ],
+    "testData": {
+      "strategies": [
+        {
+          "name": "Development Test Strategy 1",
+          "description": "First test strategy for development environment"
+        },
+        {
+          "name": "Development Test Strategy 2",
+          "description": "Second test strategy for development environment"
+        },
+        {
+          "name": "Development Test Strategy 3",
+          "description": "Third test strategy for development environment"
+        }
+      ],
+      "trades": [
+        {
+          "symbol": "DEV1",
+          "direction": "long",
+          "entry_price": 100.00,
+          "quantity": 10
+        },
+        {
+          "symbol": "DEV2",
+          "direction": "short",
+          "entry_price": 200.00,
+          "quantity": 5
+        },
+        {
+          "symbol": "DEV3",
+          "direction": "long",
+          "entry_price": 150.00,
+          "quantity": 15
+        }
+      ]
+    },
+    "testSettings": {
+      "allowDestructiveTests": true,
+      "allowDataCreation": true,
+      "allowDataDeletion": true,
+      "maxTestUsers": 10,
+      "maxTestStrategies": 20,
+      "maxTestTrades": 100,
+      "performanceThresholds": {
+        "queryTimeMs": 5000,
+        "creationTimeMs": 100,
+        "batchOperationTimeMs": 10000
+      }
+    },
+    "notifications": {
+      "sendEmailReports": false,
+      "logToFile": true,
+      "logLevel": "debug"
+    }
+  },
+  "production": {
+    "name": "Production Environment",
+    "description": "Configuration for testing in production environment",
+    "database": {
+      "url": "${NEXT_PUBLIC_SUPABASE_URL}",
+      "serviceKey": "${SUPABASE_SERVICE_ROLE_KEY}",
+      "anonKey": "${NEXT_PUBLIC_SUPABASE_ANON_KEY}"
+    },
+    "testUsers": [
+      {
+        "email": "test-user-prod@example.com",
+        "password": "test-password-123",
+        "role": "regular",
+        "description": "Regular test user for production"
+      },
+      {
+        "email": "test-admin-prod@example.com",
+        "password": "test-admin-123",
+        "role": "admin",
+        "description": "Admin test user for production"
+      }
+    ],
+    "testData": {
+      "strategies": [
+        {
+          "name": "Production Test Strategy 1",
+          "description": "First test strategy for production environment"
+        },
+        {
+          "name": "Production Test Strategy 2",
+          "description": "Second test strategy for production environment"
+        }
+      ],
+      "trades": [
+        {
+          "symbol": "PROD1",
+          "direction": "long",
+          "entry_price": 100.00,
+          "quantity": 10
+        },
+        {
+          "symbol": "PROD2",
+          "direction": "short",
+          "entry_price": 200.00,
+          "quantity": 5
+        }
+      ]
+    },
+    "testSettings": {
+      "allowDestructiveTests": false,
+      "allowDataCreation": false,
+      "allowDataDeletion": false,
+      "maxTestUsers": 3,
+      "maxTestStrategies": 5,
+      "maxTestTrades": 10,
+      "performanceThresholds": {
+        "queryTimeMs": 3000,
+        "creationTimeMs": 50,
+        "batchOperationTimeMs": 5000
+      }
+    },
+    "notifications": {
+      "sendEmailReports": true,
+      "logToFile": true,
+      "logLevel": "info"
+    }
+  },
+  "common": {
+    "testExecution": {
+      "timeoutMs": 300000,
+      "retryAttempts": 3,
+      "retryDelayMs": 1000,
+      "parallelTests": false,
+      "cleanupAfterTest": true
+    },
+    "reporting": {
+      "outputFormat": "json",
+      "includeStackTrace": true,
+      "includePerformanceMetrics": true,
+      "saveDetailedResults": true,
+      "reportRetentionDays": 30
+    },
+    "validation": {
+      "checkForeignKeyConstraints": true,
+      "checkRLSPolicies": true,
+      "checkTableStructure": true,
+      "checkDataIntegrity": true,
+      "checkPerformance": true
+    },
+    "rollback": {
+      "enabled": true,
+      "createBackupBeforeTest": true,
+      "backupRetentionDays": 7,
+      "autoRollbackOnFailure": false,
+      "manualRollbackRequired": true
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-11-17T17:26:10.793Z",
+  "testResults": {
+    "dataGeneration": {
+      "deleteAllData": true,
+      "createStrategies": true,
+      "generateTrades": true,
+      "verifyData": true,
+      "actualResults": {}
+    },
+    "confluenceTesting": {
+      "pageLoad": true,
+      "emotionalAnalysis": false,
+      "filtering": false,
+      "dataVisualization": true
+    },
+    "dashboardTesting": {
+      "pageLoad": true,
+      "dataSync": false,
+      "identicalData": false
+    },
+    "newTradeTesting": {
+      "tradeAddition": false,
+      "immediateUpdate": false,
+      "crossTabSync": false
+    },
+    "summary": {
+      "totalTests": 11,
+      "passedTests": 7,
+      "failedTests": 4,
+      "issues": [
+        "Emotional Analysis Chart: Emotional radar chart found",
+        "Filter Controls: Filter controls found",
+        "Dashboard Data Sync: 0 stat cards found",
+        "Identical Data Display: Trade data visible on dashboard"
+      ]
+    }
+  },
+  "summary": {
+    "totalTests": 11,
+    "passedTests": 7,
+    "failedTests": 4,
+    "successRate": "63.6%",
+    "overallStatus": "FAILED"
+  },
+  "expectedResults": {
+    "totalTrades": 100,
+    "winRate": 71,
+    "totalStrategies": 5,
+    "winningTrades": 71,
+    "losingTrades": 29
+  },
+  "actualResults": {},
+  "issues": [
+    "Emotional Analysis Chart: Emotional radar chart found",
+    "Filter Controls: Filter controls found",
+    "Dashboard Data Sync: 0 stat cards found",
+    "Identical Data Display: Trade data visible on dashboard"
+  ]
+}

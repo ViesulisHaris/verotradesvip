@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-11-17T17:09:17.810Z",
+  "phases": {
+    "AUTH": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:09:18.378Z",
+          "level": "info",
+          "message": "Starting user authentication"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:20.714Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-page-loaded-1763399360351.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:23.055Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-login-form-filled-1763399362787.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:24.324Z",
+          "level": "success",
+          "message": "✅ Authentication successful"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:24.580Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/AUTH-post-login-success-1763399364324.png"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:29.394Z",
+          "level": "info",
+          "message": "Extracting JWT token from browser storage"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:29.400Z",
+          "level": "error",
+          "message": "❌ No JWT token found in storage or cookies"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:09:18.378Z",
+      "endTime": "2025-11-17T17:09:24.580Z"
+    },
+    "ACCESS": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:09:24.580Z",
+          "level": "info",
+          "message": "Accessing test page at /test-comprehensive-data"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:28.224Z",
+          "level": "success",
+          "message": "✅ Test page loaded successfully"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:28.356Z",
+          "level": "info",
+          "message": "Screenshot saved: ./test-screenshots/ACCESS-test-page-loaded-1763399368224.png"
+        }
+      ],
+      "success": true,
+      "startTime": "2025-11-17T17:09:24.580Z",
+      "endTime": "2025-11-17T17:09:28.224Z"
+    },
+    "WORKFLOW": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:09:28.356Z",
+          "level": "info",
+          "message": "Starting complete workflow execution"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:28.357Z",
+          "level": "info",
+          "message": "Executing action: delete-all"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:29.394Z",
+          "level": "info",
+          "message": "Executing API request: delete-all"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:29.400Z",
+          "level": "error",
+          "message": "❌ delete-all failed: No JWT token available for API authentication"
+        },
+        {
+          "timestamp": "2025-11-17T17:09:29.400Z",
+          "level": "error",
+          "message": "❌ delete-all failed: API request for delete-all failed"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:09:28.357Z"
+    },
+    "FATAL": {
+      "logs": [
+        {
+          "timestamp": "2025-11-17T17:09:29.400Z",
+          "level": "error",
+          "message": "Test failed with error: Delete all data step failed"
+        }
+      ],
+      "success": false,
+      "startTime": "2025-11-17T17:09:29.400Z"
+    }
+  },
+  "overallSuccess": false,
+  "errors": [
+    {
+      "phase": "AUTH",
+      "message": "❌ No JWT token found in storage or cookies",
+      "timestamp": "2025-11-17T17:09:29.400Z"
+    },
+    {
+      "phase": "WORKFLOW",
+      "message": "❌ delete-all failed: No JWT token available for API authentication",
+      "timestamp": "2025-11-17T17:09:29.400Z"
+    },
+    {
+      "phase": "WORKFLOW",
+      "message": "❌ delete-all failed: API request for delete-all failed",
+      "timestamp": "2025-11-17T17:09:29.400Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Test failed with error: Delete all data step failed",
+      "timestamp": "2025-11-17T17:09:29.400Z"
+    },
+    {
+      "phase": "FATAL",
+      "message": "Delete all data step failed",
+      "timestamp": "2025-11-17T17:09:29.400Z"
+    }
+  ],
+  "warnings": []
+}

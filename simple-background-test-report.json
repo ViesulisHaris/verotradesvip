@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-11-19T21:14:03.744Z",
+  "summary": {
+    "totalScreenshots": 12,
+    "requiresManualVerification": true
+  },
+  "details": [
+    {
+      "screenSize": "Desktop",
+      "resolution": "1920x1080",
+      "positions": [
+        {
+          "position": "top",
+          "screenshotPath": "background-test-desktop-top.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "middle",
+          "screenshotPath": "background-test-desktop-middle.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "bottom",
+          "screenshotPath": "background-test-desktop-bottom.png",
+          "requiresManualCheck": true
+        }
+      ]
+    },
+    {
+      "screenSize": "Laptop",
+      "resolution": "1366x768",
+      "positions": [
+        {
+          "position": "top",
+          "screenshotPath": "background-test-laptop-top.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "middle",
+          "screenshotPath": "background-test-laptop-middle.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "bottom",
+          "screenshotPath": "background-test-laptop-bottom.png",
+          "requiresManualCheck": true
+        }
+      ]
+    },
+    {
+      "screenSize": "Tablet",
+      "resolution": "768x1024",
+      "positions": [
+        {
+          "position": "top",
+          "screenshotPath": "background-test-tablet-top.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "middle",
+          "screenshotPath": "background-test-tablet-middle.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "bottom",
+          "screenshotPath": "background-test-tablet-bottom.png",
+          "requiresManualCheck": true
+        }
+      ]
+    },
+    {
+      "screenSize": "Mobile",
+      "resolution": "375x667",
+      "positions": [
+        {
+          "position": "top",
+          "screenshotPath": "background-test-mobile-top.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "middle",
+          "screenshotPath": "background-test-mobile-middle.png",
+          "requiresManualCheck": true
+        },
+        {
+          "position": "bottom",
+          "screenshotPath": "background-test-mobile-bottom.png",
+          "requiresManualCheck": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "testInfo": {
+    "timestamp": "2025-11-19T17:17:54.349Z",
+    "testName": "Performance Optimization Validation",
+    "version": "1.0.0"
+  },
+  "sidebarMetrics": {
+    "transitionDurations": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "domReflows": [
+      135,
+      0,
+      0,
+      0,
+      0
+    ],
+    "javascriptExecution": [
+      453.69999998807907,
+      468.80000001192093,
+      446.30000001192093,
+      435,
+      465.80000001192093
+    ],
+    "beforeOptimization": {
+      "domReflows": 2512,
+      "javascriptExecution": 1040,
+      "transitionDuration": 502
+    },
+    "afterOptimization": {
+      "domReflows": 27,
+      "javascriptExecution": 453.9200000047684,
+      "transitionDuration": 0
+    }
+  },
+  "chartMetrics": {
+    "resizeEvents": [],
+    "animationFrames": [],
+    "renderTimes": [],
+    "transitionAwareBehavior": []
+  },
+  "functionalValidation": {
+    "sidebarToggle": true,
+    "chartRendering": false,
+    "interactiveElements": true,
+    "visualGlitches": true
+  },
+  "summary": {
+    "overallSuccess": false,
+    "improvements": {
+      "domReflowsReduction": "98.9",
+      "javascriptImprovement": "56.4",
+      "transitionImprovement": "100.0"
+    },
+    "remainingIssues": []
+  },
+  "performanceTargets": {
+    "domReflowsTarget": "<200",
+    "javascriptExecutionTarget": "<1000ms",
+    "transitionDurationTarget": "~300ms"
+  },
+  "actualResults": {
+    "domReflows": "27",
+    "javascriptExecution": "453.92ms",
+    "transitionDuration": "0.00ms"
+  },
+  "targetsMet": {
+    "domReflows": true,
+    "javascriptExecution": true,
+    "transitionDuration": true
+  }
+}

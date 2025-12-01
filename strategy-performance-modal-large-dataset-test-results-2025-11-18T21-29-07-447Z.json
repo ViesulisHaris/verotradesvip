@@ -1,0 +1,604 @@
+{
+  "summary": {
+    "totalTests": 12,
+    "passedTests": 7,
+    "failedTests": 5,
+    "startTime": "2025-11-18T21:28:59.314Z",
+    "endTime": "2025-11-18T21:29:07.447Z",
+    "duration": 8133
+  },
+  "modalLoadingPerformance": {
+    "tests": [
+      {
+        "name": "Modal Loading - Full dataset loading time",
+        "status": "failed",
+        "message": "Loaded 92 trades in 299ms",
+        "details": {
+          "loadingTime": 299,
+          "tradeCount": 92,
+          "expectedCount": 1000,
+          "threshold": 5000,
+          "testDuration": 299
+        },
+        "timestamp": "2025-11-18T21:29:00.210Z"
+      },
+      {
+        "name": "Modal Loading - Strategy performance calculation time",
+        "status": "passed",
+        "message": "Calculated performance for 9 strategies in 123ms",
+        "details": {
+          "calculationTime": 123,
+          "strategyCount": 9,
+          "tradeCount": 92,
+          "threshold": 3000,
+          "testDuration": 124
+        },
+        "timestamp": "2025-11-18T21:29:00.334Z"
+      },
+      {
+        "name": "Modal Loading - Memory usage with large dataset",
+        "status": "passed",
+        "message": "Processed 92 trades with estimated 0MB memory usage",
+        "details": {
+          "processingTime": 161,
+          "tradeCount": 92,
+          "estimatedMemoryUsage": 145888,
+          "threshold": 104857600,
+          "testDuration": 161
+        },
+        "timestamp": "2025-11-18T21:29:00.495Z"
+      }
+    ],
+    "overallStatus": "partial"
+  },
+  "performanceMetricsAccuracy": {
+    "tests": [
+      {
+        "name": "Performance Metrics - Win rate calculation accuracy",
+        "status": "passed",
+        "message": "Average win rate calculation accuracy: 100.0%",
+        "details": {
+          "averageAccuracy": 100,
+          "accuracyResults": [
+            {
+              "strategyName": "Momentum Breakout",
+              "expectedWinRate": 55.55555555555556,
+              "calculatedWinRate": 55.55555555555556,
+              "accuracy": 0,
+              "tradeCount": 9
+            },
+            {
+              "strategyName": "Volatility Trading",
+              "expectedWinRate": 41.17647058823529,
+              "calculatedWinRate": 41.17647058823529,
+              "accuracy": 0,
+              "tradeCount": 17
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "expectedWinRate": 50,
+              "calculatedWinRate": 50,
+              "accuracy": 0,
+              "tradeCount": 4
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "expectedWinRate": 14.285714285714285,
+              "calculatedWinRate": 14.285714285714285,
+              "accuracy": 0,
+              "tradeCount": 14
+            },
+            {
+              "strategyName": "Scalping Strategy",
+              "expectedWinRate": 46.666666666666664,
+              "calculatedWinRate": 46.666666666666664,
+              "accuracy": 0,
+              "tradeCount": 15
+            },
+            {
+              "strategyName": "Trend Following",
+              "expectedWinRate": 50,
+              "calculatedWinRate": 50,
+              "accuracy": 0,
+              "tradeCount": 2
+            },
+            {
+              "strategyName": "Trend Following",
+              "expectedWinRate": 42.10526315789473,
+              "calculatedWinRate": 42.10526315789473,
+              "accuracy": 0,
+              "tradeCount": 19
+            },
+            {
+              "strategyName": "Momentum Breakout",
+              "expectedWinRate": 75,
+              "calculatedWinRate": 75,
+              "accuracy": 0,
+              "tradeCount": 4
+            }
+          ],
+          "threshold": 95,
+          "testDuration": 1579
+        },
+        "timestamp": "2025-11-18T21:29:02.294Z"
+      },
+      {
+        "name": "Performance Metrics - P&L calculation accuracy",
+        "status": "failed",
+        "message": "Average P&L calculation accuracy: 0.0%",
+        "details": {
+          "averageAccuracy": 0,
+          "accuracyResults": [
+            {
+              "strategyName": "Momentum Breakout",
+              "expectedPnL": 461.21999999999997,
+              "calculatedPnL": 461.21999999999997,
+              "accuracy": 0,
+              "tradeCount": 9
+            },
+            {
+              "strategyName": "Volatility Trading",
+              "expectedPnL": -622.6299999999999,
+              "calculatedPnL": -622.6299999999999,
+              "accuracy": 0,
+              "tradeCount": 17
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "expectedPnL": 170,
+              "calculatedPnL": 170,
+              "accuracy": 0,
+              "tradeCount": 4
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "expectedPnL": -1488.2399999999998,
+              "calculatedPnL": -1488.2399999999998,
+              "accuracy": 0,
+              "tradeCount": 14
+            },
+            {
+              "strategyName": "Scalping Strategy",
+              "expectedPnL": -883.0800000000002,
+              "calculatedPnL": -883.0800000000002,
+              "accuracy": 0,
+              "tradeCount": 15
+            },
+            {
+              "strategyName": "Trend Following",
+              "expectedPnL": -5,
+              "calculatedPnL": -5,
+              "accuracy": 0,
+              "tradeCount": 2
+            },
+            {
+              "strategyName": "Trend Following",
+              "expectedPnL": -471.87999999999994,
+              "calculatedPnL": -471.87999999999994,
+              "accuracy": 0,
+              "tradeCount": 19
+            },
+            {
+              "strategyName": "Momentum Breakout",
+              "expectedPnL": 475,
+              "calculatedPnL": 475,
+              "accuracy": 0,
+              "tradeCount": 4
+            }
+          ],
+          "threshold": 95,
+          "testDuration": 1352
+        },
+        "timestamp": "2025-11-18T21:29:03.646Z"
+      },
+      {
+        "name": "Performance Metrics - Complex metrics calculation accuracy",
+        "status": "failed",
+        "message": "Calculated complex metrics for 1 strategies",
+        "details": {
+          "metricsResults": [
+            {
+              "strategyName": "Volatility Trading",
+              "profitFactor": 0.7459617369733123,
+              "sharpeRatio": -0.13495627110024414,
+              "maxDrawdown": 1075.73,
+              "tradeCount": 17
+            }
+          ],
+          "strategiesTested": 1,
+          "testDuration": 468
+        },
+        "timestamp": "2025-11-18T21:29:04.114Z"
+      }
+    ],
+    "overallStatus": "failed"
+  },
+  "dataRenderingPerformance": {
+    "tests": [
+      {
+        "name": "Data Rendering - Large dataset rendering performance",
+        "status": "passed",
+        "message": "Prepared 92 trades for rendering in 217ms",
+        "details": {
+          "renderTime": 217,
+          "tradeCount": 92,
+          "threshold": 5000,
+          "testDuration": 217
+        },
+        "timestamp": "2025-11-18T21:29:04.582Z"
+      },
+      {
+        "name": "Data Rendering - Chart data preparation performance",
+        "status": "passed",
+        "message": "Prepared chart data for 92 trades in 140ms",
+        "details": {
+          "chartPrepTime": 140,
+          "tradeCount": 92,
+          "equityCurvePoints": 92,
+          "strategyCount": 9,
+          "threshold": 3000,
+          "testDuration": 140
+        },
+        "timestamp": "2025-11-18T21:29:04.722Z"
+      }
+    ],
+    "overallStatus": "passed"
+  },
+  "individualStrategyAccuracy": {
+    "tests": [
+      {
+        "name": "Individual Strategy - Trade count accuracy",
+        "status": "failed",
+        "message": "Verified trade counts for 11 strategies (84 total trades)",
+        "details": {
+          "tradeCountResults": [
+            {
+              "strategyName": "Momentum Breakout",
+              "tradeCount": 9
+            },
+            {
+              "strategyName": "Volatility Trading",
+              "tradeCount": 17
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "tradeCount": 4
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "tradeCount": 14
+            },
+            {
+              "strategyName": "Scalping Strategy",
+              "tradeCount": 15
+            },
+            {
+              "strategyName": "Trend Following",
+              "tradeCount": 2
+            },
+            {
+              "strategyName": "User Test Strategy",
+              "tradeCount": 0
+            },
+            {
+              "strategyName": "Test Strategy 1763210823814",
+              "tradeCount": 0
+            },
+            {
+              "strategyName": "Test Strategy 1763212151857",
+              "tradeCount": 0
+            },
+            {
+              "strategyName": "Trend Following",
+              "tradeCount": 19
+            },
+            {
+              "strategyName": "Momentum Breakout",
+              "tradeCount": 4
+            }
+          ],
+          "totalTrades": 84,
+          "expectedMinimum": 900,
+          "testDuration": 1342
+        },
+        "timestamp": "2025-11-18T21:29:06.317Z"
+      },
+      {
+        "name": "Individual Strategy - Performance metrics accuracy",
+        "status": "passed",
+        "message": "Calculated comprehensive metrics for 3 strategies",
+        "details": {
+          "performanceResults": [
+            {
+              "strategyName": "Momentum Breakout",
+              "totalTrades": 9,
+              "totalPnL": 461.21999999999997,
+              "winRate": 55.55555555555556,
+              "avgWin": 199.98,
+              "avgLoss": 134.67000000000002,
+              "profitFactor": 1.4849632434840718,
+              "largestWin": 407.21,
+              "largestLoss": -231.64
+            },
+            {
+              "strategyName": "Volatility Trading",
+              "totalTrades": 17,
+              "totalPnL": -622.6299999999999,
+              "winRate": 41.17647058823529,
+              "avgWin": 261.1857142857143,
+              "avgLoss": 245.093,
+              "profitFactor": 1.0656596242475889,
+              "largestWin": 430.03,
+              "largestLoss": -400.32
+            },
+            {
+              "strategyName": "Mean Reversion",
+              "totalTrades": 4,
+              "totalPnL": 170,
+              "winRate": 50,
+              "avgWin": 175,
+              "avgLoss": 90,
+              "profitFactor": 1.9444444444444444,
+              "largestWin": 200,
+              "largestLoss": -135
+            }
+          ],
+          "strategiesTested": 3,
+          "testDuration": 432
+        },
+        "timestamp": "2025-11-18T21:29:06.750Z"
+      }
+    ],
+    "overallStatus": "failed"
+  },
+  "scalabilityIssues": {
+    "tests": [
+      {
+        "name": "Scalability - Performance degradation analysis",
+        "status": "passed",
+        "message": "Performance degradation factor: 0.98x",
+        "details": {
+          "performanceResults": [
+            {
+              "dataSize": 100,
+              "actualTradeCount": 92,
+              "processingTime": 104,
+              "strategiesProcessed": 9
+            },
+            {
+              "dataSize": 500,
+              "actualTradeCount": 92,
+              "processingTime": 116,
+              "strategiesProcessed": 9
+            },
+            {
+              "dataSize": 1000,
+              "actualTradeCount": 92,
+              "processingTime": 102,
+              "strategiesProcessed": 9
+            }
+          ],
+          "timePerTrade": [
+            1.1304347826086956,
+            1.2608695652173914,
+            1.108695652173913
+          ],
+          "performanceDegradation": 0.9807692307692308,
+          "testDuration": 322
+        },
+        "timestamp": "2025-11-18T21:29:07.304Z"
+      },
+      {
+        "name": "Scalability - Memory efficiency analysis",
+        "status": "failed",
+        "message": "Memory efficiency analysis completed in 142ms",
+        "details": {
+          "approaches": [
+            {
+              "name": "All at once",
+              "time": 0,
+              "memoryEstimate": 67280
+            },
+            {
+              "name": "Chunked processing",
+              "time": 1,
+              "memoryEstimate": 67282
+            }
+          ],
+          "totalTime": 142,
+          "tradeCount": 92,
+          "testDuration": 143
+        },
+        "timestamp": "2025-11-18T21:29:07.447Z"
+      }
+    ],
+    "overallStatus": "failed"
+  },
+  "issues": [
+    {
+      "test": "Modal Loading - Full dataset loading time",
+      "category": "modalLoadingPerformance",
+      "message": "Loaded 92 trades in 299ms",
+      "details": {
+        "loadingTime": 299,
+        "tradeCount": 92,
+        "expectedCount": 1000,
+        "threshold": 5000,
+        "testDuration": 299
+      }
+    },
+    {
+      "test": "Performance Metrics - P&L calculation accuracy",
+      "category": "performanceMetricsAccuracy",
+      "message": "Average P&L calculation accuracy: 0.0%",
+      "details": {
+        "averageAccuracy": 0,
+        "accuracyResults": [
+          {
+            "strategyName": "Momentum Breakout",
+            "expectedPnL": 461.21999999999997,
+            "calculatedPnL": 461.21999999999997,
+            "accuracy": 0,
+            "tradeCount": 9
+          },
+          {
+            "strategyName": "Volatility Trading",
+            "expectedPnL": -622.6299999999999,
+            "calculatedPnL": -622.6299999999999,
+            "accuracy": 0,
+            "tradeCount": 17
+          },
+          {
+            "strategyName": "Mean Reversion",
+            "expectedPnL": 170,
+            "calculatedPnL": 170,
+            "accuracy": 0,
+            "tradeCount": 4
+          },
+          {
+            "strategyName": "Mean Reversion",
+            "expectedPnL": -1488.2399999999998,
+            "calculatedPnL": -1488.2399999999998,
+            "accuracy": 0,
+            "tradeCount": 14
+          },
+          {
+            "strategyName": "Scalping Strategy",
+            "expectedPnL": -883.0800000000002,
+            "calculatedPnL": -883.0800000000002,
+            "accuracy": 0,
+            "tradeCount": 15
+          },
+          {
+            "strategyName": "Trend Following",
+            "expectedPnL": -5,
+            "calculatedPnL": -5,
+            "accuracy": 0,
+            "tradeCount": 2
+          },
+          {
+            "strategyName": "Trend Following",
+            "expectedPnL": -471.87999999999994,
+            "calculatedPnL": -471.87999999999994,
+            "accuracy": 0,
+            "tradeCount": 19
+          },
+          {
+            "strategyName": "Momentum Breakout",
+            "expectedPnL": 475,
+            "calculatedPnL": 475,
+            "accuracy": 0,
+            "tradeCount": 4
+          }
+        ],
+        "threshold": 95,
+        "testDuration": 1352
+      }
+    },
+    {
+      "test": "Performance Metrics - Complex metrics calculation accuracy",
+      "category": "performanceMetricsAccuracy",
+      "message": "Calculated complex metrics for 1 strategies",
+      "details": {
+        "metricsResults": [
+          {
+            "strategyName": "Volatility Trading",
+            "profitFactor": 0.7459617369733123,
+            "sharpeRatio": -0.13495627110024414,
+            "maxDrawdown": 1075.73,
+            "tradeCount": 17
+          }
+        ],
+        "strategiesTested": 1,
+        "testDuration": 468
+      }
+    },
+    {
+      "test": "Individual Strategy - Trade count accuracy",
+      "category": "individualStrategyAccuracy",
+      "message": "Verified trade counts for 11 strategies (84 total trades)",
+      "details": {
+        "tradeCountResults": [
+          {
+            "strategyName": "Momentum Breakout",
+            "tradeCount": 9
+          },
+          {
+            "strategyName": "Volatility Trading",
+            "tradeCount": 17
+          },
+          {
+            "strategyName": "Mean Reversion",
+            "tradeCount": 4
+          },
+          {
+            "strategyName": "Mean Reversion",
+            "tradeCount": 14
+          },
+          {
+            "strategyName": "Scalping Strategy",
+            "tradeCount": 15
+          },
+          {
+            "strategyName": "Trend Following",
+            "tradeCount": 2
+          },
+          {
+            "strategyName": "User Test Strategy",
+            "tradeCount": 0
+          },
+          {
+            "strategyName": "Test Strategy 1763210823814",
+            "tradeCount": 0
+          },
+          {
+            "strategyName": "Test Strategy 1763212151857",
+            "tradeCount": 0
+          },
+          {
+            "strategyName": "Trend Following",
+            "tradeCount": 19
+          },
+          {
+            "strategyName": "Momentum Breakout",
+            "tradeCount": 4
+          }
+        ],
+        "totalTrades": 84,
+        "expectedMinimum": 900,
+        "testDuration": 1342
+      }
+    },
+    {
+      "test": "Scalability - Memory efficiency analysis",
+      "category": "scalabilityIssues",
+      "message": "Memory efficiency analysis completed in 142ms",
+      "details": {
+        "approaches": [
+          {
+            "name": "All at once",
+            "time": 0,
+            "memoryEstimate": 67280
+          },
+          {
+            "name": "Chunked processing",
+            "time": 1,
+            "memoryEstimate": 67282
+          }
+        ],
+        "totalTime": 142,
+        "tradeCount": 92,
+        "testDuration": 143
+      }
+    }
+  ],
+  "recommendations": [
+    "Review and fix performance metric calculation algorithms",
+    "Verify data integrity between strategies and trades tables",
+    "Review and fix failing tests before deploying to production",
+    "Overall test pass rate is below 80%. Consider comprehensive system review",
+    "Consider implementing data archiving for very old trades to maintain performance",
+    "Add performance monitoring to track modal loading times in production",
+    "Implement progressive loading for strategy performance data"
+  ]
+}

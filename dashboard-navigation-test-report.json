@@ -1,0 +1,221 @@
+{
+  "summary": {
+    "totalTests": 21,
+    "passedTests": 0,
+    "failedTests": 21,
+    "startTime": "2025-11-30T18:22:44.395Z",
+    "endTime": "2025-11-30T18:23:25.773Z"
+  },
+  "buttonTests": [
+    {
+      "name": "Dashboard",
+      "selector": "a[href=\"/dashboard\"]",
+      "expectedUrl": "http://localhost:3001/dashboard",
+      "description": "Navigation to dashboard page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/dashboard\"]",
+      "details": {}
+    },
+    {
+      "name": "Trades",
+      "selector": "a[href=\"/trades\"]",
+      "expectedUrl": "http://localhost:3001/trades",
+      "description": "Navigation to trades list page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/trades\"]",
+      "details": {}
+    },
+    {
+      "name": "Log Trade",
+      "selector": "a[href=\"/log-trade\"]",
+      "expectedUrl": "http://localhost:3001/log-trade",
+      "description": "Navigation to trade logging page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/log-trade\"]",
+      "details": {}
+    },
+    {
+      "name": "Calendar",
+      "selector": "a[href=\"/calendar\"]",
+      "expectedUrl": "http://localhost:3001/calendar",
+      "description": "Navigation to calendar page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/calendar\"]",
+      "details": {}
+    },
+    {
+      "name": "Strategy",
+      "selector": "a[href=\"/strategies\"]",
+      "expectedUrl": "http://localhost:3001/strategies",
+      "description": "Navigation to strategies management page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/strategies\"]",
+      "details": {}
+    },
+    {
+      "name": "Confluence",
+      "selector": "a[href=\"/confluence\"]",
+      "expectedUrl": "http://localhost:3001/confluence",
+      "description": "Navigation to confluence page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/confluence\"]",
+      "details": {}
+    },
+    {
+      "name": "Settings",
+      "selector": "a[href=\"/settings\"]",
+      "expectedUrl": "http://localhost:3001/settings",
+      "description": "Navigation to settings page",
+      "passed": false,
+      "actualUrl": null,
+      "httpStatus": null,
+      "loadTime": null,
+      "error": "Button not found with selector: a[href=\"/settings\"]",
+      "details": {}
+    }
+  ],
+  "visualTests": [],
+  "keyboardTests": [
+    {
+      "name": "Dashboard",
+      "selector": "a[href=\"/dashboard\"]",
+      "expectedUrl": "http://localhost:3001/dashboard",
+      "passed": false,
+      "error": "Could not focus button with 50 tabs",
+      "details": {}
+    },
+    {
+      "name": "Trades",
+      "selector": "a[href=\"/trades\"]",
+      "expectedUrl": "http://localhost:3001/trades",
+      "passed": false,
+      "error": "Could not focus button with 50 tabs",
+      "details": {}
+    },
+    {
+      "name": "Log Trade",
+      "selector": "a[href=\"/log-trade\"]",
+      "expectedUrl": "http://localhost:3001/log-trade",
+      "passed": false,
+      "error": "Could not focus button with 50 tabs",
+      "details": {}
+    },
+    {
+      "name": "Calendar",
+      "selector": "a[href=\"/calendar\"]",
+      "expectedUrl": "http://localhost:3001/calendar",
+      "passed": false,
+      "error": "Could not focus button with 50 tabs",
+      "details": {}
+    },
+    {
+      "name": "Strategy",
+      "selector": "a[href=\"/strategies\"]",
+      "expectedUrl": "http://localhost:3001/strategies",
+      "passed": false,
+      "error": "Execution context was destroyed",
+      "details": {}
+    },
+    {
+      "name": "Confluence",
+      "selector": "a[href=\"/confluence\"]",
+      "expectedUrl": "http://localhost:3001/confluence",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Settings",
+      "selector": "a[href=\"/settings\"]",
+      "expectedUrl": "http://localhost:3001/settings",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    }
+  ],
+  "authenticationTests": [
+    {
+      "name": "Dashboard",
+      "selector": "a[href=\"/dashboard\"]",
+      "expectedUrl": "http://localhost:3001/dashboard",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Trades",
+      "selector": "a[href=\"/trades\"]",
+      "expectedUrl": "http://localhost:3001/trades",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Log Trade",
+      "selector": "a[href=\"/log-trade\"]",
+      "expectedUrl": "http://localhost:3001/log-trade",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Calendar",
+      "selector": "a[href=\"/calendar\"]",
+      "expectedUrl": "http://localhost:3001/calendar",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Strategy",
+      "selector": "a[href=\"/strategies\"]",
+      "expectedUrl": "http://localhost:3001/strategies",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Confluence",
+      "selector": "a[href=\"/confluence\"]",
+      "expectedUrl": "http://localhost:3001/confluence",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    },
+    {
+      "name": "Settings",
+      "selector": "a[href=\"/settings\"]",
+      "expectedUrl": "http://localhost:3001/settings",
+      "passed": false,
+      "error": "Attempted to use detached Frame '3846D38DB1B263B2829BA338AC09CA07'.",
+      "details": {}
+    }
+  ],
+  "consoleErrors": [
+    {
+      "timestamp": "2025-11-30T18:22:45.876Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "generatedAt": "2025-11-30T18:23:26.270Z",
+  "testDuration": 41378
+}

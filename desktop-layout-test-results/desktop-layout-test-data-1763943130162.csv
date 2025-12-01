@@ -1,0 +1,10 @@
+Viewport Name,Width,Height,Type,Content Width,Content Utilization %,Sidebar Type,Sidebar Width,Has Mobile-Like,Expected Sidebar,Sidebar Correct,Timestamp
+Mobile Small,375,667,mobile,356,95.0,mobile,0,NO,mobile,YES,2025-11-24T00:12:10.109Z
+Mobile Large,414,896,mobile,393,95.0,mobile,0,NO,mobile,YES,2025-11-24T00:12:10.112Z
+Tablet Small,768,1024,tablet,691,90.0,mobile,0,NO,mobile,YES,2025-11-24T00:12:10.115Z
+Tablet Large,834,1112,tablet,751,90.0,mobile,0,NO,mobile,YES,2025-11-24T00:12:10.116Z
+Desktop Small,1024,768,desktop,576,75.0,desktop,256,NO,desktop,YES,2025-11-24T00:12:10.117Z
+Desktop Medium,1280,800,desktop,819,80.0,desktop,256,NO,desktop,YES,2025-11-24T00:12:10.119Z
+Desktop Large,1440,900,desktop,974,82.2,desktop,256,NO,desktop,YES,2025-11-24T00:12:10.120Z
+Desktop Ultra,1920,1080,desktop,1442,86.7,desktop,256,NO,desktop,YES,2025-11-24T00:12:10.121Z
+Desktop Ultra Wide,2560,1440,desktop,2074,90.0,desktop,256,NO,desktop,YES,2025-11-24T00:12:10.122Z

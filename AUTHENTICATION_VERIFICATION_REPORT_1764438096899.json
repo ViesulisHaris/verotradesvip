@@ -1,0 +1,232 @@
+{
+  "environmentVariables": {
+    "NEXT_PUBLIC_SUPABASE_URL_EXISTS": {
+      "test": "NEXT_PUBLIC_SUPABASE_URL_EXISTS",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.886Z",
+      "value": "SET",
+      "length": 40
+    },
+    "NEXT_PUBLIC_SUPABASE_URL_HTTPS": {
+      "test": "NEXT_PUBLIC_SUPABASE_URL_HTTPS",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.887Z",
+      "isHTTPS": true,
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co"
+    },
+    "NEXT_PUBLIC_SUPABASE_URL_DOMAIN": {
+      "test": "NEXT_PUBLIC_SUPABASE_URL_DOMAIN",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.887Z",
+      "correctDomain": true,
+      "domain": "https://bzmixuxautbmqbrqtufx.supabase.co"
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY_EXISTS": {
+      "test": "NEXT_PUBLIC_SUPABASE_ANON_KEY_EXISTS",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "value": "SET",
+      "length": 208
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY_FORMAT": {
+      "test": "NEXT_PUBLIC_SUPABASE_ANON_KEY_FORMAT",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "startsWithJWT": true,
+      "segments": 3,
+      "expectedSegments": 3
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY_STRUCTURE": {
+      "test": "NEXT_PUBLIC_SUPABASE_ANON_KEY_STRUCTURE",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "segments": 3,
+      "expectedSegments": 3
+    },
+    "SUPABASE_SERVICE_ROLE_KEY_EXISTS": {
+      "test": "SUPABASE_SERVICE_ROLE_KEY_EXISTS",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "value": "SET",
+      "length": 219
+    },
+    "SUPABASE_SERVICE_ROLE_KEY_FORMAT": {
+      "test": "SUPABASE_SERVICE_ROLE_KEY_FORMAT",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "startsWithJWT": true,
+      "segments": 3,
+      "expectedSegments": 3
+    },
+    "SUPABASE_SERVICE_ROLE_KEY_STRUCTURE": {
+      "test": "SUPABASE_SERVICE_ROLE_KEY_STRUCTURE",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "segments": 3,
+      "expectedSegments": 3
+    },
+    "DEV_SERVER_ENVIRONMENT": {
+      "test": "DEV_SERVER_ENVIRONMENT",
+      "passed": false,
+      "timestamp": "2025-11-29T17:41:36.898Z"
+    }
+  },
+  "supabaseClient": {
+    "CLIENT_CREATION": {
+      "test": "CLIENT_CREATION",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.913Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co",
+      "hasAuth": true,
+      "hasRealtime": true
+    },
+    "CLIENT_HAS_AUTH": {
+      "test": "CLIENT_HAS_AUTH",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.913Z"
+    },
+    "CLIENT_HAS_REALTIME": {
+      "test": "CLIENT_HAS_REALTIME",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.913Z"
+    },
+    "CLIENT_HAS_STORAGE": {
+      "test": "CLIENT_HAS_STORAGE",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.913Z"
+    }
+  },
+  "apiKeyValidation": {
+    "JWT_THREE_SEGMENTS": {
+      "test": "JWT_THREE_SEGMENTS",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.888Z",
+      "actual": 3,
+      "expected": 3,
+      "segments": [
+        "eyJhbGciOiJIUzI1NiIs...",
+        "eyJpc3MiOiJzdXBhYmFz...",
+        "Lm4bo_r__27b0Los00Tp..."
+      ]
+    },
+    "JWT_HEADER_VALID": {
+      "test": "JWT_HEADER_VALID",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "headerLength": 36,
+      "expected": "> 20"
+    },
+    "JWT_PAYLOAD_VALID": {
+      "test": "JWT_PAYLOAD_VALID",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "payloadLength": 127,
+      "expected": "> 20"
+    },
+    "JWT_SIGNATURE_VALID": {
+      "test": "JWT_SIGNATURE_VALID",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "signatureLength": 43,
+      "expected": "> 30"
+    },
+    "KEY_LENGTH_SUFFICIENT": {
+      "test": "KEY_LENGTH_SUFFICIENT",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "actual": 208,
+      "expected": ">= 200"
+    },
+    "JWT_HEADER_ALGORITHM": {
+      "test": "JWT_HEADER_ALGORITHM",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "algorithm": "HS256",
+      "expected": "HS256"
+    },
+    "JWT_HEADER_TYPE": {
+      "test": "JWT_HEADER_TYPE",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.889Z",
+      "type": "JWT",
+      "expected": "JWT"
+    }
+  },
+  "networkResolution": {
+    "BASIC_API_CONNECTIVITY": {
+      "test": "BASIC_API_CONNECTIVITY",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.914Z",
+      "hasSession": false
+    },
+    "NO_NAME_RESOLUTION_ERROR": {
+      "test": "NO_NAME_RESOLUTION_ERROR",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.914Z"
+    },
+    "NO_FALLBACK_ERROR": {
+      "test": "NO_FALLBACK_ERROR",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:33.914Z"
+    },
+    "DIRECT_API_CONNECTIVITY": {
+      "test": "DIRECT_API_CONNECTIVITY",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.453Z",
+      "status": 200,
+      "statusText": "OK",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co"
+    }
+  },
+  "authenticationFlow": {
+    "INVALID_CREDENTIALS_FAIL": {
+      "test": "INVALID_CREDENTIALS_FAIL",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.885Z",
+      "hasError": true,
+      "hasSession": false,
+      "errorMessage": "Invalid login credentials",
+      "errorStatus": 400
+    },
+    "INVALID_CREDENTIALS_AUTH_ERROR": {
+      "test": "INVALID_CREDENTIALS_AUTH_ERROR",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.885Z",
+      "errorStatus": 400,
+      "isAuthError": true
+    },
+    "SIGN_OUT_FUNCTIONALITY": {
+      "test": "SIGN_OUT_FUNCTIONALITY",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.886Z",
+      "hasError": false
+    },
+    "SESSION_RETRIEVAL": {
+      "test": "SESSION_RETRIEVAL",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.886Z",
+      "hasError": false,
+      "hasSession": false
+    }
+  },
+  "sessionManagement": {
+    "INITIAL_SESSION_STATE": {
+      "test": "INITIAL_SESSION_STATE",
+      "passed": true,
+      "timestamp": "2025-11-29T17:41:35.886Z",
+      "hasError": false,
+      "hasSession": false
+    },
+    "SESSION_MANAGEMENT": {
+      "test": "SESSION_MANAGEMENT",
+      "passed": false,
+      "timestamp": "2025-11-29T17:41:36.898Z",
+      "error": "subscription.unsubscribe is not a function"
+    }
+  },
+  "overall": {
+    "passed": 29,
+    "failed": 2,
+    "total": 31
+  }
+}

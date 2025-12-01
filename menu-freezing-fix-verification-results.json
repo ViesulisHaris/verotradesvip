@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-11-24T20:06:55.491Z",
+  "summary": {
+    "totalTests": 10,
+    "passedTests": 4,
+    "failedTests": 4,
+    "overallStatus": "partial"
+  },
+  "tests": [
+    {
+      "name": "Debug Panel Z-Index Fix",
+      "status": "skip",
+      "details": "Manual verification required - check debug panel z-index is 1",
+      "timestamp": "2025-11-24T20:06:56.659Z",
+      "error": null
+    },
+    {
+      "name": "Navigate to Login Page",
+      "status": "pass",
+      "details": "Login page loaded successfully",
+      "timestamp": "2025-11-24T20:06:58.672Z",
+      "error": null
+    },
+    {
+      "name": "Login to Application",
+      "status": "pass",
+      "details": "Successfully logged in and navigated to dashboard",
+      "timestamp": "2025-11-24T20:07:03.700Z",
+      "error": null
+    },
+    {
+      "name": "Navigate to Trades Page",
+      "status": "fail",
+      "details": "Failed to navigate to trades page",
+      "timestamp": "2025-11-24T20:07:05.094Z",
+      "error": "locator.waitFor: Error: strict mode violation: locator('a[href=\"/trades\"], nav a:has-text(\"Trades\"), .nav-link:has-text(\"Trades\")') resolved to 3 elements:\n    1) <a href=\"/trades\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation↵                  ↵                \">…</a> aka locator('a').nth(3)\n    2) <a href=\"/trades\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative overflow-hidden↵                  ↵                  ↵                \">…</a> aka getByRole('link', { name: 'Trades' })\n    3) <a href=\"/trades\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation↵                  ↵                \">…</a> aka locator('a').filter({ hasText: 'Trades' }).nth(2)\n\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/trades\"], nav a:has-text(\"Trades\"), .nav-link:has-text(\"Trades\")') to be visible\u001b[22m\n\u001b[2m    7 × locator resolved to hidden <a href=\"/trades\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation↵                  ↵                \">…</a>\u001b[22m\n"
+    },
+    {
+      "name": "Menu Responsiveness on Trades Page",
+      "status": "fail",
+      "details": "Only 0/4 navigation items are responsive",
+      "timestamp": "2025-11-24T20:07:07.113Z",
+      "error": null
+    },
+    {
+      "name": "Navigate Away from Trades Page",
+      "status": "fail",
+      "details": "Failed to navigate away from trades page or menu became unresponsive",
+      "timestamp": "2025-11-24T20:07:07.143Z",
+      "error": "locator.waitFor: Error: strict mode violation: locator('a[href=\"/dashboard\"], nav a:has-text(\"Dashboard\"), .nav-link:has-text(\"Dashboard\")') resolved to 3 elements:\n    1) <a href=\"/dashboard\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation↵                  active↵                \">…</a> aka locator('a').first()\n    2) <a href=\"/dashboard\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative overflow-hidden↵                  active↵                  ↵                \">…</a> aka getByRole('link', { name: 'Dashboard' })\n    3) <a href=\"/dashboard\" class=\"↵                  nav-item-luxury flex items-center gap-3 px-4 py-4 sm:py-3 rounded-xl transition-all group relative overflow-hidden touch-manipulation↵                  active↵                \">…</a> aka locator('a').filter({ hasText: 'Dashboard' }).nth(2)\n\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard\"], nav a:has-text(\"Dashboard\"), .nav-link:has-text(\"Dashboard\")') to be visible\u001b[22m\n"
+    },
+    {
+      "name": "Mobile Menu Responsiveness",
+      "status": "skip",
+      "details": "Mobile menu toggle not found",
+      "timestamp": "2025-11-24T20:07:08.189Z",
+      "error": null
+    },
+    {
+      "name": "Debug Panel Z-Index Verification",
+      "status": "pass",
+      "details": "Debug panel z-index is 1 (should be <= 5)",
+      "timestamp": "2025-11-24T20:07:10.325Z",
+      "error": null
+    },
+    {
+      "name": "Navigation Safety System Verification",
+      "status": "pass",
+      "details": "Navigation safety system is active (3 logs found)",
+      "timestamp": "2025-11-24T20:07:12.451Z",
+      "error": null
+    },
+    {
+      "name": "Final Menu Responsiveness Check",
+      "status": "fail",
+      "details": "Only 0/4 final navigation tests passed",
+      "timestamp": "2025-11-24T20:09:19.378Z",
+      "error": null
+    }
+  ],
+  "screenshots": [
+    "menu-freezing-fix-login-page-1764014818378.png",
+    "menu-freezing-fix-dashboard-after-login-1764014823444.png"
+  ],
+  "errors": []
+}

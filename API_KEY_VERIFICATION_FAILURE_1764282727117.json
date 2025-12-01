@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-11-27T22:32:07.117Z",
+  "status": "CRITICAL_FAILURE",
+  "error": "Converting circular structure to JSON\n    --> starting at object with constructor 'Timeout'\n    |     property '_idlePrev' -> object with constructor 'TimersList'\n    --- property '_idleNext' closes the circle",
+  "stack": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Timeout'\n    |     property '_idlePrev' -> object with constructor 'TimersList'\n    --- property '_idleNext' closes the circle\n    at JSON.stringify (<anonymous>)\n    at generateReport (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-api-key-verification.js:525:37)\n    at runComprehensiveVerification (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-api-key-verification.js:630:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "conclusion": {
+    "status": "CRITICAL_FAILURE",
+    "message": "Verification failed due to unexpected error",
+    "confidence": "None"
+  }
+}

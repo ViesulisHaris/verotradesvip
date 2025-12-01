@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-11-21T09:27:12.911Z",
+  "summary": {
+    "total": 13,
+    "passed": 0,
+    "failed": 13,
+    "passRate": "0.00%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-21T09:26:34.700Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:34.704Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:35.834Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:38.696Z",
+      "type": "error",
+      "message": "❌ Login with valid credentials: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:38.697Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:41.536Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:41.536Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:44.370Z",
+      "type": "error",
+      "message": "❌ Form validation: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:44.371Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:47.225Z",
+      "type": "error",
+      "message": "❌ Registration with valid data: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/register\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:47.225Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:50.075Z",
+      "type": "error",
+      "message": "❌ Registration with invalid data: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/register\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/register\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:50.076Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:52.919Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:52.919Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:55.772Z",
+      "type": "error",
+      "message": "❌ Error handling: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:55.773Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:26:58.624Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:26:58.624Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:27:01.489Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:27:01.489Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:27:04.340Z",
+      "type": "error",
+      "message": "❌ Protected route /dashboard: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/dashboard\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:27:07.206Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/trades\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/trades\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:27:10.055Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/strategies\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/strategies\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:27:12.910Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Exception: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/analytics\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/analytics\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ]
+}

@@ -1,86 +1,391 @@
-import { supabase } from '../../../supabase/client';
+'use client';
+
+import { useState, useEffect } from 'react';
 import { formatCurrency } from '@/lib/utils';
+import { fetchTradesForDashboard } from '@/lib/optimized-queries';
+import { useAuth } from '@/contexts/AuthContext-simple';
+import AuthGuard from '@/components/AuthGuard';
+import UnifiedLayout from '@/components/layout/UnifiedLayout';
+import EmotionRadar from '@/components/EmotionRadar';
+import PnLChart from '@/components/charts/PnLChart';
+import { TrendingUp, DollarSign, Target, Calendar, Clock, BarChart3, AlertCircle } from 'lucide-react';
 
-export default async function DashboardPage() {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return <div className="p-6 text-white">Please log in</div>;
+interface Trade {
+  id: string;
+  symbol: string;
+  side: 'Buy' | 'Sell';
+  quantity: number;
+  entry_price: number;
+  exit_price?: number;
+  pnl?: number;
+  trade_date: string;
+  entry_time?: string;
+  exit_time?: string;
+  emotional_state?: string;
+  strategies?: {
+    id: string;
+    name: string;
+    rules?: string[];
+  };
+  notes?: string;
+  market?: string;
+}
 
-  // Get stats
-  const { data: trades } = await supabase
-    .from('trades')
-    .select('*')
-    .eq('user_id', user.id);
+interface DashboardStats {
+  totalPnL: number;
+  winrate: number;
+  profitFactor: number;
+  totalTrades: number;
+  avgTimeHeld: number;
+  sharpeRatio: number;
+}
 
-  const safeTrades = trades || [];
-  const totalPnL = safeTrades.reduce((s, t) => s + (t.pnl || 0), 0);
-  const wins = safeTrades.filter(t => (t.pnl || 0) > 0).length;
-  const total = safeTrades.length;
-  const winrate = total ? ((wins / total) * 100).toFixed(1) : '0';
+interface EmotionData {
+  subject: string;
+  value: number;
+  fullMark: number;
+  percent: string;
+}
 
-  const grossProfit = safeTrades.reduce((s, t) => s + Math.max(0, t.pnl || 0), 0);
-  const grossLoss = safeTrades.reduce((s, t) => s + Math.min(0, t.pnl || 0), 0);
-  const profitFactor = grossLoss === 0 ? (grossProfit > 0 ? '∞' : '0') : (grossProfit / Math.abs(grossLoss)).toFixed(2);
+function Dashboard() {
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [trades, setTrades] = useState<Trade[]>([]);
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [emotionData, setEmotionData] = useState<EmotionData[]>([]);
+  const [chartData, setChartData] = useState<any[]>([]);
 
-  const emotions = safeTrades.reduce((acc, t) => {
-    const e = t.emotional_state || 'Neutral';
-    acc[e] = (acc[e] || 0) + 1;
-    return acc;
-  }, {});
+  useEffect(() => {
+    if (!user) return;
 
-  const totalEmotions = Object.values(emotions).reduce((a, b) => a + b, 0) || 1;
-  const emotionData = Object.entries(emotions).map(([label, value]) => ({
-    subject: label,
-    value: (value / totalEmotions) * 10,
-    fullMark: 10,
-    percent: ((value / totalEmotions) * 100).toFixed(1) + '%',
-  }));
+    const loadDashboardData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const result = await fetchTradesForDashboard(user.id);
+        setTrades(result.trades);
+        setStats(result.summary);
 
-  return (
-    <div className="space-y-8 p-6">
-      <h2 className="text-3xl font-bold text-white">Dashboard</h2>
+        // Process emotional data for radar chart
+        const emotionCounts: Record<string, number> = {};
+        let totalEmotions = 0;
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="glass p-6 rounded-xl">
-          <h3 className="text-sm font-medium text-white/70 mb-2">Total PnL</h3>
-          <p className={`text-2xl font-bold ${totalPnL >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-            {formatCurrency(totalPnL)}
-          </p>
-        </div>
-        <div className="glass p-6 rounded-xl">
-          <h3 className="text-sm font-medium text-white/70 mb-2">Winrate</h3>
-          <p className="text-2xl font-bold text-white">{winrate}%</p>
-        </div>
-        <div className="glass p-6 rounded-xl">
-          <h3 className="text-sm font-medium text-white/70 mb-2">Profit Factor</h3>
-          <p className="text-2xl font-bold text-white">{profitFactor}</p>
-        </div>
-        <div className="glass p-6 rounded-xl">
-          <h3 className="text-sm font-medium text-white/70 mb-2">Total Trades</h3>
-          <p className="text-2xl font-bold text-white">{total}</p>
+        result.trades.forEach(trade => {
+          if (trade.emotional_state) {
+            let emotions: string[] = [];
+            
+            if (Array.isArray(trade.emotional_state)) {
+              emotions = trade.emotional_state.filter(e => typeof e === 'string' && e.trim());
+            } else if (typeof trade.emotional_state === 'string') {
+              const trimmed = trade.emotional_state.trim();
+              if (trimmed) {
+                if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+                  try {
+                    const parsed = JSON.parse(trimmed);
+                    if (Array.isArray(parsed)) {
+                      emotions = parsed.map(e => typeof e === 'string' ? e.trim().toUpperCase() : e);
+                    } else if (typeof parsed === 'string') {
+                      emotions = [parsed.trim().toUpperCase()];
+                    }
+                  } catch {
+                    emotions = [trimmed.toUpperCase()];
+                  }
+                } else {
+                  emotions = [trimmed.toUpperCase()];
+                }
+              }
+            }
+
+            emotions.forEach(emotion => {
+              emotionCounts[emotion] = (emotionCounts[emotion] || 0) + 1;
+              totalEmotions++;
+            });
+          }
+        });
+
+        const radarData: EmotionData[] = Object.entries(emotionCounts).map(([emotion, count]) => ({
+          subject: emotion,
+          value: Math.round((count / totalEmotions) * 100),
+          fullMark: 100,
+          percent: `${Math.round((count / totalEmotions) * 100)}%`
+        }));
+
+        setEmotionData(radarData);
+
+        // Process chart data for P&L chart
+        const sortedTrades = [...result.trades].sort((a, b) => 
+          new Date(a.trade_date).getTime() - new Date(b.trade_date).getTime()
+        );
+
+        let cumulative = 0;
+        const processedChartData = sortedTrades.map(trade => {
+          const pnl = trade.pnl || 0;
+          cumulative += pnl;
+          return {
+            date: trade.trade_date,
+            pnl: pnl,
+            cumulative: cumulative
+          };
+        });
+
+        setChartData(processedChartData);
+
+      } catch (err) {
+        console.error('Error loading dashboard data:', err);
+        setError('Failed to load dashboard data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadDashboardData();
+  }, [user]);
+
+  const formatTime = (minutes: number) => {
+    if (minutes < 60) {
+      return `${Math.round(minutes)}m`;
+    } else {
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = Math.round(minutes % 60);
+      return `${hours}h ${remainingMinutes}m`;
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="verotrade-content-wrapper">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin"
+              style={{ borderColor: 'var(--dusty-gold) transparent' }}
+            ></div>
+            <div className="body-text">Loading dashboard...</div>
+          </div>
         </div>
       </div>
+    );
+  }
 
-      {/* Emotion Radar */}
-      <div className="glass p-6 rounded-xl">
-        <h3 className="text-lg font-semibold mb-4 text-white">Emotional Patterns</h3>
-        <div className="h-80 bg-black/20 rounded-lg p-4">
-          {emotionData.length > 0 ? (
-            <div className="text-center text-white/70">
-              <div className="space-y-1">
-                {emotionData.map((item) => (
-                  <div key={item.subject} className="flex justify-between text-sm">
-                    <span>{item.subject}:</span>
-                    <span>{item.percent}</span>
+  if (error) {
+    return (
+      <div className="verotrade-content-wrapper">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="dashboard-card p-8 max-w-md text-center">
+            <AlertCircle className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--rust-red)' }} />
+            <h2 className="h2-section mb-4">Error Loading Dashboard</h2>
+            <p className="body-text mb-6">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="button-primary"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="verotrade-content-wrapper">
+      <div className="mb-section">
+        {/* Header */}
+        <div className="mb-component">
+          <h1 className="h1-dashboard mb-element">Trading Dashboard</h1>
+          <p className="body-text mb-element">Overview of your trading performance and emotional analysis</p>
+        </div>
+
+        {/* Key Metrics */}
+        {stats && (
+          <div className="key-metrics-grid mb-component">
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-opacity-20 bg-dusty-gold flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4" style={{ color: 'var(--dusty-gold)' }} />
                   </div>
-                ))}
+                  <h3 className="h3-metric-label">Total P&L</h3>
+                </div>
               </div>
-              <p className="text-xs mt-2 opacity-60">Log trades to see radar chart</p>
+              <p className={`metric-value ${stats.totalPnL >= 0 ? '' : 'text-rust-red'}`} 
+                 style={{ color: stats.totalPnL >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
+                {formatCurrency(stats.totalPnL)}
+              </p>
+            </div>
+            
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <Target className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Win Rate</h3>
+                </div>
+              </div>
+              <p className="metric-value">{stats.winrate.toFixed(1)}%</p>
+            </div>
+            
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <BarChart3 className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Profit Factor</h3>
+                </div>
+              </div>
+              <p className="metric-value">{stats.profitFactor.toFixed(2)}</p>
+            </div>
+            
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <DollarSign className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Total Trades</h3>
+                </div>
+              </div>
+              <p className="metric-value">{stats.totalTrades}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Charts Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-component mb-component">
+          {/* P&L Chart */}
+          <div className="dashboard-card">
+            <div className="card-header mb-4">
+              <h2 className="h2-section">P&L Performance</h2>
+              <p className="body-text text-sm">Profit & loss over time with cumulative total</p>
+            </div>
+            <PnLChart data={chartData} height={300} />
+          </div>
+
+          {/* Emotional Analysis */}
+          <div className="dashboard-card">
+            <div className="card-header mb-4">
+              <h2 className="h2-section">Emotional Analysis</h2>
+              <p className="body-text text-sm">Distribution of emotional states during trades</p>
+            </div>
+            {emotionData.length > 0 ? (
+              <EmotionRadar data={emotionData} />
+            ) : (
+              <div className="flex items-center justify-center h-[300px]">
+                <div className="text-center">
+                  <div className="secondary-text mb-2">No emotional data available</div>
+                  <p className="body-text text-sm">Start logging emotions with your trades to see analysis</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Additional Stats */}
+        {stats && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-component mb-component">
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Avg Time Held</h3>
+                </div>
+              </div>
+              <p className="metric-value">{formatTime(stats.avgTimeHeld)}</p>
+            </div>
+            
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <BarChart3 className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Sharpe Ratio</h3>
+                </div>
+              </div>
+              <p className="metric-value">{stats.sharpeRatio.toFixed(2)}</p>
+            </div>
+            
+            <div className="dashboard-card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
+                  <h3 className="h3-metric-label">Trading Days</h3>
+                </div>
+              </div>
+              <p className="metric-value">
+                {trades.length > 0 ? new Set(trades.map(t => t.trade_date)).size : 0}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Recent Trades Table */}
+        <div className="dashboard-card">
+          <div className="card-header mb-4">
+            <h2 className="h2-section">Recent Trades</h2>
+            <p className="body-text text-sm">Your latest trading activity</p>
+          </div>
+          
+          {trades.length === 0 ? (
+            <div className="text-center py-8">
+              <TrendingUp className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--muted-gray)' }} />
+              <h3 className="h2-section mb-2">No trades yet</h3>
+              <p className="body-text mb-4">Start logging your trades to see them here</p>
+              <button
+                onClick={() => window.location.href = '/log-trade'}
+                className="button-primary"
+              >
+                Log Your First Trade
+              </button>
             </div>
           ) : (
-            <div className="text-center text-white/70 py-8">
-              <p className="text-lg">No trades yet</p>
-              <p className="text-sm opacity-60 mt-2">Log your first trade to see emotional patterns</p>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b" style={{ borderColor: 'var(--border-primary)' }}>
+                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Date</th>
+                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Symbol</th>
+                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Side</th>
+                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Entry</th>
+                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Exit</th>
+                    <th className="text-right py-3 px-4 body-text text-sm font-medium">P&L</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {trades.slice(0, 10).map((trade) => (
+                    <tr key={trade.id} className="border-b hover:bg-opacity-5 transition-colors" 
+                        style={{ borderColor: 'var(--border-primary)' }}>
+                      <td className="py-3 px-4 body-text text-sm">
+                        {new Date(trade.trade_date).toLocaleDateString()}
+                      </td>
+                      <td className="py-3 px-4 body-text text-sm font-medium">{trade.symbol}</td>
+                      <td className="py-3 px-4">
+                        <span className={`text-sm font-medium ${
+                          trade.side === 'Buy' ? 'text-dusty-gold' : 'text-rust-red'
+                        }`} style={{ color: trade.side === 'Buy' ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
+                          {trade.side}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 body-text text-sm">${trade.entry_price}</td>
+                      <td className="py-3 px-4 body-text text-sm">
+                        {trade.exit_price ? `$${trade.exit_price}` : '-'}
+                      </td>
+                      <td className={`py-3 px-4 text-right font-medium ${
+                        (trade.pnl || 0) >= 0 ? 'text-dusty-gold' : 'text-rust-red'
+                      }`} style={{ color: (trade.pnl || 0) >= 0 ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
+                        {formatCurrency(trade.pnl || 0)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              
+              {trades.length > 10 && (
+                <div className="text-center mt-4">
+                  <button
+                    onClick={() => window.location.href = '/trades'}
+                    className="button-secondary"
+                  >
+                    View All Trades ({trades.length} total)
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -88,3 +393,16 @@ export default async function DashboardPage() {
     </div>
   );
 }
+
+// Wrapper component with authentication guard
+function DashboardWithAuth() {
+  return (
+    <AuthGuard requireAuth={true}>
+      <UnifiedLayout>
+        <Dashboard />
+      </UnifiedLayout>
+    </AuthGuard>
+  );
+}
+
+export default DashboardWithAuth;

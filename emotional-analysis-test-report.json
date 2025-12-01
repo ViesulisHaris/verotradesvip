@@ -1,0 +1,400 @@
+{
+  "timestamp": "2025-11-17T14:28:58.139Z",
+  "dashboard": {
+    "emotionSectionFound": false,
+    "emotionLogs": [],
+    "screenshot": "test-screenshots/dashboard-emotional-analysis.png"
+  },
+  "confluence": {
+    "emotionSectionFound": false,
+    "emotionLogs": [],
+    "filterState": {
+      "activeFilterCount": 0,
+      "activeFilters": []
+    },
+    "screenshot": "test-screenshots/confluence-emotional-analysis.png"
+  },
+  "network": [
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:28:44.254Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "OPTIONS",
+      "timestamp": "2025-11-17T14:28:44.256Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:28:44.627Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:28:44.739Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:28:44.740Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "method": "OPTIONS",
+      "timestamp": "2025-11-17T14:28:44.740Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "status": 200,
+      "timestamp": "2025-11-17T14:28:44.774Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+      "status": 404,
+      "timestamp": "2025-11-17T14:28:44.907Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:28:44.911Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:28:45.422Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-17T14:28:52.118Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "timestamp": "2025-11-17T14:28:52.242Z"
+    }
+  ],
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-17T14:28:44.023Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.114Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-17T14:28:44.114Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-17T14:28:44.115Z"
+    },
+    {
+      "type": "warn",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "timestamp": "2025-11-17T14:28:44.115Z"
+    },
+    {
+      "type": "warn",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-17T14:28:44.116Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": "2025-11-17T14:28:44.118Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "timestamp": "2025-11-17T14:28:44.118Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "timestamp": "2025-11-17T14:28:44.119Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.120Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": "2025-11-17T14:28:44.120Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.120Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": "2025-11-17T14:28:44.148Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "timestamp": "2025-11-17T14:28:44.206Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.220Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "timestamp": "2025-11-17T14:28:44.230Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.235Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] No session found, redirecting to login",
+      "timestamp": "2025-11-17T14:28:44.235Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "timestamp": "2025-11-17T14:28:44.242Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.255Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-11-17T14:28:44.263Z"
+    },
+    {
+      "type": "warn",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "timestamp": "2025-11-17T14:28:44.467Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "timestamp": "2025-11-17T14:28:44.482Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.483Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "timestamp": "2025-11-17T14:28:44.483Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:44.483Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": "2025-11-17T14:28:44.739Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight validation...",
+      "timestamp": "2025-11-17T14:28:44.739Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-17T14:28:44.907Z"
+    },
+    {
+      "type": "warn",
+      "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+      "timestamp": "2025-11-17T14:28:44.907Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "timestamp": "2025-11-17T14:28:44.908Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-17T14:28:45.765Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-17T14:28:45.944Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [CACHE] Comprehensive cache clear completed",
+      "timestamp": "2025-11-17T14:28:45.944Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+      "timestamp": "2025-11-17T14:28:45.945Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-17T14:28:51.872Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": "2025-11-17T14:28:51.900Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.042Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-17T14:28:52.042Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-17T14:28:52.043Z"
+    },
+    {
+      "type": "warn",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "timestamp": "2025-11-17T14:28:52.043Z"
+    },
+    {
+      "type": "warn",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-17T14:28:52.043Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": "2025-11-17T14:28:52.043Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "timestamp": "2025-11-17T14:28:52.043Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "timestamp": "2025-11-17T14:28:52.043Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.050Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": "2025-11-17T14:28:52.050Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.050Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "timestamp": "2025-11-17T14:28:52.073Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.078Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "timestamp": "2025-11-17T14:28:52.104Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.108Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] No session found, redirecting to login",
+      "timestamp": "2025-11-17T14:28:52.108Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "timestamp": "2025-11-17T14:28:52.113Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.118Z"
+    },
+    {
+      "type": "warn",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "timestamp": "2025-11-17T14:28:52.241Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session...",
+      "timestamp": "2025-11-17T14:28:52.250Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "timestamp": "2025-11-17T14:28:52.252Z"
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "timestamp": "2025-11-17T14:28:52.252Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.253Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener...",
+      "timestamp": "2025-11-17T14:28:52.253Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object",
+      "timestamp": "2025-11-17T14:28:52.253Z"
+    }
+  ],
+  "comparison": {
+    "dashboardEmotionLogs": 0,
+    "confluenceEmotionLogs": 0,
+    "networkRequests": 12,
+    "consoleErrors": 4,
+    "consoleWarnings": 0
+  }
+}

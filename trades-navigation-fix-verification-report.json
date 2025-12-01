@@ -1,0 +1,114 @@
+{
+  "timestamp": "2025-11-24T14:49:51.207Z",
+  "summary": {
+    "debugPanelFixes": {
+      "passed": 6,
+      "failed": 0,
+      "details": [
+        {
+          "passed": true,
+          "details": "Debug panel z-index: 5 (should be ≤ 5)",
+          "timestamp": "2025-11-24T14:49:35.937Z"
+        },
+        {
+          "passed": true,
+          "details": "Debug panel pointer-events: none (should be 'none')",
+          "timestamp": "2025-11-24T14:49:35.937Z"
+        },
+        {
+          "passed": true,
+          "details": "Debug panel position: {\"position\":\"fixed\",\"bottom\":\"80px\",\"left\":\"20px\"} (bottom should be ≥ 60px)",
+          "timestamp": "2025-11-24T14:49:35.937Z"
+        },
+        {
+          "passed": true,
+          "details": "Desktop: Debug panel z-index safe: 5",
+          "timestamp": "2025-11-24T14:49:45.645Z"
+        },
+        {
+          "passed": true,
+          "details": "Tablet: Debug panel z-index safe: 5",
+          "timestamp": "2025-11-24T14:49:47.857Z"
+        },
+        {
+          "passed": true,
+          "details": "Mobile: Debug panel z-index safe: 5",
+          "timestamp": "2025-11-24T14:49:50.796Z"
+        }
+      ]
+    },
+    "modalCleanupFixes": {
+      "passed": 1,
+      "failed": 2,
+      "details": [
+        {
+          "passed": false,
+          "details": "Modal cleanup function available globally",
+          "timestamp": "2025-11-24T14:49:39.151Z"
+        },
+        {
+          "passed": true,
+          "details": "Navigation safety functions available",
+          "timestamp": "2025-11-24T14:49:39.154Z"
+        },
+        {
+          "passed": false,
+          "details": "Dashboard navigation link not found",
+          "timestamp": "2025-11-24T14:49:39.168Z"
+        }
+      ]
+    },
+    "navigationSafetyFixes": {
+      "passed": 1,
+      "failed": 7,
+      "details": [
+        {
+          "passed": false,
+          "details": "Dashboard navigation link not found",
+          "timestamp": "2025-11-24T14:49:42.388Z"
+        },
+        {
+          "passed": false,
+          "details": "Strategies navigation link not found",
+          "timestamp": "2025-11-24T14:49:42.390Z"
+        },
+        {
+          "passed": false,
+          "details": "Calendar navigation link not found",
+          "timestamp": "2025-11-24T14:49:42.392Z"
+        },
+        {
+          "passed": false,
+          "details": "Log Trade navigation link not found",
+          "timestamp": "2025-11-24T14:49:42.393Z"
+        },
+        {
+          "passed": true,
+          "details": "No blocking overlays found: true (found 0)",
+          "timestamp": "2025-11-24T14:49:42.395Z"
+        },
+        {
+          "passed": false,
+          "details": "Desktop: 0 clickable navigation links",
+          "timestamp": "2025-11-24T14:49:45.638Z"
+        },
+        {
+          "passed": false,
+          "details": "Tablet: 0 clickable navigation links",
+          "timestamp": "2025-11-24T14:49:47.853Z"
+        },
+        {
+          "passed": false,
+          "details": "Mobile: 0 clickable navigation links",
+          "timestamp": "2025-11-24T14:49:50.791Z"
+        }
+      ]
+    },
+    "overall": {
+      "passed": 8,
+      "failed": 9,
+      "total": 17
+    }
+  },
+  "conclusion": "SOME ISSUES REMAIN - Further investigation needed"
+}

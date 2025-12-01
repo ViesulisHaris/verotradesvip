@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-11-15T21:41:42.618Z",
+  "environment": {
+    "supabaseUrl": "https://bzmixuxautbmqbrqtufx.supabase.co",
+    "hasServiceKey": true,
+    "nodeVersion": "v22.14.0",
+    "platform": "win32"
+  },
+  "tests": [
+    {
+      "name": "Supabase Anon Connection",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:42.924Z",
+      "details": null,
+      "error": {
+        "message": "Could not find the table 'public._test_connection' in the schema cache",
+        "code": "PGRST205"
+      }
+    },
+    {
+      "name": "Supabase Service Connection",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:43.145Z",
+      "details": null,
+      "error": {
+        "message": "Could not find the table 'public._test_connection' in the schema cache",
+        "code": "PGRST205"
+      }
+    },
+    {
+      "name": "Auth Get User (Unauthenticated)",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:43.146Z",
+      "details": null,
+      "error": {
+        "message": "Auth session missing!",
+        "stack": "AuthSessionMissingError: Auth session missing!\n    at c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1249:59\n    at SupabaseAuthClient._useSession (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1140:26)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async SupabaseAuthClient._getUser (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1241:20)\n    at async c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1228:20"
+      }
+    },
+    {
+      "name": "Auth Get Session",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:43.146Z",
+      "details": {
+        "hasSession": false,
+        "sessionExpiresAt": null
+      },
+      "error": null
+    },
+    {
+      "name": "Table: users",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:43.255Z",
+      "details": null,
+      "error": {
+        "message": "Could not find the table 'public.users' in the schema cache",
+        "code": "PGRST205"
+      }
+    },
+    {
+      "name": "Table: strategies",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:43.385Z",
+      "details": "Table exists and is accessible",
+      "error": null
+    },
+    {
+      "name": "Table: trades",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:43.583Z",
+      "details": "Table exists and is accessible",
+      "error": null
+    },
+    {
+      "name": "Table: strategy_rules",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:43.698Z",
+      "details": "Table exists and is accessible",
+      "error": null
+    },
+    {
+      "name": "Schema Cache Test",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:43.861Z",
+      "details": "No cache issues detected",
+      "error": null
+    },
+    {
+      "name": "Schema Cache Test (Service)",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.097Z",
+      "details": "No cache issues detected with service client",
+      "error": null
+    },
+    {
+      "name": "UUID Validation: Valid UUID",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.098Z",
+      "details": {
+        "input": "123e4567-e89b-12d3-a456-426614174000",
+        "expected": true,
+        "actual": true
+      },
+      "error": null
+    },
+    {
+      "name": "UUID Validation: Invalid UUID format",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.098Z",
+      "details": {
+        "input": "invalid-uuid",
+        "expected": false,
+        "actual": false
+      },
+      "error": null
+    },
+    {
+      "name": "UUID Validation: Undefined UUID",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.098Z",
+      "details": {
+        "expected": false,
+        "actual": false
+      },
+      "error": null
+    },
+    {
+      "name": "UUID Validation: Null UUID",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.098Z",
+      "details": {
+        "input": null,
+        "expected": false,
+        "actual": false
+      },
+      "error": null
+    },
+    {
+      "name": "UUID Validation: Empty UUID",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.098Z",
+      "details": {
+        "input": "",
+        "expected": false,
+        "actual": false
+      },
+      "error": null
+    },
+    {
+      "name": "UUID Validation: String \"undefined\"",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.099Z",
+      "details": {
+        "input": "undefined",
+        "expected": false,
+        "actual": false
+      },
+      "error": null
+    },
+    {
+      "name": "Strategy Loading (Fake User)",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.224Z",
+      "details": "Query executed successfully (no strategies found for fake user)",
+      "error": null
+    },
+    {
+      "name": "Strategy Loading (Service Client)",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.339Z",
+      "details": "Query executed successfully with service client",
+      "error": null
+    },
+    {
+      "name": "Permission: Read strategies",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.449Z",
+      "details": "Permission granted",
+      "error": null
+    },
+    {
+      "name": "Permission: Create strategies",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:44.565Z",
+      "details": null,
+      "error": {
+        "message": "new row violates row-level security policy for table \"strategies\"",
+        "code": "42501"
+      }
+    },
+    {
+      "name": "Permission: Update strategies",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.663Z",
+      "details": "Permission granted",
+      "error": null
+    },
+    {
+      "name": "Permission: Delete strategies",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.766Z",
+      "details": "Permission granted",
+      "error": null
+    },
+    {
+      "name": "Permission: Read trades",
+      "status": "PASS",
+      "timestamp": "2025-11-15T21:41:44.860Z",
+      "details": "Permission granted",
+      "error": null
+    },
+    {
+      "name": "Permission: Create trades",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:44.949Z",
+      "details": null,
+      "error": {
+        "message": "new row violates row-level security policy for table \"trades\"",
+        "code": "42501"
+      }
+    },
+    {
+      "name": "Supabase URL Accessibility",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:44.950Z",
+      "details": null,
+      "error": {
+        "message": "Cannot find module 'node-fetch'\nRequire stack:\n- c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js",
+        "stack": "Error: Cannot find module 'node-fetch'\nRequire stack:\n- c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function._load (node:internal/modules/cjs/loader:1055:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Module.require (node:internal/modules/cjs/loader:1311:12)\n    at require (node:internal/modules/helpers:136:16)\n    at testNetworkAndConfiguration (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js:387:19)\n    at runComprehensiveDiagnostic (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js:431:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+        "code": "MODULE_NOT_FOUND"
+      }
+    },
+    {
+      "name": "API Key Format",
+      "status": "FAIL",
+      "timestamp": "2025-11-15T21:41:44.952Z",
+      "details": {
+        "isValid": false,
+        "keyLength": 46,
+        "startsWith": "sb_publish..."
+      },
+      "error": null
+    }
+  ],
+  "errors": [
+    {
+      "test": "Supabase Anon Connection",
+      "error": "Could not find the table 'public._test_connection' in the schema cache"
+    },
+    {
+      "test": "Supabase Service Connection",
+      "error": "Could not find the table 'public._test_connection' in the schema cache"
+    },
+    {
+      "test": "Auth Get User (Unauthenticated)",
+      "error": "Auth session missing!",
+      "stack": "AuthSessionMissingError: Auth session missing!\n    at c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1249:59\n    at SupabaseAuthClient._useSession (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1140:26)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async SupabaseAuthClient._getUser (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1241:20)\n    at async c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\@supabase\\auth-js\\dist\\main\\GoTrueClient.js:1228:20"
+    },
+    {
+      "test": "Table: users",
+      "error": "Could not find the table 'public.users' in the schema cache"
+    },
+    {
+      "test": "Permission: Create strategies",
+      "error": "new row violates row-level security policy for table \"strategies\""
+    },
+    {
+      "test": "Permission: Create trades",
+      "error": "new row violates row-level security policy for table \"trades\""
+    },
+    {
+      "test": "Supabase URL Accessibility",
+      "error": "Cannot find module 'node-fetch'\nRequire stack:\n- c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js",
+      "stack": "Error: Cannot find module 'node-fetch'\nRequire stack:\n- c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function._load (node:internal/modules/cjs/loader:1055:27)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Module.require (node:internal/modules/cjs/loader:1311:12)\n    at require (node:internal/modules/helpers:136:16)\n    at testNetworkAndConfiguration (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js:387:19)\n    at runComprehensiveDiagnostic (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-strategy-error-diagnostic.js:431:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"
+    }
+  ],
+  "summary": {
+    "total": 26,
+    "passed": 18,
+    "failed": 8,
+    "warnings": 0
+  }
+}

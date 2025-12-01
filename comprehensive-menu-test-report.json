@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-11-24T15:05:40.716Z",
+  "summary": {
+    "totalTests": 6,
+    "passedTests": 0,
+    "failedTests": 6,
+    "skippedTests": 0
+  },
+  "tradesFreezingIssue": {
+    "reproduced": false,
+    "fixed": false,
+    "details": []
+  },
+  "details": [
+    {
+      "testName": "Desktop Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:28.611Z"
+    },
+    {
+      "testName": "Desktop Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:28.613Z"
+    },
+    {
+      "testName": "Tablet Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:33.653Z"
+    },
+    {
+      "testName": "Tablet Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:33.653Z"
+    },
+    {
+      "testName": "Mobile Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:38.714Z"
+    },
+    {
+      "testName": "Mobile Menu Visibility",
+      "passed": false,
+      "details": "Menu not visible",
+      "timestamp": "2025-11-24T15:05:38.714Z"
+    }
+  ],
+  "recommendations": [
+    "Some menu functionality tests failed - review individual test results for details"
+  ]
+}

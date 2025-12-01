@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-11-21T10:43:53.027Z",
+  "tests": [
+    {
+      "name": "Authentication",
+      "status": "PASS",
+      "details": "User already authenticated",
+      "duration": 3074,
+      "timestamp": "2025-11-21T10:43:56.682Z"
+    },
+    {
+      "name": "Control Detection - Filters",
+      "status": "FAIL",
+      "details": "Found 0 filter controls: ",
+      "duration": 0,
+      "timestamp": "2025-11-21T10:43:57.240Z"
+    },
+    {
+      "name": "Control Detection - Sort",
+      "status": "FAIL",
+      "details": "Found 0 sort controls: ",
+      "duration": 0,
+      "timestamp": "2025-11-21T10:43:57.240Z"
+    },
+    {
+      "name": "Control Detection - Pagination",
+      "status": "FAIL",
+      "details": "Found 0 pagination controls: ",
+      "duration": 0,
+      "timestamp": "2025-11-21T10:43:57.241Z"
+    },
+    {
+      "name": "Trades Page - Initial Load",
+      "status": "PASS",
+      "details": "Loaded 1 trades",
+      "duration": 2801,
+      "timestamp": "2025-11-21T10:44:00.043Z"
+    },
+    {
+      "name": "Trades Page - Market Filter",
+      "status": "FAIL",
+      "details": "Market filter control not found",
+      "duration": 2807,
+      "timestamp": "2025-11-21T10:44:00.050Z"
+    },
+    {
+      "name": "Trades Page - Symbol Filter",
+      "status": "FAIL",
+      "details": "Symbol filter control not found",
+      "duration": 2813,
+      "timestamp": "2025-11-21T10:44:00.055Z"
+    },
+    {
+      "name": "Trades Page - Date Range Filter",
+      "status": "FAIL",
+      "details": "Date filter controls not found",
+      "duration": 2818,
+      "timestamp": "2025-11-21T10:44:00.060Z"
+    },
+    {
+      "name": "Trades Page - Win/Loss Filter",
+      "status": "FAIL",
+      "details": "Win/Loss filter control not found",
+      "duration": 2822,
+      "timestamp": "2025-11-21T10:44:00.064Z"
+    },
+    {
+      "name": "Trades Page - Emotional State Filter",
+      "status": "FAIL",
+      "details": "Emotional state filter control not found",
+      "duration": 2825,
+      "timestamp": "2025-11-21T10:44:00.067Z"
+    },
+    {
+      "name": "Confluence Page - Navigation",
+      "status": "FAIL",
+      "details": "Confluence page not found or not accessible",
+      "duration": 2800,
+      "timestamp": "2025-11-21T10:44:03.181Z"
+    },
+    {
+      "name": "Pagination - Page Size Selector",
+      "status": "FAIL",
+      "details": "Page size selector not found",
+      "duration": 2774,
+      "timestamp": "2025-11-21T10:44:06.248Z"
+    },
+    {
+      "name": "Pagination - Navigation Controls",
+      "status": "FAIL",
+      "details": "Pagination navigation controls not found",
+      "duration": 2777,
+      "timestamp": "2025-11-21T10:44:06.251Z"
+    },
+    {
+      "name": "Pagination Controls",
+      "status": "FAIL",
+      "details": "Error: locator.isVisible: Unexpected token \"=\" while parsing css selector \".total-count, .trade-count, text=/\\d+ trades/\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m    - checking visibility of .total-count, .trade-count, text=/\\d+ trades/ >> nth=0\u001b[22m\n",
+      "duration": 2781,
+      "timestamp": "2025-11-21T10:44:06.255Z"
+    },
+    {
+      "name": "Sorting - Date Column",
+      "status": "FAIL",
+      "details": "Date sort control not found",
+      "duration": 2764,
+      "timestamp": "2025-11-21T10:44:09.305Z"
+    },
+    {
+      "name": "Sorting - P&L Column",
+      "status": "FAIL",
+      "details": "P&L sort control not found",
+      "duration": 2770,
+      "timestamp": "2025-11-21T10:44:09.311Z"
+    },
+    {
+      "name": "Sorting - Symbol Column",
+      "status": "FAIL",
+      "details": "Symbol sort control not found",
+      "duration": 2774,
+      "timestamp": "2025-11-21T10:44:09.315Z"
+    },
+    {
+      "name": "Sorting - Direction Indicators",
+      "status": "FAIL",
+      "details": "Sort direction indicators not found",
+      "duration": 2777,
+      "timestamp": "2025-11-21T10:44:09.318Z"
+    },
+    {
+      "name": "Functionality - Filter Reset",
+      "status": "FAIL",
+      "details": "Reset button not found",
+      "duration": 2837,
+      "timestamp": "2025-11-21T10:44:12.419Z"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 2,
+    "failed": 17,
+    "skipped": 0,
+    "passRate": "10.53%"
+  },
+  "performance": {
+    "filterTimes": [],
+    "sortTimes": [],
+    "paginationTimes": [],
+    "averageFilterTime": 0,
+    "averageSortTime": 0,
+    "averagePaginationTime": 0
+  },
+  "issues": [
+    {
+      "test": "Control Detection - Filters",
+      "issue": "Found 0 filter controls: "
+    },
+    {
+      "test": "Control Detection - Sort",
+      "issue": "Found 0 sort controls: "
+    },
+    {
+      "test": "Control Detection - Pagination",
+      "issue": "Found 0 pagination controls: "
+    },
+    {
+      "test": "Trades Page - Market Filter",
+      "issue": "Market filter control not found"
+    },
+    {
+      "test": "Trades Page - Symbol Filter",
+      "issue": "Symbol filter control not found"
+    },
+    {
+      "test": "Trades Page - Date Range Filter",
+      "issue": "Date filter controls not found"
+    },
+    {
+      "test": "Trades Page - Win/Loss Filter",
+      "issue": "Win/Loss filter control not found"
+    },
+    {
+      "test": "Trades Page - Emotional State Filter",
+      "issue": "Emotional state filter control not found"
+    },
+    {
+      "test": "Confluence Page - Navigation",
+      "issue": "Confluence page not found or not accessible"
+    },
+    {
+      "test": "Pagination - Page Size Selector",
+      "issue": "Page size selector not found"
+    },
+    {
+      "test": "Pagination - Navigation Controls",
+      "issue": "Pagination navigation controls not found"
+    },
+    {
+      "test": "Pagination Controls",
+      "issue": "Error: locator.isVisible: Unexpected token \"=\" while parsing css selector \".total-count, .trade-count, text=/\\d+ trades/\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m    - checking visibility of .total-count, .trade-count, text=/\\d+ trades/ >> nth=0\u001b[22m\n"
+    },
+    {
+      "test": "Sorting - Date Column",
+      "issue": "Date sort control not found"
+    },
+    {
+      "test": "Sorting - P&L Column",
+      "issue": "P&L sort control not found"
+    },
+    {
+      "test": "Sorting - Symbol Column",
+      "issue": "Symbol sort control not found"
+    },
+    {
+      "test": "Sorting - Direction Indicators",
+      "issue": "Sort direction indicators not found"
+    },
+    {
+      "test": "Functionality - Filter Reset",
+      "issue": "Reset button not found"
+    }
+  ],
+  "authenticationStatus": "ALREADY_AUTHENTICATED",
+  "screenshots": [
+    {
+      "test": "authenticated-dashboard",
+      "path": "filtering-sorting-comprehensive-test-authenticated-dashboard-1763721836682.png"
+    },
+    {
+      "test": "trades-page-filtering-complete",
+      "path": "filtering-sorting-comprehensive-test-trades-page-filtering-complete-1763721840067.png"
+    },
+    {
+      "test": "confluence-page-filtering-complete",
+      "path": "filtering-sorting-comprehensive-test-confluence-page-filtering-complete-1763721843181.png"
+    },
+    {
+      "test": "pagination-controls-complete",
+      "path": "filtering-sorting-comprehensive-test-pagination-controls-complete-1763721846255.png"
+    },
+    {
+      "test": "sorting-functionality-complete",
+      "path": "filtering-sorting-comprehensive-test-sorting-functionality-complete-1763721849322.png"
+    },
+    {
+      "test": "performance-testing-complete",
+      "path": "filtering-sorting-comprehensive-test-performance-testing-complete-1763721852421.png"
+    },
+    {
+      "test": "final-test-state",
+      "path": "filtering-sorting-comprehensive-test-final-test-state-1763721852686.png"
+    }
+  ],
+  "recommendations": [
+    "Implement comprehensive filtering UI controls for trades and confluence pages",
+    "Implement comprehensive sorting UI controls for all sortable columns",
+    "Implement pagination controls with page size selection and navigation",
+    "Enhance confluence page advanced filtering functionality"
+  ]
+}

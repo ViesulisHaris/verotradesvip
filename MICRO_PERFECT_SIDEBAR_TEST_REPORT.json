@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-11-19T10:48:24.568Z",
+  "testType": "MICRO_PERFECT_SIDEBAR_TRANSITION_TEST",
+  "summary": {
+    "totalTests": 2,
+    "passedTests": 0,
+    "failedTests": 2,
+    "microPerfectionAchieved": false
+  },
+  "testResults": [
+    {
+      "testName": "Micro-Perfect Sidebar Transition",
+      "timestamp": "2025-11-19T10:47:49.473Z",
+      "metrics": {},
+      "passed": false,
+      "details": [
+        "Error: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[title*=\"Expand sidebar\"], button[title*=\"Collapse sidebar\"], button[title*=\"sidebar\"], button:has(svg[data-lucide=\"chevron-left\"]), button:has(svg[data-lucide=\"chevron-right\"]), .lg\\\\:flex.p-2.rounded-lg.hover\\\\:bg-blue-600\\\\/20.transition-all.duration-200.items-center.justify-center').first() to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "testName": "Rapid Toggle Stress Test",
+      "timestamp": "2025-11-19T10:47:54.491Z",
+      "metrics": {
+        "totalToggles": 0,
+        "successfulToggles": 0,
+        "failedToggles": 0,
+        "avgTransitionTime": 0,
+        "maxTransitionTime": 0,
+        "minTransitionTime": null,
+        "frameDrops": 0,
+        "microGlitches": 0
+      },
+      "passed": false,
+      "details": [
+        "Error: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[title*=\"sidebar\"], button[aria-label*=\"sidebar\"]').first()\u001b[22m\n"
+      ]
+    }
+  ],
+  "thresholds": {
+    "maxTransitionTime": 310,
+    "maxFrameDrop": 0,
+    "maxLayoutShift": 0.01,
+    "maxRenderTime": 16.67,
+    "maxMicroGlitch": 0
+  },
+  "recommendations": [
+    "⚠️  Micro-perfection not achieved. Review the following:"
+  ]
+}

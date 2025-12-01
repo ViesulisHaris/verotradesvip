@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Accuracy Test - Browser Edition</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #121212;
+            color: #EAE6DD;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #202020;
+            border-radius: 12px;
+            padding: 20px;
+            border: 0.8px solid rgba(184, 155, 94, 0.3);
+        }
+        
+        .test-section {
+            margin-bottom: 32px;
+            padding: 16px;
+            background: rgba(32, 32, 32, 0.5);
+            border-radius: 8px;
+        }
+        
+        .test-result {
+            padding: 8px;
+            margin: 4px 0;
+            border-radius: 6px;
+            border-left: 3px solid #B89B5E;
+        }
+        
+        .pass { background: rgba(79, 91, 74, 0.2); border-left-color: #4F5B4A; }
+        .fail { background: rgba(167, 53, 45, 0.2); border-left-color: #A7352D; }
+        .critical { background: rgba(167, 53, 45, 0.3); border-left-color: #A7352D; font-weight: 600; }
+        
+        .summary {
+            background: linear-gradient(135deg, #B89B5E, #D6C7B2);
+            color: #121212;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid rgba(184, 155, 94, 0.3);
+            border-radius: 8px;
+            margin: 16px 0;
+            background: #121212;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .test-controls {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .test-button {
+            background: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .test-button:hover {
+            background: #9B8049;
+            transform: translateY(-1px);
+        }
+        
+        h1 { font-size: 32px; font-weight: 600; margin-bottom: 16px; }
+        h2 { font-size: 24px; font-weight: 600; margin-bottom: 12px; }
+        h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+        
+        .accuracy-meter {
+            width: 100%;
+            height: 24px;
+            background: rgba(32, 32, 32, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+        
+        .accuracy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #B89B5E, #4F5B4A);
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎯 Mockup Accuracy Test - Browser Edition</h1>
+        
+        <div class="summary" id="summary">
+            <h2>Test Summary</h2>
+            <div>Ready to test pages for 1:1 mockup accuracy...</div>
+            <div class="accuracy-meter">
+                <div class="accuracy-fill" id="accuracyFill" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <div class="test-controls">
+            <button class="test-button" onclick="testPage('dashboard')">Test Dashboard</button>
+            <button class="test-button" onclick="testPage('trades')">Test Trades</button>
+            <button class="test-button" onclick="testPage('strategies')">Test Strategies</button>
+            <button class="test-button" onclick="testPage('login')">Test Login</button>
+            <button class="test-button" onclick="testPage('register')">Test Register</button>
+            <button class="test-button" onclick="runAllTests()">Run All Tests</button>
+            <button class="test-button" onclick="generateReport()">Generate Report</button>
+        </div>
+        
+        <div class="iframe-container">
+            <iframe id="testFrame" src="about:blank"></iframe>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test Results</h2>
+            <div id="testResults">No tests run yet. Click a test button above.</div>
+        </div>
+    </div>
+
+    <script>
+        // Mockup Specifications - EXACT VALUES
+        const MOCKUP_SPECS = {
+            colors: {
+                deepCharcoal: '#121212',
+                softGraphite: '#202020',
+                warmOffWhite: '#EAE6DD',
+                mutedGray: '#9A9A9A',
+                dustyGold: '#B89B5E',
+                warmSand: '#D6C7B2',
+                mutedOlive: '#4F5B4A',
+                rustRed: '#A7352D',
+                borderPrimary: 'rgba(184, 155, 94, 0.3)'
+            },
+            typography: {
+                h1: { size: '32px', weight: '600' },
+                h2: { size: '24px', weight: '600' },
+                h3: { size: '20px', weight: '600' },
+                body: { size: '14px', weight: '400' },
+                label: { size: '13px', weight: '400' }
+            },
+            borderRadius: {
+                card: '12px',
+                button: '8px',
+                input: '8px'
+            },
+            spacing: {
+                cardInner: '20px',
+                section: '32px',
+                card: '16px'
+            }
+        };
+
+        // Test Results Storage
+        let testResults = {
+            summary: { totalTests: 0, passedTests: 0, failedTests: 0, criticalFailures: 0 },
+            pages: {
+                dashboard: { tests: [], passed: 0, failed: 0, critical: 0 },
+                trades: { tests: [], passed: 0, failed: 0, critical: 0 },
+                strategies: { tests: [], passed: 0, failed: 0, critical: 0 },
+                login: { tests: [], passed: 0, failed: 0, critical: 0 },
+                register: { tests: [], passed: 0, failed: 0, critical: 0 }
+            },
+            details: []
+        };
+
+        // Utility Functions
+        function rgbToHex(rgb) {
+            if (rgb.startsWith('#')) return rgb.toUpperCase();
+            const result = rgb.match(/\d+/g);
+            if (!result || result.length < 3) return rgb;
+            const r = parseInt(result[0]);
+            const g = parseInt(result[1]);
+            const b = parseInt(result[2]);
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+        }
+
+        function addTestResult(page, category, test, expected, actual, passed, critical = false) {
+            const result = {
+                page,
+                category,
+                test,
+                expected,
+                actual,
+                passed,
+                critical,
+                timestamp: new Date().toISOString()
+            };
+            
+            testResults.details.push(result);
+            testResults.pages[page].tests.push(result);
+            
+            testResults.summary.totalTests++;
+            if (passed) {
+                testResults.summary.passedTests++;
+                testResults.pages[page].passed++;
+            } else {
+                testResults.summary.failedTests++;
+                testResults.pages[page].failed++;
+                if (critical) {
+                    testResults.summary.criticalFailures++;
+                    testResults.pages[page].critical++;
+                }
+            }
+            
+            updateSummary();
+            displayTestResults();
+        }
+
+        function updateSummary() {
+            const accuracy = testResults.summary.totalTests > 0 ? 
+                ((testResults.summary.passedTests / testResults.summary.totalTests) * 100).toFixed(2) : 0;
+            
+            document.getElementById('accuracyFill').style.width = accuracy + '%';
+            
+            const summaryDiv = document.getElementById('summary');
+            summaryDiv.innerHTML = `
+                <h2>Test Summary</h2>
+                <div><strong>Total Tests:</strong> ${testResults.summary.totalTests}</div>
+                <div><strong>Passed:</strong> ${testResults.summary.passedTests}</div>
+                <div><strong>Failed:</strong> ${testResults.summary.failedTests}</div>
+                <div><strong>Critical Failures:</strong> ${testResults.summary.criticalFailures}</div>
+                <div><strong>Overall Accuracy:</strong> ${accuracy}%</div>
+                <div class="accuracy-meter">
+                    <div class="accuracy-fill" style="width: ${accuracy}%"></div>
+                </div>
+                ${testResults.summary.criticalFailures > 0 ? 
+                    '<div style="color: #A7352D; font-weight: 600; margin-top: 8px;">⚠️ CRITICAL FAILURES DETECTED</div>' : 
+                    '<div style="color: #4F5B4A; font-weight: 600; margin-top: 8px;">✅ NO CRITICAL FAILURES</div>'
+                }
+            `;
+        }
+
+        function displayTestResults() {
+            const resultsDiv = document.getElementById('testResults');
+            const latestResults = testResults.details.slice(-10); // Show last 10 results
+            
+            resultsDiv.innerHTML = latestResults.map(result => `
+                <div class="test-result ${result.passed ? 'pass' : (result.critical ? 'critical' : 'fail')}">
+                    <strong>${result.page} - ${result.category}: ${result.test}</strong><br>
+                    Expected: ${result.expected}<br>
+                    Actual: ${result.actual}<br>
+                    ${result.critical ? '<span style="color: #A7352D;">⚠️ CRITICAL</span>' : ''}
+                </div>
+            `).join('');
+        }
+
+        // Test Functions
+        async function testColorAccuracy(pageName, iframeDoc) {
+            console.log(`🎨 Testing color accuracy on ${pageName} page...`);
+            
+            // Test body background
+            const bodyBg = rgbToHex(window.getComputedStyle(iframeDoc.body).backgroundColor);
+            addTestResult(
+                pageName, 'Color', 'Body Background',
+                MOCKUP_SPECS.colors.deepCharcoal,
+                bodyBg,
+                bodyBg === MOCKUP_SPECS.colors.deepCharcoal,
+                true // Critical
+            );
+            
+            // Test card backgrounds
+            const cards = iframeDoc.querySelectorAll('.dashboard-card, [style*="soft-graphite"]');
+            if (cards.length > 0) {
+                const cardBg = rgbToHex(window.getComputedStyle(cards[0]).backgroundColor);
+                addTestResult(
+                    pageName, 'Color', 'Card Background',
+                    MOCKUP_SPECS.colors.softGraphite,
+                    cardBg,
+                    cardBg === MOCKUP_SPECS.colors.softGraphite,
+                    true // Critical
+                );
+            }
+            
+            // Test primary text
+            const headings = iframeDoc.querySelectorAll('h1, .h1-dashboard');
+            if (headings.length > 0) {
+                const headingColor = rgbToHex(window.getComputedStyle(headings[0]).color);
+                addTestResult(
+                    pageName, 'Color', 'Primary Text',
+                    MOCKUP_SPECS.colors.warmOffWhite,
+                    headingColor,
+                    headingColor === MOCKUP_SPECS.colors.warmOffWhite,
+                    true // Critical
+                );
+            }
+        }
+
+        async function testTypographyAccuracy(pageName, iframeDoc) {
+            console.log(`📝 Testing typography accuracy on ${pageName} page...`);
+            
+            // Test H1 typography
+            const h1Elements = iframeDoc.querySelectorAll('h1, .h1-dashboard');
+            if (h1Elements.length > 0) {
+                const h1Style = window.getComputedStyle(h1Elements[0]);
+                const fontSizeMatch = h1Style.fontSize.includes(MOCKUP_SPECS.typography.h1.size.replace('px', ''));
+                const fontWeightMatch = h1Style.fontWeight === MOCKUP_SPECS.typography.h1.weight;
+                
+                addTestResult(
+                    pageName, 'Typography', 'H1 Font Size',
+                    MOCKUP_SPECS.typography.h1.size,
+                    h1Style.fontSize,
+                    fontSizeMatch,
+                    true // Critical
+                );
+                
+                addTestResult(
+                    pageName, 'Typography', 'H1 Font Weight',
+                    MOCKUP_SPECS.typography.h1.weight,
+                    h1Style.fontWeight,
+                    fontWeightMatch,
+                    true // Critical
+                );
+            }
+            
+            // Test font family
+            const anyElement = iframeDoc.querySelector('body, *');
+            if (anyElement) {
+                const fontFamily = window.getComputedStyle(anyElement).fontFamily;
+                const hasInterFont = fontFamily && fontFamily.includes('Inter');
+                addTestResult(
+                    pageName, 'Typography', 'Font Family',
+                    'Inter',
+                    fontFamily,
+                    hasInterFont,
+                    true // Critical
+                );
+            }
+        }
+
+        async function testBorderRadiusAccuracy(pageName, iframeDoc) {
+            console.log(`🔲 Testing border radius accuracy on ${pageName} page...`);
+            
+            // Test card border radius (CRITICAL TEST)
+            const cards = iframeDoc.querySelectorAll('.dashboard-card, [style*="radius-card"]');
+            if (cards.length > 0) {
+                const cardRadius = window.getComputedStyle(cards[0]).borderRadius;
+                const radiusMatch = cardRadius && cardRadius.includes(MOCKUP_SPECS.borderRadius.card.replace('px', ''));
+                
+                addTestResult(
+                    pageName, 'Border Radius', 'Card Border Radius',
+                    MOCKUP_SPECS.borderRadius.card,
+                    cardRadius,
+                    radiusMatch,
+                    true // CRITICAL - MUST be 12px, not 16px
+                );
+            }
+        }
+
+        async function testPageSpecificElements(pageName, iframeDoc) {
+            console.log(`🔍 Testing page-specific elements on ${pageName} page...`);
+            
+            switch (pageName) {
+                case 'dashboard':
+                    // Test dashboard-specific elements
+                    const metricCards = iframeDoc.querySelectorAll('.key-metrics-grid .dashboard-card').length;
+                    addTestResult(
+                        pageName, 'Page Specific', 'Dashboard Metric Cards',
+                        4,
+                        metricCards,
+                        metricCards === 4,
+                        true // Critical
+                    );
+                    
+                    const performanceCards = iframeDoc.querySelectorAll('.performance-grid .dashboard-card').length;
+                    addTestResult(
+                        pageName, 'Page Specific', 'Dashboard Performance Cards',
+                        3,
+                        performanceCards,
+                        performanceCards === 3,
+                        true // Critical
+                    );
+                    break;
+                    
+                case 'login':
+                case 'register':
+                    // Test auth page specific elements
+                    const hasAuthForm = !!iframeDoc.querySelector('form');
+                    addTestResult(
+                        pageName, 'Page Specific', 'Authentication Form',
+                        'Present',
+                        hasAuthForm ? 'Present' : 'Missing',
+                        hasAuthForm,
+                        true // Critical
+                    );
+                    
+                    const hasAuthCard = !!iframeDoc.querySelector('.dashboard-card, [style*="soft-graphite"]');
+                    addTestResult(
+                        pageName, 'Page Specific', 'Auth Card Container',
+                        'Present',
+                        hasAuthCard ? 'Present' : 'Missing',
+                        hasAuthCard,
+                        true // Critical
+                    );
+                    break;
+            }
+        }
+
+        // Main test function for a page
+        async function testPage(pageName) {
+            console.log(`\n🚀 Starting comprehensive test for ${pageName} page...`);
+            
+            const iframe = document.getElementById('testFrame');
+            const baseUrl = 'http://localhost:3000';
+            
+            try {
+                // Load page in iframe
+                iframe.src = `${baseUrl}/${pageName}`;
+                
+                // Wait for page to load
+                await new Promise((resolve) => {
+                    iframe.onload = resolve;
+                    setTimeout(resolve, 3000); // Fallback timeout
+                });
+                
+                // Get iframe document
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                if (!iframeDoc) {
+                    addTestResult(pageName, 'Page Load', 'Page Load Success', 'Success', 'Failed to access iframe content', false, true);
+                    return;
+                }
+                
+                // Wait a bit more for dynamic content
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Run all tests
+                await testColorAccuracy(pageName, iframeDoc);
+                await testTypographyAccuracy(pageName, iframeDoc);
+                await testBorderRadiusAccuracy(pageName, iframeDoc);
+                await testPageSpecificElements(pageName, iframeDoc);
+                
+                console.log(`✅ Completed testing ${pageName} page`);
+                
+            } catch (error) {
+                console.error(`❌ Error testing ${pageName} page:`, error);
+                addTestResult(pageName, 'Page Load', 'Page Load Success', 'Success', `Error: ${error.message}`, false, true);
+            }
+        }
+
+        // Run all tests
+        async function runAllTests() {
+            const pages = ['dashboard', 'trades', 'strategies', 'login', 'register'];
+            
+            for (const page of pages) {
+                await testPage(page);
+                await new Promise(resolve => setTimeout(resolve, 1000)); // Small delay between tests
+            }
+        }
+
+        // Generate report
+        function generateReport() {
+            const report = {
+                timestamp: new Date().toISOString(),
+                summary: testResults.summary,
+                pages: testResults.pages,
+                details: testResults.details
+            };
+            
+            // Calculate accuracy percentages
+            Object.keys(testResults.pages).forEach(pageName => {
+                const page = testResults.pages[pageName];
+                const total = page.passed + page.failed;
+                page.accuracy = total > 0 ? ((page.passed / total) * 100).toFixed(2) + '%' : '0%';
+                page.criticalAccuracy = total > 0 ? (((total - page.critical) / total) * 100).toFixed(2) + '%' : '0%';
+            });
+            
+            // Create downloadable report
+            const reportData = JSON.stringify(report, null, 2);
+            const blob = new Blob([reportData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `mockup-accuracy-report-${Date.now()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Generate markdown report
+            const markdown = generateMarkdownReport(report);
+            const markdownBlob = new Blob([markdown], { type: 'text/markdown' });
+            const markdownUrl = URL.createObjectURL(markdownBlob);
+            
+            const markdownA = document.createElement('a');
+            markdownA.href = markdownUrl;
+            markdownA.download = `mockup-accuracy-report-${Date.now()}.md`;
+            document.body.appendChild(markdownA);
+            markdownA.click();
+            document.body.removeChild(markdownA);
+            URL.revokeObjectURL(markdownUrl);
+            
+            alert('Reports generated and downloaded!');
+        }
+
+        function generateMarkdownReport(report) {
+            let markdown = `# Mockup Accuracy Test Report\n\n`;
+            markdown += `**Generated**: ${new Date(report.timestamp).toLocaleString()}\n\n`;
+            
+            // Summary
+            markdown += `## Executive Summary\n\n`;
+            markdown += `- **Total Tests**: ${report.summary.totalTests}\n`;
+            markdown += `- **Passed**: ${report.summary.passedTests}\n`;
+            markdown += `- **Failed**: ${report.summary.failedTests}\n`;
+            markdown += `- **Critical Failures**: ${report.summary.criticalFailures}\n`;
+            markdown += `- **Overall Accuracy**: ${((report.summary.passedTests / report.summary.totalTests) * 100).toFixed(2)}%\n\n`;
+            
+            // Page summaries
+            markdown += `## Page Results\n\n`;
+            Object.keys(report.pages).forEach(pageName => {
+                const page = report.pages[pageName];
+                markdown += `### ${pageName.charAt(0).toUpperCase() + pageName.slice(1)} Page\n\n`;
+                markdown += `- **Tests**: ${page.tests.length}\n`;
+                markdown += `- **Passed**: ${page.passed}\n`;
+                markdown += `- **Failed**: ${page.failed}\n`;
+                markdown += `- **Critical Failures**: ${page.critical}\n`;
+                markdown += `- **Accuracy**: ${page.accuracy}\n`;
+                markdown += `- **Critical Accuracy**: ${page.criticalAccuracy}\n\n`;
+            });
+            
+            // Critical failures
+            const criticalFailures = report.details.filter(t => t.critical && !t.passed);
+            if (criticalFailures.length > 0) {
+                markdown += `## 🚨 CRITICAL FAILURES\n\n`;
+                criticalFailures.forEach(failure => {
+                    markdown += `### ${failure.page} - ${failure.category}: ${failure.test}\n\n`;
+                    markdown += `- **Expected**: ${failure.expected}\n`;
+                    markdown += `- **Actual**: ${failure.actual}\n`;
+                    markdown += `- **Impact**: ${failure.critical ? 'CRITICAL' : 'Minor'}\n\n`;
+                });
+            }
+            
+            // Conclusion
+            markdown += `## Conclusion\n\n`;
+            if (report.summary.criticalFailures === 0) {
+                markdown += `✅ **PASS**: No critical failures detected. Implementation meets mockup specifications.\n\n`;
+            } else {
+                markdown += `❌ **FAIL**: ${report.summary.criticalFailures} critical failures detected. Immediate fixes required.\n\n`;
+            }
+            
+            return markdown;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSummary();
+        });
+    </script>
+</body>
+</html>

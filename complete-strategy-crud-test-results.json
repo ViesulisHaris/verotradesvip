@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-11-15T13:09:05.388Z",
+  "tests": [
+    {
+      "name": "Login",
+      "status": "PASSED",
+      "details": "Successfully logged in, redirected to: http://localhost:3000/dashboard"
+    },
+    {
+      "name": "Navigate to Create Strategy Page",
+      "status": "PASSED",
+      "details": "Navigated to create strategy page: http://localhost:3000/strategies/create"
+    },
+    {
+      "name": "Create Strategy",
+      "status": "PASSED",
+      "details": "Strategy \"Test Strategy 1763212151857\" created successfully"
+    },
+    {
+      "name": "Verify Strategy Creation",
+      "status": "UNKNOWN",
+      "details": "Unable to verify strategy creation"
+    },
+    {
+      "name": "Test Strategy Editing",
+      "status": "SKIPPED",
+      "details": "No edit buttons found - no strategies to edit"
+    },
+    {
+      "name": "Test Strategy Deletion",
+      "status": "SKIPPED",
+      "details": "No delete buttons found - no strategies to delete"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 6
+  },
+  "createdStrategyId": null
+}

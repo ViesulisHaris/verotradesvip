@@ -1,0 +1,369 @@
+{
+  "timestamp": "2025-11-21T10:47:12.354Z",
+  "summary": {
+    "total": 38,
+    "passed": 20,
+    "failed": 18,
+    "skipped": 0
+  },
+  "categories": {
+    "authentication": {
+      "tests": [
+        {
+          "name": "Login page loads correctly",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:47:13.498Z"
+        },
+        {
+          "name": "Email field exists",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:47:13.954Z"
+        },
+        {
+          "name": "Password field exists",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:47:13.954Z"
+        },
+        {
+          "name": "Submit button exists",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:47:13.954Z"
+        },
+        {
+          "name": "Form validation shown for empty fields",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:47:15.011Z"
+        },
+        {
+          "name": "Login redirects to dashboard",
+          "passed": true,
+          "details": "Redirected to: http://localhost:3000/dashboard",
+          "timestamp": "2025-11-21T10:47:15.920Z"
+        }
+      ],
+      "passed": 6,
+      "failed": 0
+    },
+    "visualDesign": {
+      "tests": [
+        {
+          "name": "Glass morphism elements present",
+          "passed": true,
+          "details": "Found 2 glass elements",
+          "timestamp": "2025-11-21T10:47:16.537Z"
+        },
+        {
+          "name": "Button color consistency",
+          "passed": true,
+          "details": "Found 0 different button colors",
+          "timestamp": "2025-11-21T10:47:16.551Z"
+        },
+        {
+          "name": "Typography consistency",
+          "passed": true,
+          "details": "Found 0 different heading fonts",
+          "timestamp": "2025-11-21T10:47:16.558Z"
+        },
+        {
+          "name": "Spacing consistency",
+          "passed": true,
+          "details": "Found 0 different padding styles",
+          "timestamp": "2025-11-21T10:47:16.564Z"
+        },
+        {
+          "name": "Visual hierarchy established",
+          "passed": false,
+          "details": "H1: 0, H2: 0, H3: 0",
+          "timestamp": "2025-11-21T10:47:16.582Z"
+        }
+      ],
+      "passed": 4,
+      "failed": 1
+    },
+    "interactiveElements": {
+      "tests": [
+        {
+          "name": "Button hover states working",
+          "passed": false,
+          "details": "0/5 buttons have hover effects",
+          "timestamp": "2025-11-21T10:48:18.892Z"
+        },
+        {
+          "name": "Form field focus states working",
+          "passed": false,
+          "details": "0/0 fields are focusable",
+          "timestamp": "2025-11-21T10:48:18.898Z"
+        },
+        {
+          "name": "Modal triggers found",
+          "passed": false,
+          "details": "No modal triggers found on page",
+          "timestamp": "2025-11-21T10:48:18.912Z"
+        },
+        {
+          "name": "Card hover effects working",
+          "passed": false,
+          "details": "0/3 cards have hover effects",
+          "timestamp": "2025-11-21T10:48:20.043Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 4
+    },
+    "navigation": {
+      "tests": [
+        {
+          "name": "Sidebar/navigation present",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:48:20.055Z"
+        },
+        {
+          "name": "Sidebar toggle button found",
+          "passed": false,
+          "details": "No toggle button found",
+          "timestamp": "2025-11-21T10:48:20.061Z"
+        },
+        {
+          "name": "Navigation links functional",
+          "passed": false,
+          "details": "0/5 links work correctly",
+          "timestamp": "2025-11-21T10:50:50.184Z"
+        },
+        {
+          "name": "Active page highlighting",
+          "passed": true,
+          "details": "Found 1 active navigation items",
+          "timestamp": "2025-11-21T10:50:50.197Z"
+        },
+        {
+          "name": "Navigation test failed",
+          "passed": false,
+          "details": "elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - element is outside of the viewport\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+          "timestamp": "2025-11-21T10:51:20.229Z"
+        }
+      ],
+      "passed": 2,
+      "failed": 3
+    },
+    "responsive": {
+      "tests": [
+        {
+          "name": "Mobile menu present in mobile view",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-11-21T10:51:21.336Z"
+        },
+        {
+          "name": "Text readable on mobile",
+          "passed": true,
+          "details": "Font size: 16px",
+          "timestamp": "2025-11-21T10:51:21.343Z"
+        },
+        {
+          "name": "No horizontal scroll on mobile",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-11-21T10:51:21.345Z"
+        },
+        {
+          "name": "Touch-friendly controls on mobile",
+          "passed": false,
+          "details": "0/5 buttons are touch-friendly",
+          "timestamp": "2025-11-21T10:51:25.257Z"
+        }
+      ],
+      "passed": 2,
+      "failed": 2
+    },
+    "theme": {
+      "tests": [
+        {
+          "name": "Theme styles applied",
+          "passed": false,
+          "details": "Background: undefined, Color: undefined",
+          "timestamp": "2025-11-21T10:51:25.315Z"
+        },
+        {
+          "name": "Blur effects present",
+          "passed": true,
+          "details": "Found 3 elements with blur effects",
+          "timestamp": "2025-11-21T10:51:25.463Z"
+        },
+        {
+          "name": "Color-coded elements present",
+          "passed": true,
+          "details": "Found 2 color-coded elements",
+          "timestamp": "2025-11-21T10:51:25.472Z"
+        },
+        {
+          "name": "Visual feedback for interactive states",
+          "passed": false,
+          "details": "0/5 elements have state styles",
+          "timestamp": "2025-11-21T10:51:25.482Z"
+        },
+        {
+          "name": "Layout system used",
+          "passed": true,
+          "details": "Found 76 elements using grid/flex layout",
+          "timestamp": "2025-11-21T10:51:25.528Z"
+        }
+      ],
+      "passed": 3,
+      "failed": 2
+    },
+    "accessibility": {
+      "tests": [
+        {
+          "name": "Keyboard navigation possible",
+          "passed": true,
+          "details": "Found 18 tabbable elements",
+          "timestamp": "2025-11-21T10:51:26.304Z"
+        },
+        {
+          "name": "Focus indicators present",
+          "passed": false,
+          "details": "0/3 elements have focus styles",
+          "timestamp": "2025-11-21T10:51:26.990Z"
+        },
+        {
+          "name": "Accessibility test failed",
+          "passed": false,
+          "details": "page.$$: Unexpected token \"=\" while parsing css selector \"[aria-label], [aria-labelledby], [aria-describedby], role=\"button\"], role=\"navigation\"], role=\"main\"]\". Did you mean to CSS.escape it?",
+          "timestamp": "2025-11-21T10:51:26.991Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 2
+    },
+    "loadingAndError": {
+      "tests": [
+        {
+          "name": "Loading indicators present",
+          "passed": false,
+          "details": "Found 0 loading elements",
+          "timestamp": "2025-11-21T10:51:26.998Z"
+        },
+        {
+          "name": "Error containers present",
+          "passed": true,
+          "details": "Found 1 error containers",
+          "timestamp": "2025-11-21T10:51:27.012Z"
+        },
+        {
+          "name": "Empty state components present",
+          "passed": false,
+          "details": "Found 0 empty state components",
+          "timestamp": "2025-11-21T10:51:27.020Z"
+        },
+        {
+          "name": "Success message components present",
+          "passed": true,
+          "details": "Found 2 success message components",
+          "timestamp": "2025-11-21T10:51:27.038Z"
+        },
+        {
+          "name": "User-friendly error messages",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-11-21T10:51:27.047Z"
+        },
+        {
+          "name": "Form validation messages present",
+          "passed": false,
+          "details": "Found 0 validation message elements",
+          "timestamp": "2025-11-21T10:51:27.052Z"
+        }
+      ],
+      "passed": 2,
+      "failed": 4
+    }
+  },
+  "screenshots": [
+    {
+      "name": "login-page-loaded",
+      "viewport": "desktop",
+      "filename": "ui-ux-login-page-loaded-desktop-1763722033498.png",
+      "timestamp": 1763722033498
+    },
+    {
+      "name": "login-form-filled",
+      "viewport": "desktop",
+      "filename": "ui-ux-login-form-filled-desktop-1763722035054.png",
+      "timestamp": 1763722035054
+    },
+    {
+      "name": "dashboard-after-login",
+      "viewport": "desktop",
+      "filename": "ui-ux-dashboard-after-login-desktop-1763722035920.png",
+      "timestamp": 1763722035920
+    },
+    {
+      "name": "visual-design-overview",
+      "viewport": "desktop",
+      "filename": "ui-ux-visual-design-overview-desktop-1763722036583.png",
+      "timestamp": 1763722036583
+    },
+    {
+      "name": "mobile-view",
+      "viewport": "mobile",
+      "filename": "ui-ux-mobile-view-mobile-1763722281267.png",
+      "timestamp": 1763722281267
+    },
+    {
+      "name": "tablet-view",
+      "viewport": "tablet",
+      "filename": "ui-ux-tablet-view-tablet-1763722282384.png",
+      "timestamp": 1763722282384
+    },
+    {
+      "name": "laptop-view",
+      "viewport": "laptop",
+      "filename": "ui-ux-laptop-view-laptop-1763722283559.png",
+      "timestamp": 1763722283559
+    },
+    {
+      "name": "desktop-view",
+      "viewport": "desktop",
+      "filename": "ui-ux-desktop-view-desktop-1763722284765.png",
+      "timestamp": 1763722284765
+    },
+    {
+      "name": "theme-overview",
+      "viewport": "desktop",
+      "filename": "ui-ux-theme-overview-desktop-1763722285528.png",
+      "timestamp": 1763722285528
+    },
+    {
+      "name": "loading-error-overview",
+      "viewport": "desktop",
+      "filename": "ui-ux-loading-error-overview-desktop-1763722287052.png",
+      "timestamp": 1763722287052
+    }
+  ],
+  "errors": [
+    "visualDesign: Visual hierarchy established - H1: 0, H2: 0, H3: 0",
+    "interactiveElements: Button hover states working - 0/5 buttons have hover effects",
+    "interactiveElements: Form field focus states working - 0/0 fields are focusable",
+    "interactiveElements: Modal triggers found - No modal triggers found on page",
+    "interactiveElements: Card hover effects working - 0/3 cards have hover effects",
+    "navigation: Sidebar toggle button found - No toggle button found",
+    "navigation: Navigation links functional - 0/5 links work correctly",
+    "navigation: Navigation test failed - elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - element is outside of the viewport\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "responsive: Mobile menu present in mobile view - ",
+    "responsive: Touch-friendly controls on mobile - 0/5 buttons are touch-friendly",
+    "theme: Theme styles applied - Background: undefined, Color: undefined",
+    "theme: Visual feedback for interactive states - 0/5 elements have state styles",
+    "accessibility: Focus indicators present - 0/3 elements have focus styles",
+    "accessibility: Accessibility test failed - page.$$: Unexpected token \"=\" while parsing css selector \"[aria-label], [aria-labelledby], [aria-describedby], role=\"button\"], role=\"navigation\"], role=\"main\"]\". Did you mean to CSS.escape it?",
+    "loadingAndError: Loading indicators present - Found 0 loading elements",
+    "loadingAndError: Empty state components present - Found 0 empty state components",
+    "loadingAndError: User-friendly error messages - ",
+    "loadingAndError: Form validation messages present - Found 0 validation message elements"
+  ]
+}

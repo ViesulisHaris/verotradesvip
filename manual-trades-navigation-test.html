@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Trades Navigation Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 6px;
+        }
+        .test-button {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success { background: #28a745; color: white; }
+        .error { background: #dc3545; color: white; }
+        .info { background: #17a2b8; color: white; }
+        .warning { background: #ffc107; color: black; }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .instructions {
+            background: #333;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: #444;
+            border-left: 4px solid #007acc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Manual Trades Tab Navigation Test</h1>
+        
+        <div class="instructions">
+            <h2>Test Instructions:</h2>
+            <div class="step">
+                <strong>Step 1:</strong> Navigate to the Trades page using the iframe below
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Try to navigate away using menu buttons (Dashboard, Strategies, Calendar, etc.)
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Verify that menu buttons remain responsive after visiting the Trades page
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> Test this on both desktop and mobile viewports if possible
+            </div>
+            <div class="step">
+                <strong>Step 5:</strong> Check if the debug panel is visible but no longer blocking navigation
+            </div>
+            <div class="step">
+                <strong>Step 6:</strong> Verify that modal overlays are properly cleaned up
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🖥️ Desktop Viewport Test</h3>
+            <p>Test navigation in desktop view (1920x1080)</p>
+            <button class="test-button" onclick="testDesktopNavigation()">Test Desktop Navigation</button>
+            <div id="desktop-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>📱 Mobile Viewport Test</h3>
+            <p>Test navigation in mobile view (375x667)</p>
+            <button class="test-button" onclick="testMobileNavigation()">Test Mobile Navigation</button>
+            <div id="mobile-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔧 Debug Panel Test</h3>
+            <p>Check debug panel z-index and pointer-events</p>
+            <button class="test-button" onclick="testDebugPanel()">Test Debug Panel</button>
+            <div id="debug-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🧹 Modal Cleanup Test</h3>
+            <p>Test modal overlay cleanup functionality</p>
+            <button class="test-button" onclick="testModalCleanup()">Test Modal Cleanup</button>
+            <div id="modal-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Test Results Summary</h3>
+            <div id="summary"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🌐 Application iframe for testing</h3>
+            <p>Use the iframe below to manually test the navigation flow:</p>
+            <iframe 
+                src="http://localhost:3000/trades" 
+                class="iframe-container"
+                id="test-iframe"
+                onload="iframeLoaded()"
+                title="Trades Page Test">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        let testResults = {
+            desktopNavigation: { passed: 0, failed: 0, details: [] },
+            mobileNavigation: { passed: 0, failed: 0, details: [] },
+            debugPanel: { passed: 0, failed: 0, details: [] },
+            modalCleanup: { passed: 0, failed: 0, details: [] }
+        };
+
+        function updateStatus(category, passed, message) {
+            const statusDiv = document.getElementById(`${category}-status`);
+            const statusClass = passed ? 'success' : 'error';
+            statusDiv.innerHTML = `<div class="status ${statusClass}">${passed ? '✅' : '❌'} ${message}</div>`;
+            
+            testResults[category][passed ? 'passed' : 'failed']++;
+            testResults[category].details.push({ passed, message, timestamp: new Date().toISOString() });
+            
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const totalPassed = Object.values(testResults).reduce((sum, cat) => sum + cat.passed, 0);
+            const totalFailed = Object.values(testResults).reduce((sum, cat) => sum + cat.failed, 0);
+            const total = totalPassed + totalFailed;
+            const successRate = total > 0 ? ((totalPassed / total) * 100).toFixed(1) : 0;
+            
+            const summaryDiv = document.getElementById('summary');
+            summaryDiv.innerHTML = `
+                <div class="status ${totalFailed === 0 ? 'success' : 'warning'}">
+                    <strong>Overall Results:</strong><br>
+                    Total Tests: ${total}<br>
+                    Passed: ${totalPassed}<br>
+                    Failed: ${totalFailed}<br>
+                    Success Rate: ${successRate}%<br>
+                    Conclusion: ${totalFailed === 0 ? '✅ ALL FIXES VERIFIED - Trades tab navigation issue has been resolved' : '❌ SOME ISSUES REMAIN - Further investigation needed'}
+                </div>
+            `;
+        }
+
+        function iframeLoaded() {
+            updateStatus('desktop', true, 'Iframe loaded successfully - ready for manual testing');
+        }
+
+        function testDesktopNavigation() {
+            const iframe = document.getElementById('test-iframe');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            try {
+                // Check for navigation links
+                const navLinks = iframeDoc.querySelectorAll('nav a, [role="navigation"] a, a[href*="/dashboard"], a[href*="/strategies"], a[href*="/calendar"]');
+                const clickableLinks = Array.from(navLinks).filter(link => {
+                    const style = iframe.contentWindow.getComputedStyle(link);
+                    const rect = link.getBoundingClientRect();
+                    return style.pointerEvents !== 'none' && 
+                           style.visibility !== 'hidden' && 
+                           style.display !== 'none' &&
+                           rect.width > 0 && rect.height > 0;
+                });
+                
+                if (clickableLinks.length > 0) {
+                    updateStatus('desktop', true, `Found ${clickableLinks.length} clickable navigation links in desktop view`);
+                } else {
+                    updateStatus('desktop', false, 'No clickable navigation links found in desktop view');
+                }
+                
+                // Check for blocking overlays
+                const overlays = iframeDoc.querySelectorAll('.fixed.inset-0, .modal-backdrop, [role="dialog"]');
+                const blockingOverlays = Array.from(overlays).filter(overlay => {
+                    const style = iframe.contentWindow.getComputedStyle(overlay);
+                    const zIndex = parseInt(style.zIndex) || 0;
+                    const rect = overlay.getBoundingClientRect();
+                    return zIndex > 50 && rect.width > iframe.contentWindow.innerWidth * 0.8;
+                });
+                
+                if (blockingOverlays.length === 0) {
+                    updateStatus('desktop', true, 'No blocking overlays found in desktop view');
+                } else {
+                    updateStatus('desktop', false, `Found ${blockingOverlays.length} blocking overlays in desktop view`);
+                }
+                
+            } catch (error) {
+                updateStatus('desktop', false, `Error testing desktop navigation: ${error.message}`);
+            }
+        }
+
+        function testMobileNavigation() {
+            const iframe = document.getElementById('test-iframe');
+            
+            // Simulate mobile viewport by changing iframe size
+            iframe.style.width = '375px';
+            iframe.style.height = '667px';
+            
+            setTimeout(() => {
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    // Check for mobile navigation
+                    const mobileNav = iframeDoc.querySelector('.lg\\:hidden');
+                    const mobileMenu = iframeDoc.querySelector('.transform.translate-x-0');
+                    
+                    if (mobileNav || mobileMenu) {
+                        updateStatus('mobile', true, 'Mobile navigation structure detected');
+                    } else {
+                        updateStatus('mobile', false, 'Mobile navigation structure not found');
+                    }
+                    
+                    // Check for mobile menu toggle button
+                    const menuToggle = iframeDoc.querySelector('.sidebar-toggle-button');
+                    if (menuToggle) {
+                        updateStatus('mobile', true, 'Mobile menu toggle button found');
+                    } else {
+                        updateStatus('mobile', false, 'Mobile menu toggle button not found');
+                    }
+                    
+                } catch (error) {
+                    updateStatus('mobile', false, `Error testing mobile navigation: ${error.message}`);
+                }
+            }, 1000);
+        }
+
+        function testDebugPanel() {
+            const iframe = document.getElementById('test-iframe');
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                const debugPanel = iframeDoc.querySelector('.zoom-debug-panel');
+                
+                if (debugPanel) {
+                    const style = iframe.contentWindow.getComputedStyle(debugPanel);
+                    const zIndex = parseInt(style.zIndex) || 0;
+                    const pointerEvents = style.pointerEvents;
+                    const position = style.position;
+                    const bottom = style.bottom;
+                    
+                    const zIndexSafe = zIndex <= 5;
+                    const pointerEventsNone = pointerEvents === 'none';
+                    const positionFixed = position === 'fixed';
+                    const bottomSafe = parseInt(bottom) >= 60;
+                    
+                    if (zIndexSafe && pointerEventsNone && positionFixed && bottomSafe) {
+                        updateStatus('debug', true, `Debug panel properly configured: z-index=${zIndex}, pointer-events=${pointerEvents}, position=${position}, bottom=${bottom}`);
+                    } else {
+                        updateStatus('debug', false, `Debug panel not properly configured: z-index=${zIndex}, pointer-events=${pointerEvents}, position=${position}, bottom=${bottom}`);
+                    }
+                } else {
+                    updateStatus('debug', true, 'Debug panel not found (may be production mode)');
+                }
+                
+            } catch (error) {
+                updateStatus('debug', false, `Error testing debug panel: ${error.message}`);
+            }
+        }
+
+        function testModalCleanup() {
+            const iframe = document.getElementById('test-iframe');
+            try {
+                const iframeWindow = iframe.contentWindow;
+                
+                // Check for cleanup functions
+                const cleanupFunctionExists = typeof iframeWindow.cleanupModalOverlays === 'function';
+                const navigationSafetyExists = !!(iframeWindow.navigationSafety) && 
+                                         typeof iframeWindow.navigationSafety.forceCleanupNavigationBlockers === 'function';
+                
+                if (cleanupFunctionExists) {
+                    updateStatus('modal', true, 'Modal cleanup function available globally');
+                } else {
+                    updateStatus('modal', false, 'Modal cleanup function not available globally');
+                }
+                
+                if (navigationSafetyExists) {
+                    updateStatus('modal', true, 'Navigation safety functions available');
+                } else {
+                    updateStatus('modal', false, 'Navigation safety functions not available');
+                }
+                
+                // Test actual cleanup
+                if (iframeWindow.navigationSafety) {
+                    iframeWindow.navigationSafety.forceCleanupNavigationBlockers();
+                    updateStatus('modal', true, 'Modal cleanup executed successfully');
+                }
+                
+            } catch (error) {
+                updateStatus('modal', false, `Error testing modal cleanup: ${error.message}`);
+            }
+        }
+
+        // Auto-run tests when iframe is loaded
+        setTimeout(() => {
+            console.log('Running automated tests...');
+            testDesktopNavigation();
+            setTimeout(testMobileNavigation, 2000);
+            setTimeout(testDebugPanel, 4000);
+            setTimeout(testModalCleanup, 6000);
+        }, 3000);
+    </script>
+</body>
+</html>

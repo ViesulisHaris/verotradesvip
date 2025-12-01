@@ -1,0 +1,996 @@
+{
+  "timestamp": "2025-11-19T21:41:49.456Z",
+  "testType": "Background Uniformity Comprehensive Test",
+  "results": {
+    "fullPageScreenshot": "background-uniformity-full-page-1763588536782.png",
+    "vRatingCardArea": null,
+    "balatroWebGLArea": {
+      "status": "no_context",
+      "message": "Could not get canvas context"
+    },
+    "authProviderArea": null,
+    "tradeModalArea": null,
+    "visualArtifacts": [
+      {
+        "type": "conflictingElements",
+        "description": "Elements with background patterns detected",
+        "details": [
+          {
+            "tagName": "BUTTON",
+            "className": "fixed top-4 left-4 z-50 w-10 h-10 p-2.5 sidebar-toggle-button group",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "ASIDE",
+            "className": "\n          fixed top-0 left-0 h-full w-72 sidebar-overlay\n          transform transition-transform ease-out z-50\n          -translate-x-full\n        ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "flex items-center justify-between p-6 border-b border-blue-500/30 glass-enhanced",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right bottom, rgb(59, 130, 246), rgb(34, 211, 238))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "BUTTON",
+            "className": "p-2 rounded-lg hover:bg-blue-600/20 transition-all group sidebar-toggle-button",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  active\n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.2))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "BUTTON",
+            "className": "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-red-400 hover:bg-red-600/20 hover:border hover:border-red-500/30 transition-all group relative overflow-hidden backdrop-blur-sm border border-white/10 sidebar-menu-item",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgba(239, 68, 68, 0.1), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "p-4 border-t border-blue-500/30 glass-enhanced",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "A",
+            "className": "text-2xl font-bold text-gradient hover:text-blue-300 transition-colors duration-200 cursor-pointer",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgb(96, 165, 250), rgb(103, 232, 249))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500/80 to-green-400/60 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-green-500/20 to-transparent",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500/80 to-yellow-400/60 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-yellow-500/20 to-transparent",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500/80 to-yellow-400/60 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-yellow-500/20 to-transparent",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/80 to-blue-400/60 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-blue-500/20 to-transparent",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 ",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-orange-500/20 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-6",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute right-0 top-0 bottom-0 w-1",
+            "id": "",
+            "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-orange-500/20",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]",
+            "id": "",
+            "backgroundImage": "url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+\")",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-orange-500/20 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "h-full bg-gradient-to-r from-orange-500 to-orange-400 transition-all duration-700 ease-out relative",
+            "id": "",
+            "backgroundImage": "linear-gradient(to right, rgb(249, 115, 22), rgb(251, 146, 60))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute right-0 top-0 bottom-0 w-1",
+            "id": "",
+            "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-orange-500/20",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]",
+            "id": "",
+            "backgroundImage": "url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+\")",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute top-0 left-0 right-0 h-1 bg-indigo-500/20 pointer-events-none",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "relative p-5",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "w-full rounded-full h-2 overflow-hidden",
+            "id": "",
+            "backgroundImage": "linear-gradient(90deg, rgba(30, 41, 59, 0.5) 0%, rgba(51, 65, 85, 0.5) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute right-0 top-0 bottom-0 w-0.5",
+            "id": "",
+            "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-indigo-500/20",
+            "id": "",
+            "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "glass-enhanced rounded-xl p-6",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "glass-enhanced rounded-xl p-6",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tagName": "DIV",
+            "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden bg-gradient-to-br from-slate-900/85 via-slate-800/60 to-slate-900/40 backdrop-blur-xl rounded-xl border border-slate-700/60 shadow-2xl p-4",
+            "id": "",
+            "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.6) 50%, rgba(15, 23, 42, 0.4) 100%)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      }
+    ],
+    "colorAnalysis": {
+      "bodyBackground": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+      },
+      "dashboardBackground": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+      },
+      "vRatingCardBackgrounds": [],
+      "balatroBackground": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+      },
+      "modalBackgrounds": [],
+      "conflictingElements": [
+        {
+          "tagName": "BUTTON",
+          "className": "fixed top-4 left-4 z-50 w-10 h-10 p-2.5 sidebar-toggle-button group",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "ASIDE",
+          "className": "\n          fixed top-0 left-0 h-full w-72 sidebar-overlay\n          transform transition-transform ease-out z-50\n          -translate-x-full\n        ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "flex items-center justify-between p-6 border-b border-blue-500/30 glass-enhanced",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right bottom, rgb(59, 130, 246), rgb(34, 211, 238))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "BUTTON",
+          "className": "p-2 rounded-lg hover:bg-blue-600/20 transition-all group sidebar-toggle-button",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  active\n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.2))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "\n                  sidebar-menu-item flex items-center gap-3 px-4 py-3 rounded-xl transition-all group relative overflow-hidden\n                  \n                ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "BUTTON",
+          "className": "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-red-400 hover:bg-red-600/20 hover:border hover:border-red-500/30 transition-all group relative overflow-hidden backdrop-blur-sm border border-white/10 sidebar-menu-item",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgba(239, 68, 68, 0.1), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "p-4 border-t border-blue-500/30 glass-enhanced",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "A",
+          "className": "text-2xl font-bold text-gradient hover:text-blue-300 transition-colors duration-200 cursor-pointer",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgb(96, 165, 250), rgb(103, 232, 249))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500/80 to-green-400/60 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-green-500/20 to-transparent",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500/80 to-yellow-400/60 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-yellow-500/20 to-transparent",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500/80 to-yellow-400/60 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-yellow-500/20 to-transparent",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/70 via-slate-800/40 to-slate-900/60 backdrop-blur-2xl border border-slate-700/30 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:border-slate-600/40 ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 50%, rgba(15, 23, 42, 0.6) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/80 to-blue-400/60 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-blue-500/20 to-transparent",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 ",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-orange-500/20 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-6",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute right-0 top-0 bottom-0 w-1",
+          "id": "",
+          "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-orange-500/20",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]",
+          "id": "",
+          "backgroundImage": "url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+\")",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-orange-500/20 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "h-full bg-gradient-to-r from-orange-500 to-orange-400 transition-all duration-700 ease-out relative",
+          "id": "",
+          "backgroundImage": "linear-gradient(to right, rgb(249, 115, 22), rgb(251, 146, 60))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute right-0 top-0 bottom-0 w-1",
+          "id": "",
+          "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-orange-500/20",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(15, 23, 42, 0.5) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]",
+          "id": "",
+          "backgroundImage": "url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6Ii8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+\")",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute top-0 left-0 right-0 h-1 bg-indigo-500/20 pointer-events-none",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "relative p-5",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "w-full rounded-full h-2 overflow-hidden",
+          "id": "",
+          "backgroundImage": "linear-gradient(90deg, rgba(30, 41, 59, 0.5) 0%, rgba(51, 65, 85, 0.5) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute right-0 top-0 bottom-0 w-0.5",
+          "id": "",
+          "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none bg-indigo-500/20",
+          "id": "",
+          "backgroundImage": "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "glass-enhanced rounded-xl p-6",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "glass-enhanced rounded-xl p-6",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8))",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "tagName": "DIV",
+          "className": "chart-container-enhanced relative w-full min-h-[300px] h-[320px] md:h-[350px] lg:h-[400px] overflow-hidden bg-gradient-to-br from-slate-900/85 via-slate-800/60 to-slate-900/40 backdrop-blur-xl rounded-xl border border-slate-700/60 shadow-2xl p-4",
+          "id": "",
+          "backgroundImage": "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.6) 50%, rgba(15, 23, 42, 0.4) 100%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)"
+        }
+      ]
+    },
+    "uniformityScore": 85
+  },
+  "artifacts": [
+    {
+      "type": "fullPageScreenshot",
+      "filename": "background-uniformity-full-page-1763588536782.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\background-uniformity-full-page-1763588536782.png",
+      "timestamp": "2025-11-19T21:42:18.001Z"
+    },
+    {
+      "type": "balatroWebGLArea",
+      "filename": "background-uniformity-balatro-1763588538310.png",
+      "timestamp": "2025-11-19T21:42:20.190Z"
+    }
+  ],
+  "status": "WARNING"
+}

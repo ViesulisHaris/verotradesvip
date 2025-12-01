@@ -1,0 +1,282 @@
+{
+  "summary": {
+    "total": 29,
+    "passed": 28,
+    "failed": 1,
+    "passRate": "96.55%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-21T10:00:04.019Z",
+      "level": "INFO",
+      "message": "🚀 Starting VeroTrade Dashboard & Analytics Comprehensive Tests"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:04.023Z",
+      "level": "INFO",
+      "message": "Testing against: http://localhost:3002"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:05.030Z",
+      "level": "INFO",
+      "message": "Testing authentication flow..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:08.627Z",
+      "level": "PASS",
+      "message": "✅ PASS: Authentication Flow - Redirected to http://localhost:3002/dashboard"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:10.076Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: authenticated-dashboard-2025-11-21T10-00-08-628Z.png - After successful authentication"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:10.077Z",
+      "level": "INFO",
+      "message": "Testing performance metrics cards..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:11.953Z",
+      "level": "PASS",
+      "message": "✅ PASS: Total P&L Card Visible - Value: $156,670.00"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:11.967Z",
+      "level": "PASS",
+      "message": "✅ PASS: Win Rate Card Visible - Value: 69.2%"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:11.980Z",
+      "level": "PASS",
+      "message": "✅ PASS: Profit Factor Card Visible - Value: 3.25"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:11.994Z",
+      "level": "PASS",
+      "message": "✅ PASS: Total Trades Card Visible - Value: 1191"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:13.101Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: performance-metrics-cards-2025-11-21T10-00-11-994Z.png - Performance metrics cards"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:13.102Z",
+      "level": "INFO",
+      "message": "Testing advanced metrics section..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:13.116Z",
+      "level": "PASS",
+      "message": "✅ PASS: VRating Card Visible - Score: 6.0"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:14.341Z",
+      "level": "PASS",
+      "message": "✅ PASS: VRating Card Expandable - Performance breakdown section visible"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:14.360Z",
+      "level": "PASS",
+      "message": "✅ PASS: Sharpe Ratio Gauge Visible - Value: 0.51"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:14.383Z",
+      "level": "PASS",
+      "message": "✅ PASS: Dominant Emotion Card Visible - Emotion: OVERRISK"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:15.204Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: advanced-metrics-2025-11-21T10-00-14-383Z.png - Advanced metrics section"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:15.205Z",
+      "level": "INFO",
+      "message": "Testing data visualizations..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:15.216Z",
+      "level": "PASS",
+      "message": "✅ PASS: Emotion Radar Chart Rendered - Chart container found"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:16.464Z",
+      "level": "FAIL",
+      "message": "❌ FAIL: Data Visualizations - Error: locator.isVisible: Error: strict mode violation: locator('.recharts-tooltip-wrapper') resolved to 2 elements:\n    1) <div tabindex=\"-1\" xmlns=\"http://www.w3.org/1999/xhtml\" class=\"recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-bottom\">…</div> aka locator('div').filter({ hasText: /^TILTFrequency: 100\\.0%BalancedTotal Trades: 150$/ }).first()\n    2) <div tabindex=\"-1\" class=\"recharts-tooltip-wrapper\" xmlns=\"http://www.w3.org/1999/xhtml\"></div> aka locator('.recharts-wrapper.stable-chart > .recharts-tooltip-wrapper')\n\nCall log:\n\u001b[2m    - checking visibility of locator('.recharts-tooltip-wrapper')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:16.465Z",
+      "level": "INFO",
+      "message": "Testing interactive elements..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:18.638Z",
+      "level": "PASS",
+      "message": "✅ PASS: Card Hover Effects - 3/3 cards have hover effects"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:21.132Z",
+      "level": "PASS",
+      "message": "✅ PASS: VRating Expand/Collapse - Expandable functionality works"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:21.863Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: interactive-elements-2025-11-21T10-00-21-132Z.png - Interactive elements test"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:21.864Z",
+      "level": "INFO",
+      "message": "Testing data loading and error handling..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:22.240Z",
+      "level": "PASS",
+      "message": "✅ PASS: Loading State Display - Loading spinner shown during data fetch"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:24.485Z",
+      "level": "PASS",
+      "message": "✅ PASS: No Error States - 0 error elements found"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:27.199Z",
+      "level": "PASS",
+      "message": "✅ PASS: Data Persistence on Refresh - Data remains after page refresh"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:27.991Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: data-loading-2025-11-21T10-00-27-199Z.png - Data loading and error handling"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:27.992Z",
+      "level": "INFO",
+      "message": "Testing responsive design..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:29.000Z",
+      "level": "PASS",
+      "message": "✅ PASS: Desktop Layout - 4-column grid layout on desktop"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:30.071Z",
+      "level": "PASS",
+      "message": "✅ PASS: Tablet Layout - 2-column grid layout on tablet"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:31.135Z",
+      "level": "PASS",
+      "message": "✅ PASS: Mobile Layout - 1-column grid layout on mobile"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:33.273Z",
+      "level": "PASS",
+      "message": "✅ PASS: Chart Responsiveness - Chart size adjusts: 773.0000305175781px → 250px"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:33.406Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: responsive-design-mobile-2025-11-21T10-00-33-273Z.png - Mobile responsive design"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:34.718Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: responsive-design-desktop-2025-11-21T10-00-33-448Z.png - Desktop responsive design"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:34.719Z",
+      "level": "INFO",
+      "message": "Testing real-time data fetching..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:38.733Z",
+      "level": "PASS",
+      "message": "✅ PASS: Data Requests Made - 4 API requests detected"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:41.628Z",
+      "level": "PASS",
+      "message": "✅ PASS: Data Refresh - Data consistency maintained after refresh"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.451Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: realtime-data-2025-11-21T10-00-41-628Z.png - Real-time data fetching test"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.451Z",
+      "level": "INFO",
+      "message": "Testing calculations accuracy..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.508Z",
+      "level": "PASS",
+      "message": "✅ PASS: Total P&L Format Valid - Value: 156670"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.508Z",
+      "level": "PASS",
+      "message": "✅ PASS: Win Rate Format Valid - Value: 69.2%"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.508Z",
+      "level": "PASS",
+      "message": "✅ PASS: Profit Factor Format Valid - Value: 3.25"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.508Z",
+      "level": "PASS",
+      "message": "✅ PASS: Total Trades Format Valid - Value: 1191"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:42.508Z",
+      "level": "PASS",
+      "message": "✅ PASS: Logical Data Consistency - Data relationships make sense"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:43.165Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: calculations-accuracy-2025-11-21T10-00-42-509Z.png - Calculations accuracy test"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:43.165Z",
+      "level": "INFO",
+      "message": "Testing analytics page functionality..."
+    },
+    {
+      "timestamp": "2025-11-21T10:00:44.328Z",
+      "level": "PASS",
+      "message": "✅ PASS: Analytics Page Loads - Analytics page header visible"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:44.333Z",
+      "level": "PASS",
+      "message": "✅ PASS: Analytics Page Status - Page shows under construction message"
+    },
+    {
+      "timestamp": "2025-11-21T10:00:44.630Z",
+      "level": "INFO",
+      "message": "📸 Screenshot saved: analytics-page-2025-11-21T10-00-44-333Z.png - Analytics page"
+    }
+  ],
+  "timestamp": "2025-11-21T10:00:45.347Z",
+  "testConfig": {
+    "baseUrl": "http://localhost:3002",
+    "credentials": {
+      "email": "testuser@verotrade.com",
+      "password": "TestPassword123!"
+    },
+    "screenshots": {
+      "dir": "./dashboard-test-screenshots",
+      "enabled": true
+    },
+    "timeout": {
+      "navigation": 30000,
+      "element": 10000,
+      "chart": 15000
+    }
+  }
+}

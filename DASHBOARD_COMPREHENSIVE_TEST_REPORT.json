@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-11-30T19:36:24.041Z",
+  "summary": {
+    "total": 12,
+    "passed": 3,
+    "failed": 9,
+    "successRate": 25
+  },
+  "testResults": [
+    {
+      "test": "Dashboard HTTP Status",
+      "passed": true,
+      "details": "Status: 200",
+      "timestamp": "2025-11-30T19:36:17.573Z"
+    },
+    {
+      "test": "Dashboard Page Structure",
+      "passed": false,
+      "details": "Title: false, Content Wrapper: true",
+      "timestamp": "2025-11-30T19:36:23.350Z"
+    },
+    {
+      "test": "Authentication Protection",
+      "passed": false,
+      "details": "AuthGuard: false, Login Form: false",
+      "timestamp": "2025-11-30T19:36:23.355Z"
+    },
+    {
+      "test": "Trading Statistics",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "timestamp": "2025-11-30T19:36:23.511Z"
+    },
+    {
+      "test": "EmotionRadar Component",
+      "passed": false,
+      "details": "Radar Chart: false, Section: false",
+      "timestamp": "2025-11-30T19:36:23.514Z"
+    },
+    {
+      "test": "PnLChart Component",
+      "passed": true,
+      "details": "Chart Container: true, Section: false",
+      "timestamp": "2025-11-30T19:36:23.658Z"
+    },
+    {
+      "test": "Recent Trades Table",
+      "passed": false,
+      "details": "Table: false, Section: false",
+      "timestamp": "2025-11-30T19:36:23.772Z"
+    },
+    {
+      "test": "Data Fetching",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "timestamp": "2025-11-30T19:36:23.893Z"
+    },
+    {
+      "test": "Loading States",
+      "passed": true,
+      "details": "Spinner: true, Loading Text: false",
+      "timestamp": "2025-11-30T19:36:23.899Z"
+    },
+    {
+      "test": "Error Boundaries",
+      "passed": false,
+      "details": "Error Boundary Present: false",
+      "timestamp": "2025-11-30T19:36:23.900Z"
+    },
+    {
+      "test": "Retry Mechanisms",
+      "passed": false,
+      "details": "Retry Button: false",
+      "timestamp": "2025-11-30T19:36:23.902Z"
+    },
+    {
+      "test": "Responsive Design",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "timestamp": "2025-11-30T19:36:24.040Z"
+    }
+  ],
+  "componentTests": {
+    "accessibility": true,
+    "authProtection": false,
+    "tradingStats": false,
+    "emotionRadar": false,
+    "pnlChart": true,
+    "recentTrades": false,
+    "dataFetching": false,
+    "errorHandling": true,
+    "responsiveDesign": false
+  },
+  "environment": {
+    "baseUrl": "http://localhost:3000",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}

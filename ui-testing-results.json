@@ -1,0 +1,133 @@
+{
+  "timestamp": "2025-11-17T21:57:30.152Z",
+  "summary": {
+    "totalTests": 5,
+    "passedTests": 1,
+    "failedTests": 4,
+    "performanceIssues": [],
+    "criticalErrors": [
+      {
+        "page": "trades",
+        "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"trades-container\"], .glass, .trade-item') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 99 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+      },
+      {
+        "page": "dashboard",
+        "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"pnl\"], .stat-card, .glass') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 12 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+      },
+      {
+        "page": "confluence",
+        "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.glass, .filter-section, .stat-card') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 3 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+      }
+    ]
+  },
+  "pages": {
+    "trades": {
+      "name": "Trades Page",
+      "tests": [
+        {
+          "name": "Page Load",
+          "status": "FAIL",
+          "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"trades-container\"], .glass, .trade-item') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 99 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+        }
+      ],
+      "performance": {
+        "pageLoadTime": 1856
+      },
+      "dataVerification": {}
+    },
+    "dashboard": {
+      "name": "Dashboard Page",
+      "tests": [
+        {
+          "name": "Page Load",
+          "status": "FAIL",
+          "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"pnl\"], .stat-card, .glass') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 12 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+        }
+      ],
+      "performance": {
+        "pageLoadTime": 2168
+      },
+      "dataVerification": {}
+    },
+    "confluence": {
+      "name": "Confluence Page",
+      "tests": [
+        {
+          "name": "Page Load",
+          "status": "FAIL",
+          "error": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.glass, .filter-section, .stat-card') to be visible\u001b[22m\n\u001b[2m    24 × locator resolved to 3 elements. Proceeding with the first one: <button class=\"fixed top-4 left-4 z-50 p-3 glass rounded-xl lg:hidden hover:bg-blue-600/20 transition-colors duration-200\">…</button>\u001b[22m\n"
+        }
+      ],
+      "performance": {
+        "pageLoadTime": 1674
+      },
+      "dataVerification": {}
+    },
+    "calendar": {
+      "name": "Calendar Page",
+      "tests": [
+        {
+          "name": "Calendar Display",
+          "status": "FAIL",
+          "details": {
+            "hasCalendar": false,
+            "hasTradeData": true
+          },
+          "duration": 1028
+        }
+      ],
+      "performance": {
+        "pageLoadTime": 1028
+      }
+    },
+    "strategies": {
+      "name": "Strategies Page",
+      "tests": [
+        {
+          "name": "Strategies Display",
+          "status": "PASS",
+          "details": {
+            "hasStrategies": true,
+            "hasStrategyList": false
+          },
+          "duration": 1569
+        }
+      ],
+      "performance": {
+        "pageLoadTime": 1569
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "path": "ui-test-screenshots/trades-page-1763416655498.png",
+      "name": "trades-page",
+      "description": "Trades page after load",
+      "timestamp": "2025-11-17T21:57:36.161Z"
+    },
+    {
+      "path": "ui-test-screenshots/dashboard-page-1763416668347.png",
+      "name": "dashboard-page",
+      "description": "Dashboard page after load",
+      "timestamp": "2025-11-17T21:57:50.625Z"
+    },
+    {
+      "path": "ui-test-screenshots/confluence-page-1763416682314.png",
+      "name": "confluence-page",
+      "description": "Confluence page after load",
+      "timestamp": "2025-11-17T21:58:05.928Z"
+    },
+    {
+      "path": "ui-test-screenshots/calendar-page-1763416696963.png",
+      "name": "calendar-page",
+      "description": "Calendar page after load",
+      "timestamp": "2025-11-17T21:58:18.837Z"
+    },
+    {
+      "path": "ui-test-screenshots/strategies-page-1763416700415.png",
+      "name": "strategies-page",
+      "description": "Strategies page after load",
+      "timestamp": "2025-11-17T21:58:22.899Z"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "startTime": "2025-11-19T07:04:43.963Z",
+    "endTime": "2025-11-19T07:04:51.488Z",
+    "duration": 7525
+  },
+  "dashboard": {
+    "componentLoaded": false,
+    "hasData": false,
+    "visualEnhancements": {
+      "gradients": false,
+      "smoothCurves": false,
+      "glowEffects": false
+    },
+    "responsiveness": {
+      "desktop": false,
+      "tablet": false,
+      "mobile": false
+    },
+    "interactivity": {
+      "tooltips": false,
+      "hoverEffects": false
+    },
+    "errors": []
+  },
+  "confluence": {
+    "componentLoaded": false,
+    "hasData": false,
+    "visualEnhancements": {
+      "gradients": false,
+      "smoothCurves": false,
+      "glowEffects": false
+    },
+    "responsiveness": {
+      "desktop": false,
+      "tablet": false,
+      "mobile": false
+    },
+    "interactivity": {
+      "tooltips": false,
+      "hoverEffects": false
+    },
+    "errors": []
+  },
+  "screenshots": [],
+  "detailedResults": [],
+  "testEnvironment": {
+    "nodeVersion": "v22.14.0",
+    "puppeteerVersion": "24.30.0",
+    "testUrl": "http://localhost:3000",
+    "viewports": {
+      "desktop": "1920x1080",
+      "tablet": "768x1024",
+      "mobile": "375x667"
+    }
+  },
+  "recommendations": [
+    "Dashboard EmotionRadar component failed to load - check component imports and error handling",
+    "Confluence EmotionRadar component failed to load - check component imports and error handling",
+    "Dashboard EmotionRadar has no data - check data fetching and processing logic",
+    "Confluence EmotionRadar has no data - check data fetching and processing logic",
+    "Gradients not rendering properly - check SVG gradient definitions",
+    "Glow effects not working - check SVG filter definitions"
+  ]
+}

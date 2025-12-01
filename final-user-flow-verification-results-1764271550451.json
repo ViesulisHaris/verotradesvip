@@ -1,0 +1,165 @@
+{
+  "startTime": "2025-11-27T19:25:14.607Z",
+  "endTime": "2025-11-27T19:25:50.451Z",
+  "totalFlowTime": 35844,
+  "steps": {
+    "homepage": {
+      "startTime": "2025-11-27T19:25:15.514Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 5892,
+      "graySpaceCheck": {
+        "hasContent": true,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 64,
+        "elementCount": 8
+      },
+      "contentCheck": {
+        "hasLoginButton": true,
+        "hasRegisterButton": true,
+        "hasNavigation": false,
+        "hasMainContent": false,
+        "hasVeroTradeLogo": true,
+        "pageTitle": "",
+        "url": "http://localhost:3000/",
+        "totalButtons": 2,
+        "buttonTexts": [
+          "Login",
+          "Register"
+        ]
+      },
+      "endTime": "2025-11-27T19:25:23.583Z"
+    },
+    "loginPage": {
+      "startTime": "2025-11-27T19:25:23.583Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 7187,
+      "graySpaceCheck": {
+        "hasContent": true,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 110,
+        "elementCount": 9
+      },
+      "contentCheck": {
+        "hasEmailInput": true,
+        "hasPasswordInput": true,
+        "hasSubmitButton": true,
+        "hasForm": true,
+        "pageTitle": "",
+        "url": "http://localhost:3000/login"
+      },
+      "endTime": "2025-11-27T19:25:33.437Z"
+    },
+    "loginProcess": {
+      "startTime": "2025-11-27T19:25:33.438Z",
+      "status": "failed",
+      "details": {},
+      "authenticationTime": 8096,
+      "authCheck": {
+        "currentUrl": "http://localhost:3000/login",
+        "hasDashboard": false,
+        "hasSidebar": false,
+        "hasUserMenu": false,
+        "pageTitle": "",
+        "localStorage": {
+          "hasAuthData": false
+        }
+      },
+      "endTime": "2025-11-27T19:25:41.762Z"
+    },
+    "dashboard": {
+      "startTime": "2025-11-27T19:25:41.763Z",
+      "status": "failed",
+      "details": {},
+      "loadTime": 8582,
+      "graySpaceCheck": {
+        "hasContent": false,
+        "hasElements": true,
+        "backgroundColor": "rgb(18, 18, 18)",
+        "isGray": false,
+        "innerTextLength": 0,
+        "elementCount": 9
+      },
+      "contentCheck": {
+        "hasSidebar": false,
+        "hasMainContent": false,
+        "hasDashboardElement": false,
+        "hasUserInfo": false,
+        "sidebarDetails": null,
+        "pageTitle": "",
+        "url": "http://localhost:3000/login",
+        "bodyTextLength": 0
+      },
+      "endTime": "2025-11-27T19:25:50.435Z"
+    },
+    "logout": {
+      "startTime": "2025-11-27T19:25:50.436Z",
+      "status": "error",
+      "details": {},
+      "error": "Logout button not found"
+    }
+  },
+  "performance": {
+    "homepage": {
+      "loadTime": 0,
+      "domContentLoaded": 0.20000000298023224,
+      "firstPaint": 1840,
+      "firstContentfulPaint": 5360,
+      "timestamp": "2025-11-27T19:25:23.579Z"
+    },
+    "loginPage": {
+      "loadTime": 0,
+      "domContentLoaded": 0.10000000149011612,
+      "firstPaint": 1840,
+      "firstContentfulPaint": 9424,
+      "timestamp": "2025-11-27T19:25:33.435Z"
+    },
+    "dashboard": {
+      "loadTime": 0,
+      "domContentLoaded": 0.10000000149011612,
+      "firstPaint": 1980,
+      "firstContentfulPaint": 0,
+      "timestamp": "2025-11-27T19:25:50.432Z"
+    }
+  },
+  "screenshots": {
+    "homepage": {
+      "path": "final-user-flow-homepage-1764271523415.png",
+      "description": "Homepage after load",
+      "timestamp": "2025-11-27T19:25:23.575Z"
+    },
+    "login-page": {
+      "path": "final-user-flow-login-page-1764271532776.png",
+      "description": "Login page with form",
+      "timestamp": "2025-11-27T19:25:33.432Z"
+    },
+    "login-form-filled": {
+      "path": "final-user-flow-login-form-filled-1764271538270.png",
+      "description": "Login form filled with credentials",
+      "timestamp": "2025-11-27T19:25:38.494Z"
+    },
+    "login-attempt-result": {
+      "path": "final-user-flow-login-attempt-result-1764271541534.png",
+      "description": "Result after login attempt",
+      "timestamp": "2025-11-27T19:25:41.760Z"
+    },
+    "dashboard": {
+      "path": "final-user-flow-dashboard-1764271550345.png",
+      "description": "Dashboard with sidebar",
+      "timestamp": "2025-11-27T19:25:50.430Z"
+    }
+  },
+  "errors": [
+    "Homepage test failed: {\"hasLoginButton\":true,\"hasRegisterButton\":true,\"hasNavigation\":false,\"hasMainContent\":false,\"hasVeroTradeLogo\":true,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/\",\"totalButtons\":2,\"buttonTexts\":[\"Login\",\"Register\"]}",
+    "Login page test failed: {\"hasEmailInput\":true,\"hasPasswordInput\":true,\"hasSubmitButton\":true,\"hasForm\":true,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/login\"}",
+    "Login process failed: {\"currentUrl\":\"http://localhost:3000/login\",\"hasDashboard\":false,\"hasSidebar\":false,\"hasUserMenu\":false,\"pageTitle\":\"\",\"localStorage\":{\"hasAuthData\":false}}",
+    "Dashboard test failed: {\"hasSidebar\":false,\"hasMainContent\":false,\"hasDashboardElement\":false,\"hasUserInfo\":false,\"sidebarDetails\":null,\"pageTitle\":\"\",\"url\":\"http://localhost:3000/login\",\"bodyTextLength\":0}",
+    "Logout error: Logout button not found"
+  ],
+  "success": false
+}

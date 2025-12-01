@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-11-15T21:49:51.483Z",
+  "tests": [
+    {
+      "name": "Check Strategies Page Response",
+      "passed": true,
+      "message": "Strategies page properly redirects to login (protected route)",
+      "details": {
+        "url": "http://localhost:3000/login",
+        "redirected": true
+      }
+    },
+    {
+      "name": "Attempt Login",
+      "passed": true,
+      "message": "Login successful or redirected appropriately",
+      "details": {
+        "url": "http://localhost:3000/dashboard"
+      }
+    },
+    {
+      "name": "Navigate to Strategies After Auth",
+      "passed": true,
+      "message": "Successfully navigated to strategies page without error",
+      "details": {
+        "url": "http://localhost:3000/strategies",
+        "errorPresent": false
+      }
+    },
+    {
+      "name": "Check Console for Strategy Errors",
+      "passed": true,
+      "message": "No strategy-related console errors found",
+      "details": {
+        "totalErrors": 0,
+        "strategyErrors": []
+      }
+    },
+    {
+      "name": "Check Page Loading State",
+      "passed": true,
+      "message": "Page loads without excessive loading states",
+      "details": {
+        "loadingElements": 0,
+        "skeletonElements": 0
+      }
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  }
+}

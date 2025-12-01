@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-11-24T13:55:37.858Z",
+  "results": {
+    "navigationFlow": {
+      "toTrades": false,
+      "fromTradesToDashboard": false,
+      "fromTradesToStrategies": false,
+      "multipleNavigationCycles": false
+    },
+    "overlayInterference": {
+      "debugPanelZIndex": false,
+      "modalOverlayCleanup": false,
+      "noBlockingOverlays": false
+    },
+    "edgeCases": {
+      "afterFiltering": false,
+      "afterSorting": false,
+      "afterModalInteraction": false,
+      "afterTradeExpansion": false
+    },
+    "consoleErrors": {
+      "count": 0,
+      "errors": []
+    },
+    "performance": {
+      "navigationTimes": [],
+      "overlayCleanupTimes": []
+    }
+  },
+  "summary": {
+    "successRate": 0,
+    "passedTests": 0,
+    "totalTests": 11,
+    "resolved": false
+  }
+}

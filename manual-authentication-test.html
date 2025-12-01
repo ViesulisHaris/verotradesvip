@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Authentication Flow Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 4px solid #B89B5E;
+        }
+        .test-step {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+        .status-pending { border-left: 4px solid #ffc107; }
+        .status-pass { border-left: 4px solid #28a745; }
+        .status-fail { border-left: 4px solid #dc3545; }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B89B5E;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .instructions {
+            background: rgba(184, 155, 94, 0.1);
+            border: 1px solid rgba(184, 155, 94, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-button {
+            background: linear-gradient(135deg, #B89B5E 0%, #D6C7B2 100%);
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 155, 94, 0.3);
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .performance-target {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .performance-warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .performance-error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Manual Authentication Flow Performance Test</h1>
+        
+        <div class="instructions">
+            <h3>📋 Test Instructions</h3>
+            <ol>
+                <li><strong>Open the application in the iframe below</strong> - Click "Open App" button</li>
+                <li><strong>Test Login Page Access</strong> - Navigate to http://localhost:3000/login</li>
+                <li><strong>Measure Load Time</strong> - Use browser dev tools to measure page load time</li>
+                <li><strong>Test Authentication</strong> - Use credentials: testuser1000@verotrade.com / TestPassword123!</li>
+                <li><strong>Test Dashboard Redirect</strong> - Verify redirect after successful login</li>
+                <li><strong>Test Sidebar Visibility</strong> - Check if UnifiedSidebar appears for authenticated users</li>
+                <li><strong>Test Authentication State</strong> - Verify user state is maintained</li>
+                <li><strong>Test Logout</strong> - Test logout functionality and redirect</li>
+                <li><strong>Record Performance Metrics</strong> - Document all timing measurements</li>
+            </ol>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-value" id="loginPageLoad">--</div>
+                <div class="metric-label">Login Page Load (ms)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="authTime">--</div>
+                <div class="metric-label">Authentication Time (ms)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="dashboardLoad">--</div>
+                <div class="metric-label">Dashboard Load (ms)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="sidebarRender">--</div>
+                <div class="metric-label">Sidebar Render (ms)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="totalTime">--</div>
+                <div class="metric-label">Total Flow Time (ms)</div>
+            </div>
+        </div>
+
+        <div class="performance-targets">
+            <h3>🎯 Performance Targets</h3>
+            <ul>
+                <li>Login Page Load: <span class="performance-target">< 3000ms</span></li>
+                <li>Authentication Time: <span class="performance-target">< 5000ms</span></li>
+                <li>Dashboard Load: <span class="performance-target">< 3000ms</span></li>
+                <li>Sidebar Render: <span class="performance-target">< 3000ms</span></li>
+                <li>Total Flow Time: <span class="performance-target">< 5000ms</span></li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>🧪 Test Steps</h3>
+            
+            <div class="test-step status-pending" id="step1">
+                <h4>Step 1: Login Page Access</h4>
+                <p>Navigate to login page and measure load time</p>
+                <button class="test-button" onclick="navigateToLogin()">Navigate to Login</button>
+                <button class="test-button" onclick="recordMetric('loginPageLoad')">Record Load Time</button>
+            </div>
+
+            <div class="test-step status-pending" id="step2">
+                <h4>Step 2: Authentication Flow</h4>
+                <p>Test login with valid credentials</p>
+                <button class="test-button" onclick="startAuthTimer()">Start Auth Timer</button>
+                <button class="test-button" onclick="recordMetric('authTime')">Record Auth Time</button>
+            </div>
+
+            <div class="test-step status-pending" id="step3">
+                <h4>Step 3: Dashboard Access</h4>
+                <p>Verify dashboard loads after login</p>
+                <button class="test-button" onclick="navigateToDashboard()">Go to Dashboard</button>
+                <button class="test-button" onclick="recordMetric('dashboardLoad')">Record Dashboard Time</button>
+            </div>
+
+            <div class="test-step status-pending" id="step4">
+                <h4>Step 4: Sidebar Visibility</h4>
+                <p>Check if UnifiedSidebar component renders</p>
+                <button class="test-button" onclick="checkSidebar()">Check Sidebar</button>
+                <button class="test-button" onclick="recordMetric('sidebarRender')">Record Sidebar Time</button>
+            </div>
+
+            <div class="test-step status-pending" id="step5">
+                <h4>Step 5: Authentication State</h4>
+                <p>Verify user state in localStorage and context</p>
+                <button class="test-button" onclick="checkAuthState()">Check Auth State</button>
+            </div>
+
+            <div class="test-step status-pending" id="step6">
+                <h4>Step 6: Logout Functionality</h4>
+                <p>Test logout and redirect to login</p>
+                <button class="test-button" onclick="testLogout()">Test Logout</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🖥️ Application Test Area</h3>
+            <button class="test-button" onclick="openApp()">Open App in New Window</button>
+            <div class="iframe-container">
+                <iframe id="appFrame" src="about:blank" title="Application Test Area"></iframe>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Test Results</h3>
+            <div id="testResults">
+                <p>Complete the test steps above to see results here...</p>
+            </div>
+            <button class="test-button" onclick="generateReport()">Generate Report</button>
+            <button class="test-button" onclick="resetTest()">Reset Test</button>
+        </div>
+    </div>
+
+    <script>
+        let authStartTime = null;
+        let testResults = {
+            loginPageLoad: null,
+            authTime: null,
+            dashboardLoad: null,
+            sidebarRender: null,
+            totalTime: null,
+            sidebarVisible: false,
+            authStateValid: false,
+            logoutWorking: false
+        };
+
+        function openApp() {
+            window.open('http://localhost:3000', '_blank');
+        }
+
+        function navigateToLogin() {
+            const iframe = document.getElementById('appFrame');
+            iframe.src = 'http://localhost:3000/login';
+            updateStepStatus('step1', 'pass');
+            addResult('✅ Navigated to login page');
+        }
+
+        function navigateToDashboard() {
+            const iframe = document.getElementById('appFrame');
+            iframe.src = 'http://localhost:3000/dashboard';
+            updateStepStatus('step3', 'pass');
+            addResult('✅ Navigated to dashboard');
+        }
+
+        function startAuthTimer() {
+            authStartTime = performance.now();
+            updateStepStatus('step2', 'pass');
+            addResult('⏱️ Authentication timer started');
+        }
+
+        function recordMetric(metric) {
+            const value = prompt(`Enter ${metric} value in milliseconds:`);
+            if (value && !isNaN(value)) {
+                testResults[metric] = parseInt(value);
+                document.getElementById(metric).textContent = value;
+                addResult(`📊 Recorded ${metric}: ${value}ms`);
+                
+                // Check if it meets performance target
+                const targets = {
+                    loginPageLoad: 3000,
+                    authTime: 5000,
+                    dashboardLoad: 3000,
+                    sidebarRender: 3000
+                };
+                
+                if (targets[metric]) {
+                    const element = document.getElementById(metric);
+                    if (value <= targets[metric]) {
+                        element.style.color = '#28a745';
+                        addResult(`✅ ${metric} meets performance target`);
+                    } else {
+                        element.style.color = '#dc3545';
+                        addResult(`❌ ${metric} exceeds performance target (${targets[metric]}ms)`);
+                    }
+                }
+            }
+        }
+
+        function checkSidebar() {
+            updateStepStatus('step4', 'pass');
+            addResult('🔍 Checking sidebar visibility...');
+            
+            // This would need to be checked in the iframe
+            setTimeout(() => {
+                const sidebarVisible = confirm('Is the sidebar visible on the dashboard? (OK for yes, Cancel for no)');
+                testResults.sidebarVisible = sidebarVisible;
+                addResult(sidebarVisible ? '✅ Sidebar is visible' : '❌ Sidebar is not visible');
+            }, 2000);
+        }
+
+        function checkAuthState() {
+            updateStepStatus('step5', 'pass');
+            addResult('🔍 Checking authentication state...');
+            
+            setTimeout(() => {
+                const authStateValid = confirm('Is the user properly authenticated and state maintained? (OK for yes, Cancel for no)');
+                testResults.authStateValid = authStateValid;
+                addResult(authStateValid ? '✅ Authentication state is valid' : '❌ Authentication state is invalid');
+            }, 1000);
+        }
+
+        function testLogout() {
+            updateStepStatus('step6', 'pass');
+            addResult('🔍 Testing logout functionality...');
+            
+            setTimeout(() => {
+                const logoutWorking = confirm('Did logout work correctly and redirect to login page? (OK for yes, Cancel for no)');
+                testResults.logoutWorking = logoutWorking;
+                addResult(logoutWorking ? '✅ Logout working correctly' : '❌ Logout not working');
+            }, 2000);
+        }
+
+        function updateStepStatus(stepId, status) {
+            const step = document.getElementById(stepId);
+            step.className = `test-step status-${status}`;
+        }
+
+        function addResult(message) {
+            const resultsDiv = document.getElementById('testResults');
+            const timestamp = new Date().toLocaleTimeString();
+            resultsDiv.innerHTML += `<p><strong>[${timestamp}]</strong> ${message}</p>`;
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        function generateReport() {
+            // Calculate total time
+            if (testResults.loginPageLoad && testResults.authTime && testResults.dashboardLoad) {
+                testResults.totalTime = testResults.loginPageLoad + testResults.authTime + testResults.dashboardLoad;
+                document.getElementById('totalTime').textContent = testResults.totalTime;
+            }
+
+            const report = {
+                timestamp: new Date().toISOString(),
+                metrics: testResults,
+                performanceTargets: {
+                    loginPageLoad: '< 3000ms',
+                    authTime: '< 5000ms',
+                    dashboardLoad: '< 3000ms',
+                    sidebarRender: '< 3000ms',
+                    totalTime: '< 5000ms'
+                },
+                status: {
+                    loginPageLoad: testResults.loginPageLoad && testResults.loginPageLoad <= 3000,
+                    authTime: testResults.authTime && testResults.authTime <= 5000,
+                    dashboardLoad: testResults.dashboardLoad && testResults.dashboardLoad <= 3000,
+                    sidebarVisible: testResults.sidebarVisible,
+                    authStateValid: testResults.authStateValid,
+                    logoutWorking: testResults.logoutWorking
+                }
+            };
+
+            const reportText = JSON.stringify(report, null, 2);
+            const blob = new Blob([reportText], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'authentication-performance-report.json';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            addResult('📄 Report generated and downloaded');
+        }
+
+        function resetTest() {
+            testResults = {
+                loginPageLoad: null,
+                authTime: null,
+                dashboardLoad: null,
+                sidebarRender: null,
+                totalTime: null,
+                sidebarVisible: false,
+                authStateValid: false,
+                logoutWorking: false
+            };
+
+            // Reset UI
+            document.getElementById('loginPageLoad').textContent = '--';
+            document.getElementById('authTime').textContent = '--';
+            document.getElementById('dashboardLoad').textContent = '--';
+            document.getElementById('sidebarRender').textContent = '--';
+            document.getElementById('totalTime').textContent = '--';
+            document.getElementById('testResults').innerHTML = '<p>Complete the test steps above to see results here...</p>';
+
+            // Reset step statuses
+            for (let i = 1; i <= 6; i++) {
+                updateStepStatus(`step${i}`, 'pending');
+            }
+
+            addResult('🔄 Test reset completed');
+        }
+
+        // Initialize
+        addResult('🚀 Manual Authentication Test initialized');
+        addResult('📝 Follow the test steps to measure authentication performance');
+    </script>
+</body>
+</html>

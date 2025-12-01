@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "totalTests": 2,
+    "passedTests": 0,
+    "failedTests": 2,
+    "successRate": "0.00%"
+  },
+  "details": [
+    {
+      "test": "Sidebar element exists (Mobile)",
+      "passed": null,
+      "details": "Sidebar element not found",
+      "timestamp": "2025-11-27T08:52:42.059Z"
+    },
+    {
+      "test": "Sidebar toggle button exists (Mobile)",
+      "passed": false,
+      "details": "Selector: .verotrade-mobile-menu-btn",
+      "timestamp": "2025-11-27T08:52:42.074Z"
+    }
+  ],
+  "timestamp": "2025-11-27T08:52:42.431Z",
+  "testConfiguration": {
+    "baseUrl": "http://localhost:3000",
+    "testPages": [
+      "/dashboard",
+      "/trades",
+      "/strategies"
+    ],
+    "viewports": [
+      {
+        "name": "Mobile",
+        "width": 375,
+        "height": 667
+      },
+      {
+        "name": "Desktop",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "screenshotsDir": "./sidebar-test-screenshots",
+    "timeout": 8000
+  }
+}

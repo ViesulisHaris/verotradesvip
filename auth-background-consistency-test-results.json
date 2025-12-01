@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-21T17:28:49.377Z",
+  "loginPage": {
+    "hasBalatroContainer": true,
+    "hasBalatroCanvas": true,
+    "containerStyles": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+    },
+    "balatroConfig": {
+      "hasMouseInteraction": true,
+      "zIndex": "-1",
+      "position": "fixed"
+    }
+  },
+  "registerPage": {
+    "hasBalatroContainer": true,
+    "hasBalatroCanvas": true,
+    "containerStyles": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+    },
+    "balatroConfig": {
+      "hasMouseInteraction": true,
+      "zIndex": "-1",
+      "position": "fixed"
+    }
+  },
+  "isConsistent": true
+}

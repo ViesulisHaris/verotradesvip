@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-11-24T13:57:17.007Z",
+  "results": {
+    "debugPanelFix": {
+      "zIndexReduced": false,
+      "pointerEventsNone": true,
+      "userSelectNone": true,
+      "notBlockingNavigation": true
+    },
+    "modalOverlayFix": {
+      "cleanupFunctionExists": false,
+      "cleanupOnUnmount": false,
+      "reducedModalZIndex": true,
+      "properBodyCleanup": true
+    },
+    "navigationTests": {
+      "canNavigateAway": true,
+      "noBlockingOverlays": true,
+      "consistentNavigation": true
+    },
+    "consoleErrors": {
+      "count": 0,
+      "cssSelectorErrors": 0,
+      "runtimeErrors": 0
+    },
+    "performance": {
+      "navigationTimes": [
+        857,
+        918,
+        1853
+      ],
+      "averageNavigationTime": 1209.3333333333333
+    }
+  },
+  "summary": {
+    "successRate": 76.92307692307693,
+    "passedTests": 10,
+    "totalTests": 13,
+    "resolved": false
+  }
+}

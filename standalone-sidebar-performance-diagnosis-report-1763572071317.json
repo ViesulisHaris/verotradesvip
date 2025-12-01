@@ -1,0 +1,362 @@
+{
+  "timestamp": "2025-11-19T17:07:51.316Z",
+  "testEnvironment": "standalone-html",
+  "testResults": [
+    {
+      "testNumber": 1,
+      "duration": 1058,
+      "startTime": 1763572058056,
+      "endTime": 1763572059114,
+      "performanceData": {
+        "rafCalls": 0,
+        "resizeEvents": 0,
+        "domReflows": 504,
+        "transitionDuration": 0
+      },
+      "consoleMessages": [
+        {
+          "type": "log",
+          "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+          "timestamp": 1763572058092
+        },
+        {
+          "type": "log",
+          "text": "✅ [PERF] Sidebar toggle completed in 504.30ms",
+          "timestamp": 1763572058601
+        },
+        {
+          "type": "log",
+          "text": "📊 [PERF] RAF calls during transition: 0",
+          "timestamp": 1763572058602
+        },
+        {
+          "type": "log",
+          "text": "📏 [PERF] Resize events during transition: 0",
+          "timestamp": 1763572058602
+        },
+        {
+          "type": "log",
+          "text": "🔄 [PERF] DOM reflows during transition: 0",
+          "timestamp": 1763572058603
+        }
+      ]
+    },
+    {
+      "testNumber": 2,
+      "duration": 1043,
+      "startTime": 1763572061132,
+      "endTime": 1763572062175,
+      "performanceData": {
+        "rafCalls": 0,
+        "resizeEvents": 0,
+        "domReflows": 501,
+        "transitionDuration": 0
+      },
+      "consoleMessages": [
+        {
+          "type": "log",
+          "text": "🚀 [PERF] Sidebar toggle started - Current state: collapsed",
+          "timestamp": 1763572061159
+        },
+        {
+          "type": "log",
+          "text": "✅ [PERF] Sidebar toggle completed in 501.60ms",
+          "timestamp": 1763572061662
+        },
+        {
+          "type": "log",
+          "text": "📊 [PERF] RAF calls during transition: 0",
+          "timestamp": 1763572061662
+        },
+        {
+          "type": "log",
+          "text": "📏 [PERF] Resize events during transition: 0",
+          "timestamp": 1763572061662
+        },
+        {
+          "type": "log",
+          "text": "🔄 [PERF] DOM reflows during transition: 0",
+          "timestamp": 1763572061662
+        }
+      ]
+    },
+    {
+      "testNumber": 3,
+      "duration": 1026,
+      "startTime": 1763572064197,
+      "endTime": 1763572065223,
+      "performanceData": {
+        "rafCalls": 0,
+        "resizeEvents": 0,
+        "domReflows": 503,
+        "transitionDuration": 0
+      },
+      "consoleMessages": [
+        {
+          "type": "log",
+          "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+          "timestamp": 1763572064211
+        },
+        {
+          "type": "log",
+          "text": "✅ [PERF] Sidebar toggle completed in 503.10ms",
+          "timestamp": 1763572064715
+        },
+        {
+          "type": "log",
+          "text": "📊 [PERF] RAF calls during transition: 0",
+          "timestamp": 1763572064715
+        },
+        {
+          "type": "log",
+          "text": "📏 [PERF] Resize events during transition: 0",
+          "timestamp": 1763572064716
+        },
+        {
+          "type": "log",
+          "text": "🔄 [PERF] DOM reflows during transition: 0",
+          "timestamp": 1763572064716
+        }
+      ]
+    },
+    {
+      "testNumber": 4,
+      "duration": 1050,
+      "startTime": 1763572067236,
+      "endTime": 1763572068286,
+      "performanceData": {
+        "rafCalls": 0,
+        "resizeEvents": 0,
+        "domReflows": 502,
+        "transitionDuration": 0
+      },
+      "consoleMessages": [
+        {
+          "type": "log",
+          "text": "🚀 [PERF] Sidebar toggle started - Current state: collapsed",
+          "timestamp": 1763572067273
+        },
+        {
+          "type": "log",
+          "text": "✅ [PERF] Sidebar toggle completed in 502.40ms",
+          "timestamp": 1763572067777
+        },
+        {
+          "type": "log",
+          "text": "📊 [PERF] RAF calls during transition: 0",
+          "timestamp": 1763572067777
+        },
+        {
+          "type": "log",
+          "text": "📏 [PERF] Resize events during transition: 0",
+          "timestamp": 1763572067777
+        },
+        {
+          "type": "log",
+          "text": "🔄 [PERF] DOM reflows during transition: 0",
+          "timestamp": 1763572067777
+        }
+      ]
+    },
+    {
+      "testNumber": 5,
+      "duration": 1025,
+      "startTime": 1763572070290,
+      "endTime": 1763572071315,
+      "performanceData": {
+        "rafCalls": 0,
+        "resizeEvents": 0,
+        "domReflows": 502,
+        "transitionDuration": 0
+      },
+      "consoleMessages": [
+        {
+          "type": "log",
+          "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+          "timestamp": 1763572070302
+        },
+        {
+          "type": "log",
+          "text": "✅ [PERF] Sidebar toggle completed in 502.00ms",
+          "timestamp": 1763572070805
+        },
+        {
+          "type": "log",
+          "text": "📊 [PERF] RAF calls during transition: 0",
+          "timestamp": 1763572070805
+        },
+        {
+          "type": "log",
+          "text": "📏 [PERF] Resize events during transition: 0",
+          "timestamp": 1763572070805
+        },
+        {
+          "type": "log",
+          "text": "🔄 [PERF] DOM reflows during transition: 0",
+          "timestamp": 1763572070805
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "averageDuration": 1040.4,
+    "maxDuration": 1058,
+    "minDuration": 1025,
+    "totalRAFCalls": 0,
+    "totalResizeEvents": 0,
+    "totalDOMReflows": 2512,
+    "averageTransitionDuration": 0
+  },
+  "allConsoleMessages": [
+    {
+      "type": "warn",
+      "text": "cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation",
+      "timestamp": 1763572053846
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools\nYou might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq font-weight:bold",
+      "timestamp": 1763572054201
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERF] Sidebar performance test initialized",
+      "timestamp": 1763572054269
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] Click the \"Toggle Sidebar\" button to start diagnosis",
+      "timestamp": 1763572054269
+    },
+    {
+      "type": "log",
+      "text": "🔧 [PERF] Enhanced monitoring setup complete",
+      "timestamp": 1763572054363
+    },
+    {
+      "type": "log",
+      "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+      "timestamp": 1763572058092
+    },
+    {
+      "type": "log",
+      "text": "✅ [PERF] Sidebar toggle completed in 504.30ms",
+      "timestamp": 1763572058601
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] RAF calls during transition: 0",
+      "timestamp": 1763572058602
+    },
+    {
+      "type": "log",
+      "text": "📏 [PERF] Resize events during transition: 0",
+      "timestamp": 1763572058602
+    },
+    {
+      "type": "log",
+      "text": "🔄 [PERF] DOM reflows during transition: 0",
+      "timestamp": 1763572058603
+    },
+    {
+      "type": "log",
+      "text": "🚀 [PERF] Sidebar toggle started - Current state: collapsed",
+      "timestamp": 1763572061159
+    },
+    {
+      "type": "log",
+      "text": "✅ [PERF] Sidebar toggle completed in 501.60ms",
+      "timestamp": 1763572061662
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] RAF calls during transition: 0",
+      "timestamp": 1763572061662
+    },
+    {
+      "type": "log",
+      "text": "📏 [PERF] Resize events during transition: 0",
+      "timestamp": 1763572061662
+    },
+    {
+      "type": "log",
+      "text": "🔄 [PERF] DOM reflows during transition: 0",
+      "timestamp": 1763572061662
+    },
+    {
+      "type": "log",
+      "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+      "timestamp": 1763572064211
+    },
+    {
+      "type": "log",
+      "text": "✅ [PERF] Sidebar toggle completed in 503.10ms",
+      "timestamp": 1763572064715
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] RAF calls during transition: 0",
+      "timestamp": 1763572064715
+    },
+    {
+      "type": "log",
+      "text": "📏 [PERF] Resize events during transition: 0",
+      "timestamp": 1763572064716
+    },
+    {
+      "type": "log",
+      "text": "🔄 [PERF] DOM reflows during transition: 0",
+      "timestamp": 1763572064716
+    },
+    {
+      "type": "log",
+      "text": "🚀 [PERF] Sidebar toggle started - Current state: collapsed",
+      "timestamp": 1763572067273
+    },
+    {
+      "type": "log",
+      "text": "✅ [PERF] Sidebar toggle completed in 502.40ms",
+      "timestamp": 1763572067777
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] RAF calls during transition: 0",
+      "timestamp": 1763572067777
+    },
+    {
+      "type": "log",
+      "text": "📏 [PERF] Resize events during transition: 0",
+      "timestamp": 1763572067777
+    },
+    {
+      "type": "log",
+      "text": "🔄 [PERF] DOM reflows during transition: 0",
+      "timestamp": 1763572067777
+    },
+    {
+      "type": "log",
+      "text": "🚀 [PERF] Sidebar toggle started - Current state: expanded",
+      "timestamp": 1763572070302
+    },
+    {
+      "type": "log",
+      "text": "✅ [PERF] Sidebar toggle completed in 502.00ms",
+      "timestamp": 1763572070805
+    },
+    {
+      "type": "log",
+      "text": "📊 [PERF] RAF calls during transition: 0",
+      "timestamp": 1763572070805
+    },
+    {
+      "type": "log",
+      "text": "📏 [PERF] Resize events during transition: 0",
+      "timestamp": 1763572070805
+    },
+    {
+      "type": "log",
+      "text": "🔄 [PERF] DOM reflows during transition: 0",
+      "timestamp": 1763572070805
+    }
+  ]
+}

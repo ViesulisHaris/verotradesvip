@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-11-27T13:03:33.696Z",
+  "consoleLogs": [],
+  "networkRequests": [
+    {
+      "url": "http://localhost:3000/",
+      "method": "GET",
+      "timestamp": "2025-11-27T13:03:23.111Z"
+    },
+    {
+      "url": "http://localhost:3000/login",
+      "method": "GET",
+      "timestamp": "2025-11-27T13:03:28.116Z"
+    }
+  ],
+  "errors": [
+    {
+      "type": "SERVER_ERROR",
+      "message": "page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "timestamp": "2025-11-27T13:03:28.106Z"
+    },
+    {
+      "type": "LOGIN_PAGE_ERROR",
+      "message": "page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "timestamp": "2025-11-27T13:03:33.117Z"
+    },
+    {
+      "type": "SUPABASE_ERROR",
+      "message": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+      "timestamp": "2025-11-27T13:03:33.696Z"
+    }
+  ],
+  "summary": {
+    "totalErrors": 3,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "networkRequests": 2
+  }
+}

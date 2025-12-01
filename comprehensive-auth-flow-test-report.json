@@ -1,0 +1,92 @@
+{
+  "testDate": "2025-11-27T16:17:40.482Z",
+  "testConfig": {
+    "baseUrl": "http://localhost:3000",
+    "loginUrl": "http://localhost:3000/login",
+    "testUser": {
+      "email": "testuser1000@verotrade.com",
+      "password": "TestPassword123!"
+    },
+    "performanceTargets": {
+      "loginPageLoad": 3000,
+      "authentication": 5000,
+      "dashboardLoad": 3000,
+      "totalFlow": 11000
+    },
+    "timeouts": {
+      "pageLoad": 30000,
+      "authentication": 15000,
+      "elementLoad": 10000
+    }
+  },
+  "performanceMetrics": {
+    "loginPageLoad": 4132,
+    "authentication": 725,
+    "dashboardLoad": 10018,
+    "sidebarRender": 8053,
+    "authStatePersistence": 13039,
+    "logout": 1456,
+    "totalFlow": 14875,
+    "timestamps": [
+      {
+        "timestamp": "2025-11-27T16:17:04.847Z",
+        "action": "Login page loaded",
+        "screenshot": "auth-flow-test-login-page.png"
+      },
+      {
+        "timestamp": "2025-11-27T16:17:16.780Z",
+        "action": "Dashboard loaded after login",
+        "screenshot": "auth-flow-test-dashboard.png"
+      },
+      {
+        "timestamp": "2025-11-27T16:17:25.208Z",
+        "action": "Sidebar visibility test",
+        "screenshot": "auth-flow-test-sidebar.png"
+      },
+      {
+        "timestamp": "2025-11-27T16:17:38.606Z",
+        "action": "After page refresh",
+        "screenshot": "auth-flow-test-persistence.png"
+      },
+      {
+        "timestamp": "2025-11-27T16:17:40.482Z",
+        "action": "After logout",
+        "screenshot": "auth-flow-test-logout.png"
+      }
+    ]
+  },
+  "targetsMet": {
+    "loginPageLoad": false,
+    "authentication": true,
+    "dashboardLoad": false,
+    "totalFlow": false
+  },
+  "overallSuccess": false,
+  "screenshots": [
+    {
+      "timestamp": "2025-11-27T16:17:04.847Z",
+      "action": "Login page loaded",
+      "screenshot": "auth-flow-test-login-page.png"
+    },
+    {
+      "timestamp": "2025-11-27T16:17:16.780Z",
+      "action": "Dashboard loaded after login",
+      "screenshot": "auth-flow-test-dashboard.png"
+    },
+    {
+      "timestamp": "2025-11-27T16:17:25.208Z",
+      "action": "Sidebar visibility test",
+      "screenshot": "auth-flow-test-sidebar.png"
+    },
+    {
+      "timestamp": "2025-11-27T16:17:38.606Z",
+      "action": "After page refresh",
+      "screenshot": "auth-flow-test-persistence.png"
+    },
+    {
+      "timestamp": "2025-11-27T16:17:40.482Z",
+      "action": "After logout",
+      "screenshot": "auth-flow-test-logout.png"
+    }
+  ]
+}

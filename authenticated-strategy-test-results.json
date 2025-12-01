@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-11-15T13:06:31.662Z",
+  "tests": [
+    {
+      "name": "Navigate to Login Page",
+      "status": "PASSED",
+      "details": "Login page loaded with title: VeroTrade - Trading Journal"
+    },
+    {
+      "name": "Login with Test Credentials",
+      "status": "PASSED",
+      "details": "Successfully logged in, redirected to: http://localhost:3000/dashboard"
+    },
+    {
+      "name": "Navigate to Strategies Page",
+      "status": "PASSED",
+      "details": "Strategies page loaded with title: VeroTrade - Trading Journal"
+    },
+    {
+      "name": "Schema Cache Error Check",
+      "status": "PASSED",
+      "details": "No schema cache errors detected"
+    },
+    {
+      "name": "Strategy Display",
+      "status": "UNKNOWN",
+      "details": "No strategy display elements found"
+    },
+    {
+      "name": "Create Strategy Button",
+      "status": "PASSED",
+      "details": "Found 1 create button(s)"
+    },
+    {
+      "name": "Create Strategy Navigation",
+      "status": "PASSED",
+      "details": "Navigated to create strategy page: http://localhost:3000/strategies/create"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 7
+  }
+}

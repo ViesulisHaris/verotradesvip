@@ -1,0 +1,127 @@
+{
+  "testResults": {
+    "mobileMenuToggle": {
+      "working": false,
+      "details": "Mobile menu toggle selector not identified"
+    },
+    "desktopButtons": {
+      "Dashboard": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Log Trade": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Strategies": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Trades": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Calendar": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      },
+      "Confluence": {
+        "working": false,
+        "details": "Button not found in desktop sidebar"
+      }
+    },
+    "mobileButtons": {
+      "Dashboard": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Log Trade": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Strategies": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Trades": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Calendar": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      },
+      "Confluence": {
+        "working": false,
+        "details": "Button not found in mobile sidebar"
+      }
+    },
+    "logoutButtons": {
+      "working": false,
+      "details": ""
+    },
+    "pageStructure": {
+      "navLinks": {
+        "a[href=\"/dashboard\"]": false,
+        "a[href=\"/log-trade\"]": false,
+        "a[href=\"/strategies\"]": false,
+        "a[href=\"/trades\"]": false,
+        "a[href=\"/calendar\"]": false,
+        "a[href=\"/confluence\"]": false
+      }
+    }
+  },
+  "consoleLogs": [
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/lib/helpers.js:120:25)\n    at _handleRequest (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:106:24)\n    at _request (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:96:24)\n    at SupabaseAuthClient.signInWithPassword (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:429:81)\n    at handleLogin (webpack-internal:///(app-pages-browser)/./src/app/login/page.tsx:54:114)",
+    "Login error: AuthRetryableFetchError: Failed to fetch\n    at _handleRequest (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:111:15)\n    at async _request (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/lib/fetch.js:96:18)\n    at async SupabaseAuthClient.signInWithPassword (webpack-internal:///(app-pages-browser)/./node_modules/@supabase/auth-js/dist/module/GoTrueClient.js:429:23)\n    at async handleLogin (webpack-internal:///(app-pages-browser)/./src/app/login/page.tsx:54:48)",
+    "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+    "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-24T12:04:33.514Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+    "Auth state changed: INITIAL_SESSION",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+    "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+    "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-24T12:04:35.214Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+    "Auth state changed: INITIAL_SESSION",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+    "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-24T12:04:36.762Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+    "Auth state changed: INITIAL_SESSION",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "🔍 Zoom-aware responsive initialized with zoom level: 1",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "NAVIGATION DEBUG: ZoomAwareLayout rendered - zoom level: 100 breakpoint: xl",
+    "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o"
+  ],
+  "timestamp": "2025-11-24T12:04:37.608Z"
+}

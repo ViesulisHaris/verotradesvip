@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Auth Data & Reload</title>
+    <style>
+        body { 
+            font-family: monospace; 
+            background: #0f172a; 
+            color: white; 
+            padding: 20px; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container { 
+            background: #1e293b; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px;
+        }
+        button { 
+            background: #3b82f6; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            margin: 10px; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover { background: #2563eb; }
+        .danger { background: #ef4444; }
+        .danger:hover { background: #dc2626; }
+        .success { background: #22c55e; }
+        .success:hover { background: #16a34a; }
+        .warning { background: #f59e0b; }
+        .warning:hover { background: #d97706; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Supabase Authentication Fix</h1>
+    
+    <div class="container">
+        <h2>🎯 Problem</h2>
+        <p>The Supabase client is stuck in an infinite auto-refresh loop because:</p>
+        <ul>
+            <li>autoRefreshToken was enabled but no session exists</li>
+            <li>Client tries to refresh non-existent tokens every ~14 seconds</li>
+            <li>This causes infinite _autoRefreshTokenTick() calls</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>🔧 Solution</h2>
+        <p>Click the button below to clear all Supabase authentication data and reload with the fixed client:</p>
+        <button class="danger" onclick="clearAuthAndReload()">
+            🗑️ Clear All Auth Data & Reload
+        </button>
+    </div>
+
+    <div class="container">
+        <h2>📝 What This Does</h2>
+        <ol>
+            <li>Clears all localStorage items containing 'supabase' or 'sb-'</li>
+            <li>Clears all sessionStorage items containing 'supabase' or 'sb-'</li>
+            <li>Forces browser to reload with clean state</li>
+            <li>New fixed client has autoRefreshToken: false</li>
+            <li>Prevents infinite auto-refresh loops</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <h2>🧪 Test Steps</h2>
+        <ol>
+            <li>Click "Clear All Auth Data & Reload" below</li>
+            <li>Wait for page to reload</li>
+            <li>Navigate to /test-auth-fix to verify fix</li>
+            <li>Try logging in normally</li>
+        </ol>
+    </div>
+
+    <script>
+        function clearAuthAndReload() {
+            console.log('🔧 [AUTH_FIX] Starting auth data cleanup...');
+            
+            // Clear localStorage
+            const storageKeys = Object.keys(localStorage);
+            let clearedCount = 0;
+            
+            storageKeys.forEach(key => {
+                if (key.includes('supabase') || key.includes('sb-') || key.includes('auth')) {
+                    console.log('🔧 [AUTH_FIX] Removing localStorage key:', key);
+                    localStorage.removeItem(key);
+                    clearedCount++;
+                }
+            });
+            
+            // Clear sessionStorage
+            const sessionKeys = Object.keys(sessionStorage);
+            sessionKeys.forEach(key => {
+                if (key.includes('supabase') || key.includes('sb-') || key.includes('auth')) {
+                    console.log('🔧 [AUTH_FIX] Removing sessionStorage key:', key);
+                    sessionStorage.removeItem(key);
+                    clearedCount++;
+                }
+            });
+            
+            console.log(`🔧 [AUTH_FIX] Cleared ${clearedCount} storage items`);
+            
+            // Show confirmation
+            document.body.innerHTML = `
+                <div class="container">
+                    <h2>✅ Auth Data Cleared!</h2>
+                    <p>Cleared ${clearedCount} authentication-related storage items.</p>
+                    <p>Reloading in 2 seconds...</p>
+                    <div style="color: #22c55e; font-weight: bold;">
+                        🔧 The page will reload with the fixed Supabase client
+                    </div>
+                </div>
+            `;
+            
+            // Reload after 2 seconds
+            setTimeout(() => {
+                console.log('🔧 [AUTH_FIX] Reloading page...');
+                window.location.href = window.location.origin + '/test-auth-fix';
+            }, 2000);
+        }
+        
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            console.log('🔧 [AUTH_FIX] Page loaded, ready to clear auth data');
+        });
+    </script>
+</body>
+</html>

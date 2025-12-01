@@ -1,0 +1,248 @@
+{
+  "timestamp": "2025-11-22T20:59:37.615Z",
+  "summary": {
+    "totalTests": 39,
+    "passedTests": 18,
+    "failedTests": 21,
+    "successRate": 46.15384615384615
+  },
+  "results": [
+    {
+      "screenSize": "Mobile Small",
+      "dimensions": "320x568",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "PASS",
+          "details": "Expected: Visible, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Hamburger Click Opens Sidebar",
+          "status": "FAIL",
+          "details": "Before: Sidebar=false, Backdrop=false, After: Sidebar=false, Backdrop=false"
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Mobile Medium",
+      "dimensions": "375x667",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "PASS",
+          "details": "Expected: Visible, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Hamburger Click Opens Sidebar",
+          "status": "FAIL",
+          "details": "Before: Sidebar=false, Backdrop=false, After: Sidebar=false, Backdrop=false"
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Mobile Large",
+      "dimensions": "414x896",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "PASS",
+          "details": "Expected: Visible, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Hamburger Click Opens Sidebar",
+          "status": "FAIL",
+          "details": "Before: Sidebar=false, Backdrop=false, After: Sidebar=false, Backdrop=false"
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Tablet",
+      "dimensions": "768x1024",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "PASS",
+          "details": "Expected: Visible, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Hamburger Click Opens Sidebar",
+          "status": "FAIL",
+          "details": "Before: Sidebar=false, Backdrop=false, After: Sidebar=false, Backdrop=false"
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Desktop Small",
+      "dimensions": "1024x768",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "FAIL",
+          "details": "Expected: Hidden, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Desktop Medium",
+      "dimensions": "1280x800",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "FAIL",
+          "details": "Expected: Hidden, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    },
+    {
+      "screenSize": "Desktop Large",
+      "dimensions": "1440x900",
+      "tests": [
+        {
+          "name": "Hamburger Menu Button Exists in DOM",
+          "status": "PASS",
+          "details": "Button found in DOM"
+        },
+        {
+          "name": "Hamburger Menu Visibility Correct",
+          "status": "FAIL",
+          "details": "Expected: Hidden, Actual: Visible"
+        },
+        {
+          "name": "Touch-Friendly Sizing",
+          "status": "FAIL",
+          "details": "Size: 0x0px (minimum: 44x44px)"
+        },
+        {
+          "name": "Accessibility Attributes",
+          "status": "FAIL",
+          "details": "aria-label: \"Toggle mobile menu\", title: \"Toggle mobile menu\", aria-expanded: \"null\""
+        },
+        {
+          "name": "Responsive Classes Applied Correctly",
+          "status": "PASS",
+          "details": "Has lg:hidden class: true, Classes: \"lg:hidden flex items-center justify-center w-10 h-10 p-2 rounded-lg touch-manipulation transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#B89B5E]/50 hamburger-button\""
+        }
+      ]
+    }
+  ]
+}

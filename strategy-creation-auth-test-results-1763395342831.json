@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "totalTests": 6,
+    "passedTests": 1,
+    "failedTests": 5,
+    "successRate": 16.666666666666664
+  },
+  "detailedResults": {
+    "authentication": {
+      "passed": true,
+      "details": {
+        "userId": "d9f7982d-f49b-4766-a8e8-827a1d176d5e",
+        "email": "testuser@verotrade.com",
+        "sessionValid": true
+      }
+    },
+    "basicCreation": {
+      "passed": false,
+      "details": {
+        "status": 401,
+        "data": {
+          "error": "Authentication required",
+          "details": "Auth session missing!"
+        }
+      }
+    },
+    "dataIntegrity": {
+      "passed": false,
+      "details": null
+    },
+    "configurationParameters": {
+      "passed": false,
+      "details": null
+    },
+    "duplicateCreation": {
+      "passed": false,
+      "details": {
+        "status": 401,
+        "data": {
+          "error": "Authentication required",
+          "details": "Auth session missing!"
+        }
+      }
+    },
+    "errorHandling": {
+      "passed": false,
+      "details": {
+        "status": 401,
+        "data": {
+          "error": "Authentication required",
+          "details": "Auth session missing!"
+        }
+      }
+    }
+  },
+  "timestamp": "2025-11-17T16:02:22.822Z"
+}

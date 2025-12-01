@@ -1,0 +1,43 @@
+{
+  "summary": {
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "startTime": "2025-11-17T22:26:52.895Z",
+    "endTime": "2025-11-17T22:26:58.185Z",
+    "duration": 5290
+  },
+  "dashboardPerformance": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "individualTrades": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "analyticsInsights": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "dataIntegration": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "crudFunctionality": {
+    "tests": [],
+    "overallStatus": "pending"
+  },
+  "issues": [
+    {
+      "test": "Critical Error",
+      "category": "system",
+      "message": "Critical error during test execution: Authentication failed - cannot proceed with tests",
+      "details": {
+        "error": "Error: Authentication failed - cannot proceed with tests\n    at runAllTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\browser-strategy-performance-test.js:1217:13)"
+      }
+    }
+  ],
+  "recommendations": [
+    "All strategy performance features appear to be working correctly"
+  ]
+}

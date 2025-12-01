@@ -1,0 +1,165 @@
+{
+  "startTime": "2025-11-24T14:19:50.569Z",
+  "tests": [
+    {
+      "testName": "Navigate to Trades - Desktop",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate to Trades - Desktop_error_Desktop_1763993992584.png",
+      "timestamp": "2025-11-24T14:19:52.737Z"
+    },
+    {
+      "testName": "Navigate away from Trades - Desktop",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate away from Trades - Desktop_error_Desktop_1763993994009.png",
+      "timestamp": "2025-11-24T14:19:54.403Z"
+    },
+    {
+      "testName": "Menu Responsiveness after Trades - Desktop",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Menu Responsiveness after Trades - Desktop_error_Desktop_1763993995620.png",
+      "timestamp": "2025-11-24T14:19:55.792Z"
+    },
+    {
+      "testName": "Debug Panel Z-Index Fix - Desktop",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Debug Panel Z-Index Fix - Desktop_error_Desktop_1763993996994.png",
+      "timestamp": "2025-11-24T14:19:57.164Z"
+    },
+    {
+      "testName": "Navigate to Trades - Tablet",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate to Trades - Tablet_error_Tablet_1763993998414.png",
+      "timestamp": "2025-11-24T14:19:58.517Z"
+    },
+    {
+      "testName": "Navigate away from Trades - Tablet",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate away from Trades - Tablet_error_Tablet_1763993999758.png",
+      "timestamp": "2025-11-24T14:19:59.894Z"
+    },
+    {
+      "testName": "Menu Responsiveness after Trades - Tablet",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Menu Responsiveness after Trades - Tablet_error_Tablet_1763994001147.png",
+      "timestamp": "2025-11-24T14:20:01.258Z"
+    },
+    {
+      "testName": "Debug Panel Z-Index Fix - Tablet",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Debug Panel Z-Index Fix - Tablet_error_Tablet_1763994002373.png",
+      "timestamp": "2025-11-24T14:20:02.472Z"
+    },
+    {
+      "testName": "Navigate to Trades - Mobile",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate to Trades - Mobile_error_Mobile_1763994003714.png",
+      "timestamp": "2025-11-24T14:20:03.766Z"
+    },
+    {
+      "testName": "Navigate away from Trades - Mobile",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Navigate away from Trades - Mobile_error_Mobile_1763994004862.png",
+      "timestamp": "2025-11-24T14:20:04.938Z"
+    },
+    {
+      "testName": "Menu Responsiveness after Trades - Mobile",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Menu Responsiveness after Trades - Mobile_error_Mobile_1763994006015.png",
+      "timestamp": "2025-11-24T14:20:06.071Z"
+    },
+    {
+      "testName": "Debug Panel Z-Index Fix - Mobile",
+      "passed": false,
+      "details": "Error: page.waitForTimeout is not a function",
+      "screenshot": "trades-navigation-test-screenshots\\Debug Panel Z-Index Fix - Mobile_error_Mobile_1763994007354.png",
+      "timestamp": "2025-11-24T14:20:07.405Z"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 12,
+    "total": 12
+  },
+  "endTime": "2025-11-24T14:20:07.433Z",
+  "duration": 16864,
+  "viewportResults": [
+    {
+      "viewport": "Desktop",
+      "tests": [
+        {
+          "test": "Navigation to Trades",
+          "passed": false
+        },
+        {
+          "test": "Navigation away from Trades",
+          "passed": false
+        },
+        {
+          "test": "Menu responsiveness after Trades",
+          "passed": false
+        },
+        {
+          "test": "Debug panel z-index fix",
+          "passed": false
+        }
+      ],
+      "allPassed": false
+    },
+    {
+      "viewport": "Tablet",
+      "tests": [
+        {
+          "test": "Navigation to Trades",
+          "passed": false
+        },
+        {
+          "test": "Navigation away from Trades",
+          "passed": false
+        },
+        {
+          "test": "Menu responsiveness after Trades",
+          "passed": false
+        },
+        {
+          "test": "Debug panel z-index fix",
+          "passed": false
+        }
+      ],
+      "allPassed": false
+    },
+    {
+      "viewport": "Mobile",
+      "tests": [
+        {
+          "test": "Navigation to Trades",
+          "passed": false
+        },
+        {
+          "test": "Navigation away from Trades",
+          "passed": false
+        },
+        {
+          "test": "Menu responsiveness after Trades",
+          "passed": false
+        },
+        {
+          "test": "Debug panel z-index fix",
+          "passed": false
+        }
+      ],
+      "allPassed": false
+    }
+  ],
+  "overallSuccess": false
+}

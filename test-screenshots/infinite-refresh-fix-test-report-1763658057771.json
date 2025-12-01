@@ -1,0 +1,56 @@
+{
+  "startTime": "2025-11-20T17:00:34.931Z",
+  "tests": [
+    {
+      "testName": "Navigate to strategies list",
+      "passed": true,
+      "details": "Successfully loaded strategies page",
+      "timestamp": "2025-11-20T17:00:39.883Z"
+    },
+    {
+      "testName": "Navigate to strategy performance details",
+      "passed": false,
+      "details": "Waiting for selector `[data-testid=\"strategy-card\"], .strategy-card, a[href*=\"/strategies/performance/\"]` failed",
+      "timestamp": "2025-11-20T17:00:49.892Z"
+    },
+    {
+      "testName": "Infinite refresh detection",
+      "passed": true,
+      "details": "Refresh count: 0, Content changes: 0",
+      "timestamp": "2025-11-20T17:00:55.300Z"
+    },
+    {
+      "testName": "Performance data display",
+      "passed": false,
+      "details": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-20T17:00:55.302Z"
+    },
+    {
+      "testName": "Tab navigation",
+      "passed": false,
+      "details": "Successfully tested 3 tabs",
+      "timestamp": "2025-11-20T17:00:55.320Z"
+    },
+    {
+      "testName": "Chart rendering",
+      "passed": false,
+      "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Performance\")' is not a valid selector.",
+      "timestamp": "2025-11-20T17:00:55.322Z"
+    },
+    {
+      "testName": "Multiple strategies test",
+      "passed": true,
+      "details": "Only one strategy available or found, skipping multiple test",
+      "timestamp": "2025-11-20T17:00:57.337Z"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 4,
+    "total": 7
+  },
+  "endTime": "2025-11-20T17:00:57.771Z",
+  "duration": 22840,
+  "success": false,
+  "conclusion": "❌ Issues detected - infinite refresh loop may not be fully resolved"
+}

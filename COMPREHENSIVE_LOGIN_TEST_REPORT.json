@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "startTime": "2025-11-29T17:53:46.215Z",
+    "endTime": "2025-11-29T17:54:52.344Z",
+    "duration": 66129,
+    "totalTests": 8,
+    "passedTests": 1,
+    "failedTests": 7,
+    "successRate": "12.50%"
+  },
+  "testResults": [
+    {
+      "testName": "Login Page Load",
+      "status": "PASS",
+      "details": "Email: true, Password: true, Submit: true, Welcome: true",
+      "error": null,
+      "timestamp": "2025-11-29T17:53:51.747Z"
+    },
+    {
+      "testName": "Empty Credentials Validation",
+      "status": "FAIL",
+      "details": "Failed to test empty credentials",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:53:56.693Z"
+    },
+    {
+      "testName": "Invalid Credentials Error Handling",
+      "status": "FAIL",
+      "details": "Failed to test invalid credentials",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:54:09.623Z"
+    },
+    {
+      "testName": "Successful Login and Dashboard Access",
+      "status": "FAIL",
+      "details": "Failed to test successful login",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:54:22.354Z"
+    },
+    {
+      "testName": "Session Persistence Across Page Refresh",
+      "status": "FAIL",
+      "details": "Failed to test session persistence",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:54:35.054Z"
+    },
+    {
+      "testName": "Logout Functionality",
+      "status": "FAIL",
+      "details": "Failed to test logout functionality",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:54:47.773Z"
+    },
+    {
+      "testName": "Protected Route Access for Unauthenticated Users",
+      "status": "FAIL",
+      "details": "Failed to test protected route access",
+      "error": "page.waitForTimeout is not a function",
+      "timestamp": "2025-11-29T17:54:50.510Z"
+    },
+    {
+      "testName": "Network Error Handling",
+      "status": "FAIL",
+      "details": "Failed to test network error handling",
+      "error": "net::ERR_INTERNET_DISCONNECTED at http://localhost:3000/login",
+      "timestamp": "2025-11-29T17:54:51.634Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "login-page-load",
+      "filename": "login-test-login-page-load-2025-11-29T17-53-51-747Z.png",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\login-test-login-page-load-2025-11-29T17-53-51-747Z.png"
+    }
+  ],
+  "errors": [
+    {
+      "testName": "Empty Credentials Validation",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Invalid Credentials Error Handling",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Successful Login and Dashboard Access",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Session Persistence Across Page Refresh",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Logout Functionality",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Protected Route Access for Unauthenticated Users",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "testName": "Network Error Handling",
+      "error": "net::ERR_INTERNET_DISCONNECTED at http://localhost:3000/login"
+    }
+  ],
+  "testConfiguration": {
+    "baseUrl": "http://localhost:3000",
+    "headless": false,
+    "slowMo": 100,
+    "timeout": 30000,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "testCredentials": {
+    "valid": {
+      "email": "test@example.com",
+      "password": "***"
+    },
+    "invalid": {
+      "email": "invalid@example.com",
+      "password": "wrongpassword"
+    },
+    "empty": {
+      "email": "",
+      "password": ""
+    }
+  }
+}

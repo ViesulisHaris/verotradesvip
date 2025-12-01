@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-11-27T22:32:31.226Z",
+  "status": "CRITICAL_FAILURE",
+  "error": "Converting circular structure to JSON\n    --> starting at object with constructor 'SupabaseAuthClient'\n    |     property 'mfa' -> object with constructor 'Object'\n    |     property 'webauthn' -> object with constructor 'WebAuthnApi'\n    --- property 'client' closes the circle",
+  "stack": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'SupabaseAuthClient'\n    |     property 'mfa' -> object with constructor 'Object'\n    |     property 'webauthn' -> object with constructor 'WebAuthnApi'\n    --- property 'client' closes the circle\n    at JSON.stringify (<anonymous>)\n    at generateReport (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-api-key-verification.js:525:38)\n    at runComprehensiveVerification (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-api-key-verification.js:641:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "conclusion": {
+    "status": "CRITICAL_FAILURE",
+    "message": "Verification failed due to unexpected error",
+    "confidence": "None"
+  }
+}

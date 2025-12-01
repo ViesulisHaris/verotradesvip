@@ -1,0 +1,14 @@
+{
+  "dataScenarios": {},
+  "visualEnhancements": {},
+  "responsiveDesign": {},
+  "integration": {},
+  "emptyState": {},
+  "errors": [
+    {
+      "type": "execution",
+      "message": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Default\")')\u001b[22m\n",
+      "stack": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Default\")')\u001b[22m\n\n    at testEnhancedChart (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-enhanced-chart-automation.js:41:18)"
+    }
+  ]
+}

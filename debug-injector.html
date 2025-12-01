@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Script Injector</title>
+</head>
+<body>
+    <h1>Layout Debug Script Injector</h1>
+    <p>Open browser console and run the following commands:</p>
+    
+    <h2>Manual Steps:</h2>
+    <ol>
+        <li>Open http://localhost:3000/dashboard in your browser</li>
+        <li>Open Developer Tools (F12)</li>
+        <li>Go to Console tab</li>
+        <li>Copy and paste the following script:</li>
+    </ol>
+    
+    <textarea style="width: 100%; height: 300px; font-family: monospace;">// Comprehensive Layout Debugging Script
+// This script will analyze the live dashboard layout to identify width constraints
+
+console.log('🔍 Starting comprehensive layout debugging...');
+
+// Wait for page to fully load
+function waitForElement(selector, timeout = 10000) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+
+    const observer = new MutationObserver((mutations, obs) => {
+      if (document.querySelector(selector)) {
+        obs.disconnect();
+        resolve(document.querySelector(selector));
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    setTimeout(() => {
+      observer.disconnect();
+      reject(new Error(`Timeout waiting for element: ${selector}`));
+    }, timeout);
+  });
+}
+
+// Main debugging function
+async function debugLayout() {
+  try {
+    // Wait for key elements to load
+    await waitForElement('main');
+    await waitForElement('[class*="max-w"]');
+    
+    console.log('📊 COMPREHENSIVE LAYOUT DEBUG REPORT');
+    console.log('=====================================');
+    
+    // 1. VIEWPORT ANALYSIS
+    const viewport = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      devicePixelRatio: window.devicePixelRatio,
+      isDesktop: window.innerWidth >= 1024,
+      isTablet: window.innerWidth >= 640 && window.innerWidth < 1024,
+      isMobile: window.innerWidth < 640
+    };
+    
+    console.log('🖥️  VIEWPORT ANALYSIS:');
+    console.log('   Width:', viewport.width + 'px');
+    console.log('   Height:', viewport.height + 'px');
+    console.log('   Device Type:', viewport.isDesktop ? 'Desktop' : viewport.isTablet ? 'Tablet' : 'Mobile');
+    console.log('   Expected Layout:', viewport.isDesktop ? 'Full Width' : 'Mobile Layout');
+    
+    // 2. DOM HIERARCHY ANALYSIS
+    console.log('\n🏗️  DOM HIERARCHY ANALYSIS:');
+    
+    const body = document.body;
+    const html = document.documentElement;
+    const main = document.querySelector('main');
+    const sidebar = document.querySelector('aside');
+    const container = document.querySelector('[class*="max-w"]') || document.querySelector('.container-luxury');
+    const grid = document.querySelector('[class*="grid-cols"]');
+    
+    console.log('   HTML element width:', html ? window.getComputedStyle(html).width : 'Not found');
+    console.log('   BODY element width:', body ? window.getComputedStyle(body).width : 'Not found');
+    console.log('   MAIN element width:', main ? window.getComputedStyle(main).width : 'Not found');
+    console.log('   SIDEBAR element:', sidebar ? 'Found' : 'Not found');
+    if (sidebar) {
+      console.log('   SIDEBAR width:', window.getComputedStyle(sidebar).width);
+      console.log('   SIDEBAR position:', window.getComputedStyle(sidebar).position);
+    }
+    console.log('   CONTAINER element:', container ? 'Found' : 'Not found');
+    if (container) {
+      console.log('   CONTAINER classes:', container.className);
+      console.log('   CONTAINER max-width:', window.getComputedStyle(container).maxWidth);
+      console.log('   CONTAINER width:', window.getComputedStyle(container).width);
+      console.log('   CONTAINER margin:', window.getComputedStyle(container).margin);
+    }
+    console.log('   GRID element:', grid ? 'Found' : 'Not found');
+    if (grid) {
+      console.log('   GRID classes:', grid.className);
+      console.log('   GRID grid-template-columns:', window.getComputedStyle(grid).gridTemplateColumns);
+    }
+    
+    // 3. WIDTH CONSTRAINT ANALYSIS
+    console.log('\n📏 WIDTH CONSTRAINT ANALYSIS:');
+    
+    // Analyze all potential width constraints
+    const elementsToCheck = [
+      { name: 'HTML', element: html },
+      { name: 'BODY', element: body },
+      { name: 'MAIN', element: main },
+      { name: 'CONTAINER', element: container },
+      { name: 'GRID', element: grid }
+    ];
+    
+    elementsToCheck.forEach(({ name, element }) => {
+      if (element) {
+        const styles = window.getComputedStyle(element);
+        console.log(`\n   ${name} ELEMENT:`);
+        console.log('     Width:', styles.width);
+        console.log('     Max-width:', styles.maxWidth);
+        console.log('     Min-width:', styles.minWidth);
+        console.log('     Margin:', styles.margin);
+        console.log('     Padding:', styles.padding);
+        console.log('     Box-sizing:', styles.boxSizing);
+        console.log('     Position:', styles.position);
+        console.log('     Display:', styles.display);
+        
+        // Check for overflow issues
+        const rect = element.getBoundingClientRect();
+        console.log('     Client width:', element.clientWidth + 'px');
+        console.log('     Scroll width:', element.scrollWidth + 'px');
+        console.log('     Offset width:', element.offsetWidth + 'px');
+        console.log('     Bounding rect width:', rect.width + 'px');
+        
+        if (element.scrollWidth > element.clientWidth) {
+          console.log('     ⚠️  OVERFLOW DETECTED!');
+        }
+      }
+    });
+    
+    // 4. CSS CASCADE ANALYSIS
+    console.log('\n🎨 CSS CASCADE ANALYSIS:');
+    
+    // Check what's actually constraining the width
+    if (main) {
+      const mainStyles = window.getComputedStyle(main);
+      console.log('   MAIN element computed styles:');
+      console.log('     All classes:', main.className);
+      console.log('     Computed max-width:', mainStyles.maxWidth);
+      console.log('     Computed width:', mainStyles.width);
+      console.log('     Computed margin-left:', mainStyles.marginLeft);
+      console.log('     Computed margin-right:', mainStyles.marginRight);
+      
+      // Check if sidebar is affecting main content
+      if (sidebar) {
+        const sidebarStyles = window.getComputedStyle(sidebar);
+        console.log('   SIDEBAR impact on MAIN:');
+        console.log('     Sidebar width:', sidebarStyles.width);
+        console.log('     Sidebar position:', sidebarStyles.position);
+        console.log('     Main margin-left should account for sidebar:', mainStyles.marginLeft);
+      }
+    }
+    
+    // 5. TAILWIND CLASS ANALYSIS
+    console.log('\n🎯 TAILWIND CLASS ANALYSIS:');
+    
+    // Find all elements with width-related Tailwind classes
+    const widthElements = document.querySelectorAll('[class*="w-"], [class*="max-w-"], [class*="container"]');
+    console.log('   Elements with width classes:', widthElements.length);
+    
+    widthElements.forEach((el, index) => {
+      console.log(`\n   Element ${index + 1}:`);
+      console.log('     Tag:', el.tagName);
+      console.log('     Classes:', el.className);
+      console.log('     Computed width:', window.getComputedStyle(el).width);
+      console.log('     Computed max-width:', window.getComputedStyle(el).maxWidth);
+    });
+    
+    // 6. RESPONSIVE BREAKPOINT ANALYSIS
+    console.log('\n📱 RESPONSIVE BREAKPOINT ANALYSIS:');
+    
+    // Test different viewport sizes
+    const breakpoints = [
+      { name: 'Mobile', width: 375 },
+      { name: 'Tablet', width: 768 },
+      { name: 'Desktop', width: 1024 },
+      { name: 'Large Desktop', width: 1280 },
+      { name: '2XL Desktop', width: 1536 }
+    ];
+    
+    breakpoints.forEach(bp => {
+      const isCurrentSize = window.innerWidth >= bp.width;
+      console.log(`   ${bp.name} (${bp.width}px): ${isCurrentSize ? '✅ Active' : '❌ Not active'}`);
+    });
+    
+    // 7. SPECIFIC ISSUE IDENTIFICATION
+    console.log('\n🚨 SPECIFIC ISSUE IDENTIFICATION:');
+    
+    const issues = [];
+    
+    // Check for common layout problems
+    if (viewport.isDesktop) {
+      if (!sidebar) {
+        issues.push('Missing desktop sidebar');
+      }
+      
+      if (container) {
+        const containerMaxWidth = window.getComputedStyle(container).maxWidth;
+        if (containerMaxWidth && containerMaxWidth !== 'none' && parseFloat(containerMaxWidth) < viewport.width * 0.9) {
+          issues.push(`Container max-width too restrictive: ${containerMaxWidth}`);
+        }
+      }
+      
+      if (main) {
+        const mainWidth = main.getBoundingClientRect().width;
+        const expectedMinWidth = viewport.width * 0.7; // Should use at least 70% of viewport
+        if (mainWidth < expectedMinWidth) {
+          issues.push(`Main content too narrow: ${mainWidth}px (expected at least ${expectedMinWidth}px)`);
+        }
+        
+        const mainMarginLeft = window.getComputedStyle(main).marginLeft;
+        if (sidebar && mainMarginLeft === '0px') {
+          issues.push('Main content not accounting for sidebar width');
+        }
+      }
+    }
+    
+    if (issues.length === 0) {
+      console.log('   ✅ No obvious layout issues detected');
+    } else {
+      console.log('   ❌ Issues found:');
+      issues.forEach((issue, index) => {
+        console.log(`     ${index + 1}. ${issue}`);
+      });
+    }
+    
+    // 8. RECOMMENDATIONS
+    console.log('\n💡 RECOMMENDATIONS:');
+    
+    if (viewport.isDesktop && issues.length > 0) {
+      console.log('   1. Check if main content has proper margin-left to account for sidebar');
+      console.log('   2. Verify container max-width is not too restrictive');
+      console.log('   3. Ensure grid columns are properly configured for desktop');
+      console.log('   4. Check for any CSS overriding responsive breakpoints');
+    }
+    
+    console.log('\n📋 DEBUGGING COMPLETE');
+    console.log('=====================================');
+    
+    // Return results for programmatic use
+    return {
+      viewport,
+      elements: {
+        html, body, main, sidebar, container, grid
+      },
+      issues,
+      timestamp: new Date().toISOString()
+    };
+    
+  } catch (error) {
+    console.error('❌ Debugging failed:', error);
+    return null;
+  }
+}
+
+// Run debugging when page loads
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', debugLayout);
+} else {
+  debugLayout();
+}
+
+// Also run debugging when window resizes
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(debugLayout, 500);
+});
+
+// Make function available globally for manual triggering
+window.debugLayout = debugLayout;
+
+console.log('🔧 Layout debugging script loaded. Run debugLayout() manually if needed.');</textarea>
+    
+    <h2>Or use this bookmarklet:</h2>
+    <p>Drag this link to your bookmarks bar and click it on the dashboard:</p>
+    <a href="javascript:(function(){// Comprehensive Layout Debugging Script// This script will analyze the live dashboard layout to identify width constraintsconsole.log(\'🔍 Starting comprehensive layout debugging...\');// Wait for page to fully loadfunction waitForElement(selector, timeout = 10000) {  return new Promise((resolve, reject) => {    if (document.querySelector(selector)) {      return resolve(document.querySelector(selector));    }    const observer = new MutationObserver((mutations, obs) => {      if (document.querySelector(selector)) {        obs.disconnect();        resolve(document.querySelector(selector));      }    });    observer.observe(document.body, {      childList: true,      subtree: true    });    setTimeout(() => {      observer.disconnect();      reject(new Error(`Timeout waiting for element: ${selector}`));    }, timeout);  });}// Main debugging functionasync function debugLayout() {  try {    // Wait for key elements to load    await waitForElement(\'main\');    await waitForElement(\'[class*="max-w"]\');        console.log(\'📊 COMPREHENSIVE LAYOUT DEBUG REPORT\');    console.log(\'=====================================\');        // 1. VIEWPORT ANALYSIS    const viewport = {      width: window.innerWidth,      height: window.innerHeight,      devicePixelRatio: window.devicePixelRatio,      isDesktop: window.innerWidth >= 1024,      isTablet: window.innerWidth >= 640 && window.innerWidth < 1024,      isMobile: window.innerWidth < 640    };        console.log(\'🖥️  VIEWPORT ANALYSIS:\');    console.log(\'   Width:\', viewport.width + \'px\');    console.log(\'   Height:\', viewport.height + \'px\');    console.log(\'   Device Type:\', viewport.isDesktop ? \'Desktop\' : viewport.isTablet ? \'Tablet\' : \'Mobile\');    console.log(\'   Expected Layout:\', viewport.isDesktop ? \'Full Width\' : \'Mobile Layout\');        // 2. DOM HIERARCHY ANALYSIS    console.log(\'\n🏗️  DOM HIERARCHY ANALYSIS:\');        const body = document.body;    const html = document.documentElement;    const main = document.querySelector(\'main\');    const sidebar = document.querySelector(\'aside\');    const container = document.querySelector(\'[class*="max-w"]\') || document.querySelector(\'.container-luxury\');    const grid = document.querySelector(\'[class*="grid-cols"]\');        console.log(\'   HTML element width:\', html ? window.getComputedStyle(html).width : \'Not found\');    console.log(\'   BODY element width:\', body ? window.getComputedStyle(body).width : \'Not found\');    console.log(\'   MAIN element width:\', main ? window.getComputedStyle(main).width : \'Not found\');    console.log(\'   SIDEBAR element:\', sidebar ? \'Found\' : \'Not found\');    if (sidebar) {      console.log(\'   SIDEBAR width:\', window.getComputedStyle(sidebar).width);      console.log(\'   SIDEBAR position:\', window.getComputedStyle(sidebar).position);    }    console.log(\'   CONTAINER element:\', container ? \'Found\' : \'Not found\');    if (container) {      console.log(\'   CONTAINER classes:\', container.className);      console.log(\'   CONTAINER max-width:\', window.getComputedStyle(container).maxWidth);      console.log(\'   CONTAINER width:\', window.getComputedStyle(container).width);      console.log(\'   CONTAINER margin:\', window.getComputedStyle(container).margin);    }    console.log(\'   GRID element:\', grid ? \'Found\' : \'Not found\');    if (grid) {      console.log(\'   GRID classes:\', grid.className);      console.log(\'   GRID grid-template-columns:\', window.getComputedStyle(grid).gridTemplateColumns);    }        // 3. WIDTH CONSTRAINT ANALYSIS    console.log(\'\n📏 WIDTH CONSTRAINT ANALYSIS:\');        // Analyze all potential width constraints    const elementsToCheck = [      { name: \'HTML\', element: html },      { name: \'BODY\', element: body },      { name: \'MAIN\', element: main },      { name: \'CONTAINER\', element: container },      { name: \'GRID\', element: grid }    ];        elementsToCheck.forEach(({ name, element }) => {      if (element) {        const styles = window.getComputedStyle(element);        console.log(`\n   ${name} ELEMENT:`);        console.log(\'     Width:\', styles.width);        console.log(\'     Max-width:\', styles.maxWidth);        console.log(\'     Min-width:\', styles.minWidth);        console.log(\'     Margin:\', styles.margin);        console.log(\'     Padding:\', styles.padding);        console.log(\'     Box-sizing:\', styles.boxSizing);        console.log(\'     Position:\', styles.position);        console.log(\'     Display:\', styles.display);                // Check for overflow issues        const rect = element.getBoundingClientRect();        console.log(\'     Client width:\', element.clientWidth + \'px\');        console.log(\'     Scroll width:\', element.scrollWidth + \'px\');        console.log(\'     Offset width:\', element.offsetWidth + \'px\');        console.log(\'     Bounding rect width:\', rect.width + \'px\');                if (element.scrollWidth > element.clientWidth) {          console.log(\'     ⚠️  OVERFLOW DETECTED!\');        }      }    });        // 4. CSS CASCADE ANALYSIS    console.log(\'\n🎨 CSS CASCADE ANALYSIS:\');        // Check what\'s actually constraining the width    if (main) {      const mainStyles = window.getComputedStyle(main);      console.log(\'   MAIN element computed styles:\');      console.log(\'     All classes:\', main.className);      console.log(\'     Computed max-width:\', mainStyles.maxWidth);      console.log(\'     Computed width:\', mainStyles.width);      console.log(\'     Computed margin-left:\', mainStyles.marginLeft);      console.log(\'     Computed margin-right:\', mainStyles.marginRight);            // Check if sidebar is affecting main content      if (sidebar) {        const sidebarStyles = window.getComputedStyle(sidebar);        console.log(\'   SIDEBAR impact on MAIN:\');        console.log(\'     Sidebar width:\', sidebarStyles.width);        console.log(\'     Sidebar position:\', sidebarStyles.position);        console.log(\'     Main margin-left should account for sidebar:\', mainStyles.marginLeft);      }    }        // 5. TAILWIND CLASS ANALYSIS    console.log(\'\n🎯 TAILWIND CLASS ANALYSIS:\');        // Find all elements with width-related Tailwind classes    const widthElements = document.querySelectorAll(\'[class*="w-"], [class*="max-w-"], [class*="container"]\');    console.log(\'   Elements with width classes:\', widthElements.length);        widthElements.forEach((el, index) => {      console.log(`\n   Element ${index + 1}:`);      console.log(\'     Tag:\', el.tagName);      console.log(\'     Classes:\', el.className);      console.log(\'     Computed width:\', window.getComputedStyle(el).width);      console.log(\'     Computed max-width:\', window.getComputedStyle(el).maxWidth);    });        // 6. RESPONSIVE BREAKPOINT ANALYSIS    console.log(\'\n📱 RESPONSIVE BREAKPOINT ANALYSIS:\');        // Test different viewport sizes    const breakpoints = [      { name: \'Mobile\', width: 375 },      { name: \'Tablet\', width: 768 },      { name: \'Desktop\', width: 1024 },      { name: \'Large Desktop\', width: 1280 },      { name: \'2XL Desktop\', width: 1536 }    ];        breakpoints.forEach(bp => {      const isCurrentSize = window.innerWidth >= bp.width;      console.log(`   ${bp.name} (${bp.width}px): ${isCurrentSize ? \'✅ Active\' : \'❌ Not active\'}`);    });        // 7. SPECIFIC ISSUE IDENTIFICATION    console.log(\'\n🚨 SPECIFIC ISSUE IDENTIFICATION:\');        const issues = [];        // Check for common layout problems    if (viewport.isDesktop) {      if (!sidebar) {        issues.push(\'Missing desktop sidebar\');      }            if (container) {        const containerMaxWidth = window.getComputedStyle(container).maxWidth;        if (containerMaxWidth && containerMaxWidth !== \'none\' && parseFloat(containerMaxWidth) < viewport.width * 0.9) {          issues.push(`Container max-width too restrictive: ${containerMaxWidth}`);        }      }            if (main) {        const mainWidth = main.getBoundingClientRect().width;        const expectedMinWidth = viewport.width * 0.7; // Should use at least 70% of viewport        if (mainWidth < expectedMinWidth) {          issues.push(`Main content too narrow: ${mainWidth}px (expected at least ${expectedMinWidth}px)`);        }                const mainMarginLeft = window.getComputedStyle(main).marginLeft;        if (sidebar && mainMarginLeft === \'0px\') {          issues.push(\'Main content not accounting for sidebar width\');        }      }    }        if (issues.length === 0) {      console.log(\'   ✅ No obvious layout issues detected\');    } else {      console.log(\'   ❌ Issues found:\');      issues.forEach((issue, index) => {        console.log(`     ${index + 1}. ${issue}`);      });    }        // 8. RECOMMENDATIONS    console.log(\'\n💡 RECOMMENDATIONS:\');        if (viewport.isDesktop && issues.length > 0) {      console.log(\'   1. Check if main content has proper margin-left to account for sidebar\');      console.log(\'   2. Verify container max-width is not too restrictive\');      console.log(\'   3. Ensure grid columns are properly configured for desktop\');      console.log(\'   4. Check for any CSS overriding responsive breakpoints\');    }        console.log(\'\n📋 DEBUGGING COMPLETE\');    console.log(\'=====================================\');        // Return results for programmatic use    return {      viewport,      elements: {        html, body, main, sidebar, container, grid      },      issues,      timestamp: new Date().toISOString()    };      } catch (error) {    console.error(\'❌ Debugging failed:\', error);    return null;  }}// Run debugging when page loadsif (document.readyState === \'loading\') {  document.addEventListener(\'DOMContentLoaded\', debugLayout);} else {  debugLayout();}// Also run debugging when window resizeslet resizeTimeout;window.addEventListener(\'resize\', () => {  clearTimeout(resizeTimeout);  resizeTimeout = setTimeout(debugLayout, 500);});// Make function available globally for manual triggeringwindow.debugLayout = debugLayout;console.log(\'🔧 Layout debugging script loaded. Run debugLayout() manually if needed.\');})()">Run Layout Debug</a>
+    
+    <script>
+        // Display instructions
+        console.log('🔧 Debug script ready for manual injection');
+        console.log('📋 Copy the script above and paste it into the browser console on http://localhost:3000/dashboard');
+    </script>
+</body>
+</html>

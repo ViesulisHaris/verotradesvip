@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-11-20T16-34-54-352Z",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "details": [
+    {
+      "test": "Main Page Scrollbar",
+      "selector": "body",
+      "class": "scrollbar-global",
+      "info": {
+        "exists": true,
+        "hasCustomScrollbar": true,
+        "hasWebkitScrollbar": false,
+        "scrollbarWidth": 0,
+        "overflow": "visible",
+        "overflowY": "visible",
+        "overflowX": "visible",
+        "scrollbarClass": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+      },
+      "hover": {
+        "hasHoverStyles": true,
+        "hoverTransform": "",
+        "hoverBoxShadow": ""
+      },
+      "screenshot": "main-page-scrollbar-2025-11-20T16-34-54-352Z.png",
+      "passed": true
+    }
+  ]
+}

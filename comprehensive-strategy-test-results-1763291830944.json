@@ -1,0 +1,59 @@
+{
+  "schemaValidatorFix": {
+    "passed": true,
+    "details": [
+      "Anon key client creation successful",
+      "Service role key missing handled correctly",
+      "No \"supabaseKey is required\" errors detected"
+    ]
+  },
+  "toastNotificationFix": {
+    "passed": false,
+    "details": [
+      "Found 4 files with alert() calls"
+    ]
+  },
+  "strategyPagesLoad": {
+    "passed": false,
+    "details": [
+      "Successfully loaded 0 strategies",
+      "Strategy rules query failed: column strategy_rules.rule_text does not exist"
+    ]
+  },
+  "strategyPerformanceViewing": {
+    "passed": false,
+    "details": [
+      "No strategies available for performance testing"
+    ]
+  },
+  "strategyModification": {
+    "passed": false,
+    "details": [
+      "Strategy creation failed: new row violates row-level security policy for table \"strategies\""
+    ]
+  },
+  "strategyDeletion": {
+    "passed": false,
+    "details": [
+      "Test strategy creation failed: new row violates row-level security policy for table \"strategies\""
+    ]
+  },
+  "noSupabaseKeyErrors": {
+    "passed": true,
+    "details": [
+      "No supabaseKey errors in strategies query"
+    ]
+  },
+  "noStrategyMissingAlerts": {
+    "passed": true,
+    "details": [
+      "UUID validation working - invalid UUIDs caught properly"
+    ]
+  },
+  "toastNotificationsWork": {
+    "passed": true,
+    "details": [
+      "Toast implementations found in strategy files"
+    ]
+  }
+}

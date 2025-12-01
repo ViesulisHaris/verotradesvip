@@ -1,0 +1,1851 @@
+{
+  "timestamp": "2025-11-15T13:14:28.086Z",
+  "tests": [
+    {
+      "test": "Strategies Page Load - Basic Load",
+      "passed": true,
+      "details": "Page title: VeroTrade - Trading Journal",
+      "timestamp": "2025-11-15T13:14:32.783Z"
+    },
+    {
+      "test": "Strategies Page Load - Strategy Elements",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-11-15T13:14:37.794Z"
+    },
+    {
+      "test": "Strategy Viewing - Strategy Items Found",
+      "passed": false,
+      "details": "No strategy items found on page",
+      "timestamp": "2025-11-15T13:14:37.798Z"
+    },
+    {
+      "test": "Strategy Modification - Edit Button Found",
+      "passed": false,
+      "details": "No edit buttons found",
+      "timestamp": "2025-11-15T13:14:37.801Z"
+    },
+    {
+      "test": "Strategy Deletion - Delete Button Found",
+      "passed": false,
+      "details": "No delete buttons found",
+      "timestamp": "2025-11-15T13:14:37.804Z"
+    },
+    {
+      "test": "Complete Workflow - Login Form",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-11-15T13:14:41.153Z"
+    },
+    {
+      "test": "Complete Workflow - Login Ready",
+      "passed": true,
+      "details": "Login form is ready to submit (not actually submitting)",
+      "timestamp": "2025-11-15T13:14:41.348Z"
+    },
+    {
+      "test": "Complete Workflow - Strategies Access",
+      "passed": true,
+      "details": "No errors found",
+      "timestamp": "2025-11-15T13:14:44.345Z"
+    },
+    {
+      "test": "Network Requests - Failed Requests",
+      "passed": false,
+      "details": "Found 3 failed requests",
+      "timestamp": "2025-11-15T13:14:44.493Z"
+    },
+    {
+      "test": "Console Errors - Error Messages",
+      "passed": false,
+      "details": "Found 13 console errors",
+      "timestamp": "2025-11-15T13:14:44.493Z"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-11-15T13:14:29.120Z"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:29.575Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:29.577Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:29.577Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:38.200Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:38.202Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:41.640Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "console",
+      "message": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    }
+  ],
+  "screenshots": [
+    "test-screenshots/strategy-fix-verification-strategies-initial-load-1763212472542.png",
+    "test-screenshots/strategy-fix-verification-workflow-login-page-1763212480988.png",
+    "test-screenshots/strategy-fix-verification-workflow-login-filled-1763212481193.png",
+    "test-screenshots/strategy-fix-verification-workflow-strategies-final-1763212484345.png"
+  ],
+  "networkRequests": [
+    {
+      "type": "request",
+      "url": "http://localhost:3000/strategies",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.645Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/strategies",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.743Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.755Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.760Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.761Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.762Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.773Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:28.779Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.785Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.788Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.802Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.803Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.815Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.828Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.833Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.847Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.853Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.861Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.864Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.878Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.882Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.890Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.892Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.894Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.895Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.899Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:28.909Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:28.925Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.053Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.053Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.071Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.072Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.118Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.118Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.125Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.125Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.135Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.138Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.152Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.157Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.157Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.168Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.168Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.212Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.212Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.212Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.214Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.214Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:29.419Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "status": 404,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:29.575Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.597Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:29.601Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:29.602Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.605Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:29.605Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:30.010Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:30.015Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:30.020Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/login",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.809Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/login",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.863Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.875Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.875Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.875Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.875Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.877Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.878Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.882Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.883Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.885Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:37.886Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:37.893Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:37.893Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.919Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.921Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.928Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.930Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.934Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.944Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.949Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.952Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.964Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.965Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.972Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:37.979Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.006Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.008Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.016Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.018Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.044Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.044Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.046Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.051Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.051Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.062Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.062Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.083Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.083Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.085Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.085Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.091Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "status": 404,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:38.200Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:38.203Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:38.207Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.207Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:38.461Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:38.464Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:38.468Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/strategies",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.353Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/strategies",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.384Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.393Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.393Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.393Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.394Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.394Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.394Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.395Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.395Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.395Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.396Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_d62d378a._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.399Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__808363aa._.css",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.401Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.401Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:41.401Z"
+    },
+    {
+      "type": "request",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.404Z"
+    },
+    {
+      "type": "response",
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:41.404Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_9212ccad._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.411Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.412Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/_a0ff3932._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.417Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_d80fb378._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.418Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.419Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_3873bb71.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.426Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/turbopack-_376339a9._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.428Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.429Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_a7c4a686._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.433Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a6ce9b62._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.441Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_layout_tsx_3873bb71._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.442Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ba457e61._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.444Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_strategies_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.451Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/_3a2a62c6._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.453Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_1dd7fb59.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.458Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.465Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.485Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.485Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/node_modules_64070782._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.486Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.491Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_font/geist-latin.woff2",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.491Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_2ac12087._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.498Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.498Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.508Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.508Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_d425c43f._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.512Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_supabase_client_ts_874a8382._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.512Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.517Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.519Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/login?_rsc=mk9dw",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.533Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.536Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.536Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.544Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.544Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.557Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.557Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_app_(auth)_login_page_tsx_3b39c4c5._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.558Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.562Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&table_schema=eq.public&table_name=in.%28strategy_rule_compliance%2Cother_deleted_tables%29",
+      "status": 404,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:41.640Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:41.644Z"
+    },
+    {
+      "type": "request",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "method": "GET",
+      "timestamp": "2025-11-15T13:14:41.646Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.647Z"
+    },
+    {
+      "type": "response",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/strategies?select=id&limit=1",
+      "status": 200,
+      "statusText": "",
+      "timestamp": "2025-11-15T13:14:41.800Z"
+    },
+    {
+      "type": "request",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "method": "POST",
+      "timestamp": "2025-11-15T13:14:41.804Z"
+    },
+    {
+      "type": "response",
+      "url": "http://localhost:3000/__nextjs_original-stack-frames",
+      "status": 200,
+      "statusText": "OK",
+      "timestamp": "2025-11-15T13:14:41.807Z"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-15T13:14:28.966Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": "2025-11-15T13:14:29.054Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": "2025-11-15T13:14:29.054Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": "2025-11-15T13:14:29.079Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-11-15T13:14:29.119Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "timestamp": "2025-11-15T13:14:29.121Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "timestamp": "2025-11-15T13:14:29.138Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "timestamp": "2025-11-15T13:14:29.212Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "timestamp": "2025-11-15T13:14:29.219Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:29.575Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "timestamp": "2025-11-15T13:14:29.576Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "timestamp": "2025-11-15T13:14:29.576Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:29.576Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:29.576Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:29.576Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:29.577Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:29.577Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "timestamp": "2025-11-15T13:14:30.010Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T13:14:30.010Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:30.011Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-15T13:14:38.024Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": "2025-11-15T13:14:38.058Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": "2025-11-15T13:14:38.058Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": "2025-11-15T13:14:38.059Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "timestamp": "2025-11-15T13:14:38.084Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "timestamp": "2025-11-15T13:14:38.091Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:38.200Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:38.201Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/src_ebdb53ab._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:38.202Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "timestamp": "2025-11-15T13:14:38.462Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T13:14:38.461Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:38.463Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-11-15T13:14:41.468Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "timestamp": "2025-11-15T13:14:41.496Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "timestamp": "2025-11-15T13:14:41.496Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "timestamp": "2025-11-15T13:14:41.498Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running schema validation on application startup...",
+      "timestamp": "2025-11-15T13:14:41.509Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "timestamp": "2025-11-15T13:14:41.519Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "timestamp": "2025-11-15T13:14:41.558Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth state change: INITIAL_SESSION undefined",
+      "timestamp": "2025-11-15T13:14:41.563Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-11-15T13:14:41.640Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache error detected: Could not find the table 'public.information_schema.tables' in the schema cache",
+      "timestamp": "2025-11-15T13:14:41.640Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [CACHE] Cache clear failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Failed to clear cache: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at clearSchemaCache (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1651:30)\n    at http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:57:171\n    at clearSupabaseCache (http://localhost:3000/_next/static/chunks/_3a2a62c6._.js:97:7)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1707:47)",
+      "timestamp": "2025-11-15T13:14:41.641Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible",
+      "timestamp": "2025-11-15T13:14:41.800Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-15T13:14:41.800Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    },
+    {
+      "type": "error",
+      "text": "❌ [STARTUP] Schema validation process failed: Error: supabaseKey is required.\n    at new SupabaseClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16720:33)\n    at createClient (http://localhost:3000/_next/static/chunks/node_modules_64070782._.js:16928:12)\n    at new SchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:816:239)\n    at getSchemaValidator (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1643:35)\n    at validateSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1647:28)\n    at SchemaValidator.useEffect.validateAndFixSchema (http://localhost:3000/_next/static/chunks/src_ba457e61._.js:1753:206)",
+      "timestamp": "2025-11-15T13:14:41.801Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 10,
+    "passedTests": 4,
+    "failedTests": 6,
+    "successRate": "40.00%"
+  }
+}

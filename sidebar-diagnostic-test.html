@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Diagnostic Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #EAE6DD;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #B89B5E;
+            border-radius: 12px;
+            background-color: #202020;
+        }
+        .test-button {
+            background-color: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-weight: 500;
+        }
+        .test-button:hover {
+            background-color: #9B8049;
+        }
+        .console-output {
+            background-color: #000;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Sidebar Diagnostic Test</h1>
+        
+        <div class="test-section">
+            <h2>🔧 Sidebar Visibility Tests</h2>
+            <p>This test will help diagnose why the sidebar is missing.</p>
+            
+            <button class="test-button" onclick="testSidebarPresence()">Check Sidebar Presence</button>
+            <button class="test-button" onclick="testMobileMenuButton()">Check Mobile Menu Button</button>
+            <button class="test-button" onclick="testSidebarStyles()">Check Sidebar Styles</button>
+            <button class="test-button" onclick="testAuthentication()">Check Authentication State</button>
+            <button class="test-button" onclick="clearConsole()">Clear Console</button>
+            
+            <div id="console-output" class="console-output">
+                Console output will appear here...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Manual Test Instructions</h2>
+            <ol>
+                <li>Open the application in a new tab: <a href="/dashboard" target="_blank">Open Dashboard</a></li>
+                <li>Look for the mobile menu button (hamburger icon) in the top-left corner</li>
+                <li>Check browser console for diagnostic messages</li>
+                <li>Try to toggle the sidebar if visible</li>
+                <li>Report what you see (or don't see)</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function log(message) {
+            const console = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            console.innerHTML += `[${timestamp}] ${message}\n`;
+            console.scrollTop = console.scrollHeight;
+        }
+
+        function clearConsole() {
+            document.getElementById('console-output').innerHTML = 'Console cleared...\n';
+        }
+
+        function testSidebarPresence() {
+            log('🔍 Testing sidebar presence...');
+            
+            // Check for sidebar elements
+            const sidebar = document.querySelector('.verotrade-sidebar, .verotrade-sidebar-overlay');
+            const sidebarAside = document.querySelector('aside[style*="position: fixed"]');
+            
+            log(`Sidebar element found: ${!!sidebar}`);
+            log(`Sidebar aside element found: ${!!sidebarAside}`);
+            
+            if (sidebar) {
+                log(`Sidebar classes: ${sidebar.className}`);
+                log(`Sidebar styles: ${sidebar.style.cssText}`);
+                log(`Sidebar visibility: ${getComputedStyle(sidebar).visibility}`);
+                log(`Sidebar display: ${getComputedStyle(sidebar).display}`);
+                log(`Sidebar transform: ${getComputedStyle(sidebar).transform}`);
+                log(`Sidebar z-index: ${getComputedStyle(sidebar).zIndex}`);
+            }
+        }
+
+        function testMobileMenuButton() {
+            log('🔍 Testing mobile menu button...');
+            
+            const mobileButton = document.querySelector('.verotrade-mobile-menu-btn');
+            log(`Mobile menu button found: ${!!mobileButton}`);
+            
+            if (mobileButton) {
+                log(`Button classes: ${mobileButton.className}`);
+                log(`Button styles: ${mobileButton.style.cssText}`);
+                log(`Button visibility: ${getComputedStyle(mobileButton).visibility}`);
+                log(`Button display: ${getComputedStyle(mobileButton).display}`);
+                log(`Button z-index: ${getComputedStyle(mobileButton).zIndex}`);
+            }
+        }
+
+        function testSidebarStyles() {
+            log('🔍 Testing sidebar styles...');
+            
+            // Check CSS variables
+            const rootStyles = getComputedStyle(document.documentElement);
+            log(`CSS variable --dusty-gold: ${rootStyles.getPropertyValue('--dusty-gold')}`);
+            log(`CSS variable --deep-charcoal: ${rootStyles.getPropertyValue('--deep-charcoal')}`);
+            
+            // Check if CSS file is loaded
+            const stylesheets = Array.from(document.styleSheets);
+            const verotradeStyles = stylesheets.find(sheet => 
+                sheet.href && sheet.href.includes('verotrade-design-system')
+            );
+            log(`VeroTrade CSS loaded: ${!!verotradeStyles}`);
+        }
+
+        function testAuthentication() {
+            log('🔍 Testing authentication state...');
+            
+            // Check for user data in localStorage
+            const user = localStorage.getItem('user');
+            const token = localStorage.getItem('token');
+            const supabaseAuth = localStorage.getItem('supabase.auth.token');
+            
+            log(`User in localStorage: ${!!user}`);
+            log(`Token in localStorage: ${!!token}`);
+            log(`Supabase auth in localStorage: ${!!supabaseAuth}`);
+            
+            // Check for auth cookies
+            const cookies = document.cookie.split(';').map(c => c.trim());
+            const authCookies = cookies.filter(c => c.includes('auth') || c.includes('token'));
+            log(`Auth cookies found: ${authCookies.length}`);
+        }
+
+        // Auto-run tests when page loads
+        window.addEventListener('load', () => {
+            log('🚀 Sidebar diagnostic test page loaded');
+            log('📝 Run the tests above and check the application manually');
+        });
+    </script>
+</body>
+</html>

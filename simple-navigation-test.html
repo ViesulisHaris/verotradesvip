@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Navigation Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Trades Navigation Fix Test</h1>
+    
+    <div class="test-section">
+        <h2>📋 Test Instructions</h2>
+        <ol>
+            <li>Open the application in the iframe below</li>
+            <li>Navigate to the Trades page</li>
+            <li>Try opening and closing modals (edit/delete trades)</li>
+            <li>Navigate away from Trades page to Dashboard or Performance</li>
+            <li>Navigate back to Trades page</li>
+            <li>Repeat navigation to ensure no freezing occurs</li>
+        </ol>
+        
+        <p><strong>Expected Results:</strong></p>
+        <ul>
+            <li>✅ Navigation should work smoothly without freezing</li>
+            <li>✅ Debug panel (if visible) should not block clicks</li>
+            <li>✅ Modal overlays should be properly cleaned up</li>
+            <li>✅ No invisible overlays should block navigation</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 Quick Tests</h2>
+        <button class="test-button" onclick="testDirectNavigation()">Test Direct Navigation</button>
+        <button class="test-button" onclick="checkForOverlays()">Check for Overlays</button>
+        <button class="test-button" onclick="clearOverlays()">Clear Overlays</button>
+        <div id="test-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🖥️ Application Preview</h2>
+        <iframe id="app-frame" src="http://localhost:3000/dashboard" title="Application"></iframe>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Test Results</h2>
+        <div id="results">
+            <p class="info">Run the tests above and check the application in the iframe. Results will appear here.</p>
+        </div>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('app-frame');
+        const statusDiv = document.getElementById('test-status');
+        const resultsDiv = document.getElementById('results');
+        
+        function showStatus(message, type = 'info') {
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 3000);
+        }
+        
+        function addResult(message, success = true) {
+            const timestamp = new Date().toLocaleTimeString();
+            const className = success ? 'success' : 'error';
+            const icon = success ? '✅' : '❌';
+            resultsDiv.innerHTML += `<div class="status ${className}">[${timestamp}] ${icon} ${message}</div>`;
+        }
+        
+        function testDirectNavigation() {
+            try {
+                iframe.src = 'http://localhost:3000/trades';
+                showStatus('Navigating to Trades page...', 'info');
+                addResult('Direct navigation to Trades page initiated', true);
+                
+                setTimeout(() => {
+                    iframe.src = 'http://localhost:3000/dashboard';
+                    showStatus('Navigating to Dashboard...', 'info');
+                    addResult('Navigation from Trades to Dashboard initiated', true);
+                }, 2000);
+                
+                setTimeout(() => {
+                    iframe.src = 'http://localhost:3000/performance';
+                    showStatus('Navigating to Performance...', 'info');
+                    addResult('Navigation from Dashboard to Performance initiated', true);
+                }, 4000);
+                
+            } catch (error) {
+                showStatus('Navigation test failed: ' + error.message, 'error');
+                addResult('Navigation test failed: ' + error.message, false);
+            }
+        }
+        
+        function checkForOverlays() {
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                const overlays = iframeDoc.querySelectorAll('.fixed.inset-0, .modal-backdrop, [style*="position: fixed"], .zoom-debug-panel');
+                
+                showStatus(`Found ${overlays.length} overlay elements`, 'info');
+                addResult(`Overlay check: Found ${overlays.length} potential blocking elements`, true);
+                
+                overlays.forEach((overlay, index) => {
+                    const zIndex = window.getComputedStyle(overlay).zIndex;
+                    const pointerEvents = window.getComputedStyle(overlay).pointerEvents;
+                    addResult(`Overlay ${index + 1}: z-index=${zIndex}, pointer-events=${pointerEvents}`, true);
+                });
+                
+            } catch (error) {
+                showStatus('Cannot access iframe content (cross-origin restriction)', 'error');
+                addResult('Overlay check failed due to cross-origin restrictions', false);
+            }
+        }
+        
+        function clearOverlays() {
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                const overlays = iframeDoc.querySelectorAll('.fixed.inset-0, .modal-backdrop, [style*="position: fixed"]');
+                
+                overlays.forEach((overlay) => {
+                    overlay.remove();
+                });
+                
+                showStatus(`Removed ${overlays.length} overlay elements`, 'success');
+                addResult(`Manual cleanup: Removed ${overlays.length} overlay elements`, true);
+                
+            } catch (error) {
+                showStatus('Cannot access iframe content (cross-origin restriction)', 'error');
+                addResult('Manual cleanup failed due to cross-origin restrictions', false);
+            }
+        }
+        
+        // Monitor iframe load events
+        iframe.addEventListener('load', () => {
+            addResult('Page loaded successfully', true);
+        });
+        
+        iframe.addEventListener('error', () => {
+            addResult('Page failed to load', false);
+        });
+        
+        // Initial message
+        addResult('Test page loaded and ready', true);
+    </script>
+</body>
+</html>

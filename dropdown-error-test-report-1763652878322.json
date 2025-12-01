@@ -1,0 +1,2222 @@
+{
+  "timestamp": "2025-11-20T15:34:09.605Z",
+  "errors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3001/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:12.060Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.369Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.635Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.636Z"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.856Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T15:34:11.828Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.857Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.414Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.374Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.334Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.336Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.501Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.502Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.314Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T15:34:22.313Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.315Z"
+    }
+  ],
+  "consoleMessages": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.426Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.825Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.825Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.851Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.856Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T15:34:11.828Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.857Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.857Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.857Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.857Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.858Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.858Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:11.860Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3001/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:12.060Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.092Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, timestamp: 2025-11-20T15:34:12.101Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.102Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: {hasSession: false, userId: undefined, sessionExpiresAt: no expiry}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.109Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH] No session found, redirecting to login",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.114Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: INITIAL_SESSION, hasSession: false, userId: undefined, sessionExpiresAt: no expiry, timestamp: 2025-11-20T15:34:12.134Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.143Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.248Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 116ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.261Z"
+    },
+    {
+      "type": "warning",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.414Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.431Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.433Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.445Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.460Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.463Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.463Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.927Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.930Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.931Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.931Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.945Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:12.946Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.001Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.002Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.007Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.070Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight validation...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.070Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.columns?select=column_name%2Cdata_type%2Cis_nullable&table_schema=eq.public&table_name=eq.strategies&order=ordinal_position.asc",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.369Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.374Z"
+    },
+    {
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.374Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/information_schema.tables?select=table_name&limit=1",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.635Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/rpc/exec_sql",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-11-20T15:34:13.636Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [CACHE] Comprehensive cache clear completed",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.678Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:13.679Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:14.863Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 1069ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:15.824Z"
+    },
+    {
+      "type": "log",
+      "text": "🚀 Login form submission started",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.913Z"
+    },
+    {
+      "type": "log",
+      "text": "📧 Email: testuser@verotrade.com",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.914Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Password length: 16",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.914Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 Attempting Supabase authentication...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.914Z"
+    },
+    {
+      "type": "log",
+      "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.914Z"
+    },
+    {
+      "type": "log",
+      "text": "🔑 Supabase Key present: YES",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:17.914Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: SIGNED_IN, hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, timestamp: 2025-11-20T15:34:18.371Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.372Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: SIGNED_IN, hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, sessionExpiresAt: 2025-11-20T16:34:18.000Z, timestamp: 2025-11-20T15:34:18.371Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.373Z"
+    },
+    {
+      "type": "log",
+      "text": "📥 Supabase response received",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.373Z"
+    },
+    {
+      "type": "log",
+      "text": "❌ Error: NONE",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.373Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ Success: YES",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.374Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ Authentication successful!",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.374Z"
+    },
+    {
+      "type": "log",
+      "text": "👤 User ID: d9f7982d-f49b-4766-a8e8-827a1d176d5e",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.374Z"
+    },
+    {
+      "type": "log",
+      "text": "📧 User email: testuser@verotrade.com",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.374Z"
+    },
+    {
+      "type": "log",
+      "text": "🎫 Session created: YES",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.374Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 Redirecting to dashboard...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.891Z"
+    },
+    {
+      "type": "log",
+      "text": "🏁 Login process completed",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:18.897Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.025Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 114ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.034Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.196Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Starting dashboard data loading... {timestamp: 2025-11-20T15:34:19.196Z, performanceNow: 8583.200000047684}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.203Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Checking authentication state...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.204Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.210Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Starting dashboard data loading... {timestamp: 2025-11-20T15:34:19.208Z, performanceNow: 8594.799999952316}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.211Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Checking authentication state...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.211Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.247Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.249Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.249Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.250Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.374Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.375Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.376Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.376Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.376Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.377Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.383Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.383Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.387Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Authentication result: {hasUser: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, email: testuser@verotrade.com}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.614Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] User authenticated - proceeding with data load",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.614Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Starting trades query... {timestamp: 2025-11-20T15:34:19.615Z, performanceNow: 9001.600000023842}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.615Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Authentication result: {hasUser: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, email: testuser@verotrade.com}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.760Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] User authenticated - proceeding with data load",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.760Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Starting trades query... {timestamp: 2025-11-20T15:34:19.760Z, performanceNow: 9146.799999952316}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:19.760Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Trades query completed... {timestamp: 2025-11-20T15:34:20.462Z, performanceNow: 9848.299999952316, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.466Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Starting emotional data processing... {timestamp: 2025-11-20T15:34:20.465Z, performanceNow: 9852.100000023842, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.467Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Emotional data processing completed... {timestamp: 2025-11-20T15:34:20.469Z, performanceNow: 9856.100000023842, emotionsFound: 10, totalEmotions: 1598}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.471Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Trades query completed... {timestamp: 2025-11-20T15:34:20.476Z, performanceNow: 9862.700000047684, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.478Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Starting emotional data processing... {timestamp: 2025-11-20T15:34:20.477Z, performanceNow: 9864.200000047684, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.478Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE_DEBUG] Emotional data processing completed... {timestamp: 2025-11-20T15:34:20.479Z, performanceNow: 9865.299999952316, emotionsFound: 10, totalEmotions: 1598}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.478Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Starting VRating calculation... {timestamp: 2025-11-20T15:34:20.722Z, performanceNow: 10108.399999976158, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.723Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Large Loss Analysis: {timestamp: 2025-11-20T15:34:20.730Z, threshold: -50, totalTrades: 1000, losingTrades: 308, tradePnLs: Array(1000)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.731Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Large Loss Calculation Results: {timestamp: 2025-11-20T15:34:20.731Z, largeLosses: 292, largeLossPercentage: 29.2, impact: This should now properly penalize only genuinely large losses, improvement: Risk management scores should increase significantly}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.731Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Risk Management Score Calculation: {timestamp: 2025-11-20T15:34:20.738Z, input: Object, scoring: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.740Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Evaluating risk management scoring bands: {timestamp: 2025-11-20T15:34:20.739Z, metrics: Object, bandRequirements: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.741Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Band 5: Very High risk (score = 1.0-2.9) - ONLY FOR EXTREME CASES",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.741Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Fixed: Now only truly extreme cases fall here",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.741Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Final risk management score: 1.9753333333333334",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.741Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Enhanced Score Calculation: {timestamp: 2025-11-20T15:34:20.740Z, positiveEmotionPercentage: 54.18, negativeImpactPercentage: 35.08, positiveEmotionWinCorrelation: 72.04, emotionLoggingCompleteness: 100}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Band 3: Moderate emotional discipline (score = 7.0-8.4)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Bonus +1.0: Excellent emotion-win correlation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Bonus +1.0: Excellent emotional logging",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Final emotional discipline score: {finalScore: 9.390133333333333, baseScore: 9.390133333333333, bonuses: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Starting weighted overall rating calculation: {timestamp: 2025-11-20T15:34:20.741Z, categoryScores: Object, weights: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.742Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Weighted calculation result: {timestamp: 2025-11-20T15:34:20.742Z, overallRating: 6.015686666666667, components: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.743Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] VRating calculation completed: {timestamp: 2025-11-20T15:34:20.742Z, performanceNow: 10128.799999952316, overallRating: 6.02, categoryScores: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.743Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Starting VRating calculation... {timestamp: 2025-11-20T15:34:20.746Z, performanceNow: 10132.700000047684, tradesCount: 1000}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.753Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Large Loss Analysis: {timestamp: 2025-11-20T15:34:20.756Z, threshold: -50, totalTrades: 1000, losingTrades: 308, tradePnLs: Array(1000)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.759Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Large Loss Calculation Results: {timestamp: 2025-11-20T15:34:20.758Z, largeLosses: 292, largeLossPercentage: 29.2, impact: This should now properly penalize only genuinely large losses, improvement: Risk management scores should increase significantly}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.759Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Risk Management Score Calculation: {timestamp: 2025-11-20T15:34:20.762Z, input: Object, scoring: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.764Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Evaluating risk management scoring bands: {timestamp: 2025-11-20T15:34:20.763Z, metrics: Object, bandRequirements: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Band 5: Very High risk (score = 1.0-2.9) - ONLY FOR EXTREME CASES",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Fixed: Now only truly extreme cases fall here",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Final risk management score: 1.9753333333333334",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Enhanced Score Calculation: {timestamp: 2025-11-20T15:34:20.764Z, positiveEmotionPercentage: 54.18, negativeImpactPercentage: 35.08, positiveEmotionWinCorrelation: 72.04, emotionLoggingCompleteness: 100}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Band 3: Moderate emotional discipline (score = 7.0-8.4)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Bonus +1.0: Excellent emotion-win correlation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Bonus +1.0: Excellent emotional logging",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.766Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [EMOTIONAL_DISCIPLINE_DEBUG] Final emotional discipline score: {finalScore: 9.390133333333333, baseScore: 9.390133333333333, bonuses: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.767Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Starting weighted overall rating calculation: {timestamp: 2025-11-20T15:34:20.765Z, categoryScores: Object, weights: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.767Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] Weighted calculation result: {timestamp: 2025-11-20T15:34:20.765Z, overallRating: 6.015686666666667, components: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.767Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VRATING_DEBUG] VRating calculation completed: {timestamp: 2025-11-20T15:34:20.766Z, performanceNow: 10152.399999976158, overallRating: 6.02, categoryScores: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.767Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Dashboard render state: {hasUser: true, hasStats: true, tradesCount: 1000, emotionsCount: 10, emotionDataLength: 10}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.767Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LAYER_DEBUG] Dashboard visibility check: {documentReady: true, bodyExists: true, dashboardElement: false, balatroElement: true, balatroZIndex: -1}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.768Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Component rendering conditions: {dashboardCardShouldRender: true, emotionRadarShouldRender: true, pnlChartShouldRender: true, sharpeRatioShouldRender: true, dominantEmotionShouldRender: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.768Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [RENDER_DEBUG] About to render dashboard content: {willRenderContent: true, containerClass: min-h-screen p-6, totalCards: 7, timestamp: 2025-11-20T15:34:20.768Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.768Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] About to render EmotionRadar with data: {emotionDataLength: 10, sampleEmotionData: Array(2), timestamp: 2025-11-20T15:34:20.787Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.789Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] EmotionRadar rendering check: {hasData: true, hasValidEmotionData: true, willRender: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE] About to render EmotionRadar with performance monitoring",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Processing PnL data: {totalTrades: 1000, tradesWithPnL: 1000, sampleTrades: Array(3)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 1000, sampleData: Array(3), finalCumulative: 156670}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.906Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] About to render PnLChart with processed data",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.907Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Filtered valid trades: {totalTrades: 1000, validTrades: 1000, invalidTrades: 0, allTradesHaveNullPnL: false, sampleTradePnLs: Array(5)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:20.907Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 1000, sampleData: Array(3), finalCumulative: 156670}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.018Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Dashboard render state: {hasUser: true, hasStats: true, tradesCount: 1000, emotionsCount: 10, emotionDataLength: 10}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.023Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LAYER_DEBUG] Dashboard visibility check: {documentReady: true, bodyExists: true, dashboardElement: false, balatroElement: true, balatroZIndex: -1}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.026Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] Component rendering conditions: {dashboardCardShouldRender: true, emotionRadarShouldRender: true, pnlChartShouldRender: true, sharpeRatioShouldRender: true, dominantEmotionShouldRender: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.026Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [RENDER_DEBUG] About to render dashboard content: {willRenderContent: true, containerClass: min-h-screen p-6, totalCards: 7, timestamp: 2025-11-20T15:34:21.019Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.026Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] About to render EmotionRadar with data: {emotionDataLength: 10, sampleEmotionData: Array(2), timestamp: 2025-11-20T15:34:21.021Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.027Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] EmotionRadar rendering check: {hasData: true, hasValidEmotionData: true, willRender: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.027Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PERFORMANCE] About to render EmotionRadar with performance monitoring",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.027Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Processing PnL data: {totalTrades: 1000, tradesWithPnL: 1000, sampleTrades: Array(3)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.028Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 1000, sampleData: Array(3), finalCumulative: 156670}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.159Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [VISUAL_DEBUG] About to render PnLChart with processed data",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.160Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Filtered valid trades: {totalTrades: 1000, validTrades: 1000, invalidTrades: 0, allTradesHaveNullPnL: false, sampleTradePnLs: Array(5)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.160Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [PnL DEBUG] Generated PnL data: {dataPoints: 1000, sampleData: Array(3), finalCumulative: 156670}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.285Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.334Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.336Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.501Z"
+    },
+    {
+      "type": "warning",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(250) or minHeight(300) or use aspect(undefined) to control the\n       height and width.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:21.502Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.145Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: {supabaseUrl: SET, supabaseAnonKey: SET, serviceRoleKey: MISSING}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.308Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.308Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.314Z"
+    },
+    {
+      "type": "warning",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.314Z"
+    },
+    {
+      "type": "warning",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-20T15:34:22.313Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.315Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.317Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.317Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: {supabaseUrl: SET, supabaseAnonKey: SET, nodeEnv: development}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.318Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.318Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: {url: SET, anonKey: SET, persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.318Z"
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.337Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: SIGNED_IN, hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, timestamp: 2025-11-20T15:34:22.439Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.442Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: {event: INITIAL_SESSION, hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, timestamp: 2025-11-20T15:34:22.497Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.498Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: {hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, sessionExpiresAt: 2025-11-20T16:34:18.000Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.509Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.576Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.579Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Creating WebGL resources...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.593Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas element: JSHandle@node",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.599Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Canvas dimensions: 1920 x 1080",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.599Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: Device pixel ratio: 1.0000000149011612",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.599Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context created: true",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.670Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL context: WebGL2RenderingContext",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.671Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL vendor: WebKit",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.672Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL renderer: WebKit WebGL",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.672Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Balatro: WebGL version: WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.673Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Creating WebGL program...",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.675Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] WebGL program created successfully",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.683Z"
+    },
+    {
+      "type": "log",
+      "text": "[DEBUG] Program uniforms: {uTime: Object, uResolution: Object, uMouse: Object, uPixelFilter: Object, uIsRotate: Object}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [BALATRO_DEBUG] Balatro component rendered: {containerExists: true, canvasExists: true, containerClasses: balatro-container mouse-interaction, computedZIndex: -1, computedPosition: fixed}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.691Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: {event: INITIAL_SESSION, hasSession: true, userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e, sessionExpiresAt: 2025-11-20T16:34:18.000Z, timestamp: 2025-11-20T15:34:22.725Z}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.727Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.784Z"
+    },
+    {
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:22.788Z"
+    },
+    {
+      "type": "info",
+      "text": "[AUTH] Loading strategies for trade form {userId: d9f7982d-f49b-4766-a8e8-827a1d176d5e}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:23.406Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [DEBUG] Strategies loaded successfully: {count: 8, strategies: Array(8)}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:23.639Z"
+    },
+    {
+      "type": "info",
+      "text": "[STRATEGY] TradeForm strategies loaded {count: 8}",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:23.640Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:26.574Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 428ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:26.899Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:29.887Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 369ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:30.149Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:33.406Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 610ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:33.915Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:36.249Z"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 566ms",
+      "location": {
+        "url": "http://localhost:3001/_next/static/chunks/ccca7_next_dist_4ba3aab8._.js",
+        "lineNumber": 2294,
+        "columnNumber": 27
+      },
+      "timestamp": "2025-11-20T15:34:36.708Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "initial-page-load",
+      "filename": "dropdown-error-test-initial-page-load-1763652854183.png",
+      "timestamp": 1763652854183
+    },
+    {
+      "name": "after-login",
+      "filename": "dropdown-error-test-after-login-1763652866155.png",
+      "timestamp": 1763652866155
+    },
+    {
+      "name": "dropdown-found",
+      "filename": "dropdown-error-test-dropdown-found-1763652869459.png",
+      "timestamp": 1763652869459
+    },
+    {
+      "name": "after-mouse-interaction",
+      "filename": "dropdown-error-test-after-mouse-interaction-1763652873001.png",
+      "timestamp": 1763652873001
+    },
+    {
+      "name": "after-keyboard-interaction",
+      "filename": "dropdown-error-test-after-keyboard-interaction-1763652875860.png",
+      "timestamp": 1763652875860
+    },
+    {
+      "name": "final-state",
+      "filename": "dropdown-error-test-final-state-1763652878092.png",
+      "timestamp": 1763652878092
+    }
+  ],
+  "interactionResults": [
+    {
+      "type": "mouse",
+      "success": false,
+      "errors": [],
+      "timestamp": "2025-11-20T15:34:31.939Z"
+    },
+    {
+      "type": "keyboard",
+      "success": true,
+      "errors": [],
+      "timestamp": "2025-11-20T15:34:33.254Z",
+      "optionSelected": true
+    }
+  ],
+  "summary": {
+    "totalErrors": 4,
+    "totalWarnings": 10,
+    "dropdownFunctional": true,
+    "allTestsPassed": false
+  }
+}

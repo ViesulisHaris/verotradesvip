@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Smoothing Validation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .test-step {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #14b8a6;
+            background: #333;
+        }
+        .expected-logs {
+            background: #1e3a3a;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .validation-checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .validation-checklist li {
+            margin: 8px 0;
+            padding: 8px;
+            background: #444;
+            border-radius: 4px;
+        }
+        .validation-checklist li:before {
+            content: "□ ";
+            color: #14b8a6;
+            font-weight: bold;
+        }
+        .validation-checklist li.completed:before {
+            content: "✓ ";
+            color: #10b981;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #555;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Graph Smoothing Validation Test</h1>
+        
+        <div class="test-step">
+            <h2>Step 1: Open Dashboard in Browser</h2>
+            <p>Navigate to the dashboard page where the charts are displayed.</p>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 2: Open Developer Console</h2>
+            <p>Open browser developer tools (F12) and go to the Console tab.</p>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 3: Test Menu Transitions</h2>
+            <p>Toggle the sidebar multiple times using:</p>
+            <ul>
+                <li>Collapse/expand button in sidebar header</li>
+                <li>Keyboard shortcut Ctrl+B</li>
+                <li>Mobile menu button (if on mobile)</li>
+            </ul>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 4: Look for Diagnostic Logs</h2>
+            <p>Watch the console for these specific messages during menu transitions:</p>
+            <div class="expected-logs">
+🔍 [SMOOTHING DEBUG] PnLChart animation started - Duration: 1500ms
+🔍 [SMOOTHING DEBUG] PnLChart animation ended - Total smoothing time: 1500ms
+🔍 [SMOOTHING DEBUG] EmotionRadar animation started - Duration: 1800ms
+🔍 [SMOOTHING DEBUG] EmotionRadar animation ended - Total smoothing time: 1800ms
+🔍 [SMOOTHING DEBUG] PerformanceTrendChart animation started - Duration: 1500ms
+🔍 [SMOOTHING DEBUG] PerformanceTrendChart animation ended - Total smoothing time: 1500ms
+            </div>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 5: Validation Checklist</h2>
+            <p>Check each item as you observe it:</p>
+            <ul class="validation-checklist">
+                <li id="log-check">Console shows animation start/end logs during menu toggle</li>
+                <li id="timing-check">Logs show 1500ms for PnLChart and PerformanceTrendChart</li>
+                <li id="radar-timing-check">Logs show 1800ms for EmotionRadar</li>
+                <li id="smoothness-check">Transitions feel artificially smooth (like slow-motion)</li>
+                <li id="responsiveness-check">Charts take 1.5-1.8 seconds to complete transitions</li>
+                <li id="compound-check">Multiple charts animating creates compounded smoothing effect</li>
+            </ul>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 6: Assessment</h2>
+            <p><strong>If most items are checked:</strong> The excessive smoothing diagnosis is confirmed.</p>
+            <p><strong>If few or no items are checked:</strong> We need to investigate other causes.</p>
+        </div>
+
+        <div class="test-step">
+            <h2>Step 7: Test Results</h2>
+            <p>Report your findings:</p>
+            <ul>
+                <li>How many diagnostic log messages appeared?</li>
+                <li>Did the transitions feel overly smooth/artificial?</li>
+                <li>Approximately how long did transitions take visually?</li>
+                <li>Did all three charts animate simultaneously?</li>
+            </ul>
+        </div>
+
+        <div class="test-step">
+            <h2>Direct Test Link</h2>
+            <p><a href="http://localhost:3000/dashboard" target="_blank">Open Dashboard in New Tab</a></p>
+            <div class="iframe-container">
+                <p>Dashboard should load below (if running locally):</p>
+                <iframe src="http://localhost:3000/dashboard" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive checklist functionality
+        document.querySelectorAll('.validation-checklist li').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('completed');
+            });
+        });
+    </script>
+</body>
+</html>

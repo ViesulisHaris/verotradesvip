@@ -1,0 +1,321 @@
+{
+  "summary": {
+    "totalTests": 19,
+    "passedTests": 10,
+    "failedTests": 9,
+    "startTime": "2025-11-21T15:50:32.918Z",
+    "endTime": "2025-11-21T15:50:57.111Z",
+    "duration": 24193
+  },
+  "categories": {
+    "authentication": {
+      "tests": [
+        {
+          "name": "Login page accessibility",
+          "passed": true,
+          "issues": [],
+          "details": "Login form elements should be present",
+          "timestamp": "2025-11-21T15:50:35.373Z"
+        },
+        {
+          "name": "Login functionality",
+          "passed": true,
+          "issues": [],
+          "details": "Successfully redirected to http://localhost:3000/dashboard",
+          "timestamp": "2025-11-21T15:50:39.394Z"
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "issues": []
+    },
+    "dashboard": {
+      "tests": [
+        {
+          "name": "Dashboard content loading",
+          "passed": false,
+          "issues": [
+            "Insufficient stats cards"
+          ],
+          "details": "Stats cards: false, Charts: true",
+          "timestamp": "2025-11-21T15:50:40.237Z"
+        },
+        {
+          "name": "Performance metrics display",
+          "passed": false,
+          "issues": [
+            "Total P&L not displayed"
+          ],
+          "details": "Total P&L and Win Rate should be visible",
+          "timestamp": "2025-11-21T15:50:40.308Z"
+        },
+        {
+          "name": "Dashboard interactive elements",
+          "passed": true,
+          "issues": [],
+          "details": "Found 12 interactive elements",
+          "timestamp": "2025-11-21T15:50:40.317Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 2,
+      "issues": [
+        "Insufficient stats cards",
+        "Total P&L not displayed"
+      ]
+    },
+    "trades": {
+      "tests": [
+        {
+          "name": "Trades page loading",
+          "passed": false,
+          "issues": [
+            "No trade list found"
+          ],
+          "details": "Trade list should be present",
+          "timestamp": "2025-11-21T15:50:41.263Z"
+        },
+        {
+          "name": "Trade filtering controls",
+          "passed": false,
+          "issues": [
+            "No filtering controls found"
+          ],
+          "details": "Found 0 filter controls",
+          "timestamp": "2025-11-21T15:50:41.271Z"
+        },
+        {
+          "name": "Add trade button availability",
+          "passed": true,
+          "issues": [],
+          "details": "Add trade button is present",
+          "timestamp": "2025-11-21T15:50:41.361Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 2,
+      "issues": [
+        "No trade list found",
+        "No filtering controls found"
+      ]
+    },
+    "strategies": {
+      "tests": [
+        {
+          "name": "Strategies page loading",
+          "passed": true,
+          "issues": [],
+          "details": "Strategy list should be present",
+          "timestamp": "2025-11-21T15:50:47.840Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "issues": []
+    },
+    "emotional": {
+      "tests": [
+        {
+          "name": "Emotional analysis page loading",
+          "passed": false,
+          "issues": [
+            "No emotional charts found"
+          ],
+          "details": "Emotional charts should be present",
+          "timestamp": "2025-11-21T15:50:52.888Z"
+        },
+        {
+          "name": "Emotion filtering controls",
+          "passed": false,
+          "issues": [
+            "No emotion filtering controls found"
+          ],
+          "details": "Found 0 emotion filter controls",
+          "timestamp": "2025-11-21T15:50:52.896Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 2,
+      "issues": [
+        "No emotional charts found",
+        "No emotion filtering controls found"
+      ]
+    },
+    "filtering": {
+      "tests": [
+        {
+          "name": "Filter controls availability",
+          "passed": false,
+          "issues": [
+            "No filter inputs found"
+          ],
+          "details": "Found 0 filter inputs",
+          "timestamp": "2025-11-21T15:50:54.079Z"
+        },
+        {
+          "name": "Sort controls availability",
+          "passed": false,
+          "issues": [
+            "No sort controls found"
+          ],
+          "details": "Found 0 sort controls",
+          "timestamp": "2025-11-21T15:50:54.079Z"
+        }
+      ],
+      "passed": 0,
+      "failed": 2,
+      "issues": [
+        "No filter inputs found",
+        "No sort controls found"
+      ]
+    },
+    "ui": {
+      "tests": [
+        {
+          "name": "Navigation menu availability",
+          "passed": true,
+          "issues": [],
+          "details": "Found 1 navigation elements",
+          "timestamp": "2025-11-21T15:50:55.292Z"
+        },
+        {
+          "name": "Loading states support",
+          "passed": true,
+          "issues": [],
+          "details": "Found 0 loading elements",
+          "timestamp": "2025-11-21T15:50:55.297Z"
+        },
+        {
+          "name": "Error state handling",
+          "passed": true,
+          "issues": [],
+          "details": "Found 1 error elements",
+          "timestamp": "2025-11-21T15:50:55.304Z"
+        }
+      ],
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    },
+    "performance": {
+      "tests": [
+        {
+          "name": "Page load performance",
+          "passed": true,
+          "issues": [],
+          "details": "Dashboard load time: 759ms",
+          "timestamp": "2025-11-21T15:50:56.064Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "issues": []
+    },
+    "mobile": {
+      "tests": [
+        {
+          "name": "Mobile navigation",
+          "passed": true,
+          "issues": [],
+          "details": "Found 1 mobile navigation elements",
+          "timestamp": "2025-11-21T15:50:56.732Z"
+        },
+        {
+          "name": "Mobile layout adaptation",
+          "passed": false,
+          "issues": [
+            "No mobile layout adaptation found"
+          ],
+          "details": "Found 0 mobile layout elements",
+          "timestamp": "2025-11-21T15:50:56.875Z"
+        }
+      ],
+      "passed": 1,
+      "failed": 1,
+      "issues": [
+        "No mobile layout adaptation found"
+      ]
+    }
+  },
+  "screenshots": [
+    {
+      "filename": "authentication-login-page-loaded-1763740235241.png",
+      "category": "authentication",
+      "testName": "login-page-loaded",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-page-loaded-1763740235241.png"
+    },
+    {
+      "filename": "authentication-login-form-filled-1763740235913.png",
+      "category": "authentication",
+      "testName": "login-form-filled",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\authentication-login-form-filled-1763740235913.png"
+    },
+    {
+      "filename": "dashboard-dashboard-loaded-1763740240001.png",
+      "category": "dashboard",
+      "testName": "dashboard-loaded",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\dashboard-dashboard-loaded-1763740240001.png"
+    },
+    {
+      "filename": "trades-trades-page-loaded-1763740241211.png",
+      "category": "trades",
+      "testName": "trades-page-loaded",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\trades-trades-page-loaded-1763740241211.png"
+    },
+    {
+      "filename": "strategies-strategies-page-loaded-1763740247768.png",
+      "category": "strategies",
+      "testName": "strategies-page-loaded",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\strategies-strategies-page-loaded-1763740247768.png"
+    },
+    {
+      "filename": "emotional-confluence-page-loaded-1763740252829.png",
+      "category": "emotional",
+      "testName": "confluence-page-loaded",
+      "filepath": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\emotional-confluence-page-loaded-1763740252829.png"
+    }
+  ],
+  "logs": [
+    "[2025-11-21T15:50:33.570Z] [INFO] [GENERAL] Starting Simple Comprehensive Test Suite",
+    "[2025-11-21T15:50:33.570Z] [INFO] [GENERAL] Base URL: http://localhost:3000",
+    "[2025-11-21T15:50:33.570Z] [INFO] [GENERAL] Initializing test suite...",
+    "[2025-11-21T15:50:33.939Z] [INFO] [AUTHENTICATION] Starting Authentication System Tests",
+    "[2025-11-21T15:50:35.373Z] [INFO] [AUTHENTICATION] PASS: Login page accessibility - Login form elements should be present",
+    "[2025-11-21T15:50:36.261Z] [INFO] [AUTHENTICATION] Screenshot saved: authentication-login-page-loaded-1763740235241.png",
+    "[2025-11-21T15:50:36.596Z] [INFO] [AUTHENTICATION] Screenshot saved: authentication-login-form-filled-1763740235913.png",
+    "[2025-11-21T15:50:39.394Z] [INFO] [AUTHENTICATION] PASS: Login functionality - Successfully redirected to http://localhost:3000/dashboard",
+    "[2025-11-21T15:50:39.395Z] [INFO] [DASHBOARD] Starting Dashboard and Analytics Tests",
+    "[2025-11-21T15:50:40.238Z] [INFO] [DASHBOARD] FAIL: Dashboard content loading - Stats cards: false, Charts: true",
+    "[2025-11-21T15:50:40.308Z] [INFO] [DASHBOARD] FAIL: Performance metrics display - Total P&L and Win Rate should be visible",
+    "[2025-11-21T15:50:40.317Z] [INFO] [DASHBOARD] PASS: Dashboard interactive elements - Found 12 interactive elements",
+    "[2025-11-21T15:50:40.318Z] [INFO] [TRADES] Starting Trade Management Tests",
+    "[2025-11-21T15:50:40.509Z] [INFO] [DASHBOARD] Screenshot saved: dashboard-dashboard-loaded-1763740240001.png",
+    "[2025-11-21T15:50:41.263Z] [INFO] [TRADES] FAIL: Trades page loading - Trade list should be present",
+    "[2025-11-21T15:50:41.271Z] [INFO] [TRADES] FAIL: Trade filtering controls - Found 0 filter controls",
+    "[2025-11-21T15:50:41.361Z] [INFO] [TRADES] PASS: Add trade button availability - Add trade button is present",
+    "[2025-11-21T15:50:41.362Z] [INFO] [STRATEGIES] Starting Strategy Management Tests",
+    "[2025-11-21T15:50:41.665Z] [INFO] [TRADES] Screenshot saved: trades-trades-page-loaded-1763740241211.png",
+    "[2025-11-21T15:50:47.840Z] [INFO] [STRATEGIES] PASS: Strategies page loading - Strategy list should be present",
+    "[2025-11-21T15:50:47.971Z] [INFO] [EMOTIONAL] Starting Emotional Analysis Tests",
+    "[2025-11-21T15:50:52.315Z] [INFO] [STRATEGIES] Screenshot saved: strategies-strategies-page-loaded-1763740247768.png",
+    "[2025-11-21T15:50:52.888Z] [INFO] [EMOTIONAL] FAIL: Emotional analysis page loading - Emotional charts should be present",
+    "[2025-11-21T15:50:52.896Z] [INFO] [EMOTIONAL] FAIL: Emotion filtering controls - Found 0 emotion filter controls",
+    "[2025-11-21T15:50:52.897Z] [INFO] [FILTERING] Starting Data Filtering and Sorting Tests",
+    "[2025-11-21T15:50:53.743Z] [INFO] [EMOTIONAL] Screenshot saved: emotional-confluence-page-loaded-1763740252829.png",
+    "[2025-11-21T15:50:54.079Z] [INFO] [FILTERING] FAIL: Filter controls availability - Found 0 filter inputs",
+    "[2025-11-21T15:50:54.079Z] [INFO] [FILTERING] FAIL: Sort controls availability - Found 0 sort controls",
+    "[2025-11-21T15:50:54.080Z] [INFO] [UI] Starting UI/UX Elements and Responsiveness Tests",
+    "[2025-11-21T15:50:55.292Z] [INFO] [UI] PASS: Navigation menu availability - Found 1 navigation elements",
+    "[2025-11-21T15:50:55.297Z] [INFO] [UI] PASS: Loading states support - Found 0 loading elements",
+    "[2025-11-21T15:50:55.304Z] [INFO] [UI] PASS: Error state handling - Found 1 error elements",
+    "[2025-11-21T15:50:55.305Z] [INFO] [PERFORMANCE] Starting Performance and Stability Tests",
+    "[2025-11-21T15:50:56.064Z] [INFO] [PERFORMANCE] PASS: Page load performance - Dashboard load time: 759ms",
+    "[2025-11-21T15:50:56.065Z] [INFO] [MOBILE] Starting Mobile Responsiveness Tests",
+    "[2025-11-21T15:50:56.733Z] [INFO] [MOBILE] PASS: Mobile navigation - Found 1 mobile navigation elements",
+    "[2025-11-21T15:50:56.875Z] [INFO] [MOBILE] FAIL: Mobile layout adaptation - Found 0 mobile layout elements",
+    "[2025-11-21T15:50:56.876Z] [INFO] [GENERAL] Cleaning up test suite...",
+    "[2025-11-21T15:50:56.981Z] [ERROR] [MOBILE] Failed to save screenshot: page.screenshot: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  ],
+  "overallStatus": "FAIL",
+  "successRate": "52.6"
+}

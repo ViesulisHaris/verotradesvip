@@ -1,0 +1,65 @@
+{
+  "startTime": "2025-11-27T12:39:14.705Z",
+  "tests": [
+    {
+      "name": "Login Page Access",
+      "status": "PASS",
+      "details": "Login page loaded successfully with all required elements",
+      "screenshot": "authentication-flow-test-screenshots\\login-page-initial-load-1764247163340.png",
+      "timestamp": "2025-11-27T12:39:24.591Z"
+    },
+    {
+      "name": "Authentication Process",
+      "status": "FAIL",
+      "details": "Authentication failed - No error message found",
+      "screenshot": "authentication-flow-test-screenshots\\authentication-after-submit-1764247167388.png",
+      "timestamp": "2025-11-27T12:39:27.734Z"
+    },
+    {
+      "name": "Dashboard Access",
+      "status": "FAIL",
+      "details": "Dashboard issues: no dashboard content, no headers found",
+      "screenshot": "authentication-flow-test-screenshots\\dashboard-initial-load-1764247170798.png",
+      "timestamp": "2025-11-27T12:40:00.999Z"
+    },
+    {
+      "name": "Sidebar Visibility",
+      "status": "FAIL",
+      "details": "Exception: SyntaxError: Failed to execute 'querySelector' on 'Document': The provided selector is empty.",
+      "screenshot": "authentication-flow-test-screenshots\\sidebar-error-1764247201295.png",
+      "timestamp": "2025-11-27T12:40:01.417Z"
+    },
+    {
+      "name": "Authentication State",
+      "status": "FAIL",
+      "details": "Authentication state invalid - {\"isAuthenticated\":false}",
+      "screenshot": "authentication-flow-test-screenshots\\auth-state-current-state-1764247201419.png",
+      "timestamp": "2025-11-27T12:40:01.648Z"
+    },
+    {
+      "name": "Logout Functionality",
+      "status": "FAIL",
+      "details": "Logout button/link not found",
+      "screenshot": "authentication-flow-test-screenshots\\logout-before-logout-1764247201670.png",
+      "timestamp": "2025-11-27T12:40:01.812Z"
+    }
+  ],
+  "screenshots": [
+    "authentication-flow-test-screenshots\\login-page-initial-load-1764247163340.png",
+    "authentication-flow-test-screenshots\\authentication-after-submit-1764247167388.png",
+    "authentication-flow-test-screenshots\\dashboard-initial-load-1764247170798.png",
+    "authentication-flow-test-screenshots\\sidebar-error-1764247201295.png",
+    "authentication-flow-test-screenshots\\auth-state-current-state-1764247201419.png",
+    "authentication-flow-test-screenshots\\logout-before-logout-1764247201670.png"
+  ],
+  "errors": [],
+  "finalStatus": "FAILED",
+  "endTime": "2025-11-27T12:40:01.812Z",
+  "duration": 47107,
+  "summary": {
+    "total": 6,
+    "passed": 1,
+    "failed": 5,
+    "successRate": "16.67%"
+  }
+}

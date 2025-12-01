@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-11-17T21:53:35.690Z",
+  "userId": "d9f7982d-f49b-4766-a8e8-827a1d176d5e",
+  "originalIssue": "emotional_state stored as JSON string instead of array",
+  "correctedResults": {
+    "emotional": {
+      "totalTrades": 200,
+      "tradesWithEmotions": 200,
+      "tradesWithoutEmotions": 0,
+      "emotionDistribution": {
+        "OVERRISK": 39,
+        "DISCIPLINE": 35,
+        "NEUTRAL": 39,
+        "PATIENCE": 29,
+        "CONFIDENT": 25,
+        "REGRET": 35,
+        "ANXIOUS": 25,
+        "REVENGE": 33,
+        "TILT": 28,
+        "FOMO": 15
+      },
+      "allEmotionsPresent": true,
+      "formatIssues": 0,
+      "success": true
+    },
+    "quality": {
+      "totalTrades": 200,
+      "winRate": 0.71,
+      "marketDistribution": {
+        "Stock": 82,
+        "Crypto": 53,
+        "Forex": 47,
+        "Futures": 18
+      },
+      "formatAnalysis": {
+        "arrayFormat": 0,
+        "stringFormat": 200,
+        "nullFormat": 0
+      }
+    }
+  },
+  "summary": {
+    "totalTrades": 200,
+    "emotionalDataCoverage": 100,
+    "allEmotionsPresent": true,
+    "winRate": 0.71,
+    "overallStatus": "PASS"
+  }
+}

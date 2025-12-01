@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-11-24T09:31:12.873Z",
+  "loginResult": {
+    "formFunctionality": true,
+    "buttonClickable": true,
+    "zoomLevel": 100,
+    "viewport": "1920x1080",
+    "zoomIndicator": false,
+    "elements": {
+      "emailInput": {
+        "exists": true,
+        "tagName": "INPUT",
+        "type": "email",
+        "classes": "input-luxury zoom-form-input",
+        "visible": true,
+        "width": 273,
+        "height": 48,
+        "value": ""
+      },
+      "passwordInput": {
+        "exists": true,
+        "tagName": "INPUT",
+        "type": "password",
+        "classes": "input-luxury zoom-form-input",
+        "visible": true,
+        "width": 273,
+        "height": 48,
+        "value": ""
+      },
+      "submitButton": {
+        "exists": true,
+        "tagName": "BUTTON",
+        "type": "submit",
+        "classes": "btn-primary w-full zoom-submit-button",
+        "visible": true,
+        "width": 273,
+        "height": 48,
+        "text": "Sign in",
+        "disabled": false
+      },
+      "loginCard": {
+        "exists": true,
+        "classes": "card-luxury shadow-luxury animate-fadeIn zoom-card zoom-responsive-card",
+        "visible": true,
+        "width": 322,
+        "height": 612
+      },
+      "form": {
+        "exists": true,
+        "classes": "space-y-4 zoom-form",
+        "action": "http://localhost:3000/login",
+        "method": "get"
+      }
+    }
+  }
+}

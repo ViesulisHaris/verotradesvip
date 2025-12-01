@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-11-12T22:44:54.896Z",
+  "checks": {
+    "tableExistence": {
+      "success": false,
+      "error": "Could not find the table 'public.information_schema.tables' in the schema cache"
+    },
+    "strategiesQuery": {
+      "success": true,
+      "count": 0
+    },
+    "strategiesJoinQuery": {
+      "success": false,
+      "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache",
+      "hasComplianceError": false
+    },
+    "complexQuery": {
+      "success": false,
+      "error": "Could not find a relationship between 'strategies' and 'strategy_id' in the schema cache",
+      "hasComplianceError": false
+    }
+  }
+}

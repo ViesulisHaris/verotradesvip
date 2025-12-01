@@ -1,0 +1,101 @@
+{
+  "diagnosticSummary": {
+    "totalTests": 4,
+    "completed": 0,
+    "failed": 4,
+    "timestamp": "2025-11-30T19:46:27.388Z"
+  },
+  "diagnosticResults": {
+    "authenticationFlow": {
+      "status": "failed",
+      "details": {
+        "error": "this.page.waitForTimeout is not a function",
+        "timestamp": "2025-11-30T19:46:24.471Z"
+      }
+    },
+    "dashboardContent": {
+      "status": "failed",
+      "details": {
+        "error": "this.page.waitForTimeout is not a function",
+        "timestamp": "2025-11-30T19:46:25.449Z"
+      }
+    },
+    "componentRendering": {
+      "status": "failed",
+      "details": {
+        "error": "this.page.waitForTimeout is not a function",
+        "timestamp": "2025-11-30T19:46:26.422Z"
+      }
+    },
+    "dataConnectivity": {
+      "status": "failed",
+      "details": {
+        "error": "this.page.waitForTimeout is not a function",
+        "timestamp": "2025-11-30T19:46:27.387Z"
+      }
+    }
+  },
+  "consoleAnalysis": {
+    "totalMessages": 453,
+    "errors": 56,
+    "warnings": 0,
+    "authRelatedErrors": 54,
+    "recentErrors": [
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.959Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.960Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.962Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.963Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.971Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.971Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.989Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.990Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.991Z"
+      },
+      {
+        "type": "error",
+        "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "timestamp": "2025-11-30T19:46:26.992Z"
+      }
+    ]
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "url": "http://localhost:3000/dashboard",
+    "timestamp": "2025-11-30T19:46:27.392Z"
+  }
+}

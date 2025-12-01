@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Scrollbar Testing Report</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .summary-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .test-item {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .test-item.passed {
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+        .test-item.failed {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .status.passed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        .status.failed {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .details {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+        h1, h2, h3 {
+            color: #60a5fa;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .element-count {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="gradient-text">Enhanced Scrollbar Implementation Testing Report</h1>
+            <p>Generated on Invalid Date</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Total Tests</h3>
+                <div style="font-size: 2rem; font-weight: bold;">10</div>
+            </div>
+            <div class="summary-card">
+                <h3>Passed</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #22c55e;">2</div>
+            </div>
+            <div class="summary-card">
+                <h3>Failed</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #ef4444;">8</div>
+            </div>
+            <div class="summary-card">
+                <h3>Success Rate</h3>
+                <div style="font-size: 2rem; font-weight: bold;">20%</div>
+            </div>
+        </div>
+        
+        <h2>Test Results</h2>
+        
+            <div class="test-item passed">
+                <h3>Main Page Scrollbar <span class="status passed">PASSED</span></h3>
+                <p><strong>Selector:</strong> <code>body</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-global</code></p>
+                
+                
+                <img src="main-page-scrollbar-2025-11-20T16-37-19-806Z.png" alt="Main Page Scrollbar" class="screenshot">
+                
+                    <div class="details">
+                        <strong>Scrollbar Info:</strong><br>
+                        {
+  "exists": true,
+  "hasCustomScrollbar": true,
+  "hasWebkitScrollbar": false,
+  "scrollbarWidth": 0,
+  "overflow": "visible",
+  "overflowY": "visible",
+  "overflowX": "visible",
+  "scrollbarClass": "scrollbar-global",
+  "className": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+}
+                    </div>
+                
+                
+                    <div class="details">
+                        <strong>Hover Info:</strong><br>
+                        {
+  "hasHoverStyles": true,
+  "hoverTransform": "",
+  "hoverBoxShadow": ""
+}
+                    </div>
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Sidebar Navigation Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>nav</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Navigation element not found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Trade Modal Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.glass.max-w-5xl</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Add Trade button not found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Dropdown Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.dropdown-options-container</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> No dropdown elements found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Table Overflow Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.overflow-x-auto</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> No table elements found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Calendar Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.max-h-[70vh]</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Calendar elements not found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Strategy Performance Modal Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.glass.w-full.max-w-4xl</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Strategy modal not found after clicking strategy card</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Confluence Page Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.overflow-x-auto</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Confluence page elements not found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item failed">
+                <h3>Enhanced Strategy Card Scrollbar <span class="status failed">FAILED</span></h3>
+                <p><strong>Selector:</strong> <code>.max-h-[80px]</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-glass</code></p>
+                
+                <p><strong>Note:</strong> Enhanced Strategy Card elements not found</p>
+                
+                
+                
+            </div>
+        
+            <div class="test-item passed">
+                <h3>Scrollbar Class: scrollbar-global <span class="status passed">PASSED</span></h3>
+                <p><strong>Selector:</strong> <code>.scrollbar-global</code></p>
+                <p><strong>Class:</strong> <code>scrollbar-global</code></p>
+                <p><strong>Elements Found:</strong> <span class="element-count">1</span></p>
+                
+                <img src="class-scrollbar-global-2025-11-20T16-37-19-806Z.png" alt="Scrollbar Class: scrollbar-global" class="screenshot">
+                
+                    <div class="details">
+                        <strong>Scrollbar Info:</strong><br>
+                        {
+  "exists": true,
+  "hasCustomScrollbar": true,
+  "hasWebkitScrollbar": false,
+  "scrollbarWidth": 0,
+  "overflow": "visible",
+  "overflowY": "visible",
+  "overflowX": "visible",
+  "scrollbarClass": "scrollbar-global",
+  "className": "inter_5972bc34-module__OU16Qa__className h-full scrollbar-global"
+}
+                    </div>
+                
+                
+                    <div class="details">
+                        <strong>Hover Info:</strong><br>
+                        {
+  "hasHoverStyles": true,
+  "hoverTransform": "",
+  "hoverBoxShadow": ""
+}
+                    </div>
+                
+            </div>
+        
+    </div>
+</body>
+</html>
+  

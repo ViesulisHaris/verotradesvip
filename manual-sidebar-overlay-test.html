@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Overlay Manual Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #121212;
+            color: #EAE6DD;
+            line-height: 1.6;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            background: #202020;
+            border: 1px solid rgba(184, 155, 94, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #B89B5E;
+        }
+        
+        .test-instructions {
+            background: rgba(184, 155, 94, 0.1);
+            border-left: 4px solid #B89B5E;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .test-step {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+        }
+        
+        .expected-result {
+            color: #B89B5E;
+            font-weight: 500;
+        }
+        
+        .test-button {
+            background: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-button:hover {
+            background: #9B8049;
+            transform: translateY(-1px);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-pass { background: #4CAF50; }
+        .status-fail { background: #F44336; }
+        .status-pending { background: #FF9800; }
+        
+        .iframe-container {
+            border: 2px solid rgba(184, 155, 94, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #1a1a1a;
+        }
+        
+        .iframe-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        
+        .viewport-controls {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .results-log {
+            background: #1a1a1a;
+            border: 1px solid rgba(184, 155, 94, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .log-pass { background: rgba(76, 175, 80, 0.2); color: #4CAF50; }
+        .log-fail { background: rgba(244, 67, 54, 0.2); color: #F44336; }
+        .log-info { background: rgba(255, 152, 0, 0.2); color: #FF9800; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: #B89B5E;">
+            🔧 Sidebar Overlay Comprehensive Test
+        </h1>
+        
+        <div class="test-section">
+            <h2 class="test-title">📋 Test Overview</h2>
+            <div class="test-instructions">
+                <p><strong>Objective:</strong> Thoroughly test that the redesigned sidebar functions properly as an overlay without interfering with other page elements.</p>
+                <p><strong>Key Requirements:</strong></p>
+                <ul>
+                    <li>✅ When closed you can open it</li>
+                    <li>✅ When open you can close it</li>
+                    <li>✅ Sidebar doesn't interfere with other elements</li>
+                    <li>✅ Main content maintains position when sidebar toggles</li>
+                    <li>✅ Proper z-index layering (sidebar above content)</li>
+                    <li>✅ Responsive behavior across screen sizes</li>
+                    <li>✅ Multiple toggle operations work smoothly</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">🖥️ Test Controls</h2>
+            <div class="viewport-controls">
+                <button class="test-button" onclick="setViewport('mobile')">📱 Mobile (375x667)</button>
+                <button class="test-button" onclick="setViewport('tablet')">📱 Tablet (768x1024)</button>
+                <button class="test-button" onclick="setViewport('desktop')">🖥️ Desktop (1920x1080)</button>
+                <button class="test-button" onclick="navigateToDashboard()">🏠 Go to Dashboard</button>
+                <button class="test-button" onclick="runAutomatedTests()">🤖 Run Automated Tests</button>
+                <button class="test-button" onclick="clearResults()">🗑️ Clear Results</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">🧪 Manual Test Steps</h2>
+            <div class="test-instructions">
+                <div class="test-step">
+                    <strong>Step 1: Initial State Verification</strong>
+                    <p>Navigate to the dashboard and verify:</p>
+                    <ul>
+                        <li>Sidebar is initially hidden (transform: translateX(-100%))</li>
+                        <li>Main content is at position X: 0</li>
+                        <li>No overlay is visible</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> Sidebar should start in closed state</p>
+                </div>
+                
+                <div class="test-step">
+                    <strong>Step 2: Open Sidebar Test</strong>
+                    <p>Click the sidebar toggle button and verify:</p>
+                    <ul>
+                        <li>Sidebar slides in from left (transform: translateX(0))</li>
+                        <li>Overlay appears with proper z-index</li>
+                        <li>Main content doesn't shift position</li>
+                        <li>Sidebar z-index > overlay z-index > content z-index</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> Sidebar opens as overlay without moving content</p>
+                </div>
+                
+                <div class="test-step">
+                    <strong>Step 3: Close Sidebar Test</strong>
+                    <p>Click the overlay or close button and verify:</p>
+                    <ul>
+                        <li>Sidebar slides out to left (transform: translateX(-100%))</li>
+                        <li>Overlay disappears</li>
+                        <li>Main content maintains position</li>
+                        <li>No layout shifts occur</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> Sidebar closes cleanly without affecting layout</p>
+                </div>
+                
+                <div class="test-step">
+                    <strong>Step 4: Multiple Toggle Test</strong>
+                    <p>Perform 5 rapid open/close cycles and verify:</p>
+                    <ul>
+                        <li>Each toggle works correctly</li>
+                        <li>No animation glitches</li>
+                        <li>No state inconsistencies</li>
+                        <li>Performance remains smooth</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> All toggles work reliably</p>
+                </div>
+                
+                <div class="test-step">
+                    <strong>Step 5: Responsive Test</strong>
+                    <p>Test across different screen sizes:</p>
+                    <ul>
+                        <li><strong>Mobile:</strong> Menu button visible, sidebar as slide-in overlay</li>
+                        <li><strong>Tablet:</strong> Proper responsive behavior</li>
+                        <li><strong>Desktop:</strong> Desktop overlay functionality</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> Consistent behavior across all viewports</p>
+                </div>
+                
+                <div class="test-step">
+                    <strong>Step 6: Navigation Test</strong>
+                    <p>Click navigation items in sidebar and verify:</p>
+                    <ul>
+                        <li>Navigation links are clickable</li>
+                        <li>On mobile: sidebar closes after navigation</li>
+                        <li>On desktop: sidebar remains open after navigation</li>
+                        <li>No navigation errors occur</li>
+                    </ul>
+                    <p><span class="expected-result">Expected:</span> Navigation works correctly with sidebar</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="iframe-container">
+            <iframe id="testFrame" src="http://localhost:3000/dashboard" title="VeroTrade Dashboard"></iframe>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">📊 Test Results Log</h2>
+            <div id="resultsLog" class="results-log">
+                <div class="log-entry log-info">
+                    <span class="status-indicator status-pending"></span>
+                    Ready to start testing. Use the iframe above to interact with the sidebar.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = [];
+        let currentViewport = 'desktop';
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.innerHTML = `
+                <span class="status-indicator status-${type}"></span>
+                [${timestamp}] ${message}
+            `;
+            
+            const resultsLog = document.getElementById('resultsLog');
+            resultsLog.appendChild(logEntry);
+            resultsLog.scrollTop = resultsLog.scrollHeight;
+            
+            testResults.push({
+                timestamp,
+                message,
+                type,
+                viewport: currentViewport
+            });
+        }
+        
+        function setViewport(viewport) {
+            currentViewport = viewport;
+            const iframe = document.getElementById('testFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // Set viewport size
+            let width, height;
+            switch(viewport) {
+                case 'mobile':
+                    width = 375;
+                    height = 667;
+                    break;
+                case 'tablet':
+                    width = 768;
+                    height = 1024;
+                    break;
+                case 'desktop':
+                    width = 1920;
+                    height = 1080;
+                    break;
+            }
+            
+            // Resize iframe
+            iframe.style.width = width + 'px';
+            iframe.style.height = height + 'px';
+            
+            // Apply viewport meta to iframe content
+            if (iframeDoc) {
+                const viewportMeta = iframeDoc.querySelector('meta[name="viewport"]');
+                if (viewportMeta) {
+                    viewportMeta.content = `width=${width}, height=${height}, initial-scale=1.0`;
+                }
+            }
+            
+            log(`Viewport changed to ${viewport} (${width}x${height})`, 'info');
+        }
+        
+        function navigateToDashboard() {
+            const iframe = document.getElementById('testFrame');
+            iframe.src = 'http://localhost:3000/dashboard';
+            log('Navigated to dashboard', 'info');
+        }
+        
+        function clearResults() {
+            document.getElementById('resultsLog').innerHTML = '';
+            testResults = [];
+            log('Results cleared', 'info');
+        }
+        
+        async function runAutomatedTests() {
+            log('Starting automated sidebar overlay tests...', 'info');
+            
+            const iframe = document.getElementById('testFrame');
+            const iframeWindow = iframe.contentWindow;
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            if (!iframeWindow || !iframeDoc) {
+                log('Cannot access iframe content - make sure same-origin policy allows it', 'fail');
+                return;
+            }
+            
+            try {
+                // Test 1: Check if sidebar exists
+                const sidebar = iframeDoc.querySelector('.verotrade-sidebar-overlay');
+                if (sidebar) {
+                    log('✅ Sidebar element exists', 'pass');
+                } else {
+                    log('❌ Sidebar element not found', 'fail');
+                }
+                
+                // Test 2: Check initial state
+                const sidebarStyle = iframeWindow.getComputedStyle(sidebar);
+                const isInitiallyHidden = sidebarStyle.transform.includes('translateX(-100%)');
+                if (isInitiallyHidden) {
+                    log('✅ Sidebar initially hidden', 'pass');
+                } else {
+                    log('❌ Sidebar not initially hidden', 'fail');
+                }
+                
+                // Test 3: Find toggle button
+                const toggleBtn = iframeDoc.querySelector('.verotrade-mobile-menu-btn, button[aria-label*="sidebar"]');
+                if (toggleBtn) {
+                    log('✅ Toggle button found', 'pass');
+                    
+                    // Test 4: Click to open
+                    toggleBtn.click();
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                    const sidebarAfterOpen = iframeWindow.getComputedStyle(sidebar);
+                    const isOpen = sidebarAfterOpen.transform.includes('translateX(0)');
+                    if (isOpen) {
+                        log('✅ Sidebar opens when clicked', 'pass');
+                    } else {
+                        log('❌ Sidebar failed to open', 'fail');
+                    }
+                    
+                    // Test 5: Check overlay
+                    const overlay = iframeDoc.querySelector('.verotrade-mobile-overlay.active, .verotrade-desktop-overlay');
+                    if (overlay) {
+                        const overlayStyle = iframeWindow.getComputedStyle(overlay);
+                        const overlayVisible = overlayStyle.opacity !== '0' && overlayStyle.visibility !== 'hidden';
+                        if (overlayVisible) {
+                            log('✅ Overlay appears when sidebar opens', 'pass');
+                        } else {
+                            log('❌ Overlay not visible', 'fail');
+                        }
+                    } else {
+                        log('❌ Overlay element not found', 'fail');
+                    }
+                    
+                    // Test 6: Check content position
+                    const mainContent = iframeDoc.querySelector('.verotrade-main-content');
+                    if (mainContent) {
+                        const contentStyle = iframeWindow.getComputedStyle(mainContent);
+                        const contentNotShifted = contentStyle.transform === 'none' || contentStyle.transform === 'matrix(1, 0, 0, 1, 0, 0)';
+                        if (contentNotShifted) {
+                            log('✅ Main content doesn\'t shift when sidebar opens', 'pass');
+                        } else {
+                            log('❌ Main content shifted when sidebar opened', 'fail');
+                        }
+                    }
+                    
+                    // Test 7: Test closing
+                    if (overlay) {
+                        overlay.click();
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        
+                        const sidebarAfterClose = iframeWindow.getComputedStyle(sidebar);
+                        const isClosed = sidebarAfterClose.transform.includes('translateX(-100%)');
+                        if (isClosed) {
+                            log('✅ Sidebar closes when overlay clicked', 'pass');
+                        } else {
+                            log('❌ Sidebar failed to close', 'fail');
+                        }
+                    }
+                    
+                } else {
+                    log('❌ Toggle button not found', 'fail');
+                }
+                
+                log('Automated tests completed', 'info');
+                
+            } catch (error) {
+                log(`❌ Automated test error: ${error.message}`, 'fail');
+            }
+        }
+        
+        // Initialize
+        log('Sidebar Overlay Test Interface Loaded', 'info');
+        log('Use the iframe above to manually test or click "Run Automated Tests"', 'info');
+    </script>
+</body>
+</html>

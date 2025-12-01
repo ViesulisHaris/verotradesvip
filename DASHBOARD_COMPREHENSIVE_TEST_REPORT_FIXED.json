@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-11-30T19:39:17.633Z",
+  "summary": {
+    "total": 16,
+    "passed": 10,
+    "failed": 6,
+    "successRate": 62.5
+  },
+  "testResults": [
+    {
+      "test": "Dashboard HTTP Status",
+      "passed": true,
+      "details": "Status: 200",
+      "timestamp": "2025-11-30T19:38:30.589Z"
+    },
+    {
+      "test": "Dashboard Page Structure",
+      "passed": true,
+      "details": "Title: false, Content Wrapper: true",
+      "timestamp": "2025-11-30T19:38:33.854Z"
+    },
+    {
+      "test": "Authentication Protection",
+      "passed": false,
+      "details": "AuthGuard: false, Login Form: false",
+      "timestamp": "2025-11-30T19:38:33.858Z"
+    },
+    {
+      "test": "Trading Statistics Cards",
+      "passed": false,
+      "details": "Cards found: 0, Grid: false",
+      "timestamp": "2025-11-30T19:38:37.008Z"
+    },
+    {
+      "test": "Key Metrics Display",
+      "passed": false,
+      "details": "Metrics Content Found: false",
+      "timestamp": "2025-11-30T19:38:37.009Z"
+    },
+    {
+      "test": "EmotionRadar Component",
+      "passed": true,
+      "details": "Radar Chart: true, Section: false",
+      "timestamp": "2025-11-30T19:38:38.347Z"
+    },
+    {
+      "test": "PnLChart Component",
+      "passed": true,
+      "details": "Chart Container: true, Section: false",
+      "timestamp": "2025-11-30T19:38:43.645Z"
+    },
+    {
+      "test": "Recent Trades Table",
+      "passed": true,
+      "details": "Table: false, Section: true",
+      "timestamp": "2025-11-30T19:38:47.228Z"
+    },
+    {
+      "test": "Data Fetching Activity",
+      "passed": true,
+      "details": "API Requests: 0, Data Content: true",
+      "timestamp": "2025-11-30T19:38:56.295Z"
+    },
+    {
+      "test": "Data Fetching Error Handling",
+      "passed": false,
+      "details": "Error Content: true",
+      "timestamp": "2025-11-30T19:38:56.297Z"
+    },
+    {
+      "test": "Loading States",
+      "passed": true,
+      "details": "Spinner: true, Loading Text: true",
+      "timestamp": "2025-11-30T19:38:59.405Z"
+    },
+    {
+      "test": "Error Boundaries",
+      "passed": false,
+      "details": "Error Boundary Present: false",
+      "timestamp": "2025-11-30T19:38:59.407Z"
+    },
+    {
+      "test": "Retry Mechanisms",
+      "passed": false,
+      "details": "Retry Button: false",
+      "timestamp": "2025-11-30T19:38:59.408Z"
+    },
+    {
+      "test": "Responsive Design - Desktop",
+      "passed": true,
+      "details": "Viewport: 1920x1080, Content: true, Visible: true",
+      "timestamp": "2025-11-30T19:39:03.684Z"
+    },
+    {
+      "test": "Responsive Design - Tablet",
+      "passed": true,
+      "details": "Viewport: 768x1024, Content: true, Visible: true",
+      "timestamp": "2025-11-30T19:39:08.493Z"
+    },
+    {
+      "test": "Responsive Design - Mobile",
+      "passed": true,
+      "details": "Viewport: 375x667, Content: true, Visible: true",
+      "timestamp": "2025-11-30T19:39:12.501Z"
+    }
+  ],
+  "componentTests": {
+    "accessibility": true,
+    "authProtection": false,
+    "tradingStats": false,
+    "emotionRadar": true,
+    "pnlChart": true,
+    "recentTrades": true,
+    "dataFetching": true,
+    "errorHandling": true,
+    "responsiveDesign": true
+  },
+  "environment": {
+    "baseUrl": "http://localhost:3000",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 375,
+      "height": 667
+    }
+  }
+}

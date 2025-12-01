@@ -1,0 +1,63 @@
+{
+  "startTime": "2025-11-17T12:07:25.394Z",
+  "tradesLogged": [],
+  "filteringTests": [
+    {
+      "test": "Unfiltered View",
+      "status": "failed",
+      "expected": 5,
+      "actual": 0
+    },
+    {
+      "test": "FOMO Filter Pill",
+      "status": "failed",
+      "expected": 2,
+      "actual": 0
+    },
+    {
+      "test": "REVENGE Filter Pill",
+      "status": "failed",
+      "expected": 1,
+      "actual": 0
+    },
+    {
+      "test": "CONFIDENT Filter Pill",
+      "status": "failed",
+      "expected": 1,
+      "actual": 0
+    },
+    {
+      "test": "Multi-Select Emotion Dropdown",
+      "status": "failed",
+      "expected": 3,
+      "actual": 0
+    },
+    {
+      "test": "Clear Filters",
+      "status": "failed",
+      "expected": 5,
+      "actual": 0
+    }
+  ],
+  "errors": [
+    "Error logging trade FOMO Trade - AAPL Stock: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"0.00\"]:nth-of-type(2)')\u001b[22m\n",
+    "Error logging trade REVENGE Trade - BTCUSD Crypto: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"0.00\"]:nth-of-type(2)')\u001b[22m\n",
+    "Error logging trade CONFIDENT Trade - EURUSD Forex: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"0.00\"]:nth-of-type(2)')\u001b[22m\n",
+    "Error logging trade Multiple Emotions Trade - TSLA Stock: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"0.00\"]:nth-of-type(2)')\u001b[22m\n",
+    "Error logging trade No Emotions Control Trade - SPY Stock: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"0.00\"]:nth-of-type(2)')\u001b[22m\n",
+    "Error testing ANXIOUS filter: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"ANXIOUS Trades\")')\u001b[22m\n",
+    "Error testing expandable rows: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('table tbody tr button:has(svg)')\u001b[22m\n",
+    "Error testing statistics update: locator.textContent: Unexpected token \"/\" while parsing css selector \"p:text-matches(/\\d+/)\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m  - waiting for text=Filtered Trades >> .. >> p:text-matches(/\\d+/)\u001b[22m\n"
+  ],
+  "endTime": "2025-11-17T12:12:01.624Z",
+  "duration": 276230,
+  "summary": {
+    "totalTradesAttempted": 5,
+    "successfulTradesLogged": 0,
+    "tradeSuccessRate": "0.0%",
+    "totalFilteringTests": 6,
+    "successfulFilteringTests": 0,
+    "filteringSuccessRate": "0.0%",
+    "totalErrors": 8
+  }
+}

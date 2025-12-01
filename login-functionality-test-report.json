@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-11-27T23:03:41.716Z",
+  "tests": [
+    {
+      "name": "Login page loads",
+      "status": "PASS",
+      "details": "Successfully navigated to login page"
+    },
+    {
+      "name": "Login form elements present",
+      "status": "FAIL",
+      "details": "Email input: false, Password input: false, Login button: false"
+    },
+    {
+      "name": "Form interaction",
+      "status": "SKIP",
+      "details": "Form elements not found, skipping interaction tests"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "login-test-1-page-load.png",
+    "login-test-2-form-elements.png"
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 1,
+    "failed": 1,
+    "partial": 0,
+    "skipped": 1,
+    "successRate": "33.33%"
+  }
+}

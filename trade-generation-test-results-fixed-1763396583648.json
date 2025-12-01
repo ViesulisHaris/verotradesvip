@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-11-17T16:22:52.593Z",
+  "testPhase": "failed",
+  "passed": [
+    "Starting trade generation browser test (FIXED)...",
+    "Navigating to login page...",
+    "Page title: VeroTrade - Trading Journal",
+    "Attempting to authenticate with test credentials...",
+    "Post-login URL: http://localhost:3000/dashboard",
+    "Successfully authenticated and redirected to dashboard",
+    "Making API request to generate test trades...",
+    "Found 0 cookies after login",
+    "API Response Status: 401"
+  ],
+  "failed": [
+    "Test failed: API request failed with status 401: {\"error\":\"Authentication required\",\"details\":\"Auth session missing!\"}"
+  ],
+  "warnings": [],
+  "tradeData": null,
+  "detailedAnalysis": {},
+  "error": "API request failed with status 401: {\"error\":\"Authentication required\",\"details\":\"Auth session missing!\"}"
+}

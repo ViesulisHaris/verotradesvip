@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-20T20:30:41.824Z",
+  "summary": {
+    "total": 3,
+    "passed": 1,
+    "failed": 2,
+    "passRate": "33.33%"
+  },
+  "details": [
+    {
+      "test": "Navigate to Strategies Page",
+      "passed": false,
+      "details": "Failed to navigate to strategies page",
+      "screenshot": null
+    },
+    {
+      "test": "User Authentication",
+      "passed": true,
+      "details": "User is authenticated",
+      "screenshot": null
+    },
+    {
+      "test": "Test Execution",
+      "passed": false,
+      "details": "Error during test execution: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.card-unified') to be visible\u001b[22m\n",
+      "screenshot": null
+    }
+  ],
+  "screenshots": []
+}

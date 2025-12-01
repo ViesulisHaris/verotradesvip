@@ -1,0 +1,1125 @@
+{
+  "timestamp": "2025-11-26T16:34:55.000Z",
+  "summary": {
+    "totalTests": 384,
+    "passedTests": 145,
+    "failedTests": 239,
+    "warnings": 0
+  },
+  "breakpoints": {
+    "Mobile": {
+      "name": "Mobile",
+      "width": 375,
+      "height": 667,
+      "pages": {
+        "Home": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": false,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": false
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 5,
+            "failedTests": 11
+          }
+        },
+        "Login": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": false,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": true,
+            "formsUsable": true,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": false
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 7,
+            "failedTests": 9
+          }
+        },
+        "Register": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Dashboard": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": false,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": false
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 5,
+            "failedTests": 11
+          }
+        },
+        "Trades": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Strategies": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        }
+      },
+      "summary": {
+        "totalTests": 96,
+        "passedTests": 35,
+        "failedTests": 61
+      }
+    },
+    "Tablet": {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024,
+      "pages": {
+        "Home": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": false,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Login": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Register": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Dashboard": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Trades": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Strategies": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        }
+      },
+      "summary": {
+        "totalTests": 96,
+        "passedTests": 36,
+        "failedTests": 60
+      }
+    },
+    "Laptop": {
+      "name": "Laptop",
+      "width": 1024,
+      "height": 768,
+      "pages": {
+        "Home": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": false,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Login": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Register": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": true,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": true,
+            "formsUsable": true,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": false
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 8,
+            "failedTests": 8
+          }
+        },
+        "Dashboard": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Trades": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Strategies": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        }
+      },
+      "summary": {
+        "totalTests": 96,
+        "passedTests": 38,
+        "failedTests": 58
+      }
+    },
+    "Desktop": {
+      "name": "Desktop",
+      "width": 1920,
+      "height": 1080,
+      "pages": {
+        "Home": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Login": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Register": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Dashboard": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Trades": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        },
+        "Strategies": {
+          "navigation": {
+            "sidebarVisible": false,
+            "hamburgerMenuVisible": false,
+            "navigationCollapsed": false
+          },
+          "layout": {
+            "noHorizontalScroll": true,
+            "contentReflows": false,
+            "properSpacing": true,
+            "noOverlapping": true
+          },
+          "components": {
+            "buttonsSized": false,
+            "formsUsable": false,
+            "cardsAdapt": false,
+            "chartsResponsive": false
+          },
+          "typography": {
+            "textReadable": true,
+            "properScaling": true,
+            "consistentSpacing": true
+          },
+          "summary": {
+            "totalTests": 16,
+            "passedTests": 6,
+            "failedTests": 10
+          }
+        }
+      },
+      "summary": {
+        "totalTests": 96,
+        "passedTests": 36,
+        "failedTests": 60
+      }
+    }
+  },
+  "screenshots": {
+    "Mobile": {
+      "Home": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Home-initial-1764174898996.png",
+          "timestamp": "2025-11-26T16:34:59.057Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Home-after-tests-1764174899101.png",
+          "timestamp": "2025-11-26T16:34:59.176Z"
+        }
+      ],
+      "Login": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Login-initial-1764174903690.png",
+          "timestamp": "2025-11-26T16:35:03.732Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Login-after-tests-1764174903769.png",
+          "timestamp": "2025-11-26T16:35:03.809Z"
+        }
+      ],
+      "Register": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Register-initial-1764174907943.png",
+          "timestamp": "2025-11-26T16:35:07.981Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Register-after-tests-1764174908005.png",
+          "timestamp": "2025-11-26T16:35:08.043Z"
+        }
+      ],
+      "Dashboard": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Dashboard-initial-1764174912717.png",
+          "timestamp": "2025-11-26T16:35:12.765Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Dashboard-after-tests-1764174912792.png",
+          "timestamp": "2025-11-26T16:35:12.829Z"
+        }
+      ],
+      "Trades": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Trades-initial-1764174917955.png",
+          "timestamp": "2025-11-26T16:35:17.994Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Trades-after-tests-1764174918016.png",
+          "timestamp": "2025-11-26T16:35:18.059Z"
+        }
+      ],
+      "Strategies": [
+        {
+          "test": "initial",
+          "filename": "responsive-Mobile-Strategies-initial-1764174922906.png",
+          "timestamp": "2025-11-26T16:35:22.945Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Mobile-Strategies-after-tests-1764174922971.png",
+          "timestamp": "2025-11-26T16:35:23.010Z"
+        }
+      ]
+    },
+    "Tablet": {
+      "Home": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Home-initial-1764174926429.png",
+          "timestamp": "2025-11-26T16:35:26.487Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Home-after-tests-1764174926512.png",
+          "timestamp": "2025-11-26T16:35:26.588Z"
+        }
+      ],
+      "Login": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Login-initial-1764174932120.png",
+          "timestamp": "2025-11-26T16:35:32.174Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Login-after-tests-1764174932197.png",
+          "timestamp": "2025-11-26T16:35:32.246Z"
+        }
+      ],
+      "Register": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Register-initial-1764174936840.png",
+          "timestamp": "2025-11-26T16:35:36.888Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Register-after-tests-1764174936910.png",
+          "timestamp": "2025-11-26T16:35:36.959Z"
+        }
+      ],
+      "Dashboard": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Dashboard-initial-1764174941597.png",
+          "timestamp": "2025-11-26T16:35:41.652Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Dashboard-after-tests-1764174941678.png",
+          "timestamp": "2025-11-26T16:35:41.730Z"
+        }
+      ],
+      "Trades": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Trades-initial-1764174946365.png",
+          "timestamp": "2025-11-26T16:35:46.416Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Trades-after-tests-1764174946437.png",
+          "timestamp": "2025-11-26T16:35:46.487Z"
+        }
+      ],
+      "Strategies": [
+        {
+          "test": "initial",
+          "filename": "responsive-Tablet-Strategies-initial-1764174951105.png",
+          "timestamp": "2025-11-26T16:35:51.159Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Tablet-Strategies-after-tests-1764174951180.png",
+          "timestamp": "2025-11-26T16:35:51.239Z"
+        }
+      ]
+    },
+    "Laptop": {
+      "Home": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Home-initial-1764174956304.png",
+          "timestamp": "2025-11-26T16:35:56.361Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Home-after-tests-1764174956389.png",
+          "timestamp": "2025-11-26T16:35:56.445Z"
+        }
+      ],
+      "Login": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Login-initial-1764174960975.png",
+          "timestamp": "2025-11-26T16:36:01.027Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Login-after-tests-1764174961053.png",
+          "timestamp": "2025-11-26T16:36:01.111Z"
+        }
+      ],
+      "Register": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Register-initial-1764174965556.png",
+          "timestamp": "2025-11-26T16:36:05.638Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Register-after-tests-1764174965680.png",
+          "timestamp": "2025-11-26T16:36:05.756Z"
+        }
+      ],
+      "Dashboard": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Dashboard-initial-1764174970078.png",
+          "timestamp": "2025-11-26T16:36:10.131Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Dashboard-after-tests-1764174970155.png",
+          "timestamp": "2025-11-26T16:36:10.202Z"
+        }
+      ],
+      "Trades": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Trades-initial-1764174974623.png",
+          "timestamp": "2025-11-26T16:36:14.673Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Trades-after-tests-1764174974697.png",
+          "timestamp": "2025-11-26T16:36:14.751Z"
+        }
+      ],
+      "Strategies": [
+        {
+          "test": "initial",
+          "filename": "responsive-Laptop-Strategies-initial-1764174978881.png",
+          "timestamp": "2025-11-26T16:36:18.929Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Laptop-Strategies-after-tests-1764174978950.png",
+          "timestamp": "2025-11-26T16:36:19.000Z"
+        }
+      ]
+    },
+    "Desktop": {
+      "Home": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Home-initial-1764174982462.png",
+          "timestamp": "2025-11-26T16:36:22.548Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Home-after-tests-1764174982568.png",
+          "timestamp": "2025-11-26T16:36:22.660Z"
+        }
+      ],
+      "Login": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Login-initial-1764174987260.png",
+          "timestamp": "2025-11-26T16:36:27.349Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Login-after-tests-1764174987371.png",
+          "timestamp": "2025-11-26T16:36:27.483Z"
+        }
+      ],
+      "Register": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Register-initial-1764174991734.png",
+          "timestamp": "2025-11-26T16:36:31.823Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Register-after-tests-1764174991846.png",
+          "timestamp": "2025-11-26T16:36:31.951Z"
+        }
+      ],
+      "Dashboard": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Dashboard-initial-1764174996441.png",
+          "timestamp": "2025-11-26T16:36:36.536Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Dashboard-after-tests-1764174996557.png",
+          "timestamp": "2025-11-26T16:36:36.644Z"
+        }
+      ],
+      "Trades": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Trades-initial-1764175000800.png",
+          "timestamp": "2025-11-26T16:36:40.891Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Trades-after-tests-1764175000922.png",
+          "timestamp": "2025-11-26T16:36:41.016Z"
+        }
+      ],
+      "Strategies": [
+        {
+          "test": "initial",
+          "filename": "responsive-Desktop-Strategies-initial-1764175005269.png",
+          "timestamp": "2025-11-26T16:36:45.371Z"
+        },
+        {
+          "test": "after-tests",
+          "filename": "responsive-Desktop-Strategies-after-tests-1764175005391.png",
+          "timestamp": "2025-11-26T16:36:45.482Z"
+        }
+      ]
+    }
+  },
+  "issues": [
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:14.562Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:19.646Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:28.115Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:33.675Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:52.735Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:35:57.911Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:11.681Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:16.284Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:20.609Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:24.242Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:29.012Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:33.484Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:38.204Z"
+    },
+    {
+      "type": "javascript_error",
+      "message": "Invalid or unexpected token",
+      "timestamp": "2025-11-26T16:36:42.545Z"
+    }
+  ]
+}

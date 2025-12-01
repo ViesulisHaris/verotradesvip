@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .test-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        .success {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .error {
+            color: #f44336;
+            font-weight: bold;
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .log {
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Navigation Fix Verification</h1>
+        
+        <div class="test-section">
+            <h2>Test Steps</h2>
+            <div class="instructions">
+                <p><strong>1. Open the Trades page first</strong></p>
+                <p><strong>2. Navigate to another page (Dashboard, Calendar, or Confluence)</strong></p>
+                <p><strong>3. Try clicking menu buttons again</strong></p>
+                <p><strong>4. If menu buttons work, the fix is successful!</strong></p>
+            </div>
+            
+            <button class="test-button" onclick="testNavigationFix()">Test Navigation Fix</button>
+        </div>
+        
+        <div class="test-section">
+            <h2>Diagnostic Checks</h2>
+            <button class="test-button" onclick="checkNavigationSafety()">Check Navigation Safety State</button>
+            <button class="test-button" onclick="checkBodyStyles()">Check Body Styles</button>
+            <button class="test-button" onclick="checkNavigationElements()">Check Navigation Elements</button>
+            <button class="test-button" onclick="checkTradesCleanup()">Check Trades Cleanup Functions</button>
+        </div>
+        
+        <div class="test-section">
+            <h2>Manual Fixes</h2>
+            <button class="test-button" onclick="resetNavigationFlags()">Reset Navigation Flags</button>
+            <button class="test-button" onclick="forceCleanup()">Force Cleanup</button>
+            <button class="test-button" onclick="clearLogs()">Clear Logs</button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        <div id="log" class="log"></div>
+    </div>
+
+    <script>
+        let logs = [];
+        
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toISOString();
+            logs.push({ timestamp, message, type });
+            updateLogDisplay();
+        }
+        
+        function updateLogDisplay() {
+            const logDiv = document.getElementById('log');
+            const statusDiv = document.getElementById('status');
+            
+            if (logs.length > 0) {
+                const lastLog = logs[logs.length - 1];
+                logDiv.innerHTML = logs.slice(-10).map(log => 
+                    `<div>[${log.timestamp}] [${log.type.toUpperCase()}] ${log.message}</div>`
+                ).join('');
+                
+                statusDiv.innerHTML = `<div class="success">Latest: ${lastLog.message}</div>`;
+            } else {
+                logDiv.innerHTML = '<div>No logs yet</div>';
+                statusDiv.innerHTML = '<div class="error">No test results</div>';
+            }
+            
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function testNavigationFix() {
+            addLog('Testing navigation fix after visiting Trades page...');
+            
+            // Check if navigation safety is working
+            const navSafety = window.navigationSafety;
+            if (navSafety) {
+                addLog(`Navigation safety available: ${Object.keys(navSafety).length} functions`);
+                
+                // Check if we're on Trades page
+                const currentPath = window.location.pathname;
+                const isOnTradesPage = currentPath.includes('/trades');
+                addLog(`Current path: ${currentPath}, Is on Trades page: ${isOnTradesPage}`);
+                
+                // Test navigation safety flags
+                addLog(`Navigation flags - isNavigating: ${navSafety.isNavigating}, userInteractionInProgress: ${navSafety.userInteractionInProgress}`);
+                
+                // Check body styles
+                const bodyStyles = window.getComputedStyle(document.body);
+                addLog(`Body pointer-events: ${bodyStyles.pointerEvents}, overflow: ${bodyStyles.overflow}`);
+                
+                // Check navigation elements
+                const navElements = document.querySelectorAll('nav a, [role="navigation"] a, .nav-link, .nav-item-luxury');
+                let blockedElements = 0;
+                navElements.forEach(el => {
+                    const styles = window.getComputedStyle(el);
+                    if (styles.pointerEvents === 'none') {
+                        blockedElements++;
+                    }
+                });
+                
+                addLog(`Navigation elements found: ${navElements.length}, Blocked: ${blockedElements}`);
+                
+                if (blockedElements === 0 && !navSafety.isNavigating && !navSafety.userInteractionInProgress) {
+                    addLog('✅ SUCCESS: Navigation appears to be working correctly!');
+                } else {
+                    addLog('❌ ISSUE: Navigation elements are blocked or flags are stuck');
+                }
+            } else {
+                addLog('❌ ERROR: Navigation safety not available');
+            }
+        }
+        
+        function checkNavigationSafety() {
+            const navSafety = window.navigationSafety;
+            if (navSafety) {
+                const status = {
+                    isNavigating: navSafety.isNavigating,
+                    userInteractionInProgress: navSafety.userInteractionInProgress,
+                    lastCleanupTime: navSafety.lastCleanupTime,
+                    functionsAvailable: Object.keys(navSafety).length
+                };
+                addLog(`Navigation Safety State: ${JSON.stringify(status, null, 2)}`);
+            } else {
+                addLog('❌ Navigation safety not available');
+            }
+        }
+        
+        function checkBodyStyles() {
+            const bodyStyles = window.getComputedStyle(document.body);
+            addLog(`Body Styles - pointer-events: ${bodyStyles.pointerEvents}, overflow: ${bodyStyles.overflow}`);
+            
+            if (bodyStyles.pointerEvents === 'none' || bodyStyles.overflow === 'hidden') {
+                addLog('❌ ISSUE: Body has blocking styles');
+            } else {
+                addLog('✅ Body styles appear normal');
+            }
+        }
+        
+        function checkNavigationElements() {
+            const navElements = document.querySelectorAll('nav a, [role="navigation"] a, .nav-link, .nav-item-luxury');
+            addLog(`Found ${navElements.length} navigation elements`);
+            
+            let blockedCount = 0;
+            navElements.forEach((el, index) => {
+                const styles = window.getComputedStyle(el);
+                const isBlocked = styles.pointerEvents === 'none' || styles.display === 'none';
+                
+                if (isBlocked) {
+                    blockedCount++;
+                    addLog(`❌ Blocked element ${index}: ${el.textContent} (${el.tagName})`);
+                } else {
+                    addLog(`✅ Working element ${index}: ${el.textContent} (${el.tagName})`);
+                }
+            });
+            
+            if (blockedCount === 0) {
+                addLog('✅ All navigation elements are interactive');
+            } else {
+                addLog(`❌ ${blockedCount} navigation elements are blocked`);
+            }
+        }
+        
+        function checkTradesCleanup() {
+            const cleanupFunctions = [
+                'cleanupModalOverlays',
+                'forceCleanupAllOverlays', 
+                'tradesPageCleanup',
+                'navigationSafety.tradesPageCleanup'
+            ];
+            
+            addLog('Checking Trades cleanup functions...');
+            cleanupFunctions.forEach(funcName => {
+                const isAvailable = window[funcName] && typeof window[funcName] === 'function';
+                addLog(`${funcName}: ${isAvailable ? '✅ Available' : '❌ Not available'}`);
+            });
+            
+            const hasAnyCleanup = cleanupFunctions.some(funcName => window[funcName] && typeof window[funcName] === 'function');
+            
+            if (hasAnyCleanup) {
+                addLog('✅ Trades cleanup functions are available');
+            } else {
+                addLog('❌ No Trades cleanup functions found');
+            }
+        }
+        
+        function resetNavigationFlags() {
+            if (window.navigationSafety && window.navigationSafety.resetNavigationSafetyFlags) {
+                window.navigationSafety.resetNavigationSafetyFlags();
+                addLog('✅ Navigation flags reset');
+            } else {
+                addLog('❌ Navigation safety reset function not available');
+            }
+        }
+        
+        function forceCleanup() {
+            if (window.navigationSafety && window.navigationSafety.forceCleanupNavigationBlockers) {
+                window.navigationSafety.forceCleanupNavigationBlockers();
+                addLog('✅ Force cleanup triggered');
+            } else {
+                addLog('❌ Force cleanup function not available');
+            }
+        }
+        
+        function clearLogs() {
+            logs = [];
+            updateLogDisplay();
+            addLog('Logs cleared');
+        }
+        
+        // Auto-check on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                addLog('Page loaded, running initial check...');
+                checkNavigationSafety();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

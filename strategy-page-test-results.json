@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-11-15T13:04:30.578Z",
+  "tests": [
+    {
+      "name": "Navigate to Strategy Test Page",
+      "status": "PASSED",
+      "details": "Page loaded with title: VeroTrade - Trading Journal"
+    },
+    {
+      "name": "Strategy Loading Status",
+      "status": "UNKNOWN",
+      "details": "Could not determine loading status"
+    },
+    {
+      "name": "Navigate to Strategies Page",
+      "status": "PASSED",
+      "details": "Strategies page loaded with title: VeroTrade - Trading Journal"
+    },
+    {
+      "name": "Strategy Display",
+      "status": "UNKNOWN",
+      "details": "No strategy display elements found"
+    },
+    {
+      "name": "Create Strategy Button",
+      "status": "PASSED",
+      "details": "Found 1 create button(s)"
+    },
+    {
+      "name": "Edit Strategy Buttons",
+      "status": "FAILED",
+      "details": "No edit buttons found"
+    },
+    {
+      "name": "Delete Strategy Buttons",
+      "status": "FAILED",
+      "details": "No delete buttons found"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 7
+  }
+}

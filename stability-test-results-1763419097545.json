@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-17T22:37:44.584Z",
+  "pageLoadPerformance": {},
+  "databaseQueryPerformance": {},
+  "realTimeFeaturesStability": {},
+  "browserResourceUsage": {},
+  "edgeCasesAndStress": {},
+  "summary": {
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "issues": [
+      {
+        "category": "Test Execution Error",
+        "details": "page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"email\"]')\u001b[22m\n"
+      }
+    ]
+  }
+}

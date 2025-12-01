@@ -1,0 +1,187 @@
+{
+  "timestamp": "2025-11-21T09:55:36.108Z",
+  "summary": {
+    "total": 13,
+    "passed": 1,
+    "failed": 12,
+    "passRate": "7.69%"
+  },
+  "details": [
+    {
+      "timestamp": "2025-11-21T09:51:10.806Z",
+      "type": "info",
+      "message": "🚀 Starting Comprehensive Authentication Tests"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:10.807Z",
+      "type": "info",
+      "message": "=========================================="
+    },
+    {
+      "timestamp": "2025-11-21T09:51:11.818Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Valid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:51:20.975Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-page-loaded-1763718680748.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:22.183Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-form-filled-valid-1763718682037.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:25.289Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\login-success-redirect-1763718684894.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:25.290Z",
+      "type": "success",
+      "message": "✅ Login with valid credentials: PASSED - Successfully redirected to dashboard"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:25.290Z",
+      "type": "info",
+      "message": "\n=== Testing Login with Invalid Credentials ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:51:59.011Z",
+      "type": "error",
+      "message": "❌ Login with invalid credentials: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:51:59.011Z",
+      "type": "info",
+      "message": "\n=== Testing Form Validation ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:52:31.954Z",
+      "type": "error",
+      "message": "❌ Form validation: FAILED - Exception: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:52:31.955Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Valid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:52:36.910Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\register-page-loaded-1763718756571.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:53:07.435Z",
+      "type": "error",
+      "message": "❌ Registration with valid data: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:53:07.435Z",
+      "type": "info",
+      "message": "\n=== Testing Registration with Invalid Data ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:53:40.581Z",
+      "type": "error",
+      "message": "❌ Registration with invalid data: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:53:40.582Z",
+      "type": "info",
+      "message": "\n=== Testing Remember Me Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:53:44.842Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\remember-me-option-not-found-1763718824589.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:53:44.842Z",
+      "type": "error",
+      "message": "❌ Remember me functionality: FAILED - Remember me option not found"
+    },
+    {
+      "timestamp": "2025-11-21T09:53:44.843Z",
+      "type": "info",
+      "message": "\n=== Testing Error Handling ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:54:16.220Z",
+      "type": "error",
+      "message": "❌ Error handling: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:54:16.220Z",
+      "type": "info",
+      "message": "\n=== Testing Logout Functionality ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:54:47.613Z",
+      "type": "error",
+      "message": "❌ Logout functionality: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:54:47.613Z",
+      "type": "info",
+      "message": "\n=== Testing Redirect Behavior ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:55:18.990Z",
+      "type": "error",
+      "message": "❌ Redirect behavior: FAILED - Exception: page.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:18.991Z",
+      "type": "info",
+      "message": "\n=== Testing Protected Routes ==="
+    },
+    {
+      "timestamp": "2025-11-21T09:55:23.122Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route-dashboard-1763718922253.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:23.122Z",
+      "type": "error",
+      "message": "❌ Protected route /dashboard: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:27.505Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route-trades-1763718927269.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:27.505Z",
+      "type": "error",
+      "message": "❌ Protected route /trades: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:32.246Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route-strategies-1763718931873.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:32.246Z",
+      "type": "error",
+      "message": "❌ Protected route /strategies: FAILED - Allowed access without authentication"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:36.107Z",
+      "type": "info",
+      "message": "📸 Screenshot saved: auth-test-screenshots\\protected-route-analytics-1763718935905.png"
+    },
+    {
+      "timestamp": "2025-11-21T09:55:36.107Z",
+      "type": "error",
+      "message": "❌ Protected route /analytics: FAILED - Allowed access without authentication"
+    }
+  ],
+  "recommendations": [
+    "Review failed authentication tests and fix underlying issues",
+    "Improve error handling and user feedback in authentication flows",
+    "Regularly run authentication tests to ensure system reliability",
+    "Consider implementing automated regression testing for authentication"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "background": false,
+    "logoutButton": false
+  },
+  "responsive": {
+    "mobile": false,
+    "tablet": false,
+    "desktop": false
+  },
+  "screenshots": [
+    "authenticated-nav-mobile-1764198324235.png",
+    "authenticated-nav-tablet-1764198325367.png",
+    "authenticated-nav-desktop-1764198326534.png",
+    "authenticated-nav-detail-1764198326736.png"
+  ]
+}

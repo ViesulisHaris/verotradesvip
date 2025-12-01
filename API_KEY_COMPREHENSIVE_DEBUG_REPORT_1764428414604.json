@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-11-29T15:00:14.604Z",
+  "issue": "Persistent API Key Truncation and 401 Errors",
+  "findings": {
+    "envFiles": [
+      ".env",
+      ".env.fixed",
+      ".env.local"
+    ],
+    "simulatedEnvKey": 0,
+    "simulatedEnvValid": false,
+    "activeFile": ".env.local",
+    "rootCause": "Environment file loading priority causing truncated key to be used"
+  },
+  "recommendations": [
+    "Fix the API key in the highest priority environment file",
+    "Remove or rename conflicting environment files",
+    "Restart development server after fixing",
+    "Test with fresh API keys from Supabase dashboard"
+  ]
+}

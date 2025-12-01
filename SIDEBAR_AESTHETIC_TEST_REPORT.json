@@ -1,0 +1,541 @@
+{
+  "title": "COMPREHENSIVE SIDEBAR AESTHETIC ENHANCEMENT TEST REPORT",
+  "generatedAt": "2025-11-19T14:19:30.916Z",
+  "testDuration": "264.957 seconds",
+  "configuration": {
+    "baseUrl": "http://localhost:3000",
+    "browsers": [
+      "chromium"
+    ],
+    "viewportSizes": [
+      {
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "width": 375,
+        "height": 667
+      }
+    ],
+    "screenshotDir": "./sidebar-test-screenshots",
+    "timeout": 30000
+  },
+  "summary": {
+    "totalTests": 60,
+    "passed": 29,
+    "failed": 31,
+    "skipped": 0
+  },
+  "details": [
+    {
+      "category": "Visual Enhancements",
+      "testName": "Glass Morphism Effect",
+      "passed": true,
+      "details": "Background: rgba(15, 23, 42, 0.8) none repeat scroll 0% 0% / auto padding-box border-box, Backdrop: blur(10px)",
+      "screenshot": "./sidebar-test-screenshots/glass-effect-chromium-1920.png",
+      "timestamp": "2025-11-19T14:15:15.281Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Enhanced Gradients and Border Effects",
+      "passed": true,
+      "details": "Gradient border detected: true",
+      "screenshot": "./sidebar-test-screenshots/gradient-border-chromium-1920.png",
+      "timestamp": "2025-11-19T14:15:15.852Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Menu Item Hover Effects",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    36 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  14 × retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying hover action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:15:46.403Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Active State Indicators",
+      "passed": false,
+      "details": "Error: Cannot read properties of null (reading 'evaluate')",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:15:46.409Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Button Gradient Animations",
+      "passed": true,
+      "details": "Button gradient animation detected: true",
+      "screenshot": "./sidebar-test-screenshots/button-animation-chromium-1920.png",
+      "timestamp": "2025-11-19T14:15:46.504Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Tooltip Enhancements",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    51 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:16:17.294Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Fixed Dimensions",
+      "passed": true,
+      "details": "MinWidth: 64px, MaxWidth: 64px, FlexShrink: 0",
+      "screenshot": "./sidebar-test-screenshots/fixed-dimensions-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:17.321Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Consistent Spacing",
+      "passed": true,
+      "details": "Menu items have consistent spacing: true",
+      "screenshot": "./sidebar-test-screenshots/consistent-spacing-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:17.995Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "No Empty Spaces",
+      "passed": false,
+      "details": "No excessive empty spaces detected: false",
+      "screenshot": "./sidebar-test-screenshots/no-empty-spaces-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:18.997Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Layout Stability During Transitions",
+      "passed": true,
+      "details": "Initial width: 64px, Final width: 256px",
+      "screenshot": "./sidebar-test-screenshots/layout-stability-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:20.123Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Smooth Transitions",
+      "passed": false,
+      "details": "Transition time: 418ms (expected: 300ms)",
+      "screenshot": "./sidebar-test-screenshots/smooth-transition-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:21.624Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Universal Toggle Button Visibility",
+      "passed": false,
+      "details": "Error: toggleButton.isClickable is not a function",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:16:22.054Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Menu Item Functionality",
+      "passed": true,
+      "details": "Navigation successful: true, URL: http://localhost:3000/dashboard",
+      "screenshot": "./sidebar-test-screenshots/menu-navigation-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:22.816Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Sidebar Expand/Collapse Functionality",
+      "passed": true,
+      "details": "State changed from false to true",
+      "screenshot": "./sidebar-test-screenshots/sidebar-toggle-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:24.371Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "Animation Smoothness",
+      "passed": false,
+      "details": "Frame drops: 1, Max frame time: 673.40ms",
+      "screenshot": "./sidebar-test-screenshots/animation-smoothness-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:25.793Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "No Performance Lag",
+      "passed": true,
+      "details": "Total time for 5 toggles: 1388.06ms",
+      "screenshot": "./sidebar-test-screenshots/no-performance-lag-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:27.587Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "GPU Acceleration",
+      "passed": true,
+      "details": "GPU acceleration detected: true",
+      "screenshot": "./sidebar-test-screenshots/gpu-acceleration-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:28.184Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Mobile Responsiveness",
+      "passed": true,
+      "details": "Mobile (false): Sidebar hidden: false",
+      "screenshot": "./sidebar-test-screenshots/mobile-responsive-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:29.321Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Touch-Friendly Interactions",
+      "passed": true,
+      "details": "Desktop - touch interactions not applicable",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:16:29.704Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Cross-Browser Consistency",
+      "passed": true,
+      "details": "Consistent layout detected: true",
+      "screenshot": "./sidebar-test-screenshots/cross-browser-chromium-1920.png",
+      "timestamp": "2025-11-19T14:16:29.712Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Glass Morphism Effect",
+      "passed": true,
+      "details": "Background: rgba(15, 23, 42, 0.8) none repeat scroll 0% 0% / auto padding-box border-box, Backdrop: blur(10px)",
+      "screenshot": "./sidebar-test-screenshots/glass-effect-chromium-768.png",
+      "timestamp": "2025-11-19T14:16:39.720Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Enhanced Gradients and Border Effects",
+      "passed": true,
+      "details": "Gradient border detected: true",
+      "screenshot": "./sidebar-test-screenshots/gradient-border-chromium-768.png",
+      "timestamp": "2025-11-19T14:16:40.074Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Menu Item Hover Effects",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    24 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  26 × retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying hover action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:10.495Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Active State Indicators",
+      "passed": false,
+      "details": "Error: Cannot read properties of null (reading 'evaluate')",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:10.516Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Button Gradient Animations",
+      "passed": true,
+      "details": "Button gradient animation detected: true",
+      "screenshot": "./sidebar-test-screenshots/button-animation-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:10.603Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Tooltip Enhancements",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    28 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    8 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:40.915Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Fixed Dimensions",
+      "passed": true,
+      "details": "MinWidth: 64px, MaxWidth: 64px, FlexShrink: 0",
+      "screenshot": "./sidebar-test-screenshots/fixed-dimensions-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:40.925Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Consistent Spacing",
+      "passed": true,
+      "details": "Menu items have consistent spacing: true",
+      "screenshot": "./sidebar-test-screenshots/consistent-spacing-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:41.235Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "No Empty Spaces",
+      "passed": false,
+      "details": "No excessive empty spaces detected: false",
+      "screenshot": "./sidebar-test-screenshots/no-empty-spaces-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:41.466Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Layout Stability During Transitions",
+      "passed": false,
+      "details": "Initial width: 64px, Final width: 64px",
+      "screenshot": "./sidebar-test-screenshots/layout-stability-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:42.289Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Smooth Transitions",
+      "passed": false,
+      "details": "Transition time: 68ms (expected: 300ms)",
+      "screenshot": "./sidebar-test-screenshots/smooth-transition-chromium-768.png",
+      "timestamp": "2025-11-19T14:17:42.992Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Universal Toggle Button Visibility",
+      "passed": false,
+      "details": "Error: toggleButton.isClickable is not a function",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:43.154Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Menu Item Functionality",
+      "passed": false,
+      "details": "Error: elementHandle.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    5 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.097Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Sidebar Expand/Collapse Functionality",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.102Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "Animation Smoothness",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.103Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "No Performance Lag",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.104Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "GPU Acceleration",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.105Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Mobile Responsiveness",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.106Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Touch-Friendly Interactions",
+      "passed": true,
+      "details": "Desktop - touch interactions not applicable",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.106Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Cross-Browser Consistency",
+      "passed": false,
+      "details": "Error: page.$: Target page, context or browser has been closed",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:17:46.107Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Glass Morphism Effect",
+      "passed": true,
+      "details": "Background: rgba(15, 23, 42, 0.8) none repeat scroll 0% 0% / auto padding-box border-box, Backdrop: blur(10px)",
+      "screenshot": "./sidebar-test-screenshots/glass-effect-chromium-375.png",
+      "timestamp": "2025-11-19T14:17:53.826Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Enhanced Gradients and Border Effects",
+      "passed": true,
+      "details": "Gradient border detected: true",
+      "screenshot": "./sidebar-test-screenshots/gradient-border-chromium-375.png",
+      "timestamp": "2025-11-19T14:17:53.993Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Menu Item Hover Effects",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    50 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible and stable\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:18:24.141Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Active State Indicators",
+      "passed": false,
+      "details": "Error: Cannot read properties of null (reading 'evaluate')",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:18:24.145Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Button Gradient Animations",
+      "passed": true,
+      "details": "Button gradient animation detected: true",
+      "screenshot": "./sidebar-test-screenshots/button-animation-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:24.815Z"
+    },
+    {
+      "category": "Visual Enhancements",
+      "testName": "Tooltip Enhancements",
+      "passed": false,
+      "details": "Error: elementHandle.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    50 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:18:55.028Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Fixed Dimensions",
+      "passed": true,
+      "details": "MinWidth: 64px, MaxWidth: 64px, FlexShrink: 0",
+      "screenshot": "./sidebar-test-screenshots/fixed-dimensions-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:55.034Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Consistent Spacing",
+      "passed": true,
+      "details": "Menu items have consistent spacing: true",
+      "screenshot": "./sidebar-test-screenshots/consistent-spacing-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:55.171Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "No Empty Spaces",
+      "passed": false,
+      "details": "No excessive empty spaces detected: false",
+      "screenshot": "./sidebar-test-screenshots/no-empty-spaces-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:55.282Z"
+    },
+    {
+      "category": "Resize Fixes",
+      "testName": "Layout Stability During Transitions",
+      "passed": false,
+      "details": "Initial width: 64px, Final width: 64px",
+      "screenshot": "./sidebar-test-screenshots/layout-stability-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:55.781Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Smooth Transitions",
+      "passed": false,
+      "details": "Transition time: 34ms (expected: 300ms)",
+      "screenshot": "./sidebar-test-screenshots/smooth-transition-chromium-375.png",
+      "timestamp": "2025-11-19T14:18:56.268Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Universal Toggle Button Visibility",
+      "passed": false,
+      "details": "Error: toggleButton.isClickable is not a function",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:18:56.350Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Menu Item Functionality",
+      "passed": false,
+      "details": "Error: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    50 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button title=\"Toggle sidebar\" class=\"fixed top-4 left-4 z-50 p-3 glass-enhanced rounded-xl hover:bg-blue-600/20 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group sidebar-button\">…</button> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "screenshot": null,
+      "timestamp": "2025-11-19T14:19:26.371Z"
+    },
+    {
+      "category": "Functionality",
+      "testName": "Sidebar Expand/Collapse Functionality",
+      "passed": false,
+      "details": "State changed from true to true",
+      "screenshot": "./sidebar-test-screenshots/sidebar-toggle-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:26.775Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "Animation Smoothness",
+      "passed": true,
+      "details": "Frame drops: 0, Max frame time: 17.80ms",
+      "screenshot": "./sidebar-test-screenshots/animation-smoothness-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:28.609Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "No Performance Lag",
+      "passed": true,
+      "details": "Total time for 5 toggles: 1380.71ms",
+      "screenshot": "./sidebar-test-screenshots/no-performance-lag-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:30.108Z"
+    },
+    {
+      "category": "Performance",
+      "testName": "GPU Acceleration",
+      "passed": true,
+      "details": "GPU acceleration detected: true",
+      "screenshot": "./sidebar-test-screenshots/gpu-acceleration-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:30.187Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Mobile Responsiveness",
+      "passed": false,
+      "details": "Mobile (true): Sidebar hidden: false",
+      "screenshot": "./sidebar-test-screenshots/mobile-responsive-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:30.261Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Touch-Friendly Interactions",
+      "passed": true,
+      "details": "Touch-friendly buttons: true",
+      "screenshot": "./sidebar-test-screenshots/touch-friendly-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:30.340Z"
+    },
+    {
+      "category": "Responsiveness",
+      "testName": "Cross-Browser Consistency",
+      "passed": true,
+      "details": "Consistent layout detected: true",
+      "screenshot": "./sidebar-test-screenshots/cross-browser-chromium-375.png",
+      "timestamp": "2025-11-19T14:19:30.417Z"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "Issues Found",
+      "message": "31 tests failed. Review the details below for specific issues."
+    },
+    {
+      "type": "Category Issues",
+      "message": "Issues detected in Visual Enhancements. Focus on this area for fixes."
+    },
+    {
+      "type": "Category Issues",
+      "message": "Issues detected in Resize Fixes. Focus on this area for fixes."
+    },
+    {
+      "type": "Category Issues",
+      "message": "Issues detected in Functionality. Focus on this area for fixes."
+    },
+    {
+      "type": "Category Issues",
+      "message": "Issues detected in Performance. Focus on this area for fixes."
+    },
+    {
+      "type": "Category Issues",
+      "message": "Issues detected in Responsiveness. Focus on this area for fixes."
+    }
+  ]
+}

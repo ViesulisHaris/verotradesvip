@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-11-26T16:29:30.764Z",
+  "results": {
+    "backgroundColor": true,
+    "borderRadius": false,
+    "cssVariables": true,
+    "colorSystem": false
+  },
+  "score": {
+    "passed": 2,
+    "total": 4,
+    "percentage": 50
+  },
+  "status": "NEEDS_WORK"
+}

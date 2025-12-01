@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-11-17T17:01:16.285Z",
+  "testPhase": "failed",
+  "authenticationTest": {
+    "status": "PASS",
+    "url": "http://localhost:3000/dashboard"
+  },
+  "basicEndpointTest": {
+    "status": "PASS",
+    "hasData": true,
+    "hasMessage": true
+  },
+  "statisticalAccuracyTest": {
+    "status": "FAIL",
+    "issues": [
+      "Emotional state distribution is empty but trades exist",
+      "Strategy distribution count (5) doesn't match total trades (30)",
+      "Total P&L ($117535) seems outside expected range ($-1050 to $10325)"
+    ]
+  },
+  "dataCompletenessTest": {
+    "status": "FAIL",
+    "issues": [
+      "Trade 1 missing required field: strategyId",
+      "Trade 2 missing required field: strategyId",
+      "Trade 3 missing required field: strategyId",
+      "Trade 4 missing required field: strategyId",
+      "Trade 5 missing required field: strategyId",
+      "Trade 6 missing required field: strategyId",
+      "Trade 7 missing required field: strategyId",
+      "Trade 7 missing required field: emotions",
+      "Trade 8 missing required field: strategyId",
+      "Trade 9 missing required field: strategyId"
+    ]
+  },
+  "errorHandlingTest": null,
+  "overallAssessment": null,
+  "verificationData": {
+    "summary": {
+      "totalTrades": 30,
+      "tradesWithPnL": 30,
+      "winningTrades": 21,
+      "losingTrades": 7,
+      "totalPnL": 117535,
+      "winRate": 70,
+      "totalStrategies": 2,
+      "activeStrategies": 2
+    },
+    "emotionDistribution": {},
+    "marketDistribution": {
+      "futures": 4,
+      "Stock": 10,
+      "Crypto": 4,
+      "Forex": 2,
+      "stock": 10
+    },
+    "strategyDistribution": {
+      "Fix Verification Strategy 1762865219645": 3,
+      "Test Compliance Strategy": 2
+    },
+    "trades": [
+      {
+        "id": "45df8015-5a25-4f13-b47c-f0f8ae6d6bfe",
+        "symbol": "discip",
+        "market": "futures",
+        "pnl": 100,
+        "strategyId": "039bdfe1-cbd9-49d8-b566-f70c95054633",
+        "emotions": "[\"DISCIPLINE\"]"
+      },
+      {
+        "id": "81db9c72-ff31-49e3-babf-0ee3681b6958",
+        "symbol": "AAPL",
+        "market": "Stock",
+        "pnl": 250.5,
+        "strategyId": null,
+        "emotions": "[\"FOMO\",\"ANXIOUS\"]"
+      },
+      {
+        "id": "aa22113c-6e07-4001-b317-d3aef98a725c",
+        "symbol": "GOOGL",
+        "market": "Stock",
+        "pnl": -150.25,
+        "strategyId": null,
+        "emotions": "[\"REVENGE\",\"TILT\"]"
+      },
+      {
+        "id": "b14f81c3-8dd8-42dd-a665-3a426385388e",
+        "symbol": "BTC",
+        "market": "Crypto",
+        "pnl": 500,
+        "strategyId": null,
+        "emotions": "[\"CONFIDENT\",\"DISCIPLINE\"]"
+      },
+      {
+        "id": "9e417463-9c77-465f-aedd-6b151906c481",
+        "symbol": "ETH",
+        "market": "Crypto",
+        "pnl": -300.75,
+        "strategyId": null,
+        "emotions": "[\"PATIENCE\"]"
+      },
+      {
+        "id": "26b78c13-62ad-4c76-a6fe-2577c40b8c97",
+        "symbol": "EURUSD",
+        "market": "Forex",
+        "pnl": 125.3,
+        "strategyId": null,
+        "emotions": "[\"NEUTRAL\"]"
+      },
+      {
+        "id": "24348b17-bf2c-4c45-9277-6c60624a59e1",
+        "symbol": "TSLA",
+        "market": "Stock",
+        "pnl": 0,
+        "strategyId": null,
+        "emotions": "[\"FOMO\",\"OVERRISK\",\"TILT\"]"
+      },
+      {
+        "id": "915595d9-488e-4760-a618-c38478453baf",
+        "symbol": "MSFT",
+        "market": "Stock",
+        "pnl": 180.6,
+        "strategyId": null,
+        "emotions": null
+      },
+      {
+        "id": "723b26da-b365-4402-ac4d-777bd05a1108",
+        "symbol": "AMZN",
+        "market": "Stock",
+        "pnl": -90.4,
+        "strategyId": null,
+        "emotions": "[\"REGRET\",\"ANXIOUS\"]"
+      },
+      {
+        "id": "ccba5b9a-573b-4ddd-912a-4f318e89355f",
+        "symbol": "AAPL",
+        "market": "Stock",
+        "pnl": 250.5,
+        "strategyId": null,
+        "emotions": "[\"FOMO\",\"ANXIOUS\"]"
+      }
+    ]
+  },
+  "error": "page is not defined"
+}

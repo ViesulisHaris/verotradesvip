@@ -1,0 +1,241 @@
+{
+  "timestamp": "2025-11-27T16:08:30.671Z",
+  "summary": {
+    "total": 17,
+    "success": 4,
+    "failed": 0,
+    "successRate": "23.5"
+  },
+  "results": [
+    {
+      "timestamp": "18:08:26",
+      "message": "🧪 Starting Simple Authentication Test",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:26",
+      "message": "📍 Test 1: Testing Supabase client creation...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:27",
+      "message": "📊 Loaded environment from .env file",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:27",
+      "message": "✅ Supabase client created successfully",
+      "type": "success"
+    },
+    {
+      "timestamp": "18:08:27",
+      "message": "📍 Test 2: Checking current session...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:27",
+      "message": "ℹ️ No active session found",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:27",
+      "message": "📍 Test 3: Testing login with provided credentials...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "✅ Login successful for user: testuser1000@verotrade.com",
+      "type": "success"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "📊 User ID: c9dbe395-bec0-42c2-bd9a-984f3186f622",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "📍 Test 4: Checking session after login...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "✅ Session exists after login",
+      "type": "success"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "📊 Session token present: true",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:28",
+      "message": "📍 Test 5: Testing session persistence...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "✅ Session persists after delay",
+      "type": "success"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "📊 User still logged in: testuser1000@verotrade.com",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "\n📋 AUTHENTICATION TEST REPORT",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "==================================================",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "Total Tests: 17",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "Successful: 4",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "Failed: 0",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "Success Rate: 23.5%",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "\n🔧 RECOMMENDATIONS:",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "\n📄 DETAILED RESULTS:",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 🧪 Starting Simple Authentication Test",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📍 Test 1: Testing Supabase client creation...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📊 Loaded environment from .env file",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "✅ ✅ Supabase client created successfully",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📍 Test 2: Checking current session...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ ℹ️ No active session found",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📍 Test 3: Testing login with provided credentials...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "✅ ✅ Login successful for user: testuser1000@verotrade.com",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📊 User ID: c9dbe395-bec0-42c2-bd9a-984f3186f622",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📍 Test 4: Checking session after login...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "✅ ✅ Session exists after login",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📊 Session token present: true",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📍 Test 5: Testing session persistence...",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "✅ ✅ Session persists after delay",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ 📊 User still logged in: testuser1000@verotrade.com",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ \n📋 AUTHENTICATION TEST REPORT",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ ==================================================",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ Total Tests: 17",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ Successful: 4",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ Failed: 0",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ Success Rate: 23.5%",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ \n🔧 RECOMMENDATIONS:",
+      "type": "info"
+    },
+    {
+      "timestamp": "18:08:30",
+      "message": "ℹ️ \n📄 DETAILED RESULTS:",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-17T16:52:04.535Z",
+  "testResults": {
+    "basicEndpointTest": {
+      "status": "FAIL",
+      "statusCode": 401,
+      "error": "Authentication required"
+    },
+    "statisticalAccuracyTest": null,
+    "dataCompletenessTest": null,
+    "errorHandlingTest": {
+      "status": "FAIL",
+      "issues": [
+        "Invalid action should return 400, got 401",
+        "Missing action should return 400, got 401"
+      ]
+    },
+    "overallAssessment": {
+      "status": "FAIL",
+      "message": "0/2 test categories passed",
+      "passedTests": 0,
+      "totalTests": 2,
+      "failedTests": 2
+    }
+  },
+  "verificationData": null
+}

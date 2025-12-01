@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-11-20T15:48:35.545Z",
+  "dropdownFound": true,
+  "optionsCount": 0,
+  "debugInfoFound": false,
+  "debugInfoAfterInteractions": false,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "pageErrors": [],
+  "selectionTest": "SKIPPED (insufficient options)",
+  "keyboardNavigationTest": "COMPLETED"
+}

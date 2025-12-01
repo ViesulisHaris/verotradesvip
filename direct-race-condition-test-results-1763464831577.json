@@ -1,0 +1,883 @@
+{
+  "timestamp": "2025-11-18T11:20:31.576Z",
+  "messages": [
+    {
+      "timestamp": "2025-11-18T11:20:02.463Z",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.575Z",
+      "type": "log",
+      "text": "[HMR] connected"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.596Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.596Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.598Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.598Z",
+      "type": "warn",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.599Z",
+      "type": "warn",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T11:20:02.604Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.599Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.600Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.605Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.606Z",
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.606Z",
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.636Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.643Z",
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.645Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.660Z",
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.661Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.661Z",
+      "type": "log",
+      "text": "🔄 [AUTH] No session found, redirecting to login"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.666Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.677Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.781Z",
+      "type": "warn",
+      "text": "Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.794Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.795Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.795Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.795Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.892Z",
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:02.892Z",
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight validation..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.032Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.037Z",
+      "type": "warn",
+      "text": "⚠️ [STARTUP] Schema cache issue detected, clearing cache and skipping validation"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.038Z",
+      "type": "log",
+      "text": "🧹 [CACHE] Starting comprehensive cache clear..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.169Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.171Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.171Z",
+      "type": "log",
+      "text": "✅ [CACHE] Comprehensive cache clear completed"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:03.171Z",
+      "type": "log",
+      "text": "✅ [STARTUP] Cache cleared, skipping further validation to avoid errors"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.933Z",
+      "type": "log",
+      "text": "🚀 Login form submission started"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.934Z",
+      "type": "log",
+      "text": "📧 Email: testuser@verotrade.com"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.934Z",
+      "type": "log",
+      "text": "🔑 Password length: 16"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.934Z",
+      "type": "log",
+      "text": "🔄 Attempting Supabase authentication..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.934Z",
+      "type": "log",
+      "text": "🌐 Supabase URL: https://bzmixuxautbmqbrqtufx.supabase.co"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:06.934Z",
+      "type": "log",
+      "text": "🔑 Supabase Key present: YES"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.161Z",
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.161Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "📥 Supabase response received"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "❌ Error: NONE"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "✅ Success: YES"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "✅ Authentication successful!"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "👤 User ID: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "📧 User email: testuser@verotrade.com"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.468Z",
+      "type": "log",
+      "text": "🎫 Session created: YES"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.516Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.516Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 0"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "getEmotionData: No trades to process"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: []"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 0"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.517Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.518Z",
+      "type": "log",
+      "text": "getEmotionData: No trades to process"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.518Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.518Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: []"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.546Z",
+      "type": "log",
+      "text": "🔍 [AUTH_CONTEXT] Initializing auth context..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.547Z",
+      "type": "log",
+      "text": "🔍 [AUTH_CONTEXT] Initializing auth context..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.547Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.679Z",
+      "type": "log",
+      "text": "Fetching trades for user: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.792Z",
+      "type": "log",
+      "text": "Fetching trades for user: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.794Z",
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.796Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.796Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.811Z",
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.814Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.971Z",
+      "type": "log",
+      "text": "🔄 Redirecting to dashboard..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:07.973Z",
+      "type": "log",
+      "text": "🏁 Login process completed"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.097Z",
+      "type": "log",
+      "text": "Successfully fetched trades: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.146Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.146Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.146Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.147Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.147Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.147Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.148Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.148Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.148Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.149Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.152Z",
+      "type": "log",
+      "text": "Successfully fetched trades: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.190Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.191Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.191Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.192Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.192Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.375Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.375Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.380Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.380Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.629Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:08.629Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.093Z",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.122Z",
+      "type": "log",
+      "text": "[HMR] connected"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.128Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.128Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating primary Supabase client"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.129Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Creating service role Supabase client"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.129Z",
+      "type": "warn",
+      "text": "⚠️ [DEBUG] SchemaValidator: SUPABASE_SERVICE_ROLE_KEY not available, skipping service role client creation"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.129Z",
+      "type": "warn",
+      "text": "GoTrueClient@sb-bzmixuxautbmqbrqtufx-auth-token:1 (2.81.1) 2025-11-18T11:20:12.135Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.129Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Fallback client created using anon key"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.129Z",
+      "type": "log",
+      "text": "✅ [DEBUG] SchemaValidator: Initializing expected column definitions"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.131Z",
+      "type": "log",
+      "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.131Z",
+      "type": "log",
+      "text": "✅ [DEBUG] Creating client-side Supabase client with valid credentials"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.131Z",
+      "type": "log",
+      "text": "🔧 [SUPABASE] Creating Supabase client with config: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.149Z",
+      "type": "log",
+      "text": "🔍 [STARTUP] Running lightweight schema check on application startup..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.153Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Getting initial session..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.156Z",
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.160Z",
+      "type": "log",
+      "text": "🔄 [SUPABASE] Client-level auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.161Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Initial session result: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.161Z",
+      "type": "log",
+      "text": "🔍 [AUTH] Setting up auth state listener..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.172Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 0"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "getEmotionData: No trades to process"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: []"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.173Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.174Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 0"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.174Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.174Z",
+      "type": "log",
+      "text": "getEmotionData: No trades to process"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.174Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.174Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: []"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.220Z",
+      "type": "log",
+      "text": "🔍 [AUTH_CONTEXT] Initializing auth context..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.221Z",
+      "type": "log",
+      "text": "🔍 [AUTH_CONTEXT] Initializing auth context..."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.222Z",
+      "type": "log",
+      "text": "🔄 [AUTH] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.319Z",
+      "type": "log",
+      "text": "Fetching trades for user: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.320Z",
+      "type": "log",
+      "text": "✅ [STARTUP] Strategies table accessible - basic check passed"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.320Z",
+      "type": "log",
+      "text": "⏭️ [STARTUP] Skipping full schema validation due to recent cache error (cooldown period)"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.406Z",
+      "type": "log",
+      "text": "Fetching trades for user: d9f7982d-f49b-4766-a8e8-827a1d176d5e"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.407Z",
+      "type": "log",
+      "text": "✅ [AUTH_CONTEXT] Session retrieved: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.409Z",
+      "type": "log",
+      "text": "🔄 [AUTH_CONTEXT] Auth state change: JSHandle@object"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.613Z",
+      "type": "log",
+      "text": "Successfully fetched trades: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.653Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.654Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.654Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.655Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.656Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.656Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.656Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.656Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.657Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.657Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.704Z",
+      "type": "log",
+      "text": "Successfully fetched trades: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.743Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.743Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.743Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.743Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.743Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.744Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Processing emotion data"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.744Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Total trades being processed: 300"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.744Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Trades sample: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.744Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result: JSHandle@array"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.744Z",
+      "type": "log",
+      "text": "🔍 [DASHBOARD EMOTION DEBUG] Emotion data result JSON: [\n  {\n    \"subject\": \"NEUTRAL\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 11.11111111111111,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"DISCIPLINE\",\n    \"value\": 54,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.51851851851852,\n    \"totalTrades\": 54\n  },\n  {\n    \"subject\": \"FOMO\",\n    \"value\": 29,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -3.4482758620689653,\n    \"totalTrades\": 29\n  },\n  {\n    \"subject\": \"OVERRISK\",\n    \"value\": 59,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -18.64406779661017,\n    \"totalTrades\": 59\n  },\n  {\n    \"subject\": \"CONFIDENT\",\n    \"value\": 41,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -7.317073170731707,\n    \"totalTrades\": 41\n  },\n  {\n    \"subject\": \"PATIENCE\",\n    \"value\": 47,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 2.127659574468085,\n    \"totalTrades\": 47\n  },\n  {\n    \"subject\": \"REGRET\",\n    \"value\": 50,\n    \"fullMark\": 71,\n    \"leaning\": \"Sell Leaning\",\n    \"side\": \"Sell\",\n    \"leaningValue\": -16,\n    \"totalTrades\": 50\n  },\n  {\n    \"subject\": \"ANXIOUS\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -4.545454545454546,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"REVENGE\",\n    \"value\": 44,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": -13.636363636363635,\n    \"totalTrades\": 44\n  },\n  {\n    \"subject\": \"TILT\",\n    \"value\": 38,\n    \"fullMark\": 71,\n    \"leaning\": \"Balanced\",\n    \"side\": \"NULL\",\n    \"leaningValue\": 0,\n    \"totalTrades\": 38\n  }\n]"
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.839Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.839Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.842Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.842Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.857Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.858Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.870Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    },
+    {
+      "timestamp": "2025-11-18T11:20:12.870Z",
+      "type": "warn",
+      "text": "The width(-1) and height(-1) of chart should be greater than 0,\n       please check the style of container, or the props width(100%) and height(100%),\n       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the\n       height and width."
+    }
+  ],
+  "raceConditionAnalysis": {
+    "hasRaceCondition": false,
+    "sequence": [
+      {
+        "timestamp": "2025-11-18T11:20:02.596Z",
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object"
+      },
+      {
+        "timestamp": "2025-11-18T11:20:02.605Z",
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object"
+      },
+      {
+        "timestamp": "2025-11-18T11:20:12.128Z",
+        "type": "log",
+        "text": "🔍 [DEBUG] SchemaValidator constructor - Environment check: JSHandle@object"
+      },
+      {
+        "timestamp": "2025-11-18T11:20:12.131Z",
+        "type": "log",
+        "text": "🔍 [DEBUG] Client-side Supabase environment check: JSHandle@object"
+      }
+    ],
+    "validationEvents": [],
+    "tradeDataEvents": [],
+    "errors": []
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "timestamp": "2025-11-26T17:02:22.233Z",
+  "applicationStartup": {
+    "loadTime": 1844,
+    "pageTitle": "",
+    "hasError": false,
+    "hasWhiteScreen": false,
+    "success": true
+  },
+  "pageLoading": {
+    "Home": {
+      "hasError": false,
+      "has404": false,
+      "hasContent": true,
+      "success": true
+    },
+    "Login": {
+      "hasError": false,
+      "has404": true,
+      "hasContent": true,
+      "success": false
+    },
+    "Register": {
+      "hasError": false,
+      "has404": true,
+      "hasContent": true,
+      "success": false
+    },
+    "Dashboard": {
+      "hasError": false,
+      "has404": false,
+      "hasContent": true,
+      "success": true
+    },
+    "Trades": {
+      "hasError": false,
+      "has404": true,
+      "hasContent": true,
+      "success": false
+    },
+    "Strategies": {
+      "hasError": false,
+      "has404": false,
+      "hasContent": true,
+      "success": true
+    }
+  },
+  "authenticationFlow": {
+    "loginFormExists": false,
+    "hasRegisterLink": false,
+    "success": false
+  },
+  "navigationSystem": {
+    "hasSidebar": false,
+    "hasMenuItems": false,
+    "hasMobileMenu": false,
+    "hasDashboardLink": false,
+    "hasTradesLink": false,
+    "hasStrategiesLink": false,
+    "hasLoginLink": false,
+    "hasRegisterLink": false,
+    "totalNavigationLinks": 0,
+    "success": false
+  },
+  "componentRendering": {
+    "hasButtons": false,
+    "hasCards": false,
+    "hasForms": false,
+    "hasInputs": false,
+    "hasStatsCards": false,
+    "hasCharts": false,
+    "componentCount": 0,
+    "success": false
+  },
+  "responsiveDesign": {
+    "tested": true,
+    "success": true
+  },
+  "errorHandling": {
+    "handles404": true,
+    "noApplicationError": true,
+    "success": true
+  },
+  "summary": {
+    "totalTests": 12,
+    "passedTests": 6,
+    "failedTests": 6,
+    "criticalIssues": [
+      "Login page loading failed",
+      "Register page loading failed",
+      "Trades page loading failed",
+      "Authentication flow - login form not available",
+      "Navigation system not working",
+      "Component rendering issues"
+    ]
+  }
+}

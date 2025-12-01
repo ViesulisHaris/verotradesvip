@@ -1,0 +1,199 @@
+{
+  "timestamp": "2025-11-26T16:59:16.646Z",
+  "pageLoadDiagnostics": {
+    "Home": {
+      "path": "/",
+      "loadTime": 1613,
+      "responseStatus": 200,
+      "pageTitle": "",
+      "finalUrl": "http://localhost:3000/dashboard",
+      "contentLength": 8943,
+      "hasError": false,
+      "has404": false,
+      "hasServerError": false,
+      "hasAuthRequired": true,
+      "hasLoginRedirect": true,
+      "hasNetworkError": false,
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "location": {
+            "url": "http://localhost:3000/favicon.ico",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ],
+      "requestCount": 11,
+      "screenshotPath": "verotradesvip/diagnostic-home-1764176360306.png",
+      "success": true
+    },
+    "Login": {
+      "path": "/login",
+      "hasError": true,
+      "error": "page.goto: net::ERR_ABORTED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "errorType": "Error",
+      "success": false
+    },
+    "Register": {
+      "path": "/register",
+      "loadTime": 1117,
+      "responseStatus": 404,
+      "pageTitle": "404: This page could not be found.",
+      "finalUrl": "http://localhost:3000/register",
+      "contentLength": 8348,
+      "hasError": false,
+      "has404": true,
+      "hasServerError": false,
+      "hasAuthRequired": false,
+      "hasLoginRedirect": false,
+      "hasNetworkError": false,
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "location": {
+            "url": "http://localhost:3000/register",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ],
+      "requestCount": 7,
+      "screenshotPath": "verotradesvip/diagnostic-register-1764176366640.png",
+      "success": false
+    },
+    "Dashboard": {
+      "path": "/dashboard",
+      "loadTime": 2015,
+      "responseStatus": 200,
+      "pageTitle": "",
+      "finalUrl": "http://localhost:3000/dashboard",
+      "contentLength": 7116,
+      "hasError": false,
+      "has404": false,
+      "hasServerError": false,
+      "hasAuthRequired": true,
+      "hasLoginRedirect": true,
+      "hasNetworkError": false,
+      "consoleErrors": [],
+      "requestCount": 9,
+      "screenshotPath": "verotradesvip/diagnostic-dashboard-1764176370798.png",
+      "success": true
+    },
+    "Trades": {
+      "path": "/trades",
+      "loadTime": 3013,
+      "responseStatus": 404,
+      "pageTitle": "404: This page could not be found.",
+      "finalUrl": "http://localhost:3000/trades",
+      "contentLength": 8346,
+      "hasError": false,
+      "has404": true,
+      "hasServerError": false,
+      "hasAuthRequired": false,
+      "hasLoginRedirect": false,
+      "hasNetworkError": false,
+      "consoleErrors": [
+        {
+          "text": "Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. TypeError: Failed to fetch\n    at fetchServerResponse (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js:59:27)\n    at fastRefreshReducerImpl (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/reducers/fast-refresh-reducer.js:33:67)\n    at clientReducer (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/router-reducer.js:41:67)\n    at Object.action (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:150:55)\n    at runAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:56:38)\n    at dispatchAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:113:9)\n    at Object.dispatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:145:40)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/use-reducer-with-devtools.js:130:21)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:304:25)\n    at startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:2597:25)\n    at Object.fastRefresh (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:303:48)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:277:28)\n    at startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:2597:25)\n    at processMessage (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:276:44)\n    at WebSocket.handler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:395:17)",
+          "location": {
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+            "lineNumber": 32,
+            "columnNumber": 21
+          }
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "location": {
+            "url": "http://localhost:3000/trades",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ],
+      "requestCount": 15,
+      "screenshotPath": "verotradesvip/diagnostic-trades-1764176375933.png",
+      "success": false
+    },
+    "Strategies": {
+      "path": "/strategies",
+      "loadTime": 3280,
+      "responseStatus": 200,
+      "pageTitle": "",
+      "finalUrl": "http://localhost:3000/strategies",
+      "contentLength": 6389,
+      "hasError": false,
+      "has404": false,
+      "hasServerError": false,
+      "hasAuthRequired": false,
+      "hasLoginRedirect": false,
+      "hasNetworkError": false,
+      "consoleErrors": [
+        {
+          "text": "Failed to fetch RSC payload for http://localhost:3000/trades. Falling back to browser navigation. TypeError: Failed to fetch\n    at fetchServerResponse (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js:59:27)\n    at fastRefreshReducerImpl (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/reducers/fast-refresh-reducer.js:33:67)\n    at clientReducer (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/router-reducer.js:41:67)\n    at Object.action (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:150:55)\n    at runAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:56:38)\n    at dispatchAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:113:9)\n    at Object.dispatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:145:40)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/use-reducer-with-devtools.js:130:21)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:304:25)\n    at startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:2597:25)\n    at Object.fastRefresh (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:303:48)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:277:28)\n    at startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:2597:25)\n    at processMessage (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:276:44)\n    at WebSocket.handler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:395:17)",
+          "location": {
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+            "lineNumber": 32,
+            "columnNumber": 21
+          }
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "location": {
+            "url": "http://localhost:3000/_next/static/chunks/app/strategies/page.js",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ],
+      "requestCount": 15,
+      "screenshotPath": "verotradesvip/diagnostic-strategies-1764176383312.png",
+      "success": true
+    }
+  },
+  "authenticationDiagnostics": {
+    "loginPageAccessible": true,
+    "loginFormExists": false,
+    "hasEmailInput": false,
+    "hasPasswordInput": false,
+    "hasLoginButton": false,
+    "hasRegisterLink": false,
+    "hasAuthProviders": false,
+    "hasErrorMessages": true,
+    "success": false
+  },
+  "navigationDiagnostics": {
+    "hasSidebar": false,
+    "hasTopNavigation": false,
+    "hasMenuItems": false,
+    "hasMobileMenu": false,
+    "hasDashboardLink": false,
+    "hasTradesLink": false,
+    "hasStrategiesLink": false,
+    "hasLoginLink": false,
+    "hasRegisterLink": false,
+    "totalNavigationLinks": 0,
+    "success": false
+  },
+  "componentDiagnostics": {
+    "hasButtons": false,
+    "hasCards": false,
+    "hasForms": false,
+    "hasInputs": false,
+    "hasTables": false,
+    "hasCharts": false,
+    "hasLoadingIndicators": false,
+    "hasReactRoots": false,
+    "hasStatsCards": false,
+    "hasTradeLists": true,
+    "totalComponents": 0,
+    "success": false
+  },
+  "errorAnalysis": [
+    {
+      "page": "Login",
+      "error": "page.goto: net::ERR_ABORTED at http://localhost:3000/login\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/login\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "type": "Error"
+    }
+  ]
+}

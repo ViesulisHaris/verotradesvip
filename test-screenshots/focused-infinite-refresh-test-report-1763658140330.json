@@ -1,0 +1,44 @@
+{
+  "startTime": "2025-11-20T17:01:53.717Z",
+  "tests": [
+    {
+      "testName": "Direct navigation to strategy performance",
+      "passed": true,
+      "details": "Navigated to strategy test-strategy-123",
+      "timestamp": "2025-11-20T17:02:03.520Z"
+    },
+    {
+      "testName": "Infinite refresh detection",
+      "passed": true,
+      "details": "Strategy requests: 0, Console messages: 0",
+      "timestamp": "2025-11-20T17:02:08.972Z"
+    },
+    {
+      "testName": "Page content stability",
+      "passed": true,
+      "details": "Content changes: 0",
+      "timestamp": "2025-11-20T17:02:12.428Z"
+    },
+    {
+      "testName": "Different strategy navigation",
+      "passed": true,
+      "details": "Strategy requests: 0",
+      "timestamp": "2025-11-20T17:02:17.538Z"
+    },
+    {
+      "testName": "Tab navigation",
+      "passed": false,
+      "details": "No tabs found or navigation failed",
+      "timestamp": "2025-11-20T17:02:17.987Z"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5
+  },
+  "endTime": "2025-11-20T17:02:20.330Z",
+  "duration": 26613,
+  "success": false,
+  "conclusion": "❌ Issues detected - infinite refresh loop may not be fully resolved"
+}
