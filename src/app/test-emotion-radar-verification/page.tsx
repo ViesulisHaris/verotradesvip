@@ -58,7 +58,7 @@ const formatEmotionsAsBoxes = (emotionalState: string[] | null | string) => {
         return (
           <div
             key={index}
-            className={`px-2 py-1 rounded-md ${emotionColor.bg} ${emotionColor.text} text-xs border ${emotionColor.border}`}
+            className={`px-2 py-1 rounded-md ${emotionColor?.bg || ''} ${emotionColor?.text || ''} text-xs border ${emotionColor?.border || ''}`}
           >
             {emotion}
           </div>
@@ -314,22 +314,22 @@ function generateRandomTestData(): Trade[] {
     
     for (let j = 0; j < numEmotions; j++) {
       const emotion = emotions[Math.floor(Math.random() * emotions.length)];
-      if (!selectedEmotions.includes(emotion)) {
+      if (emotion && !selectedEmotions.includes(emotion)) {
         selectedEmotions.push(emotion);
       }
     }
     
     const side = sides[Math.floor(Math.random() * sides.length)];
-    const pnl = side === 'Buy' 
+    const pnl = side === 'Buy'
       ? Math.floor(Math.random() * 300) - 50 // Buy: -50 to 250
       : Math.floor(Math.random() * 100) - 200; // Sell: -200 to -100
     
     trades.push({
       id: `random-${i}`,
       pnl,
-      trade_date: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      trade_date: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000).toISOString().split('T')[0] || '',
       emotional_state: selectedEmotions,
-      side,
+      side: side as 'Buy' | 'Sell' | null,
       entry_time: `${Math.floor(Math.random() * 6) + 9}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}`,
       exit_time: `${Math.floor(Math.random() * 6) + 10}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}`,
       strategy_id: 'random-strategy'

@@ -86,7 +86,21 @@ export default function ComprehensiveSystemFixTest() {
   const updateTest = (index: number, status: TestResult['status'], message: string, details?: any) => {
     setTests(prev => {
       const updated = [...prev];
-      updated[index] = { ...updated[index], status, message, details };
+      // Ensure we have a valid result at the index
+      if (index < 0 || index >= updated.length || !updated[index]) {
+        return updated;
+      }
+      
+      // Create a properly typed result object
+      const existingResult = updated[index] as TestResult;
+      const updatedResult: TestResult = {
+        name: existingResult.name,
+        status,
+        message,
+        details
+      };
+      
+      updated[index] = updatedResult;
       return updated;
     });
   };

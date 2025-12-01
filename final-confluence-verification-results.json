@@ -1,0 +1,54 @@
+{
+  "startTime": "2025-12-01T09:17:11.961Z",
+  "endTime": "2025-12-01T09:17:26.344Z",
+  "passed": 5,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "Navigate directly to confluence page",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-01T09:17:19.907Z"
+    },
+    {
+      "name": "Page loads without infinite loading",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-01T09:17:23.103Z"
+    },
+    {
+      "name": "React key uniqueness errors resolved",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-01T09:17:26.115Z"
+    },
+    {
+      "name": "Table rows have unique keys",
+      "passed": true,
+      "details": "No table found on page",
+      "timestamp": "2025-12-01T09:17:26.117Z"
+    },
+    {
+      "name": "No critical console errors",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-01T09:17:26.117Z"
+    },
+    {
+      "name": "Page contains confluence content",
+      "passed": false,
+      "details": "Page does not appear to contain confluence-related content",
+      "timestamp": "2025-12-01T09:17:26.120Z"
+    }
+  ],
+  "reactKeyErrors": [],
+  "allConsoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico"
+      },
+      "timestamp": "2025-12-01T09:17:18.761Z"
+    }
+  ]
+}

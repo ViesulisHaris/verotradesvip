@@ -1,0 +1,151 @@
+/* Confluence Page Specific Styles */
+
+/* Filter section styling */
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Insight card styling for equal height */
+.insight-card {
+  height: 100%;
+}
+
+/* Enhanced spacing for better visual hierarchy */
+.dashboard-card {
+  transition: all 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Improved button hover states */
+.button-primary:hover,
+.button-secondary:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Enhanced input field focus states */
+.input-field:focus {
+  outline: 2px solid rgba(184, 155, 94, 0.5);
+  outline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Improved card header spacing */
+.card-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+/* Enhanced metric cards */
+.key-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .key-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .key-metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-section {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Enhanced visual hierarchy */
+.h2-section {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.h3-metric-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+/* Improved loading states */
+.animate-spin {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced emotional states grid */
+.emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+/* Better visual separation between sections */
+.mb-component {
+  margin-bottom: 1.5rem;
+}
+
+/* Enhanced table responsiveness */
+@media (max-width: 640px) {
+  .overflow-x-auto table {
+    font-size: 0.75rem;
+  }
+  
+  .overflow-x-auto th,
+  .overflow-x-auto td {
+    padding: 0.5rem;
+  }
+}
+
+/* Improved pagination controls */
+.pagination-button {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced visual flow indicators */
+.visual-flow-indicator {
+  position: relative;
+}
+
+.visual-flow-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(184, 155, 94, 0.3), transparent);
+  opacity: 0.3;
+}

@@ -1,0 +1,63 @@
+{
+  "pageLoad": {
+    "success": false,
+    "error": "page.waitForTimeout is not a function",
+    "loadTime": 2062
+  },
+  "components": {
+    "confluenceContainer": {
+      "rendered": false,
+      "error": null
+    },
+    "statsCards": {
+      "rendered": false,
+      "count": 0,
+      "error": null
+    },
+    "emotionRadar": {
+      "rendered": false,
+      "hasData": false,
+      "error": null
+    },
+    "filters": {
+      "rendered": false,
+      "interactive": false,
+      "error": null
+    },
+    "tradesTable": {
+      "rendered": false,
+      "hasData": false,
+      "error": null
+    }
+  },
+  "functionality": {
+    "refreshButton": {
+      "works": false,
+      "error": null
+    },
+    "symbolSearch": {
+      "works": false,
+      "error": null
+    },
+    "emotionFilters": {
+      "works": false,
+      "error": null
+    },
+    "dateFilters": {
+      "works": false,
+      "error": null
+    }
+  },
+  "responsive": {
+    "mobile": false,
+    "tablet": false,
+    "desktop": false
+  },
+  "performance": {
+    "loadTime": 2062,
+    "renderTime": 0
+  },
+  "errors": [
+    "page.waitForTimeout is not a function"
+  ]
+}

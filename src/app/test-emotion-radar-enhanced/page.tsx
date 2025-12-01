@@ -115,21 +115,21 @@ export default function TestEmotionRadarEnhanced() {
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [testResults, setTestResults] = useState<string[]>([]);
 
-  const currentTest = testScenarios[currentTestIndex];
+  const currentTest = testScenarios[currentTestIndex] || testScenarios[0];
 
   const addResult = (result: string) => {
     setTestResults(prev => [...prev, `${new Date().toLocaleTimeString()}: ${result}`]);
   };
 
   const runTest = async () => {
-    addResult(`Starting test: ${currentTest.name}`);
+    addResult(`Starting test: ${currentTest?.name}`);
     
     try {
       // Test if the component renders without crashing
       addResult('✓ Component renders without crashing');
       
       // Test data validation with new structure
-      if (currentTest.data) {
+      if (currentTest?.data) {
         const validCount = Array.isArray(currentTest.data)
           ? currentTest.data.filter(item =>
               item &&
@@ -166,7 +166,7 @@ export default function TestEmotionRadarEnhanced() {
         addResult('✓ Null/undefined data handled correctly');
       }
       
-      addResult(`✓ Test completed: ${currentTest.name}`);
+      addResult(`✓ Test completed: ${currentTest?.name}`);
     } catch (error) {
       addResult(`✗ Test failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -203,8 +203,8 @@ export default function TestEmotionRadarEnhanced() {
             <div className="mb-6">
               <h3 className="text-lg font-medium mb-2">Current Test:</h3>
               <div className="bg-black/30 p-4 rounded-lg">
-                <p className="font-semibold text-teal-300">{currentTest.name}</p>
-                <p className="text-sm text-white/70">{currentTest.description}</p>
+                <p className="font-semibold text-teal-300">{currentTest?.name}</p>
+                <p className="text-sm text-white/70">{currentTest?.description}</p>
               </div>
             </div>
 
@@ -254,7 +254,7 @@ export default function TestEmotionRadarEnhanced() {
             </h2>
             
             <div className="relative">
-              <EmotionRadar data={currentTest.data} />
+              <EmotionRadar data={currentTest?.data} />
             </div>
           </div>
         </div>

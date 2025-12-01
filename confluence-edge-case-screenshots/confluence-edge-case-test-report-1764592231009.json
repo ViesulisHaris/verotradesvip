@@ -1,0 +1,118 @@
+{
+  "timestamp": "2025-12-01T12:30:31.008Z",
+  "summary": {
+    "totalTests": 12,
+    "passedTests": 3,
+    "failedTests": 9,
+    "successRate": "25.0"
+  },
+  "categories": {
+    "authentication": {
+      "passed": 2,
+      "failed": 0,
+      "details": [
+        {
+          "test": "Access without auth redirects to login",
+          "result": "PASSED",
+          "details": "Correctly redirected to login",
+          "timestamp": "2025-12-01T12:28:01.446Z"
+        },
+        {
+          "test": "Expired token handled gracefully",
+          "result": "PASSED",
+          "details": "Error displayed for expired token",
+          "timestamp": "2025-12-01T12:28:23.582Z"
+        }
+      ]
+    },
+    "edgeCases": {
+      "passed": 0,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Empty data tests",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.440Z"
+        },
+        {
+          "test": "Pagination edge cases",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.441Z"
+        }
+      ]
+    },
+    "errorHandling": {
+      "passed": 1,
+      "failed": 3,
+      "details": [
+        {
+          "test": "Malformed token error handling",
+          "result": "PASSED",
+          "details": "Malformed token error handled",
+          "timestamp": "2025-12-01T12:28:55.858Z"
+        },
+        {
+          "test": "Invalid token tests",
+          "result": "FAILED",
+          "details": "Navigating frame was detached",
+          "timestamp": "2025-12-01T12:30:30.437Z"
+        },
+        {
+          "test": "Invalid filter tests",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.440Z"
+        },
+        {
+          "test": "Error recovery tests",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.441Z"
+        }
+      ]
+    },
+    "performance": {
+      "passed": 0,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Large data performance test",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.441Z"
+        },
+        {
+          "test": "Memory usage test",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.442Z"
+        }
+      ]
+    },
+    "userExperience": {
+      "passed": 0,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Rapid filter changes test",
+          "result": "FAILED",
+          "details": "Attempted to use detached Frame '1231ED06CFDC3FB04FC5D8616267A382'.",
+          "timestamp": "2025-12-01T12:30:30.442Z"
+        },
+        {
+          "test": "Responsive behavior test",
+          "result": "FAILED",
+          "details": "Protocol error (Emulation.setTouchEmulationEnabled): Session closed. Most likely the page has been closed.",
+          "timestamp": "2025-12-01T12:30:30.443Z"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "Improve error handling for invalid data and network issues",
+    "Optimize performance for large datasets and memory usage",
+    "Enhance responsive design and user interaction handling"
+  ]
+}

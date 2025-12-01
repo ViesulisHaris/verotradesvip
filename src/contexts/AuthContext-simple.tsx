@@ -244,7 +244,7 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
         subscription.unsubscribe();
       }
     };
-  }, []); // CRITICAL FIX: Empty dependency array to prevent re-initialization
+  }, [providerId]); // CRITICAL FIX: Only depend on providerId to prevent re-initialization
   
   // Simplified value - remove complex client checks
   const value: AuthContextType = {

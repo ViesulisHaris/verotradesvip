@@ -483,7 +483,7 @@ export default function TestDataRefreshFixes() {
                 </div>
                 <div className="mt-4 text-sm text-gray-400">
                   <p>Refresh Interval: 15 seconds</p>
-                  <p>Last Update: {events.length > 0 ? new Date(events[0].timestamp).toLocaleTimeString() : 'Never'}</p>
+                  <p>Last Update: {events.length > 0 && events[0] ? new Date(events[0].timestamp).toLocaleTimeString() : 'Never'}</p>
                 </div>
               </div>
             </div>

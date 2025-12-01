@@ -21,3 +21,4 @@ export { default as StrategyPerformanceModal } from './StrategyPerformanceModal'
 export { default as StrategyDeletionDialog } from './StrategyDeletionDialog';
 export { default as EmotionDropdown } from './EmotionDropdown';
 export { default as CustomDropdown } from './CustomDropdown';
+export { default as ConfluenceStats } from './ConfluenceStats';

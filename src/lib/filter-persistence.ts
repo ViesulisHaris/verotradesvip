@@ -403,14 +403,32 @@ export function validateFilterState(state: any): FilterState | null {
 /**
  * Get filter statistics
  */
-export function getFilterStats(filters: TradeFilterOptions | StrategyFilterOptions): {
+export function getFilterStats(filters: TradeFilterOptions | StrategyFilterOptions | string): {
   activeFilters: number;
   hasActiveFilters: boolean;
 } {
   let activeFilters = 0;
   
-  if ('symbol' in filters) {
-    const tradeFilters = filters as TradeFilterOptions;
+  // Handle case where filters might be a stringified JSON object
+  let parsedFilters: TradeFilterOptions | StrategyFilterOptions;
+  
+  if (typeof filters === 'string') {
+    try {
+      parsedFilters = JSON.parse(filters);
+    } catch (error) {
+      console.warn('Failed to parse filter string in getFilterStats:', error);
+      return {
+        activeFilters: 0,
+        hasActiveFilters: false,
+      };
+    }
+  } else {
+    parsedFilters = filters;
+  }
+  
+  // Now safely check properties on the parsed object
+  if ('symbol' in parsedFilters) {
+    const tradeFilters = parsedFilters as TradeFilterOptions;
     if (tradeFilters.symbol) activeFilters++;
     if (tradeFilters.market) activeFilters++;
     if (tradeFilters.dateFrom) activeFilters++;
@@ -420,7 +438,7 @@ export function getFilterStats(filters: TradeFilterOptions | StrategyFilterOptio
     if (tradeFilters.side) activeFilters++;
     if (tradeFilters.emotionalStates && tradeFilters.emotionalStates.length > 0) activeFilters++;
   } else {
-    const strategyFilters = filters as StrategyFilterOptions;
+    const strategyFilters = parsedFilters as StrategyFilterOptions;
     if (strategyFilters.search) activeFilters++;
     if (strategyFilters.isActive !== null) activeFilters++;
     if (strategyFilters.performanceMin !== undefined) activeFilters++;

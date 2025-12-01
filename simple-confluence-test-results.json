@@ -1,0 +1,23 @@
+{
+  "pageLoad": {
+    "success": false,
+    "loadTime": 1755,
+    "error": null
+  },
+  "routing": {
+    "confluenceAccessible": false,
+    "redirectsToLogin": true
+  },
+  "components": {
+    "container": false,
+    "stats": false,
+    "radar": false,
+    "filters": false,
+    "table": false
+  },
+  "apiEndpoints": {
+    "stats": true,
+    "trades": true
+  },
+  "errors": []
+}

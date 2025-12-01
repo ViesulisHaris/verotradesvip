@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useAuth } from '@/contexts/AuthContext-simple';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -17,22 +17,29 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
   // DIAGNOSTIC: Track AuthGuard instance and auth state
   const guardId = React.useRef(Math.random().toString(36).substr(2, 9));
   
+  // CRITICAL FIX: Use refs to prevent infinite loops
+  const hasRedirected = React.useRef(false);
+  const lastAuthState = React.useRef({ user: null as any, loading: true, authInitialized: false });
+  
+  // CRITICAL FIX: Memoize auth state to prevent unnecessary re-renders
+  const authState = useMemo(() => ({
+    hasUser: !!user,
+    userEmail: user?.email,
+    loading,
+    authInitialized,
+    timestamp: new Date().toISOString()
+  }), [user, loading, authInitialized]);
+  
   console.log('🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering', {
     guardId: guardId.current,
     pathname,
     requireAuth,
-    authState: {
-      hasUser: !!user,
-      userEmail: user?.email,
-      loading,
-      authInitialized,
-      timestamp: new Date().toISOString()
-    }
+    authState
   });
 
-  // Simplified auth handling with immediate rendering for auth pages
+  // CRITICAL FIX: Simplified auth handling with proper state tracking
   useEffect(() => {
-    // Skip all logic for auth pages - render immediately
+    // Skip all logic for auth pages - handled in render logic below
     const isAuthPage = pathname === '/login' || pathname === '/register';
     if (isAuthPage) {
       console.log('🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks', {
@@ -43,9 +50,31 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
       return;
     }
 
-    // CRITICAL FIX: Remove artificial delay - check auth immediately
-    // The auth state change listener in login page will handle proper timing
+    // CRITICAL FIX: Prevent infinite loops by checking if auth state actually changed
+    const currentAuthState = { user, loading, authInitialized };
+    const authStateChanged = JSON.stringify(currentAuthState) !== JSON.stringify(lastAuthState.current);
+    
+    if (!authStateChanged) {
+      return;
+    }
+    
+    // Update last auth state
+    lastAuthState.current = currentAuthState;
+    
+    // CRITICAL FIX: Reset redirect flag when auth state changes significantly
+    if (authInitialized && !loading) {
+      hasRedirected.current = false;
+    }
+
     const checkAuthAndRedirect = () => {
+      // CRITICAL FIX: Prevent multiple redirects for the same auth state
+      if (hasRedirected.current) {
+        console.log('🔍 [AUTH_GUARD_DEBUG] Already redirected - preventing infinite loop', {
+          guardId: guardId.current
+        });
+        return;
+      }
+
       console.log('🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting', {
         guardId: guardId.current,
         requireAuth,
@@ -53,81 +82,46 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
         userEmail: user?.email,
         loading,
         authInitialized,
-        shouldRedirectToLogin: requireAuth && !user && authInitialized && !loading,
-        shouldRedirectToLoginAlt: requireAuth && !user && authInitialized
+        shouldRedirectToLogin: requireAuth && !user && authInitialized && !loading
       });
-  
-      // Check if authentication is required and user is not logged in
-      // CRITICAL FIX: Be more permissive during auth transitions to prevent sidebar disappearing
+      
+      // CRITICAL FIX: Single, clear condition for redirecting to login
+      // Only redirect if:
+      // 1. Auth is required
+      // 2. No user is authenticated
+      // 3. Auth is initialized
+      // 4. Not currently loading
       if (requireAuth && !user && authInitialized && !loading) {
         console.log('🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated', {
           guardId: guardId.current,
           reason: 'requireAuth && !user && authInitialized && !loading'
         });
-        router.replace('/login');
-        return;
-      }
-  
-      // Additional check for when auth is initialized but user is null
-      // CRITICAL FIX: Only redirect if we're not on a protected route
-      if (requireAuth && !user && authInitialized) {
-        console.log('🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth initialized but no user', {
-          guardId: guardId.current,
-          reason: 'requireAuth && !user && authInitialized'
-        });
+        hasRedirected.current = true;
         router.replace('/login');
         return;
       }
     };
 
-    // CRITICAL FIX: Check auth immediately without artificial delay
-    // Auth state changes will trigger re-render, so no need for setTimeout
-    console.log('🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay)', {
-      guardId: guardId.current,
-      reason: 'Auth state changes trigger re-renders automatically'
-    });
-    checkAuthAndRedirect();
-
-    // Only wait for auth initialization if we're not in a clear unauthenticated state
-    if (!authInitialized && requireAuth) {
-      console.log('🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization', {
-        guardId: guardId.current,
-        authInitialized,
-        requireAuth
-      });
-      return;
+    // CRITICAL FIX: Only check auth if we're not in a loading state
+    if (!loading || authInitialized) {
+      checkAuthAndRedirect();
     }
+  }, [user?.id, loading, authInitialized, requireAuth, pathname, router]); // Only depend on user.id to prevent unnecessary re-renders
 
-    // If user is logged in and trying to access auth pages, redirect to dashboard
-    if (user && isAuthPage) {
-      console.log('🔍 [AUTH_GUARD_DEBUG] Redirecting to dashboard - user authenticated on auth page', {
-        guardId: guardId.current,
-        userEmail: user?.email,
-        pathname
-      });
-      router.replace('/dashboard');
-      return;
-    }
-  }, [user, loading, authInitialized, requireAuth, pathname, router]);
+  // CRITICAL FIX: Reset redirect flag when pathname changes
+  useEffect(() => {
+    hasRedirected.current = false;
+  }, [pathname]);
 
   // Immediate rendering for auth pages to prevent gray screen
   const isAuthPage = pathname === '/login' || pathname === '/register';
   if (isAuthPage) {
     return <>{children}</>;
   }
-  
-  // For protected pages that require auth, be more aggressive about redirecting
-  // If auth is not initialized and we're on a protected page, show loader but also set up redirect
+
+  // CRITICAL FIX: Simplified loading state logic
+  // If auth is not initialized and we require auth, show loader
   if (requireAuth && !authInitialized) {
-    // Only set up timeout redirect on client-side to prevent location error
-    if (typeof window !== 'undefined') {
-      setTimeout(() => {
-        if (!authInitialized && requireAuth) {
-          router.replace('/login');
-        }
-      }, 2000); // 2 second timeout
-    }
-    
     return (
       <div style={{
         minHeight: '100vh',
@@ -152,8 +146,8 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
     );
   }
   
-  // For protected pages, check if auth is required and user is not logged in
-  if (requireAuth && !user && loading) {
+  // CRITICAL FIX: Only show loading spinner when auth is initialized but still loading
+  if (requireAuth && authInitialized && loading) {
     return (
       <div style={{
         minHeight: '100vh',
@@ -173,12 +167,15 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
     );
   }
 
-  // CRITICAL FIX: Always render children if auth is initialized and we're not requiring auth
-  // This ensures the strategies page shows even when user is not authenticated
-  if (authInitialized && !requireAuth) {
+  // CRITICAL FIX: Clear rendering logic
+  // 1. If auth is not required, always render children
+  // 2. If auth is required and we have a user, render children
+  // 3. If auth is required but we don't have a user, don't render (redirect will happen)
+  if (!requireAuth || (requireAuth && user)) {
     return <>{children}</>;
   }
 
-  // Always render children when conditions are met
-  return <>{children}</>;
+  // CRITICAL FIX: For the case where auth is required but user is null and we're still initializing
+  // Return null to prevent rendering while redirect is being processed
+  return null;
 }

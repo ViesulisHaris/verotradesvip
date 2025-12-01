@@ -104,7 +104,7 @@ export async function fetchTradesPaginated(
       // This is a complex filter - we need to handle it differently
       // For now, we'll filter client-side after fetching
       // In a real implementation, you might want to use a more sophisticated approach
-      console.log('Emotional states filter applied:', options.emotionalStates);
+      console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Emotional states filter applied:', options.emotionalStates);
     }
 
     // Apply pagination
@@ -114,6 +114,20 @@ export async function fetchTradesPaginated(
       .order(orderBy.column as any, { ascending: orderBy.ascending });
 
     // Execute query
+    console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Executing trades query with filters:', {
+      hasEmotionalStates: !!(options.emotionalStates && options.emotionalStates.length > 0),
+      emotionalStates: options.emotionalStates,
+      otherFilters: {
+        strategyId: options.strategyId,
+        symbol: options.symbol,
+        market: options.market,
+        dateFrom: options.dateFrom,
+        dateTo: options.dateTo,
+        pnlFilter: options.pnlFilter,
+        side: options.side
+      }
+    });
+    
     const { data, error, count } = await query;
 
     if (error) {
@@ -157,10 +171,14 @@ export async function fetchTradesForDashboard(userId: string): Promise<{
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
     
-    // Fetch only necessary columns for dashboard
+    // Fetch all necessary columns for dashboard
     const { data: trades, error } = await supabase
       .from('trades')
-      .select('pnl, trade_date, entry_time, exit_time, strategies(id, name)')
+      .select(`
+        id, symbol, side, quantity, entry_price, exit_price, pnl, trade_date,
+        entry_time, exit_time, emotional_state, strategy_id, user_id, notes, market,
+        strategies(id, name, rules)
+      `)
       .eq('user_id', validatedUserId)
       .order('trade_date', { ascending: false })
       .limit(1000); // Limit for performance
@@ -170,31 +188,46 @@ export async function fetchTradesForDashboard(userId: string): Promise<{
       throw error;
     }
 
+    // Return empty data if no trades found
+    if (!trades || trades.length === 0) {
+      return {
+        trades: [],
+        summary: {
+          totalPnL: 0,
+          winrate: 0,
+          profitFactor: 0,
+          totalTrades: 0,
+          avgTimeHeld: 0,
+          sharpeRatio: 0
+        }
+      };
+    }
+
     // Process summary statistics
-    const pnls = (trades || []).map(t => t.pnl || 0);
+    const pnls = (trades || []).map((t: Trade) => t.pnl || 0);
     const totalTrades = pnls.length;
-    const winningTrades = pnls.filter(p => p > 0).length;
-    const totalPnL = pnls.reduce((sum, p) => sum + p, 0);
-    const grossProfit = pnls.filter(p => p > 0).reduce((sum, p) => sum + p, 0);
-    const grossLoss = Math.abs(pnls.filter(p => p < 0).reduce((sum, p) => sum + p, 0));
+    const winningTrades = pnls.filter((p: number) => p > 0).length;
+    const totalPnL = pnls.reduce((sum: number, p: number) => sum + p, 0);
+    const grossProfit = pnls.filter((p: number) => p > 0).reduce((sum: number, p: number) => sum + p, 0);
+    const grossLoss = Math.abs(pnls.filter((p: number) => p < 0).reduce((sum: number, p: number) => sum + p, 0));
     const profitFactor = grossLoss === 0 ? (grossProfit > 0 ? 999 : 0) : grossProfit / grossLoss;
     const winrate = totalTrades > 0 ? (winningTrades / totalTrades) * 100 : 0;
 
     // Calculate average time held
-    const tradesWithTime = (trades || []).filter(t => t.entry_time && t.exit_time);
+    const tradesWithTime = (trades || []).filter((t: Trade) => t.entry_time && t.exit_time);
     let totalMinutes = 0;
     let validTrades = 0;
 
-    tradesWithTime.forEach(trade => {
+    tradesWithTime.forEach((trade: Trade) => {
       try {
         const [entryHours, entryMinutes] = trade.entry_time!.split(':').map(Number);
         const [exitHours, exitMinutes] = trade.exit_time!.split(':').map(Number);
         
         const entryDate = new Date();
-        entryDate.setHours(entryHours, entryMinutes, 0, 0);
+        entryDate.setHours(entryHours || 0, entryMinutes || 0, 0, 0);
         
         const exitDate = new Date();
-        exitDate.setHours(exitHours, exitMinutes, 0, 0);
+        exitDate.setHours(exitHours || 0, exitMinutes || 0, 0, 0);
         
         let durationMs = exitDate.getTime() - entryDate.getTime();
         
@@ -215,7 +248,7 @@ export async function fetchTradesForDashboard(userId: string): Promise<{
     let sharpeRatio = 0;
     if (totalTrades > 1) {
       const avgReturn = totalPnL / totalTrades;
-      const variance = pnls.reduce((sum, pnl) => sum + Math.pow(pnl - avgReturn, 2), 0) / totalTrades;
+      const variance = pnls.reduce((sum: number, pnl: number) => sum + Math.pow(pnl - avgReturn, 2), 0) / totalTrades;
       const stdDev = Math.sqrt(variance);
       sharpeRatio = stdDev > 0 ? avgReturn / stdDev : 0;
     }
@@ -280,7 +313,7 @@ export async function fetchStrategiesWithOptimizedStats(userId: string): Promise
 
     // Calculate stats in parallel with memoization
     const strategiesWithStats = await Promise.all(
-      strategies.map(async (strategy) => {
+      strategies.map(async (strategy: any) => {
         try {
           // Use memoized function for stats calculation
           const stats = await memoizedStrategyStats(strategy.id);
@@ -387,7 +420,7 @@ export async function getAvailableSymbols(userId: string): Promise<Array<{ value
     }
 
     // Count occurrences of each symbol and format for autocomplete
-    const symbolCounts = (data || []).reduce((acc, trade) => {
+    const symbolCounts = (data || []).reduce((acc: Record<string, number>, trade: any) => {
       const symbol = trade.symbol;
       if (symbol) {
         acc[symbol] = (acc[symbol] || 0) + 1;
@@ -399,9 +432,9 @@ export async function getAvailableSymbols(userId: string): Promise<Array<{ value
       .map(([symbol, count]) => ({
         value: symbol,
         label: symbol,
-        count
+        count: count as number
       }))
-      .sort((a, b) => b.count - a.count); // Sort by frequency
+      .sort((a, b) => (b.count as number) - (a.count as number)); // Sort by frequency
   } catch (error) {
     console.error('Exception in getAvailableSymbols:', error);
     throw error;

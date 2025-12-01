@@ -63,15 +63,21 @@ export default function TestAuthMenuFixes() {
       const duplicateIcons = Array.from(iconMap.entries()).filter(([_, count]) => count > 1);
       
       if (duplicateIcons.length === 0) {
-        results[0].status = 'pass';
-        results[0].details = '✅ All menu icons are unique';
+        if (results[0]) {
+          results[0].status = 'pass';
+          results[0].details = '✅ All menu icons are unique';
+        }
       } else {
-        results[0].status = 'fail';
-        results[0].details = `❌ Found duplicate icons: ${duplicateIcons.map(([name]) => name).join(', ')}`;
+        if (results[0]) {
+          results[0].status = 'fail';
+          results[0].details = `❌ Found duplicate icons: ${duplicateIcons.map(([name]) => name).join(', ')}`;
+        }
       }
     } catch (error) {
-      results[0].status = 'fail';
-      results[0].details = `❌ Error checking icons: ${error}`;
+      if (results[0]) {
+        results[0].status = 'fail';
+        results[0].details = `❌ Error checking icons: ${error}`;
+      }
     }
 
     // Test 2: Authentication state consistency
@@ -87,15 +93,21 @@ export default function TestAuthMenuFixes() {
       const serverUser = session?.user;
 
       if (clientUser?.id === serverUser?.id) {
-        results[1].status = 'pass';
-        results[1].details = '✅ Client and server authentication states are consistent';
+        if (results[1]) {
+          results[1].status = 'pass';
+          results[1].details = '✅ Client and server authentication states are consistent';
+        }
       } else {
-        results[1].status = 'fail';
-        results[1].details = `❌ Authentication state mismatch - Client: ${clientUser?.id}, Server: ${serverUser?.id}`;
+        if (results[1]) {
+          results[1].status = 'fail';
+          results[1].details = `❌ Authentication state mismatch - Client: ${clientUser?.id}, Server: ${serverUser?.id}`;
+        }
       }
     } catch (error) {
-      results[1].status = 'fail';
-      results[1].details = `❌ Error checking auth state: ${error}`;
+      if (results[1]) {
+        results[1].status = 'fail';
+        results[1].details = `❌ Error checking auth state: ${error}`;
+      }
     }
 
     // Test 3: Protected route access
@@ -111,7 +123,7 @@ export default function TestAuthMenuFixes() {
 
       for (const route of protectedRoutes) {
         try {
-          const response = await fetch(route, { 
+          const response = await fetch(route, {
             method: 'GET',
             headers: { 'Content-Type': 'text/html' }
           });
@@ -134,17 +146,23 @@ export default function TestAuthMenuFixes() {
       }
 
       if (accessibleRoutes === protectedRoutes.length) {
-        results[2].status = 'pass';
-        results[2].details = user 
-          ? '✅ All protected routes accessible for authenticated user'
-          : '✅ All protected routes properly redirect unauthenticated users';
+        if (results[2]) {
+          results[2].status = 'pass';
+          results[2].details = user
+            ? '✅ All protected routes accessible for authenticated user'
+            : '✅ All protected routes properly redirect unauthenticated users';
+        }
       } else {
-        results[2].status = 'fail';
-        results[2].details = `❌ Only ${accessibleRoutes}/${protectedRoutes.length} routes behaving correctly`;
+        if (results[2]) {
+          results[2].status = 'fail';
+          results[2].details = `❌ Only ${accessibleRoutes}/${protectedRoutes.length} routes behaving correctly`;
+        }
       }
     } catch (error) {
-      results[2].status = 'fail';
-      results[2].details = `❌ Error testing protected routes: ${error}`;
+      if (results[2]) {
+        results[2].status = 'fail';
+        results[2].details = `❌ Error testing protected routes: ${error}`;
+      }
     }
 
     // Test 4: Session persistence
@@ -164,19 +182,27 @@ export default function TestAuthMenuFixes() {
         const subsequentSession = await supabase.auth.getSession();
 
         if (initialSession.data.session?.access_token === subsequentSession.data.session?.access_token) {
-          results[3].status = 'pass';
-          results[3].details = '✅ Session persists correctly across navigation';
+          if (results[3]) {
+            results[3].status = 'pass';
+            results[3].details = '✅ Session persists correctly across navigation';
+          }
         } else {
-          results[3].status = 'fail';
-          results[3].details = '❌ Session does not persist across navigation';
+          if (results[3]) {
+            results[3].status = 'fail';
+            results[3].details = '❌ Session does not persist across navigation';
+          }
         }
       } else {
-        results[3].status = 'pass';
-        results[3].details = '✅ No active session to test persistence';
+        if (results[3]) {
+          results[3].status = 'pass';
+          results[3].details = '✅ No active session to test persistence';
+        }
       }
     } catch (error) {
-      results[3].status = 'fail';
-      results[3].details = `❌ Error testing session persistence: ${error}`;
+      if (results[3]) {
+        results[3].status = 'fail';
+        results[3].details = `❌ Error testing session persistence: ${error}`;
+      }
     }
 
     // Test 5: Menu icon visibility
@@ -200,15 +226,21 @@ export default function TestAuthMenuFixes() {
       });
 
       if (visibleIcons === totalLinks && totalLinks > 0) {
-        results[4].status = 'pass';
-        results[4].details = `✅ All ${totalLinks} menu items have visible icons`;
+        if (results[4]) {
+          results[4].status = 'pass';
+          results[4].details = `✅ All ${totalLinks} menu items have visible icons`;
+        }
       } else {
-        results[4].status = 'fail';
-        results[4].details = `❌ Only ${visibleIcons}/${totalLinks} menu items have visible icons`;
+        if (results[4]) {
+          results[4].status = 'fail';
+          results[4].details = `❌ Only ${visibleIcons}/${totalLinks} menu items have visible icons`;
+        }
       }
     } catch (error) {
-      results[4].status = 'fail';
-      results[4].details = `❌ Error checking icon visibility: ${error}`;
+      if (results[4]) {
+        results[4].status = 'fail';
+        results[4].details = `❌ Error checking icon visibility: ${error}`;
+      }
     }
 
     setTestResults(results);

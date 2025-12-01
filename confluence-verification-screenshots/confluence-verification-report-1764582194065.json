@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-12-01T09:43:14.065Z",
+  "summary": {
+    "overallStatus": "FAILED",
+    "totalTests": 5,
+    "passedTests": 4,
+    "failedTests": 1
+  },
+  "testResults": {
+    "pageLoad": {
+      "status": "passed",
+      "details": [
+        "✅ Page loaded successfully"
+      ]
+    },
+    "authentication": {
+      "status": "passed",
+      "details": [
+        "✅ Correctly redirected to login when not authenticated",
+        "✅ Successfully accessed confluence page after login"
+      ]
+    },
+    "consoleErrors": {
+      "status": "failed",
+      "details": [
+        "Error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Error: Error: <path> attribute d: Expected arc flag ('0' or '1'), \"…18 8 018 0 4.58 4.58a8 8 0 018 0…\".",
+        "Error: 🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "Error: 🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "Error: 🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+        "Error: 🚨 AuthContext is undefined - providing safe fallback to prevent gray screen"
+      ]
+    },
+    "reactHooks": {
+      "status": "passed",
+      "details": []
+    },
+    "componentRendering": {
+      "status": "passed",
+      "details": [
+        "✅ Confluence page content loaded correctly"
+      ]
+    }
+  },
+  "consoleAnalysis": {
+    "totalMessages": 160,
+    "errorCount": 6,
+    "reactHookErrors": 0,
+    "authGuardMessages": 36
+  }
+}

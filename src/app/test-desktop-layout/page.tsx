@@ -41,8 +41,17 @@ const VIEWPORTS: ViewportSize[] = [
   { name: 'Desktop Ultra', width: 1920, height: 1080, type: 'large-desktop', icon: Monitor },
 ];
 
+// Ensure we have at least one viewport
+const DEFAULT_VIEWPORT: ViewportSize = VIEWPORTS[0] || {
+  name: 'Default Desktop',
+  width: 1280,
+  height: 800,
+  type: 'desktop',
+  icon: Desktop
+};
+
 export default function DesktopLayoutTest() {
-  const [selectedViewport, setSelectedViewport] = useState<ViewportSize>(VIEWPORTS[4]);
+  const [selectedViewport, setSelectedViewport] = useState<ViewportSize>(DEFAULT_VIEWPORT);
   const [testResults, setTestResults] = useState<TestResult[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [currentMetrics, setCurrentMetrics] = useState<LayoutMetrics | null>(null);
@@ -180,11 +189,13 @@ export default function DesktopLayoutTest() {
 
     for (let i = 0; i < VIEWPORTS.length; i++) {
       const viewport = VIEWPORTS[i];
-      setSelectedViewport(viewport);
-      
-      const result = await testViewport(viewport);
-      if (result) {
-        results.push(result);
+      if (viewport) {
+        setSelectedViewport(viewport);
+        
+        const result = await testViewport(viewport);
+        if (result) {
+          results.push(result);
+        }
       }
       
       setTestProgress(((i + 1) / VIEWPORTS.length) * 100);
@@ -207,6 +218,7 @@ export default function DesktopLayoutTest() {
 
       return () => clearInterval(interval);
     }
+    return undefined;
   }, [autoTest, isRunning, runAllTests]);
 
   // Update current metrics when viewport changes

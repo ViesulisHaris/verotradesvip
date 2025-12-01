@@ -23,6 +23,109 @@ interface Props {
 // Define the 7 valid emotions from TradeForm
 const VALID_EMOTIONS = ['FOMO', 'REVENGE', 'TILT', 'OVERRISK', 'PATIENCE', 'REGRET', 'DISCIPLINE', 'CONFIDENT', 'ANXIOUS', 'NEUTRAL'];
 
+/**
+ * Comprehensive data validation function for EmotionRadar component
+ * Validates data structure, emotion names, and numeric values to prevent SVG path rendering errors
+ */
+function validateEmotionRadarData(data: any[]): { isValid: boolean; validatedData: Data[]; warnings: string[] } {
+  const warnings: string[] = [];
+  const validatedData: Data[] = [];
+  
+  // Check if data is an array
+  if (!Array.isArray(data)) {
+    console.error('EmotionRadar: Invalid data - expected array, received:', typeof data, data);
+    return { isValid: false, validatedData: [], warnings: ['Data is not an array'] };
+  }
+  
+  // Process each data item
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    
+    // Check if item exists and is an object
+    if (!item || typeof item !== 'object') {
+      warnings.push(`Item ${i}: Not an object - ${JSON.stringify(item)}`);
+      continue;
+    }
+    
+    // Validate subject (emotion name)
+    if (typeof item.subject !== 'string' || !item.subject.trim()) {
+      warnings.push(`Item ${i}: Missing or invalid subject`);
+      continue;
+    }
+    
+    const normalizedSubject = item.subject.toUpperCase().trim();
+    if (!VALID_EMOTIONS.includes(normalizedSubject)) {
+      warnings.push(`Item ${i}: Invalid emotion "${item.subject}" - not in valid emotions list`);
+      continue;
+    }
+    
+    // Validate value (must be a finite number)
+    if (typeof item.value !== 'number') {
+      warnings.push(`Item ${i}: Value is not a number - ${typeof item.value}`);
+      continue;
+    }
+    
+    if (!isFinite(item.value)) {
+      warnings.push(`Item ${i}: Value is not finite (${item.value}) - NaN or Infinity detected`);
+      continue;
+    }
+    
+    // Check for reasonable value ranges (0-100% for radar chart)
+    if (item.value < 0 || item.value > 100) {
+      warnings.push(`Item ${i}: Value ${item.value} is outside expected range (0-100)`);
+      // We'll still include it but clamp it to valid range
+    }
+    
+    // Validate optional fields with proper defaults
+    const leaning = typeof item.leaning === 'string' ? item.leaning.trim() : 'Balanced';
+    const side = (item.side === 'Buy' || item.side === 'Sell') ? item.side : 'NULL';
+    
+    let leaningValue = 0;
+    if (typeof item.leaningValue === 'number') {
+      if (isFinite(item.leaningValue)) {
+        leaningValue = Math.max(-100, Math.min(100, item.leaningValue));
+      } else {
+        warnings.push(`Item ${i}: leaningValue is not finite (${item.leaningValue})`);
+      }
+    }
+    
+    let totalTrades = 0;
+    if (typeof item.totalTrades === 'number') {
+      if (isFinite(item.totalTrades) && item.totalTrades >= 0) {
+        totalTrades = item.totalTrades;
+      } else {
+        warnings.push(`Item ${i}: totalTrades is invalid (${item.totalTrades})`);
+      }
+    }
+    
+    // Create validated data item with sanitized values
+    const validatedItem: Data = {
+      subject: normalizedSubject,
+      value: Math.max(0, Math.min(100, item.value)), // Clamp to 0-100 range
+      fullMark: 100, // Standard fullMark for radar chart
+      leaning,
+      side,
+      leaningValue,
+      totalTrades
+    };
+    
+    validatedData.push(validatedItem);
+  }
+  
+  // Check if we have any valid data
+  if (validatedData.length === 0) {
+    console.error('EmotionRadar: No valid data items after validation', { originalData: data, warnings });
+    return { isValid: false, validatedData: [], warnings };
+  }
+  
+  // Log warnings if any
+  if (warnings.length > 0) {
+    console.warn('EmotionRadar: Data validation warnings:', warnings);
+  }
+  
+  return { isValid: true, validatedData, warnings };
+}
+
 // Error boundary component for EmotionRadar
 class EmotionRadarErrorBoundary extends React.Component<
   { children: React.ReactNode; fallback?: React.ReactNode },
@@ -248,64 +351,12 @@ function EmotionRadarComponent({ data }: Props) {
       );
     }
     else {
-      // Validate and filter data with enhanced edge case handling
-      const filteredData = data.filter(item => {
-        try {
-          // Check if item exists and has required properties
-          if (!item || typeof item !== 'object') {
-            console.warn('Invalid data item: not an object', item);
-            return false;
-          }
-          
-          // Validate subject is a string and is a valid emotion
-          if (typeof item.subject !== 'string' || !item.subject.trim()) {
-            return false;
-          }
-          
-          // Check if emotion is in our valid list (case insensitive)
-          const normalizedSubject = item.subject.toUpperCase().trim();
-          if (!VALID_EMOTIONS.includes(normalizedSubject)) {
-            return false;
-          }
-          
-          // Validate value is a finite number
-          if (typeof item.value !== 'number' || !isFinite(item.value)) {
-            return false;
-          }
-          
-          // Safeguard against extreme values (>1000 or <0)
-          if (item.value < 0 || item.value > 1000) {
-            return false;
-          }
-          
-          return true;
-        } catch (error) {
-          return false;
-        }
-      }).map(item => {
-        // Sanitize and normalize the data item
-        try {
-          return {
-            ...item,
-            subject: item.subject.trim(),
-            value: Math.max(0, Math.min(100, item.value)), // Keep percentage values in 0-100 range (don't use Math.abs)
-            leaning: typeof item.leaning === 'string' ? item.leaning.trim() : 'Balanced',
-            side: (item.side === 'Buy' || item.side === 'Sell') ? item.side : 'NULL',
-            leaningValue: typeof item.leaningValue === 'number' && isFinite(item.leaningValue)
-              ? Math.max(-100, Math.min(100, item.leaningValue)) // Clamp to -100 to 100
-              : 0,
-            totalTrades: typeof item.totalTrades === 'number' && isFinite(item.totalTrades) && item.totalTrades >= 0
-              ? item.totalTrades
-              : 0
-          };
-        } catch (error) {
-          return null;
-        }
-      }).filter(Boolean); // Remove any null items from sanitization
+      // Use comprehensive data validation to prevent SVG path rendering errors
+      const validation = validateEmotionRadarData(data);
+      const filteredData = validation.validatedData;
       
-      
-      // If no valid emotions after filtering, show empty state
-      if (filteredData.length === 0) {
+      // If validation failed or no valid emotions after validation, show empty state
+      if (!validation.isValid || filteredData.length === 0) {
         renderContent = (
           <div className="card-unified h-64 lg:h-80 flex items-center justify-center text-tertiary">
             <div className="text-center px-4">

@@ -47,7 +47,22 @@ export default function ComprehensiveSchemaFixTest() {
   const updateTestResult = (index: number, updates: Partial<TestResult>) => {
     setTestResults(prev => {
       const newResults = [...prev];
-      newResults[index] = { ...newResults[index], ...updates };
+      // Ensure we have a valid result at the index
+      if (index < 0 || index >= newResults.length || !newResults[index]) {
+        return newResults;
+      }
+      
+      // Create a properly typed result object
+      const existingResult = newResults[index] as TestResult;
+      const updatedResult: TestResult = {
+        name: updates.name || existingResult.name,
+        status: updates.status || existingResult.status,
+        message: updates.message || existingResult.message,
+        details: updates.details !== undefined ? updates.details : existingResult.details,
+        duration: updates.duration !== undefined ? updates.duration : existingResult.duration
+      };
+      
+      newResults[index] = updatedResult;
       return newResults;
     });
   };

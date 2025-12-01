@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Fetching Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+            color: #fff;
+        }
+        .diagnostic-section {
+            background: #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #B89B5E;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background: #2d5a2d; color: #fff; }
+        .error { background: #8b0000; color: #fff; }
+        .warning { background: #ff6600; color: #fff; }
+        .info { background: #1e3a8a; color: #fff; }
+        button {
+            background: #B89B5E;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #d4af37; }
+        pre { background: #1a1a1a; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        .log-entry { margin: 5px 0; padding: 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Trades Fetching Diagnostic Tool</h1>
+    <p>This tool will help diagnose the "Error fetching trades" issue by testing the actual application environment.</p>
+    
+    <div class="diagnostic-section">
+        <h2>Environment Check</h2>
+        <div id="env-status" class="status info">Checking environment...</div>
+    </div>
+    
+    <div class="diagnostic-section">
+        <h2>Authentication Status</h2>
+        <div id="auth-status" class="status info">Checking authentication...</div>
+        <button onclick="testAuthentication()">Test Authentication</button>
+    </div>
+    
+    <div class="diagnostic-section">
+        <h2>Supabase Client Test</h2>
+        <div id="supabase-status" class="status info">Testing Supabase client...</div>
+        <button onclick="testSupabaseClient()">Test Supabase Client</button>
+    </div>
+    
+    <div class="diagnostic-section">
+        <h2>Database Query Test</h2>
+        <div id="db-status" class="status info">Ready to test database queries...</div>
+        <button onclick="testDatabaseQuery()">Test Database Query</button>
+    </div>
+    
+    <div class="diagnostic-section">
+        <h2>Error Simulation</h2>
+        <p>Test what happens when we trigger the exact error conditions:</p>
+        <button onclick="simulateError()">Simulate "Error fetching trades"</button>
+        <button onclick="testErrorDisplay()">Test Error Message Display</button>
+    </div>
+    
+    <div class="diagnostic-section">
+        <h2>Diagnostic Log</h2>
+        <div id="diagnostic-log" style="max-height: 300px; overflow-y: auto;">
+            <div class="log-entry info">Diagnostic tool loaded. Click buttons above to run tests.</div>
+        </div>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <script>
+        let diagnosticLog = document.getElementById('diagnostic-log');
+        
+        function log(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${message}`;
+            diagnosticLog.appendChild(entry);
+            diagnosticLog.scrollTop = diagnosticLog.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+        
+        function updateStatus(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.className = `status ${type}`;
+            element.textContent = message;
+        }
+        
+        // Environment Check
+        function checkEnvironment() {
+            log('Checking environment variables...');
+            
+            // Check if we're on the actual application domain
+            const currentHost = window.location.hostname;
+            const isLocalhost = currentHost === 'localhost' || currentHost === '127.0.0.1';
+            
+            updateStatus('env-status', 
+                `Host: ${currentHost} (${isLocalhost ? 'Local' : 'Production'})`, 
+                isLocalhost ? 'success' : 'warning'
+            );
+            
+            log(`Environment: ${currentHost} (${isLocalhost ? 'Development' : 'Production'})`);
+            
+            // Check for Supabase configuration in window
+            if (window.supabase) {
+                log('Supabase client found in window object', 'success');
+                updateStatus('supabase-status', 'Supabase client detected', 'success');
+            } else {
+                log('Supabase client not found in window object', 'error');
+                updateStatus('supabase-status', 'Supabase client not detected', 'error');
+            }
+        }
+        
+        // Authentication Test
+        async function testAuthentication() {
+            log('Testing authentication...');
+            updateStatus('auth-status', 'Testing authentication...', 'info');
+            
+            try {
+                // Try to access the application's auth context
+                const response = await fetch('/api/auth-status', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Auth status: ${JSON.stringify(data)}`, 'success');
+                    updateStatus('auth-status', `Authenticated: ${!!data.user}`, 'success');
+                } else {
+                    log(`Auth check failed: ${response.status}`, 'error');
+                    updateStatus('auth-status', 'Authentication check failed', 'error');
+                }
+            } catch (error) {
+                log(`Auth test error: ${error.message}`, 'error');
+                updateStatus('auth-status', 'Authentication test error', 'error');
+            }
+        }
+        
+        // Supabase Client Test
+        async function testSupabaseClient() {
+            log('Testing Supabase client functionality...');
+            updateStatus('supabase-status', 'Testing Supabase client...', 'info');
+            
+            try {
+                // Try to access the actual application
+                const response = await fetch('/dashboard', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                const text = await response.text();
+                
+                // Check if we get the dashboard or an error
+                if (response.ok && text.includes('Trading Dashboard')) {
+                    log('Dashboard loads successfully', 'success');
+                    updateStatus('supabase-status', 'Dashboard accessible', 'success');
+                } else if (text.includes('Error Loading Dashboard')) {
+                    log('Dashboard shows error loading data', 'error');
+                    updateStatus('supabase-status', 'Dashboard error detected', 'error');
+                } else if (response.status === 401 || response.status === 403) {
+                    log('Authentication required for dashboard', 'warning');
+                    updateStatus('supabase-status', 'Authentication required', 'warning');
+                } else {
+                    log(`Unexpected response: ${response.status}`, 'error');
+                    updateStatus('supabase-status', `Response: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`Supabase test error: ${error.message}`, 'error');
+                updateStatus('supabase-status', 'Supabase test failed', 'error');
+            }
+        }
+        
+        // Database Query Test
+        async function testDatabaseQuery() {
+            log('Testing database query functionality...');
+            updateStatus('db-status', 'Testing database queries...', 'info');
+            
+            try {
+                // Try to access trades page
+                const response = await fetch('/trades', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                const text = await response.text();
+                
+                if (response.ok && text.includes('Trade History')) {
+                    log('Trades page loads successfully', 'success');
+                    updateStatus('db-status', 'Trades page accessible', 'success');
+                } else if (text.includes('Error fetching trades')) {
+                    log('Trades page shows "Error fetching trades"', 'error');
+                    updateStatus('db-status', '"Error fetching trades" detected', 'error');
+                } else if (response.status === 401 || response.status === 403) {
+                    log('Authentication required for trades', 'warning');
+                    updateStatus('db-status', 'Authentication required', 'warning');
+                } else {
+                    log(`Unexpected trades response: ${response.status}`, 'error');
+                    updateStatus('db-status', `Response: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`Database test error: ${error.message}`, 'error');
+                updateStatus('db-status', 'Database test failed', 'error');
+            }
+        }
+        
+        // Error Simulation
+        function simulateError() {
+            log('Simulating "Error fetching trades" condition...');
+            
+            // Create a temporary error state to see how it behaves
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #8b0000;
+                color: white;
+                padding: 10px;
+                border-radius: 4px;
+                z-index: 9999;
+                font-family: Arial, sans-serif;
+            `;
+            errorDiv.textContent = 'Error fetching trades (simulated)';
+            document.body.appendChild(errorDiv);
+            
+            log('Error message displayed (simulated)', 'warning');
+            
+            // Remove after 3 seconds to test flashing behavior
+            setTimeout(() => {
+                if (errorDiv.parentNode) {
+                    errorDiv.parentNode.removeChild(errorDiv);
+                }
+                log('Error message removed (simulated)', 'info');
+            }, 3000);
+        }
+        
+        function testErrorDisplay() {
+            log('Testing error message display patterns...');
+            
+            // Check for existing error elements
+            const errorElements = document.querySelectorAll('[class*="error"], [class*="alert"]');
+            log(`Found ${errorElements.length} potential error elements`, 'info');
+            
+            errorElements.forEach((el, index) => {
+                log(`Error element ${index}: ${el.tagName}.${el.className} - ${el.textContent?.substring(0, 50)}...`, 'info');
+            });
+        }
+        
+        function clearLog() {
+            diagnosticLog.innerHTML = '<div class="log-entry info">Log cleared.</div>';
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            log('Diagnostic tool loaded successfully');
+            checkEnvironment();
+        });
+    </script>
+</body>
+</html>

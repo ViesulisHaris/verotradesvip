@@ -103,7 +103,9 @@ export default function TestEmotionRadarFixed() {
     // Test 3: Component Rendering with different data
     for (let i = 0; i < testCases.length; i++) {
       const testCase = testCases[i];
-      addResult(`Testing render with: ${testCase.name}`);
+      if (testCase) {
+        addResult(`Testing render with: ${testCase.name}`);
+      }
       
       // Test static component
       try {
@@ -181,10 +183,10 @@ export default function TestEmotionRadarFixed() {
 
         {/* Current Test Case Info */}
         <div className="mb-8 p-4 bg-gray-800 rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{currentTest.name}</h3>
-          <p className="text-white/70 text-sm mb-4">{currentTest.description}</p>
+          <h3 className="text-lg font-semibold mb-2">{currentTest?.name || 'No test selected'}</h3>
+          <p className="text-white/70 text-sm mb-4">{currentTest?.description || 'No description available'}</p>
           <div className="font-mono text-xs bg-gray-900 p-2 rounded">
-            {JSON.stringify(currentTest.data, null, 2)}
+            {JSON.stringify(currentTest?.data || null, null, 2)}
           </div>
         </div>
 
@@ -197,7 +199,7 @@ export default function TestEmotionRadarFixed() {
               Static Import
             </h3>
             <div className="bg-gray-900 p-4 rounded-lg">
-              <EmotionRadarStatic data={currentTest.data} />
+              <EmotionRadarStatic data={currentTest?.data || []} />
             </div>
           </div>
 
@@ -208,7 +210,7 @@ export default function TestEmotionRadarFixed() {
               Dynamic Import (ssr: false)
             </h3>
             <div className="bg-gray-900 p-4 rounded-lg">
-              <EmotionRadarDynamic data={currentTest.data} />
+              <EmotionRadarDynamic data={currentTest?.data || []} />
             </div>
           </div>
         </div>

@@ -1,0 +1,848 @@
+{
+  "timestamp": "2025-12-01T08:09:39.389Z",
+  "summary": {
+    "totalConsoleMessages": 66,
+    "jsErrors": 2,
+    "warnings": 8,
+    "networkErrors": 0,
+    "authStateChanges": 23,
+    "renderEvents": 10
+  },
+  "issues": {
+    "infiniteLoops": true,
+    "authenticationErrors": false,
+    "networkFailures": false,
+    "jsErrors": true,
+    "rapidRerenders": false
+  },
+  "details": {
+    "consoleMessages": [
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.456Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "location": {
+          "url": "http://localhost:3000/favicon.ico",
+          "lineNumber": 0,
+          "columnNumber": 0
+        },
+        "timestamp": "2025-12-01T08:09:02.461Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.464Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.465Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.465Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T08:09:02.462Z, isClient: true, currentStates: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.467Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.469Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.469Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.471Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T08:09:02.466Z, isClient: true, currentStates: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.471Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.575Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.575Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.575Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.576Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.575Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.576Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.576Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.578Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.580Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.581Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.579Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.582Z"
+      },
+      {
+        "type": "warning",
+        "text": "🚨 RAPID RENDER DETECTED: 1ms apart, render #6",
+        "location": {
+          "url": "",
+          "lineNumber": 15,
+          "columnNumber": 20
+        },
+        "timestamp": "2025-12-01T08:09:02.583Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.580Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.584Z"
+      },
+      {
+        "type": "warning",
+        "text": "🚨 RAPID RENDER DETECTED: 1ms apart, render #7",
+        "location": {
+          "url": "",
+          "lineNumber": 15,
+          "columnNumber": 20
+        },
+        "timestamp": "2025-12-01T08:09:02.585Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.586Z"
+      },
+      {
+        "type": "warning",
+        "text": "🚨 RAPID RENDER DETECTED: 0ms apart, render #8",
+        "location": {
+          "url": "",
+          "lineNumber": 15,
+          "columnNumber": 20
+        },
+        "timestamp": "2025-12-01T08:09:02.586Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.587Z"
+      },
+      {
+        "type": "warning",
+        "text": "🚨 RAPID RENDER DETECTED: 12ms apart, render #9",
+        "location": {
+          "url": "",
+          "lineNumber": 15,
+          "columnNumber": 20
+        },
+        "timestamp": "2025-12-01T08:09:02.595Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.597Z"
+      },
+      {
+        "type": "warning",
+        "text": "🚨 RAPID RENDER DETECTED: 0ms apart, render #10",
+        "location": {
+          "url": "",
+          "lineNumber": 15,
+          "columnNumber": 20
+        },
+        "timestamp": "2025-12-01T08:09:02.598Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.599Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.609Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.610Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: n0e6q0r74, reason: requireAuth && !user && authInitialized && !loading}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.611Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 6tazdugr6, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-01T08:09:02.809Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.811Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.810Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.811Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.811Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.812Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-01T08:09:02.941Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.942Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-01T08:09:02.942Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.943Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.943Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.944Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-01T08:09:02.964Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.965Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-01T08:09:02.964Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.966Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.966Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-01T08:09:02.966Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.968Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-01T08:09:02.966Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.968Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.968Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-01T08:09:02.972Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.973Z"
+      },
+      {
+        "type": "verbose",
+        "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+        "location": {
+          "url": "http://localhost:3000/login",
+          "lineNumber": 0,
+          "columnNumber": 0
+        },
+        "timestamp": "2025-12-01T08:09:03.079Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:03.310Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:03.310Z"
+      },
+      {
+        "type": "log",
+        "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-12-01T08:09:03.310Z}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:03.311Z"
+      }
+    ],
+    "jsErrors": [
+      {
+        "message": "Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+        "stack": "TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.\n    at <anonymous>:32:16\n    at <anonymous>:38:7\n    at <anonymous>:39:7",
+        "timestamp": "2025-12-01T08:09:01.824Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "location": {
+          "url": "http://localhost:3000/favicon.ico",
+          "lineNumber": 0,
+          "columnNumber": 0
+        },
+        "timestamp": "2025-12-01T08:09:02.461Z"
+      }
+    ],
+    "networkErrors": [],
+    "authStateChanges": [
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.456Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.464Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.465Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.465Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.469Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.469Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.471Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.575Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.576Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.576Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.578Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.580Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.581Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.609Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.610Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: n0e6q0r74, reason: requireAuth && !user && authInitialized && !loading}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.611Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.810Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.811Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.811Z, isClient: true, loading: false, authInitialized: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.812Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.943Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.944Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.966Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.968Z"
+      }
+    ],
+    "renderEvents": [
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.443Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.446Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.449Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.450Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.452Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.579Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.582Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.580Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.584Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.586Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.587Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.597Z"
+      },
+      {
+        "type": "log",
+        "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}",
+        "location": {
+          "url": "",
+          "lineNumber": 20,
+          "columnNumber": 27
+        },
+        "timestamp": "2025-12-01T08:09:02.599Z"
+      }
+    ]
+  },
+  "recommendations": [
+    "Infinite loop detected - check useEffect dependencies and authentication state management",
+    "JavaScript errors detected - check component implementations and error handling"
+  ]
+}

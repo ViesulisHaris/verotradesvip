@@ -8,7 +8,14 @@ export default function TestCalendarAuth() {
   const [isRunning, setIsRunning] = useState(false);
 
   const addResult = (message: string) => {
-    setTestResults(prev => [...prev, `${new Date().toISOString().split('T')[1].split('.')[0]} - ${message}`]);
+    setTestResults((prev: string[]) => {
+      const isoString = new Date().toISOString();
+      const timeParts = isoString.split('T');
+      const timeString = timeParts[1] || '00:00:00.000Z';
+      const timePart = timeString.split('.')[0] || '00:00:00';
+      const currentPrev = prev || [];
+      return [...currentPrev, `${timePart} - ${message}`];
+    });
   };
 
   const runAuthTest = async () => {

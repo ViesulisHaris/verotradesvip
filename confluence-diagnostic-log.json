@@ -1,0 +1,1654 @@
+{
+  "timestamp": "2025-12-01T08:58:55.862Z",
+  "testResults": [
+    {
+      "test": "navigation-links",
+      "result": "INFO",
+      "message": "Found 7 navigation links",
+      "data": [
+        {
+          "text": "Dashboard",
+          "href": "/dashboard"
+        },
+        {
+          "text": "Trades",
+          "href": "/trades"
+        },
+        {
+          "text": "Log Trade",
+          "href": "/log-trade"
+        },
+        {
+          "text": "Calendar",
+          "href": "/calendar"
+        },
+        {
+          "text": "Strategy",
+          "href": "/strategies"
+        },
+        {
+          "text": "Confluence",
+          "href": "/confluence"
+        },
+        {
+          "text": "Settings",
+          "href": "/settings"
+        }
+      ]
+    },
+    {
+      "test": "page-loading-state",
+      "result": "PASSED",
+      "message": "Page has completed loading"
+    }
+  ],
+  "consoleLogs": [
+    {
+      "timestamp": "2025-12-01T08:58:58.376Z",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.532Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.537Z",
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.538Z",
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.539Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.539Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.539Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.640Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.641Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.641Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.641Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.641Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.641Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.642Z",
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.642Z",
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.642Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.642Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.658Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.658Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.671Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 39,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.672Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.672Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.672Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.672Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 39,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.673Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.687Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.780Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.780Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.781Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.796Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.797Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 39,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.797Z",
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.811Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.812Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:58.906Z",
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "location": {
+        "url": "http://localhost:3000/login"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:59.549Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:59.550Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:58:59.550Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.062Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.062Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] User signed in, redirecting to dashboard JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 67,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.062Z",
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login successful, auth state change will handle redirect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 117,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state listener will handle redirect automatically JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 125,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.063Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.064Z",
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Redirecting to dashboard from useEffect JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 42,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.064Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 39,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.541Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.542Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.542Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.542Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.542Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.542Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.588Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 82,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.588Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 49,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.589Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 82,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.589Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 49,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.287Z",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.378Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.393Z",
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.393Z",
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.394Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.394Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.394Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.629Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.629Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.629Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.630Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.630Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.630Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.643Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.644Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.644Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 65,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.644Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.645Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 65,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.645Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.754Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.754Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Found existing session data in localStorage: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 132,
+        "columnNumber": 32
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.754Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.770Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.770Z",
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 65,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.786Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 24,
+        "columnNumber": 12
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.800Z",
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx",
+        "lineNumber": 65,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:17.396Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:17.397Z",
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:17.397Z",
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: JSHandle@object",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      }
+    }
+  ],
+  "consoleErrors": [
+    {
+      "timestamp": "2025-12-01T08:58:58.657Z",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://localhost:3000/favicon.ico"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:13.640Z",
+      "type": "error",
+      "text": "Error: <path> attribute d: Expected arc flag ('0' or '1'), \"…18 8 018 0 4.58 4.58a8 8 0 018 0…\".",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 2544
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.965Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.965Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.965Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.966Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.966Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.966Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.966Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.967Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.967Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.721Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.722Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.722Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.722Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.723Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.723Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.723Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.723Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.723Z",
+      "type": "error",
+      "text": "Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s  \n    at tbody\n    at table\n    at div\n    at div\n    at div\n    at div\n    at Dashboard (webpack-internal:///(app-pages-browser)/./src/app/dashboard/page.tsx:32:91)\n    at div\n    at div\n    at main\n    at div\n    at UnifiedLayout (webpack-internal:///(app-pages-browser)/./src/components/layout/UnifiedLayout.tsx:15:11)\n    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx:16:11)\n    at DashboardWithAuth\n    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)\n    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)\n    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)\n    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)\n    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)\n    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)\n    at body\n    at html\n    at RootLayout (Server)\n    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)\n    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)\n    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)\n    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)\n    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)\n    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)\n    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)\n    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)\n    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)\n    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)\n    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)\n    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)\n    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "error",
+      "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:16.755Z",
+      "type": "error",
+      "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js",
+        "lineNumber": 32,
+        "columnNumber": 21
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:24.310Z",
+      "type": "react-error",
+      "text": "React errors check performed"
+    }
+  ],
+  "networkRequests": [
+    {
+      "timestamp": "2025-12-01T08:59:13.639Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+      "method": "POST",
+      "resourceType": "fetch",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "x-supabase-api-version": "2024-01-01",
+        "referer": "http://localhost:3000/",
+        "accept-language": "en-GB,en;q=0.9",
+        "sec-ch-ua": "\"Not_A Brand\";v=\"99\", \"Chromium\";v=\"142\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web-session-fix",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "content-type": "application/json;charset=UTF-8",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "x-force-config": "true"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.061Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/token?grant_type=password",
+      "status": 200,
+      "resourceType": "fetch",
+      "headers": {
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "http://localhost:3000",
+        "access-control-expose-headers": "X-Total-Count, Link, X-Supabase-Api-Version",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "9a7163222e91b801-RIX",
+        "content-encoding": "gzip",
+        "content-type": "application/json",
+        "date": "Mon, 01 Dec 2025 08:59:13 GMT",
+        "priority": "u=1,i",
+        "sb-auth-refresh-token-prefix": "6zumw",
+        "sb-auth-session-id": "b525636c-3a37-4b84-821f-afb27171769a",
+        "sb-auth-user-id": "c9dbe395-bec0-42c2-bd9a-984f3186f622",
+        "sb-gateway-version": "1",
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "sb-request-id": "019ad923-3162-75f2-9da8-c279d0b79fd7",
+        "server": "cloudflare",
+        "server-timing": "cfExtPri",
+        "set-cookie": "__cf_bm=g9UwlP0bSSqN_qBbUHjRyEEMhVcUsl1XCA.lzNAs8Jg-1764579553-1.0.1.1-lYGqbP0vbj.Xg.7VmK2RdW4OJUIn6B2XsvYZSK09To9wjOMkfALsF7HjD_cqLKNJ0Vn370rYy2AymnfQhPP4RLaO.sL9AUhUdE.M2U.WWPg; path=/; expires=Mon, 01-Dec-25 09:29:13 GMT; domain=.supabase.co; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "vary": "Origin, Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-envoy-attempt-count": "1",
+        "x-envoy-upstream-service-time": "116"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.062Z",
+      "url": "http://localhost:3000/dashboard?_rsc=10x2f",
+      "method": "GET",
+      "resourceType": "fetch",
+      "headers": {
+        "rsc": "1",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "accept-language": "en-GB,en;q=0.9",
+        "sec-ch-ua": "\"Not_A Brand\";v=\"99\", \"Chromium\";v=\"142\"",
+        "sec-ch-ua-mobile": "?0",
+        "next-router-prefetch": "1",
+        "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%22(auth)%22%2C%7B%22children%22%3A%5B%22login%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D",
+        "next-url": "/login",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.108Z",
+      "url": "http://localhost:3000/dashboard?_rsc=10x2f",
+      "status": 200,
+      "resourceType": "fetch",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/x-component",
+        "date": "Mon, 01 Dec 2025 08:59:13 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.109Z",
+      "url": "http://localhost:3000/dashboard?_rsc=16jui",
+      "method": "GET",
+      "resourceType": "fetch",
+      "headers": {
+        "rsc": "1",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "http://localhost:3000/login",
+        "accept-language": "en-GB,en;q=0.9",
+        "sec-ch-ua": "\"Not_A Brand\";v=\"99\", \"Chromium\";v=\"142\"",
+        "sec-ch-ua-mobile": "?0",
+        "next-router-state-tree": "%5B%22%22%2C%7B%22children%22%3A%5B%22dashboard%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2C%22refetch%22%5D%7D%2Cnull%2Cnull%5D",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.139Z",
+      "url": "http://localhost:3000/dashboard?_rsc=16jui",
+      "status": 200,
+      "resourceType": "fetch",
+      "headers": {
+        "cache-control": "no-store, must-revalidate",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/x-component",
+        "date": "Mon, 01 Dec 2025 08:59:14 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.589Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622&order=trade_date.desc&limit=1000",
+      "method": "GET",
+      "resourceType": "fetch",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IlRHNWEyVm00U3d6VUFQd1kiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2J6bWl4dXhhdXRibXFicnF0dWZ4LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjOWRiZTM5NS1iZWMwLTQyYzItYmQ5YS05ODRmMzE4NmY2MjIiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0NTgzMTUzLCJpYXQiOjE3NjQ1Nzk1NTMsImVtYWlsIjoidGVzdHVzZXIxMDAwQHZlcm90cmFkZS5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoidGVzdHVzZXIxMDAwQHZlcm90cmFkZS5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiJjOWRiZTM5NS1iZWMwLTQyYzItYmQ5YS05ODRmMzE4NmY2MjIifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc2NDU3OTU1M31dLCJzZXNzaW9uX2lkIjoiYjUyNTYzNmMtM2EzNy00Yjg0LTgyMWYtYWZiMjcxNzE3NjlhIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.M53PXqcczs4cq8g4K7aDFNzP1XflHH_15WDrwmrdJSs",
+        "referer": "http://localhost:3000/",
+        "accept-language": "en-GB,en;q=0.9",
+        "sec-ch-ua": "\"Not_A Brand\";v=\"99\", \"Chromium\";v=\"142\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web-session-fix",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "x-force-config": "true"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.589Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622&order=trade_date.desc&limit=1000",
+      "method": "GET",
+      "resourceType": "fetch",
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IlRHNWEyVm00U3d6VUFQd1kiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2J6bWl4dXhhdXRibXFicnF0dWZ4LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJjOWRiZTM5NS1iZWMwLTQyYzItYmQ5YS05ODRmMzE4NmY2MjIiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY0NTgzMTUzLCJpYXQiOjE3NjQ1Nzk1NTMsImVtYWlsIjoidGVzdHVzZXIxMDAwQHZlcm90cmFkZS5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoidGVzdHVzZXIxMDAwQHZlcm90cmFkZS5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiJjOWRiZTM5NS1iZWMwLTQyYzItYmQ5YS05ODRmMzE4NmY2MjIifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc2NDU3OTU1M31dLCJzZXNzaW9uX2lkIjoiYjUyNTYzNmMtM2EzNy00Yjg0LTgyMWYtYWZiMjcxNzE3NjlhIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.M53PXqcczs4cq8g4K7aDFNzP1XflHH_15WDrwmrdJSs",
+        "referer": "http://localhost:3000/",
+        "accept-language": "en-GB,en;q=0.9",
+        "sec-ch-ua": "\"Not_A Brand\";v=\"99\", \"Chromium\";v=\"142\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-client-info": "verotrades-web-session-fix",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "accept-profile": "public",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6bWl4dXhhdXRibXFicnF0dWZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyODA2MzIsImV4cCI6MjA3Nzg1NjYzMn0.Lm4bo_r__27b0Los00TpvD9KMgwKEOPlQT0waS5jWPk",
+        "x-force-config": "true"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:14.872Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622&order=trade_date.desc&limit=1000",
+      "status": 200,
+      "resourceType": "fetch",
+      "headers": {
+        "access-control-allow-origin": "http://localhost:3000",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "9a7163277835b801-RIX",
+        "content-encoding": "gzip",
+        "content-location": "/trades?limit=1000&order=trade_date.desc&select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622",
+        "content-profile": "public",
+        "content-range": "0-999/*",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 01 Dec 2025 08:59:14 GMT",
+        "priority": "u=1,i",
+        "sb-gateway-version": "1",
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "sb-request-id": "019ad923-34af-7686-99d5-cef54c3c5fbb",
+        "server": "cloudflare",
+        "server-timing": "cfExtPri",
+        "set-cookie": "__cf_bm=UlTFcHbM_Lz21FwhcOQ3CKFIcpx5yUx8f1PmTQfImPo-1764579554-1.0.1.1-1ENWe0siOYTcPCLzBJJ.vS9wOYtJ5Z0LnPQkemyBWVDSbhQt99WQTI3WKylaEVt2glagngjH4OufQOKadpRqFvX4dW0uWBkgYSm3TJrDhhI; path=/; expires=Mon, 01-Dec-25 09:29:14 GMT; domain=.supabase.co; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-envoy-attempt-count": "1",
+        "x-envoy-upstream-service-time": "53"
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:15.488Z",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/rest/v1/trades?select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622&order=trade_date.desc&limit=1000",
+      "status": 200,
+      "resourceType": "fetch",
+      "headers": {
+        "access-control-allow-origin": "http://localhost:3000",
+        "access-control-expose-headers": "Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "9a716328c86bb801-RIX",
+        "content-encoding": "gzip",
+        "content-location": "/trades?limit=1000&order=trade_date.desc&select=pnl%2Ctrade_date%2Centry_time%2Cexit_time%2Cstrategies%28id%2Cname%29&user_id=eq.c9dbe395-bec0-42c2-bd9a-984f3186f622",
+        "content-profile": "public",
+        "content-range": "0-999/*",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 01 Dec 2025 08:59:14 GMT",
+        "priority": "u=1,i",
+        "sb-gateway-version": "1",
+        "sb-project-ref": "bzmixuxautbmqbrqtufx",
+        "sb-request-id": "019ad923-3582-78c5-9c85-5507b416f1f7",
+        "server": "cloudflare",
+        "server-timing": "cfExtPri",
+        "set-cookie": "__cf_bm=IAfV5jDfGS1n1MJazhXGo1pf0DPu9IBnAdGYL9Q0ygQ-1764579554-1.0.1.1-mjgHglPrbX89JdBLQccnkowV_Hf6tbP3964ASFk3gyIg5B26thwZ.TDGNSY8iSpSLrMGbXAOwnQ331jjR8OOBo6iXiNlNu4a9wD5H0bIHm0; path=/; expires=Mon, 01-Dec-25 09:29:14 GMT; domain=.supabase.co; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-envoy-attempt-count": "1",
+        "x-envoy-upstream-service-time": "68"
+      }
+    }
+  ],
+  "performanceMetrics": [
+    {
+      "timestamp": "2025-12-01T08:59:24.086Z",
+      "type": "page-metrics",
+      "data": {
+        "Timestamp": 253148.582409,
+        "Documents": 4,
+        "Frames": 4,
+        "JSEventListeners": 320,
+        "Nodes": 308,
+        "LayoutCount": 375,
+        "RecalcStyleCount": 732,
+        "LayoutDuration": 0.062945,
+        "RecalcStyleDuration": 0.094557,
+        "ScriptDuration": 1.489648,
+        "TaskDuration": 4.321235,
+        "JSHeapUsedSize": 18874672,
+        "JSHeapTotalSize": 41738240
+      }
+    },
+    {
+      "timestamp": "2025-12-01T08:59:24.204Z",
+      "type": "timing",
+      "data": {
+        "connectStart": 1764579555494,
+        "secureConnectionStart": 0,
+        "unloadEventEnd": 1764579555800,
+        "domainLookupStart": 1764579555494,
+        "domainLookupEnd": 1764579555494,
+        "responseStart": 1764579555586,
+        "connectEnd": 1764579555494,
+        "responseEnd": 1764579555589,
+        "requestStart": 1764579555497,
+        "domLoading": 1764579555808,
+        "redirectStart": 0,
+        "loadEventEnd": 1764579556522,
+        "domComplete": 1764579556522,
+        "navigationStart": 1764579555494,
+        "loadEventStart": 1764579556522,
+        "domContentLoadedEventEnd": 1764579555834,
+        "unloadEventStart": 1764579555800,
+        "redirectEnd": 0,
+        "domInteractive": 1764579555834,
+        "fetchStart": 1764579555494,
+        "domContentLoadedEventStart": 1764579555834
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "login-page-loaded",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\diagnostic-screenshots\\login-page-loaded-1764579539235.png",
+      "timestamp": "2025-12-01T08:58:59.800Z"
+    },
+    {
+      "name": "login-form-filled",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\diagnostic-screenshots\\login-form-filled-1764579551852.png",
+      "timestamp": "2025-12-01T08:59:12.325Z"
+    },
+    {
+      "name": "after-login",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\diagnostic-screenshots\\after-login-1764579554553.png",
+      "timestamp": "2025-12-01T08:59:14.968Z"
+    },
+    {
+      "name": "confluence-page-loaded",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\diagnostic-screenshots\\confluence-page-loaded-1764579557194.png",
+      "timestamp": "2025-12-01T08:59:17.541Z"
+    },
+    {
+      "name": "final-state",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\diagnostic-screenshots\\final-state-1764579564310.png",
+      "timestamp": "2025-12-01T08:59:24.602Z"
+    }
+  ]
+}

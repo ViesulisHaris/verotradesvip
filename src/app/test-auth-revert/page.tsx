@@ -28,7 +28,7 @@ export default function TestAuthRevert() {
     checkAuth();
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event: string, session: any) => {
       setUser(session?.user ?? null);
       setTestResult(session?.user ? `✅ User authenticated: ${session.user.email}` : '❌ No user authenticated');
     });

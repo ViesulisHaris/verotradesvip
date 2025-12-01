@@ -1,0 +1,153 @@
+{
+  "timestamp": "2025-12-01T12:33:44.897Z",
+  "summary": {
+    "totalTests": 14,
+    "passedTests": 6,
+    "failedTests": 8,
+    "successRate": "42.9"
+  },
+  "categories": {
+    "authentication": {
+      "passed": 2,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Login and navigate to confluence",
+          "result": "PASSED",
+          "details": "Successfully navigated to confluence",
+          "timestamp": "2025-12-01T12:33:29.463Z"
+        },
+        {
+          "test": "Page title and headers",
+          "result": "PASSED",
+          "details": "Correct page title found",
+          "timestamp": "2025-12-01T12:33:30.458Z"
+        },
+        {
+          "test": "Authentication and navigation tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'button:has-text(\"FOMO\"), button:has-text(\"REVENGE\"), button:has-text(\"TILT\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:30.514Z"
+        }
+      ]
+    },
+    "filterFunctionality": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Filter functionality tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'button[class*=\"emotion\"], button:has-text(\"FOMO\"), button:has-text(\"REVENGE\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:30.518Z"
+        }
+      ]
+    },
+    "refreshFunctionality": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Refresh functionality tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Refresh\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:30.524Z"
+        }
+      ]
+    },
+    "responsiveDesign": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Responsive design tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'button:has-text(\"FOMO\"), button:has-text(\"REVENGE\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:42.598Z"
+        }
+      ]
+    },
+    "dataConsistency": {
+      "passed": 2,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Statistics data consistency",
+          "result": "PASSED",
+          "details": "Data consistent (trades: 92, win rate: 44.6%)",
+          "timestamp": "2025-12-01T12:33:30.560Z"
+        },
+        {
+          "test": "Emotional radar chart presence",
+          "result": "PASSED",
+          "details": "Emotional radar chart found",
+          "timestamp": "2025-12-01T12:33:30.570Z"
+        },
+        {
+          "test": "Data consistency tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"FOMO\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:30.580Z"
+        }
+      ]
+    },
+    "errorHandling": {
+      "passed": 1,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Error state display",
+          "result": "PASSED",
+          "details": "Error displayed correctly",
+          "timestamp": "2025-12-01T12:33:35.585Z"
+        },
+        {
+          "test": "Error message display",
+          "result": "FAILED",
+          "details": "Error message not shown",
+          "timestamp": "2025-12-01T12:33:35.589Z"
+        },
+        {
+          "test": "Loading state indicators",
+          "result": "FAILED",
+          "details": "Loading indicators not found",
+          "timestamp": "2025-12-01T12:33:38.099Z"
+        }
+      ]
+    },
+    "performance": {
+      "passed": 1,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Page load performance",
+          "result": "PASSED",
+          "details": "Page loaded in 1846ms",
+          "timestamp": "2025-12-01T12:33:44.444Z"
+        },
+        {
+          "test": "Performance tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"FOMO\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:33:44.455Z"
+        }
+      ]
+    }
+  },
+  "keyFindings": [
+    "Filter functionality has issues that need to be addressed",
+    "Data consistency issues detected between components",
+    "Responsive design needs improvement for different screen sizes",
+    "Performance optimization needed for better user experience"
+  ],
+  "recommendations": [
+    "Improve filter state management and persistence",
+    "Add more comprehensive filtering options (date range, P&L filtering, etc.)",
+    "Ensure data consistency between statistics, radar chart, and trades table",
+    "Fix emotional radar chart positioning and update logic",
+    "Optimize responsive design for mobile and tablet viewports",
+    "Improve touch interaction and mobile usability",
+    "Optimize API response times and implement loading states",
+    "Reduce memory usage and implement efficient data handling"
+  ]
+}

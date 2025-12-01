@@ -39,7 +39,7 @@ export default function TestEmotionalDataValidation() {
         setTrades(tradesData || []);
 
         // Analyze emotional data
-        const emotionalStates = (tradesData || []).map(t => t.emotional_state);
+        const emotionalStates = (tradesData || []).map((t: any) => t.emotional_state);
         const uniqueEmotions = [...new Set(emotionalStates.filter(Boolean))];
         
         // Check which emotions are valid

@@ -1,0 +1,200 @@
+[2025-12-01T08:07:55.490Z] [INFO] [MAIN] Starting comprehensive confluence console error diagnostic...
+[2025-12-01T08:07:56.427Z] [INFO] [FATAL_ERROR] Diagnostic failed: page.evaluateOnNewDocument is not a function
+[2025-12-01T08:08:31.441Z] [INFO] [MAIN] Starting comprehensive confluence console error diagnostic...
+[2025-12-01T08:08:32.154Z] [INFO] [NAVIGATION] Navigating to confluence page...
+[2025-12-01T08:08:32.156Z] [INFO] [FATAL_ERROR] Diagnostic failed: waitUntil: expected one of (load|domcontentloaded|networkidle|commit)
+[2025-12-01T08:09:00.749Z] [INFO] [MAIN] Starting comprehensive confluence console error diagnostic...
+[2025-12-01T08:09:01.441Z] [INFO] [NAVIGATION] Navigating to confluence page...
+[2025-12-01T08:09:01.824Z] [INFO] [PAGE_ERROR] Page error: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.
+[2025-12-01T08:09:02.442Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.437Z, isClient: true, loading: true, authInitialized: false}
+[2025-12-01T08:09:02.444Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.442Z, isClient: true, loading: true, authInitialized: false}
+[2025-12-01T08:09:02.446Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.443Z, isClient: true}
+[2025-12-01T08:09:02.448Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 1ms apart, render #2
+[2025-12-01T08:09:02.449Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}
+[2025-12-01T08:09:02.449Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #3
+[2025-12-01T08:09:02.450Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}
+[2025-12-01T08:09:02.452Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #4
+[2025-12-01T08:09:02.452Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.444Z, isClient: true}
+[2025-12-01T08:09:02.454Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:09:02.456Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:09:02.461Z] [INFO] [CONSOLE_ERROR] Error: Failed to load resource: the server responded with a status of 404 (Not Found)
+[2025-12-01T08:09:02.464Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}
+[2025-12-01T08:09:02.465Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}
+[2025-12-01T08:09:02.465Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}
+[2025-12-01T08:09:02.469Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}
+[2025-12-01T08:09:02.469Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}
+[2025-12-01T08:09:02.471Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Waiting for auth initialization {guardId: n0e6q0r74, authInitialized: false, requireAuth: true}
+[2025-12-01T08:09:02.576Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.575Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:09:02.578Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.576Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:09:02.580Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:09:02.581Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: n0e6q0r74, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:09:02.582Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.579Z, isClient: true}
+[2025-12-01T08:09:02.583Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 1ms apart, render #6
+[2025-12-01T08:09:02.584Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.580Z, isClient: true}
+[2025-12-01T08:09:02.585Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 1ms apart, render #7
+[2025-12-01T08:09:02.586Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}
+[2025-12-01T08:09:02.586Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #8
+[2025-12-01T08:09:02.587Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.581Z, isClient: true}
+[2025-12-01T08:09:02.595Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 12ms apart, render #9
+[2025-12-01T08:09:02.597Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}
+[2025-12-01T08:09:02.598Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #10
+[2025-12-01T08:09:02.599Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:09:02.593Z, isClient: true}
+[2025-12-01T08:09:02.609Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth immediately (no delay) {guardId: n0e6q0r74, reason: Auth state changes trigger re-renders automatically}
+[2025-12-01T08:09:02.610Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: n0e6q0r74, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}
+[2025-12-01T08:09:02.611Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: n0e6q0r74, reason: requireAuth && !user && authInitialized && !loading}
+[2025-12-01T08:09:02.811Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.810Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:09:02.812Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 6tazdugr6, timestamp: 2025-12-01T08:09:02.811Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:09:02.943Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}
+[2025-12-01T08:09:02.944Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: gnyqn1qsf, pathname: /login, requireAuth: false, authState: Object}
+[2025-12-01T08:09:02.966Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}
+[2025-12-01T08:09:02.968Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: gnyqn1qsf, pathname: /login, isAuthPage: true}
+[2025-12-01T08:09:08.767Z] [INFO] [MONITORING] Monitoring for console errors and flashing for 30 seconds...
+[2025-12-01T08:09:39.094Z] [INFO] [INTERACTIVITY] Testing page interactivity...
+[2025-12-01T08:09:39.102Z] [INFO] [INTERACTIVITY] ❌ Refresh button not found or not visible
+[2025-12-01T08:09:39.106Z] [INFO] [INTERACTIVITY] ❌ Emotion filter not found or not visible
+[2025-12-01T08:09:39.391Z] [INFO] [SUMMARY] === CONSOLE ERROR DIAGNOSTIC SUMMARY ===
+[2025-12-01T08:09:39.392Z] [INFO] [SUMMARY] Total Console Messages: 66
+[2025-12-01T08:09:39.393Z] [INFO] [SUMMARY] JavaScript Errors: 2
+[2025-12-01T08:09:39.393Z] [INFO] [SUMMARY] Warnings: 8
+[2025-12-01T08:09:39.394Z] [INFO] [SUMMARY] Network Errors: 0
+[2025-12-01T08:09:39.394Z] [INFO] [SUMMARY] Auth State Changes: 23
+[2025-12-01T08:09:39.394Z] [INFO] [SUMMARY] Render Events: 10
+[2025-12-01T08:09:39.394Z] [INFO] [SUMMARY] === ISSUES DETECTED ===
+[2025-12-01T08:09:39.395Z] [INFO] [SUMMARY] infiniteLoops: ❌ DETECTED
+[2025-12-01T08:09:39.395Z] [INFO] [SUMMARY] authenticationErrors: ✅ OK
+[2025-12-01T08:09:39.395Z] [INFO] [SUMMARY] networkFailures: ✅ OK
+[2025-12-01T08:09:39.396Z] [INFO] [SUMMARY] jsErrors: ❌ DETECTED
+[2025-12-01T08:09:39.396Z] [INFO] [SUMMARY] rapidRerenders: ✅ OK
+[2025-12-01T08:09:39.396Z] [INFO] [SUMMARY] === RECOMMENDATIONS ===
+[2025-12-01T08:09:39.397Z] [INFO] [SUMMARY] 1. Infinite loop detected - check useEffect dependencies and authentication state management
+[2025-12-01T08:09:39.397Z] [INFO] [SUMMARY] 2. JavaScript errors detected - check component implementations and error handling
+[2025-12-01T08:09:39.398Z] [INFO] [COMPLETION] Diagnostic completed - report saved to confluence-console-diagnostic-screenshots\confluence-console-diagnostic-report-1764576579390.json
+[2025-12-01T08:16:55.551Z] [INFO] [MAIN] Starting comprehensive confluence console error diagnostic...
+[2025-12-01T08:16:56.454Z] [INFO] [NAVIGATION] Navigating to confluence page...
+[2025-12-01T08:16:57.513Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.508Z, isClient: true, loading: true, authInitialized: false}
+[2025-12-01T08:16:57.517Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.514Z, isClient: true, loading: true, authInitialized: false}
+[2025-12-01T08:16:57.519Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:16:57.515Z, isClient: true}
+[2025-12-01T08:16:57.520Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 1ms apart, render #2
+[2025-12-01T08:16:57.521Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:16:57.516Z, isClient: true}
+[2025-12-01T08:16:57.521Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #3
+[2025-12-01T08:16:57.523Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:16:57.516Z, isClient: true}
+[2025-12-01T08:16:57.524Z] [INFO] [CONSOLE_WARNING] Warning: 🚨 RAPID RENDER DETECTED: 0ms apart, render #4
+[2025-12-01T08:16:57.525Z] [INFO] [RENDER_EVENT] Render event: 🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T08:16:57.516Z, isClient: true}
+[2025-12-01T08:16:57.526Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ikthd7qii, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:16:57.526Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ikthd7qii, pathname: /confluence, requireAuth: true, authState: Object}
+[2025-12-01T08:16:57.534Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.545Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.552Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.554Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.557Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.569Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.571Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.573Z] [INFO] [PAGE_ERROR] Page error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+[2025-12-01T08:16:57.577Z] [INFO] [CONSOLE_ERROR] Error: The above error occurred in the <NotFoundErrorBoundary> component:
+
+    at AuthGuard (webpack-internal:///(app-pages-browser)/./src/components/AuthGuard-fixed.tsx:16:11)
+    at ConfluencePageWithAuth
+    at ClientPageRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js:14:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:94:9)
+    at ErrorBoundaryWrapper (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundaryWrapper.tsx:13:11)
+    at AuthContextProviderSimple (webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx:35:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundaryHandler.
+[2025-12-01T08:16:57.579Z] [INFO] [CONSOLE_ERROR] Error: 🚨 [Error Boundary] Caught error: {message: Invalid hook call. Hooks can only be called inside…for tips about how to debug and fix this problem., stack: Error: Invalid hook call. Hooks can only be called…d/react-dom/cjs/react-dom.development.js:23256:9), digest: undefined, timestamp: 2025-12-01T08:16:57.577Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36}
+[2025-12-01T08:16:57.580Z] [INFO] [CONSOLE_ERROR] Error: 🚨 [Error Boundary] Caught error: {message: Invalid hook call. Hooks can only be called inside…for tips about how to debug and fix this problem., stack: Error: Invalid hook call. Hooks can only be called…d/react-dom/cjs/react-dom.development.js:23256:9), digest: undefined, timestamp: 2025-12-01T08:16:57.578Z, userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36}
+[2025-12-01T08:16:57.661Z] [INFO] [CONSOLE_ERROR] Error: Failed to load resource: the server responded with a status of 404 (Not Found)
+[2025-12-01T08:16:57.668Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.666Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:16:57.669Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.667Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:16:57.671Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.670Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:16:57.672Z] [INFO] [AUTH_STATE] Auth state change: 🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: rkiceuzwc, timestamp: 2025-12-01T08:16:57.671Z, isClient: true, loading: false, authInitialized: true}
+[2025-12-01T08:17:03.842Z] [INFO] [MONITORING] Monitoring for console errors and flashing for 30 seconds...
+[2025-12-01T08:17:34.151Z] [INFO] [INTERACTIVITY] Testing page interactivity...
+[2025-12-01T08:17:34.163Z] [INFO] [INTERACTIVITY] ❌ Refresh button not found or not visible
+[2025-12-01T08:17:34.166Z] [INFO] [INTERACTIVITY] ❌ Emotion filter not found or not visible
+[2025-12-01T08:17:34.293Z] [INFO] [SUMMARY] === CONSOLE ERROR DIAGNOSTIC SUMMARY ===
+[2025-12-01T08:17:34.294Z] [INFO] [SUMMARY] Total Console Messages: 36
+[2025-12-01T08:17:34.295Z] [INFO] [SUMMARY] JavaScript Errors: 12
+[2025-12-01T08:17:34.295Z] [INFO] [SUMMARY] Warnings: 3
+[2025-12-01T08:17:34.296Z] [INFO] [SUMMARY] Network Errors: 0
+[2025-12-01T08:17:34.296Z] [INFO] [SUMMARY] Auth State Changes: 8
+[2025-12-01T08:17:34.297Z] [INFO] [SUMMARY] Render Events: 4
+[2025-12-01T08:17:34.297Z] [INFO] [SUMMARY] === ISSUES DETECTED ===
+[2025-12-01T08:17:34.298Z] [INFO] [SUMMARY] infiniteLoops: ✅ OK
+[2025-12-01T08:17:34.298Z] [INFO] [SUMMARY] authenticationErrors: ✅ OK
+[2025-12-01T08:17:34.299Z] [INFO] [SUMMARY] networkFailures: ✅ OK
+[2025-12-01T08:17:34.299Z] [INFO] [SUMMARY] jsErrors: ❌ DETECTED
+[2025-12-01T08:17:34.300Z] [INFO] [SUMMARY] rapidRerenders: ✅ OK
+[2025-12-01T08:17:34.300Z] [INFO] [SUMMARY] === RECOMMENDATIONS ===
+[2025-12-01T08:17:34.300Z] [INFO] [SUMMARY] 1. JavaScript errors detected - check component implementations and error handling
+[2025-12-01T08:17:34.301Z] [INFO] [COMPLETION] Diagnostic completed - report saved to confluence-console-diagnostic-screenshots\confluence-console-diagnostic-report-1764577054292.json

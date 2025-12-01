@@ -1,0 +1,58 @@
+{
+  "pageLoad": {
+    "success": true,
+    "error": "Authentication failed - not redirected to confluence",
+    "loadTime": 2432
+  },
+  "authentication": {
+    "success": false,
+    "error": null
+  },
+  "components": {
+    "stats": {
+      "rendered": false,
+      "hasData": false,
+      "error": null
+    },
+    "emotionRadar": {
+      "rendered": false,
+      "hasData": false,
+      "error": null
+    },
+    "filters": {
+      "rendered": false,
+      "interactive": false,
+      "error": null
+    },
+    "tradesTable": {
+      "rendered": false,
+      "hasData": false,
+      "error": null
+    }
+  },
+  "functionality": {
+    "refresh": {
+      "works": false,
+      "error": null
+    },
+    "filtering": {
+      "works": false,
+      "error": null
+    },
+    "pagination": {
+      "works": false,
+      "error": null
+    }
+  },
+  "responsive": {
+    "mobile": false,
+    "tablet": false,
+    "desktop": false
+  },
+  "performance": {
+    "loadTime": 2432,
+    "renderTime": 0,
+    "interactionTime": 0
+  },
+  "errors": []
+}

@@ -1,0 +1,67 @@
+{
+  "pageLoad": {
+    "success": true,
+    "loadTime": 5143,
+    "error": null
+  },
+  "components": {
+    "container": {
+      "rendered": true,
+      "error": null
+    },
+    "statsCards": {
+      "rendered": true,
+      "count": 4,
+      "error": null
+    },
+    "emotionRadar": {
+      "rendered": true,
+      "hasData": true,
+      "error": null
+    },
+    "filters": {
+      "rendered": true,
+      "interactive": false,
+      "error": null
+    },
+    "tradesTable": {
+      "rendered": true,
+      "hasData": true,
+      "error": null
+    }
+  },
+  "functionality": {
+    "refreshButton": {
+      "works": false,
+      "error": null
+    },
+    "symbolSearch": {
+      "works": true,
+      "error": null
+    },
+    "emotionFilters": {
+      "works": false,
+      "error": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"FOMO\")' is not a valid selector."
+    },
+    "dateFilters": {
+      "works": false,
+      "error": null
+    },
+    "marketFilter": {
+      "works": true,
+      "error": null
+    }
+  },
+  "responsive": {
+    "mobile": true,
+    "tablet": false,
+    "desktop": false
+  },
+  "performance": {
+    "loadTime": 5143,
+    "interactionTime": 3881
+  },
+  "errors": [
+    "Sell"
+  ]
+}

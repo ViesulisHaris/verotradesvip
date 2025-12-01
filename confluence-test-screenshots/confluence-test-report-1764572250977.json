@@ -1,0 +1,265 @@
+{
+  "timestamp": "2025-12-01T06:57:30.976Z",
+  "summary": {
+    "totalTests": 31,
+    "totalPassed": 14,
+    "totalFailed": 17,
+    "successRate": "45.2%"
+  },
+  "categories": {
+    "pageLoading": {
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "successRate": "75.0%",
+      "details": [
+        {
+          "test": "Page loads without errors",
+          "passed": true,
+          "details": "Title: ",
+          "timestamp": "2025-12-01T06:56:51.670Z"
+        },
+        {
+          "test": "UnifiedLayout wrapper applied",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:56:51.684Z"
+        },
+        {
+          "test": "Glass morphism design applied",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:56:51.686Z"
+        },
+        {
+          "test": "Page loading test completed",
+          "passed": false,
+          "details": "Error: getElementText(...)?.includes is not a function",
+          "timestamp": "2025-12-01T06:56:51.691Z"
+        }
+      ]
+    },
+    "authentication": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "successRate": "0.0%",
+      "details": [
+        {
+          "test": "Page accessible without authentication redirect",
+          "passed": false,
+          "details": "Should redirect to login",
+          "timestamp": "2025-12-01T06:56:51.678Z"
+        }
+      ]
+    },
+    "dataFetching": {
+      "total": 7,
+      "passed": 2,
+      "failed": 5,
+      "successRate": "28.6%",
+      "details": [
+        {
+          "test": "Loading indicators present",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:56:56.698Z"
+        },
+        {
+          "test": "Error handling displays",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:56:56.699Z"
+        },
+        {
+          "test": "Statistics cards rendered",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:56:56.700Z"
+        },
+        {
+          "test": "Trade data table rendered",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:06.704Z"
+        },
+        {
+          "test": "Emotion radar container present",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:06.706Z"
+        },
+        {
+          "test": "Filter controls rendered",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:06.708Z"
+        },
+        {
+          "test": "Data fetching test completed",
+          "passed": false,
+          "details": "Error: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:contains(\"Refresh\"), [class*=\"refresh\"]' is not a valid selector.",
+          "timestamp": "2025-12-01T06:57:06.710Z"
+        }
+      ]
+    },
+    "filtering": {
+      "total": 6,
+      "passed": 3,
+      "failed": 3,
+      "successRate": "50.0%",
+      "details": [
+        {
+          "test": "Emotion filter options available",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:07.732Z"
+        },
+        {
+          "test": "Symbol filter works",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:09.757Z"
+        },
+        {
+          "test": "Market dropdown found",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:09.759Z"
+        },
+        {
+          "test": "Date range filters available",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:09.766Z"
+        },
+        {
+          "test": "Date range selection works",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:11.800Z"
+        },
+        {
+          "test": "Filtering test completed",
+          "passed": false,
+          "details": "Error: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:contains(\"Clear\"), button:contains(\"Reset\")' is not a valid selector.",
+          "timestamp": "2025-12-01T06:57:11.802Z"
+        }
+      ]
+    },
+    "emotionRadar": {
+      "total": 5,
+      "passed": 2,
+      "failed": 3,
+      "successRate": "40.0%",
+      "details": [
+        {
+          "test": "Chart element rendered",
+          "details": "",
+          "timestamp": "2025-12-01T06:57:14.812Z"
+        },
+        {
+          "test": "Emotion data processed",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:14.813Z"
+        },
+        {
+          "test": "Chart tooltips work",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:15.855Z"
+        },
+        {
+          "test": "Leaning calculation displayed",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:15.857Z"
+        },
+        {
+          "test": "Chart responsive design",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:17.868Z"
+        }
+      ]
+    },
+    "crossTabSync": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "successRate": "50.0%",
+      "details": [
+        {
+          "test": "Filter synchronization works",
+          "passed": "",
+          "details": "",
+          "timestamp": "2025-12-01T06:57:24.487Z"
+        },
+        {
+          "test": "localStorage events work",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:25.500Z"
+        }
+      ]
+    },
+    "uiComponents": {
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "successRate": "75.0%",
+      "details": [
+        {
+          "test": "Emotion dropdown keyboard navigation",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:27.573Z"
+        },
+        {
+          "test": "Filter controls interactive",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:27.651Z"
+        },
+        {
+          "test": "Statistics cards display",
+          "passed": true,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:27.658Z"
+        },
+        {
+          "test": "UI components test completed",
+          "passed": false,
+          "details": "Error: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:contains(\"Refresh\"), [class*=\"refresh\"]' is not a valid selector.",
+          "timestamp": "2025-12-01T06:57:27.659Z"
+        }
+      ]
+    },
+    "errorHandling": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "successRate": "0.0%",
+      "details": [
+        {
+          "test": "Empty data state handled",
+          "passed": false,
+          "details": "",
+          "timestamp": "2025-12-01T06:57:30.695Z"
+        },
+        {
+          "test": "Error handling test completed",
+          "passed": false,
+          "details": "Error: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:contains(\"Refresh\"), [class*=\"refresh\"]' is not a valid selector.",
+          "timestamp": "2025-12-01T06:57:30.698Z"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "Review filter dropdown components",
+    "Check emotion data processing logic",
+    "Review cross-tab synchronization implementation"
+  ]
+}

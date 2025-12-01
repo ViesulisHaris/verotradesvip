@@ -73,7 +73,7 @@ export default function TestEmotionDiagnosis() {
         return;
       }
 
-      const typeAnalysis = sampleTrades?.map(trade => ({
+      const typeAnalysis = sampleTrades?.map((trade: {id: string, symbol: string, emotional_state: string[] | null}) => ({
         id: trade.id,
         symbol: trade.symbol,
         emotional_state: trade.emotional_state,

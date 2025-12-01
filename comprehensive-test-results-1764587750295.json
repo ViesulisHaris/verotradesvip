@@ -1,0 +1,605 @@
+{
+  "timestamp": "2025-12-01T11:15:36.972Z",
+  "tests": [
+    {
+      "test": "Login form loaded",
+      "passed": true,
+      "details": "Form is present",
+      "timestamp": "2025-12-01T11:15:43.689Z"
+    },
+    {
+      "test": "User login",
+      "passed": true,
+      "details": "Successfully logged in, redirected to: http://localhost:3000/dashboard",
+      "timestamp": "2025-12-01T11:15:45.167Z"
+    },
+    {
+      "test": "Dashboard content wrapper",
+      "passed": true,
+      "details": "Content wrapper loaded successfully",
+      "timestamp": "2025-12-01T11:15:45.177Z"
+    },
+    {
+      "test": "Dashboard loading completion",
+      "passed": true,
+      "details": "Loading completed successfully",
+      "timestamp": "2025-12-01T11:15:48.849Z"
+    },
+    {
+      "test": "Dashboard metrics cards",
+      "passed": true,
+      "details": "Found 10 metrics cards",
+      "timestamp": "2025-12-01T11:15:48.859Z"
+    },
+    {
+      "test": "Dashboard charts",
+      "passed": true,
+      "details": "Found 2 charts",
+      "timestamp": "2025-12-01T11:15:48.865Z"
+    },
+    {
+      "test": "Dashboard recent trades table",
+      "passed": true,
+      "details": "Found table with 10 rows",
+      "timestamp": "2025-12-01T11:15:48.879Z"
+    }
+  ],
+  "errors": [
+    {
+      "type": "network",
+      "url": "http://localhost:3000/dashboard?_rsc=16jui",
+      "error": "net::ERR_ABORTED",
+      "timestamp": "2025-12-01T11:15:44.738Z"
+    },
+    {
+      "type": "execution",
+      "message": "confluenceTabClicked is not defined",
+      "stack": "ReferenceError: confluenceTabClicked is not defined\n    at runComprehensiveTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\comprehensive-dashboard-confluence-test.js:237:5)",
+      "timestamp": "2025-12-01T11:15:50.076Z"
+    }
+  ],
+  "screenshots": [
+    "comprehensive-test-login-page-1764587743469.png",
+    "comprehensive-test-login-form-filled-1764587743732.png",
+    "comprehensive-test-after-login-1764587745014.png",
+    "comprehensive-test-execution-error-1764587750076.png"
+  ],
+  "consoleLogs": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "timestamp": "2025-12-01T11:15:43.085Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "timestamp": "2025-12-01T11:15:43.137Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "timestamp": "2025-12-01T11:15:43.138Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "timestamp": "2025-12-01T11:15:43.138Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "timestamp": "2025-12-01T11:15:43.139Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-01T11:15:43.137Z}",
+      "timestamp": "2025-12-01T11:15:43.139Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-01T11:15:43.139Z}",
+      "timestamp": "2025-12-01T11:15:43.139Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.181Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-12-01T11:15:43.183Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.182Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-12-01T11:15:43.184Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:43.183Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:43.186Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:43.183Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:43.186Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:43.183Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:43.186Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:43.184Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:43.186Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-01T11:15:43.186Z}",
+      "timestamp": "2025-12-01T11:15:43.187Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-01T11:15:43.186Z}",
+      "timestamp": "2025-12-01T11:15:43.187Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:43.187Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:43.188Z"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "timestamp": "2025-12-01T11:15:43.199Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: true, shouldRedirect: false, timestamp: 2025-12-01T11:15:43.198Z}",
+      "timestamp": "2025-12-01T11:15:43.202Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-01T11:15:43.199Z}",
+      "timestamp": "2025-12-01T11:15:43.202Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: ado8huula, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-12-01T11:15:43.202Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T11:15:43.200Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-12-01T11:15:43.202Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: true, shouldRedirect: false, timestamp: 2025-12-01T11:15:43.202Z}",
+      "timestamp": "2025-12-01T11:15:43.205Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-01T11:15:43.202Z}",
+      "timestamp": "2025-12-01T11:15:43.205Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: ado8huula, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-12-01T11:15:43.205Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T11:15:43.202Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-12-01T11:15:43.205Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-01T11:15:43.213Z}",
+      "timestamp": "2025-12-01T11:15:43.215Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "timestamp": "2025-12-01T11:15:43.313Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+      "timestamp": "2025-12-01T11:15:43.313Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "timestamp": "2025-12-01T11:15:43.314Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "timestamp": "2025-12-01T11:15:43.314Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.313Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:43.314Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.314Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:43.315Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:43.315Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:43.315Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-01T11:15:43.341Z}",
+      "timestamp": "2025-12-01T11:15:43.343Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: ado8huula, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-12-01T11:15:43.345Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: wbemt2c1c, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-01T11:15:43.343Z}",
+      "timestamp": "2025-12-01T11:15:43.345Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.345Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:43.346Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:43.345Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:43.346Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "timestamp": "2025-12-01T11:15:43.424Z"
+    },
+    {
+      "type": "error",
+      "text": "Error: <path> attribute d: Expected arc flag ('0' or '1'), \"…18 8 018 0 4.58 4.58a8 8 0 018 0…\".",
+      "timestamp": "2025-12-01T11:15:43.925Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "timestamp": "2025-12-01T11:15:44.142Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "timestamp": "2025-12-01T11:15:44.142Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-12-01T11:15:44.142Z}",
+      "timestamp": "2025-12-01T11:15:44.143Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: SIGNED_IN, hasSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-01T11:15:44.597Z}",
+      "timestamp": "2025-12-01T11:15:44.597Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] User signed in, redirecting to dashboard {userEmail: testuser1000@verotrade.com, reason: SIGNED_IN event with session}",
+      "timestamp": "2025-12-01T11:15:44.597Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: wbemt2c1c, event: SIGNED_IN, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-01T11:15:44.599Z}",
+      "timestamp": "2025-12-01T11:15:44.601Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login successful, auth state change will handle redirect {userEmail: testuser1000@verotrade.com, hasData: true, hasUser: true, timestamp: 2025-12-01T11:15:44.599Z}",
+      "timestamp": "2025-12-01T11:15:44.602Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state listener will handle redirect automatically {userEmail: testuser1000@verotrade.com, reason: Auth state change listener will handle SIGNED_IN event}",
+      "timestamp": "2025-12-01T11:15:44.602Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:44.601Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:44.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: wbemt2c1c, timestamp: 2025-12-01T11:15:44.601Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:44.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:44.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: ado8huula, pathname: /login, requireAuth: false, authState: Object}",
+      "timestamp": "2025-12-01T11:15:44.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: true, userEmail: testuser1000@verotrade.com, loading: false, shouldRedirect: true, timestamp: 2025-12-01T11:15:44.604Z}",
+      "timestamp": "2025-12-01T11:15:44.606Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Redirecting to dashboard from useEffect {userEmail: testuser1000@verotrade.com, reason: user && !loading}",
+      "timestamp": "2025-12-01T11:15:44.607Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: ado8huula, pathname: /login, isAuthPage: true}",
+      "timestamp": "2025-12-01T11:15:44.608Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: uu2e8bppp, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:45.003Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: uu2e8bppp, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:45.003Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:45.002Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:45.004Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:45.002Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:45.004Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:45.003Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:45.004Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:45.003Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:45.004Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: uu2e8bppp, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "timestamp": "2025-12-01T11:15:45.049Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "timestamp": "2025-12-01T11:15:49.519Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "timestamp": "2025-12-01T11:15:49.565Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "timestamp": "2025-12-01T11:15:49.568Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "timestamp": "2025-12-01T11:15:49.568Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "timestamp": "2025-12-01T11:15:49.568Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-01T11:15:49.564Z}",
+      "timestamp": "2025-12-01T11:15:49.568Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-01T11:15:49.567Z}",
+      "timestamp": "2025-12-01T11:15:49.569Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.664Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-12-01T11:15:49.665Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.665Z, isClient: true, loading: true, authInitialized: false}",
+      "timestamp": "2025-12-01T11:15:49.665Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.665Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.666Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.665Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.666Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.665Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.666Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.665Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.666Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.672Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.673Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: w1t9qmqlc, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-12-01T11:15:49.681Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T11:15:49.680Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-12-01T11:15:49.681Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: w1t9qmqlc, requireAuth: true, hasUser: false, userEmail: undefined, loading: true}",
+      "timestamp": "2025-12-01T11:15:49.685Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-01T11:15:49.682Z, isClient: true, currentStates: Object}",
+      "timestamp": "2025-12-01T11:15:49.685Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "timestamp": "2025-12-01T11:15:49.785Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Found existing session data in localStorage: true",
+      "timestamp": "2025-12-01T11:15:49.785Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: true, hasError: false, error: undefined, userEmail: testuser1000@verotrade.com}",
+      "timestamp": "2025-12-01T11:15:49.785Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: true",
+      "timestamp": "2025-12-01T11:15:49.785Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "timestamp": "2025-12-01T11:15:49.785Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.785Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:49.786Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.786Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:49.786Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.787Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.787Z"
+    },
+    {
+      "type": "error",
+      "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+      "timestamp": "2025-12-01T11:15:49.790Z"
+    },
+    {
+      "type": "error",
+      "text": "🚨 AuthContext is undefined - providing safe fallback to prevent gray screen",
+      "timestamp": "2025-12-01T11:15:49.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.790Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.790Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.790Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.791Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.791Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.791Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.791Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.799Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.801Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-01T11:15:49.799Z, isClient: true}",
+      "timestamp": "2025-12-01T11:15:49.802Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: w1t9qmqlc, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "timestamp": "2025-12-01T11:15:49.823Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: llvvuna4q, event: INITIAL_SESSION, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-01T11:15:49.823Z}",
+      "timestamp": "2025-12-01T11:15:49.824Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.825Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:49.827Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: llvvuna4q, timestamp: 2025-12-01T11:15:49.825Z, isClient: true, loading: false, authInitialized: true}",
+      "timestamp": "2025-12-01T11:15:49.827Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.827Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: w1t9qmqlc, pathname: /confluence, requireAuth: true, authState: Object}",
+      "timestamp": "2025-12-01T11:15:49.827Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: w1t9qmqlc, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "timestamp": "2025-12-01T11:15:49.833Z"
+    }
+  ],
+  "finalStatus": "failed"
+}

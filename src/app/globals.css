@@ -21,6 +21,72 @@
   --verotrade-info: #3B82F6;
   --soft-graphite: #1F2937;
   --elevated: #374151;
+  
+  /* Typography scale */
+  --verotrade-xs: 0.75rem;
+  --verotrade-sm: 0.875rem;
+  --verotrade-base: 1rem;
+  --verotrade-lg: 1.125rem;
+  --verotrade-xl: 1.25rem;
+  --verotrade-2xl: 1.5rem;
+  --verotrade-3xl: 1.875rem;
+  --verotrade-4xl: 2.25rem;
+  
+  /* Font weights */
+  --verotrade-light: 300;
+  --verotrade-normal: 400;
+  --verotrade-medium: 500;
+  --verotrade-semibold: 600;
+  --verotrade-bold: 700;
+  --verotrade-extrabold: 800;
+  
+  /* Border radius */
+  --verotrade-radius-sm: 0.25rem;
+  --verotrade-radius-md: 0.375rem;
+  --verotrade-radius-lg: 0.5rem;
+  --verotrade-radius-xl: 0.75rem;
+  --verotrade-radius-2xl: 1rem;
+  
+  /* Spacing scale */
+  --verotrade-0: 0;
+  --verotrade-1: 0.25rem;
+  --verotrade-2: 0.5rem;
+  --verotrade-3: 0.75rem;
+  --verotrade-4: 1rem;
+  --verotrade-5: 1.25rem;
+  --verotrade-6: 1.5rem;
+  --verotrade-8: 2rem;
+  --verotrade-10: 2.5rem;
+  --verotrade-12: 3rem;
+  --verotrade-16: 4rem;
+  --verotrade-20: 5rem;
+  --verotrade-24: 6rem;
+  
+  /* Colors */
+  --verotrade-primary-black: #000000;
+  --verotrade-secondary-black: #0a0a0a;
+  --verotrade-tertiary-black: #1a1a1a;
+  --verotrade-quaternary-black: #2a2a2a;
+  --verotrade-text-primary: #f5f5f1;
+  --verotrade-text-secondary: #a0a0a0;
+  --verotrade-border-primary: rgba(184, 155, 94, 0.3);
+  --verotrade-border-secondary: rgba(184, 155, 94, 0.2);
+  --rust-red: #dc2626;
+  
+  /* Shadows */
+  --verotrade-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --verotrade-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --verotrade-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --verotrade-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --verotrade-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Transitions */
+  --verotrade-transition-fast: 150ms;
+  --verotrade-transition-normal: 300ms;
+  --verotrade-transition-slow: 500ms;
+  
+  /* Transform */
+  --transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
 }
 
 html, body {
@@ -66,4 +132,549 @@ body {
 .info-card h2 {
   color: var(--dusty-gold);
   margin-bottom: 1rem;
+}
+
+/* Custom scrollbar styles for confluence page */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 155, 94, 0.2) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(184, 155, 94, 0.2);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(184, 155, 94, 0.3);
+}
+
+.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar-thumb {
+  background-color: rgba(184, 155, 94, 0.2);
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Card luxury styling */
+.card-luxury {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
+  border: 1px solid rgba(184, 155, 94, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card-luxury:hover {
+  border-color: rgba(184, 155, 94, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Text styling */
+.heading-luxury {
+  background: linear-gradient(135deg, #f5f5f1, #e5e5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.body-text {
+  color: rgba(245, 245, 241, 0.8);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--dusty-gold), var(--gold-secondary));
+  color: var(--deep-charcoal);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(184, 155, 94, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 155, 94, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Color utilities */
+.text-primary {
+  color: #f5f5f1;
+}
+
+.text-tertiary {
+  color: rgba(245, 245, 241, 0.6);
+}
+
+.border-border-primary {
+  border-color: rgba(184, 155, 94, 0.3);
+}
+
+.bg-secondary {
+  background-color: rgba(31, 41, 55, 0.6);
+}
+
+/* VeroTrade Design System Classes */
+.verotrade-content-wrapper {
+  padding: var(--spacing-section);
+  max-width: 1400px;
+  margin: 0 auto;
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+.mb-section {
+  margin-bottom: var(--spacing-section);
+}
+
+.mb-component {
+  margin-bottom: var(--spacing-component);
+}
+
+.mb-element {
+  margin-bottom: var(--spacing-element);
+}
+
+.gap-component {
+  gap: var(--spacing-component);
+}
+
+.gap-element {
+  gap: var(--spacing-element);
+}
+
+.gap-button-group {
+  gap: var(--spacing-button-group);
+}
+
+.h1-dashboard {
+  font-size: var(--verotrade-4xl);
+  font-weight: var(--verotrade-bold);
+  color: var(--warm-off-white);
+  margin-bottom: var(--spacing-element);
+}
+
+.h2-section {
+  font-size: var(--verotrade-2xl);
+  font-weight: var(--verotrade-semibold);
+  color: var(--warm-off-white);
+  margin-bottom: var(--spacing-element);
+}
+
+.h3-card-title {
+  font-size: var(--verotrade-lg);
+  font-weight: var(--verotrade-medium);
+  color: var(--warm-off-white);
+  margin-bottom: var(--spacing-element);
+}
+
+.h3-metric-label {
+  font-size: var(--verotrade-sm);
+  font-weight: var(--verotrade-medium);
+  color: var(--verotrade-text-secondary);
+}
+
+.metric-value {
+  font-size: var(--verotrade-3xl);
+  font-weight: var(--verotrade-bold);
+  color: var(--warm-off-white);
+}
+
+.label-text {
+  font-size: var(--verotrade-sm);
+  font-weight: var(--verotrade-medium);
+  color: var(--verotrade-text-primary);
+  margin-bottom: var(--spacing-element);
+}
+
+.secondary-text {
+  color: var(--verotrade-text-secondary);
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
+  border: 1px solid var(--verotrade-border-primary);
+  border-radius: var(--verotrade-radius-lg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--verotrade-shadow-lg);
+  transition: all var(--verotrade-transition-normal);
+  padding: var(--spacing-section);
+}
+
+.dashboard-card:hover {
+  border-color: rgba(184, 155, 94, 0.4);
+  box-shadow: var(--verotrade-shadow-xl);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-component);
+}
+
+.key-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-component);
+}
+
+.input-field {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--verotrade-border-primary);
+  border-radius: var(--verotrade-radius-md);
+  background-color: var(--verotrade-tertiary-black);
+  color: var(--verotrade-text-primary);
+  font-size: var(--verotrade-base);
+  transition: all var(--verotrade-transition-normal);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--verotrade-gold-primary);
+  box-shadow: 0 0 0 2px rgba(184, 155, 94, 0.2);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--dusty-gold), var(--gold-secondary));
+  color: var(--deep-charcoal);
+  font-weight: var(--verotrade-semibold);
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--verotrade-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--verotrade-transition-normal);
+  box-shadow: 0 4px 12px rgba(184, 155, 94, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 155, 94, 0.4);
+}
+
+.button-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--verotrade-text-primary);
+  font-weight: var(--verotrade-medium);
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--verotrade-radius-md);
+  border: 1px solid var(--verotrade-border-primary);
+  cursor: pointer;
+  transition: all var(--verotrade-transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.button-secondary:hover {
+  background-color: var(--verotrade-quaternary-black);
+  border-color: var(--verotrade-gold-primary);
+}
+
+.button-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text-dusty-gold {
+  color: var(--dusty-gold);
+}
+
+.text-rust-red {
+  color: var(--rust-red);
+}
+
+.bg-dusty-gold {
+  background-color: var(--dusty-gold);
+}
+
+.bg-opacity-10 {
+  background-color: rgba(184, 155, 94, 0.1);
+}
+
+.bg-opacity-20 {
+  background-color: rgba(184, 155, 94, 0.2);
+}
+
+.hover\:bg-opacity-5:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.hover\:bg-opacity-10:hover {
+  background-color: rgba(184, 155, 94, 0.1);
+}
+
+.p-section {
+  padding: var(--spacing-section);
+}
+
+/* Additional utility classes */
+.border {
+  border: 1px solid var(--verotrade-border-primary);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--spacing-2);
+}
+
+.gap-3 {
+  gap: var(--spacing-3);
+}
+
+.gap-4 {
+  gap: var(--spacing-4);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-sm {
+  font-size: var(--verotrade-sm);
+}
+
+.text-xs {
+  font-size: var(--verotrade-xs);
+}
+
+.font-medium {
+  font-weight: var(--verotrade-medium);
+}
+
+.font-bold {
+  font-weight: var(--verotrade-bold);
+}
+
+.rounded-lg {
+  border-radius: var(--verotrade-radius-lg);
+}
+
+.rounded {
+  border-radius: var(--verotrade-radius-md);
+}
+
+.transition-colors {
+  transition: color var(--verotrade-transition-normal), background-color var(--verotrade-transition-normal), border-color var(--verotrade-transition-normal);
+}
+
+.transition-all {
+  transition: all var(--verotrade-transition-normal);
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.transform {
+  transform: var(--transform);
+}
+
+.-translate-y-1\/2 {
+  transform: translateY(-50%);
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.min-h-0 {
+  min-height: 0;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.space-y-5 > * + * {
+  margin-top: var(--spacing-5);
+}
+
+.border-t {
+  border-top: 1px solid var(--verotrade-border-primary);
+}
+
+.pt-4 {
+  padding-top: var(--spacing-4);
+}
+
+.px-3 {
+  padding-left: var(--spacing-3);
+  padding-right: var(--spacing-3);
+}
+
+.py-1 {
+  padding-top: var(--spacing-1);
+  padding-bottom: var(--spacing-1);
+}
+
+.py-2 {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+}
+
+.py-3 {
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-3);
+}
+
+.py-4 {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+
+.px-4 {
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+/* CSS Variables for spacing */
+:root {
+  --spacing-section: var(--verotrade-8);
+  --spacing-component: var(--verotrade-4);
+  --spacing-element: var(--verotrade-3);
+  --spacing-button-group: var(--verotrade-3);
+  --spacing-1: var(--verotrade-1);
+  --spacing-2: var(--verotrade-2);
+  --spacing-3: var(--verotrade-3);
+  --spacing-4: var(--verotrade-4);
+  --spacing-5: var(--verotrade-5);
+  --spacing-6: var(--verotrade-6);
+  --spacing-8: var(--verotrade-8);
 }

@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-12-01T12:36:55.789Z",
+  "summary": {
+    "totalTests": 8,
+    "passedTests": 2,
+    "failedTests": 6,
+    "successRate": "25.0"
+  },
+  "categories": {
+    "largeDataHandling": {
+      "passed": 1,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Large dataset loading performance",
+          "result": "PASSED",
+          "details": "Large dataset loaded in 2256ms",
+          "timestamp": "2025-12-01T12:36:20.342Z"
+        },
+        {
+          "test": "Large data handling tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"FOMO\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:36:24.996Z"
+        }
+      ]
+    },
+    "rapidInteractions": {
+      "passed": 1,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Rapid filter changes",
+          "result": "FAILED",
+          "details": "5 errors during rapid changes",
+          "timestamp": "2025-12-01T12:36:25.002Z"
+        },
+        {
+          "test": "Rapid page navigation",
+          "result": "PASSED",
+          "details": "Rapid navigation completed in 13481ms",
+          "timestamp": "2025-12-01T12:36:42.667Z"
+        }
+      ]
+    },
+    "memoryUsage": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Memory usage tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"FOMO\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:36:47.150Z"
+        }
+      ]
+    },
+    "apiPerformance": {
+      "passed": 0,
+      "failed": 1,
+      "details": [
+        {
+          "test": "API performance tests",
+          "result": "FAILED",
+          "details": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Refresh\")' is not a valid selector.",
+          "timestamp": "2025-12-01T12:36:47.151Z"
+        }
+      ]
+    },
+    "stability": {
+      "passed": 0,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Long-running stability",
+          "result": "FAILED",
+          "details": "10 errors during 10ms",
+          "timestamp": "2025-12-01T12:36:47.161Z"
+        },
+        {
+          "test": "Error recovery stability",
+          "result": "FAILED",
+          "details": "5 recovery failures",
+          "timestamp": "2025-12-01T12:36:51.328Z"
+        }
+      ]
+    }
+  },
+  "keyFindings": [
+    "Large dataset handling performance issues detected",
+    "Rapid interaction handling needs improvement",
+    "Memory management issues during operations",
+    "API response time performance needs optimization",
+    "Stability and error recovery issues detected"
+  ],
+  "recommendations": [
+    "Implement virtual scrolling for large datasets",
+    "Add pagination with progressive loading",
+    "Optimize data processing algorithms",
+    "Implement debouncing for rapid interactions",
+    "Add loading states during rapid operations",
+    "Optimize UI update mechanisms",
+    "Implement memory cleanup and garbage collection",
+    "Optimize component rendering to prevent memory leaks",
+    "Add memory usage monitoring and alerts",
+    "Implement API response caching",
+    "Add loading indicators for slow API calls",
+    "Optimize database queries and indexing",
+    "Implement comprehensive error handling and recovery mechanisms",
+    "Add automatic retry logic for failed operations",
+    "Implement health checks and monitoring"
+  ]
+}

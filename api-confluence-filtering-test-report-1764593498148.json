@@ -1,0 +1,302 @@
+{
+  "summary": {
+    "total": 29,
+    "passed": 0,
+    "failed": 29,
+    "passRate": "0.0%",
+    "timestamp": "2025-12-01T12:51:38.147Z"
+  },
+  "testResults": [
+    {
+      "test": "Authentication",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.075Z"
+    },
+    {
+      "test": "Strategies API",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.079Z"
+    },
+    {
+      "test": "Trades API - basic request",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.081Z"
+    },
+    {
+      "test": "Single filter - Emotion filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.083Z"
+    },
+    {
+      "test": "Single filter - Symbol filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.086Z"
+    },
+    {
+      "test": "Single filter - Market filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.088Z"
+    },
+    {
+      "test": "Single filter - P&L filter - profitable",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.090Z"
+    },
+    {
+      "test": "Single filter - P&L filter - lossable",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.093Z"
+    },
+    {
+      "test": "Single filter - Side filter - Buy",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.097Z"
+    },
+    {
+      "test": "Single filter - Side filter - Sell",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.099Z"
+    },
+    {
+      "test": "Single filter - Date from filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.101Z"
+    },
+    {
+      "test": "Single filter - Date to filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.102Z"
+    },
+    {
+      "test": "Filter combination - Emotion + Market",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.105Z"
+    },
+    {
+      "test": "Filter combination - Symbol + Side",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.107Z"
+    },
+    {
+      "test": "Filter combination - P&L + Date range",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.108Z"
+    },
+    {
+      "test": "Filter combination - All filters",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.110Z"
+    },
+    {
+      "test": "Edge case - Empty emotion filter",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.112Z"
+    },
+    {
+      "test": "Edge case - Invalid market",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.114Z"
+    },
+    {
+      "test": "Edge case - Future date",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.116Z"
+    },
+    {
+      "test": "Edge case - Negative page",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.117Z"
+    },
+    {
+      "test": "Edge case - Zero limit",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.119Z"
+    },
+    {
+      "test": "Edge case - Large limit",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.121Z"
+    },
+    {
+      "test": "Edge case - Multiple emotions",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.122Z"
+    },
+    {
+      "test": "Edge case - Special characters in symbol",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.125Z"
+    },
+    {
+      "test": "Stats API",
+      "passed": false,
+      "details": "write EPROTO 30290000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\ssl3_record.c:355:\n",
+      "performance": null,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.127Z"
+    },
+    {
+      "test": "Performance - No filters",
+      "passed": false,
+      "details": "Avg: 9999ms, Min: 9999ms, Max: 9999ms",
+      "performance": 9999,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.132Z"
+    },
+    {
+      "test": "Performance - Single filter",
+      "passed": false,
+      "details": "Avg: 9999ms, Min: 9999ms, Max: 9999ms",
+      "performance": 9999,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.137Z"
+    },
+    {
+      "test": "Performance - Multiple filters",
+      "passed": false,
+      "details": "Avg: 9999ms, Min: 9999ms, Max: 9999ms",
+      "performance": 9999,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.142Z"
+    },
+    {
+      "test": "Performance - Complex filters",
+      "passed": false,
+      "details": "Avg: 9999ms, Min: 9999ms, Max: 9999ms",
+      "performance": 9999,
+      "response": null,
+      "timestamp": "2025-12-01T12:51:38.147Z"
+    }
+  ],
+  "performance": [
+    {
+      "test": "Performance - No filters",
+      "time": 9999,
+      "min": 9999,
+      "max": 9999,
+      "samples": [
+        9999,
+        9999,
+        9999
+      ]
+    },
+    {
+      "test": "Performance - Single filter",
+      "time": 9999,
+      "min": 9999,
+      "max": 9999,
+      "samples": [
+        9999,
+        9999,
+        9999
+      ]
+    },
+    {
+      "test": "Performance - Multiple filters",
+      "time": 9999,
+      "min": 9999,
+      "max": 9999,
+      "samples": [
+        9999,
+        9999,
+        9999
+      ]
+    },
+    {
+      "test": "Performance - Complex filters",
+      "time": 9999,
+      "min": 9999,
+      "max": 9999,
+      "samples": [
+        9999,
+        9999,
+        9999
+      ]
+    }
+  ],
+  "apiResponses": [],
+  "recommendations": [
+    "Consider optimizing API response times - average is 9999ms",
+    "1 Authentication test(s) failed - review Authentication implementation",
+    "1 Strategies API test(s) failed - review Strategies API implementation",
+    "1 Trades API test(s) failed - review Trades API implementation",
+    "9 Single filter test(s) failed - review Single filter implementation",
+    "4 Filter combination test(s) failed - review Filter combination implementation",
+    "8 Edge case test(s) failed - review Edge case implementation",
+    "1 Stats API test(s) failed - review Stats API implementation",
+    "4 Performance test(s) failed - review Performance implementation",
+    "4 slow API responses detected (>2s) - consider database query optimization"
+  ]
+}

@@ -156,7 +156,7 @@ export default function TestEmotionalAnalysisFix() {
       // Process emotions using same logic as dashboard
       const emotionDataMap: Record<string, { buyCount: number; sellCount: number; nullCount: number }> = {};
       
-      tradesData?.forEach(trade => {
+      tradesData?.forEach((trade: Trade) => {
         if (trade.emotional_state && Array.isArray(trade.emotional_state)) {
           trade.emotional_state.forEach((emotion: string) => {
             if (!emotionDataMap[emotion]) {

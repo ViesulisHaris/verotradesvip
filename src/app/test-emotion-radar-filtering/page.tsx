@@ -291,16 +291,26 @@ export default function EmotionRadarFilteringTest() {
     setBeforeFilterData(allTradesEmotionData);
 
     if (allTradesEmotionData.length > 0) {
-      results[0].status = 'passed';
-      results[0].message = `Successfully processed ${trades.length} trades with ${allTradesEmotionData.length} emotions`;
-      results[0].details = {
-        totalTrades: trades.length,
-        emotionCount: allTradesEmotionData.length,
-        sampleData: allTradesEmotionData.slice(0, 3)
-      };
+      if (results.length > 0) {
+        const resultIndex = results.length - 1;
+        if (results[resultIndex]) {
+          results[resultIndex].status = 'passed';
+          results[resultIndex].message = `Successfully processed ${trades.length} trades with ${allTradesEmotionData.length} emotions`;
+          results[resultIndex].details = {
+            totalTrades: trades.length,
+            emotionCount: allTradesEmotionData.length,
+            sampleData: allTradesEmotionData.slice(0, 3)
+          };
+        }
+      }
     } else {
-      results[0].status = 'failed';
-      results[0].message = 'No emotion data generated from trades';
+      if (results.length > 0) {
+        const resultIndex = results.length - 1;
+        if (results[resultIndex]) {
+          results[resultIndex].status = 'failed';
+          results[resultIndex].message = 'No emotion data generated from trades';
+        }
+      }
     }
 
     // Test 2: Market filter test
@@ -317,20 +327,26 @@ export default function EmotionRadarFilteringTest() {
     const stockEmotionData = getEmotionData(stockTrades);
     
     if (stockTrades.length > 0 && stockEmotionData.length > 0) {
-      results[1].status = 'passed';
-      results[1].message = `Stock filter: ${stockTrades.length} trades, ${stockEmotionData.length} emotions`;
-      results[1].details = {
-        filterType: 'Market: Stock',
-        beforeCount: trades.length,
-        afterCount: stockTrades.length,
-        emotionDataChanged: JSON.stringify(allTradesEmotionData) !== JSON.stringify(stockEmotionData)
-      };
+      if (results[1]) {
+        results[1].status = 'passed';
+        results[1].message = `Stock filter: ${stockTrades.length} trades, ${stockEmotionData.length} emotions`;
+        results[1].details = {
+          filterType: 'Market: Stock',
+          beforeCount: trades.length,
+          afterCount: stockTrades.length,
+          emotionDataChanged: JSON.stringify(allTradesEmotionData) !== JSON.stringify(stockEmotionData)
+        };
+      }
     } else if (stockTrades.length === 0) {
-      results[1].status = 'passed';
-      results[1].message = 'No stock trades found (test passed but no data to verify)';
+      if (results[1]) {
+        results[1].status = 'passed';
+        results[1].message = 'No stock trades found (test passed but no data to verify)';
+      }
     } else {
-      results[1].status = 'failed';
-      results[1].message = 'Stock filter failed to generate emotion data';
+      if (results[1]) {
+        results[1].status = 'failed';
+        results[1].message = 'Stock filter failed to generate emotion data';
+      }
     }
 
     // Test 3: Side filter test
@@ -348,20 +364,24 @@ export default function EmotionRadarFilteringTest() {
     
     if (buyTrades.length > 0 && buyEmotionData.length > 0) {
       const hasBuyLeaning = buyEmotionData.some(emotion => emotion.side === 'Buy');
-      results[2].status = hasBuyLeaning ? 'passed' : 'failed';
-      results[2].message = hasBuyLeaning 
-        ? `Buy filter shows buy-leaning emotions: ${buyTrades.length} trades`
-        : `Buy filter failed to show buy-leaning emotions`;
-      results[2].details = {
-        filterType: 'Side: Buy',
-        beforeCount: trades.length,
-        afterCount: buyTrades.length,
-        hasBuyLeaning,
-        sampleEmotions: buyEmotionData.slice(0, 3)
-      };
+      if (results[2]) {
+        results[2].status = hasBuyLeaning ? 'passed' : 'failed';
+        results[2].message = hasBuyLeaning
+          ? `Buy filter shows buy-leaning emotions: ${buyTrades.length} trades`
+          : `Buy filter failed to show buy-leaning emotions`;
+        results[2].details = {
+          filterType: 'Side: Buy',
+          beforeCount: trades.length,
+          afterCount: buyTrades.length,
+          hasBuyLeaning,
+          sampleEmotions: buyEmotionData.slice(0, 3)
+        };
+      }
     } else {
-      results[2].status = 'failed';
-      results[2].message = 'No buy trades found or no emotion data generated';
+      if (results[2]) {
+        results[2].status = 'failed';
+        results[2].message = 'No buy trades found or no emotion data generated';
+      }
     }
 
     // Test 4: Emotion filter test
@@ -385,20 +405,24 @@ export default function EmotionRadarFilteringTest() {
     
     if (fomoTrades.length > 0 && fomoEmotionData.length > 0) {
       const hasFomoEmotion = fomoEmotionData.some(emotion => emotion.subject === 'FOMO');
-      results[3].status = hasFomoEmotion ? 'passed' : 'failed';
-      results[3].message = hasFomoEmotion
-        ? `FOMO filter correctly shows FOMO emotion: ${fomoTrades.length} trades`
-        : `FOMO filter failed to show FOMO emotion`;
-      results[3].details = {
-        filterType: 'Emotion: FOMO',
-        beforeCount: trades.length,
-        afterCount: fomoTrades.length,
-        hasFomoEmotion,
-        sampleEmotions: fomoEmotionData.slice(0, 3)
-      };
+      if (results[3]) {
+        results[3].status = hasFomoEmotion ? 'passed' : 'failed';
+        results[3].message = hasFomoEmotion
+          ? `FOMO filter correctly shows FOMO emotion: ${fomoTrades.length} trades`
+          : `FOMO filter failed to show FOMO emotion`;
+        results[3].details = {
+          filterType: 'Emotion: FOMO',
+          beforeCount: trades.length,
+          afterCount: fomoTrades.length,
+          hasFomoEmotion,
+          sampleEmotions: fomoEmotionData.slice(0, 3)
+        };
+      }
     } else {
-      results[3].status = 'passed';
-      results[3].message = 'No FOMO trades found (test passed but no data to verify)';
+      if (results[3]) {
+        results[3].status = 'passed';
+        results[3].message = 'No FOMO trades found (test passed but no data to verify)';
+      }
     }
 
     // Test 5: Combined filter test
@@ -418,21 +442,25 @@ export default function EmotionRadarFilteringTest() {
     
     if (stockBuyTrades.length > 0 && stockBuyEmotionData.length > 0) {
       const hasBuyLeaning = stockBuyEmotionData.some(emotion => emotion.side === 'Buy');
-      results[4].status = hasBuyLeaning ? 'passed' : 'failed';
-      results[4].message = hasBuyLeaning
-        ? `Stock+Buy filter works: ${stockBuyTrades.length} trades with buy leaning`
-        : `Stock+Buy filter failed to show proper leaning`;
-      results[4].details = {
-        filterType: 'Market: Stock + Side: Buy',
-        beforeCount: trades.length,
-        afterCount: stockBuyTrades.length,
-        hasBuyLeaning,
-        emotionData: stockBuyEmotionData
-      };
+      if (results[4]) {
+        results[4].status = hasBuyLeaning ? 'passed' : 'failed';
+        results[4].message = hasBuyLeaning
+          ? `Stock+Buy filter works: ${stockBuyTrades.length} trades with buy leaning`
+          : `Stock+Buy filter failed to show proper leaning`;
+        results[4].details = {
+          filterType: 'Market: Stock + Side: Buy',
+          beforeCount: trades.length,
+          afterCount: stockBuyTrades.length,
+          hasBuyLeaning,
+          emotionData: stockBuyEmotionData
+        };
+      }
       setAfterFilterData(stockBuyEmotionData);
     } else {
-      results[4].status = 'passed';
-      results[4].message = 'No Stock+Buy trades found (test passed but no data to verify)';
+      if (results[4]) {
+        results[4].status = 'passed';
+        results[4].message = 'No Stock+Buy trades found (test passed but no data to verify)';
+      }
     }
 
     // Test 6: Leaning calculation verification
@@ -485,22 +513,26 @@ export default function EmotionRadarFilteringTest() {
     const fomoData = testEmotionData.find(e => e.subject === 'FOMO');
     
     if (fomoData && fomoData.side === 'Buy' && (fomoData.leaningValue || 0) > 0) {
-      results[5].status = 'passed';
-      results[5].message = `Leaning calculation correct: 2 Buy, 1 Sell = Buy leaning (${(fomoData.leaningValue || 0).toFixed(1)}%)`;
-      results[5].details = {
-        buyCount: 2,
-        sellCount: 1,
-        expectedLeaning: 'Buy',
-        actualLeaning: fomoData.side,
-        leaningValue: fomoData.leaningValue
-      };
+      if (results[5]) {
+        results[5].status = 'passed';
+        results[5].message = `Leaning calculation correct: 2 Buy, 1 Sell = Buy leaning (${(fomoData.leaningValue || 0).toFixed(1)}%)`;
+        results[5].details = {
+          buyCount: 2,
+          sellCount: 1,
+          expectedLeaning: 'Buy',
+          actualLeaning: fomoData.side,
+          leaningValue: fomoData.leaningValue
+        };
+      }
     } else {
-      results[5].status = 'failed';
-      results[5].message = 'Leaning calculation incorrect';
-      results[5].details = {
-        expected: 'Buy leaning with positive value',
-        actual: fomoData ? `${fomoData.side} (${fomoData.leaningValue})` : 'No data'
-      };
+      if (results[5]) {
+        results[5].status = 'failed';
+        results[5].message = 'Leaning calculation incorrect';
+        results[5].details = {
+          expected: 'Buy leaning with positive value',
+          actual: fomoData ? `${fomoData.side} (${fomoData.leaningValue})` : 'No data'
+        };
+      }
     }
 
     setTestResults(results);

@@ -86,7 +86,7 @@ export default function EmotionRadarEdgeCaseTest() {
   const [selectedTest, setSelectedTest] = useState(0);
   const [testResults, setTestResults] = useState<Record<number, 'pass' | 'fail' | 'pending'>>({});
 
-  const currentTest = testCases[selectedTest];
+  const currentTest = testCases[selectedTest] || testCases[0];
 
   const runTest = (testIndex: number) => {
     const test = testCases[testIndex];
@@ -95,7 +95,7 @@ export default function EmotionRadarEdgeCaseTest() {
       // Simulate the validation logic from EmotionRadar component
       const VALID_EMOTIONS = ['FOMO', 'REVENGE', 'TILT', 'OVERRISK', 'PATIENCE', 'REGRET', 'DISCIPLINE', 'CONFIDENT', 'ANXIOUS', 'NEUTRAL'];
       
-      if (!test.data || (Array.isArray(test.data) && test.data.length === 0)) {
+      if (!test || !test.data || (Array.isArray(test.data) && test.data.length === 0)) {
         // This should show empty state
         setTestResults(prev => ({ ...prev, [testIndex]: 'pass' }));
         return;
@@ -219,18 +219,18 @@ export default function EmotionRadarEdgeCaseTest() {
             <h3 className="text-lg font-medium text-white">Test Details</h3>
             
             <div className="glass p-4 rounded-lg">
-              <h4 className="font-medium text-white mb-2">{currentTest.name}</h4>
-              <p className="text-sm text-white/70 mb-3">{currentTest.description}</p>
+              <h4 className="font-medium text-white mb-2">{currentTest?.name}</h4>
+              <p className="text-sm text-white/70 mb-3">{currentTest?.description}</p>
               
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-white/60">Expected Behavior:</span>
-                  <span className="text-white/80">{currentTest.expectedBehavior}</span>
+                  <span className="text-white/80">{currentTest?.expectedBehavior}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-white/60">Should Render:</span>
-                  <span className={currentTest.shouldRender ? 'text-green-400' : 'text-red-400'}>
-                    {currentTest.shouldRender ? 'Yes' : 'No'}
+                  <span className={currentTest?.shouldRender ? 'text-green-400' : 'text-red-400'}>
+                    {currentTest?.shouldRender ? 'Yes' : 'No'}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -252,7 +252,7 @@ export default function EmotionRadarEdgeCaseTest() {
             <div className="glass p-4 rounded-lg">
               <h4 className="font-medium text-white mb-2">Test Data</h4>
               <pre className="text-xs text-white/70 bg-black/30 p-3 rounded overflow-auto max-h-40">
-                {JSON.stringify(currentTest.data, null, 2)}
+                {JSON.stringify(currentTest?.data, null, 2)}
               </pre>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function EmotionRadarEdgeCaseTest() {
       <div className="glass p-6 rounded-xl">
         <h2 className="text-xl font-semibold text-white mb-4">Component Preview</h2>
         <div className="border border-white/10 rounded-lg p-4">
-          <EmotionRadar data={currentTest.data as any} />
+          <EmotionRadar data={currentTest?.data as any} />
         </div>
       </div>
 

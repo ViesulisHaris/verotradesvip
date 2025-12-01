@@ -43,8 +43,8 @@ export default function PnLChart({ data, height = 300 }: PnLChartProps) {
         }}>
           <p className="body-text text-sm font-medium mb-2">{formatDate(label)}</p>
           {payload.map((entry: any, index: number) => (
-            <p key={index} className="body-text text-sm" style={{ 
-              color: entry.color 
+            <p key={`tooltip-${index}-${entry.name}`} className="body-text text-sm" style={{
+              color: entry.color
             }}>
               {entry.name}: {formatCurrency(entry.value)}
             </p>

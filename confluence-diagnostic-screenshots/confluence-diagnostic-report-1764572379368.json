@@ -1,0 +1,227 @@
+{
+  "timestamp": "2025-12-01T06:59:39.367Z",
+  "summary": {
+    "overallStatus": "critical",
+    "criticalIssues": [
+      "Critical errors detected in confluence tab functionality"
+    ],
+    "recommendations": [
+      "Fix AuthGuard redirect logic for protected routes",
+      "Investigate data fetching and component rendering logic",
+      "Check Supabase configuration and API endpoints",
+      "Review React component state and props handling"
+    ]
+  },
+  "diagnostics": {
+    "authentication": {
+      "findings": [
+        {
+          "finding": "Current URL: http://localhost:3000/confluence",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.394Z"
+        },
+        {
+          "finding": "Is on login page: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.394Z"
+        },
+        {
+          "finding": "Is on confluence page: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.394Z"
+        },
+        {
+          "finding": "AuthGuard components found: {\"authGuard\":false,\"authComponent\":false,\"authLayout\":false}",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.397Z"
+        },
+        {
+          "finding": "Auth state detected: {\"userState\":\"not_found\"}",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.399Z"
+        },
+        {
+          "finding": "Page requires authentication: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:24.400Z"
+        },
+        {
+          "finding": "ISSUE: Protected page accessible without authentication",
+          "status": "error",
+          "timestamp": "2025-12-01T06:59:24.400Z"
+        }
+      ],
+      "status": "issue"
+    },
+    "dataProcessing": {
+      "findings": [
+        {
+          "finding": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "status": "error",
+          "timestamp": "2025-12-01T06:59:20.955Z"
+        },
+        {
+          "finding": "Loading indicators: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.858Z"
+        },
+        {
+          "finding": "Error messages: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.858Z"
+        },
+        {
+          "finding": "Empty states: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.858Z"
+        },
+        {
+          "finding": "Emotion keywords found: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.859Z"
+        },
+        {
+          "finding": "Emotion data present: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.859Z"
+        },
+        {
+          "finding": "Chart elements present: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.859Z"
+        },
+        {
+          "finding": "React error boundaries: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.860Z"
+        },
+        {
+          "finding": "Error messages found: 4",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.860Z"
+        },
+        {
+          "finding": "Some components loading, but data processing may be incomplete",
+          "status": "warning",
+          "timestamp": "2025-12-01T06:59:29.860Z"
+        },
+        {
+          "finding": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "status": "error",
+          "timestamp": "2025-12-01T06:59:38.917Z"
+        }
+      ],
+      "status": "partial"
+    },
+    "componentRendering": {
+      "findings": [
+        {
+          "finding": "mainContent: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.856Z"
+        },
+        {
+          "finding": "confluenceHeading: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "statisticsCards: 4",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "filterControls: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "emotionRadar: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "tradeTable: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "refreshButton: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:29.857Z"
+        },
+        {
+          "finding": "React DevTools available: true",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.920Z"
+        },
+        {
+          "finding": "React root found: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.920Z"
+        },
+        {
+          "finding": "Trade filters in localStorage: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Filter state in localStorage: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Confluence filters in localStorage: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Radar hasEmotionRadar: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Radar hasRadarData: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Radar hasLeaningCalculation: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.922Z"
+        },
+        {
+          "finding": "Radar hasValidEmotions: false",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.923Z"
+        }
+      ],
+      "status": "unknown"
+    },
+    "apiConnectivity": {
+      "findings": [
+        {
+          "finding": "API requests made: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:35.040Z"
+        },
+        {
+          "finding": "API responses received: 0",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.045Z"
+        },
+        {
+          "finding": "Auth endpoint status: 404",
+          "status": "info",
+          "timestamp": "2025-12-01T06:59:38.918Z"
+        },
+        {
+          "finding": "No API connectivity detected",
+          "status": "error",
+          "timestamp": "2025-12-01T06:59:38.918Z"
+        }
+      ],
+      "status": "failed"
+    }
+  }
+}

@@ -42,6 +42,7 @@ export default function AuthRenderingDiagnosisPage() {
         }
       };
     }
+    return undefined;
   }, []);
 
   return (
@@ -253,7 +254,7 @@ export default function AuthRenderingDiagnosisPage() {
             Expected Issues Based on Analysis
           </h2>
           <div style={{
-            spaceY: '1rem'
+            marginBottom: '1rem'
           }}>
             <div style={{
               marginBottom: '1rem',
