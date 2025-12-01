@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function Sidebar({ onLogout }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   const links = [
@@ -22,59 +22,40 @@ export default function Sidebar({ onLogout }: Props) {
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 p-3 bg-black/50 rounded-xl lg:hidden"
-      >
-        <Menu className="w-6 h-6 text-white" />
+      <button onClick={() => setOpen(true)} className="fixed top-4 left-4 z-50 p-2 rounded-full bg-white/10 text-white lg:hidden">
+        <Menu className="w-5 h-5" />
       </button>
 
-      {/* Mobile Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      {open && <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setOpen(false)} />}
 
-      {/* Sidebar */}
       <aside className={`
-        fixed inset-y-0 left-0 z-40 w-64 glass border-r border-white/10 transform transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0
+        fixed inset-y-0 left-0 z-40 w-64 glass border-r border-white/10 transform transition-transform duration-300
+        ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0
       `}>
         <div className="flex items-center justify-between p-4 border-b border-white/10">
-          <h2 className="text-lg font-bold text-white">VeroTrade</h2>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="p-2 rounded hover:bg-white/10 lg:hidden"
-          >
+          <h2 className="text-lg font-bold text-white">Menu</h2>
+          <button onClick={() => setOpen(false)} className="p-1 rounded hover:bg-white/10 lg:hidden">
             <X className="w-5 h-5 text-white" />
           </button>
         </div>
-
         <nav className="p-4 space-y-2">
           {links.map(({ href, label, icon: Icon }) => (
             <Link
               key={href}
               href={href}
               className={`
-                flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200
-                ${pathname === href ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30' : 'text-white/70 hover:bg-white/10 hover:text-white'}
+                flex items-center gap-3 px-4 py-3 rounded-xl transition-all
+                ${pathname.startsWith(href) ? 'bg-white/10 text-primary' : 'text-white/80 hover:bg-white/10'}
               `}
-              onClick={() => setIsOpen(false)}
+              onClick={() => setOpen(false)}
             >
               <Icon className="w-5 h-5" />
-              <span>{label}</span>
+              {label}
             </Link>
           ))}
-          
-          <button
-            onClick={onLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-red-400 hover:bg-red-900/30 transition-all duration-200"
-          >
+          <button onClick={onLogout} className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-red-400 hover:bg-red-500/10">
             <LogOut className="w-5 h-5" />
-            <span>Logout</span>
+            Logout
           </button>
         </nav>
       </aside>
