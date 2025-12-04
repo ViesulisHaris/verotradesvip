@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Display Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .debug-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .log-output {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statistics Display Debug Test</h1>
+        <p>This tool helps diagnose why Total P&L and WinRate statistics are not displaying on the /trades page.</p>
+        
+        <div class="debug-section">
+            <h2>Test Instructions</h2>
+            <ol>
+                <li>Open the trades page in the iframe below</li>
+                <li>Log in to your account</li>
+                <li>Navigate to the /trades page</li>
+                <li>Run the debug tests to check statistics display</li>
+                <li>Check the console output for any issues</li>
+            </ol>
+            
+            <button class="button" onclick="loadTradesPage()">Load Trades Page</button>
+            <button class="button" onclick="runDebugTest()">Run Debug Test</button>
+            <button class="button" onclick="clearLog()">Clear Log</button>
+        </div>
+        
+        <div class="debug-section">
+            <h2>Trades Page</h2>
+            <div class="iframe-container">
+                <iframe id="tradesFrame" src="about:blank"></iframe>
+            </div>
+        </div>
+        
+        <div class="debug-section">
+            <h2>Debug Output</h2>
+            <div id="logOutput" class="log-output">Debug output will appear here...</div>
+        </div>
+        
+        <div class="debug-section">
+            <h2>Manual Checks</h2>
+            <p>After running the debug test, check the following manually:</p>
+            <ul>
+                <li>Are there any trades visible on the page?</li>
+                <li>Are the statistics containers visible in the DOM?</li>
+                <li>Are there any JavaScript errors in the browser console?</li>
+                <li>Are there any network requests failing for statistics?</li>
+                <li>Is the statistics data being returned from the API?</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let logWindow;
+        
+        function log(message) {
+            const logOutput = document.getElementById('logOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            logOutput.textContent += `[${timestamp}] ${message}\n`;
+            logOutput.scrollTop = logOutput.scrollHeight;
+            console.log(message);
+        }
+        
+        function clearLog() {
+            document.getElementById('logOutput').textContent = '';
+        }
+        
+        function loadTradesPage() {
+            const iframe = document.getElementById('tradesFrame');
+            iframe.src = '/trades';
+            log('Loading trades page in iframe...');
+        }
+        
+        function runDebugTest() {
+            const iframe = document.getElementById('tradesFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            if (!iframeDoc) {
+                log('Error: Cannot access iframe content. Make sure the trades page is loaded first.');
+                return;
+            }
+            
+            log('Running debug test on trades page...');
+            
+            // Inject our debug script into the iframe
+            const script = iframeDoc.createElement('script');
+            script.textContent = `
+                // Debug script to investigate statistics display
+                console.log('🔍 [STATISTICS_DEBUG] Starting investigation...');
+                
+                // Check for statistics elements
+                const statsElements = document.querySelectorAll('.metric-value');
+                console.log('🔍 [STATISTICS_DEBUG] Found statistics elements:', statsElements.length);
+                
+                // Check for specific statistics
+                const totalPnL = Array.from(statsElements).find(el => 
+                    el.parentElement?.textContent?.includes('Total P&L')
+                );
+                const winRate = Array.from(statsElements).find(el => 
+                    el.parentElement?.textContent?.includes('Win Rate')
+                );
+                
+                console.log('🔍 [STATISTICS_DEBUG] Total P&L element:', {
+                    found: !!totalPnL,
+                    text: totalPnL?.textContent,
+                    visible: totalPnL?.offsetParent !== null
+                });
+                
+                console.log('🔍 [STATISTICS_DEBUG] Win Rate element:', {
+                    found: !!winRate,
+                    text: winRate?.textContent,
+                    visible: winRate?.offsetParent !== null
+                });
+                
+                // Check for statistics container
+                const statsContainer = document.querySelector('.key-metrics-grid');
+                console.log('🔍 [STATISTICS_DEBUG] Statistics container:', {
+                    found: !!statsContainer,
+                    visible: statsContainer?.offsetParent !== null,
+                    display: statsContainer ? window.getComputedStyle(statsContainer).display : 'not found'
+                });
+                
+                // Check for trades
+                const trades = document.querySelectorAll('[data-testid*="trade"], .dashboard-card');
+                console.log('🔍 [STATISTICS_DEBUG] Trade elements found:', trades.length);
+                
+                // Check for loading indicators
+                const loadingElements = document.querySelectorAll('.animate-spin, [class*="loading"]');
+                console.log('🔍 [STATISTICS_DEBUG] Loading elements found:', loadingElements.length);
+                
+                // Check if statistics are in the DOM but hidden
+                if (statsContainer) {
+                    const computedStyle = window.getComputedStyle(statsContainer);
+                    console.log('🔍 [STATISTICS_DEBUG] Statistics container styles:', {
+                        display: computedStyle.display,
+                        visibility: computedStyle.visibility,
+                        opacity: computedStyle.opacity,
+                        height: computedStyle.height,
+                        width: computedStyle.width
+                    });
+                }
+                
+                // Check for any conditional rendering logic
+                const summarySection = document.querySelector('div[class*="summary"], div[class*="stats"]');
+                console.log('🔍 [STATISTICS_DEBUG] Summary section found:', !!summarySection);
+                
+                // Look for the specific conditional rendering logic
+                const conditionalRender = document.evaluate(
+                    "//div[contains(text(), 'Summary Stats') or contains(text(), 'Statistics')]",
+                    document,
+                    null,
+                    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+                    null
+                );
+                
+                console.log('🔍 [STATISTICS_DEBUG] Conditional render elements found:', conditionalRender.snapshotLength);
+                
+                // Check for pagination data
+                const pagination = document.querySelector('[class*="pagination"], [class*="page"]');
+                console.log('🔍 [STATISTICS_DEBUG] Pagination elements found:', !!pagination);
+                
+                // Check if the statistics condition is being met
+                const conditionMet = document.evaluate(
+                    "//div[(.//div[contains(@class, 'pagination') and .//div[contains(@class, 'totalCount') and number(translate(., '0', '')) > 0]) or .//div[contains(@class, 'statistics')]]",
+                    document,
+                    null,
+                    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+                    null
+                );
+                
+                console.log('🔍 [STATISTICS_DEBUG] Statistics display condition met:', conditionMet.snapshotLength > 0);
+                
+                // Final diagnosis
+                console.log('🔍 [STATISTICS_DEBUG] DIAGNOSIS:');
+                if (statsElements.length === 0) {
+                    console.log('🔍 [STATISTICS_DEBUG] ISSUE: No statistics elements found in DOM');
+                } else if (!totalPnL || !winRate) {
+                    console.log('🔍 [STATISTICS_DEBUG] ISSUE: Total P&L or Win Rate elements missing');
+                } else if (totalPnL.offsetParent === null || winRate.offsetParent === null) {
+                    console.log('🔍 [STATISTICS_DEBUG] ISSUE: Statistics elements exist but are hidden');
+                } else if (!statsContainer || statsContainer.offsetParent === null) {
+                    console.log('🔍 [STATISTICS_DEBUG] ISSUE: Statistics container missing or hidden');
+                } else {
+                    console.log('🔍 [STATISTICS_DEBUG] Statistics appear to be properly rendered');
+                }
+                
+                console.log('🔍 [STATISTICS_DEBUG] Investigation completed');
+            `;
+            
+            iframeDoc.body.appendChild(script);
+            
+            // Monitor console output from iframe
+            iframe.contentWindow.console.log = function(...args) {
+                log('[IFRAME] ' + args.join(' '));
+            };
+            
+            iframe.contentWindow.console.error = function(...args) {
+                log('[IFRAME ERROR] ' + args.join(' '));
+            };
+            
+            log('Debug script injected. Check iframe console for detailed output.');
+        }
+        
+        // Auto-load trades page when page loads
+        window.addEventListener('load', () => {
+            setTimeout(loadTradesPage, 1000);
+        });
+    </script>
+</body>
+</html>

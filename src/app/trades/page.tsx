@@ -804,7 +804,7 @@ const TradesPageContent = memo(function TradesPageContent() {
         </div>
 
         {/* Summary Stats Section - 4-Column Grid Layout */}
-        {(pagination && pagination.totalCount > 0) || statistics ? (
+        {statistics || (pagination && pagination.totalCount > 0) ? (
           <div className="key-metrics-grid mb-component">
             <div className="dashboard-card">
               <div className="card-header">

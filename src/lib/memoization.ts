@@ -432,25 +432,29 @@ export function createFilterDebouncedFunction<T extends (...args: any[]) => any>
   fn: T
 ): T {
   let timeoutId: NodeJS.Timeout | null = null;
-  let lastMarketValue: string | undefined;
+  let lastFilterHash: string | undefined;
   
   return ((...args: Parameters<T>) => {
     // Extract market filter from args if it's the filter function
     const marketFilter = args.length > 1 && typeof args[1] === 'object' ? args[1].market : undefined;
     
-    // Check if market filter changed - if so, clear cache immediately
-    if (lastMarketValue !== undefined && lastMarketValue !== marketFilter) {
-      console.log('🔄 [MARKET_FILTER_DEBUG] Market filter changed, clearing cache:', {
-        oldValue: lastMarketValue,
-        newValue: marketFilter || 'NONE',
+    // Generate current filter hash from args for comparison
+    const currentFilterHash = JSON.stringify(args);
+    
+    // Check if any filter changed - if so, clear cache immediately
+    if (lastFilterHash !== undefined && lastFilterHash !== currentFilterHash) {
+      console.log('🔄 [WINRATE_DEBUG] Filter parameters changed, clearing cache:', {
+        oldHash: lastFilterHash,
+        newHash: currentFilterHash,
+        filterParams: args,
         timestamp: new Date().toISOString()
       });
       
-      // Clear all cache entries when market filter changes to ensure fresh data
+      // Clear all cache entries when any filter changes to ensure fresh statistics
       memoCache.clear();
     }
     
-    lastMarketValue = marketFilter;
+    lastFilterHash = currentFilterHash;
     
     // Clear existing timeout
     if (timeoutId) {
@@ -459,8 +463,8 @@ export function createFilterDebouncedFunction<T extends (...args: any[]) => any>
     
     // Set new timeout with reduced delay for better responsiveness
     timeoutId = setTimeout(() => {
-      console.log('🔄 [MARKET_FILTER_DEBUG] Executing debounced filter function:', {
-        marketFilter: marketFilter || 'NO_FILTER',
+      console.log('🔄 [WINRATE_DEBUG] Executing debounced filter function:', {
+        filterParams: args,
         argsCount: args.length,
         timestamp: new Date().toISOString()
       });

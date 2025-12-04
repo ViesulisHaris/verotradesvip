@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winrate Calculation Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .container {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+        .result {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        .info { color: #2196F3; }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .filter-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input {
+            padding: 8px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background: #333;
+            color: #e0e0e0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Winrate Calculation Debug Test</h1>
+    
+    <div class="container">
+        <h2>Test Configuration</h2>
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" placeholder="Enter user ID">
+            </div>
+            <div class="filter-group">
+                <label for="marketFilter">Market Filter:</label>
+                <select id="marketFilter">
+                    <option value="">All Markets</option>
+                    <option value="stock">Stocks</option>
+                    <option value="crypto">Crypto</option>
+                    <option value="forex">Forex</option>
+                    <option value="futures">Futures</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="pnlFilter">P&L Filter:</label>
+                <select id="pnlFilter">
+                    <option value="all">All Trades</option>
+                    <option value="profitable">Profitable Only</option>
+                    <option value="lossable">Losses Only</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sideFilter">Side Filter:</label>
+                <select id="sideFilter">
+                    <option value="">All Sides</option>
+                    <option value="Buy">Buy Only</option>
+                    <option value="Sell">Sell Only</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="runWinrateTest()">Run Winrate Test</button>
+        <button onclick="runComparisonTest()">Run Filter Comparison</button>
+        <button onclick="clearResults()">Clear Results</button>
+    </div>
+
+    <div class="container">
+        <h2>Test Results</h2>
+        <div id="testResults" class="result">Click "Run Winrate Test" to start debugging...</div>
+    </div>
+
+    <div class="container">
+        <h2>Filter Comparison Results</h2>
+        <div id="comparisonResults">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Filter Scenario</th>
+                        <th>Total Trades</th>
+                        <th>Winning Trades</th>
+                        <th>Losing Trades</th>
+                        <th>Win Rate %</th>
+                        <th>Total P&L</th>
+                    </tr>
+                </thead>
+                <tbody id="comparisonTableBody">
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Run comparison test to see results</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import Supabase client
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+        // Initialize Supabase
+        const supabaseUrl = 'https://your-supabase-url.supabase.co'; // Replace with actual URL
+        const supabaseKey = 'your-anon-key'; // Replace with actual key
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Helper function to log results
+        function logResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('testResults');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info';
+            resultsDiv.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        // Manual winrate calculation
+        function calculateManualWinrate(trades) {
+            if (!trades || trades.length === 0) {
+                return { winRate: 0, totalTrades: 0, winningTrades: 0, losingTrades: 0, totalPnL: 0 };
+            }
+
+            let winningTrades = 0;
+            let losingTrades = 0;
+            let totalPnL = 0;
+
+            trades.forEach(trade => {
+                const pnl = trade.pnl || 0;
+                totalPnL += pnl;
+
+                if (pnl > 0) {
+                    winningTrades++;
+                } else if (pnl < 0) {
+                    losingTrades++;
+                }
+            });
+
+            const winRate = trades.length > 0 ? (winningTrades / trades.length) * 100 : 0;
+
+            return {
+                winRate: parseFloat(winRate.toFixed(2)),
+                totalTrades: trades.length,
+                winningTrades,
+                losingTrades,
+                totalPnL: parseFloat(totalPnL.toFixed(2))
+            };
+        }
+
+        // Fetch trades with filters
+        async function fetchTradesWithFilters(userId, filters = {}) {
+            try {
+                let query = supabase
+                    .from('trades')
+                    .select('pnl, market, side, symbol', { count: 'exact' })
+                    .eq('user_id', userId);
+
+                // Apply filters
+                if (filters.market) {
+                    query = query.ilike('market', filters.market);
+                }
+
+                if (filters.pnlFilter && filters.pnlFilter !== 'all') {
+                    if (filters.pnlFilter === 'profitable') {
+                        query = query.gt('pnl', 0);
+                    } else if (filters.pnlFilter === 'lossable') {
+                        query = query.lt('pnl', 0);
+                    }
+                }
+
+                if (filters.side) {
+                    query = query.eq('side', filters.side);
+                }
+
+                const { data, error, count } = await query;
+
+                if (error) {
+                    throw error;
+                }
+
+                return { data: data || [], count: count || 0 };
+            } catch (error) {
+                logResult(`Error fetching trades: ${error.message}`, 'error');
+                return { data: [], count: 0 };
+            }
+        }
+
+        // Main winrate test function
+        window.runWinrateTest = async function() {
+            const userId = document.getElementById('userId').value;
+            const marketFilter = document.getElementById('marketFilter').value;
+            const pnlFilter = document.getElementById('pnlFilter').value;
+            const sideFilter = document.getElementById('sideFilter').value;
+
+            if (!userId) {
+                logResult('Please enter a User ID', 'error');
+                return;
+            }
+
+            logResult(`Starting winrate test for user: ${userId}`, 'info');
+            logResult(`Filters: Market=${marketFilter || 'None'}, P&L=${pnlFilter}, Side=${sideFilter || 'None'}`, 'info');
+
+            const filters = {
+                market: marketFilter,
+                pnlFilter: pnlFilter,
+                side: sideFilter
+            };
+
+            // Fetch trades
+            const { data: trades, count } = await fetchTradesWithFilters(userId, filters);
+            
+            logResult(`Fetched ${count} trades (data length: ${trades.length})`, 'info');
+
+            // Show sample data
+            if (trades.length > 0) {
+                logResult(`Sample trade data: ${JSON.stringify(trades.slice(0, 3), null, 2)}`, 'info');
+            }
+
+            // Calculate manual winrate
+            const manualStats = calculateManualWinrate(trades);
+            logResult(`Manual calculation: Win Rate=${manualStats.winRate}%, Total=${manualStats.totalTrades}, Wins=${manualStats.winningTrades}, Losses=${manualStats.losingTrades}, P&L=${manualStats.totalPnL}`, 'success');
+
+            // Check for potential issues
+            const nullPnLTrades = trades.filter(trade => trade.pnl === null || trade.pnl === undefined);
+            const zeroPnLTrades = trades.filter(trade => trade.pnl === 0);
+
+            if (nullPnLTrades.length > 0) {
+                logResult(`Warning: ${nullPnLTrades.length} trades have null/undefined P&L`, 'warning');
+            }
+
+            if (zeroPnLTrades.length > 0) {
+                logResult(`Info: ${zeroPnLTrades.length} trades have zero P&L (neither win nor loss)`, 'info');
+            }
+
+            logResult('Winrate test completed', 'success');
+        };
+
+        // Comparison test function
+        window.runComparisonTest = async function() {
+            const userId = document.getElementById('userId').value;
+
+            if (!userId) {
+                logResult('Please enter a User ID', 'error');
+                return;
+            }
+
+            logResult('Starting filter comparison test...', 'info');
+
+            const scenarios = [
+                { name: 'No Filters', filters: {} },
+                { name: 'Stock Market', filters: { market: 'stock' } },
+                { name: 'Crypto Market', filters: { market: 'crypto' } },
+                { name: 'Forex Market', filters: { market: 'forex' } },
+                { name: 'Profitable Only', filters: { pnlFilter: 'profitable' } },
+                { name: 'Losses Only', filters: { pnlFilter: 'lossable' } },
+                { name: 'Buy Only', filters: { side: 'Buy' } },
+                { name: 'Sell Only', filters: { side: 'Sell' } }
+            ];
+
+            const tbody = document.getElementById('comparisonTableBody');
+            tbody.innerHTML = '';
+
+            for (const scenario of scenarios) {
+                logResult(`Testing: ${scenario.name}`, 'info');
+                
+                const { data: trades, count } = await fetchTradesWithFilters(userId, scenario.filters);
+                const stats = calculateManualWinrate(trades);
+
+                const row = tbody.insertRow();
+                row.insertCell(0).textContent = scenario.name;
+                row.insertCell(1).textContent = stats.totalTrades;
+                row.insertCell(2).textContent = stats.winningTrades;
+                row.insertCell(3).textContent = stats.losingTrades;
+                row.insertCell(4).textContent = `${stats.winRate}%`;
+                row.insertCell(5).textContent = `$${stats.totalPnL.toFixed(2)}`;
+
+                // Highlight rows with potential issues
+                if (stats.totalTrades === 0) {
+                    row.style.backgroundColor = '#444';
+                } else if (stats.winRate === 0 || stats.winRate === 100) {
+                    row.style.backgroundColor = '#663333';
+                }
+            }
+
+            logResult('Filter comparison test completed', 'success');
+        };
+
+        // Clear results function
+        window.clearResults = function() {
+            document.getElementById('testResults').innerHTML = 'Results cleared...';
+            document.getElementById('comparisonTableBody').innerHTML = '<tr><td colspan="6" style="text-align: center;">Run comparison test to see results</td></tr>';
+        };
+
+        // Initialize
+        logResult('Winrate Debug Tool loaded. Please configure Supabase credentials in the script.', 'info');
+    </script>
+</body>
+</html>

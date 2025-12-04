@@ -598,10 +598,10 @@ export async function fetchTradesStatistics(
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
     
-    // Build optimized query for statistics - use aggregate functions for better performance
+    // Build optimized query for statistics - fetch only pnl column for calculations
     let query = supabase
       .from('trades')
-      .select('pnl', { count: 'exact', head: true }) // Use head: true for faster count
+      .select('pnl', { count: 'exact' }) // Remove head: true to fetch actual pnl data
       .eq('user_id', validatedUserId);
 
     // Apply filters (same as in fetchTradesPaginated)
@@ -670,7 +670,17 @@ export async function fetchTradesStatistics(
     
     // Optimized statistics calculation
     const trades = data || [];
-    const totalTrades = count || trades.length;
+    
+    // CRITICAL FIX: Use actual data length for consistent winrate calculation
+    // The count might include records without P&L data, while data array contains actual P&L values
+    const totalTrades = trades.length;
+    
+    console.log('🔄 [WINRATE_DEBUG] Winrate calculation data:', {
+      countFromQuery: count,
+      dataLength: trades.length,
+      usingTotalTrades: totalTrades,
+      sampleData: trades.slice(0, 3)
+    });
     
     // Use reduce for single-pass calculation
     const stats = trades.reduce((acc: { totalPnL: number; winningTrades: number; losingTrades: number }, trade: Trade) => {
@@ -681,7 +691,16 @@ export async function fetchTradesStatistics(
       return acc;
     }, { totalPnL: 0, winningTrades: 0, losingTrades: 0 });
 
+    // CRITICAL FIX: Calculate winrate using consistent data source
     const winRate = totalTrades > 0 ? (stats.winningTrades / totalTrades) * 100 : 0;
+    
+    console.log('🔄 [WINRATE_DEBUG] Winrate calculation result:', {
+      totalTrades,
+      winningTrades: stats.winningTrades,
+      losingTrades: stats.losingTrades,
+      winRate,
+      calculation: `${stats.winningTrades} / ${totalTrades} * 100 = ${winRate}%`
+    });
 
     console.log('🔄 [MARKET_FILTER_DEBUG] Optimized statistics query response:', {
       totalTrades,
