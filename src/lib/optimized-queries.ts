@@ -125,10 +125,27 @@ export async function fetchTradesPaginated(
         dateTo: options.dateTo,
         pnlFilter: options.pnlFilter,
         side: options.side
+      },
+      pagination: {
+        page: options.page,
+        limit: options.limit,
+        from: from,
+        to: to,
+        orderBy: orderBy
       }
     });
     
     const { data, error, count } = await query;
+    
+    console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Trades query response:', {
+      hasData: !!data,
+      dataLength: data?.length || 0,
+      hasError: !!error,
+      error: error?.message || null,
+      count: count,
+      totalCount: count || 0,
+      totalPages: Math.ceil((count || 0) / options.limit)
+    });
 
     if (error) {
       console.error('Error fetching paginated trades:', error);
@@ -487,6 +504,105 @@ async function fetchRecentActivity(userId: string): Promise<any[]> {
     return data || [];
   } catch (error) {
     console.error('Exception in fetchRecentActivity:', error);
+    throw error;
+  }
+}
+
+/**
+ * Fetch trades statistics for all trades (not paginated)
+ * Returns aggregate statistics for total P&L, win rate, and other metrics
+ */
+export async function fetchTradesStatistics(
+  userId: string,
+  options: {
+    strategyId?: string;
+    symbol?: string;
+    market?: string;
+    dateFrom?: string;
+    dateTo?: string;
+    pnlFilter?: 'all' | 'profitable' | 'lossable';
+    side?: 'Buy' | 'Sell' | '';
+    emotionalStates?: string[];
+  } = {}
+): Promise<{
+  totalPnL: number;
+  winRate: number;
+  totalTrades: number;
+  winningTrades: number;
+  losingTrades: number;
+}> {
+  try {
+    // Validate user ID
+    const validatedUserId = validateUUID(userId, 'user_id');
+    
+    // Build base query - only select the columns we need for statistics
+    let query = supabase
+      .from('trades')
+      .select('pnl', { count: 'exact' })
+      .eq('user_id', validatedUserId);
+
+    // Apply filters (same as in fetchTradesPaginated)
+    if (options.strategyId) {
+      const validatedStrategyId = validateUUID(options.strategyId, 'strategy_id');
+      query = query.eq('strategy_id', validatedStrategyId);
+    }
+
+    if (options.symbol) {
+      query = query.ilike('symbol', `%${options.symbol}%`);
+    }
+
+    if (options.market) {
+      query = query.eq('market', options.market);
+    }
+
+    if (options.dateFrom) {
+      query = query.gte('trade_date', options.dateFrom);
+    }
+
+    if (options.dateTo) {
+      query = query.lte('trade_date', options.dateTo);
+    }
+
+    // P&L filter
+    if (options.pnlFilter && options.pnlFilter !== 'all') {
+      if (options.pnlFilter === 'profitable') {
+        query = query.gt('pnl', 0);
+      } else if (options.pnlFilter === 'lossable') {
+        query = query.lt('pnl', 0);
+      }
+    }
+
+    // Trade side filter
+    if (options.side) {
+      query = query.eq('side', options.side);
+    }
+
+    // Execute query
+    const { data, error, count } = await query;
+
+    if (error) {
+      console.error('Error fetching trades statistics:', error);
+      throw error;
+    }
+
+    // Calculate statistics
+    const trades = data || [];
+    const totalTrades = count || trades.length;
+    const pnls = trades.map((t: any) => t.pnl || 0);
+    const totalPnL = pnls.reduce((sum: number, pnl: number) => sum + pnl, 0);
+    const winningTrades = pnls.filter((pnl: number) => pnl > 0).length;
+    const losingTrades = pnls.filter((pnl: number) => pnl < 0).length;
+    const winRate = totalTrades > 0 ? (winningTrades / totalTrades) * 100 : 0;
+
+    return {
+      totalPnL,
+      winRate,
+      totalTrades,
+      winningTrades,
+      losingTrades
+    };
+  } catch (error) {
+    console.error('Exception in fetchTradesStatistics:', error);
     throw error;
   }
 }

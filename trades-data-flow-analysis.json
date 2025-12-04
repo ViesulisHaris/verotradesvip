@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-12-04T09:06:54.490Z",
+  "componentStructure": {
+    "mainComponent": "TradesPage",
+    "authGuard": "AuthGuard with requireAuth={true}",
+    "layout": "UnifiedLayout",
+    "contentComponent": "TradesPageContent"
+  },
+  "dataFlow": {
+    "authentication": {
+      "dependency": "useAuth() hook from AuthContext-simple",
+      "guard": "AuthGuard component redirects to /login if not authenticated",
+      "issue": "User must be authenticated before any data fetching occurs"
+    },
+    "statistics": {
+      "fetchingFunction": "fetchTradesStatistics()",
+      "trigger": "useEffect when filters change",
+      "dependency": "user?.id and filters",
+      "queryType": "Aggregate query - only selects pnl column with count",
+      "potentialIssue": "Works independently of trades list fetching"
+    },
+    "tradesList": {
+      "fetchingFunction": "fetchTradesPaginated()",
+      "trigger": "useEffect when currentPage, filters, sortConfig, user?.id, pageSize change",
+      "dependency": "user?.id, paginationOptions, filters, sortConfig",
+      "queryType": "Full trade data with strategies join",
+      "potentialIssue": "More complex query with more failure points"
+    },
+    "stateManagement": {
+      "tradesState": "const [trades, setTrades] = useState<Trade[]>([])",
+      "statisticsState": "const [statistics, setStatistics] = useState<...>(null)",
+      "paginationState": "const [pagination, setPagination] = useState<PaginatedResult<Trade> | null>(null)",
+      "loadingState": "const [loading, setLoading] = useState(true)"
+    }
+  },
+  "renderingLogic": {
+    "statisticsCards": {
+      "condition": "(pagination && pagination.totalCount > 0) || statistics ?",
+      "dataSource": "statistics?.totalTrades || pagination?.totalCount || 0",
+      "potentialIssue": "Can display if either statistics OR pagination has data"
+    },
+    "tradesList": {
+      "condition": "trades.length === 0 ?",
+      "noTradesMessage": "Shows \"No trades yet\" when trades array is empty",
+      "tradesRendering": "Maps over trades array when it has data",
+      "potentialIssue": "Depends only on trades array, not pagination data"
+    }
+  },
+  "potentialIssues": [
+    {
+      "issue": "Authentication Required",
+      "severity": "HIGH",
+      "description": "Both statistics and trades require user authentication",
+      "impact": "If auth fails, no data will load"
+    },
+    {
+      "issue": "Different Data Sources",
+      "severity": "MEDIUM",
+      "description": "Statistics and trades use separate API calls",
+      "impact": "Statistics might work while trades fail due to different query complexity"
+    },
+    {
+      "issue": "Rendering Logic Mismatch",
+      "severity": "MEDIUM",
+      "description": "Statistics can show from pagination count while trades list needs actual trades array",
+      "impact": "Statistics display but trades show \"no trades\" if trades array is empty but pagination has count"
+    },
+    {
+      "issue": "Query Complexity Difference",
+      "severity": "MEDIUM",
+      "description": "Statistics query is simple (pnl + count), trades query is complex (full data + strategies join)",
+      "impact": "Complex query might fail while simple one succeeds"
+    },
+    {
+      "issue": "Error Handling",
+      "severity": "LOW",
+      "description": "Both fetch operations have try-catch but set different error states",
+      "impact": "One might fail silently while the other shows errors"
+    }
+  ],
+  "mostLikelyCauses": [
+    {
+      "rank": 1,
+      "cause": "Query Complexity Difference",
+      "explanation": "The statistics query is simple and fast, while the trades query involves a complex join with strategies table. If there's an issue with the strategies relationship or the join is failing, statistics will work but trades won't load.",
+      "evidence": "Statistics only needs pnl column, trades needs full trade data + strategies join"
+    },
+    {
+      "rank": 2,
+      "cause": "Data Processing Issue",
+      "explanation": "The trades data might be fetched but not properly processed into the trades array, while pagination metadata is correctly set.",
+      "evidence": "Rendering logic uses different sources (trades array vs pagination count)"
+    },
+    {
+      "rank": 3,
+      "cause": "Filtering Logic",
+      "explanation": "The trades query applies more filters than statistics, and one of the filters might be causing the query to return empty results.",
+      "evidence": "Trades query has additional emotionalStates filter and more complex logic"
+    }
+  ],
+  "debuggingSteps": [
+    "1. Authenticate first before testing",
+    "2. Check browser network tab for both API calls",
+    "3. Compare the statistics API response vs trades API response",
+    "4. Look for any errors in the strategies join or emotional states filtering",
+    "5. Check if pagination.count has value but trades array is empty",
+    "6. Verify the actual SQL queries being executed"
+  ],
+  "recommendedFixes": [
+    {
+      "priority": "HIGH",
+      "fix": "Add comprehensive logging to both fetchTradesStatistics and fetchTradesPaginated",
+      "implementation": "Log the actual SQL queries, parameters, and response data"
+    },
+    {
+      "priority": "HIGH",
+      "fix": "Add error boundary around trades list rendering",
+      "implementation": "Catch and display any rendering errors in the trades list component"
+    },
+    {
+      "priority": "MEDIUM",
+      "fix": "Synchronize rendering logic",
+      "implementation": "Use consistent data source for both statistics and trades list display"
+    },
+    {
+      "priority": "MEDIUM",
+      "fix": "Add fallback for failed strategies join",
+      "implementation": "Handle cases where strategies relationship fails but trades data is available"
+    }
+  ]
+}

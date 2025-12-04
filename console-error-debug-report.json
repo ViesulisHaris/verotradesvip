@@ -1,0 +1,2796 @@
+{
+  "timestamp": "2025-12-04T09:39:30.284Z",
+  "summary": {
+    "totalConsoleMessages": 137,
+    "errors": 5,
+    "warnings": 0,
+    "logs": 137
+  },
+  "errors": [
+    {
+      "type": "requestfailed",
+      "url": "http://localhost:3000/login?_rsc=1pqi3",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "timestamp": "2025-12-04T09:39:10.853Z"
+    },
+    {
+      "type": "requestfailed",
+      "url": "http://localhost:3000/dashboard?_rsc=32djh",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "timestamp": "2025-12-04T09:39:14.949Z"
+    },
+    {
+      "type": "requestfailed",
+      "url": "http://localhost:3000/dashboard?_rsc=16jui",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "timestamp": "2025-12-04T09:39:15.013Z"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://bzmixuxautbmqbrqtufx.supabase.co/auth/v1/logout?scope=global",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "timestamp": "2025-12-04T09:39:26.474Z"
+    },
+    {
+      "type": "requestfailed",
+      "url": "http://localhost:3000/login?_rsc=199om",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      },
+      "timestamp": "2025-12-04T09:39:26.535Z"
+    }
+  ],
+  "warnings": [],
+  "logs": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.459Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      },
+      "timestamp": "2025-12-04T09:39:10.526Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.528Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.529Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.529Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-04T09:39:10.526Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.530Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-04T09:39:10.529Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.531Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 257,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.549Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.587Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.589Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.589Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.594Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.594Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:10.602Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:10.605Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.606Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.712Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.713Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.714Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:10.714Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.713Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.714Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.716Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: 3391ynn11, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.716Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: 3391ynn11, reason: requireAuth && !user && authInitialized && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 99,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:10.717Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 1c8919xi2, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:10.720Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.721Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.721Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.722Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.722Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.722Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:10.923Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:10.923Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.925Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:10.941Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.943Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:10.942Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.943Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.944Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:10.943Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:10.944Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:10.952Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.952Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "location": {
+        "url": "http://localhost:3000/login",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-12-04T09:39:11.057Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-12-04T09:39:11.538Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 1c8919xi2, event: SIGNED_IN, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:14.873Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:14.873Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: SIGNED_IN, hasSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:14.873Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.874Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] User signed in, redirecting to dashboard {userEmail: testuser1000@verotrade.com, reason: SIGNED_IN event with session}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 67,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.874Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login successful, auth state change will handle redirect {userEmail: testuser1000@verotrade.com, hasData: true, hasUser: true, timestamp: 2025-12-04T09:39:14.874Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 117,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.875Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state listener will handle redirect automatically {userEmail: testuser1000@verotrade.com, reason: Auth state change listener will handle SIGNED_IN event}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 125,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.875Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:14.874Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.876Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:14.875Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: true, userEmail: testuser1000@verotrade.com, loading: false, shouldRedirect: true, timestamp: 2025-12-04T09:39:14.877Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:14.879Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Redirecting to dashboard from useEffect {userEmail: testuser1000@verotrade.com, reason: user && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 42,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.879Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.880Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 0hca6olhg, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 0hca6olhg, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.285Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.285Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.286Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.286Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.286Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.287Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: 0hca6olhg, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:15.310Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:19.960Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      },
+      "timestamp": "2025-12-04T09:39:19.987Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-04T09:39:19.987Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-04T09:39:19.987Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.989Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 257,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.991Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.028Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.030Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.029Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.031Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.030Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.030Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.031Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.031Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:20.039Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.040Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:20.041Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.042Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.149Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Found existing session data in localStorage: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 132,
+        "columnNumber": 32
+      },
+      "timestamp": "2025-12-04T09:39:20.150Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: true, hasError: false, error: undefined, userEmail: testuser1000@verotrade.com}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.150Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.152Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.151Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.152Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.153Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.153Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.152Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.154Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.152Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.154Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.153Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.155Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.153Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.155Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.176Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622, currentPage: 1, pageSize: 25, sortConfig: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 299,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.177Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered - DISABLED: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 351,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.177Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: s009ydljp, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.180Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.180Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622, currentPage: 1, pageSize: 25, sortConfig: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 299,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.181Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered - DISABLED: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 351,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.181Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: krwun05e8, event: INITIAL_SESSION, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:20.182Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.183Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.183Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.184Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.183Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.192Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Starting trades fetch...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 312,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.483Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Fetching trades with options: {page: 1, limit: 25, sortBy: trade_date, sortOrder: desc, symbol: }",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 321,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [OPTIMIZED_QUERIES_DEBUG] Executing trades query with filters: {hasEmotionalStates: false, emotionalStates: Array(0), otherFilters: Object, pagination: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/optimized-queries.ts",
+        "lineNumber": 79,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [OPTIMIZED_QUERIES_DEBUG] Trades query response: {hasData: true, dataLength: 25, hasError: false, error: null, count: 1000}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/optimized-queries.ts",
+        "lineNumber": 100,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.655Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetch result: {hasResult: true, totalCount: 1000, dataLength: 25, currentPage: 1, totalPages: 40}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 323,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.656Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] State updated: {paginationSet: true, tradesSet: 25}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 332,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.656Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: true, hasError: false, error: undefined, timestamp: 2025-12-04T09:39:20.989Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: krwun05e8, event: SIGNED_OUT, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:26.468Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:26.469Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:26.473Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.474Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:26.473Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.475Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.475Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.476Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: s009ydljp, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: s009ydljp, reason: requireAuth && !user && authInitialized && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 99,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:26.486Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:26.662Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.663Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:26.663Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 31pbsyk14, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 31pbsyk14, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:26.680Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.681Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:26.681Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.683Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: 31pbsyk14, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:26.682Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:26.682Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: 31pbsyk14, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:26.686Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.686Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "location": {
+        "url": "http://localhost:3000/login",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-12-04T09:39:26.799Z"
+    }
+  ],
+  "allConsoleMessages": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.459Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      },
+      "timestamp": "2025-12-04T09:39:10.526Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.528Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.529Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.529Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-04T09:39:10.526Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.530Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-04T09:39:10.529Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.531Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 257,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.549Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.587Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.589Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.589Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:10.590Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.594Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.594Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:10.602Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.603Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:10.605Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.606Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.712Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: false, hasError: false, error: undefined, userEmail: undefined}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.713Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.714Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:10.714Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.713Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.714Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.715Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 3391ynn11, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.716Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: 3391ynn11, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.716Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: 3391ynn11, reason: requireAuth && !user && authInitialized && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 99,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:10.717Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 1c8919xi2, event: INITIAL_SESSION, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:10.720Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:10.721Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.721Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.722Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:10.722Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.722Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:10.923Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:10.923Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.924Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:10.925Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:10.941Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.943Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:10.942Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.943Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.944Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:10.943Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:10.944Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.945Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:10.952Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:10.952Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "location": {
+        "url": "http://localhost:3000/login",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-12-04T09:39:11.057Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: false, hasError: false, error: undefined, timestamp: 2025-12-04T09:39:11.538Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:11.538Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: 1c8919xi2, event: SIGNED_IN, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:14.873Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:14.873Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: SIGNED_IN, hasSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:14.873Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.874Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] User signed in, redirecting to dashboard {userEmail: testuser1000@verotrade.com, reason: SIGNED_IN event with session}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 67,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.874Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login successful, auth state change will handle redirect {userEmail: testuser1000@verotrade.com, hasData: true, hasUser: true, timestamp: 2025-12-04T09:39:14.874Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 117,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.875Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state listener will handle redirect automatically {userEmail: testuser1000@verotrade.com, reason: Auth state change listener will handle SIGNED_IN event}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 125,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:14.875Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:14.874Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.876Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: 1c8919xi2, timestamp: 2025-12-04T09:39:14.875Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: csqxp7kia, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:14.877Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: true, userEmail: testuser1000@verotrade.com, loading: false, shouldRedirect: true, timestamp: 2025-12-04T09:39:14.877Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:14.879Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Redirecting to dashboard from useEffect {userEmail: testuser1000@verotrade.com, reason: user && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 42,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.879Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: csqxp7kia, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:14.880Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 0hca6olhg, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 0hca6olhg, pathname: /dashboard, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.285Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.285Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.285Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.286Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.286Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:15.286Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:15.287Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: 0hca6olhg, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:15.310Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js",
+        "lineNumber": 38559,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:19.960Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: {supabaseUrl: SET, supabaseAnonKey: SET, urlLength: 40, keyLength: 208, keyStart: eyJhbGciOiJIUzI1NiIs...}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 15,
+        "columnNumber": 8
+      },
+      "timestamp": "2025-12-04T09:39:19.987Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: {length: 208, isValid: true, segments: 3, segmentLengths: Array(3), headerLength: 36}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/api-key-length-validator.ts",
+        "lineNumber": 66,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: {isValid: true, length: 208, expectedMinLength: 200, actualSegments: Array(3), expectedSegments: Array(3)}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 49,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 64,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: {url: https://bzmixuxautbmqbrqtufx.supabase.co, config: Object, keyLength: 208, timestamp: 2025-12-04T09:39:19.987Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 87,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.988Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created {url: https://bzmixuxautbmqbrqtufx.supabase.co, hasAuth: true, actualConfig: Object, forcedConfig: Object, timestamp: 2025-12-04T09:39:19.987Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 99,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.989Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 257,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:19.991Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.028Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.030Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.029Z, isClient: true, loading: true, authInitialized: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.031Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.030Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.030Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.031Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.031Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.032Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.033Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:20.039Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.040Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting {timestamp: 2025-12-04T09:39:20.041Z, isClient: true, currentStates: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 78,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.042Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 109,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.149Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Found existing session data in localStorage: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 132,
+        "columnNumber": 32
+      },
+      "timestamp": "2025-12-04T09:39:20.150Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: {hasSession: true, hasError: false, error: undefined, userEmail: testuser1000@verotrade.com}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 145,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 163,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 186,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.151Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.150Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.152Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.151Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.152Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.153Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.153Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.152Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.154Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.152Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.154Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.153Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.155Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor {timestamp: 2025-12-04T09:39:20.153Z, isClient: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx",
+        "lineNumber": 106,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.155Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.176Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622, currentPage: 1, pageSize: 25, sortConfig: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 299,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.177Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered - DISABLED: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 351,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.177Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: s009ydljp, requireAuth: true, hasUser: true, userEmail: testuser1000@verotrade.com, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.180Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.180Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622, currentPage: 1, pageSize: 25, sortConfig: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 299,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.181Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered - DISABLED: {hasUser: true, userId: c9dbe395-bec0-42c2-bd9a-984f3186f622}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 351,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.181Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: krwun05e8, event: INITIAL_SESSION, hasNewSession: true, userEmail: testuser1000@verotrade.com, timestamp: 2025-12-04T09:39:20.182Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:20.183Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.183Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.184Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:20.183Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.185Z"
+    },
+    {
+      "type": "log",
+      "text": "🛡️ Navigation Safety FIXED: Initializing with minimal interference...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/navigation-safety.ts",
+        "lineNumber": 154,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:20.192Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Starting trades fetch...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 312,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.483Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Fetching trades with options: {page: 1, limit: 25, sortBy: trade_date, sortOrder: desc, symbol: }",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 321,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [OPTIMIZED_QUERIES_DEBUG] Executing trades query with filters: {hasEmotionalStates: false, emotionalStates: Array(0), otherFilters: Object, pagination: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/optimized-queries.ts",
+        "lineNumber": 79,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [OPTIMIZED_QUERIES_DEBUG] Trades query response: {hasData: true, dataLength: 25, hasError: false, error: null, count: 1000}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/lib/optimized-queries.ts",
+        "lineNumber": 100,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.655Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] Trades fetch result: {hasResult: true, totalCount: 1000, dataLength: 25, currentPage: 1, totalPages: 40}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 323,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.656Z"
+    },
+    {
+      "type": "log",
+      "text": "🔄 [TRADES_PAGE_DEBUG] State updated: {paginationSet: true, tradesSet: 25}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/trades/page.tsx",
+        "lineNumber": 332,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.656Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 108,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 111,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: {hasSession: true, hasError: false, error: undefined, timestamp: 2025-12-04T09:39:20.989Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/supabase/client.ts",
+        "lineNumber": 115,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:20.990Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed {providerId: krwun05e8, event: SIGNED_OUT, hasNewSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:26.468Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 172,
+        "columnNumber": 28
+      },
+      "timestamp": "2025-12-04T09:39:26.469Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:26.473Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.474Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering {providerId: krwun05e8, timestamp: 2025-12-04T09:39:26.473Z, isClient: true, loading: false, authInitialized: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/contexts/AuthContext-simple.tsx",
+        "lineNumber": 44,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.475Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.475Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: s009ydljp, pathname: /trades, requireAuth: true, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.476Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting {guardId: s009ydljp, requireAuth: true, hasUser: false, userEmail: undefined, loading: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 83,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.484Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated {guardId: s009ydljp, reason: requireAuth && !user && authInitialized && !loading}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 99,
+        "columnNumber": 24
+      },
+      "timestamp": "2025-12-04T09:39:26.486Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:26.662Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.663Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering {pathname: /login, requireAuth: false, needsUnifiedLayout: false, timestamp: 2025-12-04T09:39:26.663Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/layout.tsx",
+        "lineNumber": 22,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 31pbsyk14, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering {guardId: 31pbsyk14, pathname: /login, requireAuth: false, authState: Object}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 41,
+        "columnNumber": 12
+      },
+      "timestamp": "2025-12-04T09:39:26.664Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:26.680Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.681Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:26.681Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.683Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: 31pbsyk14, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect {hasUser: false, userEmail: undefined, loading: false, shouldRedirect: false, timestamp: 2025-12-04T09:39:26.682Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 34,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener {timestamp: 2025-12-04T09:39:26.682Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 55,
+        "columnNumber": 16
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks {guardId: 31pbsyk14, pathname: /login, isAuthPage: true}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/components/AuthGuard.tsx",
+        "lineNumber": 52,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.684Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected {event: INITIAL_SESSION, hasSession: false, userEmail: undefined, timestamp: 2025-12-04T09:39:26.686Z}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/(auth)/login/page.tsx",
+        "lineNumber": 60,
+        "columnNumber": 20
+      },
+      "timestamp": "2025-12-04T09:39:26.686Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "location": {
+        "url": "http://localhost:3000/login",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "timestamp": "2025-12-04T09:39:26.799Z"
+    }
+  ]
+}

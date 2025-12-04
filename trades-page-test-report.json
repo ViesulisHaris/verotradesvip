@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-12-04T09:41:33.779Z",
+  "tests": [
+    {
+      "name": "Navigate to /trades page",
+      "passed": false,
+      "details": {
+        "error": "Navigation timeout of 30000 ms exceeded"
+      },
+      "timestamp": "2025-12-04T09:42:04.606Z"
+    },
+    {
+      "name": "Test execution",
+      "passed": false,
+      "details": {
+        "error": "Navigation timeout of 30000 ms exceeded",
+        "stack": "TimeoutError: Navigation timeout of 30000 ms exceeded\n    at new Deferred (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\util\\Deferred.js:60:34)\n    at Deferred.create (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\util\\Deferred.js:21:16)\n    at new LifecycleWatcher (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\cdp\\LifecycleWatcher.js:73:60)\n    at CdpFrame.goto (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\cdp\\Frame.js:149:29)\n    at CdpFrame.<anonymous> (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\util\\decorators.js:109:27)\n    at CdpPage.goto (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\node_modules\\puppeteer-core\\lib\\cjs\\puppeteer\\api\\Page.js:572:43)\n    at runTradesPageTest (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\trades-page-comprehensive-test.js:143:35)"
+      },
+      "timestamp": "2025-12-04T09:42:04.607Z"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 2,
+    "total": 2,
+    "successRate": "0.00%"
+  },
+  "environment": {
+    "userAgent": "Puppeteer",
+    "viewport": "1920x1080",
+    "testUrl": "http://localhost:3000/trades"
+  }
+}

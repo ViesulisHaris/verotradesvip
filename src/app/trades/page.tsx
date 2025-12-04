@@ -1,16 +1,15 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { formatCurrency } from '@/lib/utils';
 import { supabase } from '@/supabase/client';
 import EmotionalStateInput from '@/components/ui/EmotionalStateInput';
 import MarketBadge from '@/components/ui/MarketBadge';
 import { ChevronDown, ChevronUp, TrendingUp, Calendar, DollarSign, Target, Timer, Edit, Trash2, XCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { validateUUID } from '@/lib/uuid-validation';
-import { fetchTradesPaginated, getAvailableSymbols, getAvailableStrategies } from '@/lib/optimized-queries';
+import { fetchTradesPaginated, fetchTradesStatistics, getAvailableSymbols, getAvailableStrategies } from '@/lib/optimized-queries';
 import { PaginationOptions, PaginatedResult } from '@/lib/pagination';
 import { memoizedTradeProcessing, createDebouncedFunction } from '@/lib/memoization';
-import EnhancedFilterControls from '@/components/ui/EnhancedFilterControls';
 import EnhancedSortControls, { SortIndicator } from '@/components/ui/EnhancedSortControls';
 import {
   TradeFilterOptions,
@@ -34,7 +33,6 @@ import {
   resetNavigationSafetyFlags,
   handleTradesPageNavigation
 } from '@/lib/navigation-safety';
-import { startMenuFreezingLogger, exportMenuFreezingLogs } from '@/lib/menu-freezing-logger';
 
 interface Trade {
   id: string;
@@ -57,54 +55,73 @@ interface Trade {
   market?: string;
 }
 
-// Helper function to calculate trade duration
-const calculateTradeDuration = (entryTime?: string, exitTime?: string): string | null => {
-  if (!entryTime || !exitTime) {
-    return null;
-  }
-
-  try {
-    // Parse the times
-    const [entryHours, entryMinutes] = entryTime.split(':').map(Number);
-    const [exitHours, exitMinutes] = exitTime.split(':').map(Number);
-    
-    // Create date objects for the same day
-    const entryDate = new Date();
-    entryDate.setHours(entryHours || 0, entryMinutes || 0);
-    
-    const exitDate = new Date();
-    exitDate.setHours(exitHours || 0, exitMinutes || 0);
-    
-    // Calculate duration in milliseconds
-    let durationMs = exitDate.getTime() - entryDate.getTime();
-    
-    // Handle overnight trades (if exit time is earlier than entry time)
-    if (durationMs < 0) {
-      // Add 24 hours to handle overnight trades
-      durationMs += 24 * 60 * 60 * 1000;
+// Helper function to calculate trade duration - memoized to prevent infinite re-renders
+const calculateTradeDuration = (() => {
+  const cache = new Map<string, string | null>();
+  
+  return (entryTime?: string, exitTime?: string): string | null => {
+    if (!entryTime || !exitTime) {
+      return null;
     }
-    
-    // Convert to hours, minutes, seconds
-    const totalSeconds = Math.floor(durationMs / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-    
-    // Format the duration string
-    if (hours > 0) {
-      return `${hours}h ${minutes}m`;
-    } else if (minutes > 0) {
-      return `${minutes}m`;
-    } else {
-      return `${seconds}s`;
-    }
-  } catch (error) {
-    console.error('Error calculating trade duration:', error);
-    return null;
-  }
-};
 
-function TradesPage() {
+    // Create cache key
+    const cacheKey = `${entryTime}-${exitTime}`;
+    
+    // Return cached result if available
+    if (cache.has(cacheKey)) {
+      return cache.get(cacheKey) || null;
+    }
+
+    try {
+      // Parse the times
+      const [entryHours, entryMinutes] = entryTime.split(':').map(Number);
+      const [exitHours, exitMinutes] = exitTime.split(':').map(Number);
+      
+      // Use a fixed date for consistent calculations
+      const baseDate = new Date(2000, 0, 1); // Fixed reference date
+      const entryDate = new Date(baseDate);
+      entryDate.setHours(entryHours || 0, entryMinutes || 0);
+      
+      const exitDate = new Date(baseDate);
+      exitDate.setHours(exitHours || 0, exitMinutes || 0);
+      
+      // Calculate duration in milliseconds
+      let durationMs = exitDate.getTime() - entryDate.getTime();
+      
+      // Handle overnight trades (if exit time is earlier than entry time)
+      if (durationMs < 0) {
+        // Add 24 hours to handle overnight trades
+        durationMs += 24 * 60 * 60 * 1000;
+      }
+      
+      // Convert to hours, minutes, seconds
+      const totalSeconds = Math.floor(durationMs / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      
+      // Format the duration string
+      let result: string;
+      if (hours > 0) {
+        result = `${hours}h ${minutes}m`;
+      } else if (minutes > 0) {
+        result = `${minutes}m`;
+      } else {
+        result = `${seconds}s`;
+      }
+      
+      // Cache the result
+      cache.set(cacheKey, result);
+      return result;
+    } catch (error) {
+      console.error('Error calculating trade duration:', error);
+      cache.set(cacheKey, null);
+      return null;
+    }
+  };
+})();
+
+function TradesPageContent() {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -119,22 +136,68 @@ function TradesPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
   const [filters, setFilters] = useState<TradeFilterOptions>(createDefaultTradeFilters());
-  const [sortConfig, setSortConfig] = useState<SortConfig>(TRADE_SORT_OPTIONS[0] || { field: 'trade_date', direction: 'desc', label: 'Date (Newest First)' }); // Default: Date (Newest First)
+  const [sortConfig, setSortConfig] = useState<SortConfig>(TRADE_SORT_OPTIONS[0] || { field: 'trade_date', direction: 'desc', label: 'Date (Newest First)' });
   
-  // Memoize filters and sortConfig to prevent recreation on every render
-  const memoizedFilters = useMemo(() => JSON.stringify(filters), [filters]);
-  const memoizedSortConfig = useMemo(() => JSON.stringify(sortConfig), [sortConfig]);
+  // Use refs to store stable references to filters and sortConfig
+  const filtersRef = useRef(filters);
+  const sortConfigRef = useRef(sortConfig);
+  
+  // Update refs only when values actually change
+  useEffect(() => {
+    filtersRef.current = filters;
+  }, [filters]);
+  
+  useEffect(() => {
+    sortConfigRef.current = sortConfig;
+  }, [sortConfig]);
   const [availableSymbols, setAvailableSymbols] = useState<Array<{ value: string; label: string; count: number }>>([]);
   const [availableStrategies, setAvailableStrategies] = useState<Array<{ id: string; name: string }>>([]);
   const [trades, setTrades] = useState<Trade[]>([]);
+  const [statistics, setStatistics] = useState<{
+    totalPnL: number;
+    winRate: number;
+    totalTrades: number;
+    winningTrades: number;
+    losingTrades: number;
+  } | null>(null);
 
-  // REMOVED: overlayCleanup state as it was causing unnecessary re-renders
-  // const [overlayCleanup, setOverlayCleanup] = useState(false);
+  // Fetch statistics for the trades page
+  const fetchStatistics = useCallback(async () => {
+    if (!user) {
+      console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called - no user, skipping');
+      return;
+    }
+
+    try {
+      console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called for user:', user.id);
+      
+      // Use the current filters from refs to avoid circular dependencies
+      const currentFilters = filtersRef.current;
+      
+      // Call fetchTradesStatistics with the user ID and current filters
+      const stats = await fetchTradesStatistics(user.id, {
+        symbol: currentFilters.symbol,
+        market: currentFilters.market,
+        dateFrom: currentFilters.dateFrom,
+        dateTo: currentFilters.dateTo,
+        pnlFilter: currentFilters.pnlFilter,
+        side: currentFilters.side,
+        emotionalStates: currentFilters.emotionalStates
+      });
+      
+      console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetched:', stats);
+      
+      // Set the statistics state with the returned data
+      setStatistics(stats);
+    } catch (error) {
+      console.error('🔄 [TRADES_PAGE_DEBUG] Error fetching statistics:', error);
+      // Don't set error state to avoid disrupting the UI, just log the error
+    }
+  }, [user?.id]); // Only depend on user ID to avoid infinite loops
 
   // Debounced fetch function to prevent excessive API calls
   const debouncedFetchTrades = useMemo(() => {
     return createDebouncedFunction(async (page: number, filters: TradeFilterOptions, sort: SortConfig) => {
-      console.log('🔍 INFINITE RENDER DEBUG: debouncedFetchTrades called with:', { page, filters, sort });
       if (!user) return;
       
       try {
@@ -157,66 +220,32 @@ function TradesPage() {
         setLoading(false);
       }
     }, 300);
-  }, [user?.id, pageSize, memoizedFilters, memoizedSortConfig]); // Include memoized dependencies
+  }, [user?.id, pageSize]); // Remove memoizedFilters and memoizedSortConfig to prevent circular dependency
 
-  // FIXED: Modal cleanup function with navigation safety improvements
+  // Modal cleanup function with navigation safety improvements
   const cleanupModalOverlays = useCallback(() => {
-    console.log('🧹 TradesPage: Cleaning up modal overlays for navigation safety...');
-    console.log('🔍 TRADES PAGE DEBUG: cleanupModalOverlays called - FIXED VERSION');
-    console.log('🔍 INFINITE RENDER DEBUG: cleanupModalOverlays function called', {
-      timestamp: Date.now(),
-      showEditModal,
-      showDeleteConfirm,
-      editingTrade: !!editingTrade,
-      deletingTradeId
-    });
-    
-    // CRITICAL DIAGNOSTIC: Check if this cleanup is being called during navigation
+    // Check if this cleanup is being called during navigation
     const currentPath = window.location?.pathname;
     const isOnTradesPage = currentPath?.includes('/trades');
     const navigationInProgress = (window as any).navigationSafety?.isNavigating || false;
     
-    // ENHANCED DIAGNOSTIC: Log current state when cleanup is called
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Cleanup triggered - checking navigation state');
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Current pathname:', currentPath);
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Is on trades page:', isOnTradesPage);
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Navigation in progress:', navigationInProgress);
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Active element:', document.activeElement?.tagName, document.activeElement?.className);
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Modal states:', {
-      showEditModal,
-      showDeleteConfirm,
-      editingTrade: !!editingTrade,
-      deletingTradeId
-    });
-    
-    // CRITICAL FIX: Skip cleanup entirely if not on Trades page to prevent navigation interference
+    // Skip cleanup entirely if not on Trades page to prevent navigation interference
     if (!isOnTradesPage) {
-      console.log('🚫 CRITICAL TRADES PAGE DIAGNOSTIC: Cleanup called from non-Trades page - SKIPPING CLEANUP to prevent navigation interference!');
-      console.log('🔍 TRADES PAGE DIAGNOSTIC: This is the root cause - cleanup interfering with other pages');
       return;
     }
     
-    // CRITICAL DIAGNOSTIC: If cleanup is called during navigation, it might be the issue
+    // If cleanup is called during navigation, it might be the issue
     if (navigationInProgress) {
-      console.log('🚫 CRITICAL TRADES PAGE DIAGNOSTIC: Cleanup called during navigation - this might be blocking navigation!');
-    }
-    
-    // CRITICAL FIX: Only run cleanup if there are actually open modals
-    if (!showEditModal && !showDeleteConfirm && !editingTrade && !deletingTradeId) {
-      console.log('🚨 TRADES PAGE DIAGNOSTIC: No open modals detected - SKIPPING CLEANUP to prevent navigation interference');
       return;
     }
     
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Open modals detected - proceeding with cleanup');
-    
-    // FIXED: Less aggressive modal overlay removal - only remove actual modal overlays
+    // Less aggressive modal overlay removal - only remove actual modal overlays
     const modalSelectors = [
       '.modal-backdrop',
       '[role="dialog"]',
       '[aria-modal="true"]',
       '.ReactModal__Overlay',
       '.ReactModal__Content'
-      // REMOVED: '.fixed.inset-0', '[style*="position: fixed"]', '.fixed.z-50' etc. to avoid removing navigation elements
     ];
     
     const overlays = document.querySelectorAll(modalSelectors.join(', '));
@@ -226,57 +255,27 @@ function TradesPage() {
       const computedStyle = window.getComputedStyle(element);
       const zIndex = parseInt(computedStyle.zIndex) || 0;
       
-      // CRITICAL FIX: Never remove navigation elements or their parents
+      // Never remove navigation elements or their parents
       const isNavigationElement = element.closest('nav, a, [role="navigation"], .nav-link, .sidebar, .desktop-sidebar, header') !== null;
       
-      // FIXED: More specific criteria - only remove actual modal elements
+      // More specific criteria - only remove actual modal elements
       const isActualModal = element.classList.contains('modal-backdrop') ||
                            element.getAttribute('aria-modal') === 'true' ||
                            element.classList.contains('ReactModal__Overlay') ||
                            element.classList.contains('ReactModal__Content');
       
-      // ENHANCED DIAGNOSTIC: Log all elements being evaluated for removal
-      console.log('🚨 TRADES PAGE DIAGNOSTIC: Evaluating element for removal:', {
-        element: element.tagName,
-        className: element.className,
-        id: element.id,
-        zIndex,
-        position: computedStyle.position,
-        pointerEvents: computedStyle.pointerEvents,
-        isActualModal,
-        isNavigationElement,
-        willRemove: isActualModal && !isNavigationElement
-      });
-      
-      // CRITICAL FIX: Only remove if it's actually a modal AND not a navigation element
+      // Only remove if it's actually a modal AND not a navigation element
       if (isActualModal && !isNavigationElement) {
-        console.log('🗑️ TradesPage: Removing actual modal overlay:', element, 'z-index:', zIndex);
         if (element.parentNode) {
           element.parentNode.removeChild(element);
         }
-      } else if (isNavigationElement) {
-        console.log('🛑 TRADES PAGE CRITICAL: Skipping navigation element to prevent blocking:', element);
-      } else {
-        // DEBUG: Log skipped elements to ensure we're not removing navigation elements
-        console.log('🔍 TRADES PAGE DEBUG: Skipping non-modal element:', {
-          element: element.tagName,
-          className: element.className,
-          zIndex,
-          position: computedStyle.position
-        });
       }
     });
-    
-    // Reset modal states
-    setShowEditModal(false);
-    setShowDeleteConfirm(false);
-    setEditingTrade(null);
-    setDeletingTradeId(null);
     
     // Gentle body cleanup - only remove modal-related classes
     document.body.classList.remove('modal-open', 'overflow-hidden', 'ReactModal__Body--open');
     
-    // FIXED: Only remove specific problematic styles, not all styles
+    // Only remove specific problematic styles, not all styles
     const bodyStyle = document.body.getAttribute('style');
     if (bodyStyle) {
       // Only remove pointer-events: none if it exists
@@ -289,116 +288,54 @@ function TradesPage() {
       }
     }
     
-    // CRITICAL FIX: Only ensure navigation elements are interactive if they're blocked
+    // Only ensure navigation elements are interactive if they're blocked
     const navElements = document.querySelectorAll('nav a, [role="navigation"] a, .nav-link, .sidebar a, .desktop-sidebar a, header a');
     navElements.forEach(nav => {
       const element = nav as HTMLElement;
       const computedStyle = window.getComputedStyle(element);
       // Only fix if pointer-events is actually none
       if (computedStyle.pointerEvents === 'none') {
-        console.log('🔧 TRADES PAGE FIX: Restoring pointer-events for navigation element:', element);
         element.style.pointerEvents = 'auto';
         // Also ensure parent elements don't block clicks
         let parent = element.parentElement;
         while (parent) {
           if (window.getComputedStyle(parent).pointerEvents === 'none') {
             parent.style.pointerEvents = 'auto';
-            console.log('🔧 TRADES PAGE FIX: Restoring pointer-events for parent element:', parent);
           }
           parent = parent.parentElement;
         }
       }
     });
-    
-    // Trigger cleanup state change - FIXED: Remove rapid state updates that could cause re-renders
-    // The overlayCleanup state is not actually used anywhere in the component, so we can remove these state updates
-    console.log('🔍 INFINITE RENDER DEBUG: Skipping overlayCleanup state updates to prevent re-renders');
-    // setOverlayCleanup(true);
-    // setTimeout(() => {
-    //   console.log('🔍 INFINITE RENDER DEBUG: Setting overlayCleanup state to false after timeout');
-    //   setOverlayCleanup(false);
-    // }, 50);
-    
-    console.log('✅ TRADES PAGE: Cleanup completed successfully');
-  }, [showEditModal, showDeleteConfirm, editingTrade, deletingTradeId]);
+  }, []); // Remove all dependencies to prevent infinite loop
 
-  // DEBUG: Log when cleanupModalOverlays is recreated
-  useEffect(() => {
-    console.log('🔍 INFINITE RENDER DEBUG: cleanupModalOverlays function recreated', {
-      showEditModal,
-      showDeleteConfirm,
-      editingTrade: !!editingTrade,
-      deletingTradeId,
-      timestamp: Date.now()
-    });
-  }, [cleanupModalOverlays]);
-
-  // NEW: Make cleanup function globally accessible with enhanced reliability
+  // Make cleanup function globally accessible
   useEffect(() => {
     // Export cleanup function to global scope for access from other components
     (window as any).cleanupModalOverlays = cleanupModalOverlays;
     
-    // Add fallback for direct access with multiple aliases
-    (window as any).forceCleanupAllOverlays = cleanupModalOverlays;
-    (window as any).tradesPageCleanup = cleanupModalOverlays;
-    
-    // Also add to navigation safety object if it exists
-    if ((window as any).navigationSafety) {
-      (window as any).navigationSafety.tradesPageCleanup = cleanupModalOverlays;
-    }
-    
-    // Log successful export for debugging
-    console.log('🔗 TradesPage: Modal cleanup function exported to global scope');
-    
     return () => {
       // Clean up global reference on unmount
       delete (window as any).cleanupModalOverlays;
-      delete (window as any).forceCleanupAllOverlays;
-      delete (window as any).tradesPageCleanup;
-      if ((window as any).navigationSafety) {
-        delete (window as any).navigationSafety.tradesPageCleanup;
-      }
-      console.log('🗑️ TradesPage: Modal cleanup function removed from global scope');
     };
   }, [cleanupModalOverlays]);
 
-  // ENHANCED: Navigation click handler with comprehensive safety
+  // Navigation click handler with safety
   const handleNavigationClick = useCallback((href: string, label: string) => {
-    // CRITICAL DIAGNOSTIC: Check if this navigation function is being called
     const navigationSafetyState = (window as any).navigationSafety || {};
     const isNavigationBlocked = navigationSafetyState.isNavigating || navigationSafetyState.userInteractionInProgress;
     
-    console.log('🖱️ TradesPage: Navigation click attempted:', {
-      href,
-      label,
-      timestamp: Date.now(),
-      navigationSafetyState: {
-        isNavigating: navigationSafetyState.isNavigating,
-        userInteractionInProgress: navigationSafetyState.userInteractionInProgress,
-        navigationStartTime: navigationSafetyState.navigationStartTime,
-        lastCleanupTime: navigationSafetyState.lastCleanupTime
-      },
-      isNavigationBlocked,
-      currentPath: window.location?.pathname
-    });
-    
-    // CRITICAL DIAGNOSTIC: If navigation is blocked, log it and reset flags
+    // If navigation is blocked, reset flags
     if (isNavigationBlocked) {
-      console.log('🚫 CRITICAL TRADES PAGE DIAGNOSTIC: Navigation blocked by navigation safety flags - resetting flags and retrying');
       resetNavigationSafetyFlags();
     }
     
     // Use special Trades page navigation handling
-    console.log('🚨 TRADES PAGE DIAGNOSTIC: Using special Trades page navigation handling...');
     handleTradesPageNavigation(href, label);
   }, []);
 
   useEffect(() => {
     // Initialize navigation safety on component mount
     initializeNavigationSafety();
-    
-    // Start menu freezing logger to capture real-time data
-    startMenuFreezingLogger();
     
     // Load saved filters
     const savedFilters = loadTradeFilters();
@@ -423,22 +360,17 @@ function TradesPage() {
       
       loadFilterOptions();
     }
-    
-    // Export logs on unmount for analysis
-    return () => {
-      const logs = exportMenuFreezingLogs();
-      console.log('🔍 MENU FREEZING LOGS EXPORTED:', logs);
-    };
   }, [user]);
 
-  // Fetch trades when page, filters, or sort change
+  // Fetch trades when page, filters, or sort change - using refs to prevent infinite loop
   useEffect(() => {
-    console.log('🔍 INFINITE RENDER DEBUG: useEffect for fetching trades triggered', {
-      currentPage,
-      filters,
-      sortConfig,
+    console.log('🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered:', {
+      hasUser: !!user,
       userId: user?.id,
-      timestamp: Date.now()
+      currentPage,
+      pageSize,
+      sortConfig: sortConfigRef.current,
+      filters: filtersRef.current
     });
     
     if (!user) return;
@@ -446,54 +378,91 @@ function TradesPage() {
     // Create a simple debounced function inside useEffect to avoid circular dependencies
     const timeoutId = setTimeout(async () => {
       try {
+        console.log('🔄 [TRADES_PAGE_DEBUG] Starting trades fetch...');
         setLoading(true);
         const paginationOptions: PaginationOptions = {
           page: currentPage,
           limit: pageSize,
-          sortBy: sortConfig.field,
-          sortOrder: sortConfig.direction,
-          ...filters
+          sortBy: sortConfigRef.current.field,
+          sortOrder: sortConfigRef.current.direction,
+          ...filtersRef.current
         };
 
+        console.log('🔄 [TRADES_PAGE_DEBUG] Fetching trades with options:', paginationOptions);
         const result = await fetchTradesPaginated(user.id, paginationOptions);
+        console.log('🔄 [TRADES_PAGE_DEBUG] Trades fetch result:', {
+          hasResult: !!result,
+          totalCount: result?.totalCount,
+          dataLength: result?.data?.length,
+          currentPage: result?.currentPage,
+          totalPages: result?.totalPages
+        });
+        
         setPagination(result);
         setTrades(result.data);
+        
+        console.log('🔄 [TRADES_PAGE_DEBUG] State updated:', {
+          paginationSet: !!result,
+          tradesSet: result?.data?.length || 0
+        });
       } catch (err) {
         setError('Error fetching trades');
-        console.error('Error fetching trades:', err);
+        console.error('🔄 [TRADES_PAGE_DEBUG] Error fetching trades:', err);
       } finally {
         setLoading(false);
       }
     }, 300);
     
     return () => clearTimeout(timeoutId);
-  }, [currentPage, filters, sortConfig, user?.id, pageSize]);
+  }, [currentPage, pageSize, user?.id]); // Only depend on stable values
 
-  // Save filters when they change
+  // Fetch statistics when user or filters change
+  useEffect(() => {
+    console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered:', {
+      hasUser: !!user,
+      userId: user?.id
+    });
+    
+    if (user) {
+      fetchStatistics();
+    }
+  }, [user?.id, fetchStatistics]); // Depend on user ID and fetchStatistics function
+
+  // Save filters when they change - separate from statistics fetching
   useEffect(() => {
     if (user) {
-      saveTradeFilters(memoizedFilters);
+      saveTradeFilters(filtersRef.current);
     }
-  }, [memoizedFilters, user]);
-
-  // Sync filters across tabs
+  }, [user?.id]); // Remove filters dependency to prevent infinite loop
+  
+  // Fetch statistics when filters change
   useEffect(() => {
-    return useFilterSync((state) => {
+    if (user) {
+      // Debounce the statistics fetching to avoid excessive API calls
+      const timeoutId = setTimeout(() => {
+        console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetching triggered by filter change');
+        fetchStatistics();
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [filters, user?.id, fetchStatistics]); // Depend on filters, user ID, and fetchStatistics function
+
+  // Sync filters across tabs - using refs to prevent infinite loop
+  useEffect(() => {
+    return useFilterSync((state: any) => {
       if (state && user) {
         setFilters(state.trades);
       }
     });
-  }, [user, setFilters]);
+  }, []); // Remove all dependencies to prevent infinite loop
 
-  // ENHANCED: Add cleanup effect that runs when component unmounts
+  // Add cleanup effect that runs when component unmounts
   useEffect(() => {
     return () => {
-      console.log('🧹 TradesPage unmounting - performing comprehensive cleanup');
-      
-      // CRITICAL FIX: Only run cleanup if we're actually on the Trades page
+      // Only run cleanup if we're actually on the Trades page
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
-        console.log('🧹 TradesPage: On Trades page - running cleanup');
         cleanupModalOverlays();
         
         // Additional cleanup for any remaining overlays
@@ -504,44 +473,33 @@ function TradesPage() {
             element.parentNode.removeChild(element);
           }
         });
-      } else {
-        console.log('🧹 TradesPage: NOT on Trades page - SKIPPING cleanup to prevent navigation interference');
       }
     };
   }, [cleanupModalOverlays]);
 
-  // ENHANCED: Add page visibility change handler with reduced frequency
+  // Add page visibility change handler
   useEffect(() => {
     let cleanupTimeout: NodeJS.Timeout;
     
     const handleVisibilityChange = () => {
-      // CRITICAL FIX: Only run cleanup if we're actually on the Trades page
+      // Only run cleanup if we're actually on the Trades page
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
-        console.log('🧹 TradesPage: On Trades page - handling visibility change');
-        
         if (document.hidden) {
           // Debounce cleanup to prevent excessive calls
           clearTimeout(cleanupTimeout);
           cleanupTimeout = setTimeout(() => {
             cleanupModalOverlays();
           }, 100);
-        } else {
-          console.log('🧹 TradesPage: On Trades page - visibility changed, but page is visible');
         }
-      } else {
-        console.log('🧹 TradesPage: NOT on Trades page - SKIPPING visibility cleanup to prevent navigation interference');
       }
     };
 
     const handleBeforeUnload = () => {
-      // CRITICAL FIX: Only run cleanup if we're actually on the Trades page
+      // Only run cleanup if we're actually on the Trades page
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
-        console.log('🧹 TradesPage: On Trades page - handling beforeunload');
         cleanupModalOverlays();
-      } else {
-        console.log('🧹 TradesPage: NOT on Trades page - SKIPPING beforeunload cleanup to prevent navigation interference');
       }
     };
 
@@ -727,7 +685,7 @@ function TradesPage() {
         </div>
 
         {/* Summary Stats Section - 4-Column Grid Layout */}
-        {pagination && pagination.totalCount > 0 && (
+        {(pagination && pagination.totalCount > 0) || statistics ? (
           <div className="key-metrics-grid mb-component">
             <div className="dashboard-card">
               <div className="card-header">
@@ -738,7 +696,7 @@ function TradesPage() {
                   <h3 className="h3-metric-label">Total Trades</h3>
                 </div>
               </div>
-              <p className="metric-value">{pagination.totalCount}</p>
+              <p className="metric-value">{statistics?.totalTrades || pagination?.totalCount || 0}</p>
             </div>
             
             <div className="dashboard-card">
@@ -748,9 +706,9 @@ function TradesPage() {
                   <h3 className="h3-metric-label">Total P&L</h3>
                 </div>
               </div>
-              <p className={`metric-value ${(pagination.data.reduce((sum, t) => sum + (t.pnl || 0), 0) || 0) >= 0 ? '' : 'text-rust-red'}`} 
-                 style={{ color: (pagination.data.reduce((sum, t) => sum + (t.pnl || 0), 0) || 0) >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
-                {formatCurrency(pagination.data.reduce((sum, t) => sum + (t.pnl || 0), 0))}
+              <p className={`metric-value ${(statistics?.totalPnL || 0) >= 0 ? '' : 'text-rust-red'}`}
+                 style={{ color: (statistics?.totalPnL || 0) >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
+                {formatCurrency(statistics?.totalPnL || 0)}
               </p>
             </div>
             
@@ -762,11 +720,7 @@ function TradesPage() {
                 </div>
               </div>
               <p className="metric-value">
-                {(() => {
-                  if (pagination.data.length === 0) return '0%';
-                  const winRate = (pagination.data.filter(t => (t.pnl || 0) > 0).length / pagination.data.length) * 100;
-                  return `${winRate.toFixed(1)}%`;
-                })()}
+                {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
               </p>
             </div>
             
@@ -778,11 +732,11 @@ function TradesPage() {
                 </div>
               </div>
               <p className="metric-value">
-                {currentPage} of {pagination.totalPages}
+                {currentPage} of {pagination?.totalPages || 1}
               </p>
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* Pagination Controls - Clean Styling and Responsive Behavior */}
         {pagination && pagination.totalPages > 1 && (
@@ -834,11 +788,11 @@ function TradesPage() {
                 const pageNum = i + 1;
                 const isActive = pageNum === currentPage;
                 const isEllipsis = pageNum === 5 && pagination.totalPages > 5;
-                
+                 
                 if (isEllipsis) {
                   return <span key="ellipsis" className="secondary-text px-2">...</span>;
                 }
-                
+                 
                 return (
                   <button
                     key={pageNum}
@@ -1241,7 +1195,6 @@ function TradesPage() {
                     <h2 className="h2-section text-2xl">Edit Trade</h2>
                     <button
                       onClick={() => {
-                        // NEW: Use enhanced cleanup
                         cleanupModalOverlays();
                         setShowEditModal(false);
                         setEditingTrade(null);
@@ -1259,7 +1212,6 @@ function TradesPage() {
                     trade={editingTrade}
                     onSave={handleUpdateTrade}
                     onCancel={() => {
-                      // NEW: Use enhanced cleanup
                       cleanupModalOverlays();
                       setShowEditModal(false);
                       setEditingTrade(null);
@@ -1514,15 +1466,13 @@ function EditTradeForm({ trade, onSave, onCancel }: EditTradeFormProps) {
   );
 }
 
-// Wrapper component with authentication guard
-function TradesPageWithAuth() {
+// Main page component with authentication guard
+export default function TradesPage() {
   return (
     <AuthGuard requireAuth={true}>
       <UnifiedLayout>
-        <TradesPage />
+        <TradesPageContent />
       </UnifiedLayout>
     </AuthGuard>
   );
 }
-
-export default TradesPageWithAuth;

@@ -1,0 +1,246 @@
+{
+  "timestamp": "2025-12-04T09:05:56.198Z",
+  "url": "http://localhost:3000/login",
+  "hasStatistics": false,
+  "hasTradesList": false,
+  "hasNoTradesMessage": false,
+  "isAuthenticated": false,
+  "consoleMessages": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold",
+      "timestamp": "2025-12-04T09:05:49.879Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Environment variables check: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:49.977Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [API_KEY_VALIDATOR] Detailed Analysis: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:49.978Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AGGRESSIVE_FIX] Detailed API key validation: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:49.978Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] API key validation passed",
+      "timestamp": "2025-12-04T09:05:49.978Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Creating Supabase client with forced configuration: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:49.978Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Supabase client created JSHandle@object",
+      "timestamp": "2025-12-04T09:05:49.988Z"
+    },
+    {
+      "type": "log",
+      "text": "🔗 Navigation Safety FIXED: Global scope initialized with minimal interference",
+      "timestamp": "2025-12-04T09:05:50.011Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.068Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.068Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.073Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.073Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.073Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [HYDRATION_DEBUG] ErrorBoundary constructor JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.074Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.076Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.077Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.091Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] AuthContext useEffect starting JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.095Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization",
+      "timestamp": "2025-12-04T09:05:50.196Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session fetch result: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.196Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [SESSION_PERSISTENCE_FIX] Session found: false",
+      "timestamp": "2025-12-04T09:05:50.196Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [SESSION_PERSISTENCE_FIX] Auth initialization completed successfully",
+      "timestamp": "2025-12-04T09:05:50.196Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.197Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.198Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.198Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.198Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Checking auth and redirecting JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.201Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.203Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [SESSION_PERSISTENCE_FIX] Auth state changed JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.213Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.213Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.213Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.417Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.417Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.417Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.418Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.444Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.444Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.445Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Login page useEffect checking redirect JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.446Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Setting up auth state change listener JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.446Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] Auth page detected - skipping auth checks JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.446Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [LOGIN_DEBUG] Auth state change detected JSHandle@object",
+      "timestamp": "2025-12-04T09:05:50.455Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "timestamp": "2025-12-04T09:05:50.562Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Validating client configuration after creation...",
+      "timestamp": "2025-12-04T09:05:51.001Z"
+    },
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "timestamp": "2025-12-04T09:05:51.001Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AGGRESSIVE_FIX] Session test result: JSHandle@object",
+      "timestamp": "2025-12-04T09:05:51.001Z"
+    }
+  ],
+  "analysis": {
+    "potentialIssues": [
+      "User not authenticated - data fetching will fail",
+      "Neither statistics nor trades loading - possible authentication or API issue"
+    ]
+  }
+}
