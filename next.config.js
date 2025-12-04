@@ -24,11 +24,7 @@ const nextConfig = {
   
   // Configure webpack for proper chunk handling
   webpack: (config, { dev, isServer }) => {
-    // Fix chunk loading issues in development
-    if (dev) {
-      config.output.publicPath = '/_next/';
-    }
-    
+    // Let Next.js handle asset paths automatically
     return config;
   },
   

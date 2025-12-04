@@ -1,0 +1,231 @@
+/* TRADES TABLE INVISIBILITY FIXES */
+/* 
+ * Apply these CSS rules to fix the trades table invisibility issue.
+ * Add this file to your project or copy the rules to globals.css
+ */
+
+/* FIX 1: ENSURE SCROLL ITEMS ARE VISIBLE (HIGHEST PRIORITY) */
+.scroll-item {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Ensure visible class works properly */
+.scroll-item.visible {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: translateY(0) !important;
+}
+
+/* FIX 2: FLASHLIGHT EFFECT Z-INDEX CORRECTION */
+.flashlight-bg {
+  z-index: 1 !important;
+  opacity: 0 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+.flashlight-border {
+  z-index: 5 !important;
+  opacity: 0 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+/* Only show flashlight effects on hover */
+.flashlight-container:hover .flashlight-bg,
+.flashlight-container:hover .flashlight-border {
+  opacity: 1 !important;
+}
+
+/* Ensure content is above flashlight effects */
+.flashlight-container .relative.z-10 {
+  z-index: 20 !important;
+  position: relative !important;
+}
+
+/* FIX 3: TEXT COLOR CONTRAST IMPROVEMENTS */
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+/* Ensure white text is truly white */
+.text-white {
+  color: #ffffff !important;
+}
+
+/* FIX 4: CONTAINER VISIBILITY GUARANTEES */
+.space-y-3.mt-4.min-h-\[200px\] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* FIX 5: TRADE ROW VISIBILITY */
+.flashlight-container.rounded-lg.overflow-hidden.scroll-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  min-height: auto !important;
+  height: auto !important;
+  z-index: 15 !important;
+}
+
+/* FIX 6: ACCORDION CONTENT VISIBILITY */
+.accordion-content {
+  opacity: 1 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+.accordion-content.active {
+  opacity: 1 !important;
+  max-height: 500px !important;
+  overflow: visible !important;
+}
+
+/* FIX 7: GRID LAYOUT ENSURANCE */
+.grid.grid-cols-12.gap-4 {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  opacity: 1 !important;
+}
+
+/* FIX 8: PARENT CONTAINER VISIBILITY */
+.scroll-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* FIX 9: CHARACTER REVEAL ANIMATION FIX */
+.char {
+  opacity: 1 !important;
+  transform: translateY(0%) !important;
+  display: inline-block !important;
+}
+
+.char-wrapper {
+  opacity: 1 !important;
+  display: inline-block !important;
+  overflow: visible !important;
+}
+
+/* FIX 10: BACKDROP BLUR AND VISIBILITY */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* FIX 11: BUTTON AND INTERACTIVE ELEMENT VISIBILITY */
+.btn-beam-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* FIX 12: MATERIAL ICONS VISIBILITY */
+.material-symbols-outlined {
+  opacity: 1 !important;
+  display: inline-block !important;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
+}
+
+/* FIX 13: TRADE SPECIFIC ELEMENTS */
+.col-span-2 .text-white {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.col-span-2 .text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.col-span-2 .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* FIX 14: PROFIT/LOSS COLORS */
+.text-profit {
+  color: #2EBD85 !important;
+  opacity: 1 !important;
+}
+
+.text-loss {
+  color: #F6465D !important;
+  opacity: 1 !important;
+}
+
+.bg-profit\/10 {
+  background-color: rgba(46, 189, 133, 0.1) !important;
+}
+
+.bg-loss {
+  background-color: #F6465D !important;
+}
+
+/* FIX 15: BORDER AND SHADOW VISIBILITY */
+.border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.shadow-\[0_0_8px_rgba\(46\2c 189\2c 133\2c 0\.5\)\] {
+  box-shadow: 0 0 8px rgba(46, 189, 133, 0.5) !important;
+}
+
+.shadow-\[0_0_8px_rgba\(246\2c 70\2c 93\2c 0\.5\)\] {
+  box-shadow: 0 0 8px rgba(246, 70, 93, 0.5) !important;
+}
+
+/* FIX 16: EMERGENCY VISIBILITY OVERRIDE */
+/* Use this as a last resort if other fixes don't work */
+.emergency-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 999 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 1rem !important;
+  margin: 0.5rem 0 !important;
+  border-radius: 0.5rem !important;
+}
+
+/* EMERGENCY FIX: Apply to all trade containers */
+.flashlight-container.rounded-lg.overflow-hidden.scroll-item.emergency-visible {
+  min-height: 100px !important;
+  background: rgba(10, 10, 10, 0.8) !important;
+  z-index: 50 !important;
+}
+
+/* DEBUG: Add colored borders to see element boundaries */
+.debug-visible * {
+  border: 1px solid rgba(255, 0, 0, 0.3) !important;
+  background: rgba(255, 255, 0, 0.1) !important;
+}

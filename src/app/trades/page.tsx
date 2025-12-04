@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback, useRef, memo } from 'react';
+import dynamic from 'next/dynamic';
 import { formatCurrency } from '@/lib/utils';
 import { supabase } from '@/supabase/client';
 import EmotionalStateInput from '@/components/ui/EmotionalStateInput';
@@ -16,16 +17,12 @@ import {
   SortConfig,
   TRADE_SORT_OPTIONS
 } from '@/lib/filtering-types';
-import {
-  createDefaultTradeFilters,
-  saveTradeFilters,
-  loadTradeFilters,
-  useFilterSync,
-  getFilterStats as getFilterStatsFromPersistence
-} from '@/lib/filter-persistence';
 import AuthGuard from '@/components/AuthGuard';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
 import { useAuth } from '@/contexts/AuthContext-simple';
+import { TradesFilterProvider, useTradesFilter } from '@/contexts/TradesFilterContext';
+import TradesFilterBar from '@/components/trades/TradesFilterBar';
+import TradesSortControls from '@/components/trades/TradesSortControls';
 import {
   forceCleanupNavigationBlockers,
   safeNavigation,
@@ -33,6 +30,17 @@ import {
   resetNavigationSafetyFlags,
   handleTradesPageNavigation
 } from '@/lib/navigation-safety';
+import {
+  performanceUtils,
+  createFilterDebouncedFunction as createOptimizedFilterDebouncedFunction,
+  createSortDebouncedFunction
+} from '@/lib/performance-optimization';
+
+// Dynamic GSAP imports for proper Next.js SSR compatibility
+const GSAPAnimations = dynamic(() => import('@/components/ui/GSAPAnimations'), {
+  ssr: false,
+  loading: () => null
+});
 
 interface Trade {
   id: string;
@@ -121,9 +129,82 @@ const calculateTradeDuration = (() => {
   };
 })();
 
+// Optimized flashlight effect hook with throttling
+const useFlashlightEffect = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleMouseMove = performanceUtils.createThrottled((e: Event) => {
+      const cards = document.querySelectorAll('.flashlight-container, .flashlight-row');
+      
+      // Use requestAnimationFrame for smooth updates
+      requestAnimationFrame(() => {
+        for(const card of cards) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+          (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+        }
+      });
+    }, 16); // ~60fps throttling
+
+    // Track event listener for cleanup
+    performanceUtils.trackEventListener(document, 'mousemove', handleMouseMove, 'flashlight-effect');
+    document.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+};
+
+// Optimized text reveal animation hook with memoization
+const useTextReveal = (text: string, delay: number = 0) => {
+  const [revealedText, setRevealedText] = useState<React.ReactNode>('');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    // Memoize character elements to prevent recreation
+    const chars = text.split('');
+    const elements = chars.map((char, i) => (
+      <span key={`${char}-${i}`} className="char" style={{
+        animationDelay: `${delay + i * 0.03}s`,
+        animation: 'textReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards'
+      }}>
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+
+    setRevealedText(
+      <span className="reveal-text">
+        {elements.map((el, i) => (
+          <span key={i} className="char-wrapper">{el}</span>
+        ))}
+      </span>
+    );
+  }, [text, delay]);
+
+  return revealedText;
+};
+
+// Optimized GSAP animations hook (moved to separate component)
+const useGSAPAnimations = () => {
+  // GSAP animations are now handled by the dynamically imported GSAPAnimations component
+  // This hook is kept for compatibility but simplified
+  useEffect(() => {
+    // No-op - animations handled by GSAPAnimations component
+  }, []);
+};
+
 // Memoize the main content component to prevent unnecessary re-renders
 const TradesPageContent = memo(function TradesPageContent() {
   const { user } = useAuth();
+  const { state: filterState, actions: filterActions } = useTradesFilter();
+  const { filters } = filterState;
+  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedTrades, setExpandedTrades] = useState<Set<string>>(new Set());
@@ -136,21 +217,27 @@ const TradesPageContent = memo(function TradesPageContent() {
   const [pagination, setPagination] = useState<PaginatedResult<Trade> | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
-  const [filters, setFilters] = useState<TradeFilterOptions>(createDefaultTradeFilters());
-  const [sortConfig, setSortConfig] = useState<SortConfig>(TRADE_SORT_OPTIONS[0] || { field: 'trade_date', direction: 'desc', label: 'Date (Newest First)' });
   
-  // Use refs to store stable references to filters and sortConfig
-  const filtersRef = useRef(filters);
+  // Get sort state from filter context
+  const sortConfig: SortConfig = useMemo(() => {
+    const sortBy = filters.sortBy || 'trade_date';
+    const sortOrder = filters.sortOrder || 'desc';
+    
+    const matchingOption = TRADE_SORT_OPTIONS.find(
+      option => option.field === sortBy && option.direction === sortOrder
+    );
+    
+    return matchingOption || TRADE_SORT_OPTIONS[0];
+  }, [filters.sortBy, filters.sortOrder]) as SortConfig;
+  
+  // Use refs to store stable references
   const sortConfigRef = useRef(sortConfig);
   
   // Update refs only when values actually change
   useEffect(() => {
-    filtersRef.current = filters;
-  }, [filters]);
-  
-  useEffect(() => {
     sortConfigRef.current = sortConfig;
   }, [sortConfig]);
+  
   const [availableSymbols, setAvailableSymbols] = useState<Array<{ value: string; label: string; count: number }>>([]);
   const [availableStrategies, setAvailableStrategies] = useState<Array<{ id: string; name: string }>>([]);
   const [trades, setTrades] = useState<Trade[]>([]);
@@ -162,138 +249,119 @@ const TradesPageContent = memo(function TradesPageContent() {
     losingTrades: number;
   } | null>(null);
 
+  // Initialize custom hooks
+  useFlashlightEffect();
+  useGSAPAnimations();
+  const titleRevealed = useTextReveal("Trade History", 0.5);
+
+  // Ensure scroll items are visible after component mounts
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    timer = setTimeout(() => {
+      const scrollItems = document.querySelectorAll('.scroll-item');
+      scrollItems.forEach(item => {
+        item.classList.add('visible');
+      });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Simplified authentication state handling
+  useEffect(() => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
+    
+    // Load available symbols and strategies for autocomplete
+    const loadFilterOptions = async () => {
+      try {
+        const [symbolsData, strategiesData] = await Promise.all([
+          getAvailableSymbols(user.id),
+          getAvailableStrategies(user.id)
+        ]);
+        setAvailableSymbols(symbolsData);
+        setAvailableStrategies(strategiesData);
+      } catch (error) {
+        console.warn('Failed to load filter options:', error);
+      }
+    };
+    
+    loadFilterOptions();
+  }, [user]);
+
   // Optimized fetch statistics function
   const fetchStatistics = useCallback(async () => {
     if (!user) {
-      console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called - no user, skipping');
       return;
     }
 
     try {
-      console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called for user:', user.id);
-      
-      // Use the current filters and sort config from refs to avoid circular dependencies
-      const currentFilters = filtersRef.current;
-      const currentSortConfig = sortConfigRef.current;
-      
-      console.log('🔄 [STATISTICS_DEBUG] Fetching statistics with current values:', {
-        filters: currentFilters,
-        sortConfig: currentSortConfig,
-        timestamp: new Date().toISOString()
-      });
-      
       // Call fetchTradesStatistics with the user ID and current filters
       const stats = await fetchTradesStatistics(user.id, {
-        symbol: currentFilters.symbol,
-        market: currentFilters.market,
-        dateFrom: currentFilters.dateFrom,
-        dateTo: currentFilters.dateTo,
-        pnlFilter: currentFilters.pnlFilter,
-        side: currentFilters.side,
-        emotionalStates: currentFilters.emotionalStates
-      });
-      
-      console.log('🔄 [STATISTICS_DEBUG] Statistics fetched successfully:', {
-        stats,
-        sortConfigUsed: currentSortConfig,
-        timestamp: new Date().toISOString()
+        symbol: filters.symbol,
+        market: filters.market,
+        dateFrom: filters.dateFrom,
+        dateTo: filters.dateTo,
+        pnlFilter: filters.pnlFilter,
+        side: filters.side,
+        emotionalStates: filters.emotionalStates
       });
       
       // Set the statistics state with the returned data
       setStatistics(stats);
     } catch (error) {
-      console.error('🔄 [STATISTICS_DEBUG] Error fetching statistics:', error);
+      console.error('Error fetching statistics:', error);
       // Don't set error state to avoid disrupting the UI, just log the error
     }
-  }, [user?.id]); // Only depend on user ID to avoid infinite loops
+  }, [user?.id, filters]); // Include filters in dependencies
 
-  // Debounced statistics fetch with optimized delay
+  // Optimized debounced functions using performance utilities
   const debouncedFetchStatistics = useMemo(() => {
-    return createStatsDebouncedFunction(fetchStatistics);
+    return createOptimizedFilterDebouncedFunction(fetchStatistics);
   }, [fetchStatistics]);
 
-  // Optimized debounced fetch function with improved performance
   const debouncedFetchTrades = useMemo(() => {
-    return createFilterDebouncedFunction(async (page: number, filters: TradeFilterOptions, sort: SortConfig) => {
+    return createOptimizedFilterDebouncedFunction(async (page: number, filters: TradeFilterOptions, sort: SortConfig) => {
       if (!user) return;
       
       try {
-        console.log('🔄 [MARKET_FILTER_DEBUG] Optimized debounced fetch triggered with:', {
-          page,
-          filters: {
-            ...filters,
-            market: filters.market || 'ALL_MARKETS'
-          },
-          sort,
-          userId: user.id,
-          timestamp: new Date().toISOString()
-        });
-        
         setLoading(true);
-        const paginationOptions: PaginationOptions = {
+        const paginationOptions: PaginationOptions & {
+          strategyId?: string;
+          symbol?: string;
+          market?: string;
+          dateFrom?: string;
+          dateTo?: string;
+          pnlFilter?: 'all' | 'profitable' | 'lossable';
+          side?: 'Buy' | 'Sell' | '';
+          emotionalStates?: string[];
+        } = {
           page,
           limit: pageSize,
           sortBy: sort.field,
           sortOrder: sort.direction,
           ...filters
         };
-
-        console.log('🔄 [MARKET_FILTER_DEBUG] Fetching trades with pagination options:', {
-          ...paginationOptions,
-          marketFilter: paginationOptions.market || 'NO_FILTER',
-          timestamp: new Date().toISOString()
-        });
         
         const result = await fetchTradesPaginated(user.id, paginationOptions);
-        
-        console.log('🔄 [MARKET_FILTER_DEBUG] Fetch completed, result:', {
-          hasData: !!result,
-          dataLength: result?.data?.length,
-          totalCount: result?.totalCount,
-          marketFilterApplied: filters.market || 'NONE',
-          timestamp: new Date().toISOString()
-        });
-        
-        // Log the market values of returned trades for verification
-        if (result?.data && result.data.length > 0) {
-          const marketValues = result.data.map(trade => trade.market || 'NULL').filter((val, idx, arr) => arr.indexOf(val) === idx);
-          console.log('🔄 [MARKET_FILTER_DEBUG] Market values in returned trades:', {
-            uniqueMarkets: marketValues,
-            tradeCount: result.data.length,
-            expectedMarket: filters.market || 'ANY',
-            timestamp: new Date().toISOString()
-          });
-        }
         
         setPagination(result);
         setTrades(result.data);
       } catch (err) {
         setError('Error fetching trades');
-        console.error('🔄 [MARKET_FILTER_DEBUG] Error fetching trades:', err);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error fetching trades:', err);
+        }
       } finally {
         setLoading(false);
       }
     });
-  }, [user?.id, pageSize]); // Only depend on user ID and pageSize to prevent recreation on every filter change
+  }, [user?.id, pageSize]);
 
-  // Modal cleanup function with navigation safety improvements
+  // Simplified modal cleanup function
   const cleanupModalOverlays = useCallback(() => {
-    // Check if this cleanup is being called during navigation
-    const currentPath = window.location?.pathname;
-    const isOnTradesPage = currentPath?.includes('/trades');
-    const navigationInProgress = (window as any).navigationSafety?.isNavigating || false;
-    
-    // Skip cleanup entirely if not on Trades page to prevent navigation interference
-    if (!isOnTradesPage) {
-      return;
-    }
-    
-    // If cleanup is called during navigation, it might be the issue
-    if (navigationInProgress) {
-      return;
-    }
-    
-    // Less aggressive modal overlay removal - only remove actual modal overlays
+    // Only remove actual modal overlays
     const modalSelectors = [
       '.modal-backdrop',
       '[role="dialog"]',
@@ -306,206 +374,101 @@ const TradesPageContent = memo(function TradesPageContent() {
     
     overlays.forEach(overlay => {
       const element = overlay as HTMLElement;
-      const computedStyle = window.getComputedStyle(element);
-      const zIndex = parseInt(computedStyle.zIndex) || 0;
-      
-      // Never remove navigation elements or their parents
-      const isNavigationElement = element.closest('nav, a, [role="navigation"], .nav-link, .sidebar, .desktop-sidebar, header') !== null;
-      
-      // More specific criteria - only remove actual modal elements
       const isActualModal = element.classList.contains('modal-backdrop') ||
                            element.getAttribute('aria-modal') === 'true' ||
                            element.classList.contains('ReactModal__Overlay') ||
                            element.classList.contains('ReactModal__Content');
       
-      // Only remove if it's actually a modal AND not a navigation element
-      if (isActualModal && !isNavigationElement) {
-        if (element.parentNode) {
-          element.parentNode.removeChild(element);
-        }
+      if (isActualModal && element.parentNode) {
+        element.parentNode.removeChild(element);
       }
     });
     
-    // Gentle body cleanup - only remove modal-related classes
+    // Clean up body classes
     document.body.classList.remove('modal-open', 'overflow-hidden', 'ReactModal__Body--open');
-    
-    // Only remove specific problematic styles, not all styles
-    const bodyStyle = document.body.getAttribute('style');
-    if (bodyStyle) {
-      // Only remove pointer-events: none if it exists
-      if (bodyStyle.includes('pointer-events: none')) {
-        document.body.style.pointerEvents = '';
-      }
-      // Only remove overflow: hidden if it exists
-      if (bodyStyle.includes('overflow: hidden')) {
-        document.body.style.overflow = '';
-      }
-    }
-    
-    // Only ensure navigation elements are interactive if they're blocked
-    const navElements = document.querySelectorAll('nav a, [role="navigation"] a, .nav-link, .sidebar a, .desktop-sidebar a, header a');
-    navElements.forEach(nav => {
-      const element = nav as HTMLElement;
-      const computedStyle = window.getComputedStyle(element);
-      // Only fix if pointer-events is actually none
-      if (computedStyle.pointerEvents === 'none') {
-        element.style.pointerEvents = 'auto';
-        // Also ensure parent elements don't block clicks
-        let parent = element.parentElement;
-        while (parent) {
-          if (window.getComputedStyle(parent).pointerEvents === 'none') {
-            parent.style.pointerEvents = 'auto';
-          }
-          parent = parent.parentElement;
-        }
-      }
-    });
-  }, []); // Remove all dependencies to prevent infinite loop
-
-  // Make cleanup function globally accessible
-  useEffect(() => {
-    // Export cleanup function to global scope for access from other components
-    (window as any).cleanupModalOverlays = cleanupModalOverlays;
-    
-    return () => {
-      // Clean up global reference on unmount
-      delete (window as any).cleanupModalOverlays;
-    };
-  }, [cleanupModalOverlays]);
-
-  // Navigation click handler with safety
-  const handleNavigationClick = useCallback((href: string, label: string) => {
-    const navigationSafetyState = (window as any).navigationSafety || {};
-    const isNavigationBlocked = navigationSafetyState.isNavigating || navigationSafetyState.userInteractionInProgress;
-    
-    // If navigation is blocked, reset flags
-    if (isNavigationBlocked) {
-      resetNavigationSafetyFlags();
-    }
-    
-    // Use special Trades page navigation handling
-    handleTradesPageNavigation(href, label);
   }, []);
 
   useEffect(() => {
     // Initialize navigation safety on component mount
     initializeNavigationSafety();
-    
-    // Load saved filters
-    const savedFilters = loadTradeFilters();
-    if (savedFilters) {
-      setFilters(savedFilters);
+  }, []);
+
+  // Simplified effect for trades fetching - using the new filter context
+  useEffect(() => {
+    // Only fetch if we have a valid user with ID
+    if (!user || !user.id) {
+      setLoading(false);
+      return;
+    }
+
+    // Validate user ID format
+    try {
+      validateUUID(user.id, 'user_id');
+    } catch (error) {
+      console.error('Invalid user ID format:', error);
+      setLoading(false);
+      return;
     }
     
-    // Load available symbols and strategies for autocomplete
-    if (user) {
-      const loadFilterOptions = async () => {
-        try {
-          const [symbolsData, strategiesData] = await Promise.all([
-            getAvailableSymbols(user.id),
-            getAvailableStrategies(user.id)
-          ]);
-          setAvailableSymbols(symbolsData);
-          setAvailableStrategies(strategiesData);
-        } catch (error) {
-          console.warn('Failed to load filter options:', error);
+    setLoading(true);
+    // Simple direct fetch without debouncing to avoid issues
+    const fetchTrades = async () => {
+      try {
+        const paginationOptions: PaginationOptions & {
+          strategyId?: string;
+          symbol?: string;
+          market?: string;
+          dateFrom?: string;
+          dateTo?: string;
+          pnlFilter?: 'all' | 'profitable' | 'lossable';
+          side?: 'Buy' | 'Sell' | '';
+          emotionalStates?: string[];
+        } = {
+          page: currentPage,
+          limit: pageSize,
+          sortBy: sortConfig.field,
+          sortOrder: sortConfig.direction,
+          ...filters
+        };
+
+        const result = await fetchTradesPaginated(user.id, paginationOptions);
+        
+        setPagination(result);
+        setTrades(result?.data || []);
+        
+        // Also fetch statistics when we fetch trades
+        if (user) {
+          try {
+            const stats = await fetchTradesStatistics(user.id, {
+              symbol: filters.symbol,
+              market: filters.market,
+              dateFrom: filters.dateFrom,
+              dateTo: filters.dateTo,
+              pnlFilter: filters.pnlFilter,
+              side: filters.side,
+              emotionalStates: filters.emotionalStates
+            });
+            setStatistics(stats);
+          } catch (statsError) {
+            console.error('Error fetching statistics:', statsError);
+          }
         }
-      };
-      
-      loadFilterOptions();
-    }
-  }, [user]);
-
-  // Optimized combined effect for trades fetching
-  useEffect(() => {
-    console.log('🔄 [MARKET_FILTER_DEBUG] Data fetching effect triggered:', {
-      hasUser: !!user,
-      userId: user?.id,
-      currentPage,
-      pageSize,
-      sortConfig: sortConfigRef.current,
-      filters: {
-        ...filtersRef.current,
-        market: filtersRef.current.market || 'NO_FILTER'
-      },
-      timestamp: new Date().toISOString()
-    });
-    
-    if (!user) return;
-    
-    // Use the debounced fetch function to prevent excessive API calls
-    debouncedFetchTrades(currentPage, filtersRef.current, sortConfigRef.current);
-  }, [currentPage, pageSize, user?.id, filters, sortConfig, debouncedFetchTrades]);
-
-  // Separate effect for statistics fetching with proper synchronization
-  useEffect(() => {
-    console.log('🔄 [STATISTICS_DEBUG] Statistics effect triggered:', {
-      hasUser: !!user,
-      userId: user?.id,
-      sortConfig: sortConfigRef.current,
-      filters: {
-        ...filtersRef.current,
-        market: filtersRef.current.market || 'NO_FILTER'
-      },
-      timestamp: new Date().toISOString()
-    });
-    
-    if (!user) return;
-    
-    // Use debounced statistics fetch for better performance
-    debouncedFetchStatistics();
-  }, [user?.id, filters, sortConfig, debouncedFetchStatistics]);
-
-  // Dedicated effect to handle sortConfig changes for statistics
-  useEffect(() => {
-    console.log('🔄 [STATISTICS_DEBUG] SortConfig change detected:', {
-      sortConfig: sortConfigRef.current,
-      timestamp: new Date().toISOString()
-    });
-    
-    if (!user) return;
-    
-    // Force statistics recalculation when sortConfig changes
-    // This ensures statistics boxes update correctly when sorting changes
-    const timeoutId = setTimeout(() => {
-      console.log('🔄 [STATISTICS_DEBUG] Triggering statistics update due to sortConfig change:', {
-        sortConfig: sortConfigRef.current,
-        timestamp: new Date().toISOString()
-      });
-      fetchStatistics();
-    }, 100); // Small delay to ensure refs are updated
-    
-    return () => clearTimeout(timeoutId);
-  }, [sortConfig, user?.id, fetchStatistics]);
-
-  // Save filters when they change - separate from data fetching
-  useEffect(() => {
-    if (user) {
-      saveTradeFilters(filtersRef.current);
-    }
-  }, [user?.id]); // Remove filters dependency to prevent infinite loop
-
-  // Sync filters across tabs - optimized with memory management
-  useEffect(() => {
-    const unsubscribe = useFilterSync((state: any) => {
-      if (state && user) {
-        setFilters(state.trades);
+      } catch (err) {
+        setError('Error fetching trades');
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
       }
-    });
+    };
     
-    return unsubscribe; // Cleanup subscription
-  }, [user]); // Add user dependency for proper cleanup
+    fetchTrades();
+  }, [currentPage, pageSize, user?.id, filters, sortConfig]);
 
-  // Optimized cleanup effect with memory management
+
+
+  // Combined cleanup effect with performance tracking
   useEffect(() => {
-    // Performance monitoring
-    const startTime = performance.now();
-    
-    return () => {
-      const endTime = performance.now();
-      console.log('🧹 [MEMORY_CLEANUP] TradesPage cleanup took:', `${(endTime - startTime).toFixed(2)}ms`);
-      
-      // Only run cleanup if we're actually on the Trades page
+    const performCleanup = () => {
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
         cleanupModalOverlays();
@@ -513,51 +476,37 @@ const TradesPageContent = memo(function TradesPageContent() {
         // Optimized overlay cleanup with batch DOM operations
         const remainingOverlays = document.querySelectorAll('.fixed.inset-0, .modal-backdrop, [role="dialog"]');
         if (remainingOverlays.length > 0) {
-          // Use DocumentFragment for better performance
           const fragment = document.createDocumentFragment();
           remainingOverlays.forEach(overlay => {
             if (overlay.parentNode) {
               fragment.appendChild(overlay);
             }
           });
-          // Clear the fragment (removes all elements)
           fragment.textContent = '';
         }
       }
     };
-  }, [cleanupModalOverlays]);
 
-  // Optimized page visibility handler with debouncing and memory management
-  useEffect(() => {
-    let cleanupTimeout: NodeJS.Timeout;
-    let visibilityChangeCount = 0;
-    
-    const handleVisibilityChange = () => {
-      visibilityChangeCount++;
-      
-      // Only run cleanup if we're actually on the Trades page
-      const currentPath = window.location?.pathname || '';
-      if (currentPath.includes('/trades')) {
-        if (document.hidden) {
-          // Debounce cleanup to prevent excessive calls
-          clearTimeout(cleanupTimeout);
-          cleanupTimeout = setTimeout(() => {
-            console.log('🧹 [MEMORY_CLEANUP] Visibility change cleanup, count:', visibilityChangeCount);
-            cleanupModalOverlays();
-          }, 100);
-        }
+    // Track cleanup timeout for memory management
+    const cleanupTimeout = performanceUtils.trackTimeout(
+      setTimeout(performCleanup, 100),
+      'trades-page-cleanup'
+    );
+
+    // Track event listeners for cleanup
+    const handleVisibilityChange = performanceUtils.createThrottled(() => {
+      if (document.hidden) {
+        performCleanup();
       }
-    };
+    }, 100);
 
     const handleBeforeUnload = () => {
-      // Only run cleanup if we're actually on the Trades page
-      const currentPath = window.location?.pathname || '';
-      if (currentPath.includes('/trades')) {
-        cleanupModalOverlays();
-      }
+      performCleanup();
     };
 
-    // Add event listeners for additional cleanup triggers
+    performanceUtils.trackEventListener(document, 'visibilitychange', handleVisibilityChange, 'trades-page-visibility');
+    performanceUtils.trackEventListener(window, 'beforeunload', handleBeforeUnload, 'trades-page-unload');
+
     document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
     window.addEventListener('beforeunload', handleBeforeUnload, { passive: true });
 
@@ -565,7 +514,6 @@ const TradesPageContent = memo(function TradesPageContent() {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('beforeunload', handleBeforeUnload);
       clearTimeout(cleanupTimeout);
-      console.log('🧹 [MEMORY_CLEANUP] Visibility handlers cleaned up');
     };
   }, [cleanupModalOverlays]);
 
@@ -574,8 +522,7 @@ const TradesPageContent = memo(function TradesPageContent() {
     setExpandedTrades(prev => {
       // Limit expanded trades to prevent memory issues with large datasets
       if (prev.size >= 10 && !prev.has(tradeId)) {
-        console.log('🧹 [MEMORY_MANAGEMENT] Limiting expanded trades to 10 for performance');
-        return prev; // Don't expand if we already have 10 expanded
+        return prev;
       }
       
       const newSet = new Set(prev);
@@ -679,723 +626,456 @@ const TradesPageContent = memo(function TradesPageContent() {
   };
 
   return (
-    <div className="verotrade-content-wrapper">
-      {/* Main container with exact spacing */}
-      <div className="mb-section">
-        
-        {/* Header Section - Exact Typography and Styling */}
-        <div className="mb-component">
-          <h1 className="h1-dashboard mb-element">Trade History</h1>
-          <p className="body-text mb-element">View and expand your past trades for detailed information</p>
-        </div>
-
-        {/* Filters Section - Responsive Grid Layout */}
-        <div className="dashboard-card mb-component">
-          <h2 className="h2-section mb-component">Filters</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-element mb-component">
-            <div>
-              <label className="block label-text mb-2">Symbol</label>
-              <input
-                type="text"
-                value={filters.symbol}
-                onChange={(e) => setFilters(prev => ({ ...prev, symbol: e.target.value }))}
-                placeholder="Search symbol..."
-                className="input-field"
-              />
+    <div className="min-h-screen flex flex-col antialiased">
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5 h-20 flex items-center transition-all duration-500">
+        <div className="max-w-[1800px] w-full mx-auto px-6 lg:px-12 flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <div className="relative w-10 h-10 flex items-center justify-center">
+               <span className="font-serif text-3xl text-gold italic font-bold">V</span>
+               <span className="font-serif text-3xl text-gold absolute left-3 top-0">T</span>
             </div>
-            <div>
-              <label className="block label-text mb-2">Market</label>
-              <div className="relative">
-                <select
-                  value={filters.market}
-                  onChange={(e) => {
-                    const newMarketValue = e.target.value as TradeFilterOptions['market'];
-                    console.log('🔄 [MARKET_FILTER_DEBUG] Market filter changed:', {
-                      oldValue: filters.market,
-                      newValue: newMarketValue,
-                      timestamp: new Date().toISOString()
-                    });
-                    
-                    // Set loading state immediately for visual feedback
-                    setLoading(true);
-                    
-                    // Update filters and reset to first page
-                    setFilters(prev => ({
-                      ...prev,
-                      market: newMarketValue
-                    }));
-                    setCurrentPage(1);
-                    
-                    // Clear any cached results to ensure fresh data
-                    setPagination(null);
-                    setTrades([]);
-                  }}
-                  className={`input-field pr-8 transition-all duration-200 ${
-                    filters.market ? 'border-dusty-gold bg-opacity-5' : ''
-                  }`}
-                  style={{
-                    backgroundColor: filters.market ? 'rgba(184, 155, 94, 0.05)' : 'transparent',
-                    borderColor: filters.market ? 'var(--dusty-gold)' : 'var(--border-primary)'
-                  }}
-                >
-                  <option value="">All Markets</option>
-                  <option value="stock">Stocks</option>
-                  <option value="crypto">Crypto</option>
-                  <option value="forex">Forex</option>
-                  <option value="futures">Futures</option>
-                </select>
-                {filters.market && (
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--dusty-gold)' }}></div>
-                  </div>
-                )}
-              </div>
-              {filters.market && (
-                <div className="mt-1 text-xs" style={{ color: 'var(--dusty-gold)' }}>
-                  Filtering by: {filters.market.charAt(0).toUpperCase() + filters.market.slice(1)}
-                </div>
-              )}
-            </div>
-            <div>
-              <label className="block label-text mb-2">From Date</label>
-              <input
-                type="date"
-                value={filters.dateFrom}
-                onChange={(e) => setFilters(prev => ({ ...prev, dateFrom: e.target.value }))}
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label className="block label-text mb-2">To Date</label>
-              <input
-                type="date"
-                value={filters.dateTo}
-                onChange={(e) => setFilters(prev => ({ ...prev, dateTo: e.target.value }))}
-                className="input-field"
-              />
-            </div>
+            <span className="font-serif text-xl tracking-wide text-white group-hover:text-gold transition-colors duration-300">VeroTrade</span>
           </div>
-          <div className="flex gap-button-group items-center">
-            <button
-              onClick={() => {
-                console.log('🔄 [MARKET_FILTER_DEBUG] Clear filters clicked, resetting all filters');
-                setFilters({ symbol: '', market: '', dateFrom: '', dateTo: '' });
-                setCurrentPage(1);
-                setPagination(null);
-                setTrades([]);
-                setLoading(true);
-              }}
-              className="button-secondary"
-            >
-              Clear Filters
+
+          {/* Nav Links */}
+          <div className="hidden md:flex items-center gap-1">
+            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+              <span className="material-symbols-outlined">dashboard</span>
             </button>
-            {loading && (
-              <div className="flex items-center gap-2 text-sm" style={{ color: 'var(--dusty-gold)' }}>
-                <div className="w-4 h-4 border-2 border-dusty-gold border-t-transparent rounded-full animate-spin"></div>
-                Applying filters...
+            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gold bg-gold/10 border border-gold/20">
+              <span className="material-symbols-outlined">candlestick_chart</span>
+            </button>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+              <span className="material-symbols-outlined">add</span>
+            </button>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+              <span className="material-symbols-outlined">school</span>
+            </button>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+              <span className="material-symbols-outlined">settings</span>
+            </button>
+          </div>
+
+          {/* Profile */}
+          <div className="flex items-center gap-4">
+             <button className="btn-beam px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase text-gray-300 group">
+                <div className="btn-beam-content rounded-full bg-background px-4">
+                  <span className="flex items-center gap-2">
+                       <span className="material-symbols-outlined text-sm">logout</span> Logout
+                  </span>
+                </div>
+             </button>
+             <div className="w-9 h-9 rounded bg-gradient-to-br from-gold to-gold-dim flex items-center justify-center text-black font-serif font-bold text-lg shadow-[0_0_15px_rgba(197,160,101,0.4)]">
+                {user?.email?.charAt(0).toUpperCase() || 'U'}
+             </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-grow pt-32 px-6 lg:px-12 max-w-[1800px] w-full mx-auto pb-20">
+        
+        {/* Header Section */}
+        <header className="mb-12">
+          <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">
+            {titleRevealed}
+          </h1>
+          <p className="text-gray-400 max-w-xl text-lg font-light tracking-wide scroll-item">
+            Review your trading performance, analyze P&L, and refine your strategies.
+          </p>
+        </header>
+
+        {/* GSAP Animations Component */}
+        <GSAPAnimations />
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* Stat Card 1 */}
+          <div className="flashlight-container rounded-2xl p-6 scroll-item">
+            <div className="flashlight-bg"></div>
+            <div className="flashlight-border"></div>
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                Trades
               </div>
-            )}
-            {!loading && filters.market && (
-              <div className="text-sm" style={{ color: 'var(--dusty-gold)' }}>
-                ✓ Market filter applied
+              <div className="text-3xl font-mono text-white font-medium">
+                {statistics?.totalTrades || pagination?.totalCount || 0}
               </div>
-            )}
+            </div>
+          </div>
+
+           {/* Stat Card 2 */}
+           <div className="flashlight-container rounded-2xl p-6 scroll-item">
+              <div className="flashlight-bg"></div>
+              <div className="flashlight-border"></div>
+              <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                      Total P&L
+                  </div>
+                  <div className="text-3xl font-mono text-white font-medium">
+                    {formatCurrency(statistics?.totalPnL || 0)}
+                  </div>
+              </div>
+          </div>
+
+           {/* Stat Card 3 */}
+           <div className="flashlight-container rounded-2xl p-6 scroll-item">
+              <div className="flashlight-bg"></div>
+              <div className="flashlight-border"></div>
+              <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                      Win Rate
+                  </div>
+                  <div className="text-3xl font-mono text-white font-medium">
+                    {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
+                  </div>
+              </div>
+          </div>
+
+          {/* Stat Card 4 */}
+          <div className="flashlight-container rounded-2xl p-6 scroll-item">
+              <div className="flashlight-bg"></div>
+              <div className="flashlight-border"></div>
+              <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                      Avg Emotion
+                  </div>
+                  <div className="text-3xl font-serif italic text-gold-light">Neutral</div>
+              </div>
           </div>
         </div>
 
-        {/* Summary Stats Section - 4-Column Grid Layout */}
-        {statistics || (pagination && pagination.totalCount > 0) ? (
-          <div className="key-metrics-grid mb-component">
-            <div className="dashboard-card">
-              <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-opacity-20 bg-dusty-gold flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4" style={{ color: 'var(--dusty-gold)' }} />
-                  </div>
-                  <div>
-                    <h3 className="h3-metric-label">Total Trades</h3>
-                    {filters.market && (
-                      <div className="text-xs" style={{ color: 'var(--dusty-gold)' }}>
-                        Filtered: {filters.market.charAt(0).toUpperCase() + filters.market.slice(1)}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <p className="metric-value">{statistics?.totalTrades || pagination?.totalCount || 0}</p>
-            </div>
-            
-            <div className="dashboard-card">
-              <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <DollarSign className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Total P&L</h3>
-                </div>
-              </div>
-              <p className={`metric-value ${(statistics?.totalPnL || 0) >= 0 ? '' : 'text-rust-red'}`}
-                 style={{ color: (statistics?.totalPnL || 0) >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
-                {formatCurrency(statistics?.totalPnL || 0)}
-              </p>
-            </div>
-            
-            <div className="dashboard-card">
-              <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <Target className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Win Rate</h3>
-                </div>
-              </div>
-              <p className="metric-value">
-                {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
-              </p>
-            </div>
-            
-            <div className="dashboard-card">
-              <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Page</h3>
-                </div>
-              </div>
-              <p className="metric-value">
-                {currentPage} of {pagination?.totalPages || 1}
-              </p>
-            </div>
+        {/* Filters Section */}
+        <div className="space-y-4">
+          <TradesFilterBar />
+          
+          {/* Sort Controls Section */}
+          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+            <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
+              <span className="material-symbols-outlined text-gold">sort</span>
+              Sort Options
+            </h3>
+            <TradesSortControls />
           </div>
-        ) : null}
+        </div>
 
-        {/* Pagination Controls - Clean Styling and Responsive Behavior */}
-        {pagination && pagination.totalPages > 1 && (
-          <div className="dashboard-card mb-component">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <label className="label-text">Trades per page:</label>
-                <select
-                  value={pageSize}
-                  onChange={(e) => {
-                    setPageSize(Number(e.target.value));
-                    setCurrentPage(1); // Reset to first page when changing page size
-                  }}
-                  className="input-field w-auto"
-                >
-                  <option value={10}>10</option>
-                  <option value={25}>25</option>
-                  <option value={50}>50</option>
-                  <option value={100}>100</option>
-                </select>
+        {/* Trades Table Area */}
+        <div className="scroll-item">
+          {/* Controls */}
+          <div className="flex flex-wrap justify-between items-center mb-6 px-1">
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-500">Trades per page:</span>
+              <div className="relative w-20">
+                   <select
+                     value={pageSize}
+                     onChange={(e) => {
+                       setPageSize(Number(e.target.value));
+                       setCurrentPage(1); // Reset to first page when changing page size
+                     }}
+                     className="w-full bg-surface border border-white/10 rounded px-2 py-1 text-sm text-gray-300 focus:outline-none focus:border-gold"
+                   >
+                       <option value={10}>10</option>
+                       <option value={25}>25</option>
+                       <option value={50}>50</option>
+                       <option value={100}>100</option>
+                   </select>
               </div>
-             
-              <div className="flex items-center gap-2">
-                <button
+              
+              {/* Current sort indicator for mobile */}
+              <div className="lg:hidden flex items-center gap-2 px-3 py-1.5 bg-blue-600/10 border border-blue-500/20 rounded-lg">
+                <span className="text-xs text-blue-400">Sort:</span>
+                <span className="text-sm text-white truncate max-w-[120px]">{sortConfig.label}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-gray-400">Page <span className="text-white font-mono">{currentPage}</span> of <span className="text-white font-mono">{pagination?.totalPages || 1}</span></span>
+              <div className="flex gap-2">
+                <button 
                   onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                   disabled={currentPage === 1}
-                  className="button-secondary p-3 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] min-w-[44px]"
+                  className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
-                
-                <span className="body-text font-medium px-3">
-                  Page {currentPage} of {pagination.totalPages}
-                </span>
-                
-                <button
-                  onClick={() => setCurrentPage(prev => Math.min(pagination.totalPages, prev + 1))}
-                  disabled={currentPage === pagination.totalPages}
-                  className="button-secondary p-3 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] min-w-[44px]"
+                <button 
+                  onClick={() => setCurrentPage(prev => Math.min(pagination?.totalPages || 1, prev + 1))}
+                  disabled={currentPage === (pagination?.totalPages || 1)}
+                  className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
-            
-            {/* Page Numbers */}
-            <div className="flex items-center justify-center gap-1 mt-4">
-              {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
-                const pageNum = i + 1;
-                const isActive = pageNum === currentPage;
-                const isEllipsis = pageNum === 5 && pagination.totalPages > 5;
-                 
-                if (isEllipsis) {
-                  return <span key="ellipsis" className="secondary-text px-2">...</span>;
-                }
-                 
+          </div>
+
+          {/* Headers */}
+          <div className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-white/5 text-xs font-medium text-gray-500 uppercase tracking-widest">
+            <div className="col-span-2">Date / Time</div>
+            <div className="col-span-2">Symbol</div>
+            <div className="col-span-2 text-right">Entry Price</div>
+            <div className="col-span-2 text-right">P&L</div>
+            <div className="col-span-2 text-right">Quantity</div>
+            <div className="col-span-2 text-right flex items-center justify-end gap-2">
+              <span>Status</span>
+              {/* Sort indicator on desktop */}
+              <div className="hidden lg:flex items-center gap-1 px-2 py-1 bg-blue-600/10 border border-blue-500/20 rounded text-xs">
+                <span className="text-blue-400">Sort:</span>
+                <span className="text-white truncate max-w-[100px]">{sortConfig.label}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Trade Rows Container */}
+          <div className="space-y-3 mt-4 min-h-[200px] relative z-10">
+            {trades.map((trade) => {
+                const isWin = (trade.pnl || 0) > 0;
+                const pnlClass = isWin ? 'text-profit' : 'text-loss';
+                const pnlSign = isWin ? '+' : '';
+                const pnlFormatted = pnlSign + formatCurrency(Math.abs(trade.pnl || 0));
+                
                 return (
-                  <button
-                    key={pageNum}
-                    onClick={() => setCurrentPage(pageNum)}
-                    className={`px-3 py-2 rounded-lg transition-all min-h-[44px] ${
-                      isActive
-                        ? 'button-primary'
-                        : 'button-secondary'
-                    }`}
-                  >
-                    {pageNum}
-                  </button>
+                  <div key={trade.id} className="flashlight-container rounded-lg overflow-hidden scroll-item mb-3 group">
+                    <div className="flashlight-bg"></div>
+                    <div className="flashlight-border"></div>
+                    
+                    {/* Main Row Content */}
+                    <div className="relative z-10 px-6 py-4 cursor-pointer hover:bg-white/5 transition-colors" onClick={() => toggleTradeExpansion(trade.id)}>
+                      <div className="grid grid-cols-12 gap-4 items-center">
+                        <div className="col-span-2">
+                          <div className="text-sm text-white font-medium">{new Date(trade.trade_date).toLocaleDateString()}</div>
+                          <div className="text-xs text-gray-500 mt-1">{trade.entry_time || 'N/A'}</div>
+                        </div>
+                        <div className="col-span-2 flex items-center gap-3">
+                          <span className="w-8 h-8 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-xs font-bold text-gold font-serif">
+                            {trade.symbol.substring(0, 2).toUpperCase()}
+                          </span>
+                          <div>
+                            <div className="text-sm font-bold text-white tracking-wide">{trade.symbol}</div>
+                            {trade.market && (
+                              <span className="text-[10px] uppercase tracking-wider text-gray-500 border border-gray-800 rounded px-1.5 py-0.5">
+                                {trade.market}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price.toFixed(2)}</div>
+                        <div className="col-span-2 text-right font-mono text-sm font-bold">{pnlFormatted}</div>
+                        <div className="col-span-2 text-right text-sm text-gray-400">
+                          {trade.quantity} <span className="text-xs text-gray-600">shares</span>
+                        </div>
+                        <div className="col-span-2 flex justify-end items-center gap-3">
+                             <div className={`w-2 h-2 rounded-full ${isWin ? 'bg-profit shadow-[0_0_8px_rgba(46,189,133,0.5)]' : 'bg-loss shadow-[0_0_8px_rgba(246,70,93,0.5)]'}`}></div>
+                             <span className={`material-symbols-outlined text-gray-600 chevron-icon ${expandedTrades.has(trade.id) ? 'rotate' : ''}`}>
+                               expand_more
+                             </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Expanded Content */}
+                    <div className={`accordion-content bg-[#080808] border-t border-white/5 relative z-10 ${expandedTrades.has(trade.id) ? 'active' : ''}`}>
+                      <div className="p-8 grid grid-cols-12 gap-8">
+                         
+                        {/* Left Info */}
+                        <div className="col-span-12 md:col-span-8">
+                          <div className="flex items-center gap-4 mb-6">
+                            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest">Trade Details</h3>
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Entry Price</div>
+                              <div className="text-base font-mono text-white">${trade.entry_price.toFixed(2)}</div>
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Exit Price</div>
+                              <div className="text-base font-mono text-white">
+                                {trade.exit_price ? `$${trade.exit_price.toFixed(2)}` : 'N/A'}
+                              </div>
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Total P&L</div>
+                              <div className={`text-lg font-mono font-bold ${pnlClass}`}>{pnlFormatted}</div>
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Duration</div>
+                              <div className="text-base text-white font-serif italic">
+                                {calculateTradeDuration(trade.entry_time, trade.exit_time) || 'N/A'}
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Strategy</div>
+                              {trade.strategies ? (
+                                <span className="inline-block px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gold-light">
+                                  {trade.strategies.name}
+                                </span>
+                              ) : (
+                                <span className="text-gray-400 text-xs">No strategy</span>
+                              )}
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Emotional State</div>
+                              {trade.emotional_state ? (
+                                <span className="inline-block px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 uppercase tracking-wide">
+                                  {trade.emotional_state}
+                                </span>
+                              ) : (
+                                <span className="text-gray-400 text-xs">Not recorded</span>
+                              )}
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Side</div>
+                              <span className={`${trade.side === 'Buy' ? 'text-profit' : 'text-loss'} font-medium text-sm uppercase`}>
+                                {trade.side}
+                              </span>
+                            </div>
+                            <div>
+                              <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Actions</div>
+                              <div className="flex gap-2">
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleEditTrade(trade);
+                                  }}
+                                  className="hover:text-gold transition-colors"
+                                >
+                                  <Edit className="w-4 h-4" />
+                                </button>
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleDeleteTrade(trade.id);
+                                  }}
+                                  className="hover:text-loss transition-colors"
+                                >
+                                  <Trash2 className="w-4 h-4" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Right Decor/Chart Placeholder */}
+                        <div className="col-span-12 md:col-span-4 flex items-center justify-center bg-white/[0.02] rounded-lg border border-white/5 min-h-[150px] relative overflow-hidden group/chart">
+                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/5 opacity-0 group-hover/chart:opacity-100 transition-opacity"></div>
+                          <div className="text-center">
+                            <span className="material-symbols-outlined text-4xl text-gray-700 mb-2 group-hover/chart:text-gold transition-colors">show_chart</span>
+                            <p className="text-xs text-gray-600 uppercase tracking-widest">Price Action Replay</p>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
-            </div>
-          </div>
-        )}
-
-        {/* Trades List - Updated with 12px Border Radius */}
-        {trades.length === 0 ? (
-          <div className="dashboard-card p-section text-center">
-            <TrendingUp className="w-16 h-16 mx-auto mb-component" style={{ color: 'var(--muted-gray)' }} />
-            <h3 className="h2-section mb-element">No trades yet</h3>
-            <p className="body-text mb-component">Start logging your trades to see them here</p>
-            <button
-              onClick={() => window.location.href = '/log-trade'}
-              className="button-primary"
-            >
-              Log Your First Trade
-            </button>
-          </div>
-        ) : (
-          <div className="gap-component">
-            {/* Table Header with Sort Controls */}
-            <div className="dashboard-card p-4 mb-4">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 text-xs sm:text-sm font-medium text-muted-gray mb-2 sm:mb-3">
-                <div></div> {/* Spacer for expand/collapse */}
-                <SortIndicator
-                  field="trade_date"
-                  currentSort={sortConfig}
-                  onSort={(fieldDirection) => {
-                    const [field, direction] = fieldDirection.split('-');
-                    const newSortConfig = TRADE_SORT_OPTIONS.find(opt =>
-                      opt.field === field && opt.direction === direction
-                    );
-                    if (newSortConfig) {
-                      setSortConfig(newSortConfig);
-                    }
-                  }}
-                  label="Date"
-                />
-                <SortIndicator
-                  field="symbol"
-                  currentSort={sortConfig}
-                  onSort={(fieldDirection) => {
-                    const [field, direction] = fieldDirection.split('-');
-                    const newSortConfig = TRADE_SORT_OPTIONS.find(opt =>
-                      opt.field === field && opt.direction === direction
-                    );
-                    if (newSortConfig) {
-                      setSortConfig(newSortConfig);
-                    }
-                  }}
-                  label="Symbol"
-                />
-                <SortIndicator
-                  field="entry_price"
-                  currentSort={sortConfig}
-                  onSort={(fieldDirection) => {
-                    const [field, direction] = fieldDirection.split('-');
-                    const newSortConfig = TRADE_SORT_OPTIONS.find(opt =>
-                      opt.field === field && opt.direction === direction
-                    );
-                    if (newSortConfig) {
-                      setSortConfig(newSortConfig);
-                    }
-                  }}
-                  label="Entry Price"
-                />
-                <SortIndicator
-                  field="pnl"
-                  currentSort={sortConfig}
-                  onSort={(fieldDirection) => {
-                    const [field, direction] = fieldDirection.split('-');
-                    const newSortConfig = TRADE_SORT_OPTIONS.find(opt =>
-                      opt.field === field && opt.direction === direction
-                    );
-                    if (newSortConfig) {
-                      setSortConfig(newSortConfig);
-                    }
-                  }}
-                  label="P&L"
-                />
-                <SortIndicator
-                  field="quantity"
-                  currentSort={sortConfig}
-                  onSort={(fieldDirection) => {
-                    const [field, direction] = fieldDirection.split('-');
-                    const newSortConfig = TRADE_SORT_OPTIONS.find(opt =>
-                      opt.field === field && opt.direction === direction
-                    );
-                    if (newSortConfig) {
-                      setSortConfig(newSortConfig);
-                    }
-                  }}
-                  label="Quantity"
-                />
-                <div></div> {/* Spacer for actions */}
-              </div>
-            </div>
-
-            {trades.map((trade) => (
-              <div key={trade.id} className="dashboard-card overflow-hidden transform transition-all hover:translate-y-[-2px] hover:shadow-card-hover">
-                {/* Trade Summary - Always Visible */}
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                          trade.side === 'Buy' ? 'bg-opacity-20' : 'bg-opacity-20'
-                        }`} style={{ backgroundColor: trade.side === 'Buy' ? 'rgba(184, 155, 94, 0.2)' : 'rgba(167, 53, 45, 0.2)' }}>
-                          <span className={`text-sm font-bold ${
-                            trade.side === 'Buy' ? 'text-dusty-gold' : 'text-rust-red'
-                          }`}>
-                            {trade.side === 'Buy' ? 'B' : 'S'}
-                          </span>
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            {/* Compact Symbol Display */}
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs text-muted-gray font-medium uppercase tracking-wider">SYMBOL</span>
-                              <h3 className="text-sm font-bold body-text bg-opacity-10 px-2 py-1 rounded-lg border" 
-                                 style={{ backgroundColor: 'rgba(184, 155, 94, 0.1)', borderColor: 'var(--dusty-gold)' }}>
-                                {trade.symbol || 'N/A'}
-                              </h3>
-                            </div>
-                            {/* Compact Market Type Display - Same size as symbol */}
-                            {trade.market && (
-                              <div className="flex items-center gap-2">
-                                <span className="text-xs text-muted-gray font-medium uppercase tracking-wider">MARKET</span>
-                                <MarketBadge market={trade.market} size="compact" />
-                              </div>
-                            )}
-                          </div>
-                          <p className="body-text text-sm">
-                            {new Date(trade.trade_date).toLocaleDateString()} • {trade.quantity} shares
-                          </p>
-                          {(() => {
-                            const duration = calculateTradeDuration(trade.entry_time, trade.exit_time);
-                            return duration ? (
-                              <div className="flex items-center gap-1 mt-1">
-                                <Timer className="w-3 h-3" style={{ color: 'var(--dusty-gold)' }} />
-                                <span className="text-xs" style={{ color: 'var(--dusty-gold)' }}>{duration}</span>
-                              </div>
-                            ) : null;
-                          })()}
-                        </div>
-                      </div>
-                      {trade.strategies && (
-                        <div className="px-3 py-1 rounded-full" style={{ backgroundColor: 'rgba(184, 155, 94, 0.1)' }}>
-                          <span className="text-sm" style={{ color: 'var(--dusty-gold)' }}>{trade.strategies.name}</span>
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 sm:gap-4">
-                      <div className="text-right">
-                        <p className={`text-lg font-bold ${
-                          (trade.pnl || 0) >= 0 ? 'text-dusty-gold' : 'text-rust-red'
-                        }`} style={{ color: (trade.pnl || 0) >= 0 ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
-                          {formatCurrency(trade.pnl || 0)}
-                        </p>
-                        <p className="body-text text-sm">
-                          ${trade.entry_price} {trade.exit_price && `→ $${trade.exit_price}`}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2 sm:gap-4">
-                        <div className="flex gap-2">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleEditTrade(trade);
-                            }}
-                            className="p-3 rounded-lg transition-all min-h-[44px] min-w-[44px] hover:bg-opacity-10"
-                            style={{ backgroundColor: 'transparent' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(184, 155, 94, 0.1)'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                            title="Edit trade"
-                          >
-                            <Edit className="w-4 h-4" style={{ color: 'var(--dusty-gold)' }} />
-                          </button>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleDeleteTrade(trade.id);
-                            }}
-                            className="p-3 rounded-lg transition-all min-h-[44px] min-w-[44px] hover:bg-opacity-10"
-                            style={{ backgroundColor: 'transparent' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(167, 53, 45, 0.1)'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                            title="Delete trade"
-                          >
-                            <Trash2 className="w-4 h-4" style={{ color: 'var(--rust-red)' }} />
-                          </button>
-                          <button
-                            className="p-3 rounded-lg transition-all min-h-[44px] min-w-[44px] hover:bg-opacity-10"
-                            style={{ backgroundColor: 'transparent' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(79, 91, 74, 0.1)' }
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                            onClick={() => toggleTradeExpansion(trade.id)}
-                          >
-                            {expandedTrades.has(trade.id) ? (
-                              <ChevronUp className="w-5 h-5" style={{ color: 'var(--muted-gray)' }} />
-                            ) : (
-                              <ChevronDown className="w-5 h-5" style={{ color: 'var(--muted-gray)' }} />
-                            )}
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Expanded Details */}
-                  {expandedTrades.has(trade.id) && (
-                    <div className="border-t" style={{ borderColor: 'var(--border-primary)' }}>
-                      <div className="p-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {/* Trade Details */}
-                          <div>
-                            <h4 className="h3-card-title text-sm mb-3 uppercase tracking-wider">Trade Details</h4>
-                            <div className="space-y-2">
-                              <div className="flex justify-between">
-                                <span className="secondary-text">Entry Price:</span>
-                                <span className="body-text font-medium">${trade.entry_price}</span>
-                              </div>
-                              {trade.exit_price && (
-                                <div className="flex justify-between">
-                                  <span className="secondary-text">Exit Price:</span>
-                                  <span className="body-text font-medium">${trade.exit_price}</span>
-                                </div>
-                              )}
-                              <div className="flex justify-between">
-                                <span className="secondary-text">Quantity:</span>
-                                <span className="body-text font-medium">{trade.quantity}</span>
-                              </div>
-                              <div className="flex justify-between">
-                                <span className="secondary-text">Side:</span>
-                                <span className={`font-medium ${
-                                  trade.side === 'Buy' ? 'text-dusty-gold' : 'text-rust-red'
-                                }`} style={{ color: trade.side === 'Buy' ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
-                                  {trade.side}
-                                </span>
-                              </div>
-                              <div className="flex justify-between">
-                                <span className="secondary-text">Symbol:</span>
-                                <span className="text-sm font-bold body-text bg-opacity-10 px-2 py-1 rounded-lg border" 
-                                   style={{ backgroundColor: 'rgba(184, 155, 94, 0.1)', borderColor: 'var(--dusty-gold)' }}>
-                                  {trade.symbol || 'N/A'}
-                                </span>
-                              </div>
-                              {trade.market && (
-                                <div className="flex justify-between">
-                                  <span className="secondary-text">Market:</span>
-                                  <MarketBadge market={trade.market} size="compact" />
-                                </div>
-                              )}
-                              <div className="flex justify-between">
-                                <span className="secondary-text">P&L:</span>
-                                <span className={`font-bold ${
-                                  (trade.pnl || 0) >= 0 ? 'text-dusty-gold' : 'text-rust-red'
-                                }`} style={{ color: (trade.pnl || 0) >= 0 ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
-                                  {formatCurrency(trade.pnl || 0)}
-                                </span>
-                              </div>
-                              {trade.entry_time && trade.exit_time && (
-                                <div className="flex justify-between">
-                                  <span className="secondary-text">Duration:</span>
-                                  <span className="font-medium" style={{ color: 'var(--dusty-gold)' }}>
-                                    {calculateTradeDuration(trade.entry_time, trade.exit_time)}
-                                  </span>
-                                </div>
-                              )}
-                              {trade.entry_time && (
-                                <div className="flex justify-between">
-                                  <span className="secondary-text">Entry Time:</span>
-                                  <span className="body-text font-medium">{trade.entry_time}</span>
-                                </div>
-                              )}
-                              {trade.exit_time && (
-                                <div className="flex justify-between">
-                                  <span className="secondary-text">Exit Time:</span>
-                                  <span className="body-text font-medium">{trade.exit_time}</span>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Strategy & Emotion */}
-                          <div>
-                            {trade.strategies ? (
-                              <div className="mb-4">
-                                <p className="secondary-text mb-2">Strategy: {trade.strategies.name}</p>
-                                {trade.strategies.rules && trade.strategies.rules.length > 0 && (
-                                  <div className="space-y-1">
-                                    <p className="secondary-text text-sm mb-2">Rules followed:</p>
-                                    {trade.strategies.rules.map((rule, index) => (
-                                      <div key={index} className="flex items-center gap-2 text-xs secondary-text">
-                                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--dusty-gold)' }}></div>
-                                        {rule}
-                                      </div>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            ) : (
-                              <p className="secondary-text mb-4">No strategy assigned</p>
-                            )}
-                           
-                            {trade.emotional_state && (
-                              <div>
-                                <p className="secondary-text mb-1">Emotional State:</p>
-                                <div className="flex flex-wrap gap-1">
-                                  {(() => {
-                                    // Parse emotional state and display as formatted boxes
-                                    let emotions: string[] = [];
-                                    
-                                    if (Array.isArray(trade.emotional_state)) {
-                                      emotions = trade.emotional_state
-                                        .filter(e => typeof e === 'string' && e.trim())
-                                        .map(e => e.trim().toUpperCase());
-                                    } else if (typeof trade.emotional_state === 'string') {
-                                      const trimmed = trade.emotional_state.trim();
-                                      if (trimmed) {
-                                        // Quick check if it's JSON format
-                                        if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
-                                          try {
-                                            const parsed = JSON.parse(trimmed);
-                                            if (Array.isArray(parsed)) {
-                                              emotions = parsed.map(e => typeof e === 'string' ? e.trim().toUpperCase() : e);
-                                            } else if (typeof parsed === 'string') {
-                                              emotions = [parsed.trim().toUpperCase()];
-                                            }
-                                          } catch {
-                                            emotions = [trimmed.toUpperCase()];
-                                          }
-                                        } else {
-                                          emotions = [trimmed.toUpperCase()];
-                                        }
-                                      }
-                                    }
-                                    
-                                    return emotions.map((emotion, index) => {
-                                      const emotionColors: Record<string, { bg: string; text: string; border: string }> = {
-                                        'FOMO': { bg: 'rgba(184, 155, 94, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'REVENGE': { bg: 'rgba(167, 53, 45, 0.1)', text: 'var(--rust-red)', border: 'var(--rust-red)' },
-                                        'TILT': { bg: 'rgba(147, 51, 234, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'OVERRISK': { bg: 'rgba(184, 155, 94, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'PATIENCE': { bg: 'rgba(79, 91, 74, 0.1)', text: 'var(--muted-olive)', border: 'var(--muted-olive)' },
-                                        'REGRET': { bg: 'rgba(184, 155, 94, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'DISCIPLINE': { bg: 'rgba(20, 184, 166, 0.1)', text: 'var(--muted-olive)', border: 'var(--muted-olive)' },
-                                        'CONFIDENT': { bg: 'rgba(99, 102, 241, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'ANXIOUS': { bg: 'rgba(236, 72, 153, 0.1)', text: 'var(--dusty-gold)', border: 'var(--dusty-gold)' },
-                                        'NEUTRAL': { bg: 'rgba(154, 154, 154, 0.1)', text: 'var(--muted-gray)', border: 'var(--muted-gray)' }
-                                      };
-                                      
-                                      const emotionColor = emotionColors[emotion] || emotionColors['NEUTRAL'];
-                                      
-                                      return (
-                                        <div
-                                          key={index}
-                                          className="px-2 py-1 rounded-md text-xs border"
-                                          style={{
-                                            backgroundColor: emotionColor?.bg || 'rgba(154, 154, 154, 0.1)',
-                                            color: emotionColor?.text || 'var(--muted-gray)',
-                                            borderColor: emotionColor?.border || 'var(--muted-gray)'
-                                          }}
-                                        >
-                                          {emotion}
-                                        </div>
-                                      );
-                                    });
-                                  })()}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {/* Edit Modal */}
-            {showEditModal && editingTrade && (
-              <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
-                <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto border" style={{ borderColor: 'rgba(184, 155, 94, 0.3)' }}>
-                  <div className="flex justify-between items-center mb-6">
-                    <h2 className="h2-section text-2xl">Edit Trade</h2>
-                    <button
-                      onClick={() => {
-                        cleanupModalOverlays();
-                        setShowEditModal(false);
-                        setEditingTrade(null);
-                      }}
-                      className="p-2 rounded-lg transition-all"
-                      style={{ backgroundColor: 'transparent' }}
-                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(79, 91, 74, 0.1)' }
-                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                    >
-                      <XCircle className="w-5 h-5" style={{ color: 'var(--muted-gray)' }} />
-                    </button>
-                  </div>
-
-                  <EditTradeForm
-                    trade={editingTrade}
-                    onSave={handleUpdateTrade}
-                    onCancel={() => {
-                      cleanupModalOverlays();
-                      setShowEditModal(false);
-                      setEditingTrade(null);
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* Delete Confirmation Dialog */}
-            {showDeleteConfirm && (
-              <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
-                <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-md border" style={{ borderColor: 'rgba(167, 53, 45, 0.3)' }}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(167, 53, 45, 0.1)' }}>
-                      <Trash2 className="w-5 h-5" style={{ color: 'var(--rust-red)' }} />
-                    </div>
-                    <h2 className="h2-section text-xl">Delete Trade</h2>
-                  </div>
-                 
-                  <p className="body-text mb-6">
-                    Are you sure you want to delete this trade? This action cannot be undone.
+            
+            {/* No trades message */}
+            {!loading && trades.length === 0 && (
+              <div className="dashboard-card p-section text-center relative z-10">
+                  <TrendingUp className="w-16 h-16 mx-auto mb-component" style={{ color: 'var(--muted-gray)' }} />
+                  <h3 className="h2-section mb-element">No trades yet</h3>
+                  <p className="body-text mb-component">
+                    {user
+                      ? "Start logging your trades to see them here"
+                      : "Please log in to view your trades"}
                   </p>
-
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => {
-                        setShowDeleteConfirm(false);
-                        setDeletingTradeId(null);
-                      }}
-                      className="button-secondary flex-1"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={confirmDelete}
-                      className="flex-1 font-medium py-3 px-6 rounded-lg transition-all min-h-[44px] border"
-                      style={{ 
-                        backgroundColor: 'var(--rust-red)', 
-                        color: 'var(--warm-off-white)',
-                        borderColor: 'var(--rust-red)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(167, 53, 45, 0.8)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'var(--rust-red)';
-                      }}
-                    >
-                      Delete Trade
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => window.location.href = user ? '/log-trade' : '/login'}
+                    className="button-primary"
+                  >
+                    {user ? 'Log Your First Trade' : 'Log In'}
+                  </button>
                 </div>
-              </div>
             )}
           </div>
+        </div>
+
+        {/* Edit Modal */}
+        {showEditModal && editingTrade && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
+            <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto border" style={{ borderColor: 'rgba(184, 155, 94, 0.3)' }}>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="h2-section text-2xl">Edit Trade</h2>
+                <button
+                  onClick={() => {
+                    cleanupModalOverlays();
+                    setShowEditModal(false);
+                    setEditingTrade(null);
+                  }}
+                  className="p-2 rounded-lg transition-all"
+                  style={{ backgroundColor: 'transparent' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(79, 91, 74, 0.1)' }
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                >
+                  <XCircle className="w-5 h-5" style={{ color: 'var(--muted-gray)' }} />
+                </button>
+              </div>
+
+              <EditTradeForm
+                trade={editingTrade}
+                onSave={handleUpdateTrade}
+                onCancel={() => {
+                  cleanupModalOverlays();
+                  setShowEditModal(false);
+                  setEditingTrade(null);
+                }}
+              />
+            </div>
+          </div>
         )}
-      </div>
+
+        {/* Delete Confirmation Dialog */}
+        {showDeleteConfirm && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
+            <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-md border" style={{ borderColor: 'rgba(167, 53, 45, 0.3)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(167, 53, 45, 0.1)' }}>
+                  <Trash2 className="w-5 h-5" style={{ color: 'var(--rust-red)' }} />
+                </div>
+                <h2 className="h2-section text-xl">Delete Trade</h2>
+              </div>
+             
+              <p className="body-text mb-6">
+                Are you sure you want to delete this trade? This action cannot be undone.
+              </p>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => {
+                    setShowDeleteConfirm(false);
+                    setDeletingTradeId(null);
+                  }}
+                  className="button-secondary flex-1"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmDelete}
+                  className="flex-1 font-medium py-3 px-6 rounded-lg transition-all min-h-[44px] border"
+                  style={{ 
+                    backgroundColor: 'var(--rust-red)', 
+                    color: 'var(--warm-off-white)',
+                    borderColor: 'var(--rust-red)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(167, 53, 45, 0.8)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--rust-red)';
+                  }}
+                >
+                  Delete Trade
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 });
@@ -1597,7 +1277,9 @@ export default function TradesPage() {
   return (
     <AuthGuard requireAuth={true}>
       <UnifiedLayout>
-        <TradesPageContent />
+        <TradesFilterProvider>
+          <TradesPageContent />
+        </TradesFilterProvider>
       </UnifiedLayout>
     </AuthGuard>
   );

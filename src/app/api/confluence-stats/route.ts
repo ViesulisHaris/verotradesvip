@@ -23,8 +23,17 @@ interface ConfluenceStatsResponse {
 }
 
 export async function GET(request: Request) {
+  const requestId = Math.random().toString(36).substring(7);
+  const startTime = Date.now();
+  
   try {
-    console.log('🔄 [CONFLUENCE_STATS] Fetching confluence statistics...');
+    console.log(`🔄 [CONFLUENCE_STATS:${requestId}] Fetching confluence statistics...`);
+    console.log(`🔄 [CONFLUENCE_STATS:${requestId}] Request URL:`, request.url);
+    console.log(`🔄 [CONFLUENCE_STATS:${requestId}] Request headers:`, {
+      authorization: request.headers.get('authorization') ? 'Bearer ***' : 'none',
+      contentType: request.headers.get('content-type'),
+      userAgent: request.headers.get('user-agent')
+    });
     
     // Parse URL parameters for filtering
     const { searchParams } = new URL(request.url);
@@ -62,7 +71,7 @@ export async function GET(request: Request) {
         }
       });
       
-      const result = await supabase.auth.getUser(token);
+      const result = await supabase.auth.getUser();
       user = result.data?.user;
       authError = result.error;
     } else {
@@ -79,12 +88,25 @@ export async function GET(request: Request) {
     }
     
     if (authError || !user) {
-      console.error('❌ [CONFLUENCE_STATS] Authentication failed:', authError?.message);
+      console.error(`❌ [CONFLUENCE_STATS:${requestId}] Authentication failed:`, {
+        error: authError?.message,
+        userExists: !!user,
+        userId: user?.id,
+        authErrorDetails: authError,
+        timestamp: new Date().toISOString()
+      });
       return NextResponse.json({
         error: 'Authentication required',
-        details: authError?.message
+        details: authError?.message,
+        requestId
       }, { status: 401 });
     }
+
+    console.log(`✅ [CONFLUENCE_STATS:${requestId}] Authentication successful for user:`, {
+      userId: user.id,
+      userEmail: user.email,
+      timestamp: new Date().toISOString()
+    });
 
     const userId = validateUUID(user.id, 'user_id');
 
@@ -159,10 +181,26 @@ export async function GET(request: Request) {
     const { data: trades, error: tradesError } = await query;
 
     if (tradesError) {
-      console.error('❌ [CONFLUENCE_STATS] Error fetching trades:', tradesError);
+      console.error(`❌ [CONFLUENCE_STATS:${requestId}] Error fetching trades:`, {
+        error: tradesError.message,
+        details: tradesError,
+        userId: user.id,
+        filters: {
+          emotionalStates,
+          strategyId,
+          symbol,
+          market,
+          dateFrom,
+          dateTo,
+          pnlFilter,
+          side
+        },
+        timestamp: new Date().toISOString()
+      });
       return NextResponse.json({
         error: 'Failed to fetch trades',
-        details: tradesError.message
+        details: tradesError.message,
+        requestId
       }, { status: 500 });
     }
 
@@ -331,7 +369,10 @@ export async function GET(request: Request) {
       emotionalData
     };
 
-    console.log('✅ [CONFLUENCE_STATS] Statistics calculated successfully:', {
+    const endTime = Date.now();
+    const duration = endTime - startTime;
+    
+    console.log(`✅ [CONFLUENCE_STATS:${requestId}] Statistics calculated successfully:`, {
       totalTrades,
       totalPnL,
       winRate: winRate.toFixed(1) + '%',
@@ -345,16 +386,32 @@ export async function GET(request: Request) {
         dateTo,
         pnlFilter,
         side
-      }
+      },
+      duration: `${duration}ms`,
+      timestamp: new Date().toISOString()
     });
 
-    return NextResponse.json(response);
+    return NextResponse.json({
+      ...response,
+      requestId,
+      processingTime: duration
+    });
 
   } catch (error) {
-    console.error('❌ [CONFLUENCE_STATS] Unexpected error:', error);
+    const endTime = Date.now();
+    const duration = endTime - startTime;
+    
+    console.error(`❌ [CONFLUENCE_STATS:${requestId}] Unexpected error:`, {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      duration: `${duration}ms`,
+      timestamp: new Date().toISOString()
+    });
     return NextResponse.json({
       error: 'Internal server error',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error',
+      requestId,
+      processingTime: duration
     }, { status: 500 });
   }
 }

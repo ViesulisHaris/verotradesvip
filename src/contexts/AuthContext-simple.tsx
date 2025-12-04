@@ -10,6 +10,8 @@ interface AuthContextType {
   session: Session | null;
   loading: boolean;
   authInitialized: boolean;
+  hasUser: boolean;
+  hasSession: boolean;
   logout: () => Promise<void>;
 }
 
@@ -26,6 +28,8 @@ export function useAuth() {
       session: null,
       loading: false,
       authInitialized: true,
+      hasUser: false,
+      hasSession: false,
       logout: async () => {}
     };
   }
@@ -62,12 +66,19 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
   // Simplified logout function
   const logout = async (): Promise<void> => {
     try {
-      const supabase = getSupabaseClient();
+      let supabase;
+      try {
+        supabase = getSupabaseClient();
+      } catch (error) {
+        console.error('🔧 [LOGOUT] Error getting Supabase client:', error);
+        // Continue with logout even if Supabase client fails
+      }
+      
       if (supabase && supabase.auth) {
         await supabase.auth.signOut();
       }
     } catch (error) {
-      console.error('Logout error:', error);
+      console.error('🔧 [LOGOUT] Logout error:', error);
     } finally {
       setUser(null);
       setSession(null);
@@ -111,6 +122,7 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
     let isComponentMounted = true;
     let subscription: { unsubscribe: () => void } | null = null;
     let initializationTimeout: NodeJS.Timeout | null = null;
+    let forceCompletionTimeout: NodeJS.Timeout | null = null;
     
     const initializeAuth = async () => {
       // CRITICAL FIX: Prevent multiple initialization attempts using ref
@@ -123,17 +135,33 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
       console.log('🔧 [SESSION_PERSISTENCE_FIX] Starting auth initialization');
       
       try {
-        // CRITICAL FIX: Force completion after 5 seconds to prevent hanging
+        // CRITICAL FIX: Force completion after 3 seconds to prevent hanging (reduced from 5)
         initializationTimeout = setTimeout(() => {
           if (isComponentMounted && !authInitialized) {
             console.warn('🚨 [SESSION_PERSISTENCE_FIX] Auth initialization timeout - forcing completion');
             setAuthInitialized(true);
             setLoading(false);
           }
+        }, 3000);
+        
+        // CRITICAL FIX: Force completion after 5 seconds regardless of state
+        const forceCompletionTimeout = setTimeout(() => {
+          if (isComponentMounted) {
+            console.warn('🚨 [SESSION_PERSISTENCE_FIX] FORCING AUTH COMPLETION - 5 second timeout');
+            setAuthInitialized(true);
+            setLoading(false);
+          }
         }, 5000);
         
-        // Get Supabase client
-        const supabase = getSupabaseClient();
+        // Get Supabase client with proper error handling
+        let supabase;
+        try {
+          supabase = getSupabaseClient();
+          console.log('🔧 [SESSION_PERSISTENCE_FIX] Supabase client obtained successfully');
+        } catch (error) {
+          console.error('🔧 [SESSION_PERSISTENCE_FIX] Error getting Supabase client:', error);
+          throw new Error(`Failed to get Supabase client: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
         
         if (!supabase || !supabase.auth) {
           console.error('🔧 [SESSION_PERSISTENCE_FIX] Supabase client not properly initialized');
@@ -153,12 +181,22 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
           console.warn('🔧 [SESSION_PERSISTENCE_FIX] Failed to read from localStorage:', storageError);
         }
         
-        // CRITICAL FIX: Get current session with better error handling
+        // CRITICAL FIX: Get current session with better error handling and timeout
         let session: Session | null = null;
         let error: any = null;
         
+        console.log('🔧 [SESSION_PERSISTENCE_FIX] Fetching current session...');
+        
+        // Add timeout to session fetch
+        const sessionFetchPromise = supabase.auth.getSession();
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Session fetch timeout')), 2000)
+        );
+        
         try {
-          const { data: { session: fetchedSession }, error: sessionError } = await supabase.auth.getSession();
+          const { data: { session: fetchedSession }, error: sessionError } =
+            await Promise.race([sessionFetchPromise, timeoutPromise]) as any;
+          
           session = fetchedSession;
           error = sessionError;
           
@@ -199,9 +237,11 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
               userEmail: newSession?.user?.email,
               timestamp: new Date().toISOString()
             });
-            
+             
             setSession(newSession);
             setUser(newSession?.user ?? null);
+            // CRITICAL FIX: Set authInitialized to true when we get auth state change
+            setAuthInitialized(true);
             setLoading(false);
           }
         );
@@ -213,10 +253,13 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
         setAuthInitialized(true);
         setLoading(false);
         
-        // Clear the timeout since we completed successfully
+        // Clear the timeouts since we completed successfully
         if (initializationTimeout) {
           clearTimeout(initializationTimeout);
           initializationTimeout = null;
+        }
+        if (forceCompletionTimeout) {
+          clearTimeout(forceCompletionTimeout);
         }
         
       } catch (error) {
@@ -240,11 +283,14 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
       if (initializationTimeout) {
         clearTimeout(initializationTimeout);
       }
+      if (forceCompletionTimeout) {
+        clearTimeout(forceCompletionTimeout);
+      }
       if (subscription) {
         subscription.unsubscribe();
       }
     };
-  }, [providerId]); // CRITICAL FIX: Only depend on providerId to prevent re-initialization
+  }, []); // CRITICAL FIX: Empty dependency array to prevent re-initialization
   
   // Simplified value - remove complex client checks
   const value: AuthContextType = {
@@ -252,6 +298,8 @@ export function AuthContextProviderSimple({ children }: AuthProviderProps) {
     session,
     loading,
     authInitialized,
+    hasUser: !!user,
+    hasSession: !!session,
     logout,
   };
 

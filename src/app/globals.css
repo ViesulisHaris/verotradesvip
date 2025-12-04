@@ -4,20 +4,32 @@
 
 /* Basic VeroTrade Styles */
 :root {
-  --deep-charcoal: #121212;
-  --warm-off-white: #f5f5f1;
-  --dusty-gold: #B89B5E;
+  /* New Design System Colors */
+  --background: #050505;
+  --surface: #0A0A0A;
+  --surfaceHighlight: #121212;
+  --border: #1E1E1E;
+  --gold: #C5A065;
+  --gold-dim: #8C7040;
+  --gold-light: #E5C585;
+  --profit: #2EBD85;
+  --loss: #F6465D;
+  
+  /* Legacy Colors for compatibility */
+  --deep-charcoal: #050505;
+  --warm-off-white: #EAEAEA;
+  --dusty-gold: #C5A065;
   --gold-secondary: #D4AF37;
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
   /* VeroTrade Design System Variables */
-  --verotrade-gold-primary: #B89B5E;
+  --verotrade-gold-primary: #C5A065;
   --verotrade-gold-secondary: #D4AF37;
   --verotrade-gold-tertiary: #E8C4A0;
   --verotrade-gold-quaternary: #F0D9B5;
-  --verotrade-success: #10B981;
+  --verotrade-success: #2EBD85;
   --verotrade-warning: #F59E0B;
-  --verotrade-error: #EF4444;
+  --verotrade-error: #F6465D;
   --verotrade-info: #3B82F6;
   --soft-graphite: #1F2937;
   --elevated: #374151;
@@ -31,6 +43,8 @@
   --verotrade-2xl: 1.5rem;
   --verotrade-3xl: 1.875rem;
   --verotrade-4xl: 2.25rem;
+  --verotrade-5xl: 3rem;
+  --verotrade-6xl: 3.75rem;
   
   /* Font weights */
   --verotrade-light: 300;
@@ -67,11 +81,13 @@
   --verotrade-secondary-black: #0a0a0a;
   --verotrade-tertiary-black: #1a1a1a;
   --verotrade-quaternary-black: #2a2a2a;
-  --verotrade-text-primary: #f5f5f1;
-  --verotrade-text-secondary: #a0a0a0;
-  --verotrade-border-primary: rgba(184, 155, 94, 0.3);
-  --verotrade-border-secondary: rgba(184, 155, 94, 0.2);
-  --rust-red: #dc2626;
+  --verotrade-text-primary: #EAEAEA;
+  --verotrade-text-secondary: #9ca3af;
+  --verotrade-border-primary: rgba(197, 160, 101, 0.3);
+  --verotrade-border-secondary: rgba(197, 160, 101, 0.2);
+  --rust-red: #F6465D;
+  --muted-gray: #9ca3af;
+  --muted-olive: #6b7280;
   
   /* Shadows */
   --verotrade-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -91,9 +107,10 @@
 
 html, body {
   height: 100%;
-  background-color: var(--deep-charcoal);
-  color: var(--warm-off-white);
-  font-family: var(--font-family-primary);
+  background-color: var(--background);
+  color: var(--verotrade-text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 * {
@@ -101,8 +118,9 @@ html, body {
 }
 
 body {
-  background-color: var(--deep-charcoal);
+  background-color: var(--background);
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Simple button styles */
@@ -677,4 +695,594 @@ body {
   --spacing-5: var(--verotrade-5);
   --spacing-6: var(--verotrade-6);
   --spacing-8: var(--verotrade-8);
+}
+
+/* Column Reveal Animation */
+@keyframes column-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.column-reveal {
+  animation: column-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.column-reveal-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.column-reveal-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.column-reveal-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.column-reveal-delay-4 {
+  animation-delay: 0.4s;
+}
+
+/* Text Reveal Animation */
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal {
+  animation: text-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Character reveal animation for text */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.text-reveal-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.text-reveal-delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* Flashlight Effect - Updated from target design */
+.flashlight-container {
+  position: relative;
+  background: rgba(18, 18, 18, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+/* The glow on the background */
+.flashlight-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 255, 255, 0.03),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* The glow on the border */
+.flashlight-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* border width */
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(197, 160, 101, 0.6),
+    transparent 40%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.flashlight-container:hover .flashlight-bg,
+.flashlight-container:hover .flashlight-border {
+  opacity: 1;
+}
+
+@keyframes flashlight-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Border Beam Animation - Updated from target design */
+.btn-beam {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-beam::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(transparent 20%, #C5A065 50%, transparent 80%);
+  animation: beam-spin 3s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-beam:hover::before {
+  opacity: 1;
+}
+
+.btn-beam-content {
+  position: relative;
+  z-index: 1;
+  background: var(--surface); /* Matches surface */
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes beam-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Scroll Entry Animations */
+.scroll-entry {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-entry.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-entry-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-entry-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-entry-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-entry-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-entry-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-entry-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Custom Input Styles (input-dark) */
+.input-dark {
+  background-color: var(--verotrade-tertiary-black);
+  border: 1px solid var(--verotrade-border-primary);
+  color: var(--verotrade-text-primary);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--verotrade-radius-md);
+  font-size: var(--verotrade-base);
+  transition: all var(--verotrade-transition-normal);
+  outline: none;
+}
+
+.input-dark:focus {
+  border-color: var(--verotrade-gold-primary);
+  box-shadow: 0 0 0 2px rgba(184, 155, 94, 0.2);
+}
+
+.input-dark::placeholder {
+  color: var(--verotrade-text-secondary);
+}
+
+.input-dark:hover {
+  border-color: rgba(184, 155, 94, 0.4);
+}
+
+/* Accordion Transition Styles - Updated from target design */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  max-height: 500px; /* Arbitrary large height */
+  opacity: 1;
+}
+
+.accordion-header {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background-color: var(--verotrade-quaternary-black);
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Additional Animation Utilities */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pulse-gold {
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(184, 155, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(184, 155, 94, 0);
+  }
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(184, 155, 94, 0.3);
+  border-color: var(--verotrade-gold-primary);
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--verotrade-quaternary-black) 25%, var(--verotrade-tertiary-black) 50%, var(--verotrade-quaternary-black) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Animation Delays */
+@media (prefers-reduced-motion: reduce) {
+  .column-reveal,
+  .text-reveal,
+  .scroll-entry,
+  .scroll-entry-left,
+  .scroll-entry-right,
+  .scroll-entry-scale,
+  .fade-in,
+  .slide-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .button-border-beam,
+  .flashlight-border {
+    animation: none;
+  }
+  
+  .pulse-gold {
+    animation: none;
+  }
+}
+
+/* Material Symbols Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0');
+
+/* Typography System */
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Input Styles - Updated from target design */
+.input-dark {
+  background: transparent;
+  border: 1px solid #2A2A2A;
+  color: #C0C0C0;
+  transition: all 0.3s ease;
+}
+
+.input-dark:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(197, 160, 101, 0.1);
+}
+
+.input-dark::placeholder {
+  color: #555;
+}
+
+/* Select Chevron */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23555'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* Scroll Entry Animations - Updated from target design */
+.scroll-item {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Make scroll items visible by default after a short delay */
+.scroll-item.visible {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* Additional utility classes for new design */
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surfaceHighlight {
+  background-color: var(--surfaceHighlight);
+}
+
+.border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-white\/\[0\.02\] {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.bg-profit\/10 {
+  background-color: rgba(46, 189, 133, 0.1);
+}
+
+.text-profit {
+  color: var(--profit);
+}
+
+.bg-loss {
+  background-color: var(--loss);
+}
+
+.text-loss {
+  color: var(--loss);
+}
+
+.shadow-\[0_0_15px_rgba\(197\2c 160\2c 101\2c 0\.4\)\] {
+  box-shadow: 0 0 15px rgba(197, 160, 101, 0.4);
+}
+
+.shadow-\[0_0_8px_rgba\(246\2c 70\2c 93\2c 0\.5\)\] {
+  box-shadow: 0 0 8px rgba(246, 70, 93, 0.5);
+}
+
+.shadow-\[0_0_8px_rgba\(46\2c 189\2c 133\2c 0\.5\)\] {
+  box-shadow: 0 0 8px rgba(46, 189, 133, 0.5);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Grid system for 12-column layout */
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.col-span-12 {
+  grid-column: span 12 / span 12;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+/* Character reveal animation for text */
+.char-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 2px; /* Fix clipping descenders */
+}
+
+.char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  will-change: transform;
+}
+
+/* Most critical fix - ensure scroll items are visible */
+.scroll-item {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: translateY(0) !important;
+}
+
+/* Fix flashlight effect z-index stacking */
+.flashlight-bg {
+  z-index: 1 !important;
+  opacity: 0 !important;
+}
+
+.flashlight-border {
+  z-index: 5 !important;
+  opacity: 0 !important;
+}
+
+.flashlight-container .relative.z-10 {
+  z-index: 20 !important;
+  position: relative !important;
+}
+
+/* Ensure trade rows are visible */
+.flashlight-container.rounded-lg.overflow-hidden.scroll-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 15 !important;
+}
+
+/* Fix text contrast */
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Ensure container visibility */
+.space-y-3.mt-4.min-h-\[200px\] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
 }

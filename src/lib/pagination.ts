@@ -4,6 +4,13 @@ export interface PaginationOptions {
   limit: number;
   sortBy?: string;
   sortOrder?: 'asc' | 'desc';
+  symbol?: string;
+  market?: string;
+  dateFrom?: string;
+  dateTo?: string;
+  pnlFilter?: string;
+  side?: string;
+  emotionalStates?: string[];
 }
 
 export interface PaginatedResult<T> {

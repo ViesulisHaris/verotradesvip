@@ -1,0 +1,180 @@
+{
+  "timestamp": "2025-12-04T16:38:35.629Z",
+  "summary": {
+    "totalTests": 20,
+    "passed": 12,
+    "failed": 8,
+    "warnings": 0,
+    "successRate": "60.00%"
+  },
+  "tests": {
+    "API Authentication": [
+      {
+        "name": "trades endpoint without auth returns 401",
+        "passed": false,
+        "details": "Status: 0, Duration: 66ms",
+        "timestamp": "2025-12-04T16:38:35.702Z"
+      },
+      {
+        "name": "stats endpoint without auth returns 401",
+        "passed": false,
+        "details": "Status: 0, Duration: 6ms",
+        "timestamp": "2025-12-04T16:38:35.709Z"
+      },
+      {
+        "name": "trades endpoint with invalid auth returns 401",
+        "passed": false,
+        "details": "Status: 0, Duration: 3ms",
+        "timestamp": "2025-12-04T16:38:35.712Z"
+      },
+      {
+        "name": "stats endpoint with invalid auth returns 401",
+        "passed": false,
+        "details": "Status: 0, Duration: 3ms",
+        "timestamp": "2025-12-04T16:38:35.715Z"
+      },
+      {
+        "name": "trades endpoint provides structured error response",
+        "details": "RequestId: undefined, ErrorDetails: fetch failed",
+        "timestamp": "2025-12-04T16:38:35.718Z"
+      },
+      {
+        "name": "stats endpoint provides structured error response",
+        "details": "RequestId: undefined, ErrorDetails: fetch failed",
+        "timestamp": "2025-12-04T16:38:35.720Z"
+      }
+    ],
+    "UUID Validation": [
+      {
+        "name": "UUID validation file exists and has proper validation",
+        "passed": true,
+        "details": "Permissive: true, Error Handling: true, Edge Cases: true",
+        "timestamp": "2025-12-04T16:38:35.721Z"
+      },
+      {
+        "name": "src/app/api/confluence-trades/route.ts uses UUID validation and proper auth",
+        "passed": true,
+        "details": "UUID Validation: true, Auth Flow: true, Error Logging: true",
+        "timestamp": "2025-12-04T16:38:35.721Z"
+      },
+      {
+        "name": "src/app/api/confluence-stats/route.ts uses UUID validation and proper auth",
+        "passed": true,
+        "details": "UUID Validation: true, Auth Flow: true, Error Logging: true",
+        "timestamp": "2025-12-04T16:38:35.722Z"
+      }
+    ],
+    "Win Rate Calculation": [
+      {
+        "name": "Stats API has correct win rate calculation",
+        "passed": true,
+        "details": "Correct Calculation: true, No Division Bug: true",
+        "timestamp": "2025-12-04T16:38:35.723Z"
+      },
+      {
+        "name": "Stats API handles edge cases properly",
+        "passed": true,
+        "details": "Zero Trades: true, NaN Prevention: true",
+        "timestamp": "2025-12-04T16:38:35.723Z"
+      }
+    ],
+    "Frontend Validation": [
+      {
+        "name": "Trades page has proper user validation",
+        "passed": true,
+        "details": "User Validation: true, Existence Check: true, Error Handling: true",
+        "timestamp": "2025-12-04T16:38:35.724Z"
+      },
+      {
+        "name": "Trades page has proper loading and error states",
+        "passed": true,
+        "details": "Loading State: true, Error State: true",
+        "timestamp": "2025-12-04T16:38:35.724Z"
+      }
+    ],
+    "Error Logging": [
+      {
+        "name": "src/app/api/confluence-trades/route.ts has comprehensive error logging",
+        "passed": true,
+        "details": "Request ID: true, Timing: true, Structured: true, Detailed: true",
+        "timestamp": "2025-12-04T16:38:35.724Z"
+      },
+      {
+        "name": "src/app/api/confluence-stats/route.ts has comprehensive error logging",
+        "passed": true,
+        "details": "Request ID: true, Timing: true, Structured: true, Detailed: true",
+        "timestamp": "2025-12-04T16:38:35.725Z"
+      }
+    ],
+    "Data Flow": [
+      {
+        "name": "Frontend properly handles data fetching and state management",
+        "passed": true,
+        "details": "Data Fetching: true, State Management: true, Pagination: true",
+        "timestamp": "2025-12-04T16:38:35.725Z"
+      },
+      {
+        "name": "Trades API returns properly structured response",
+        "passed": true,
+        "details": "Response Structure: true, Pagination: true, Metadata: true",
+        "timestamp": "2025-12-04T16:38:35.726Z"
+      }
+    ],
+    "Performance": [
+      {
+        "name": "Frontend has performance optimizations",
+        "passed": true,
+        "details": "Memoization: true, Debouncing: true, Optimized Rendering: true",
+        "timestamp": "2025-12-04T16:38:35.727Z"
+      },
+      {
+        "name": "trades API is accessible for performance testing",
+        "passed": false,
+        "details": "Status: 0",
+        "timestamp": "2025-12-04T16:38:35.730Z"
+      },
+      {
+        "name": "stats API is accessible for performance testing",
+        "passed": false,
+        "details": "Status: 0",
+        "timestamp": "2025-12-04T16:38:35.732Z"
+      }
+    ]
+  },
+  "performance": {
+    "API_trades_no_auth": {
+      "duration": 66,
+      "metadata": {},
+      "timestamp": "2025-12-04T16:38:35.703Z"
+    },
+    "API_stats_no_auth": {
+      "duration": 6,
+      "metadata": {},
+      "timestamp": "2025-12-04T16:38:35.709Z"
+    },
+    "API_trades_invalid_auth": {
+      "duration": 3,
+      "metadata": {},
+      "timestamp": "2025-12-04T16:38:35.712Z"
+    },
+    "API_stats_invalid_auth": {
+      "duration": 3,
+      "metadata": {},
+      "timestamp": "2025-12-04T16:38:35.715Z"
+    }
+  },
+  "errors": [
+    "API Authentication: trades endpoint without auth returns 401 - FAIL Status: 0, Duration: 66ms",
+    "API Authentication: stats endpoint without auth returns 401 - FAIL Status: 0, Duration: 6ms",
+    "API Authentication: trades endpoint with invalid auth returns 401 - FAIL Status: 0, Duration: 3ms",
+    "API Authentication: stats endpoint with invalid auth returns 401 - FAIL Status: 0, Duration: 3ms",
+    "API Authentication: trades endpoint provides structured error response - FAIL RequestId: undefined, ErrorDetails: fetch failed",
+    "API Authentication: stats endpoint provides structured error response - FAIL RequestId: undefined, ErrorDetails: fetch failed",
+    "Performance: trades API is accessible for performance testing - FAIL Status: 0",
+    "Performance: stats API is accessible for performance testing - FAIL Status: 0"
+  ],
+  "recommendations": [
+    "Several fixes need attention before the /trades tab will work properly."
+  ],
+  "overallStatus": "NEEDS_IMPROVEMENT"
+}

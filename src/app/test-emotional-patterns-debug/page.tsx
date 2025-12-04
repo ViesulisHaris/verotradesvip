@@ -43,7 +43,7 @@ export default function TestEmotionalPatternsDebug() {
         setTrades(tradesData || []);
 
         // Process emotions like dashboard does
-        const emotions = (tradesData || []).reduce<Record<string, number>>((acc, t) => {
+        const emotions: Record<string, number> = (tradesData || []).reduce((acc: any, t: any) => {
           const e = t.emotional_state ?? 'Neutral';
           acc[e] = (acc[e] ?? 0) + 1;
           return acc;
@@ -51,11 +51,11 @@ export default function TestEmotionalPatternsDebug() {
 
         console.log('📊 Emotions count:', emotions);
 
-        const totalEmotions = Object.values(emotions).reduce((a: number, b: number) => a + b, 0) || 1;
+        const totalEmotions = Object.values(emotions).reduce((a: number, b: any) => a + b, 0) || 1;
         console.log('📊 Total emotions:', totalEmotions);
 
         // Create emotionData like dashboard does
-        const processedEmotionData = Object.entries(emotions).map(([label, value]) => ({
+        const processedEmotionData = Object.entries(emotions).map(([label, value]: [string, any]) => ({
           subject: label,
           value: (value / totalEmotions) * 10,
           fullMark: 10,

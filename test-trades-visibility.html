@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Visibility Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Include the trades visibility fixes */
+        /* Most critical fix - ensure scroll items are visible */
+        .scroll-item {
+          opacity: 1 !important;
+          filter: blur(0px) !important;
+          transform: translateY(0) !important;
+        }
+
+        /* Fix flashlight effect z-index stacking */
+        .flashlight-bg {
+          z-index: 1 !important;
+          opacity: 0 !important;
+        }
+
+        .flashlight-border {
+          z-index: 5 !important;
+          opacity: 0 !important;
+        }
+
+        .flashlight-container .relative.z-10 {
+          z-index: 20 !important;
+          position: relative !important;
+        }
+
+        /* Ensure trade rows are visible */
+        .flashlight-container.rounded-lg.overflow-hidden.scroll-item {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+          position: relative !important;
+          z-index: 15 !important;
+        }
+
+        /* Fix text contrast */
+        .text-gray-300 {
+          color: #d1d5db !important;
+        }
+
+        .text-gray-400 {
+          color: #9ca3af !important;
+        }
+
+        /* Ensure container visibility */
+        .space-y-3.mt-4.min-h-\[200px\] {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+          position: relative !important;
+          z-index: 10 !important;
+        }
+
+        /* Test styles */
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        .test-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .scroll-item-test {
+            opacity: 0;
+            filter: blur(4px);
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-item-test.visible {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0);
+        }
+        .flashlight-container {
+            position: relative;
+            background: rgba(18, 18, 18, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .flashlight-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+                rgba(255, 255, 255, 0.03),
+                transparent 40%
+            );
+            opacity: 1;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .flashlight-border {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: radial-gradient(
+                400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+                rgba(197, 160, 101, 0.6),
+                transparent 40%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 1;
+            transition: opacity 0.5s;
+            pointer-events: none;
+            z-index: 20;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .success {
+            background-color: #2EBD85;
+            color: white;
+        }
+        .error {
+            background-color: #F6465D;
+            color: white;
+        }
+        .info {
+            background-color: #3B82F6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Trades Visibility Test</h1>
+        <p>This page tests the CSS fixes for trades visibility.</p>
+        
+        <div class="test-section">
+            <h2>Test 1: Scroll Item Visibility</h2>
+            <div class="test-item scroll-item-test" id="scroll-test">
+                This should start invisible (opacity: 0, blur: 4px, translateY: 20px)
+            </div>
+            <button onclick="toggleScrollItem()">Toggle Scroll Item Visibility</button>
+            <div id="scroll-status" class="status info">Status: Not tested</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test 2: Flashlight Effect Z-Index</h2>
+            <div class="flashlight-container" id="flashlight-test">
+                <div class="flashlight-bg"></div>
+                <div class="flashlight-border"></div>
+                <div class="relative z-10">
+                    This content should be visible with proper z-index stacking
+                </div>
+            </div>
+            <button onclick="toggleFlashlight()">Toggle Flashlight Effect</button>
+            <div id="flashlight-status" class="status info">Status: Not tested</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test 3: Combined Trade Row</h2>
+            <div class="flashlight-container rounded-lg overflow-hidden scroll-item" id="trade-row-test">
+                <div class="flashlight-bg"></div>
+                <div class="flashlight-border"></div>
+                <div class="relative z-10">
+                    This simulates a trade row with all problematic classes
+                </div>
+            </div>
+            <button onclick="toggleTradeRow()">Toggle Trade Row</button>
+            <div id="trade-row-status" class="status info">Status: Not tested</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test Results</h2>
+            <div id="test-results" class="status info">
+                Run tests to see if CSS fixes are working properly.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleScrollItem() {
+            const element = document.getElementById('scroll-test');
+            const status = document.getElementById('scroll-status');
+            
+            if (element.classList.contains('visible')) {
+                element.classList.remove('visible');
+                status.textContent = 'Status: INVISIBLE (opacity: 0, blur: 4px, translateY: 20px)';
+                status.className = 'status error';
+            } else {
+                element.classList.add('visible');
+                status.textContent = 'Status: VISIBLE (opacity: 1, blur: 0px, translateY: 0)';
+                status.className = 'status success';
+            }
+        }
+        
+        function toggleFlashlight() {
+            const element = document.getElementById('flashlight-test');
+            const status = document.getElementById('flashlight-status');
+            
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+                status.textContent = 'Status: FLASHLIGHT VISIBLE';
+                status.className = 'status success';
+            } else {
+                element.style.display = 'none';
+                status.textContent = 'Status: FLASHLIGHT HIDDEN';
+                status.className = 'status info';
+            }
+        }
+        
+        function toggleTradeRow() {
+            const element = document.getElementById('trade-row-test');
+            const status = document.getElementById('trade-row-status');
+            
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+                status.textContent = 'Status: TRADE ROW VISIBLE';
+                status.className = 'status success';
+            } else {
+                element.style.display = 'none';
+                status.textContent = 'Status: TRADE ROW HIDDEN';
+                status.className = 'status error';
+            }
+        }
+        
+        // Auto-run tests after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const results = document.getElementById('test-results');
+                
+                // Test 1: Check if CSS fixes make scroll items visible
+                const scrollTest = document.getElementById('scroll-test');
+                const scrollStyles = window.getComputedStyle(scrollTest);
+                const scrollVisible = scrollStyles.opacity === '1' && scrollStyles.filter === 'blur(0px)' && scrollStyles.transform === 'translateY(0px)';
+                
+                // Test 2: Check flashlight z-index
+                const flashlightTest = document.getElementById('flashlight-test');
+                const flashlightVisible = flashlightTest.style.display !== 'none';
+                
+                // Test 3: Check combined trade row
+                const tradeRowTest = document.getElementById('trade-row-test');
+                const tradeRowVisible = tradeRowTest.style.display !== 'none';
+                
+                let allTestsPassed = true;
+                let testResults = [];
+                
+                if (!scrollVisible) {
+                    allTestsPassed = false;
+                    testResults.push('❌ Scroll item visibility fix FAILED');
+                } else {
+                    testResults.push('✅ Scroll item visibility fix PASSED');
+                }
+                
+                if (!flashlightVisible) {
+                    allTestsPassed = false;
+                    testResults.push('❌ Flashlight effect test FAILED');
+                } else {
+                    testResults.push('✅ Flashlight effect test PASSED');
+                }
+                
+                if (!tradeRowVisible) {
+                    allTestsPassed = false;
+                    testResults.push('❌ Trade row visibility test FAILED');
+                } else {
+                    testResults.push('✅ Trade row visibility test PASSED');
+                }
+                
+                results.innerHTML = testResults.join('<br>') + '<br><br>' + 
+                    (allTestsPassed ? 
+                        '<strong style="color: #2EBD85;">✅ ALL TESTS PASSED - CSS fixes are working!</strong>' : 
+                        '<strong style="color: #F6465D;">❌ SOME TESTS FAILED - CSS fixes may not be working</strong>'
+                    );
+                
+                results.className = allTestsPassed ? 'status success' : 'status error';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

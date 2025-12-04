@@ -233,6 +233,24 @@ export function getFilterStats(filters: TradeFilterOptions | StrategyFilterOptio
   };
 }
 
+/**
+ * Create default trade filters
+ */
+export function createDefaultTradeFilters(): TradeFilterOptions {
+  return {
+    symbol: '',
+    market: '',
+    dateFrom: '',
+    dateTo: '',
+    pnlFilter: 'all',
+    strategyId: '',
+    side: '',
+    emotionalStates: [],
+    sortBy: 'trade_date',
+    sortOrder: 'desc',
+  };
+}
+
 // Filter persistence functions (these would be implemented elsewhere)
 // export function saveTradeFilters(filters: TradeFilterOptions): void;
 // export function saveStrategyFilters(filters: StrategyFilterOptions): void;

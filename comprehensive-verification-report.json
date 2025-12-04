@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-12-04T20:32:12.503Z",
+  "successRate": 0,
+  "results": {
+    "tradesStatistics": {
+      "barChartIcon": false,
+      "tradesLabel": false,
+      "statisticsCards": false,
+      "overallStyling": false
+    },
+    "staticAssets": {
+      "no404Errors": false,
+      "cssLoaded": false,
+      "jsLoaded": false,
+      "properHTTPResponses": false
+    },
+    "overallFunctionality": {
+      "pageLoads": false,
+      "interactiveFeatures": false,
+      "serverSideRendering": false,
+      "clientSideRendering": false
+    },
+    "errors": [
+      "Verification error: page.waitForTimeout is not a function"
+    ],
+    "screenshots": []
+  },
+  "summary": {
+    "tradesStatisticsFixed": false,
+    "staticAssetsFixed": false,
+    "overallFunctional": false,
+    "allIssuesResolved": false
+  }
+}

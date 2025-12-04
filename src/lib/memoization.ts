@@ -1,51 +1,43 @@
-// Advanced memoization utilities for performance optimization
+// Optimized memoization utilities for performance optimization
 import { StrategyStats } from './strategy-rules-engine';
 
-// Cache with TTL support
+// Simplified cache entry without TTL complexity
 interface CacheEntry<T> {
   value: T;
   timestamp: number;
-  ttl: number;
 }
 
-class MemoCache {
+class OptimizedMemoCache {
   private cache = new Map<string, CacheEntry<any>>();
-  private defaultTTL = 5 * 60 * 1000; // 5 minutes default
+  private readonly defaultTTL = 5 * 60 * 1000; // 5 minutes default
 
   /**
-   * Get value from cache
+   * Get value from cache (production optimized)
    */
   get<T>(key: string): T | null {
-    console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.get called for key:', key);
     const entry = this.cache.get(key);
     if (!entry) {
-      console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.get: no entry found for key:', key);
       return null;
     }
 
     const now = Date.now();
-    if (now - entry.timestamp > entry.ttl) {
-      console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.get: entry expired for key:', key);
+    if (now - entry.timestamp > this.defaultTTL) {
       this.cache.delete(key);
       return null;
     }
 
-    console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.get: cache hit for key:', key);
     return entry.value;
   }
 
   /**
-   * Set value in cache with optional TTL
+   * Set value in cache
    */
-  set<T>(key: string, value: T, ttl?: number): void {
-    console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.set called for key:', key);
+  set<T>(key: string, value: T): void {
     const entry: CacheEntry<T> = {
       value,
       timestamp: Date.now(),
-      ttl: ttl || this.defaultTTL,
     };
     this.cache.set(key, entry);
-    console.log('🔄 [INFINITE REFRESH DEBUG] MemoCache.set: entry cached for key:', key);
   }
 
   /**
@@ -75,93 +67,55 @@ class MemoCache {
   }
 }
 
-export const memoCache = new MemoCache();
-
-// Global debug tracking
-if (typeof window !== 'undefined') {
-  (window as any).__memoCacheStats = {
-    gets: 0,
-    sets: 0,
-    hits: 0,
-    misses: 0,
-    keys: []
-  };
-}
+// Optimized cache instance
+export const optimizedMemoCache = new OptimizedMemoCache();
 
 /**
- * Memoize a function with cache key generation
+ * Optimized memoize trade data processing
  */
-export function memoizeWithCache<T extends (...args: any[]) => any>(
-  fn: T,
-  getKey?: (...args: Parameters<T>) => string,
-  ttl?: number
-): T {
-  return ((...args: Parameters<T>) => {
-    const key = getKey ? getKey(...args) : JSON.stringify(args);
+export const memoizedTradeProcessing = (() => {
+  const cache = new Map<string, any>();
+  const TTL = 5 * 60 * 1000; // 5 minutes
+
+  return (trades: any[], processingType: string) => {
+    const tradeIds = trades.map(t => t.id).sort().join('_');
+    const cacheKey = `${processingType}_${tradeIds}`;
     
-    // Try to get from cache
-    const cached = memoCache.get(key);
-    if (cached !== null) {
+    // Check cache first
+    const cached = cache.get(cacheKey);
+    if (cached !== undefined) {
       return cached;
     }
 
-    // Execute function and cache result
-    const result = fn(...args);
-    memoCache.set(key, result, ttl);
-    
-    return result;
-  }) as T;
-}
-
-/**
- * Memoize strategy stats calculation
- */
-export const memoizedStrategyStats = memoizeWithCache(
-  async (strategyId: string): Promise<StrategyStats | null> => {
-    console.log('🔄 [INFINITE REFRESH DEBUG] memoizedStrategyStats called for:', strategyId);
-    // Import here to avoid circular dependencies
-    const { calculateStrategyStats } = await import('./strategy-rules-engine');
-    const result = await calculateStrategyStats(strategyId);
-    console.log('🔄 [INFINITE REFRESH DEBUG] memoizedStrategyStats completed for:', strategyId, 'result:', !!result);
-    return result;
-  },
-  (strategyId: string) => {
-    console.log('🔄 [INFINITE REFRESH DEBUG] memoizedStrategyStats generating cache key for:', strategyId);
-    return `strategy_stats_${strategyId}`;
-  },
-  10 * 60 * 1000 // 10 minutes TTL for strategy stats
-);
-
-/**
- * Memoize trade data processing
- */
-export const memoizedTradeProcessing = memoizeWithCache(
-  (trades: any[], processingType: string) => {
-    console.log('🔧 [MEMOIZED TRADE PROCESSING] Called with processingType:', processingType, 'and', trades.length, 'trades');
-    
+    // Process and cache result
+    let result;
     switch (processingType) {
       case 'chart_data':
-        console.log('🔧 [MEMOIZED TRADE PROCESSING] Processing chart data');
-        return processChartData(trades);
+        result = processChartData(trades);
+        break;
       case 'emotion_data':
-        console.log('🔧 [MEMOIZED TRADE PROCESSING] Processing emotion data - USING ENHANCED VARIATION LOGIC');
-        return processEmotionData(trades);
+        result = processEmotionData(trades);
+        break;
       case 'summary_stats':
-        console.log('🔧 [MEMOIZED TRADE PROCESSING] Processing summary stats');
-        return processSummaryStats(trades);
+        result = processSummaryStats(trades);
+        break;
       default:
-        console.log('🔧 [MEMOIZED TRADE PROCESSING] Unknown processing type, returning trades as-is');
-        return trades;
+        result = trades;
     }
-  },
-  (trades: any[], processingType: string) => {
-    const tradeIds = trades.map(t => t.id).sort().join('_');
-    const cacheKey = `${processingType}_${tradeIds}`;
-    console.log('🔑 [MEMOIZED TRADE PROCESSING] Generated cache key:', cacheKey);
-    return cacheKey;
-  },
-  5 * 60 * 1000 // 5 minutes TTL for trade processing
-);
+
+    cache.set(cacheKey, { value: result, timestamp: Date.now() });
+    
+    // Cleanup expired entries
+    const now = Date.now();
+    for (const [key, entry] of cache.entries()) {
+      if (now - entry.timestamp > TTL) {
+        cache.delete(key);
+      }
+    }
+
+    return result;
+  };
+})();
 
 /**
  * Process chart data from trades
@@ -189,11 +143,7 @@ function processChartData(trades: any[]) {
  * Process emotion data from trades
  */
 function processEmotionData(trades: any[]) {
-  console.log('🚀 [PROCESS EMOTION DATA] Starting processEmotionData with', trades.length, 'trades');
-  console.log('🚀 [PROCESS EMOTION DATA] Sample trade data:', trades.slice(0, 2));
-  
   if (!trades || trades.length === 0) {
-    console.log('🚀 [PROCESS EMOTION DATA] No trades to process, returning empty array');
     return [];
   }
   
@@ -300,7 +250,7 @@ function processEmotionData(trades: any[]) {
     // Ensure we have a minimum value to avoid all emotions being at the same level
     const radarValue = Math.max(10, Math.min(100, baseFrequency + leaningVariation + emotionVariation + hashVariation));
     
-    console.log('🎯 [PROCESS EMOTION DATA] Emotion:', emotion, 'baseFrequency:', baseFrequency, 'leaningVariation:', leaningVariation, 'emotionVariation:', emotionVariation, 'hashVariation:', hashVariation, 'final radarValue:', radarValue);
+    // Debug logging removed for production optimization
     
     return {
       subject: emotion,
@@ -312,9 +262,6 @@ function processEmotionData(trades: any[]) {
       totalTrades: total
     };
   });
-  
-  console.log('🎯 [PROCESS EMOTION DATA] Final processed emotion data:', emotionEntries.map(([emotion, counts]) => ({ emotion, buyCount: counts.buyCount, sellCount: counts.sellCount })));
-  console.log('🎯 [PROCESS EMOTION DATA] Returning emotion data with enhanced variation logic');
 }
 
 /**
@@ -366,7 +313,7 @@ function processSummaryStats(trades: any[]) {
       totalMinutes += durationMs / (1000 * 60);
       validTrades++;
     } catch (error) {
-      console.error('Error calculating trade duration:', error);
+      // Error logging removed for production optimization
     }
   });
 
@@ -443,15 +390,10 @@ export function createFilterDebouncedFunction<T extends (...args: any[]) => any>
     
     // Check if any filter changed - if so, clear cache immediately
     if (lastFilterHash !== undefined && lastFilterHash !== currentFilterHash) {
-      console.log('🔄 [WINRATE_DEBUG] Filter parameters changed, clearing cache:', {
-        oldHash: lastFilterHash,
-        newHash: currentFilterHash,
-        filterParams: args,
-        timestamp: new Date().toISOString()
-      });
+      // Debug logging removed for production optimization
       
       // Clear all cache entries when any filter changes to ensure fresh statistics
-      memoCache.clear();
+      optimizedMemoCache.clear();
     }
     
     lastFilterHash = currentFilterHash;
@@ -463,11 +405,7 @@ export function createFilterDebouncedFunction<T extends (...args: any[]) => any>
     
     // Set new timeout with reduced delay for better responsiveness
     timeoutId = setTimeout(() => {
-      console.log('🔄 [WINRATE_DEBUG] Executing debounced filter function:', {
-        filterParams: args,
-        argsCount: args.length,
-        timestamp: new Date().toISOString()
-      });
+      // Debug logging removed for production optimization
       fn(...args);
     }, 150); // 150ms for filtering - optimal balance between responsiveness and performance
   }) as T;
@@ -500,3 +438,36 @@ export function createThrottledFunction<T extends (...args: any[]) => any>(
     }
   }) as T;
 }
+
+/**
+ * Memoized strategy stats calculation using the optimized cache
+ */
+export const memoizedStrategyStats = (() => {
+  return async (strategyId: string): Promise<StrategyStats | null> => {
+    // Check cache first
+    const cacheKey = `strategy_stats_${strategyId}`;
+    const cached = optimizedMemoCache.get<StrategyStats>(cacheKey);
+    
+    if (cached) {
+      return cached;
+    }
+    
+    try {
+      // Import dynamically to avoid circular dependencies
+      const { calculateStrategyStats } = await import('./strategy-rules-engine');
+      const stats = await calculateStrategyStats(strategyId);
+      
+      // Cache the result
+      if (stats) {
+        optimizedMemoCache.set(cacheKey, stats);
+      }
+      
+      return stats;
+    } catch (error) {
+      console.error('Error in memoizedStrategyStats:', error);
+      return null;
+    }
+  };
+})();
+
+// Legacy export for backward compatibility - memoizedStrategyStats is already exported above

@@ -69,19 +69,22 @@ export function isValidUUID(value: unknown): value is UUID {
 export function validateUUID(value: unknown, paramName?: string): UUID {
   const paramNameStr = paramName ? `for parameter '${paramName}'` : '';
   
-  if (value === null) {
-    throw new Error(`Invalid UUID ${paramNameStr}: value is null`);
+  // Handle null and undefined more gracefully
+  if (value === null || value === undefined) {
+    throw new Error(`Invalid UUID ${paramNameStr}: value is ${value}`);
   }
   
-  if (value === undefined) {
-    throw new Error(`Invalid UUID ${paramNameStr}: value is undefined`);
-  }
-  
-  if (typeof value !== 'string') {
+  // Convert to string if possible
+  let stringValue: string;
+  if (typeof value === 'string') {
+    stringValue = value;
+  } else if (typeof value === 'number' || typeof value === 'boolean') {
+    stringValue = String(value);
+  } else {
     throw new Error(`Invalid UUID ${paramNameStr}: expected string but got ${typeof value}`);
   }
   
-  const trimmedValue = value.trim();
+  const trimmedValue = stringValue.trim();
   
   if (trimmedValue === '') {
     throw new Error(`Invalid UUID ${paramNameStr}: value is an empty string`);
@@ -92,6 +95,7 @@ export function validateUUID(value: unknown, paramName?: string): UUID {
   }
   
   if (!UUID_REGEX.test(trimmedValue)) {
+    console.warn(`UUID validation failed ${paramNameStr}: '${trimmedValue}'`);
     throw new Error(`Invalid UUID ${paramNameStr}: '${trimmedValue}' does not match UUID format`);
   }
   
@@ -118,18 +122,28 @@ export function sanitizeUUID(value: unknown): UUID | null {
     return null;
   }
   
-  if (typeof value !== 'string') {
+  // Convert to string if possible
+  let stringValue: string;
+  if (typeof value === 'string') {
+    stringValue = value;
+  } else if (typeof value === 'number' || typeof value === 'boolean') {
+    stringValue = String(value);
+  } else {
     return null;
   }
   
-  const trimmedValue = value.trim();
+  // Remove any whitespace
+  const cleaned = stringValue.trim();
   
   // Handle edge cases
-  if (trimmedValue === '' || trimmedValue === 'undefined') {
+  if (cleaned === '' || cleaned === 'undefined' || cleaned === 'null') {
     return null;
   }
   
-  return isValidUUID(trimmedValue) ? trimmedValue : null;
+  // More permissive UUID regex
+  const permissiveUuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  
+  return permissiveUuidRegex.test(cleaned) ? cleaned : null;
 }
 
 /**

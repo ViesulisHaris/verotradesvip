@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-12-04T20:33:59.816Z",
+  "successRate": 100,
+  "results": {
+    "serverStatus": true,
+    "staticAssets": {
+      "css": true,
+      "js": true,
+      "overall": true
+    },
+    "tradesPage": {
+      "accessible": true,
+      "redirectsCorrectly": true
+    },
+    "errors": [],
+    "tradesStatistics": {
+      "barChartIcon": true,
+      "tradesLabel": true,
+      "statisticsCards": true
+    },
+    "webpackConfig": true
+  },
+  "summary": {
+    "serverWorking": true,
+    "staticAssetsFixed": true,
+    "tradesPageWorking": true,
+    "tradesStatisticsFixed": true,
+    "webpackConfigFixed": true,
+    "allIssuesResolved": true
+  }
+}

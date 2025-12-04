@@ -230,12 +230,7 @@ function Dashboard() {
           <div className="key-metrics-grid mb-component" data-testid="metrics-container">
             <div className="dashboard-card" data-testid="metrics-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-opacity-20 bg-dusty-gold flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4" style={{ color: 'var(--dusty-gold)' }} />
-                  </div>
-                  <h3 className="h3-metric-label">Total P&L</h3>
-                </div>
+                <h3 className="h3-metric-label">Total P&L</h3>
               </div>
               <p className={`metric-value ${(stats?.totalPnL || 0) >= 0 ? '' : 'text-rust-red'}`}
                  style={{ color: (stats?.totalPnL || 0) >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
@@ -245,30 +240,21 @@ function Dashboard() {
             
             <div className="dashboard-card" data-testid="metrics-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <Target className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Win Rate</h3>
-                </div>
+                <h3 className="h3-metric-label">Win Rate</h3>
               </div>
               <p className="metric-value">{(stats?.winrate || 0).toFixed(1)}%</p>
             </div>
             
             <div className="dashboard-card" data-testid="metrics-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <BarChart3 className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Profit Factor</h3>
-                </div>
+                <h3 className="h3-metric-label">Profit Factor</h3>
               </div>
               <p className="metric-value">{(stats?.profitFactor || 0).toFixed(2)}</p>
             </div>
             
             <div className="dashboard-card" data-testid="metrics-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <DollarSign className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Total Trades</h3>
-                </div>
+                <h3 className="h3-metric-label">Total Trades</h3>
               </div>
               <p className="metric-value">{stats?.totalTrades || 0}</p>
             </div>
@@ -310,30 +296,21 @@ function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-component mb-component">
             <div className="dashboard-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Avg Time Held</h3>
-                </div>
+                <h3 className="h3-metric-label">Avg Time Held</h3>
               </div>
               <p className="metric-value">{formatTime(stats?.avgTimeHeld || 0)}</p>
             </div>
             
             <div className="dashboard-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <BarChart3 className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Sharpe Ratio</h3>
-                </div>
+                <h3 className="h3-metric-label">Sharpe Ratio</h3>
               </div>
               <p className="metric-value">{(stats?.sharpeRatio || 0).toFixed(2)}</p>
             </div>
             
             <div className="dashboard-card">
               <div className="card-header">
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5" style={{ color: 'var(--dusty-gold)' }} />
-                  <h3 className="h3-metric-label">Trading Days</h3>
-                </div>
+                <h3 className="h3-metric-label">Trading Days</h3>
               </div>
               <p className="metric-value">
                 {trades.length > 0 ? new Set(trades.map(t => t.trade_date)).size : 0}

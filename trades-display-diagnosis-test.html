@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades Display Diagnosis Test</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #111;
+        }
+        .error { color: #ff4444; }
+        .success { color: #44ff44; }
+        .warning { color: #ffaa44; }
+        .info { color: #44aaff; }
+        button {
+            background: #333;
+            color: #00ff00;
+            border: 1px solid #555;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #444;
+        }
+        #results {
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Trades Display Diagnosis Tool</h1>
+        
+        <div class="section">
+            <h2>Diagnosis Controls</h2>
+            <button onclick="runDiagnosis()">🚀 Run Full Diagnosis</button>
+            <button onclick="checkAuth()">🔑 Check Authentication</button>
+            <button onclick="checkDataFetching()">📊 Check Data Fetching</button>
+            <button onclick="checkErrors()">🚨 Check for Errors</button>
+            <button onclick="testMockData()">🎭 Test Mock Data</button>
+            <button onclick="clearResults()">🧹 Clear Results</button>
+        </div>
+
+        <div class="section">
+            <h2>Quick Status</h2>
+            <div id="quickStatus">Click "Run Full Diagnosis" to start...</div>
+        </div>
+
+        <div class="section">
+            <h2>Diagnosis Results</h2>
+            <div id="results">Results will appear here...</div>
+        </div>
+
+        <div class="section">
+            <h2>Manual Tests</h2>
+            <button onclick="window.open('/trades', '_blank')">📈 Open Trades Page</button>
+            <button onclick="window.open('/login', '_blank')">🔐 Open Login Page</button>
+            <button onclick="checkLocalStorage()">💾 Check LocalStorage</button>
+            <button onclick="checkNetworkRequests()">🌐 Check Network</button>
+        </div>
+    </div>
+
+    <script>
+        // Capture console.log to display in our results div
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        let logBuffer = [];
+
+        function addToResults(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'error' ? 'error' : type === 'warning' ? 'warning' : type === 'success' ? 'success' : 'info';
+            logBuffer.push(`[${timestamp}] ${message}`);
+            
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToResults(args.join(' '), 'info');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToResults(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToResults(args.join(' '), 'warning');
+        };
+
+        function clearResults() {
+            logBuffer = [];
+            document.getElementById('results').innerHTML = 'Results cleared...\n';
+        }
+
+        function updateQuickStatus(status) {
+            document.getElementById('quickStatus').innerHTML = status;
+        }
+
+        // Diagnosis functions
+        function checkAuth() {
+            console.log('🔍 Checking authentication state...');
+            
+            // Check localStorage for auth data
+            const authKeys = Object.keys(localStorage).filter(key => 
+                key.includes('supabase') || key.includes('sb-') || key.includes('auth')
+            );
+            
+            if (authKeys.length > 0) {
+                console.log(`✅ Found ${authKeys.length} auth keys in localStorage:`, authKeys);
+                authKeys.forEach(key => {
+                    try {
+                        const value = localStorage.getItem(key);
+                        if (value) {
+                            const parsed = JSON.parse(value);
+                            console.log(`📦 ${key}:`, {
+                                hasUser: !!parsed.user,
+                                userEmail: parsed.user?.email,
+                                hasAccessToken: !!parsed.access_token,
+                                expiresAt: parsed.expires_at ? new Date(parsed.expires_at * 1000).toISOString() : 'N/A'
+                            });
+                        }
+                    } catch (e) {
+                        console.log(`📦 ${key}: [non-JSON value, length: ${localStorage.getItem(key)?.length}]`);
+                    }
+                });
+            } else {
+                console.log('❌ No auth keys found in localStorage');
+            }
+
+            // Check current page
+            console.log('📍 Current page:', window.location.pathname);
+            
+            updateQuickStatus(`Auth check complete. Found ${authKeys.length} auth keys.`);
+        }
+
+        function checkDataFetching() {
+            console.log('📊 Checking data fetching state...');
+            
+            // Check for network requests
+            if (window.performance && window.performance.getEntriesByType) {
+                const resourceEntries = window.performance.getEntriesByType('resource');
+                const supabaseRequests = resourceEntries.filter(entry => 
+                    entry.name && entry.name.includes('supabase')
+                );
+                
+                console.log(`Found ${supabaseRequests.length} Supabase requests:`, supabaseRequests.map(req => ({
+                    url: req.name,
+                    method: req.initiatorType,
+                    size: req.transferSize
+                })));
+            } else {
+                console.log('⚠️ Performance API not available');
+            }
+            
+            updateQuickStatus('Data fetching check complete.');
+        }
+
+        function checkErrors() {
+            console.log('🚨 Checking for errors...');
+            
+            // Check for error elements in current page
+            const errorElements = document.querySelectorAll('[class*="error"], [class*="alert"]');
+            console.log(`Found ${errorElements.length} error/alert elements on current page`);
+            
+            errorElements.forEach((el, index) => {
+                console.log(`❌ Error element ${index + 1}:`, el.textContent?.substring(0, 200));
+            });
+            
+            updateQuickStatus(`Error check complete. Found ${errorElements.length} error elements.`);
+        }
+
+        function testMockData() {
+            console.log('🎭 Testing mock data injection...');
+            
+            const mockTrades = [
+                {
+                    id: 'mock-1',
+                    symbol: 'AAPL',
+                    side: 'Buy',
+                    quantity: 100,
+                    entry_price: 150.25,
+                    exit_price: 155.50,
+                    pnl: 525.00,
+                    trade_date: '2024-01-15',
+                    market: 'stock'
+                },
+                {
+                    id: 'mock-2',
+                    symbol: 'BTC',
+                    side: 'Sell',
+                    quantity: 0.5,
+                    entry_price: 45000,
+                    exit_price: 44000,
+                    pnl: 500.00,
+                    trade_date: '2024-01-14',
+                    market: 'crypto'
+                }
+            ];
+            
+            console.log('✅ Created mock trades data:', mockTrades.length, 'trades');
+            console.log('📊 Sample trade:', mockTrades[0]);
+            
+            // Save to localStorage for potential use
+            localStorage.setItem('mock-trades-data', JSON.stringify(mockTrades));
+            console.log('💾 Mock data saved to localStorage');
+            
+            updateQuickStatus('Mock data test complete. Data saved to localStorage.');
+        }
+
+        function checkLocalStorage() {
+            console.log('💾 Checking localStorage contents...');
+            
+            const allKeys = Object.keys(localStorage);
+            console.log(`Found ${allKeys.length} keys in localStorage:`, allKeys);
+            
+            allKeys.forEach(key => {
+                const value = localStorage.getItem(key);
+                console.log(`📦 ${key}:`, {
+                    type: typeof value,
+                    length: value?.length,
+                    preview: value?.substring(0, 100)
+                });
+            });
+            
+            updateQuickStatus(`LocalStorage check complete. Found ${allKeys.length} keys.`);
+        }
+
+        function checkNetworkRequests() {
+            console.log('🌐 Checking network requests...');
+            
+            if (window.performance && window.performance.getEntriesByType) {
+                const entries = window.performance.getEntriesByType('resource');
+                console.log(`Total resource entries: ${entries.length}`);
+                
+                // Group by type
+                const requests = entries.reduce((acc, entry) => {
+                    const type = entry.initiatorType || 'unknown';
+                    if (!acc[type]) acc[type] = [];
+                    acc[type].push(entry);
+                    return acc;
+                }, {});
+                
+                Object.entries(requests).forEach(([type, reqs]) => {
+                    console.log(`📡 ${type}: ${reqs.length} requests`);
+                    reqs.slice(0, 3).forEach(req => {
+                        console.log(`   - ${req.name} (${req.transferSize || 0} bytes)`);
+                    });
+                });
+            } else {
+                console.log('⚠️ Performance API not available');
+            }
+            
+            updateQuickStatus('Network request check complete.');
+        }
+
+        function runDiagnosis() {
+            console.log('🚀 Running comprehensive trades display diagnosis...');
+            clearResults();
+            
+            checkAuth();
+            checkDataFetching();
+            checkErrors();
+            testMockData();
+            
+            console.log('\n=== DIAGNOSIS SUMMARY ===');
+            console.log('✅ Diagnosis complete! Review the results above.');
+            console.log('💡 Tip: Open the actual trades page in another tab to see real-time behavior.');
+            
+            updateQuickStatus('✅ Full diagnosis complete! Review results below.');
+        }
+
+        // Auto-run some checks on page load
+        window.addEventListener('load', () => {
+            console.log('🔧 Diagnosis tool loaded successfully');
+            console.log('📍 Current URL:', window.location.href);
+            console.log('🌐 User agent:', navigator.userAgent);
+            updateQuickStatus('Diagnosis tool ready. Click buttons to run tests.');
+        });
+    </script>
+</body>
+</html>

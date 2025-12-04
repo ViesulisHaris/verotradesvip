@@ -48,9 +48,28 @@ export async function fetchTradesPaginated(
 ): Promise<PaginatedResult<Trade>> {
   const startTime = performance.now();
   
+  console.log('🔍 [FETCH_DIAGNOSTIC] fetchTradesPaginated called:', {
+    userId,
+    userIdType: typeof userId,
+    options,
+    timestamp: new Date().toISOString()
+  });
+  
   try {
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
+    console.log('🔍 [FETCH_DIAGNOSTIC] User ID validation result:', {
+      originalUserId: userId,
+      validatedUserId,
+      validationSuccess: validatedUserId === userId,
+      timestamp: new Date().toISOString()
+    });
+    
+    // CRITICAL FIX: Check if user ID is valid before proceeding
+    if (!validatedUserId) {
+      console.error('🔍 [FETCH_DIAGNOSTIC] Invalid user ID provided:', userId);
+      throw new Error(`Invalid user ID: ${userId}`);
+    }
     
     // Build optimized query with only necessary columns for list view
     let query = supabase
@@ -594,9 +613,28 @@ export async function fetchTradesStatistics(
 }> {
   const startTime = performance.now();
   
+  console.log('🔍 [FETCH_DIAGNOSTIC] fetchTradesStatistics called:', {
+    userId,
+    userIdType: typeof userId,
+    options,
+    timestamp: new Date().toISOString()
+  });
+  
   try {
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
+    console.log('🔍 [FETCH_DIAGNOSTIC] Statistics User ID validation result:', {
+      originalUserId: userId,
+      validatedUserId,
+      validationSuccess: validatedUserId === userId,
+      timestamp: new Date().toISOString()
+    });
+    
+    // CRITICAL FIX: Check if user ID is valid before proceeding
+    if (!validatedUserId) {
+      console.error('🔍 [FETCH_DIAGNOSTIC] Invalid user ID provided for statistics:', userId);
+      throw new Error(`Invalid user ID for statistics: ${userId}`);
+    }
     
     // Build optimized query for statistics - fetch only pnl column for calculations
     let query = supabase

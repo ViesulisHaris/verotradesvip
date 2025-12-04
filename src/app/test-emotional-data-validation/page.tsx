@@ -44,29 +44,29 @@ export default function TestEmotionalDataValidation() {
         
         // Check which emotions are valid
         const validEmotions = uniqueEmotions.filter(e => {
-          const normalized = e?.toUpperCase().trim();
+          const normalized = typeof e === 'string' ? e.toUpperCase().trim() : '';
           return normalized && VALID_EMOTIONS.includes(normalized);
         });
         
         const invalidEmotions = uniqueEmotions.filter(e => {
-          const normalized = e?.toUpperCase().trim();
+          const normalized = typeof e === 'string' ? e.toUpperCase().trim() : '';
           return normalized && !VALID_EMOTIONS.includes(normalized);
         });
 
         // Count null/undefined emotions
-        const nullEmotions = emotionalStates.filter(e => e === null || e === undefined).length;
-        const emptyEmotions = emotionalStates.filter(e => e === '').length;
+        const nullEmotions = emotionalStates.filter((e: any) => e === null || e === undefined).length;
+        const emptyEmotions = emotionalStates.filter((e: any) => e === '').length;
 
         // Create emotion data like dashboard does
-        const emotions = (tradesData || []).reduce<Record<string, number>>((acc, t) => {
+        const emotions: Record<string, number> = (tradesData || []).reduce((acc: any, t: any) => {
           const e = t.emotional_state ?? 'Neutral';
           acc[e] = (acc[e] ?? 0) + 1;
           return acc;
         }, {});
 
-        const totalEmotions = Object.values(emotions).reduce((a: number, b: number) => a + b, 0) || 1;
+        const totalEmotions = Object.values(emotions).reduce((a: number, b: any) => a + b, 0) || 1;
         
-        const emotionData = Object.entries(emotions).map(([label, value]) => ({
+        const emotionData = Object.entries(emotions).map(([label, value]: [string, any]) => ({
           subject: label,
           value: (value / totalEmotions) * 10,
           fullMark: 10,

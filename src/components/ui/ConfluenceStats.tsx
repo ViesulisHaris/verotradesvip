@@ -1,20 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { 
-  TrendingUp, 
-  TrendingDown, 
-  DollarSign, 
-  Target, 
-  Activity, 
-  Calendar,
-  BarChart3,
-  PieChart,
-  ArrowUpRight,
-  ArrowDownRight,
-  AlertTriangle,
-  RefreshCw
-} from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 
 // Interface for trade data
@@ -260,16 +246,15 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
     return (
       <div className="card-unified p-8 min-h-[400px] flex items-center justify-center">
         <div className="text-center">
-          <BarChart3 className="w-16 h-16 mx-auto mb-4 opacity-50 text-verotrade-gold-primary" />
+          <div className="w-16 h-16 mx-auto mb-4 opacity-50"></div>
           <h3 className="text-lg font-medium text-verotrade-text-primary mb-2">No trade data available</h3>
           <p className="text-sm text-verotrade-text-tertiary mb-4">
             Add some trades to see your confluence statistics here
           </p>
           <button
             onClick={handleRefresh}
-            className="px-4 py-2 bg-verotrade-gold-primary/20 text-verotrade-gold-primary rounded-lg hover:bg-verotrade-gold-primary/30 transition-colors flex items-center gap-2 mx-auto"
+            className="px-4 py-2 bg-verotrade-gold-primary/20 text-verotrade-gold-primary rounded-lg hover:bg-verotrade-gold-primary/30 transition-colors mx-auto"
           >
-            <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
             Refresh Data
           </button>
         </div>
@@ -282,22 +267,21 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
       {/* View Selector */}
       <div className="flex flex-wrap gap-2 mb-6">
         {[
-          { id: 'overview', label: 'Overview', icon: BarChart3 },
-          { id: 'monthly', label: 'Monthly', icon: Calendar },
-          { id: 'strategy', label: 'Strategy', icon: Target },
-          { id: 'market', label: 'Market', icon: TrendingUp },
-          { id: 'emotional', label: 'Emotional', icon: Activity }
-        ].map(({ id, label, icon: Icon }) => (
+          { id: 'overview', label: 'Overview' },
+          { id: 'monthly', label: 'Monthly' },
+          { id: 'strategy', label: 'Strategy' },
+          { id: 'market', label: 'Market' },
+          { id: 'emotional', label: 'Emotional' }
+        ].map(({ id, label }) => (
           <button
             key={id}
             onClick={() => setSelectedView(id as any)}
-            className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
+            className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
               selectedView === id
                 ? 'bg-verotrade-gold-primary/20 text-verotrade-gold-primary border border-verotrade-gold-primary/40'
                 : 'bg-verotrade-tertiary-black text-verotrade-text-secondary hover:bg-verotrade-quaternary-black border border-verotrade-border-primary'
             }`}
           >
-            <Icon className="w-4 h-4" />
             {label}
           </button>
         ))}
@@ -309,9 +293,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Total Trades */}
           <div className="card-unified p-6 hover:shadow-verotrade-lg transition-all duration-300">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-full bg-verotrade-gold-primary/20 flex items-center justify-center">
-                <Target className="w-6 h-6 text-verotrade-gold-primary" />
-              </div>
               <span className="text-verotrade-text-tertiary text-sm">Total</span>
             </div>
             <h3 className="text-2xl font-bold text-verotrade-text-primary mb-1">{statistics.totalTrades}</h3>
@@ -326,9 +307,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Win Rate */}
           <div className="card-unified p-6 hover:shadow-verotrade-lg transition-all duration-300">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-full bg-verotrade-success/20 flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-verotrade-success" />
-              </div>
               <span className="text-verotrade-text-tertiary text-sm">Success</span>
             </div>
             <h3 className="text-2xl font-bold text-verotrade-text-primary mb-1">{statistics.winRate.toFixed(1)}%</h3>
@@ -346,13 +324,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Total P&L */}
           <div className="card-unified p-6 hover:shadow-verotrade-lg transition-all duration-300">
             <div className="flex items-center justify-between mb-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                statistics.totalPnL >= 0 ? 'bg-verotrade-gold-primary/20' : 'bg-verotrade-error/20'
-              }`}>
-                <DollarSign className={`w-6 h-6 ${
-                  statistics.totalPnL >= 0 ? 'text-verotrade-gold-primary' : 'text-verotrade-error'
-                }`} />
-              </div>
               <span className="text-verotrade-text-tertiary text-sm">P&L</span>
             </div>
             <h3 className={`text-2xl font-bold mb-1 ${
@@ -361,12 +332,7 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
               {formatCurrency(statistics.totalPnL)}
             </h3>
             <p className="text-sm text-verotrade-text-tertiary">Total Profit/Loss</p>
-            <div className="mt-3 flex items-center gap-1">
-              {statistics.totalPnL >= 0 ? (
-                <ArrowUpRight className="w-4 h-4 text-verotrade-success" />
-              ) : (
-                <ArrowDownRight className="w-4 h-4 text-verotrade-error" />
-              )}
+            <div className="mt-3">
               <span className={`text-xs ${
                 statistics.totalPnL >= 0 ? 'text-verotrade-success' : 'text-verotrade-error'
               }`}>
@@ -378,9 +344,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Average Trade Size */}
           <div className="card-unified p-6 hover:shadow-verotrade-lg transition-all duration-300">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-full bg-verotrade-info/20 flex items-center justify-center">
-                <Activity className="w-6 h-6 text-verotrade-info" />
-              </div>
               <span className="text-verotrade-text-tertiary text-sm">Average</span>
             </div>
             <h3 className="text-2xl font-bold text-verotrade-text-primary mb-1">
@@ -400,9 +363,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Best Trade */}
           <div className="card-unified p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-verotrade-success/20 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-verotrade-success" />
-              </div>
               <h3 className="text-lg font-semibold text-verotrade-text-primary">Best Trade</h3>
             </div>
             {statistics.bestTrade ? (
@@ -440,9 +400,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
           {/* Worst Trade */}
           <div className="card-unified p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-verotrade-error/20 flex items-center justify-center">
-                <TrendingDown className="w-5 h-5 text-verotrade-error" />
-              </div>
               <h3 className="text-lg font-semibold text-verotrade-text-primary">Worst Trade</h3>
             </div>
             {statistics.worstTrade ? (
@@ -483,7 +440,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
       {selectedView === 'monthly' && (
         <div className="card-unified p-6">
           <div className="flex items-center gap-3 mb-6">
-            <Calendar className="w-5 h-5 text-verotrade-gold-primary" />
             <h3 className="text-lg font-semibold text-verotrade-text-primary">Monthly Performance</h3>
           </div>
           {statistics.monthlyPerformance.length > 0 ? (
@@ -533,7 +489,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
       {selectedView === 'strategy' && (
         <div className="card-unified p-6">
           <div className="flex items-center gap-3 mb-6">
-            <Target className="w-5 h-5 text-verotrade-gold-primary" />
             <h3 className="text-lg font-semibold text-verotrade-text-primary">Strategy Performance</h3>
           </div>
           {statistics.strategyPerformance.length > 0 ? (
@@ -583,7 +538,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
       {selectedView === 'market' && (
         <div className="card-unified p-6">
           <div className="flex items-center gap-3 mb-6">
-            <TrendingUp className="w-5 h-5 text-verotrade-gold-primary" />
             <h3 className="text-lg font-semibold text-verotrade-text-primary">Market Performance</h3>
           </div>
           {statistics.marketPerformance.length > 0 ? (
@@ -633,7 +587,6 @@ export default function ConfluenceStats({ data, isLoading = false }: ConfluenceS
       {selectedView === 'emotional' && (
         <div className="card-unified p-6">
           <div className="flex items-center gap-3 mb-6">
-            <Activity className="w-5 h-5 text-verotrade-gold-primary" />
             <h3 className="text-lg font-semibold text-verotrade-text-primary">Emotional Performance</h3>
           </div>
           {statistics.emotionalPerformance.length > 0 ? (

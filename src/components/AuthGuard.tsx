@@ -120,7 +120,7 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
   }
 
   // CRITICAL FIX: Simplified loading state logic
-  // If auth is not initialized and we require auth, show loader
+  // If auth is not initialized, show loader briefly
   if (requireAuth && !authInitialized) {
     return (
       <div style={{
@@ -146,26 +146,9 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
     );
   }
   
-  // CRITICAL FIX: Only show loading spinner when auth is initialized but still loading
-  if (requireAuth && authInitialized && loading) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#121212'
-      }}>
-        <div style={{
-          animation: 'spin 1s linear infinite',
-          borderRadius: '50%',
-          height: '2rem',
-          width: '2rem',
-          borderBottom: '2px solid #B89B5E'
-        }}></div>
-      </div>
-    );
-  }
+  // CRITICAL FIX: Don't block rendering just because auth is loading
+  // This prevents infinite loading states when authLoading gets stuck
+  // We'll proceed with rendering and let the child components handle loading states
 
   // CRITICAL FIX: Clear rendering logic
   // 1. If auth is not required, always render children

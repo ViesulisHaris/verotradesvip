@@ -9,14 +9,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // VeroTrade Design System Colors
+        // New Design System Colors
+        background: '#050505',
+        surface: '#0A0A0A',
+        surfaceHighlight: '#121212',
+        border: '#1E1E1E',
+        
+        // Gold variants
+        gold: {
+          50: '#FFFDF7',
+          100: '#FEFAE7',
+          200: '#FCF2D1',
+          300: '#F8E6B0',
+          400: '#F2D47A',
+          500: '#E6B84F',
+          600: '#D4A038',
+          700: '#B89B5E',
+          800: '#9C7E47',
+          900: '#7D6339',
+          950: '#4A3822',
+        },
+        
+        // Trading status colors
+        profit: '#2EBD85',
+        loss: '#F6465D',
+        
+        // VeroTrade Design System Colors (Legacy)
         'verotrade-primary-black': '#0A0A0A',
         'verotrade-secondary-black': '#121212',
         'verotrade-tertiary-black': '#1A1A1A',
         'verotrade-quaternary-black': '#1F1F1F',
         'verotrade-quinary-black': '#252525',
         
-        // Gold accents
+        // Gold accents (Legacy)
         'verotrade-gold-primary': '#B89B5E',
         'verotrade-gold-secondary': '#D4B87F',
         'verotrade-gold-tertiary': '#E6D4A3',
@@ -46,7 +71,6 @@ module.exports = {
         
         // Legacy compatibility
         primary: '#C0C0C0',
-        background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
       animation: {
@@ -70,6 +94,12 @@ module.exports = {
         }
       },
       fontFamily: {
+        // New font families
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+        
+        // Legacy font families
         'verotrade-primary': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         'verotrade-mono': ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
@@ -133,6 +163,9 @@ module.exports = {
         'verotrade-popover': '1060',
         'verotrade-tooltip': '1070',
         'verotrade-toast': '1080',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
