@@ -1,10 +1,116 @@
-// Filter persistence utilities for localStorage
-import { 
-  FilterState, 
-  TradeFilterOptions, 
-  StrategyFilterOptions, 
-  FILTER_STORAGE_KEYS 
+// Optimized filter persistence utilities for localStorage with performance improvements
+import {
+  FilterState,
+  TradeFilterOptions,
+  StrategyFilterOptions,
+  FILTER_STORAGE_KEYS
 } from './filtering-types';
+
+// Performance optimization: Cache for localStorage operations
+let localStorageCache: Record<string, any> = {};
+let cacheTimestamp = 0;
+const CACHE_TTL = 5000; // 5 seconds cache TTL
+
+// Performance monitoring
+let readOperations = 0;
+let writeOperations = 0;
+
+/**
+ * Check if cache is valid
+ */
+function isCacheValid(): boolean {
+  return Date.now() - cacheTimestamp < CACHE_TTL;
+}
+
+/**
+ * Get value from cache or localStorage
+ */
+function getCachedValue(key: string): any {
+  if (isCacheValid() && key in localStorageCache) {
+    return localStorageCache[key];
+  }
+  
+  try {
+    const value = localStorage.getItem(key);
+    if (value !== null) {
+      localStorageCache[key] = JSON.parse(value);
+      return localStorageCache[key];
+    }
+  } catch (error) {
+    console.warn(`Failed to read ${key} from localStorage:`, error);
+  }
+  
+  return null;
+}
+
+/**
+ * Set value in cache and localStorage
+ */
+function setCachedValue(key: string, value: any): void {
+  localStorageCache[key] = value;
+  cacheTimestamp = Date.now();
+  writeOperations++;
+  
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.warn(`Failed to write ${key} to localStorage:`, error);
+    // Clear cache and try again with essential data only
+    if (error instanceof Error && error.name === 'QuotaExceededError') {
+      clearLocalStorageCache();
+      setEssentialData(key, value);
+    }
+  }
+}
+
+/**
+ * Clear localStorage cache
+ */
+function clearLocalStorageCache(): void {
+  localStorageCache = {};
+  cacheTimestamp = 0;
+}
+
+/**
+ * Set essential data when quota is exceeded
+ */
+function setEssentialData(key: string, value: any): void {
+  const essentialKeys: string[] = [FILTER_STORAGE_KEYS.TRADE_FILTERS, FILTER_STORAGE_KEYS.STRATEGY_FILTERS];
+  if (!essentialKeys.includes(key)) return;
+  
+  const essentialValue = key === FILTER_STORAGE_KEYS.TRADE_FILTERS
+    ? {
+        symbol: value.symbol || '',
+        market: value.market || '',
+        dateFrom: value.dateFrom || '',
+        dateTo: value.dateTo || '',
+        pnlFilter: value.pnlFilter || 'all',
+        side: value.side || ''
+      }
+    : {
+        search: value.search || '',
+        isActive: value.isActive
+      };
+  
+  try {
+    localStorage.setItem(key, JSON.stringify(essentialValue));
+    localStorageCache[key] = essentialValue;
+  } catch (error) {
+    console.warn(`Failed to save essential data for ${key}:`, error);
+  }
+}
+
+/**
+ * Get performance statistics
+ */
+export function getFilterPersistenceStats() {
+  return {
+    readOperations,
+    writeOperations,
+    cacheSize: Object.keys(localStorageCache).length,
+    cacheValid: isCacheValid()
+  };
+}
 
 /**
  * Save filter state to localStorage
@@ -224,17 +330,12 @@ export function saveStrategyFilters(filters: StrategyFilterOptions): void {
  * Load trade filters specifically
  */
 export function loadTradeFilters(): TradeFilterOptions | null {
-  try {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(FILTER_STORAGE_KEYS.TRADE_FILTERS);
-      if (saved) {
-        return JSON.parse(saved) as TradeFilterOptions;
-      }
-    }
-  } catch (error) {
-    console.warn('Failed to load trade filters from localStorage:', error);
-  }
-  return null;
+  if (typeof window === 'undefined') return null;
+  
+  readOperations++;
+  
+  // Use cached value if available
+  return getCachedValue(FILTER_STORAGE_KEYS.TRADE_FILTERS) as TradeFilterOptions | null;
 }
 
 /**

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Error Monitoring Test Runner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.danger {
+            background-color: #dc3545;
+        }
+        .button.danger:hover {
+            background-color: #c82333;
+        }
+        .button.success {
+            background-color: #28a745;
+        }
+        .button.success:hover {
+            background-color: #218838;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .status.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .status.warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .log-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .log-entry.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .log-entry.warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .log-entry.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        .iframe-container {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .report-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Console Error Monitoring Test Runner</h1>
+            <p>Comprehensive console error monitoring for /trades page filter interactions</p>
+        </div>
+
+        <div class="test-section">
+            <h3>🚀 Test Execution</h3>
+            <button class="button" onclick="startMonitoring()">Start Console Monitoring</button>
+            <button class="button danger" onclick="stopMonitoring()">Stop Monitoring</button>
+            <button class="button success" onclick="runFullTest()">Run Full Test Suite</button>
+            <button class="button" onclick="clearLogs()">Clear Logs</button>
+            <button class="button" onclick="generateReport()">Generate Report</button>
+            
+            <div id="status" class="status info">
+                Ready to start console error monitoring
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Real-time Metrics</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value" id="totalErrors">0</div>
+                    <div class="metric-label">Total Errors</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="warnings">0</div>
+                    <div class="metric-label">Warnings</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="networkErrors">0</div>
+                    <div class="metric-label">Network Errors</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="reactErrors">0</div>
+                    <div class="metric-label">React Errors</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="jsErrors">0</div>
+                    <div class="metric-label">JavaScript Errors</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="performanceIssues">0</div>
+                    <div class="metric-label">Performance Issues</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📝 Console Log</h3>
+            <div id="logContainer" class="log-container">
+                <div class="log-entry info">Console monitoring ready...</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🌐 Trades Page Test Area</h3>
+            <p>Navigate to the trades page in the iframe below to test filter interactions:</p>
+            <div class="iframe-container">
+                <iframe src="/trades" id="tradesFrame"></iframe>
+            </div>
+        </div>
+
+        <div class="report-section" id="reportSection" style="display: none;">
+            <h3>📄 Test Report</h3>
+            <div id="reportContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Global monitoring state
+        let monitoringActive = false;
+        let capturedErrors = [];
+        let capturedWarnings = [];
+        let capturedNetworkErrors = [];
+        let capturedReactErrors = [];
+        let capturedJSErrors = [];
+        let performanceIssues = [];
+        let testResults = {};
+        let originalConsole = {};
+
+        // Initialize console monitoring
+        function initializeConsoleMonitoring() {
+            // Store original console methods
+            originalConsole.error = console.error;
+            originalConsole.warn = console.warn;
+            originalConsole.info = console.info;
+            originalConsole.log = console.log;
+
+            // Override console methods
+            console.error = function(...args) {
+                captureError('error', args);
+                originalConsole.error.apply(console, args);
+            };
+
+            console.warn = function(...args) {
+                captureError('warn', args);
+                originalConsole.warn.apply(console, args);
+            };
+
+            console.info = function(...args) {
+                captureError('info', args);
+                originalConsole.info.apply(console, args);
+            };
+
+            console.log = function(...args) {
+                const message = args.join(' ');
+                if (message.toLowerCase().includes('error') || 
+                    message.toLowerCase().includes('warning') ||
+                    message.toLowerCase().includes('failed')) {
+                    captureError('log', args);
+                }
+                originalConsole.log.apply(console, args);
+            };
+        }
+
+        // Capture and categorize errors
+        function captureError(type, args) {
+            if (!monitoringActive) return;
+
+            const message = args.join(' ');
+            const timestamp = new Date().toISOString();
+            const errorEntry = {
+                timestamp,
+                type,
+                message,
+                args: args.map(arg => {
+                    if (typeof arg === 'object') {
+                        try {
+                            return JSON.stringify(arg, null, 2);
+                        } catch (e) {
+                            return '[Object]';
+                        }
+                    }
+                    return String(arg);
+                }),
+                stack: new Error().stack
+            };
+
+            // Categorize errors
+            if (type === 'error') {
+                capturedErrors.push(errorEntry);
+                
+                if (message.includes('network') || message.includes('fetch') || message.includes('axios')) {
+                    capturedNetworkErrors.push(errorEntry);
+                } else if (message.includes('React') || message.includes('component') || message.includes('render')) {
+                    capturedReactErrors.push(errorEntry);
+                } else {
+                    capturedJSErrors.push(errorEntry);
+                }
+            } else if (type === 'warn') {
+                capturedWarnings.push(errorEntry);
+            }
+
+            // Update UI
+            updateMetrics();
+            addLogEntry(type, message);
+        }
+
+        // Update metrics display
+        function updateMetrics() {
+            document.getElementById('totalErrors').textContent = capturedErrors.length;
+            document.getElementById('warnings').textContent = capturedWarnings.length;
+            document.getElementById('networkErrors').textContent = capturedNetworkErrors.length;
+            document.getElementById('reactErrors').textContent = capturedReactErrors.length;
+            document.getElementById('jsErrors').textContent = capturedJSErrors.length;
+            document.getElementById('performanceIssues').textContent = performanceIssues.length;
+        }
+
+        // Add log entry to display
+        function addLogEntry(type, message) {
+            const logContainer = document.getElementById('logContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry ${type}`;
+            logEntry.innerHTML = `<strong>[${new Date().toLocaleTimeString()}] ${type.toUpperCase()}:</strong> ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // Update status message
+        function updateStatus(message, type = 'info') {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = message;
+            statusElement.className = `status ${type}`;
+        }
+
+        // Start monitoring
+        function startMonitoring() {
+            if (monitoringActive) {
+                updateStatus('Monitoring already active', 'warning');
+                return;
+            }
+
+            monitoringActive = true;
+            initializeConsoleMonitoring();
+            updateStatus('Console monitoring started', 'success');
+            addLogEntry('info', 'Console error monitoring initialized');
+        }
+
+        // Stop monitoring
+        function stopMonitoring() {
+            if (!monitoringActive) {
+                updateStatus('Monitoring not active', 'warning');
+                return;
+            }
+
+            monitoringActive = false;
+            
+            // Restore original console methods
+            if (originalConsole.error) console.error = originalConsole.error;
+            if (originalConsole.warn) console.warn = originalConsole.warn;
+            if (originalConsole.info) console.info = originalConsole.info;
+            if (originalConsole.log) console.log = originalConsole.log;
+            
+            updateStatus('Console monitoring stopped', 'info');
+            addLogEntry('info', 'Console error monitoring stopped');
+        }
+
+        // Clear logs
+        function clearLogs() {
+            const logContainer = document.getElementById('logContainer');
+            logContainer.innerHTML = '<div class="log-entry info">Logs cleared...</div>';
+            
+            // Reset counters
+            capturedErrors = [];
+            capturedWarnings = [];
+            capturedNetworkErrors = [];
+            capturedReactErrors = [];
+            capturedJSErrors = [];
+            performanceIssues = [];
+            
+            updateMetrics();
+            updateStatus('Logs cleared', 'info');
+        }
+
+        // Simulate filter interactions in iframe
+        async function simulateFilterInteractions() {
+            const iframe = document.getElementById('tradesFrame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            if (!iframeDoc) {
+                addLogEntry('error', 'Cannot access iframe content - cross-origin restrictions');
+                return;
+            }
+
+            // Test symbol filter
+            const symbolInput = iframeDoc.querySelector('input[placeholder*="symbol"]');
+            if (symbolInput) {
+                addLogEntry('info', 'Testing symbol filter interactions...');
+                
+                const testSymbols = ['AAPL', 'GOOGL', 'MSFT', '', 'INVALID'];
+                for (const symbol of testSymbols) {
+                    symbolInput.value = symbol;
+                    symbolInput.dispatchEvent(new Event('input', { bubbles: true }));
+                    symbolInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                }
+            }
+
+            // Test market filter
+            const marketSelect = iframeDoc.querySelector('select');
+            if (marketSelect) {
+                addLogEntry('info', 'Testing market filter interactions...');
+                
+                const markets = ['', 'stock', 'crypto', 'forex', 'futures'];
+                for (const market of markets) {
+                    marketSelect.value = market;
+                    marketSelect.dispatchEvent(new Event('change', { bubbles: true }));
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                }
+            }
+
+            // Test date filters
+            const dateInputs = iframeDoc.querySelectorAll('input[type="date"]');
+            if (dateInputs.length >= 2) {
+                addLogEntry('info', 'Testing date filter interactions...');
+                
+                dateInputs[0].value = '2024-01-01';
+                dateInputs[1].value = '2024-12-31';
+                dateInputs[0].dispatchEvent(new Event('change', { bubbles: true }));
+                dateInputs[1].dispatchEvent(new Event('change', { bubbles: true }));
+                await new Promise(resolve => setTimeout(resolve, 300));
+            }
+
+            // Test clear filters
+            const clearButton = iframeDoc.querySelector('button:contains("Clear"), button:contains("Reset")');
+            if (clearButton) {
+                addLogEntry('info', 'Testing filter clearing...');
+                clearButton.click();
+                await new Promise(resolve => setTimeout(resolve, 300));
+            }
+
+            addLogEntry('info', 'Filter interaction tests completed');
+        }
+
+        // Run full test suite
+        async function runFullTest() {
+            updateStatus('Running full test suite...', 'info');
+            
+            // Start monitoring
+            startMonitoring();
+            
+            // Wait a moment for monitoring to initialize
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Simulate filter interactions
+            try {
+                await simulateFilterInteractions();
+                
+                // Wait for any delayed errors
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                updateStatus('Test suite completed', 'success');
+                addLogEntry('info', 'Full test suite execution completed');
+                
+            } catch (error) {
+                updateStatus(`Test suite failed: ${error.message}`, 'error');
+                addLogEntry('error', `Test suite error: ${error.message}`);
+            }
+        }
+
+        // Generate report
+        function generateReport() {
+            const reportSection = document.getElementById('reportSection');
+            const reportContent = document.getElementById('reportContent');
+            
+            const report = {
+                timestamp: new Date().toISOString(),
+                summary: {
+                    totalErrors: capturedErrors.length,
+                    warnings: capturedWarnings.length,
+                    networkErrors: capturedNetworkErrors.length,
+                    reactErrors: capturedReactErrors.length,
+                    javascriptErrors: capturedJSErrors.length,
+                    performanceIssues: performanceIssues.length
+                },
+                errors: {
+                    all: capturedErrors,
+                    network: capturedNetworkErrors,
+                    react: capturedReactErrors,
+                    javascript: capturedJSErrors
+                },
+                warnings: capturedWarnings,
+                recommendations: generateRecommendations()
+            };
+            
+            // Display report
+            reportContent.innerHTML = `
+                <h4>📊 Summary</h4>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">${report.summary.totalErrors}</div>
+                        <div class="metric-label">Total Errors</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${report.summary.warnings}</div>
+                        <div class="metric-label">Warnings</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${report.summary.networkErrors}</div>
+                        <div class="metric-label">Network Errors</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${report.summary.reactErrors}</div>
+                        <div class="metric-label">React Errors</div>
+                    </div>
+                </div>
+                
+                <h4>🔧 Recommendations</h4>
+                <ul>
+                    ${report.recommendations.map(rec => `<li><strong>${rec.severity.toUpperCase()}:</strong> ${rec.recommendation}</li>`).join('')}
+                </ul>
+                
+                <h4>📥 Download Report</h4>
+                <button class="button" onclick="downloadReport()">Download JSON Report</button>
+            `;
+            
+            // Store report for download
+            window.currentReport = report;
+            
+            reportSection.style.display = 'block';
+            updateStatus('Report generated', 'success');
+        }
+
+        // Generate recommendations
+        function generateRecommendations() {
+            const recommendations = [];
+            
+            if (capturedNetworkErrors.length > 0) {
+                recommendations.push({
+                    severity: 'high',
+                    recommendation: 'Network errors detected - implement proper error handling for API calls'
+                });
+            }
+            
+            if (capturedReactErrors.length > 0) {
+                recommendations.push({
+                    severity: 'high',
+                    recommendation: 'React rendering errors detected - review component lifecycle and state management'
+                });
+            }
+            
+            if (capturedJSErrors.length > 0) {
+                recommendations.push({
+                    severity: 'medium',
+                    recommendation: 'JavaScript errors detected - add proper null checks and validation'
+                });
+            }
+            
+            if (capturedWarnings.length > 5) {
+                recommendations.push({
+                    severity: 'low',
+                    recommendation: 'Multiple warnings detected - review and address warning conditions'
+                });
+            }
+            
+            if (recommendations.length === 0) {
+                recommendations.push({
+                    severity: 'info',
+                    recommendation: 'No critical errors detected - system appears to be functioning correctly'
+                });
+            }
+            
+            return recommendations;
+        }
+
+        // Download report
+        function downloadReport() {
+            if (!window.currentReport) {
+                updateStatus('No report available to download', 'warning');
+                return;
+            }
+            
+            const blob = new Blob([JSON.stringify(window.currentReport, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `console-error-report-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            updateStatus('Report downloaded', 'success');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatus('Ready to start console error monitoring', 'info');
+            addLogEntry('info', 'Console Error Monitoring Test Runner loaded successfully');
+        });
+    </script>
+</body>
+</html>

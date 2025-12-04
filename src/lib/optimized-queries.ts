@@ -35,7 +35,7 @@ interface Trade {
  */
 export async function fetchTradesPaginated(
   userId: string,
-  options: PaginationOptions & { 
+  options: PaginationOptions & {
     strategyId?: string;
     symbol?: string;
     market?: string;
@@ -46,19 +46,31 @@ export async function fetchTradesPaginated(
     emotionalStates?: string[];
   } = { page: 1, limit: 50 }
 ): Promise<PaginatedResult<Trade>> {
+  const startTime = performance.now();
+  
   try {
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
     
-    // Build base query
+    // Build optimized query with only necessary columns for list view
     let query = supabase
       .from('trades')
       .select(`
-        *,
+        id,
+        symbol,
+        side,
+        quantity,
+        entry_price,
+        exit_price,
+        pnl,
+        trade_date,
+        entry_time,
+        exit_time,
+        emotional_state,
+        market,
         strategies (
           id,
-          name,
-          rules
+          name
         )
       `, { count: 'exact' })
       .eq('user_id', validatedUserId);
@@ -74,7 +86,16 @@ export async function fetchTradesPaginated(
     }
 
     if (options.market) {
-      query = query.eq('market', options.market);
+      console.log('🔄 [MARKET_FILTER_DEBUG] Applying market filter:', {
+        market: options.market,
+        timestamp: new Date().toISOString()
+      });
+      // Use case-insensitive filtering to handle inconsistent casing in database
+      query = query.ilike('market', options.market);
+    } else {
+      console.log('🔄 [MARKET_FILTER_DEBUG] No market filter applied - fetching all markets', {
+        timestamp: new Date().toISOString()
+      });
     }
 
     if (options.dateFrom) {
@@ -99,12 +120,16 @@ export async function fetchTradesPaginated(
       query = query.eq('side', options.side);
     }
 
-    // Emotional states filter
+    // Emotional states filter - optimized for better performance
     if (options.emotionalStates && options.emotionalStates.length > 0) {
-      // This is a complex filter - we need to handle it differently
-      // For now, we'll filter client-side after fetching
-      // In a real implementation, you might want to use a more sophisticated approach
-      console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Emotional states filter applied:', options.emotionalStates);
+      // Use OR condition for emotional states filtering
+      const emotionalStateConditions = options.emotionalStates.map(state =>
+        `emotional_state.ilike.%${state}%`
+      );
+      
+      // Apply the filter using .or() for better performance
+      query = query.or(emotionalStateConditions.join(','));
+      console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Optimized emotional states filter applied:', options.emotionalStates);
     }
 
     // Apply pagination
@@ -114,13 +139,17 @@ export async function fetchTradesPaginated(
       .order(orderBy.column as any, { ascending: orderBy.ascending });
 
     // Execute query
-    console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Executing trades query with filters:', {
+    console.log('🔄 [MARKET_FILTER_DEBUG] Executing trades query with filters:', {
       hasEmotionalStates: !!(options.emotionalStates && options.emotionalStates.length > 0),
       emotionalStates: options.emotionalStates,
+      marketFilter: {
+        hasFilter: !!options.market,
+        value: options.market || 'NO_FILTER',
+        timestamp: new Date().toISOString()
+      },
       otherFilters: {
         strategyId: options.strategyId,
         symbol: options.symbol,
-        market: options.market,
         dateFrom: options.dateFrom,
         dateTo: options.dateTo,
         pnlFilter: options.pnlFilter,
@@ -137,15 +166,38 @@ export async function fetchTradesPaginated(
     
     const { data, error, count } = await query;
     
-    console.log('🔄 [OPTIMIZED_QUERIES_DEBUG] Trades query response:', {
+    const endTime = performance.now();
+    const queryTime = endTime - startTime;
+    
+    console.log('🔄 [MARKET_FILTER_DEBUG] Optimized trades query response:', {
       hasData: !!data,
       dataLength: data?.length || 0,
       hasError: !!error,
       error: error?.message || null,
       count: count,
       totalCount: count || 0,
-      totalPages: Math.ceil((count || 0) / options.limit)
+      totalPages: Math.ceil((count || 0) / options.limit),
+      queryTime: `${queryTime.toFixed(2)}ms`,
+      performance: queryTime < 300 ? 'GOOD' : 'NEEDS_OPTIMIZATION',
+      marketFilter: {
+        applied: !!options.market,
+        value: options.market || 'NONE',
+        timestamp: new Date().toISOString()
+      }
     });
+    
+    // Additional market-specific logging
+    if (data && data.length > 0 && options.market) {
+      const marketMatches = data.filter((trade: Trade) => trade.market === options.market).length;
+      console.log('🔄 [MARKET_FILTER_DEBUG] Market filter verification:', {
+        expectedMarket: options.market,
+        totalResults: data.length,
+        matchingMarket: marketMatches,
+        nonMatchingMarkets: data.length - marketMatches,
+        filterAccuracy: marketMatches === data.length ? 'PERFECT' : 'ISSUE_DETECTED',
+        timestamp: new Date().toISOString()
+      });
+    }
 
     if (error) {
       console.error('Error fetching paginated trades:', error);
@@ -156,8 +208,17 @@ export async function fetchTradesPaginated(
     const currentPage = options.page;
     const totalPages = Math.ceil(totalCount / options.limit);
 
+    // Optimized data processing
+    const optimizedData = (data || []).map((trade: Trade) => ({
+      ...trade,
+      // Pre-calculate commonly used values for better rendering performance
+      pnlDisplay: trade.pnl ? (trade.pnl >= 0 ? '+$' : '-$') + Math.abs(trade.pnl).toFixed(2) : '$0.00',
+      isProfitable: (trade.pnl || 0) >= 0,
+      tradeDateObj: new Date(trade.trade_date)
+    }));
+
     return {
-      data: data || [],
+      data: optimizedData,
       totalCount,
       currentPage,
       totalPages,
@@ -531,14 +592,16 @@ export async function fetchTradesStatistics(
   winningTrades: number;
   losingTrades: number;
 }> {
+  const startTime = performance.now();
+  
   try {
     // Validate user ID
     const validatedUserId = validateUUID(userId, 'user_id');
     
-    // Build base query - only select the columns we need for statistics
+    // Build optimized query for statistics - use aggregate functions for better performance
     let query = supabase
       .from('trades')
-      .select('pnl', { count: 'exact' })
+      .select('pnl', { count: 'exact', head: true }) // Use head: true for faster count
       .eq('user_id', validatedUserId);
 
     // Apply filters (same as in fetchTradesPaginated)
@@ -552,7 +615,16 @@ export async function fetchTradesStatistics(
     }
 
     if (options.market) {
-      query = query.eq('market', options.market);
+      console.log('🔄 [MARKET_FILTER_DEBUG] Applying market filter to statistics query:', {
+        market: options.market,
+        timestamp: new Date().toISOString()
+      });
+      // Use case-insensitive filtering to handle inconsistent casing in database
+      query = query.ilike('market', options.market);
+    } else {
+      console.log('🔄 [MARKET_FILTER_DEBUG] No market filter applied to statistics - calculating for all markets', {
+        timestamp: new Date().toISOString()
+      });
     }
 
     if (options.dateFrom) {
@@ -577,7 +649,15 @@ export async function fetchTradesStatistics(
       query = query.eq('side', options.side);
     }
 
-    // Execute query
+    // Emotional states filter for statistics
+    if (options.emotionalStates && options.emotionalStates.length > 0) {
+      const emotionalStateConditions = options.emotionalStates.map(state =>
+        `emotional_state.ilike.%${state}%`
+      );
+      query = query.or(emotionalStateConditions.join(','));
+    }
+
+    // Execute query with optimized performance
     const { data, error, count } = await query;
 
     if (error) {
@@ -585,21 +665,45 @@ export async function fetchTradesStatistics(
       throw error;
     }
 
-    // Calculate statistics
+    const endTime = performance.now();
+    const queryTime = endTime - startTime;
+    
+    // Optimized statistics calculation
     const trades = data || [];
     const totalTrades = count || trades.length;
-    const pnls = trades.map((t: any) => t.pnl || 0);
-    const totalPnL = pnls.reduce((sum: number, pnl: number) => sum + pnl, 0);
-    const winningTrades = pnls.filter((pnl: number) => pnl > 0).length;
-    const losingTrades = pnls.filter((pnl: number) => pnl < 0).length;
-    const winRate = totalTrades > 0 ? (winningTrades / totalTrades) * 100 : 0;
+    
+    // Use reduce for single-pass calculation
+    const stats = trades.reduce((acc: { totalPnL: number; winningTrades: number; losingTrades: number }, trade: Trade) => {
+      const pnl = trade.pnl || 0;
+      acc.totalPnL += pnl;
+      if (pnl > 0) acc.winningTrades++;
+      else if (pnl < 0) acc.losingTrades++;
+      return acc;
+    }, { totalPnL: 0, winningTrades: 0, losingTrades: 0 });
+
+    const winRate = totalTrades > 0 ? (stats.winningTrades / totalTrades) * 100 : 0;
+
+    console.log('🔄 [MARKET_FILTER_DEBUG] Optimized statistics query response:', {
+      totalTrades,
+      totalPnL: stats.totalPnL,
+      winRate,
+      winningTrades: stats.winningTrades,
+      losingTrades: stats.losingTrades,
+      queryTime: `${queryTime.toFixed(2)}ms`,
+      performance: queryTime < 300 ? 'GOOD' : 'NEEDS_OPTIMIZATION',
+      marketFilter: {
+        applied: !!options.market,
+        value: options.market || 'NONE',
+        timestamp: new Date().toISOString()
+      }
+    });
 
     return {
-      totalPnL,
+      totalPnL: stats.totalPnL,
       winRate,
       totalTrades,
-      winningTrades,
-      losingTrades
+      winningTrades: stats.winningTrades,
+      losingTrades: stats.losingTrades
     };
   } catch (error) {
     console.error('Exception in fetchTradesStatistics:', error);

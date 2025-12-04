@@ -390,18 +390,93 @@ function processSummaryStats(trades: any[]) {
 }
 
 /**
- * Debounced function for frequent operations
+ * Debounced function for frequent operations with optimized performance
  */
 export function createDebouncedFunction<T extends (...args: any[]) => any>(
   fn: T,
   delay: number
 ): T {
   let timeoutId: NodeJS.Timeout;
+  let lastCallTime = 0;
+  let lastArgs: Parameters<T> | null = null;
   
   return ((...args: Parameters<T>) => {
+    const now = Date.now();
+    
+    // Clear existing timeout
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => fn(...args), delay);
+    
+    // Store args for potential immediate execution
+    lastArgs = args;
+    
+    // If this is a rapid successive call, debounce
+    if (now - lastCallTime < 50) { // Very rapid calls get debounced
+      timeoutId = setTimeout(() => {
+        lastCallTime = Date.now();
+        fn(...args);
+      }, delay);
+    } else {
+      // For slower typing, use shorter delay for better responsiveness
+      timeoutId = setTimeout(() => {
+        lastCallTime = Date.now();
+        fn(...args);
+      }, Math.min(delay, 150)); // Cap at 150ms for better UX
+    }
   }) as T;
+}
+
+/**
+ * Create a specialized debounced function for filtering with optimal delay
+ */
+export function createFilterDebouncedFunction<T extends (...args: any[]) => any>(
+  fn: T
+): T {
+  let timeoutId: NodeJS.Timeout | null = null;
+  let lastMarketValue: string | undefined;
+  
+  return ((...args: Parameters<T>) => {
+    // Extract market filter from args if it's the filter function
+    const marketFilter = args.length > 1 && typeof args[1] === 'object' ? args[1].market : undefined;
+    
+    // Check if market filter changed - if so, clear cache immediately
+    if (lastMarketValue !== undefined && lastMarketValue !== marketFilter) {
+      console.log('🔄 [MARKET_FILTER_DEBUG] Market filter changed, clearing cache:', {
+        oldValue: lastMarketValue,
+        newValue: marketFilter || 'NONE',
+        timestamp: new Date().toISOString()
+      });
+      
+      // Clear all cache entries when market filter changes to ensure fresh data
+      memoCache.clear();
+    }
+    
+    lastMarketValue = marketFilter;
+    
+    // Clear existing timeout
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    
+    // Set new timeout with reduced delay for better responsiveness
+    timeoutId = setTimeout(() => {
+      console.log('🔄 [MARKET_FILTER_DEBUG] Executing debounced filter function:', {
+        marketFilter: marketFilter || 'NO_FILTER',
+        argsCount: args.length,
+        timestamp: new Date().toISOString()
+      });
+      fn(...args);
+    }, 150); // 150ms for filtering - optimal balance between responsiveness and performance
+  }) as T;
+}
+
+/**
+ * Create a debounced function for statistics with longer delay
+ */
+export function createStatsDebouncedFunction<T extends (...args: any[]) => any>(
+  fn: T
+): T {
+  // Use 300ms for statistics - less critical for immediate feedback
+  return createDebouncedFunction(fn, 300);
 }
 
 /**

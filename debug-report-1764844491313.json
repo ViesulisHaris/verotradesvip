@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-12-04T10:34:44.477Z",
+  "marketFilter": {
+    "issue": "Market filter doesn't work correctly",
+    "tests": [],
+    "findings": [
+      {
+        "timestamp": "2025-12-04T10:34:47.674Z",
+        "category": "MARKET_FILTER",
+        "message": "Error during market filter test",
+        "data": {
+          "error": "page.waitForTimeout is not a function"
+        }
+      }
+    ],
+    "rootCause": null,
+    "recommendations": []
+  },
+  "statisticsBoxes": {
+    "issue": "Statistics boxes stop working when sorting",
+    "tests": [],
+    "findings": [
+      {
+        "timestamp": "2025-12-04T10:34:49.226Z",
+        "category": "STATISTICS_BOXES",
+        "message": "Error during statistics boxes test",
+        "data": {
+          "error": "page.waitForTimeout is not a function"
+        }
+      }
+    ],
+    "rootCause": null,
+    "recommendations": []
+  },
+  "recentOptimizations": {
+    "analysis": [
+      {
+        "timestamp": "2025-12-04T10:34:50.733Z",
+        "category": "OPTIMIZATIONS",
+        "message": "Error during optimization analysis",
+        "data": {
+          "error": "page.waitForTimeout is not a function"
+        }
+      }
+    ],
+    "potentialImpacts": []
+  }
+}

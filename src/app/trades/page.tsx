@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef, memo } from 'react';
 import { formatCurrency } from '@/lib/utils';
 import { supabase } from '@/supabase/client';
 import EmotionalStateInput from '@/components/ui/EmotionalStateInput';
@@ -9,7 +9,7 @@ import { ChevronDown, ChevronUp, TrendingUp, Calendar, DollarSign, Target, Timer
 import { validateUUID } from '@/lib/uuid-validation';
 import { fetchTradesPaginated, fetchTradesStatistics, getAvailableSymbols, getAvailableStrategies } from '@/lib/optimized-queries';
 import { PaginationOptions, PaginatedResult } from '@/lib/pagination';
-import { memoizedTradeProcessing, createDebouncedFunction } from '@/lib/memoization';
+import { memoizedTradeProcessing, createFilterDebouncedFunction, createStatsDebouncedFunction } from '@/lib/memoization';
 import EnhancedSortControls, { SortIndicator } from '@/components/ui/EnhancedSortControls';
 import {
   TradeFilterOptions,
@@ -121,7 +121,8 @@ const calculateTradeDuration = (() => {
   };
 })();
 
-function TradesPageContent() {
+// Memoize the main content component to prevent unnecessary re-renders
+const TradesPageContent = memo(function TradesPageContent() {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -161,7 +162,7 @@ function TradesPageContent() {
     losingTrades: number;
   } | null>(null);
 
-  // Fetch statistics for the trades page
+  // Optimized fetch statistics function
   const fetchStatistics = useCallback(async () => {
     if (!user) {
       console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called - no user, skipping');
@@ -171,8 +172,15 @@ function TradesPageContent() {
     try {
       console.log('🔄 [TRADES_PAGE_DEBUG] fetchStatistics called for user:', user.id);
       
-      // Use the current filters from refs to avoid circular dependencies
+      // Use the current filters and sort config from refs to avoid circular dependencies
       const currentFilters = filtersRef.current;
+      const currentSortConfig = sortConfigRef.current;
+      
+      console.log('🔄 [STATISTICS_DEBUG] Fetching statistics with current values:', {
+        filters: currentFilters,
+        sortConfig: currentSortConfig,
+        timestamp: new Date().toISOString()
+      });
       
       // Call fetchTradesStatistics with the user ID and current filters
       const stats = await fetchTradesStatistics(user.id, {
@@ -185,22 +193,42 @@ function TradesPageContent() {
         emotionalStates: currentFilters.emotionalStates
       });
       
-      console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetched:', stats);
+      console.log('🔄 [STATISTICS_DEBUG] Statistics fetched successfully:', {
+        stats,
+        sortConfigUsed: currentSortConfig,
+        timestamp: new Date().toISOString()
+      });
       
       // Set the statistics state with the returned data
       setStatistics(stats);
     } catch (error) {
-      console.error('🔄 [TRADES_PAGE_DEBUG] Error fetching statistics:', error);
+      console.error('🔄 [STATISTICS_DEBUG] Error fetching statistics:', error);
       // Don't set error state to avoid disrupting the UI, just log the error
     }
   }, [user?.id]); // Only depend on user ID to avoid infinite loops
 
-  // Debounced fetch function to prevent excessive API calls
+  // Debounced statistics fetch with optimized delay
+  const debouncedFetchStatistics = useMemo(() => {
+    return createStatsDebouncedFunction(fetchStatistics);
+  }, [fetchStatistics]);
+
+  // Optimized debounced fetch function with improved performance
   const debouncedFetchTrades = useMemo(() => {
-    return createDebouncedFunction(async (page: number, filters: TradeFilterOptions, sort: SortConfig) => {
+    return createFilterDebouncedFunction(async (page: number, filters: TradeFilterOptions, sort: SortConfig) => {
       if (!user) return;
       
       try {
+        console.log('🔄 [MARKET_FILTER_DEBUG] Optimized debounced fetch triggered with:', {
+          page,
+          filters: {
+            ...filters,
+            market: filters.market || 'ALL_MARKETS'
+          },
+          sort,
+          userId: user.id,
+          timestamp: new Date().toISOString()
+        });
+        
         setLoading(true);
         const paginationOptions: PaginationOptions = {
           page,
@@ -210,17 +238,43 @@ function TradesPageContent() {
           ...filters
         };
 
+        console.log('🔄 [MARKET_FILTER_DEBUG] Fetching trades with pagination options:', {
+          ...paginationOptions,
+          marketFilter: paginationOptions.market || 'NO_FILTER',
+          timestamp: new Date().toISOString()
+        });
+        
         const result = await fetchTradesPaginated(user.id, paginationOptions);
+        
+        console.log('🔄 [MARKET_FILTER_DEBUG] Fetch completed, result:', {
+          hasData: !!result,
+          dataLength: result?.data?.length,
+          totalCount: result?.totalCount,
+          marketFilterApplied: filters.market || 'NONE',
+          timestamp: new Date().toISOString()
+        });
+        
+        // Log the market values of returned trades for verification
+        if (result?.data && result.data.length > 0) {
+          const marketValues = result.data.map(trade => trade.market || 'NULL').filter((val, idx, arr) => arr.indexOf(val) === idx);
+          console.log('🔄 [MARKET_FILTER_DEBUG] Market values in returned trades:', {
+            uniqueMarkets: marketValues,
+            tradeCount: result.data.length,
+            expectedMarket: filters.market || 'ANY',
+            timestamp: new Date().toISOString()
+          });
+        }
+        
         setPagination(result);
         setTrades(result.data);
       } catch (err) {
         setError('Error fetching trades');
-        console.error('Error fetching trades:', err);
+        console.error('🔄 [MARKET_FILTER_DEBUG] Error fetching trades:', err);
       } finally {
         setLoading(false);
       }
-    }, 300);
-  }, [user?.id, pageSize]); // Remove memoizedFilters and memoizedSortConfig to prevent circular dependency
+    });
+  }, [user?.id, pageSize]); // Only depend on user ID and pageSize to prevent recreation on every filter change
 
   // Modal cleanup function with navigation safety improvements
   const cleanupModalOverlays = useCallback(() => {
@@ -362,126 +416,125 @@ function TradesPageContent() {
     }
   }, [user]);
 
-  // Fetch trades when page, filters, or sort change - using refs to prevent infinite loop
+  // Optimized combined effect for trades fetching
   useEffect(() => {
-    console.log('🔄 [TRADES_PAGE_DEBUG] Trades fetching useEffect triggered:', {
+    console.log('🔄 [MARKET_FILTER_DEBUG] Data fetching effect triggered:', {
       hasUser: !!user,
       userId: user?.id,
       currentPage,
       pageSize,
       sortConfig: sortConfigRef.current,
-      filters: filtersRef.current
+      filters: {
+        ...filtersRef.current,
+        market: filtersRef.current.market || 'NO_FILTER'
+      },
+      timestamp: new Date().toISOString()
     });
     
     if (!user) return;
     
-    // Create a simple debounced function inside useEffect to avoid circular dependencies
-    const timeoutId = setTimeout(async () => {
-      try {
-        console.log('🔄 [TRADES_PAGE_DEBUG] Starting trades fetch...');
-        setLoading(true);
-        const paginationOptions: PaginationOptions = {
-          page: currentPage,
-          limit: pageSize,
-          sortBy: sortConfigRef.current.field,
-          sortOrder: sortConfigRef.current.direction,
-          ...filtersRef.current
-        };
+    // Use the debounced fetch function to prevent excessive API calls
+    debouncedFetchTrades(currentPage, filtersRef.current, sortConfigRef.current);
+  }, [currentPage, pageSize, user?.id, filters, sortConfig, debouncedFetchTrades]);
 
-        console.log('🔄 [TRADES_PAGE_DEBUG] Fetching trades with options:', paginationOptions);
-        const result = await fetchTradesPaginated(user.id, paginationOptions);
-        console.log('🔄 [TRADES_PAGE_DEBUG] Trades fetch result:', {
-          hasResult: !!result,
-          totalCount: result?.totalCount,
-          dataLength: result?.data?.length,
-          currentPage: result?.currentPage,
-          totalPages: result?.totalPages
-        });
-        
-        setPagination(result);
-        setTrades(result.data);
-        
-        console.log('🔄 [TRADES_PAGE_DEBUG] State updated:', {
-          paginationSet: !!result,
-          tradesSet: result?.data?.length || 0
-        });
-      } catch (err) {
-        setError('Error fetching trades');
-        console.error('🔄 [TRADES_PAGE_DEBUG] Error fetching trades:', err);
-      } finally {
-        setLoading(false);
-      }
-    }, 300);
-    
-    return () => clearTimeout(timeoutId);
-  }, [currentPage, pageSize, user?.id]); // Only depend on stable values
-
-  // Fetch statistics when user or filters change
+  // Separate effect for statistics fetching with proper synchronization
   useEffect(() => {
-    console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetching useEffect triggered:', {
+    console.log('🔄 [STATISTICS_DEBUG] Statistics effect triggered:', {
       hasUser: !!user,
-      userId: user?.id
+      userId: user?.id,
+      sortConfig: sortConfigRef.current,
+      filters: {
+        ...filtersRef.current,
+        market: filtersRef.current.market || 'NO_FILTER'
+      },
+      timestamp: new Date().toISOString()
     });
     
-    if (user) {
-      fetchStatistics();
-    }
-  }, [user?.id, fetchStatistics]); // Depend on user ID and fetchStatistics function
+    if (!user) return;
+    
+    // Use debounced statistics fetch for better performance
+    debouncedFetchStatistics();
+  }, [user?.id, filters, sortConfig, debouncedFetchStatistics]);
 
-  // Save filters when they change - separate from statistics fetching
+  // Dedicated effect to handle sortConfig changes for statistics
+  useEffect(() => {
+    console.log('🔄 [STATISTICS_DEBUG] SortConfig change detected:', {
+      sortConfig: sortConfigRef.current,
+      timestamp: new Date().toISOString()
+    });
+    
+    if (!user) return;
+    
+    // Force statistics recalculation when sortConfig changes
+    // This ensures statistics boxes update correctly when sorting changes
+    const timeoutId = setTimeout(() => {
+      console.log('🔄 [STATISTICS_DEBUG] Triggering statistics update due to sortConfig change:', {
+        sortConfig: sortConfigRef.current,
+        timestamp: new Date().toISOString()
+      });
+      fetchStatistics();
+    }, 100); // Small delay to ensure refs are updated
+    
+    return () => clearTimeout(timeoutId);
+  }, [sortConfig, user?.id, fetchStatistics]);
+
+  // Save filters when they change - separate from data fetching
   useEffect(() => {
     if (user) {
       saveTradeFilters(filtersRef.current);
     }
   }, [user?.id]); // Remove filters dependency to prevent infinite loop
-  
-  // Fetch statistics when filters change
-  useEffect(() => {
-    if (user) {
-      // Debounce the statistics fetching to avoid excessive API calls
-      const timeoutId = setTimeout(() => {
-        console.log('🔄 [TRADES_PAGE_DEBUG] Statistics fetching triggered by filter change');
-        fetchStatistics();
-      }, 300);
-      
-      return () => clearTimeout(timeoutId);
-    }
-  }, [filters, user?.id, fetchStatistics]); // Depend on filters, user ID, and fetchStatistics function
 
-  // Sync filters across tabs - using refs to prevent infinite loop
+  // Sync filters across tabs - optimized with memory management
   useEffect(() => {
-    return useFilterSync((state: any) => {
+    const unsubscribe = useFilterSync((state: any) => {
       if (state && user) {
         setFilters(state.trades);
       }
     });
-  }, []); // Remove all dependencies to prevent infinite loop
+    
+    return unsubscribe; // Cleanup subscription
+  }, [user]); // Add user dependency for proper cleanup
 
-  // Add cleanup effect that runs when component unmounts
+  // Optimized cleanup effect with memory management
   useEffect(() => {
+    // Performance monitoring
+    const startTime = performance.now();
+    
     return () => {
+      const endTime = performance.now();
+      console.log('🧹 [MEMORY_CLEANUP] TradesPage cleanup took:', `${(endTime - startTime).toFixed(2)}ms`);
+      
       // Only run cleanup if we're actually on the Trades page
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
         cleanupModalOverlays();
         
-        // Additional cleanup for any remaining overlays
+        // Optimized overlay cleanup with batch DOM operations
         const remainingOverlays = document.querySelectorAll('.fixed.inset-0, .modal-backdrop, [role="dialog"]');
-        remainingOverlays.forEach(overlay => {
-          const element = overlay as HTMLElement;
-          if (element.parentNode) {
-            element.parentNode.removeChild(element);
-          }
-        });
+        if (remainingOverlays.length > 0) {
+          // Use DocumentFragment for better performance
+          const fragment = document.createDocumentFragment();
+          remainingOverlays.forEach(overlay => {
+            if (overlay.parentNode) {
+              fragment.appendChild(overlay);
+            }
+          });
+          // Clear the fragment (removes all elements)
+          fragment.textContent = '';
+        }
       }
     };
   }, [cleanupModalOverlays]);
 
-  // Add page visibility change handler
+  // Optimized page visibility handler with debouncing and memory management
   useEffect(() => {
     let cleanupTimeout: NodeJS.Timeout;
+    let visibilityChangeCount = 0;
     
     const handleVisibilityChange = () => {
+      visibilityChangeCount++;
+      
       // Only run cleanup if we're actually on the Trades page
       const currentPath = window.location?.pathname || '';
       if (currentPath.includes('/trades')) {
@@ -489,6 +542,7 @@ function TradesPageContent() {
           // Debounce cleanup to prevent excessive calls
           clearTimeout(cleanupTimeout);
           cleanupTimeout = setTimeout(() => {
+            console.log('🧹 [MEMORY_CLEANUP] Visibility change cleanup, count:', visibilityChangeCount);
             cleanupModalOverlays();
           }, 100);
         }
@@ -504,18 +558,26 @@ function TradesPageContent() {
     };
 
     // Add event listeners for additional cleanup triggers
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
+    window.addEventListener('beforeunload', handleBeforeUnload, { passive: true });
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('beforeunload', handleBeforeUnload);
       clearTimeout(cleanupTimeout);
+      console.log('🧹 [MEMORY_CLEANUP] Visibility handlers cleaned up');
     };
   }, [cleanupModalOverlays]);
 
-  const toggleTradeExpansion = (tradeId: string) => {
+  // Optimized trade expansion with memory management
+  const toggleTradeExpansion = useCallback((tradeId: string) => {
     setExpandedTrades(prev => {
+      // Limit expanded trades to prevent memory issues with large datasets
+      if (prev.size >= 10 && !prev.has(tradeId)) {
+        console.log('🧹 [MEMORY_MANAGEMENT] Limiting expanded trades to 10 for performance');
+        return prev; // Don't expand if we already have 10 expanded
+      }
+      
       const newSet = new Set(prev);
       if (newSet.has(tradeId)) {
         newSet.delete(tradeId);
@@ -524,7 +586,7 @@ function TradesPageContent() {
       }
       return newSet;
     });
-  };
+  }, []);
 
   const handleEditTrade = (trade: Trade) => {
     setEditingTrade(trade);
@@ -643,17 +705,56 @@ function TradesPageContent() {
             </div>
             <div>
               <label className="block label-text mb-2">Market</label>
-              <select
-                value={filters.market}
-                onChange={(e) => setFilters(prev => ({ ...prev, market: e.target.value as TradeFilterOptions['market'] }))}
-                className="input-field"
-              >
-                <option value="">All Markets</option>
-                <option value="stock">Stocks</option>
-                <option value="crypto">Crypto</option>
-                <option value="forex">Forex</option>
-                <option value="futures">Futures</option>
-              </select>
+              <div className="relative">
+                <select
+                  value={filters.market}
+                  onChange={(e) => {
+                    const newMarketValue = e.target.value as TradeFilterOptions['market'];
+                    console.log('🔄 [MARKET_FILTER_DEBUG] Market filter changed:', {
+                      oldValue: filters.market,
+                      newValue: newMarketValue,
+                      timestamp: new Date().toISOString()
+                    });
+                    
+                    // Set loading state immediately for visual feedback
+                    setLoading(true);
+                    
+                    // Update filters and reset to first page
+                    setFilters(prev => ({
+                      ...prev,
+                      market: newMarketValue
+                    }));
+                    setCurrentPage(1);
+                    
+                    // Clear any cached results to ensure fresh data
+                    setPagination(null);
+                    setTrades([]);
+                  }}
+                  className={`input-field pr-8 transition-all duration-200 ${
+                    filters.market ? 'border-dusty-gold bg-opacity-5' : ''
+                  }`}
+                  style={{
+                    backgroundColor: filters.market ? 'rgba(184, 155, 94, 0.05)' : 'transparent',
+                    borderColor: filters.market ? 'var(--dusty-gold)' : 'var(--border-primary)'
+                  }}
+                >
+                  <option value="">All Markets</option>
+                  <option value="stock">Stocks</option>
+                  <option value="crypto">Crypto</option>
+                  <option value="forex">Forex</option>
+                  <option value="futures">Futures</option>
+                </select>
+                {filters.market && (
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--dusty-gold)' }}></div>
+                  </div>
+                )}
+              </div>
+              {filters.market && (
+                <div className="mt-1 text-xs" style={{ color: 'var(--dusty-gold)' }}>
+                  Filtering by: {filters.market.charAt(0).toUpperCase() + filters.market.slice(1)}
+                </div>
+              )}
             </div>
             <div>
               <label className="block label-text mb-2">From Date</label>
@@ -674,13 +775,31 @@ function TradesPageContent() {
               />
             </div>
           </div>
-          <div className="flex gap-button-group">
+          <div className="flex gap-button-group items-center">
             <button
-              onClick={() => setFilters({ symbol: '', market: '', dateFrom: '', dateTo: '' })}
+              onClick={() => {
+                console.log('🔄 [MARKET_FILTER_DEBUG] Clear filters clicked, resetting all filters');
+                setFilters({ symbol: '', market: '', dateFrom: '', dateTo: '' });
+                setCurrentPage(1);
+                setPagination(null);
+                setTrades([]);
+                setLoading(true);
+              }}
               className="button-secondary"
             >
               Clear Filters
             </button>
+            {loading && (
+              <div className="flex items-center gap-2 text-sm" style={{ color: 'var(--dusty-gold)' }}>
+                <div className="w-4 h-4 border-2 border-dusty-gold border-t-transparent rounded-full animate-spin"></div>
+                Applying filters...
+              </div>
+            )}
+            {!loading && filters.market && (
+              <div className="text-sm" style={{ color: 'var(--dusty-gold)' }}>
+                ✓ Market filter applied
+              </div>
+            )}
           </div>
         </div>
 
@@ -693,7 +812,14 @@ function TradesPageContent() {
                   <div className="w-8 h-8 rounded-full bg-opacity-20 bg-dusty-gold flex items-center justify-center">
                     <TrendingUp className="w-4 h-4" style={{ color: 'var(--dusty-gold)' }} />
                   </div>
-                  <h3 className="h3-metric-label">Total Trades</h3>
+                  <div>
+                    <h3 className="h3-metric-label">Total Trades</h3>
+                    {filters.market && (
+                      <div className="text-xs" style={{ color: 'var(--dusty-gold)' }}>
+                        Filtered: {filters.market.charAt(0).toUpperCase() + filters.market.slice(1)}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
               <p className="metric-value">{statistics?.totalTrades || pagination?.totalCount || 0}</p>
@@ -1272,7 +1398,7 @@ function TradesPageContent() {
       </div>
     </div>
   );
-}
+});
 
 // Edit Trade Form Component
 interface EditTradeFormProps {
