@@ -1,0 +1,218 @@
+{
+  "timestamp": "2025-12-05T12:46:54.017Z",
+  "testSuite": "Log Trade Page Corrected Test",
+  "version": "1.0.0",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "url": "http://localhost:3000/log-trade"
+  },
+  "results": {
+    "pageLoading": {
+      "navigation": {
+        "status": "pass",
+        "message": "Successfully navigated to log trade page"
+      },
+      "Page title": {
+        "status": "fail",
+        "message": "Test failed"
+      },
+      "Main heading": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Form sections render": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "TorchCard component": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Text reveal animations": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Form inputs present": {
+        "status": "pass",
+        "message": "Test passed"
+      }
+    },
+    "interactiveElements": {
+      "market_stock": {
+        "status": "fail",
+        "message": "Market type stock toggle: FAILED"
+      },
+      "market_crypto": {
+        "status": "fail",
+        "message": "Market type crypto toggle: FAILED"
+      },
+      "market_forex": {
+        "status": "fail",
+        "message": "Market type forex toggle: FAILED"
+      },
+      "market_futures": {
+        "status": "fail",
+        "message": "Market type futures toggle: FAILED"
+      },
+      "side_Buy": {
+        "status": "pass",
+        "message": "Side Buy: WORKING"
+      },
+      "side_Sell": {
+        "status": "pass",
+        "message": "Side Sell: WORKING"
+      },
+      "strategy_dropdown": {
+        "status": "error",
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"None\"), button:has-text(\"Select Strategy\")' is not a valid selector."
+      },
+      "emotion_dropdown": {
+        "status": "error",
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Neutral\")' is not a valid selector."
+      }
+    },
+    "animations": {
+      "torchcard_spotlight": {
+        "status": "pass",
+        "message": "TorchCard spotlight: WORKING"
+      },
+      "text_reveal": {
+        "status": "pass",
+        "message": "Text reveal animations: 1/1 working"
+      },
+      "border_beam": {
+        "status": "fail",
+        "message": "Border beam: FAILED"
+      }
+    },
+    "formFunctionality": {
+      "input_symbol": {
+        "status": "pass",
+        "message": "Input symbol: WORKING"
+      },
+      "input_quantity": {
+        "status": "pass",
+        "message": "Input quantity: WORKING"
+      },
+      "input_date": {
+        "status": "fail",
+        "message": "Input date: FAILED"
+      },
+      "input_entry_time": {
+        "status": "pass",
+        "message": "Input entry_time: WORKING"
+      },
+      "input_stop_loss": {
+        "status": "error",
+        "message": "Waiting for selector `input[placeholder*=\"Stop Loss\"]` failed"
+      },
+      "input_take_profit": {
+        "status": "error",
+        "message": "Waiting for selector `input[placeholder*=\"Take Profit\"]` failed"
+      },
+      "input_pnl": {
+        "status": "pass",
+        "message": "Input pnl: WORKING"
+      },
+      "validation": {
+        "status": "fail",
+        "message": "Form validation: FAILED"
+      },
+      "save_functionality": {
+        "status": "fail",
+        "message": "Save functionality: NO LOADING STATE"
+      }
+    },
+    "responsiveDesign": {
+      "mobile": {
+        "status": "fail",
+        "message": "Mobile (375x667): NOT USABLE"
+      },
+      "tablet": {
+        "status": "fail",
+        "message": "Tablet (768x1024): NOT USABLE"
+      },
+      "desktop": {
+        "status": "fail",
+        "message": "Desktop (1920x1080): NOT USABLE"
+      }
+    },
+    "errorHandling": {},
+    "integration": {
+      "supabase": {
+        "status": "fail",
+        "message": "Supabase integration: NOT DETECTED"
+      },
+      "authentication": {
+        "status": "error",
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Logout\"), button:has-text(\"Sign Out\")' is not a valid selector."
+      },
+      "data_persistence": {
+        "status": "fail",
+        "message": "Data persistence: FAILED"
+      }
+    },
+    "summary": {
+      "totalTests": 33,
+      "passedTests": 13,
+      "failedTests": 15,
+      "criticalIssues": [
+        "Page title failed"
+      ],
+      "warnings": [
+        "Border beam animation may not be properly implemented",
+        "Form validation may not be working properly",
+        "Save button may not show loading state",
+        "Success toast not detected (may require valid setup)",
+        "Supabase integration may not be properly configured"
+      ]
+    }
+  },
+  "screenshots": [
+    {
+      "name": "page-loaded",
+      "filename": "log-trade-test-page-loaded-2025-12-05T12-46-29-924Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-page-loaded-2025-12-05T12-46-29-924Z.png",
+      "timestamp": "2025-12-05T12:46:30.385Z"
+    },
+    {
+      "name": "responsive-mobile",
+      "filename": "log-trade-test-responsive-mobile-2025-12-05T12-46-50-651Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-mobile-2025-12-05T12-46-50-651Z.png",
+      "timestamp": "2025-12-05T12:46:50.744Z"
+    },
+    {
+      "name": "responsive-tablet",
+      "filename": "log-trade-test-responsive-tablet-2025-12-05T12-46-51-764Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-tablet-2025-12-05T12-46-51-764Z.png",
+      "timestamp": "2025-12-05T12:46:51.891Z"
+    },
+    {
+      "name": "responsive-desktop",
+      "filename": "log-trade-test-responsive-desktop-2025-12-05T12-46-52-925Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-desktop-2025-12-05T12-46-52-925Z.png",
+      "timestamp": "2025-12-05T12:46:53.706Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 33,
+    "passedTests": 13,
+    "failedTests": 15,
+    "criticalIssues": [
+      "Page title failed"
+    ],
+    "warnings": [
+      "Border beam animation may not be properly implemented",
+      "Form validation may not be working properly",
+      "Save button may not show loading state",
+      "Success toast not detected (may require valid setup)",
+      "Supabase integration may not be properly configured"
+    ],
+    "successRate": "39.39%",
+    "status": "FAILED"
+  }
+}

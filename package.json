@@ -23,7 +23,10 @@
     "test:all": "npm run test:unit && npm run test:integration && npm run test:e2e",
     "test:ci": "jest --coverage --watchAll=false && playwright test",
     "playwright:install": "playwright install",
-    "playwright:install-deps": "playwright install-deps"
+    "playwright:install-deps": "playwright install-deps",
+    "test:duration": "node duration-calculation-test.js",
+    "test:duration:report": "node generate-duration-test-report.js",
+    "test:duration:full": "npm run test:duration && npm run test:duration:report"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",

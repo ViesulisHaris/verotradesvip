@@ -1,0 +1,190 @@
+{
+  "timestamp": "2025-12-05T12:30:46.278Z",
+  "testSuite": "Log Trade Page Simple Test",
+  "version": "1.0.0",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "url": "http://localhost:3000/log-trade"
+  },
+  "results": {
+    "pageLoading": {
+      "navigation": {
+        "status": "pass",
+        "message": "Successfully navigated to log trade page"
+      },
+      "Page title": {
+        "status": "fail",
+        "message": "Test failed"
+      },
+      "Main heading": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Form sections render": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "TorchCard component": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Text reveal animations": {
+        "status": "pass",
+        "message": "Test passed"
+      },
+      "Form inputs present": {
+        "status": "pass",
+        "message": "Test passed"
+      }
+    },
+    "interactiveElements": {
+      "market_stock": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"stock\")` failed"
+      },
+      "market_crypto": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"crypto\")` failed"
+      },
+      "market_forex": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"forex\")` failed"
+      },
+      "market_futures": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"futures\")` failed"
+      },
+      "side_Buy": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"Buy\")` failed"
+      },
+      "side_Sell": {
+        "status": "error",
+        "message": "Waiting for selector `button[type=\"button\"]:has-text(\"Sell\")` failed"
+      }
+    },
+    "animations": {
+      "torchcard_spotlight": {
+        "status": "pass",
+        "message": "TorchCard spotlight: WORKING"
+      },
+      "text_reveal": {
+        "status": "pass",
+        "message": "Text reveal animations: 1/1 working"
+      }
+    },
+    "formFunctionality": {
+      "input_symbol": {
+        "status": "pass",
+        "message": "Input symbol: WORKING"
+      },
+      "input_quantity": {
+        "status": "pass",
+        "message": "Input quantity: WORKING"
+      },
+      "input_date": {
+        "status": "fail",
+        "message": "Input date: FAILED"
+      },
+      "input_entry_time": {
+        "status": "pass",
+        "message": "Input entry_time: WORKING"
+      },
+      "input_stop_loss": {
+        "status": "error",
+        "message": "Waiting for selector `input[placeholder*=\"Stop Loss\"]` failed"
+      },
+      "input_take_profit": {
+        "status": "error",
+        "message": "Waiting for selector `input[placeholder*=\"Take Profit\"]` failed"
+      },
+      "input_pnl": {
+        "status": "error",
+        "message": "Waiting for selector `input[placeholder*=\"PnL\"]` failed"
+      },
+      "save_functionality": {
+        "status": "error",
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"stock\")' is not a valid selector."
+      }
+    },
+    "responsiveDesign": {
+      "mobile": {
+        "status": "fail",
+        "message": "Mobile (375x667): NOT USABLE"
+      },
+      "tablet": {
+        "status": "fail",
+        "message": "Tablet (768x1024): NOT USABLE"
+      },
+      "desktop": {
+        "status": "fail",
+        "message": "Desktop (1920x1080): NOT USABLE"
+      }
+    },
+    "errorHandling": {},
+    "integration": {
+      "supabase": {
+        "status": "fail",
+        "message": "Supabase integration: NOT DETECTED"
+      },
+      "authentication": {
+        "status": "error",
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Logout\"), button:has-text(\"Sign Out\")' is not a valid selector."
+      }
+    },
+    "summary": {
+      "totalTests": 27,
+      "passedTests": 10,
+      "failedTests": 16,
+      "criticalIssues": [
+        "Page title failed"
+      ],
+      "warnings": [
+        "Supabase integration may not be properly configured"
+      ]
+    }
+  },
+  "screenshots": [
+    {
+      "name": "page-loaded",
+      "filename": "log-trade-test-page-loaded-2025-12-05T12-29-53-253Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-page-loaded-2025-12-05T12-29-53-253Z.png",
+      "timestamp": "2025-12-05T12:29:53.829Z"
+    },
+    {
+      "name": "responsive-mobile",
+      "filename": "log-trade-test-responsive-mobile-2025-12-05T12-30-40-999Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-mobile-2025-12-05T12-30-40-999Z.png",
+      "timestamp": "2025-12-05T12:30:41.065Z"
+    },
+    {
+      "name": "responsive-tablet",
+      "filename": "log-trade-test-responsive-tablet-2025-12-05T12-30-42-084Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-tablet-2025-12-05T12-30-42-084Z.png",
+      "timestamp": "2025-12-05T12:30:42.881Z"
+    },
+    {
+      "name": "responsive-desktop",
+      "filename": "log-trade-test-responsive-desktop-2025-12-05T12-30-43-900Z.png",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\log-trade-test-responsive-desktop-2025-12-05T12-30-43-900Z.png",
+      "timestamp": "2025-12-05T12:30:46.274Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 27,
+    "passedTests": 10,
+    "failedTests": 16,
+    "criticalIssues": [
+      "Page title failed"
+    ],
+    "warnings": [
+      "Supabase integration may not be properly configured"
+    ],
+    "successRate": "37.04%",
+    "status": "FAILED"
+  }
+}

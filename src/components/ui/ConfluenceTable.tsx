@@ -227,7 +227,7 @@ const ConfluenceTable: React.FC<ConfluenceTableProps> = ({ data, isLoading = fal
                   <td className="py-3 px-4 text-primary font-medium">{trade.symbol}</td>
                   <td className="py-3 px-4 text-primary">{trade.strategy}</td>
                   <td className="py-3 px-4 text-primary">{trade.timeframe}</td>
-                  <td className="py-3 px-4 text-primary">${trade.entryPrice.toFixed(2)}</td>
+                  <td className="py-3 px-4 text-primary">${trade.entryPrice ? trade.entryPrice.toFixed(2) : '0.00'}</td>
                   <td className="py-3 px-4 text-primary">
                     {trade.exitPrice ? `$${trade.exitPrice.toFixed(2)}` : '-'}
                   </td>

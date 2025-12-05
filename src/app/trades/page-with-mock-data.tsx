@@ -552,7 +552,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                       <span className="material-symbols-outlined text-gold text-lg">pie_chart</span> Win Rate
                   </div>
                   <div className="text-3xl font-mono text-white font-medium">
-                    {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
+                    {statistics && statistics.winRate !== null ? `${statistics.winRate.toFixed(1)}%` : '0%'}
                   </div>
               </div>
           </div>
@@ -730,7 +730,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                             )}
                           </div>
                         </div>
-                        <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price.toFixed(2)}</div>
+                        <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</div>
                         <div className="col-span-2 text-right font-mono text-sm font-bold">{pnlFormatted}</div>
                         <div className="col-span-2 text-right text-sm text-gray-400">
                           {trade.quantity} <span className="text-xs text-gray-600">shares</span>
@@ -758,7 +758,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Entry Price</div>
-                              <div className="text-base font-mono text-white">${trade.entry_price.toFixed(2)}</div>
+                              <div className="text-base font-mono text-white">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</div>
                             </div>
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Exit Price</div>

@@ -423,7 +423,7 @@ export default function TestConfluenceComponents() {
                         </span>
                       </td>
                       <td className="py-2 px-3 text-verotrade-text-secondary">{trade.quantity}</td>
-                      <td className="py-2 px-3 text-verotrade-text-secondary">${trade.entry_price.toFixed(2)}</td>
+                      <td className="py-2 px-3 text-verotrade-text-secondary">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</td>
                       <td className="py-2 px-3 text-verotrade-text-secondary">{trade.exit_price ? `$${trade.exit_price.toFixed(2)}` : '-'}</td>
                       <td className={`py-2 px-3 font-medium ${
                         (trade.pnl || 0) >= 0 ? 'text-verotrade-gold-primary' : 'text-verotrade-error'
