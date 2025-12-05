@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "total": 17,
+    "passed": 2,
+    "failed": 15,
+    "successRate": "11.8"
+  },
+  "details": [
+    {
+      "test": "TorchCard component exists in DOM",
+      "passed": false,
+      "details": "Found no TorchCard elements",
+      "timestamp": "2025-12-05T11:33:37.537Z"
+    },
+    {
+      "test": "TorchCard has correct CSS classes",
+      "passed": false,
+      "details": "Elements have relative, overflow-hidden, and rounded-xl classes",
+      "timestamp": "2025-12-05T11:33:37.539Z"
+    },
+    {
+      "test": "Statistics Card 1 - Total Trades - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.grid > div:nth-child(1)",
+      "timestamp": "2025-12-05T11:33:37.560Z"
+    },
+    {
+      "test": "Statistics Card 2 - Total P&L - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.grid > div:nth-child(2)",
+      "timestamp": "2025-12-05T11:33:37.563Z"
+    },
+    {
+      "test": "Statistics Card 3 - Win Rate - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.grid > div:nth-child(3)",
+      "timestamp": "2025-12-05T11:33:37.565Z"
+    },
+    {
+      "test": "Statistics Card 4 - Top Emotion - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.grid > div:nth-child(4)",
+      "timestamp": "2025-12-05T11:33:37.567Z"
+    },
+    {
+      "test": "Filter Bar - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.space-y-4 > div:nth-child(1)",
+      "timestamp": "2025-12-05T11:33:37.570Z"
+    },
+    {
+      "test": "Sort Controls - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.space-y-4 > div:nth-child(2)",
+      "timestamp": "2025-12-05T11:33:37.572Z"
+    },
+    {
+      "test": "Table Controls (Page Size & Pagination) - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.scroll-item > div:nth-child(1)",
+      "timestamp": "2025-12-05T11:33:37.574Z"
+    },
+    {
+      "test": "Table Headers - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.scroll-item > div:nth-child(2)",
+      "timestamp": "2025-12-05T11:33:37.575Z"
+    },
+    {
+      "test": "Individual Trade Cards - Container Missing",
+      "passed": false,
+      "details": "Container not found with selector: div.space-y-3.mt-4 > div",
+      "timestamp": "2025-12-05T11:33:37.578Z"
+    },
+    {
+      "test": "No Trades Message - Not Applicable",
+      "passed": true,
+      "details": "Container not needed when trades exist",
+      "timestamp": "2025-12-05T11:33:37.580Z"
+    },
+    {
+      "test": "Torch Effect Visual - No TorchCard found",
+      "passed": false,
+      "details": "No TorchCard elements found to test visual effect",
+      "timestamp": "2025-12-05T11:33:37.582Z"
+    },
+    {
+      "test": "Mouse Tracking - No TorchCard found",
+      "passed": false,
+      "details": "No TorchCard elements found to test mouse tracking",
+      "timestamp": "2025-12-05T11:33:37.584Z"
+    },
+    {
+      "test": "Hover Behavior - No TorchCard found",
+      "passed": false,
+      "details": "No TorchCard elements found to test hover behavior",
+      "timestamp": "2025-12-05T11:33:37.586Z"
+    },
+    {
+      "test": "Console Errors - No TorchCard errors",
+      "passed": true,
+      "details": "No TorchCard-related errors or warnings found",
+      "timestamp": "2025-12-05T11:33:41.495Z"
+    },
+    {
+      "test": "Test Execution",
+      "passed": false,
+      "details": "Error during test execution: msg.type is not a function",
+      "timestamp": "2025-12-05T11:33:41.495Z"
+    }
+  ],
+  "timestamp": "2025-12-05T11:33:41.771Z"
+}

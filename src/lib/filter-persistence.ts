@@ -538,6 +538,9 @@ export function getFilterStats(filters: TradeFilterOptions | StrategyFilterOptio
     if (tradeFilters.strategyId) activeFilters++;
     if (tradeFilters.side) activeFilters++;
     if (tradeFilters.emotionalStates && tradeFilters.emotionalStates.length > 0) activeFilters++;
+    // Exclude default sort values
+    if (tradeFilters.sortBy && tradeFilters.sortBy !== 'trade_date') activeFilters++;
+    if (tradeFilters.sortOrder && tradeFilters.sortOrder !== 'desc') activeFilters++;
   } else {
     const strategyFilters = parsedFilters as StrategyFilterOptions;
     if (strategyFilters.search) activeFilters++;

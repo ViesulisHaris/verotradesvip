@@ -7,6 +7,8 @@ import { supabase } from '@/supabase/client';
 import EmotionalStateInput from '@/components/ui/EmotionalStateInput';
 import MarketBadge from '@/components/ui/MarketBadge';
 import { ChevronDown, ChevronUp, TrendingUp, Calendar, DollarSign, Target, Timer, Edit, Trash2, XCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import EditTradeModal from '@/components/trades/EditTradeModal';
+import DeleteTradeModal from '@/components/trades/DeleteTradeModal';
 import { validateUUID } from '@/lib/uuid-validation';
 import { fetchTradesPaginated, fetchTradesStatistics, getAvailableSymbols, getAvailableStrategies } from '@/lib/optimized-queries';
 import { PaginationOptions, PaginatedResult } from '@/lib/pagination';
@@ -35,6 +37,7 @@ import {
   createFilterDebouncedFunction as createOptimizedFilterDebouncedFunction,
   createSortDebouncedFunction
 } from '@/lib/performance-optimization';
+import TorchCard from '@/components/TorchCard';
 
 // Dynamic GSAP imports for proper Next.js SSR compatibility
 const GSAPAnimations = dynamic(() => import('@/components/ui/GSAPAnimations'), {
@@ -53,7 +56,7 @@ interface Trade {
   trade_date: string;
   entry_time?: string;
   exit_time?: string;
-  emotional_state?: string;
+  emotional_state?: string | string[];
   strategies?: {
     id: string;
     name: string;
@@ -129,37 +132,6 @@ const calculateTradeDuration = (() => {
   };
 })();
 
-// Optimized flashlight effect hook with throttling
-const useFlashlightEffect = () => {
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleMouseMove = performanceUtils.createThrottled((e: Event) => {
-      const cards = document.querySelectorAll('.flashlight-container, .flashlight-row');
-      
-      // Use requestAnimationFrame for smooth updates
-      requestAnimationFrame(() => {
-        for(const card of cards) {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-          (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-        }
-      });
-    }, 16); // ~60fps throttling
-
-    // Track event listener for cleanup
-    performanceUtils.trackEventListener(document, 'mousemove', handleMouseMove, 'flashlight-effect');
-    document.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-};
-
 // Optimized text reveal animation hook with memoization
 const useTextReveal = (text: string, delay: number = 0) => {
   const [revealedText, setRevealedText] = useState<React.ReactNode>('');
@@ -210,8 +182,8 @@ const TradesPageContent = memo(function TradesPageContent() {
   const [expandedTrades, setExpandedTrades] = useState<Set<string>>(new Set());
   const [editingTrade, setEditingTrade] = useState<Trade | null>(null);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const [deletingTradeId, setDeletingTradeId] = useState<string | null>(null);
+  const [deletingTrade, setDeletingTrade] = useState<Trade | null>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
   
   // Pagination state
   const [pagination, setPagination] = useState<PaginatedResult<Trade> | null>(null);
@@ -250,9 +222,9 @@ const TradesPageContent = memo(function TradesPageContent() {
   } | null>(null);
 
   // Initialize custom hooks
-  useFlashlightEffect();
   useGSAPAnimations();
   const titleRevealed = useTextReveal("Trade History", 0.5);
+  
 
   // Ensure scroll items are visible after component mounts
   useEffect(() => {
@@ -464,8 +436,6 @@ const TradesPageContent = memo(function TradesPageContent() {
     fetchTrades();
   }, [currentPage, pageSize, user?.id, filters, sortConfig]);
 
-
-
   // Combined cleanup effect with performance tracking
   useEffect(() => {
     const performCleanup = () => {
@@ -513,7 +483,7 @@ const TradesPageContent = memo(function TradesPageContent() {
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('beforeunload', handleBeforeUnload);
-      clearTimeout(cleanupTimeout);
+      clearTimeout(cleanupTimeout as unknown as NodeJS.Timeout);
     };
   }, [cleanupModalOverlays]);
 
@@ -540,17 +510,17 @@ const TradesPageContent = memo(function TradesPageContent() {
     setShowEditModal(true);
   };
 
-  const handleDeleteTrade = (tradeId: string) => {
-    setDeletingTradeId(tradeId);
-    setShowDeleteConfirm(true);
+  const handleDeleteTrade = (trade: Trade) => {
+    setDeletingTrade(trade);
   };
 
-  const confirmDelete = async () => {
-    if (!deletingTradeId || !user) return;
+  const confirmDelete = async (tradeId: string) => {
+    if (!user) return;
 
     try {
+      setIsDeleting(true);
       // Validate UUIDs before delete operation
-      const validatedTradeId = validateUUID(deletingTradeId, 'trade_id');
+      const validatedTradeId = validateUUID(tradeId, 'trade_id');
       const validatedUserId = validateUUID(user.id, 'user_id');
       
       const { error } = await supabase
@@ -563,17 +533,18 @@ const TradesPageContent = memo(function TradesPageContent() {
         setError(`Error deleting trade: ${error.message}`);
       } else {
         // Update the trades list to remove the deleted trade
-        setTrades(prev => prev.filter(trade => trade.id !== deletingTradeId));
+        setTrades(prev => prev.filter(trade => trade.id !== tradeId));
         
         // Trigger storage event to notify other pages (like confluence) to refresh
         localStorage.setItem('trade-deleted', Date.now().toString());
         
-        setShowDeleteConfirm(false);
-        setDeletingTradeId(null);
+        setDeletingTrade(null);
       }
     } catch (err) {
       setError('An unexpected error occurred while deleting the trade');
       console.error('Error deleting trade:', err);
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -584,6 +555,16 @@ const TradesPageContent = memo(function TradesPageContent() {
       // Validate UUIDs before update operation
       const validatedTradeId = validateUUID(editingTrade.id, 'trade_id');
       const validatedUserId = validateUUID(user.id, 'user_id');
+      
+      // Handle emotional_state conversion from array to string if needed
+      let emotionalStateValue: string | undefined;
+      if (updatedTrade.emotional_state) {
+        if (Array.isArray(updatedTrade.emotional_state)) {
+          emotionalStateValue = updatedTrade.emotional_state.join(', ');
+        } else {
+          emotionalStateValue = updatedTrade.emotional_state;
+        }
+      }
       
       // Use direct object assignment to avoid TypeScript issues with supabase
       const updateData = {
@@ -596,7 +577,7 @@ const TradesPageContent = memo(function TradesPageContent() {
         trade_date: updatedTrade.trade_date || '',
         entry_time: updatedTrade.entry_time,
         exit_time: updatedTrade.exit_time,
-        emotional_state: updatedTrade.emotional_state,
+        emotional_state: emotionalStateValue,
         notes: updatedTrade.notes || '',
         market: updatedTrade.market || '',
       };
@@ -627,55 +608,8 @@ const TradesPageContent = memo(function TradesPageContent() {
 
   return (
     <div className="min-h-screen flex flex-col antialiased">
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5 h-20 flex items-center transition-all duration-500">
-        <div className="max-w-[1800px] w-full mx-auto px-6 lg:px-12 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-               <span className="font-serif text-3xl text-gold italic font-bold">V</span>
-               <span className="font-serif text-3xl text-gold absolute left-3 top-0">T</span>
-            </div>
-            <span className="font-serif text-xl tracking-wide text-white group-hover:text-gold transition-colors duration-300">VeroTrade</span>
-          </div>
-
-          {/* Nav Links */}
-          <div className="hidden md:flex items-center gap-1">
-            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
-              <span className="material-symbols-outlined">dashboard</span>
-            </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gold bg-gold/10 border border-gold/20">
-              <span className="material-symbols-outlined">candlestick_chart</span>
-            </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
-              <span className="material-symbols-outlined">add</span>
-            </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
-              <span className="material-symbols-outlined">school</span>
-            </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all">
-              <span className="material-symbols-outlined">settings</span>
-            </button>
-          </div>
-
-          {/* Profile */}
-          <div className="flex items-center gap-4">
-             <button className="btn-beam px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase text-gray-300 group">
-                <div className="btn-beam-content rounded-full bg-background px-4">
-                  <span className="flex items-center gap-2">
-                       <span className="material-symbols-outlined text-sm">logout</span> Logout
-                  </span>
-                </div>
-             </button>
-             <div className="w-9 h-9 rounded bg-gradient-to-br from-gold to-gold-dim flex items-center justify-center text-black font-serif font-bold text-lg shadow-[0_0_15px_rgba(197,160,101,0.4)]">
-                {user?.email?.charAt(0).toUpperCase() || 'U'}
-             </div>
-          </div>
-        </div>
-      </nav>
-
       {/* Main Content */}
-      <main className="flex-grow pt-32 px-6 lg:px-12 max-w-[1800px] w-full mx-auto pb-20">
+      <main className="flex-grow pt-12 px-6 lg:px-12 max-w-[1800px] w-full mx-auto pb-20">
         
         {/* Header Section */}
         <header className="mb-12">
@@ -693,58 +627,83 @@ const TradesPageContent = memo(function TradesPageContent() {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {/* Stat Card 1 */}
-          <div className="flashlight-container rounded-2xl p-6 scroll-item">
-            <div className="flashlight-bg"></div>
-            <div className="flashlight-border"></div>
-            <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
-                Trades
-              </div>
-              <div className="text-3xl font-mono text-white font-medium">
-                {statistics?.totalTrades || pagination?.totalCount || 0}
-              </div>
+          <TorchCard className="scroll-item p-6">
+            <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+              Trades
             </div>
-          </div>
+            <div className="text-3xl font-mono text-white font-medium">
+              {statistics?.totalTrades || pagination?.totalCount || 0}
+            </div>
+          </TorchCard>
 
            {/* Stat Card 2 */}
-           <div className="flashlight-container rounded-2xl p-6 scroll-item">
-              <div className="flashlight-bg"></div>
-              <div className="flashlight-border"></div>
-              <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
-                      Total P&L
-                  </div>
-                  <div className="text-3xl font-mono text-white font-medium">
-                    {formatCurrency(statistics?.totalPnL || 0)}
-                  </div>
+           <TorchCard className="scroll-item p-6">
+              <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                  Total P&L
               </div>
-          </div>
+              <div className="text-3xl font-mono text-white font-medium">
+                {formatCurrency(statistics?.totalPnL || 0)}
+              </div>
+          </TorchCard>
 
            {/* Stat Card 3 */}
-           <div className="flashlight-container rounded-2xl p-6 scroll-item">
-              <div className="flashlight-bg"></div>
-              <div className="flashlight-border"></div>
-              <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
-                      Win Rate
-                  </div>
-                  <div className="text-3xl font-mono text-white font-medium">
-                    {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
-                  </div>
+           <TorchCard className="scroll-item p-6">
+              <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                  Win Rate
               </div>
-          </div>
+              <div className="text-3xl font-mono text-white font-medium">
+                {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
+              </div>
+          </TorchCard>
 
           {/* Stat Card 4 */}
-          <div className="flashlight-container rounded-2xl p-6 scroll-item">
-              <div className="flashlight-bg"></div>
-              <div className="flashlight-border"></div>
-              <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
-                      Avg Emotion
-                  </div>
-                  <div className="text-3xl font-serif italic text-gold-light">Neutral</div>
+          <TorchCard className="scroll-item p-6">
+              <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
+                  Top Emotion
               </div>
-          </div>
+              <div className="text-3xl font-serif italic text-torch-orange-light capitalize">
+                {(() => {
+                  // Calculate the most common emotion from trades data
+                  if (!trades || trades.length === 0) return 'Neutral';
+                  
+                  const emotionCounts: Record<string, number> = {};
+                  
+                  trades.forEach(trade => {
+                    if (trade.emotional_state) {
+                      // Handle comma-separated emotions
+                      const emotions = typeof trade.emotional_state === 'string'
+                        ? trade.emotional_state.split(',').map(e => e.trim())
+                        : trade.emotional_state;
+                      emotions.forEach(emotion => {
+                        if (emotion) {
+                          // Clean emotion name by removing brackets, parentheses, and extra formatting
+                          const cleanEmotion = emotion.replace(/[\[\](){}]/g, '').trim();
+                          if (cleanEmotion) {
+                            emotionCounts[cleanEmotion] = (emotionCounts[cleanEmotion] || 0) + 1;
+                          }
+                        }
+                      });
+                    }
+                  });
+                  
+                  // If no emotions found, return Neutral
+                  if (Object.keys(emotionCounts).length === 0) return 'Neutral';
+                  
+                  // Find the most common emotion
+                  let mostCommonEmotion = 'Neutral';
+                  let maxCount = 0;
+                  
+                  Object.entries(emotionCounts).forEach(([emotion, count]) => {
+                    if (count > maxCount) {
+                      maxCount = count;
+                      mostCommonEmotion = emotion;
+                    }
+                  });
+                  
+                  return mostCommonEmotion;
+                })()}
+              </div>
+          </TorchCard>
         </div>
 
         {/* Filters Section */}
@@ -752,80 +711,68 @@ const TradesPageContent = memo(function TradesPageContent() {
           <TradesFilterBar />
           
           {/* Sort Controls Section */}
-          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-            <h3 className="text-sm font-medium text-white mb-3 flex items-center gap-2">
-              <span className="material-symbols-outlined text-gold">sort</span>
-              Sort Options
-            </h3>
+          <TorchCard className="mb-4 p-4">
             <TradesSortControls />
-          </div>
+          </TorchCard>
         </div>
 
         {/* Trades Table Area */}
         <div className="scroll-item">
           {/* Controls */}
-          <div className="flex flex-wrap justify-between items-center mb-6 px-1">
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500">Trades per page:</span>
-              <div className="relative w-20">
-                   <select
-                     value={pageSize}
-                     onChange={(e) => {
-                       setPageSize(Number(e.target.value));
-                       setCurrentPage(1); // Reset to first page when changing page size
-                     }}
-                     className="w-full bg-surface border border-white/10 rounded px-2 py-1 text-sm text-gray-300 focus:outline-none focus:border-gold"
-                   >
-                       <option value={10}>10</option>
-                       <option value={25}>25</option>
-                       <option value={50}>50</option>
-                       <option value={100}>100</option>
-                   </select>
+          <TorchCard className="mb-6 p-4">
+            <div className="flex flex-wrap justify-between items-center">
+              <div className="flex items-center gap-4">
+                <TorchCard className="p-2">
+                  <select
+                    value={pageSize}
+                    onChange={(e) => {
+                      setPageSize(Number(e.target.value));
+                      setCurrentPage(1); // Reset to first page when changing page size
+                    }}
+                    className="bg-surface border border-white/10 rounded px-2 py-1 text-sm text-gray-300 focus:outline-none focus:border-gold"
+                  >
+                      <option value={10}>10</option>
+                      <option value={25}>25</option>
+                      <option value={50}>50</option>
+                      <option value={100}>100</option>
+                  </select>
+                </TorchCard>
               </div>
-              
-              {/* Current sort indicator for mobile */}
-              <div className="lg:hidden flex items-center gap-2 px-3 py-1.5 bg-blue-600/10 border border-blue-500/20 rounded-lg">
-                <span className="text-xs text-blue-400">Sort:</span>
-                <span className="text-sm text-white truncate max-w-[120px]">{sortConfig.label}</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-gray-400">Page <span className="text-white font-mono">{currentPage}</span> of <span className="text-white font-mono">{pagination?.totalPages || 1}</span></span>
-              <div className="flex gap-2">
-                <button 
-                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                  disabled={currentPage === 1}
-                  className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button 
-                  onClick={() => setCurrentPage(prev => Math.min(pagination?.totalPages || 1, prev + 1))}
-                  disabled={currentPage === (pagination?.totalPages || 1)}
-                  className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+              <div className="flex items-center gap-4 text-sm">
+                <span className="text-gray-400">Page <span className="text-white font-mono">{currentPage}</span> of <span className="text-white font-mono">{pagination?.totalPages || 1}</span></span>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                    disabled={currentPage === 1}
+                    className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.min(pagination?.totalPages || 1, prev + 1))}
+                    disabled={currentPage === (pagination?.totalPages || 1)}
+                    className="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:border-gold hover:text-gold text-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </TorchCard>
 
           {/* Headers */}
-          <div className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-white/5 text-xs font-medium text-gray-500 uppercase tracking-widest">
-            <div className="col-span-2">Date / Time</div>
-            <div className="col-span-2">Symbol</div>
-            <div className="col-span-2 text-right">Entry Price</div>
-            <div className="col-span-2 text-right">P&L</div>
-            <div className="col-span-2 text-right">Quantity</div>
-            <div className="col-span-2 text-right flex items-center justify-end gap-2">
-              <span>Status</span>
-              {/* Sort indicator on desktop */}
-              <div className="hidden lg:flex items-center gap-1 px-2 py-1 bg-blue-600/10 border border-blue-500/20 rounded text-xs">
-                <span className="text-blue-400">Sort:</span>
-                <span className="text-white truncate max-w-[100px]">{sortConfig.label}</span>
+          <TorchCard className="px-6 py-4 mb-4">
+            <div className="grid grid-cols-12 gap-4 text-xs font-medium text-gray-500 uppercase tracking-widest">
+              <div className="col-span-2">Date / Time</div>
+              <div className="col-span-2">Symbol</div>
+              <div className="col-span-2 text-right">Entry Price</div>
+              <div className="col-span-2 text-right">P&L</div>
+              <div className="col-span-2 text-right">Quantity</div>
+              <div className="col-span-2 text-right flex items-center justify-end gap-2">
+                <span>Status</span>
               </div>
             </div>
-          </div>
+          </TorchCard>
 
           {/* Trade Rows Container */}
           <div className="space-y-3 mt-4 min-h-[200px] relative z-10">
@@ -834,57 +781,51 @@ const TradesPageContent = memo(function TradesPageContent() {
                 const pnlClass = isWin ? 'text-profit' : 'text-loss';
                 const pnlSign = isWin ? '+' : '';
                 const pnlFormatted = pnlSign + formatCurrency(Math.abs(trade.pnl || 0));
-                
+               
                 return (
-                  <div key={trade.id} className="flashlight-container rounded-lg overflow-hidden scroll-item mb-3 group">
-                    <div className="flashlight-bg"></div>
-                    <div className="flashlight-border"></div>
-                    
+                  <TorchCard key={trade.id} className="scroll-item mb-3 group relative">
                     {/* Main Row Content */}
                     <div className="relative z-10 px-6 py-4 cursor-pointer hover:bg-white/5 transition-colors" onClick={() => toggleTradeExpansion(trade.id)}>
-                      <div className="grid grid-cols-12 gap-4 items-center">
-                        <div className="col-span-2">
-                          <div className="text-sm text-white font-medium">{new Date(trade.trade_date).toLocaleDateString()}</div>
-                          <div className="text-xs text-gray-500 mt-1">{trade.entry_time || 'N/A'}</div>
-                        </div>
-                        <div className="col-span-2 flex items-center gap-3">
-                          <span className="w-8 h-8 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-xs font-bold text-gold font-serif">
-                            {trade.symbol.substring(0, 2).toUpperCase()}
-                          </span>
-                          <div>
-                            <div className="text-sm font-bold text-white tracking-wide">{trade.symbol}</div>
-                            {trade.market && (
-                              <span className="text-[10px] uppercase tracking-wider text-gray-500 border border-gray-800 rounded px-1.5 py-0.5">
-                                {trade.market}
-                              </span>
-                            )}
+                        <div className="grid grid-cols-12 gap-4 items-center">
+                          <div className="col-span-2">
+                            <div className="text-sm text-white font-medium">{new Date(trade.trade_date).toLocaleDateString()}</div>
+                            <div className="text-xs text-gray-500 mt-1">{trade.entry_time || 'N/A'}</div>
+                          </div>
+                          <div className="col-span-2 flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-full bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-xs font-bold text-gold font-serif">
+                              {trade.symbol.substring(0, 2).toUpperCase()}
+                            </span>
+                            <div>
+                              <div className="text-sm font-bold text-white tracking-wide">{trade.symbol}</div>
+                              {trade.market && (
+                                <span className="text-[10px] uppercase tracking-wider text-gray-500 border border-gray-800 rounded px-1.5 py-0.5">
+                                  {trade.market}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price.toFixed(2)}</div>
+                          <div className="col-span-2 text-right font-mono text-sm font-bold">{pnlFormatted}</div>
+                          <div className="col-span-2 text-right text-sm text-gray-400">
+                            {trade.quantity} <span className="text-xs text-gray-600">shares</span>
+                          </div>
+                          <div className="col-span-2 flex justify-end items-center gap-3">
+                               <div className={`w-2 h-2 rounded-full ${isWin ? 'bg-profit shadow-[0_0_8px_rgba(46,189,133,0.5)]' : 'bg-loss shadow-[0_0_8px_rgba(246,70,93,0.5)]'}`}></div>
+                               <span className="text-xs text-gray-500 italic cursor-pointer">
+                                 {expandedTrades.has(trade.id) ? 'Click to collapse' : 'Click to expand'}
+                               </span>
                           </div>
                         </div>
-                        <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price.toFixed(2)}</div>
-                        <div className="col-span-2 text-right font-mono text-sm font-bold">{pnlFormatted}</div>
-                        <div className="col-span-2 text-right text-sm text-gray-400">
-                          {trade.quantity} <span className="text-xs text-gray-600">shares</span>
-                        </div>
-                        <div className="col-span-2 flex justify-end items-center gap-3">
-                             <div className={`w-2 h-2 rounded-full ${isWin ? 'bg-profit shadow-[0_0_8px_rgba(46,189,133,0.5)]' : 'bg-loss shadow-[0_0_8px_rgba(246,70,93,0.5)]'}`}></div>
-                             <span className={`material-symbols-outlined text-gray-600 chevron-icon ${expandedTrades.has(trade.id) ? 'rotate' : ''}`}>
-                               expand_more
-                             </span>
-                        </div>
                       </div>
-                    </div>
 
-                    {/* Expanded Content */}
-                    <div className={`accordion-content bg-[#080808] border-t border-white/5 relative z-10 ${expandedTrades.has(trade.id) ? 'active' : ''}`}>
-                      <div className="p-8 grid grid-cols-12 gap-8">
-                         
-                        {/* Left Info */}
-                        <div className="col-span-12 md:col-span-8">
+                      {/* Expanded Content */}
+                      <div className={`accordion-content bg-[#080808] border-t border-white/5 relative z-10 ${expandedTrades.has(trade.id) ? 'active' : ''}`}>
+                        <div className="p-8">
                           <div className="flex items-center gap-4 mb-6">
                             <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest">Trade Details</h3>
                             <div className="h-px bg-white/10 flex-grow"></div>
                           </div>
-                          
+                            
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Entry Price</div>
@@ -906,7 +847,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                                 {calculateTradeDuration(trade.entry_time, trade.exit_time) || 'N/A'}
                               </div>
                             </div>
-                            
+                             
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Strategy</div>
                               {trade.strategies ? (
@@ -936,47 +877,38 @@ const TradesPageContent = memo(function TradesPageContent() {
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Actions</div>
                               <div className="flex gap-2">
-                                <button 
+                                <button
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     handleEditTrade(trade);
                                   }}
-                                  className="hover:text-gold transition-colors"
+                                  className="px-3 py-1.5 bg-[#1A1A1A]/80 hover:bg-[#2A2A2A]/80 border border-white/10 hover:border-torch-orange/40 rounded-lg transition-all flex items-center gap-1.5 text-xs text-gray-300 hover:text-torch-orange backdrop-blur-sm"
                                 >
-                                  <Edit className="w-4 h-4" />
+                                  <Edit className="w-3.5 h-3.5" />
+                                  <span>Edit</span>
                                 </button>
-                                <button 
+                                <button
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    handleDeleteTrade(trade.id);
+                                    handleDeleteTrade(trade);
                                   }}
-                                  className="hover:text-loss transition-colors"
+                                  className="px-3 py-1.5 bg-[#1A1A1A]/80 hover:bg-[#2A2A2A]/80 border border-white/10 hover:border-red-400/40 rounded-lg transition-all flex items-center gap-1.5 text-xs text-gray-300 hover:text-red-400 backdrop-blur-sm"
                                 >
-                                  <Trash2 className="w-4 h-4" />
+                                  <Trash2 className="w-3.5 h-3.5" />
+                                  <span>Delete</span>
                                 </button>
                               </div>
                             </div>
                           </div>
                         </div>
-
-                        {/* Right Decor/Chart Placeholder */}
-                        <div className="col-span-12 md:col-span-4 flex items-center justify-center bg-white/[0.02] rounded-lg border border-white/5 min-h-[150px] relative overflow-hidden group/chart">
-                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/5 opacity-0 group-hover/chart:opacity-100 transition-opacity"></div>
-                          <div className="text-center">
-                            <span className="material-symbols-outlined text-4xl text-gray-700 mb-2 group-hover/chart:text-gold transition-colors">show_chart</span>
-                            <p className="text-xs text-gray-600 uppercase tracking-widest">Price Action Replay</p>
-                          </div>
-                        </div>
-
                       </div>
-                    </div>
-                  </div>
+                    </TorchCard>
                 );
               })}
-            
+             
             {/* No trades message */}
             {!loading && trades.length === 0 && (
-              <div className="dashboard-card p-section text-center relative z-10">
+              <TorchCard className="p-section text-center relative z-10">
                   <TrendingUp className="w-16 h-16 mx-auto mb-component" style={{ color: 'var(--muted-gray)' }} />
                   <h3 className="h2-section mb-element">No trades yet</h3>
                   <p className="body-text mb-component">
@@ -990,287 +922,49 @@ const TradesPageContent = memo(function TradesPageContent() {
                   >
                     {user ? 'Log Your First Trade' : 'Log In'}
                   </button>
-                </div>
+                </TorchCard>
             )}
           </div>
         </div>
 
         {/* Edit Modal */}
-        {showEditModal && editingTrade && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
-            <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto border" style={{ borderColor: 'rgba(184, 155, 94, 0.3)' }}>
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="h2-section text-2xl">Edit Trade</h2>
-                <button
-                  onClick={() => {
-                    cleanupModalOverlays();
-                    setShowEditModal(false);
-                    setEditingTrade(null);
-                  }}
-                  className="p-2 rounded-lg transition-all"
-                  style={{ backgroundColor: 'transparent' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(79, 91, 74, 0.1)' }
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
-                  <XCircle className="w-5 h-5" style={{ color: 'var(--muted-gray)' }} />
-                </button>
-              </div>
-
-              <EditTradeForm
-                trade={editingTrade}
-                onSave={handleUpdateTrade}
-                onCancel={() => {
-                  cleanupModalOverlays();
-                  setShowEditModal(false);
-                  setEditingTrade(null);
-                }}
-              />
-            </div>
-          </div>
-        )}
+        <EditTradeModal
+          isOpen={showEditModal}
+          onClose={() => {
+            setShowEditModal(false);
+            setEditingTrade(null);
+          }}
+          trade={editingTrade ? {
+            ...editingTrade,
+            emotional_state: editingTrade.emotional_state
+              ? (typeof editingTrade.emotional_state === 'string'
+                  ? editingTrade.emotional_state.split(', ').filter(e => e.trim())
+                  : editingTrade.emotional_state)
+              : undefined
+          } : null}
+          onSave={handleUpdateTrade}
+        />
 
         {/* Delete Confirmation Dialog */}
-        {showDeleteConfirm && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 z-50">
-            <div className="dashboard-card p-6 sm:p-8 w-full max-w-full sm:max-w-md border" style={{ borderColor: 'rgba(167, 53, 45, 0.3)' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(167, 53, 45, 0.1)' }}>
-                  <Trash2 className="w-5 h-5" style={{ color: 'var(--rust-red)' }} />
-                </div>
-                <h2 className="h2-section text-xl">Delete Trade</h2>
-              </div>
-             
-              <p className="body-text mb-6">
-                Are you sure you want to delete this trade? This action cannot be undone.
-              </p>
-
-              <div className="flex gap-3">
-                <button
-                  onClick={() => {
-                    setShowDeleteConfirm(false);
-                    setDeletingTradeId(null);
-                  }}
-                  className="button-secondary flex-1"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={confirmDelete}
-                  className="flex-1 font-medium py-3 px-6 rounded-lg transition-all min-h-[44px] border"
-                  style={{ 
-                    backgroundColor: 'var(--rust-red)', 
-                    color: 'var(--warm-off-white)',
-                    borderColor: 'var(--rust-red)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(167, 53, 45, 0.8)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--rust-red)';
-                  }}
-                >
-                  Delete Trade
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        <DeleteTradeModal
+          isOpen={!!deletingTrade}
+          onClose={() => setDeletingTrade(null)}
+          trade={deletingTrade ? {
+            ...deletingTrade,
+            emotional_state: deletingTrade.emotional_state
+              ? (typeof deletingTrade.emotional_state === 'string'
+                  ? deletingTrade.emotional_state.split(', ').filter(e => e.trim())
+                  : deletingTrade.emotional_state)
+              : undefined
+          } : null}
+          onDelete={confirmDelete}
+          isLoading={isDeleting}
+        />
       </main>
     </div>
   );
 });
 
-// Edit Trade Form Component
-interface EditTradeFormProps {
-  trade: Trade;
-  onSave: (updatedTrade: Partial<Trade>) => void;
-  onCancel: () => void;
-}
-
-function EditTradeForm({ trade, onSave, onCancel }: EditTradeFormProps) {
-  const [formData, setFormData] = useState({
-    symbol: trade.symbol,
-    side: trade.side,
-    quantity: trade.quantity.toString(),
-    entry_price: trade.entry_price.toString(),
-    exit_price: trade.exit_price?.toString() || '',
-    pnl: trade.pnl?.toString() || '',
-    trade_date: trade.trade_date,
-    entry_time: trade.entry_time || '',
-    exit_time: trade.exit_time || '',
-    emotional_state: trade.emotional_state || '',
-    market: trade.market || '',
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const updateEmotionalState = (emotions: string[] | { [key: string]: boolean }) => {
-    // Convert to string array if it's an object
-    const emotionArray = Array.isArray(emotions) ? emotions : 
-      Object.entries(emotions).filter(([_, isSelected]) => isSelected).map(([emotion]) => emotion);
-    
-    setFormData(prev => ({
-      ...prev,
-      emotional_state: emotionArray.length > 0 ? emotionArray.join(', ') : ''
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const updatedTrade = {
-        symbol: formData.symbol,
-        side: formData.side as 'Buy' | 'Sell',
-        quantity: parseFloat(formData.quantity) || 0,
-        entry_price: parseFloat(formData.entry_price) || 0,
-        exit_price: formData.exit_price ? parseFloat(formData.exit_price) : undefined,
-        pnl: formData.pnl ? parseFloat(formData.pnl) : undefined,
-        trade_date: formData.trade_date,
-        entry_time: formData.entry_time || undefined,
-        exit_time: formData.exit_time || undefined,
-        emotional_state: formData.emotional_state || undefined,
-        market: formData.market,
-      };
-
-      await onSave(updatedTrade);
-    } catch (error) {
-      console.error('Error updating trade:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-        <div>
-          <label className="block label-text mb-2">Symbol</label>
-          <input
-            type="text"
-            value={formData.symbol}
-            onChange={(e) => setFormData({ ...formData, symbol: e.target.value })}
-            className="input-field"
-            required
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Side</label>
-          <select
-            value={formData.side}
-            onChange={(e) => setFormData({ ...formData, side: e.target.value as 'Buy' | 'Sell' })}
-            className="input-field"
-          >
-            <option value="Buy">Buy</option>
-            <option value="Sell">Sell</option>
-          </select>
-        </div>
-        <div>
-          <label className="block label-text mb-2">Quantity</label>
-          <input
-            type="number"
-            value={formData.quantity}
-            onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-            className="input-field"
-            required
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Entry Price</label>
-          <input
-            type="number"
-            value={formData.entry_price}
-            onChange={(e) => setFormData({ ...formData, entry_price: e.target.value })}
-            className="input-field"
-            required
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Exit Price</label>
-          <input
-            type="number"
-            value={formData.exit_price || ''}
-            onChange={(e) => setFormData({ ...formData, exit_price: e.target.value })}
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">P&L</label>
-          <input
-            type="number"
-            value={formData.pnl || ''}
-            onChange={(e) => setFormData({ ...formData, pnl: e.target.value })}
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Market</label>
-          <input
-            type="text"
-            value={formData.market}
-            onChange={(e) => setFormData({ ...formData, market: e.target.value })}
-            placeholder="e.g., stock, crypto, forex, futures"
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Trade Date</label>
-          <input
-            type="date"
-            value={formData.trade_date}
-            onChange={(e) => setFormData({ ...formData, trade_date: e.target.value })}
-            className="input-field"
-            required
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Emotional State</label>
-          <EmotionalStateInput
-            value={typeof formData.emotional_state === 'string' ? formData.emotional_state.split(', ').filter(e => e.trim()) : formData.emotional_state}
-            onChange={updateEmotionalState}
-            placeholder="Select emotions you felt during this trade..."
-            className="mt-2"
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Entry Time</label>
-          <input
-            type="time"
-            value={formData.entry_time || ''}
-            onChange={(e) => setFormData({ ...formData, entry_time: e.target.value })}
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label className="block label-text mb-2">Exit Time</label>
-          <input
-            type="time"
-            value={formData.exit_time || ''}
-            onChange={(e) => setFormData({ ...formData, exit_time: e.target.value })}
-            className="input-field"
-          />
-        </div>
-      </div>
-      <div className="flex gap-3">
-        <button
-          type="button"
-          onClick={onCancel}
-          className="button-secondary flex-1"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="button-primary flex-1 disabled:opacity-50"
-        >
-          {isSubmitting ? 'Saving...' : 'Save Changes'}
-        </button>
-      </div>
-    </form>
-  );
-}
 
 // Main page component with authentication guard
 export default function TradesPage() {

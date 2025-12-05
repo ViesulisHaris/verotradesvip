@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torch Effect Manual Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        .test-card {
+            margin: 10px 0;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .status {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.pass { background: #2ea043; color: white; }
+        .status.fail { background: #dc3545; color: white; }
+        .status.pending { background: #6c757d; color: white; }
+        .instructions {
+            background: #2d3748;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #6c757d;
+            background: rgba(255,255,255,0.05);
+        }
+        .test-result.pass { border-left-color: #2ea043; }
+        .test-result.fail { border-left-color: #dc3545; }
+        
+        /* TorchCard styles for testing */
+        .torch-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(18,18,18,0.4);
+            padding: 20px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        
+        .torch-glow-bg {
+            position: absolute;
+            pointer-events: none;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .torch-glow-border {
+            position: absolute;
+            pointer-events: none;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+            mask-clip: content-box, border-box;
+            padding: 1px;
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+        }
+        
+        .torch-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔥 Torch Effect Manual Test</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Open the trades page in your browser: <a href="http://localhost:3000/trades" target="_blank">http://localhost:3000/trades</a></li>
+                <li>Log in if necessary</li>
+                <li>Hover over the stats cards and trade rows</li>
+                <li>Observe the torch glow effect</li>
+                <li>Check the results below and update the status</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h2>📍 Test 1: Component Presence</h2>
+            <div class="test-result" id="test1">
+                <strong>Check:</strong> Verify TorchCard components are present on the page
+                <br><strong>Expected:</strong> Stats cards and trade rows should use TorchCard
+                <br><strong>Status:</strong> <span class="status pending" id="test1-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test1-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🖱️ Test 2: Hover Effects</h2>
+            <div class="test-result" id="test2">
+                <strong>Check:</strong> Hover over different elements (stats cards, trade rows)
+                <br><strong>Expected:</strong> Glow effect should appear on hover
+                <br><strong>Status:</strong> <span class="status pending" id="test2-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test2-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎯 Test 3: Mouse Movement Tracking</h2>
+            <div class="test-result" id="test3">
+                <strong>Check:</strong> Move mouse around within hovered elements
+                <br><strong>Expected:</strong> Glow should follow mouse movement
+                <br><strong>Status:</strong> <span class="status pending" id="test3-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test3-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎨 Test 4: Visual Quality</h2>
+            <div class="test-result" id="test4">
+                <strong>Check:</strong> Visual appearance of the torch effect
+                <br><strong>Expected:</strong> White radial gradient background + golden border ring
+                <br><strong>Status:</strong> <span class="status pending" id="test4-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test4-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>⚡ Test 5: Performance</h2>
+            <div class="test-result" id="test5">
+                <strong>Check:</strong> Performance during rapid hovering
+                <br><strong>Expected:</strong> Smooth animations, no lag
+                <br><strong>Status:</strong> <span class="status pending" id="test5-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test5-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🐛 Test 6: Console Errors</h2>
+            <div class="test-result" id="test6">
+                <strong>Check:</strong> Browser console for JavaScript errors
+                <br><strong>Expected:</strong> No errors related to TorchCard
+                <br><strong>Status:</strong> <span class="status pending" id="test6-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test6-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔥 Test 7: Multiple Simultaneous Effects</h2>
+            <div class="test-result" id="test7">
+                <strong>Check:</strong> Multiple elements with torch effects at once
+                <br><strong>Expected:</strong> Each element should work independently
+                <br><strong>Status:</strong> <span class="status pending" id="test7-status">Pending</span>
+                <br><strong>Notes:</strong> <input type="text" id="test7-notes" placeholder="Enter your observations here" style="width: 100%; margin-top: 5px;">
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Demo TorchCard</h2>
+            <p>Hover over the cards below to see the torch effect in action:</p>
+            
+            <div class="torch-card" id="demo-card-1">
+                <div class="torch-glow-bg"></div>
+                <div class="torch-glow-border"></div>
+                <div class="torch-content">
+                    <h3>Demo Card 1</h3>
+                    <p>This is a demo TorchCard component. Hover over me to see the torch effect!</p>
+                </div>
+            </div>
+
+            <div class="torch-card" id="demo-card-2">
+                <div class="torch-glow-bg"></div>
+                <div class="torch-glow-border"></div>
+                <div class="torch-content">
+                    <h3>Demo Card 2</h3>
+                    <p>Another demo card to test multiple simultaneous effects.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📊 Test Summary</h2>
+            <div id="test-summary">
+                <p>Complete all tests above to see the summary.</p>
+            </div>
+            <button onclick="generateReport()" style="background: #2ea043; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Generate Report</button>
+        </div>
+    </div>
+
+    <script>
+        // Demo torch effect implementation
+        function initDemoCards() {
+            const cards = document.querySelectorAll('.torch-card');
+            
+            cards.forEach(card => {
+                const glowBg = card.querySelector('.torch-glow-bg');
+                const glowBorder = card.querySelector('.torch-glow-border');
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    glowBg.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(255, 255, 255, 0.03), transparent 40%)`;
+                    glowBorder.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(197, 160, 101, 0.6), transparent 40%)`;
+                });
+                
+                card.addEventListener('mouseenter', () => {
+                    glowBg.style.opacity = '1';
+                    glowBorder.style.opacity = '1';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    glowBg.style.opacity = '0';
+                    glowBorder.style.opacity = '0';
+                });
+            });
+        }
+
+        function updateTestStatus(testId, status) {
+            const statusElement = document.getElementById(testId + '-status');
+            statusElement.className = `status ${status}`;
+            statusElement.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+        }
+
+        function generateReport() {
+            const tests = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7'];
+            let passCount = 0;
+            let failCount = 0;
+            let report = '🔥 TORCH EFFECT TESTING REPORT\n';
+            report += '================================\n\n';
+            
+            tests.forEach(testId => {
+                const statusElement = document.getElementById(testId + '-status');
+                const notesElement = document.getElementById(testId + '-notes');
+                const status = statusElement.textContent.toLowerCase();
+                
+                if (status === 'pass') passCount++;
+                else if (status === 'fail') failCount++;
+                
+                report += `${testId.toUpperCase()}: ${status.toUpperCase()}\n`;
+                if (notesElement.value) {
+                    report += `Notes: ${notesElement.value}\n`;
+                }
+                report += '\n';
+            });
+            
+            report += 'SUMMARY:\n';

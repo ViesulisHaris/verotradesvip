@@ -13,10 +13,13 @@ module.exports = {
         background: '#050505',
         surface: '#0A0A0A',
         surfaceHighlight: '#121212',
-        border: '#1E1E1E',
+        border: '#2A2A2A',
+        input: '#111111',
         
         // Gold variants
         gold: {
+          DEFAULT: '#C5A065',
+          light: '#E5C585',
           50: '#FFFDF7',
           100: '#FEFAE7',
           200: '#FCF2D1',
