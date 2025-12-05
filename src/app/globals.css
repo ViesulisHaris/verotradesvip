@@ -195,6 +195,32 @@ body {
   background: transparent;
 }
 
+/* Enhanced scrollbar styling for dropdowns */
+.scrollbar-thin.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.scrollbar-thin.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar-thumb {
+  background-color: rgba(197, 160, 101, 0.3);
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 101, 0.1);
+  transition: all 0.2s ease;
+}
+
+.scrollbar-thin.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(197, 160, 101, 0.5);
+  border-color: rgba(197, 160, 101, 0.2);
+}
+
+.scrollbar-thin.scrollbar-thumb-dusty-gold\/20::-webkit-scrollbar-thumb:active {
+  background-color: rgba(197, 160, 101, 0.6);
+}
+
 /* Card luxury styling */
 .card-luxury {
   background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
@@ -1670,5 +1696,18 @@ select {
   .toast-wrapper {
     max-width: 100%;
     min-width: auto;
+  }
+}
+
+/* Additional responsive fixes for dropdowns */
+@media (max-width: 768px) {
+  .max-h-60 {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .max-h-60 {
+    max-height: 30vh;
   }
 }
