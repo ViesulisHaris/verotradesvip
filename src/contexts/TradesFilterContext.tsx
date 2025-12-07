@@ -269,13 +269,6 @@ export function TradesFilterProvider({ children }: { children: React.ReactNode }
     const activeFilterCount = Object.entries(state.filters).filter(([key, value]) => {
       if (value === undefined || value === null || value === '') return false;
       if (Array.isArray(value) && value.length === 0) return false;
-      
-      // Exclude default values
-      if (key === 'pnlFilter' && value === 'all') return false;
-      if (key === 'sortBy' && value === 'trade_date') return false;
-      if (key === 'sortOrder' && value === 'desc') return false;
-      if (key === 'strategyId' && value === '') return false;
-      
       return true;
     }).length;
 

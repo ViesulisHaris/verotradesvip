@@ -6,7 +6,6 @@ import { useTradesFilter } from '@/contexts/TradesFilterContext';
 import { TradeFilterOptions, MARKET_OPTIONS, PNL_FILTER_OPTIONS, SIDE_OPTIONS } from '@/lib/filtering-types';
 import { getFilterStats } from '@/lib/filter-persistence';
 import { performanceUtils } from '@/lib/performance-optimization';
-import TorchCard from '@/components/TorchCard';
 
 // Filter badge component for active filters
 const FilterBadge = memo(({ label, value, onRemove }: { 
@@ -107,7 +106,10 @@ const TradesFilterBar = memo(() => {
   const filterStats = useMemo(() => getFilterStats(filters), [filters]);
 
   return (
-    <TorchCard className="mb-10 scroll-item p-6">
+    <div className="flashlight-container rounded-xl p-6 mb-10 scroll-item bg-surface">
+      <div className="flashlight-bg"></div>
+      <div className="flashlight-border"></div>
+      <div className="relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
@@ -137,15 +139,18 @@ const TradesFilterBar = memo(() => {
             <label className="block text-xs text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-gold transition-colors">
               Symbol
             </label>
-            <input
-              type="text"
-              placeholder="Search symbol..."
-              value={filters.symbol || ''}
-              onChange={(e) => handleFilterChange('symbol', e.target.value)}
-              className="w-full h-11 px-4 rounded-lg input-dark text-sm placeholder:text-gray-600"
-              // Performance optimization: prevent unnecessary re-renders
-              autoComplete="off"
-            />
+            <div className="relative">
+              <TrendingUp className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-600 pointer-events-none" />
+              <input
+                type="text"
+                placeholder="Search symbol..."
+                value={filters.symbol || ''}
+                onChange={(e) => handleFilterChange('symbol', e.target.value)}
+                className="w-full h-11 pl-10 pr-4 rounded-lg input-dark text-sm placeholder:text-gray-600"
+                // Performance optimization: prevent unnecessary re-renders
+                autoComplete="off"
+              />
+            </div>
           </div>
 
           {/* Market Filter */}
@@ -171,14 +176,17 @@ const TradesFilterBar = memo(() => {
             <label className="block text-xs text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-gold transition-colors">
               From Date
             </label>
-            <input
-              type="date"
-              value={filters.dateFrom || ''}
-              onChange={(e) => handleFilterChange('dateFrom', e.target.value)}
-              className="w-full h-11 px-4 rounded-lg input-dark text-sm"
-              // Performance optimization: prevent unnecessary re-renders
-              autoComplete="off"
-            />
+            <div className="relative">
+              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-600 pointer-events-none" />
+              <input
+                type="date"
+                value={filters.dateFrom || ''}
+                onChange={(e) => handleFilterChange('dateFrom', e.target.value)}
+                className="w-full h-11 pl-10 pr-4 rounded-lg input-dark text-sm"
+                // Performance optimization: prevent unnecessary re-renders
+                autoComplete="off"
+              />
+            </div>
           </div>
 
           {/* Date To Filter */}
@@ -186,14 +194,17 @@ const TradesFilterBar = memo(() => {
             <label className="block text-xs text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-gold transition-colors">
               To Date
             </label>
-            <input
-              type="date"
-              value={filters.dateTo || ''}
-              onChange={(e) => handleFilterChange('dateTo', e.target.value)}
-              className="w-full h-11 px-4 rounded-lg input-dark text-sm"
-              // Performance optimization: prevent unnecessary re-renders
-              autoComplete="off"
-            />
+            <div className="relative">
+              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-600 pointer-events-none" />
+              <input
+                type="date"
+                value={filters.dateTo || ''}
+                onChange={(e) => handleFilterChange('dateTo', e.target.value)}
+                className="w-full h-11 pl-10 pr-4 rounded-lg input-dark text-sm"
+                // Performance optimization: prevent unnecessary re-renders
+                autoComplete="off"
+              />
+            </div>
           </div>
 
           {/* P&L Filter */}
@@ -201,17 +212,20 @@ const TradesFilterBar = memo(() => {
             <label className="block text-xs text-gray-500 uppercase tracking-widest mb-2 group-focus-within:text-gold transition-colors">
               P&L Filter
             </label>
-            <select
-              value={filters.pnlFilter || 'all'}
-              onChange={(e) => handleFilterChange('pnlFilter', e.target.value)}
-              className="w-full h-11 px-4 rounded-lg input-dark text-sm cursor-pointer appearance-none bg-[#1A1A1A]"
-            >
-              {PNL_FILTER_OPTIONS.map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+            <div className="relative">
+              <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-600 pointer-events-none" />
+              <select
+                value={filters.pnlFilter || 'all'}
+                onChange={(e) => handleFilterChange('pnlFilter', e.target.value)}
+                className="w-full h-11 pl-10 pr-4 rounded-lg input-dark text-sm cursor-pointer appearance-none bg-[#1A1A1A]"
+              >
+                {PNL_FILTER_OPTIONS.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
@@ -235,7 +249,7 @@ const TradesFilterBar = memo(() => {
         <div className="mt-4 pt-4 border-t border-white/10">
           <div className="flex items-center justify-between text-xs text-gray-500">
             <span>
-              {filterStats.hasActiveFilters
+              {filterStats.hasActiveFilters 
                 ? `${filterStats.activeFilters} filter${filterStats.activeFilters !== 1 ? 's' : ''} applied`
                 : 'No filters applied'
               }
@@ -245,7 +259,8 @@ const TradesFilterBar = memo(() => {
             </span>
           </div>
         </div>
-    </TorchCard>
+      </div>
+    </div>
   );
 });
 

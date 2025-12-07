@@ -53,7 +53,6 @@ const formatEmotionsAsBoxes = (emotionalState: string[] | null | string) => {
     <div className="flex flex-wrap gap-1">
       {emotions.map((emotion, index) => {
         const emotionColor = emotionColors[emotion] || emotionColors['NEUTRAL'];
-        if (!emotionColor) return null;
         return (
           <div
             key={index}

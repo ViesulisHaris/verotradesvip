@@ -420,7 +420,7 @@ export default function TestFilterFunctionalityPage() {
                                   return (
                                     <div
                                       key={index}
-                                      className={`px-2 py-1 rounded-md ${emotionColor?.bg || ''} ${emotionColor?.text || ''} text-xs border ${emotionColor?.border || ''}`}
+                                      className={`px-2 py-1 rounded-md ${emotionColor.bg} ${emotionColor.text} text-xs border ${emotionColor.border}`}
                                     >
                                       {emotion}
                                     </div>

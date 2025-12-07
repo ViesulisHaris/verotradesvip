@@ -59,10 +59,10 @@ export default function Modal({
   if (!isOpen) return null;
 
   const sizeClasses = {
-    sm: 'max-w-md sm:max-w-md',
-    md: 'max-w-sm sm:max-w-md md:max-w-lg',
-    lg: 'max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl',
-    xl: 'max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl xl:max-w-4xl'
+    sm: 'max-w-md',
+    md: 'max-w-lg',
+    lg: 'max-w-2xl',
+    xl: 'max-w-4xl'
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
@@ -73,7 +73,7 @@ export default function Modal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[var(--z-modal-backdrop)] flex items-center justify-center p-2 sm:p-4 animate-fade-in"
+      className="fixed inset-0 z-[var(--z-modal-backdrop)] flex items-center justify-center p-4 animate-fade-in"
       style={{
         backgroundColor: 'rgba(18, 18, 18, 0.8)',
         backdropFilter: 'blur(4px)',
@@ -83,7 +83,7 @@ export default function Modal({
     >
       <div
         ref={modalRef}
-        className={`relative w-full ${sizeClasses[size]} max-h-[85vh] sm:max-h-[90vh] overflow-y-auto overflow-x-hidden animate-scale-up`}
+        className={`relative w-full ${sizeClasses[size]} max-h-[90vh] overflow-y-auto animate-scale-up`}
         style={{
           backgroundColor: 'var(--soft-graphite)',
           borderRadius: 'var(--radius-card)',
@@ -91,10 +91,7 @@ export default function Modal({
           backdropFilter: 'blur(var(--glass-morphism-blur))',
           WebkitBackdropFilter: 'blur(var(--glass-morphism-blur))',
           border: '0.8px solid var(--border-primary)',
-          transition: 'var(--transition-base)',
-          margin: '0 auto',
-          maxHeight: 'calc(100vh - 2rem)',
-          minHeight: 'auto'
+          transition: 'var(--transition-base)'
         }}
         onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
@@ -139,8 +136,7 @@ export default function Modal({
         <div
           className="p-component"
           style={{
-            padding: 'var(--spacing-card-inner)',
-            overflowX: 'hidden'
+            padding: 'var(--spacing-card-inner)'
           }}
         >
           {children}
