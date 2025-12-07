@@ -38,7 +38,7 @@ export default function LogTradePage() {
     entry_time: '',
     exit_time: '',
     duration: '',
-    emotional_state: 'NEUTRAL',
+    emotional_state: 'Neutral',
   });
   const [strategies, setStrategies] = useState<{ id: string; name: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -190,15 +190,15 @@ export default function LogTradePage() {
     }));
   };
 
-  const emotionOptions = ['FOMO', 'REVENGE', 'TILT', 'OVERRISK', 'PATIENCE', 'REGRET', 'DISCIPLINE', 'CONFIDENT', 'ANXIOUS', 'FEAR', 'NEUTRAL'];
+  const emotionOptions = ['Neutral', 'Greed', 'Fear', 'Confidence', 'Frustration'];
 
   return (
     <UnifiedLayout>
       <div className="max-w-4xl mx-auto">
         {/* Header with text reveal animation */}
         <div className="mb-8 text-reveal">
-          <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">Log New Trade</h1>
-          <p className="text-gray-400 max-w-xl text-lg font-light tracking-wide">Record your trading activity with detailed analysis</p>
+          <h1 className="text-4xl font-bold text-white mb-2">Log New Trade</h1>
+          <p className="text-gray-400">Record your trading activity with detailed analysis</p>
         </div>
 
         {/* Main form with TorchCard spotlight effect */}
@@ -259,11 +259,11 @@ export default function LogTradePage() {
                       </svg>
                     </button>
                     {isStrategyOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-white/10 rounded-lg shadow-xl z-[9999] max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-dusty-gold/20 scrollbar-track-transparent">
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-white/10 rounded-lg shadow-xl z-[9999]">
                         <button
                           type="button"
                           onClick={() => { setForm({ ...form, strategy_id: '' }); setIsStrategyOpen(false); }}
-                          className="w-full px-4 py-3 text-left text-gray-400 hover:bg-white/5 transition-colors first:rounded-t-lg"
+                          className="w-full px-4 py-3 text-left text-gray-400 hover:bg-white/5 transition-colors"
                         >
                           None
                         </button>
@@ -272,7 +272,7 @@ export default function LogTradePage() {
                             key={strategy.id}
                             type="button"
                             onClick={() => { setForm({ ...form, strategy_id: strategy.id }); setIsStrategyOpen(false); }}
-                            className="w-full px-4 py-3 text-left text-white hover:bg-white/5 transition-colors last:rounded-b-lg"
+                            className="w-full px-4 py-3 text-left text-white hover:bg-white/5 transition-colors"
                           >
                             {strategy.name}
                           </button>
@@ -360,37 +360,6 @@ export default function LogTradePage() {
                   />
                 </div>
 
-                {/* Emotional State Dropdown */}
-                <div className="space-y-3">
-                  <label className="text-sm font-medium text-gray-300">Emotional State</label>
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setIsEmotionOpen(!isEmotionOpen)}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-left focus:border-verotrade-gold-primary focus:outline-none transition-colors flex items-center justify-between"
-                    >
-                      <span>{form.emotional_state}</span>
-                      <svg className={`w-5 h-5 transition-transform ${isEmotionOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {isEmotionOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-white/10 rounded-lg shadow-xl z-[9999] max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-dusty-gold/20 scrollbar-track-transparent">
-                        {emotionOptions.map((emotion) => (
-                          <button
-                            key={emotion}
-                            type="button"
-                            onClick={() => { setForm({ ...form, emotional_state: emotion }); setIsEmotionOpen(false); }}
-                            className="w-full px-4 py-3 text-left text-white hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                          >
-                            {emotion}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
                 {/* Duration Display */}
                 {form.duration && (
                   <div className="md:col-span-2">
@@ -458,6 +427,36 @@ export default function LogTradePage() {
                   />
                 </div>
 
+                {/* Emotional State Dropdown */}
+                <div className="space-y-3">
+                  <label className="text-sm font-medium text-gray-300">Emotional State</label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsEmotionOpen(!isEmotionOpen)}
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-left focus:border-verotrade-gold-primary focus:outline-none transition-colors flex items-center justify-between"
+                    >
+                      <span>{form.emotional_state}</span>
+                      <svg className={`w-5 h-5 transition-transform ${isEmotionOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {isEmotionOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-white/10 rounded-lg shadow-xl z-[9999]">
+                        {emotionOptions.map((emotion) => (
+                          <button
+                            key={emotion}
+                            type="button"
+                            onClick={() => { setForm({ ...form, emotional_state: emotion }); setIsEmotionOpen(false); }}
+                            className="w-full px-4 py-3 text-left text-white hover:bg-white/5 transition-colors"
+                          >
+                            {emotion}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
 
