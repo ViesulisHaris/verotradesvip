@@ -3,6 +3,7 @@
 import AuthGuard from '@/components/AuthGuard';
 import { usePathname } from 'next/navigation';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
+import { AuthContextProviderSimple } from '@/contexts/AuthContext-simple';
 
 export default function AuthLayout({
   children,
@@ -15,7 +16,6 @@ export default function AuthLayout({
   const requireAuth = !pathname.includes('/login') && !pathname.includes('/register');
   
   // Check if current page needs UnifiedLayout (sidebar navigation)
-  // CRITICAL FIX: Be more permissive about showing sidebar for authenticated routes
   const needsUnifiedLayout = pathname.includes('/dashboard') ||
                            pathname.includes('/trades') ||
                            pathname.includes('/log-trade') ||
@@ -24,22 +24,26 @@ export default function AuthLayout({
                            pathname.includes('/confluence') ||
                            pathname.includes('/settings');
   
-  console.log('🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering', {
+  console.log('🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering with AuthContextProviderSimple', {
     pathname,
     requireAuth,
     needsUnifiedLayout,
     timestamp: new Date().toISOString()
   });
   
+  // CRITICAL FIX: Ensure AuthContextProviderSimple wraps all components in auth route group
+  // This fixes the "AuthContext is undefined" issue by guaranteeing provider availability
   return (
-    <AuthGuard requireAuth={requireAuth}>
-      {needsUnifiedLayout ? (
-        <UnifiedLayout>
-          {children}
-        </UnifiedLayout>
-      ) : (
-        children
-      )}
-    </AuthGuard>
+    <AuthContextProviderSimple>
+      <AuthGuard requireAuth={requireAuth}>
+        {needsUnifiedLayout ? (
+          <UnifiedLayout>
+            {children}
+          </UnifiedLayout>
+        ) : (
+          children
+        )}
+      </AuthGuard>
+    </AuthContextProviderSimple>
   );
 }

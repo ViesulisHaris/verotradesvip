@@ -1,37 +1,32 @@
-import './globals.css'
-import '../styles/verotrade-design-system.css'
-import { AuthContextProviderSimple as AuthContextProvider } from '@/contexts/AuthContext-simple';
-import ErrorBoundaryWrapper from '@/components/ErrorBoundaryWrapper';
+'use client';
 
-console.log('🔍 [HYDRATION_DEBUG] RootLayout component loading - START');
-console.log('🔍 [HYDRATION_DEBUG] Layout environment:', {
-  timestamp: new Date().toISOString(),
-  isClient: typeof window !== 'undefined',
-  hasWindow: typeof window !== 'undefined',
-  hasDocument: typeof document !== 'undefined'
-});
+import { AuthContextProviderSimple } from '@/contexts/AuthContext-simple';
+import './globals.css';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  console.log('🔍 [HYDRATION_DEBUG] RootLayout rendering with children:', !!children);
-  console.log('🔍 [HYDRATION_DEBUG] RootLayout render context:', {
+  console.log('🔍 [ROOT_LAYOUT_DEBUG] RootLayout rendering with AuthContextProviderSimple - START', {
     timestamp: new Date().toISOString(),
-    isClient: typeof window !== 'undefined',
-    childrenType: typeof children,
-    hasChildren: !!children
+    hasChildren: !!children,
+    isClient: typeof window !== 'undefined'
   });
   
+  console.log('🔍 [ROOT_LAYOUT_DEBUG] About to render AuthContextProviderSimple');
+
   return (
-    <html lang="en" className="h-full" style={{ backgroundColor: 'var(--deep-charcoal)' }}>
-      <body className="h-full" style={{ color: 'var(--warm-off-white)' }}>
-        <AuthContextProvider>
-          <ErrorBoundaryWrapper>
-            {children}
-          </ErrorBoundaryWrapper>
-        </AuthContextProvider>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>VeroTrade - Professional Trading Journal</title>
+      </head>
+      <body>
+        <AuthContextProviderSimple>
+          {children}
+        </AuthContextProviderSimple>
       </body>
     </html>
   );

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext-diagnostic';
-import { getSupabaseClient } from '@/supabase/client';
+import { useAuth } from '@/contexts/AuthContext-simple';
+import { supabase } from '@/supabase/client';
 
 export default function TestAuthDiagnostic() {
   const { user, session, loading, authInitialized } = useAuth();
@@ -37,7 +37,6 @@ export default function TestAuthDiagnostic() {
 
       // DIAGNOSTIC: Check Supabase client status
       try {
-        const supabase = getSupabaseClient();
         setSupabaseClientStatus({
           hasClient: !!supabase,
           hasAuth: !!supabase?.auth,
@@ -74,8 +73,8 @@ export default function TestAuthDiagnostic() {
         },
         {
           name: 'Supabase Client Available',
-          status: !!getSupabaseClient() ? 'PASS' : 'FAIL',
-          details: !!getSupabaseClient() ? 'Supabase client is properly initialized' : 'Supabase client not available'
+          status: !!supabase ? 'PASS' : 'FAIL',
+          details: !!supabase ? 'Supabase client is properly initialized' : 'Supabase client not available'
         },
         {
           name: 'LocalStorage Session Data',
@@ -98,7 +97,6 @@ export default function TestAuthDiagnostic() {
     try {
       console.log('🔧 [DIAGNOSTIC_TEST] Testing session persistence...');
       
-      const supabase = getSupabaseClient();
       if (!supabase) {
         alert('Supabase client not available');
         return;

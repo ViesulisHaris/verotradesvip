@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext-simple';
 import UnifiedSidebar from '@/components/navigation/UnifiedSidebar';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
 import Link from 'next/link';

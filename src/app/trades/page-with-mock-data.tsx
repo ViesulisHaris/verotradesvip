@@ -21,7 +21,7 @@ import {
 } from '@/lib/filter-persistence';
 import AuthGuard from '@/components/AuthGuard';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
-import { useAuth } from '@/contexts/AuthContext-simple-fixed';
+import { useAuth } from '@/contexts/AuthContext-simple';
 
 // Import GSAP safely for SSR compatibility
 let gsap: any = null;

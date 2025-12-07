@@ -79,7 +79,7 @@ export default function TestFixesVerificationPage() {
         addLog(`✅ Found ${strategies?.length || 0} strategies`);
         
         if (strategies && strategies.length > 0) {
-          strategies.forEach((strategy, index) => {
+          strategies.forEach((strategy: { id: string; name: string }, index: number) => {
             addLog(`📝 Strategy ${index + 1}: ${strategy.name} (ID: ${strategy.id})`);
             
             // Test UUID validation

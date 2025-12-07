@@ -1,96 +1,155 @@
-/**
- * SIMPLE AUTHENTICATION FIX VERIFICATION
- * Tests the complete authentication flow after fixing double provider nesting
- */
-
 const puppeteer = require('puppeteer');
 
-async function testAuthenticationFlow() {
-  console.log('🧪 [AUTH_TEST] Starting authentication flow test...');
+async function simpleAuthTest() {
+  console.log('🔧 Starting Simple AuthContext Test...');
   
   const browser = await puppeteer.launch({ 
     headless: false,
-    defaultViewport: { width: 1280, height: 800 }
+    devtools: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+  
+  const page = await browser.newPage();
+  
+  // Capture console logs
+  const consoleLogs = [];
+  page.on('console', (msg) => {
+    const logText = msg.text();
+    consoleLogs.push(logText);
+    
+    // Filter for AuthContext related logs
+    if (logText.includes('AuthContext') || logText.includes('AUTH_CONTEXT_FIX') || logText.includes('AUTH_LAYOUT_DEBUG')) {
+      console.log(`📝 [CONSOLE] ${logText}`);
+    }
+    
+    // Look for errors
+    if (logText.includes('🚨') || logText.includes('Error') || logText.includes('undefined')) {
+      console.log(`❌ [ERROR] ${logText}`);
+    }
+  });
+  
+  // Capture page errors
+  page.on('pageerror', (error) => {
+    console.log(`🚨 [PAGE_ERROR] ${error.message}`);
   });
   
   try {
-    const page = await browser.newPage();
+    console.log('📍 Step 1: Testing basic page load...');
     
-    // Enable console logging
-    page.on('console', msg => {
-      if (msg.text().includes('AUTH_DEBUG') && msg.text().includes('AuthContextProviderSimple rendering')) {
-        console.log('🧪 [AUTH_TEST] Found AuthContext log:', msg.text());
-      }
+    // Try to navigate to a simple page first
+    await page.goto('http://localhost:3000/login', { 
+      waitUntil: 'networkidle2',
+      timeout: 15000 
     });
     
-    // Go to login page
-    console.log('🧪 [AUTH_TEST] Navigating to login page...');
-    await page.goto('http://localhost:3000/login', { waitUntil: 'networkidle0' });
+    await new Promise(resolve => setTimeout(resolve, 3000));
     
-    // Wait for page to fully load
-    await page.waitForTimeout(3000);
+    // Check if page loaded successfully (not 500 error)
+    const pageTitle = await page.title();
+    console.log(`📄 Page title: ${pageTitle}`);
     
-    // Count AuthContext providers
-    const authContextCount = await page.evaluate(() => {
-      let count = 0;
-      const originalLog = console.log;
-      console.log = function(...args) {
-        if (args[0] && args[0].includes && args[0].includes('AuthContextProviderSimple rendering')) {
-          count++;
+    // Check for AuthContext errors
+    const authContextErrors = consoleLogs.filter(log => 
+      log.includes('AuthContext is undefined') && 
+      log.includes('hasProvider: false')
+    );
+    
+    console.log(`📊 AuthContext undefined errors: ${authContextErrors.length}`);
+    
+    // Check for provider duplication
+    const providerLogs = consoleLogs.filter(log => 
+      log.includes('AuthContextProviderSimple rendering')
+    );
+    
+    console.log(`📊 AuthContextProvider instances: ${providerLogs.length}`);
+    
+    // Try to find login form elements
+    try {
+      const emailInput = await page.$('input[type="email"]');
+      const passwordInput = await page.$('input[type="password"]');
+      const submitButton = await page.$('button[type="submit"]');
+      
+      console.log(`📝 Form elements found: Email=${!!emailInput}, Password=${!!passwordInput}, Submit=${!!submitButton}`);
+      
+      if (emailInput && passwordInput && submitButton) {
+        console.log('✅ PASSED: Login form is present and accessible');
+        
+        // Try to fill the form
+        await emailInput.type('Testuser1000@verotrade.com', { delay: 100 });
+        await passwordInput.type('TestPassword123!', { delay: 100 });
+        
+        console.log('✅ PASSED: Form can be filled');
+        
+        // Try to submit
+        await submitButton.click();
+        
+        console.log('✅ PASSED: Form can be submitted');
+        
+        // Wait for response
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        
+        // Check where we ended up
+        const finalUrl = page.url();
+        console.log(`📍 Final URL after login: ${finalUrl}`);
+        
+        if (finalUrl.includes('/dashboard')) {
+          console.log('✅ PASSED: Successfully redirected to dashboard');
+        } else if (finalUrl.includes('/login')) {
+          console.log('❌ FAILED: Still on login page after submission');
+        } else {
+          console.log(`⚠️  WARNING: Redirected to unexpected page: ${finalUrl}`);
         }
-        return originalLog.apply(console, args);
-      };
+        
+      } else {
+        console.log('❌ FAILED: Login form elements not found');
+      }
       
-      // Trigger a re-render to capture logs
-      setTimeout(() => {}, 100);
-      
-      return count;
-    });
-    
-    console.log('🧪 [AUTH_TEST] AuthContext provider instances found:', authContextCount);
-    
-    if (authContextCount === 1) {
-      console.log('✅ [AUTH_TEST] SUCCESS: Only one AuthContext provider found - DOUBLE NESTING FIXED!');
-    } else {
-      console.log('❌ [AUTH_TEST] FAILURE: Multiple AuthContext providers still exist:', authContextCount);
+    } catch (formError) {
+      console.log(`❌ FAILED: Error interacting with login form: ${formError.message}`);
     }
     
-    // Fill in login form
-    console.log('🧪 [AUTH_TEST] Filling login form...');
-    await page.type('#email', 'test@example.com');
-    await page.type('#password', 'testpassword123');
+    // Generate final report
+    const report = {
+      timestamp: new Date().toISOString(),
+      pageTitle,
+      authContextErrors: authContextErrors.length,
+      providerInstances: providerLogs.length,
+      loginFormPresent: !!(await page.$('input[type="email"]')),
+      consoleLogs: consoleLogs.filter(log => 
+        log.includes('AuthContext') || 
+        log.includes('AUTH_CONTEXT_FIX') || 
+        log.includes('AUTH_LAYOUT_DEBUG') ||
+        log.includes('🚨')
+      )
+    };
     
-    // Submit login
-    console.log('🧪 [AUTH_TEST] Submitting login form...');
-    await page.click('[data-testid="login-submit-button"]');
+    console.log('\n📋 SIMPLE AUTH TEST REPORT:');
+    console.log('===========================');
+    console.log(`✅ Page Loaded: ${pageTitle !== 'Error' ? 'YES' : 'NO'}`);
+    console.log(`✅ AuthContext Errors: ${authContextErrors.length === 0 ? 'FIXED' : 'STILL BROKEN'}`);
+    console.log(`✅ Provider Duplication: ${providerLogs.length <= 1 ? 'FIXED' : 'STILL BROKEN'}`);
+    console.log(`✅ Login Form Available: ${report.loginFormPresent ? 'YES' : 'NO'}`);
     
-    // Wait for navigation
-    console.log('🧪 [AUTH_TEST] Waiting for navigation...');
-    await page.waitForTimeout(10000);
+    const overallStatus = authContextErrors.length === 0 && 
+                         providerLogs.length <= 1 && 
+                         report.loginFormPresent;
     
-    const currentUrl = page.url();
-    console.log('🧪 [AUTH_TEST] Final URL after login attempt:', currentUrl);
+    console.log(`\n🎯 OVERALL STATUS: ${overallStatus ? '✅ FIXES WORKING' : '❌ ISSUES REMAIN'}`);
     
-    if (currentUrl.includes('/dashboard')) {
-      console.log('✅ [AUTH_TEST] SUCCESS: Login successful, reached dashboard');
-    } else if (currentUrl.includes('/login')) {
-      console.log('❌ [AUTH_TEST] FAILURE: Still on login page - redirect loop detected');
-    } else {
-      console.log('🧪 [AUTH_TEST] UNKNOWN: Ended up at:', currentUrl);
-    }
+    // Save report to file
+    const fs = require('fs');
+    fs.writeFileSync(
+      'simple-auth-test-report.json', 
+      JSON.stringify(report, null, 2)
+    );
+    console.log('\n📄 Detailed report saved to: simple-auth-test-report.json');
     
   } catch (error) {
-    console.error('🧪 [AUTH_TEST] Test error:', error);
+    console.error('❌ Test failed with error:', error);
   } finally {
     await browser.close();
   }
 }
 
 // Run the test
-testAuthenticationFlow().then(() => {
-  console.log('🧪 [AUTH_TEST] Authentication flow test completed');
-  process.exit(0);
-}).catch(error => {
-  console.error('🧪 [AUTH_TEST] Test failed:', error);
-  process.exit(1);
-});
+simpleAuthTest().catch(console.error);

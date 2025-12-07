@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval } from 'date-fns';
 import { supabase } from '@/supabase/client';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext-simple';
 
 export default function SimpleCalendarTest() {
   const { user, session, loading: authLoading, authInitialized } = useAuth();

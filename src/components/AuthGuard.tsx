@@ -37,7 +37,7 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
     authState
   });
 
-  // CRITICAL FIX: Simplified auth handling with proper state tracking
+  // CRITICAL FIX: Simplified auth handling with proper state tracking and RACE CONDITION FIX
   useEffect(() => {
     // Skip all logic for auth pages - handled in render logic below
     const isAuthPage = pathname === '/login' || pathname === '/register';
@@ -85,26 +85,50 @@ export default function AuthGuard({ children, requireAuth = false }: AuthGuardPr
         shouldRedirectToLogin: requireAuth && !user && authInitialized && !loading
       });
       
-      // CRITICAL FIX: Single, clear condition for redirecting to login
-      // Only redirect if:
-      // 1. Auth is required
-      // 2. No user is authenticated
-      // 3. Auth is initialized
-      // 4. Not currently loading
-      if (requireAuth && !user && authInitialized && !loading) {
-        console.log('🔍 [AUTH_GUARD_DEBUG] Redirecting to login - auth required and user not authenticated', {
-          guardId: guardId.current,
-          reason: 'requireAuth && !user && authInitialized && !loading'
-        });
-        hasRedirected.current = true;
-        router.replace('/login');
-        return;
-      }
+      // CRITICAL RACE CONDITION FIX: Add delay before checking auth state
+      // This allows AuthContext to update after successful login
+      const delayedAuthCheck = setTimeout(() => {
+        // Only redirect if:
+        // 1. Auth is required
+        // 2. No user is authenticated
+        // 3. Auth is initialized
+        // 4. Not currently loading
+        // 5. CRITICAL: Double-check user state after delay to catch race conditions
+        if (requireAuth && !user && authInitialized && !loading) {
+          console.log('🔍 [AUTH_GUARD_DEBUG] RACE CONDITION: Redirecting to login after delay - auth required and user not authenticated', {
+            guardId: guardId.current,
+            reason: 'requireAuth && !user && authInitialized && !loading (after delay)',
+            finalUserCheck: !!user,
+            timestamp: new Date().toISOString()
+          });
+          hasRedirected.current = true;
+          
+          // CRITICAL FIX: Use both push and replace to ensure redirect happens
+          router.push('/login');
+          router.replace('/login');
+          return;
+        } else {
+          console.log('🔍 [AUTH_GUARD_DEBUG] RACE CONDITION: User authenticated after delay - no redirect needed', {
+            guardId: guardId.current,
+            hasUser: !!user,
+            userEmail: user?.email,
+            reason: 'User state updated during delay'
+          });
+        }
+      }, 500); // 500ms delay to allow AuthContext to update
+
+      // Store timeout ID for cleanup
+      const timeoutId = delayedAuthCheck;
+      
+      return () => {
+        clearTimeout(timeoutId);
+      };
     };
 
     // CRITICAL FIX: Only check auth if we're not in a loading state
     if (!loading || authInitialized) {
-      checkAuthAndRedirect();
+      const cleanup = checkAuthAndRedirect();
+      return cleanup;
     }
   }, [user?.id, loading, authInitialized, requireAuth, pathname, router]); // Only depend on user.id to prevent unnecessary re-renders
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import UnifiedSidebar from '@/components/navigation/UnifiedSidebar';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext-simple';
 
 function TestSidebarDirectPage() {
   const { user } = useAuth();

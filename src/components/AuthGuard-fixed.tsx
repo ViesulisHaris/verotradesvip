@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext-simple-fixed';
+import { useAuth } from '@/contexts/AuthContext-simple';
 import { useRouter, usePathname } from 'next/navigation';
 
 interface AuthGuardProps {

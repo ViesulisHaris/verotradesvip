@@ -20,7 +20,7 @@ import {
   TrendingUp as TrendingIcon
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/contexts/AuthContext-simple';
 
 interface NavigationItem {
   name: string;

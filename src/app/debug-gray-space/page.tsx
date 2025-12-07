@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext-simple';
-import { AuthContextProviderSimple } from '@/contexts/AuthContext-simple';
 
 function DebugGraySpaceContent() {
   const { user, loading: authLoading, authInitialized } = useAuth();
@@ -125,9 +124,7 @@ function DebugGraySpaceContent() {
 }
 
 export default function DebugGraySpace() {
-  return (
-    <AuthContextProviderSimple>
-      <DebugGraySpaceContent />
-    </AuthContextProviderSimple>
-  );
+  // CRITICAL FIX: Remove duplicate AuthContextProviderSimple to prevent provider nesting conflicts
+  // The root layout.tsx already provides the AuthContext provider
+  return <DebugGraySpaceContent />;
 }

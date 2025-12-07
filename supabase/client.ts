@@ -20,3 +20,32 @@ export const clearSupabaseCache = async () => {
     console.error('Unexpected error clearing cache:', error);
   }
 };
+
+// Clear corrupted auth data function
+export const clearCorruptedAuthData = () => {
+  try {
+    // Clear localStorage auth data
+    if (typeof window !== 'undefined') {
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (key.includes('supabase.auth') || key.includes('sb-'))) {
+          keysToRemove.push(key);
+        }
+      }
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+      
+      // Clear sessionStorage auth data
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        if (key && (key.includes('supabase.auth') || key.includes('sb-'))) {
+          sessionStorage.removeItem(key);
+        }
+      }
+      
+      console.log('🧹 Cleared corrupted auth data from storage');
+    }
+  } catch (error) {
+    console.error('Error clearing corrupted auth data:', error);
+  }
+};
