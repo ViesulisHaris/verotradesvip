@@ -71,9 +71,7 @@ export default function Alert({
       `.trim().replace(/\s+/g, ' ')}
       style={{
         borderRadius: 'var(--radius-card)',
-        transition: 'var(--transition-base)',
-        backgroundColor: 'rgba(0, 0, 0, 0.9)', // Add semi-transparent background
-        backdropFilter: 'blur(8px)' // Add backdrop blur for better visibility
+        transition: 'var(--transition-base)'
       }}
     >
       {/* Close button */}
@@ -105,10 +103,10 @@ export default function Alert({
         {/* Text content */}
         <div className="flex-1 min-w-0">
           {title && (
-            <h3 className="font-semibold mb-1" style={{
+            <h3 className="font-semibold mb-1 body-text" style={{
               fontSize: 'var(--text-body)',
               fontWeight: 'var(--font-weight-h2)',
-              color: '#FFFFFF'
+              color: 'var(--warm-off-white)'
             }}>
               {title}
             </h3>
@@ -117,7 +115,7 @@ export default function Alert({
           {description && (
             <p className="text-sm opacity-90" style={{
               fontSize: 'var(--text-small)',
-              color: '#FFFFFF'
+              color: 'var(--warm-off-white)'
             }}>
               {description}
             </p>

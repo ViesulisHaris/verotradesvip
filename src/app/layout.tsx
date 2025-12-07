@@ -2,8 +2,6 @@ import './globals.css'
 import '../styles/verotrade-design-system.css'
 import { AuthContextProviderSimple as AuthContextProvider } from '@/contexts/AuthContext-simple';
 import ErrorBoundaryWrapper from '@/components/ErrorBoundaryWrapper';
-import { ToastProvider } from '@/contexts/ToastContext';
-import GlobalToastContainer from '@/components/ui/GlobalToastContainer';
 
 console.log('🔍 [HYDRATION_DEBUG] RootLayout component loading - START');
 console.log('🔍 [HYDRATION_DEBUG] Layout environment:', {
@@ -30,12 +28,9 @@ export default function RootLayout({
     <html lang="en" className="h-full" style={{ backgroundColor: 'var(--deep-charcoal)' }}>
       <body className="h-full" style={{ color: 'var(--warm-off-white)' }}>
         <AuthContextProvider>
-          <ToastProvider>
-            <ErrorBoundaryWrapper>
-              {children}
-            </ErrorBoundaryWrapper>
-            <GlobalToastContainer />
-          </ToastProvider>
+          <ErrorBoundaryWrapper>
+            {children}
+          </ErrorBoundaryWrapper>
         </AuthContextProvider>
       </body>
     </html>

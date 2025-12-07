@@ -609,10 +609,10 @@ const TradesPageContent = memo(function TradesPageContent() {
   return (
     <div className="min-h-screen flex flex-col antialiased">
       {/* Main Content */}
-      <main className="flex-grow pt-4 px-6 lg:px-12 max-w-[1800px] w-full mx-auto pb-20">
+      <main className="flex-grow pt-12 px-6 lg:px-12 max-w-[1800px] w-full mx-auto pb-20">
         
         {/* Header Section */}
-        <header className="mb-8">
+        <header className="mb-12">
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">
             {titleRevealed}
           </h1>
@@ -625,7 +625,7 @@ const TradesPageContent = memo(function TradesPageContent() {
         <GSAPAnimations />
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {/* Stat Card 1 */}
           <TorchCard className="scroll-item p-6">
             <div className="flex items-center gap-2 mb-2 text-gray-400 text-sm uppercase tracking-wider font-medium">
@@ -652,7 +652,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                   Win Rate
               </div>
               <div className="text-3xl font-mono text-white font-medium">
-                {statistics && statistics.winRate !== null ? `${statistics.winRate.toFixed(1)}%` : '0%'}
+                {statistics ? `${statistics.winRate.toFixed(1)}%` : '0%'}
               </div>
           </TorchCard>
 
@@ -804,7 +804,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                               )}
                             </div>
                           </div>
-                          <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</div>
+                          <div className="col-span-2 text-right font-mono text-sm text-gray-300">${trade.entry_price.toFixed(2)}</div>
                           <div className="col-span-2 text-right font-mono text-sm font-bold">{pnlFormatted}</div>
                           <div className="col-span-2 text-right text-sm text-gray-400">
                             {trade.quantity} <span className="text-xs text-gray-600">shares</span>
@@ -829,7 +829,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Entry Price</div>
-                              <div className="text-base font-mono text-white">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</div>
+                              <div className="text-base font-mono text-white">${trade.entry_price.toFixed(2)}</div>
                             </div>
                             <div>
                               <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Exit Price</div>

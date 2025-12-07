@@ -489,7 +489,7 @@ function ConfluencePage() {
                     <h3 className="h3-metric-label">Win Rate</h3>
                   </div>
                 </div>
-                <p className="metric-value">{stats && stats.winRate !== null ? stats.winRate.toFixed(1) : '0'}%</p>
+                <p className="metric-value">{stats.winRate.toFixed(1)}%</p>
               </div>
              
               <div className="dashboard-card" data-testid="confluence-card">
@@ -1061,7 +1061,7 @@ function ConfluencePage() {
                           </span>
                         </td>
                         <td className="py-3 px-4 body-text text-sm">{trade.quantity}</td>
-                        <td className="py-3 px-4 body-text text-sm">${trade.entry_price ? trade.entry_price.toFixed(2) : '0.00'}</td>
+                        <td className="py-3 px-4 body-text text-sm">${trade.entry_price.toFixed(2)}</td>
                         <td className="py-3 px-4 body-text text-sm">
                           {trade.exit_price ? `$${trade.exit_price.toFixed(2)}` : '-'}
                         </td>
