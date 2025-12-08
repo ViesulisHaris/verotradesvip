@@ -65,7 +65,9 @@ try {
     console.log('✅ [AGGRESSIVE_FIX] API key validation passed');
   }
   
-  // SESSION PERSISTENCE FIX: Create client with proper session persistence configuration
+  // CRITICAL SESSION PERSISTENCE FIX: Create client with proper storage handling for SSR
+  // IMPORTANT: Don't set storage here - let Supabase handle it automatically
+  // Setting storage explicitly causes SSR hydration issues
   const forcedConfig = {
     auth: {
       persistSession: true,
@@ -73,13 +75,13 @@ try {
       detectSessionInUrl: false, // Disable URL detection for form-based login
       flowType: 'implicit' as const, // Use implicit flow for authentication
       debug: false, // Disable debug to reduce console noise
-      // CRITICAL FIX: Don't set storage here - let Supabase handle it automatically
-      // This prevents server-side storage issues
+      // CRITICAL FIX: Let Supabase handle storage automatically for proper SSR compatibility
+      // This prevents server-side storage issues and allows client-side localStorage access
     },
     global: {
       headers: {
-        'X-Client-Info': 'verotrades-web-session-fix',
-        'X-Force-Config': 'true'
+        'X-Client-Info': 'verotrades-web-session-fix-v3',
+        'X-SSR-Compatible': 'true'
       }
     },
     realtime: {

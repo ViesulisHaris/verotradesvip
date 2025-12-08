@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-12-08T18:19:37.247Z",
+  "pageTitle": "VeroTrade - Professional Trading Journal",
+  "authContextErrors": 0,
+  "providerInstances": 4,
+  "loginFormPresent": false,
+  "consoleLogs": [
+    "🔍 [ROOT_LAYOUT_DEBUG] RootLayout rendering with AuthContextProviderSimple - START JSHandle@object",
+    "🔍 [ROOT_LAYOUT_DEBUG] About to render AuthContextProviderSimple",
+    "🔍 [ROOT_LAYOUT_DEBUG] RootLayout rendering with AuthContextProviderSimple - START JSHandle@object",
+    "🔍 [ROOT_LAYOUT_DEBUG] About to render AuthContextProviderSimple",
+    "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering - START JSHandle@object",
+    "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering Provider JSHandle@object",
+    "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering - START JSHandle@object",
+    "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering Provider JSHandle@object",
+    "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering with AuthContextProviderSimple JSHandle@object",
+    "🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering with AuthContextProviderSimple JSHandle@object",
+    "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] AuthContext useEffect starting JSHandle@object",
+    "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] AuthContext useEffect starting JSHandle@object"
+  ]
+}

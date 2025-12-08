@@ -81,11 +81,7 @@ const UnifiedSidebar = forwardRef<HTMLDivElement, UnifiedSidebarProps>(({ classN
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Start closed for overlay behavior
   const pathname = usePathname();
 
-  // Don't render sidebar if user is not authenticated
-  if (!user) {
-    return null;
-  }
-
+  // CRITICAL FIX: Move all hooks before any early returns to prevent "Rendered more hooks" error
   // Check if we're on mobile and adjust initial state
   useEffect(() => {
     const checkIsMobile = () => {
@@ -142,6 +138,13 @@ const UnifiedSidebar = forwardRef<HTMLDivElement, UnifiedSidebarProps>(({ classN
       setIsMobileMenuOpen(false);
     }
   }, [pathname, isMobile]);
+
+  // CRITICAL FIX: Now we can safely return early after all hooks are called
+  // Don't render sidebar if user is not authenticated
+  if (!user) {
+    return null;
+  }
+
 
   const toggleSidebar = () => {
     if (isMobile) {

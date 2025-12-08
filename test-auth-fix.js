@@ -1,98 +1,119 @@
-/**
- * FINAL AUTHENTICATION FIX VERIFICATION TEST
- * Tests the complete authentication flow after fixing double provider nesting
- */
-
 const puppeteer = require('puppeteer');
 
-async function testAuthenticationFlow() {
-  console.log('🧪 [AUTH_TEST] Starting authentication flow test...');
+async function testAuthFix() {
+  console.log('🧪 Testing Authentication Fix...');
   
-  const browser = await puppeteer.launch({ 
-    headless: false,
-    defaultViewport: { width: 1280, height: 800 }
-  });
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
   
-  try {
-    const page = await browser.newPage();
-    
-    // Go to login page
-    console.log('🧪 [AUTH_TEST] Navigating to login page...');
-    await page.goto('http://localhost:3000/login');
-    
-    // Wait for page to load
-    await page.waitForSelector('[data-testid="login-submit-button"]', { timeout: 5000 });
-    
-    // Check if we have a single AuthContext provider
-    const authContextLogs = await page.evaluate(() => {
-      return console.logs.filter(log => 
-        log.includes('AUTH_DEBUG') && log.includes('AuthContextProviderSimple rendering')
-      );
+  // Capture console logs
+  const consoleMessages = [];
+  page.on('console', msg => {
+    consoleMessages.push({
+      type: msg.type(),
+      text: msg.text(),
+      timestamp: new Date().toISOString()
     });
+  });
+
+  try {
+    console.log('📍 Step 1: Navigate to trades page (protected route)...');
+    await page.goto('http://localhost:3000/trades', { 
+      waitUntil: 'networkidle2',
+      timeout: 10000 
+    });
+
+    // Wait a moment to see if auth initializes
+    await new Promise(resolve => setTimeout(resolve, 5000));
+
+    console.log('📍 Step 2: Check for infinite loading...');
     
-    console.log('🧪 [AUTH_TEST] AuthContext provider instances found:', authContextLogs.length);
-    
-    if (authContextLogs.length === 1) {
-      console.log('✅ [AUTH_TEST] SUCCESS: Only one AuthContext provider found');
-    } else {
-      console.log('❌ [AUTH_TEST] FAILURE: Multiple AuthContext providers still exist');
-    }
-    
-    // Fill in login form
-    console.log('🧪 [AUTH_TEST] Filling login form...');
-    await page.type('#email', 'test@example.com');
-    await page.type('#password', 'testpassword123');
-    
-    // Submit login
-    console.log('🧪 [AUTH_TEST] Submitting login form...');
-    await page.click('[data-testid="login-submit-button"]');
-    
-    // Wait for either dashboard or error
-    try {
-      await Promise.race([
-        page.waitForSelector('h1', { timeout: 10000 }), // Dashboard title
-        page.waitForSelector('[style*="color: #dc2626"]', { timeout: 10000 }) // Error message
-      ]);
-      
-      const currentUrl = page.url();
-      console.log('🧪 [AUTH_TEST] Navigation result:', currentUrl);
-      
-      if (currentUrl.includes('/dashboard')) {
-        console.log('✅ [AUTH_TEST] SUCCESS: Login successful, redirected to dashboard');
-        
-        // Check dashboard content
-        const dashboardTitle = await page.$eval('h1', el => el.textContent);
-        if (dashboardTitle && dashboardTitle.includes('Trading Dashboard')) {
-          console.log('✅ [AUTH_TEST] SUCCESS: Dashboard loaded correctly');
-        }
-        
-      } else if (currentUrl.includes('/login')) {
-        console.log('❌ [AUTH_TEST] FAILURE: Redirected back to login - redirect loop still exists');
-        
-        // Check for error messages
-        const errorElement = await page.$('[style*="color: #dc2626"]');
-        if (errorElement) {
-          const errorText = await errorElement.evaluate(el => el.textContent);
-          console.log('🧪 [AUTH_TEST] Error message:', errorText);
+    // Check if still showing loading state
+    const isLoading = await page.evaluate(() => {
+      const loadingElements = document.querySelectorAll('*');
+      for (const el of loadingElements) {
+        if (el.textContent && el.textContent.includes('Initializing authentication')) {
+          return true;
         }
       }
-      
-    } catch (error) {
-      console.log('❌ [AUTH_TEST] Test failed:', error.message);
-    }
+      return false;
+    });
+
+    console.log('📍 Step 3: Analyze console logs...');
     
+    // Analyze auth-related console messages
+    const authMessages = consoleMessages.filter(msg =>
+      msg.text.includes('AUTH_CONTEXT_HYDRATION_DEBUG') ||
+      msg.text.includes('AUTH_GUARD_DEBUG') ||
+      msg.text.includes('AuthContext')
+    );
+
+    // Check for successful initialization
+    const hasInitSuccess = authMessages.some(msg =>
+      msg.text.includes('Auth initialization completed successfully') ||
+      msg.text.includes('authInitialized: true')
+    );
+
+    // Check for timeout triggers
+    const hasTimeoutMessages = authMessages.some(msg =>
+      msg.text.includes('Forcing initialization due to timeout') ||
+      msg.text.includes('Critical timeout reached')
+    );
+
+    // Check for error messages
+    const hasErrors = authMessages.some(msg =>
+      msg.type === 'error' ||
+      msg.text.includes('🚨')
+    );
+
+    console.log('\n🎯 AUTHENTICATION FIX TEST RESULTS:');
+    console.log('=====================================');
+    console.log(`✅ Loading State Resolved: ${!isLoading ? 'PASS' : 'FAIL'}`);
+    console.log(`✅ Auth Initialization Success: ${hasInitSuccess ? 'PASS' : 'FAIL'}`);
+    console.log(`⚠️  Timeout Mechanism Active: ${hasTimeoutMessages ? 'YES' : 'NO'}`);
+    console.log(`❌ Errors Present: ${hasErrors ? 'YES' : 'NO'}`);
+    
+    if (!isLoading && hasInitSuccess) {
+      console.log('\n🎉 SUCCESS: Authentication initialization issue appears to be FIXED!');
+      console.log('   - Loading state resolved properly');
+      console.log('   - Auth context initialized successfully');
+      console.log('   - No infinite loading detected');
+    } else {
+      console.log('\n❌ ISSUE STILL PERSISTS:');
+      if (isLoading) {
+        console.log('   - Still showing infinite loading state');
+      }
+      if (!hasInitSuccess) {
+        console.log('   - Auth initialization not completing');
+      }
+    }
+
+    console.log('\n📊 Console Log Analysis:');
+    console.log(`   - Total auth messages: ${authMessages.length}`);
+    console.log(`   - Error messages: ${authMessages.filter(m => m.type === 'error').length}`);
+    console.log(`   - Warning messages: ${authMessages.filter(m => m.type === 'warning').length}`);
+
+    // Final check - try to navigate to dashboard
+    console.log('\n📍 Step 4: Test navigation to dashboard...');
+    await page.goto('http://localhost:3000/dashboard', { 
+      waitUntil: 'networkidle2',
+      timeout: 8000 
+    });
+    
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
+    const dashboardLoaded = await page.evaluate(() => {
+      return !document.body.textContent.includes('Initializing authentication');
+    });
+
+    console.log(`✅ Dashboard Navigation: ${dashboardLoaded ? 'PASS' : 'FAIL'}`);
+
   } catch (error) {
-    console.error('🧪 [AUTH_TEST] Test error:', error);
+    console.error('❌ Test failed with error:', error.message);
   } finally {
     await browser.close();
   }
 }
 
 // Run the test
-testAuthenticationFlow().then(() => {
-  console.log('🧪 [AUTH_TEST] Authentication flow test completed');
-  process.exit(0);
-}).catch(error => {
-  console.error('🧪 [AUTH_TEST] Test failed:', error);
-  process.exit(1);
-});
+testAuthFix().catch(console.error);

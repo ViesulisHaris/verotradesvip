@@ -2420,3 +2420,27 @@ html body div[data-testid*="dropdown-menu"] {
     transform: none !important;
   }
 }
+
+/* Fix for main element padding-top issue - Maximum specificity */
+html body div main.verotrade-main-content {
+  padding-top: 70px !important;
+  margin-top: 0 !important;
+}
+
+/* Additional override for any potential Tailwind reset */
+.verotrade-main-content {
+  padding-top: 70px !important;
+  margin-top: 0 !important;
+}
+
+/* Ensure no CSS reset is overriding the main element */
+main.verotrade-main-content {
+  padding-top: 70px !important;
+  margin-top: 0 !important;
+}
+
+/* Ultra-specific rule to override any CSS reset */
+html body main.verotrade-main-content[style] {
+  padding-top: 70px !important;
+  margin-top: 0 !important;
+}

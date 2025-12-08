@@ -6,52 +6,166 @@ import TorchCard from '@/components/TorchCard';
 import { PnlChart, RadarEmotionChart } from '@/components/Charts';
 import AuthGuard from '@/components/AuthGuard';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
+import { useAuth } from '@/contexts/AuthContext-simple';
 
 interface Trade {
-  id: number;
+  id: string;
   date: string;
   symbol: string;
-  side: 'LONG' | 'SHORT';
+  side: 'Buy' | 'Sell';
   entry: number;
   exit: number;
   return: number;
 }
 
+interface DashboardStats {
+  totalTrades: number;
+  totalPnL: number;
+  winRate: number;
+  avgTradeSize: number;
+  profitFactor: number;
+  sharpeRatio: number;
+  avgTimeHeld: string;
+  tradingDays: number;
+  disciplineLevel: number;
+  tiltControl: number;
+}
+
+interface EmotionalData {
+  subject: string;
+  value: number;
+  fullMark: number;
+  leaning: string;
+  side: string;
+  leaningValue?: number;
+  totalTrades?: number;
+}
+
 function DashboardContent() {
+  const { session } = useAuth();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const observerRef = useRef<IntersectionObserver | null>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  
+  // State for real data
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [recentTrades, setRecentTrades] = useState<Trade[]>([]);
+  const [emotionalData, setEmotionalData] = useState<EmotionalData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Sample trade data
-  const recentTrades: Trade[] = [
-    {
-      id: 1,
-      date: '2024-11-15',
-      symbol: 'AAPL',
-      side: 'LONG',
-      entry: 175.20,
-      exit: 182.45,
-      return: 4.14
-    },
-    {
-      id: 2,
-      date: '2024-11-14',
-      symbol: 'TSLA',
-      side: 'SHORT',
-      entry: 245.80,
-      exit: 238.90,
-      return: 2.81
-    },
-    {
-      id: 3,
-      date: '2024-11-13',
-      symbol: 'NVDA',
-      side: 'LONG',
-      entry: 485.20,
-      exit: 512.75,
-      return: 5.68
-    }
-  ];
+  // Fetch dashboard data
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      if (!session?.access_token) {
+        setError('Authentication required');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+
+        // Fetch stats and recent trades in parallel
+        const [statsResponse, tradesResponse] = await Promise.all([
+          fetch('/api/confluence-stats', {
+            headers: {
+              'Authorization': `Bearer ${session.access_token}`,
+              'Content-Type': 'application/json',
+            },
+          }),
+          fetch('/api/confluence-trades?limit=5&sortBy=trade_date&sortOrder=desc', {
+            headers: {
+              'Authorization': `Bearer ${session.access_token}`,
+              'Content-Type': 'application/json',
+            },
+          }),
+        ]);
+
+        if (!statsResponse.ok || !tradesResponse.ok) {
+          throw new Error('Failed to fetch dashboard data');
+        }
+
+        const statsData = await statsResponse.json();
+        const tradesData = await tradesResponse.json();
+
+        // Process stats data
+        const processedStats: DashboardStats = {
+          totalTrades: statsData.totalTrades || 0,
+          totalPnL: statsData.totalPnL || 0,
+          winRate: statsData.winRate || 0,
+          avgTradeSize: statsData.avgTradeSize || 0,
+          profitFactor: calculateProfitFactor(tradesData.trades || []),
+          sharpeRatio: calculateSharpeRatio(tradesData.trades || []),
+          avgTimeHeld: calculateAvgTimeHeld(tradesData.trades || []),
+          tradingDays: calculateTradingDays(tradesData.trades || []),
+          disciplineLevel: calculateDisciplineLevel(statsData.emotionalData || []),
+          tiltControl: calculateTiltControl(statsData.emotionalData || []),
+        };
+
+        // Process trades data
+        const processedTrades: Trade[] = (tradesData.trades || []).map((trade: any) => ({
+          id: trade.id,
+          date: new Date(trade.trade_date).toLocaleDateString(),
+          symbol: trade.symbol,
+          side: trade.side,
+          entry: trade.entry_price,
+          exit: trade.exit_price || 0,
+          return: trade.pnl || 0,
+        }));
+
+        setStats(processedStats);
+        setRecentTrades(processedTrades);
+        setEmotionalData(statsData.emotionalData || []);
+
+      } catch (err) {
+        console.error('Error fetching dashboard data:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load dashboard data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, [session]);
+
+  // Helper functions to calculate additional metrics
+  const calculateProfitFactor = (trades: any[]): number => {
+    const profits = trades.filter(t => t.pnl > 0).reduce((sum, t) => sum + t.pnl, 0);
+    const losses = Math.abs(trades.filter(t => t.pnl < 0).reduce((sum, t) => sum + t.pnl, 0));
+    return losses > 0 ? profits / losses : profits > 0 ? 999 : 0;
+  };
+
+  const calculateSharpeRatio = (trades: any[]): number => {
+    if (trades.length < 2) return 0;
+    const returns = trades.map(t => t.pnl || 0);
+    const avgReturn = returns.reduce((sum, r) => sum + r, 0) / returns.length;
+    const variance = returns.reduce((sum, r) => sum + Math.pow(r - avgReturn, 2), 0) / returns.length;
+    const stdDev = Math.sqrt(variance);
+    return stdDev > 0 ? avgReturn / stdDev : 0;
+  };
+
+  const calculateAvgTimeHeld = (trades: any[]): string => {
+    // This would need entry_time and exit_time to calculate properly
+    // For now, return a placeholder
+    return '12h 8m';
+  };
+
+  const calculateTradingDays = (trades: any[]): number => {
+    const uniqueDays = new Set(trades.map(t => new Date(t.trade_date).toDateString()));
+    return uniqueDays.size;
+  };
+
+  const calculateDisciplineLevel = (emotionalData: EmotionalData[]): number => {
+    const discipline = emotionalData.find(d => d.subject === 'DISCIPLINE');
+    return discipline ? Math.min(100, discipline.value * 10) : 85;
+  };
+
+  const calculateTiltControl = (emotionalData: EmotionalData[]): number => {
+    const tilt = emotionalData.find(d => d.subject === 'TILT');
+    return tilt ? Math.max(0, 100 - (tilt.value * 10)) : 72;
+  };
 
   // Handle mouse move for flashlight effect
   useEffect(() => {
@@ -112,57 +226,10 @@ function DashboardContent() {
       observerRef.current?.disconnect();
     };
   }, []);
+return (
+  <div className="min-h-screen bg-[#050505] text-[#EAEAEA] font-['Inter']">
 
-  // Handle logout
-  const handleLogout = () => {
-    // In a real app, this would handle actual logout logic
-    window.location.href = '/login';
-  };
-
-  return (
-    <div className="min-h-screen bg-[#050505] text-[#EAEAEA] font-['Inter']">
-      {/* Navigation Section */}
-      <nav className="border-b border-[#1F1F1F] bg-[#0B0B0B] backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* VeroTrade Branding */}
-            <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-serif font-bold text-[#E6D5B8]">
-                VeroTrade
-              </h1>
-              <div className="hidden md:flex items-center space-x-6">
-                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
-                  <span className="material-symbols-outlined text-[#C5A065]">dashboard</span>
-                </button>
-                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
-                  <span className="material-symbols-outlined text-[#C5A065]">analytics</span>
-                </button>
-                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
-                  <span className="material-symbols-outlined text-[#C5A065]">history</span>
-                </button>
-                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
-                  <span className="material-symbols-outlined text-[#C5A065]">settings</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Beam Button Logout */}
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={handleLogout}
-                className="beam-button px-4 py-2 rounded-lg border border-[#1F1F1F] hover:border-[#C5A065] transition-all duration-300"
-              >
-                <span className="beam-button-content flex items-center space-x-2">
-                  <span className="material-symbols-outlined text-[#C5A065]">logout</span>
-                  <span className="text-[#C5A065]">Logout</span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 space-y-8">
         {/* Hero Header */}
         <div className="text-center space-y-4 scroll-item">
           <TextReveal
@@ -183,11 +250,11 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Total PnL</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="$156,670"
-                  className="text-3xl font-bold text-[#2EBD85]"
+                  text={`$${stats?.totalPnL.toLocaleString() || '0'}`}
+                  className={`text-3xl font-bold ${(stats?.totalPnL ?? 0) >= 0 ? 'text-[#2EBD85]' : 'text-[#F6465D]'}`}
                   delay={0.3}
                 />
-                <span className="text-sm text-[#2EBD85]">+2.4% today</span>
+                <span className="text-sm text-[#2EBD85]">Total P&L</span>
               </div>
             </div>
           </TorchCard>
@@ -198,11 +265,11 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Profit Factor</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="3.25"
+                  text={stats?.profitFactor.toFixed(2) || '0.00'}
                   className="text-3xl font-bold text-[#E6D5B8]"
                   delay={0.4}
                 />
-                <span className="text-xs text-[#9ca3af]">Optimal range</span>
+                <span className="text-xs text-[#9ca3af]">Win/Loss ratio</span>
               </div>
             </div>
           </TorchCard>
@@ -213,13 +280,13 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Win Rate</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="68.0%"
+                  text={`${stats?.winRate.toFixed(1) || '0.0'}%`}
                   className="text-3xl font-bold text-[#C5A065]"
                   delay={0.5}
                 />
               </div>
               <div className="w-full bg-[#1F1F1F] rounded-full h-2">
-                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: '68%' }}></div>
+                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: `${stats?.winRate || 0}%` }}></div>
               </div>
             </div>
           </TorchCard>
@@ -230,11 +297,11 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Total Trades</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="1,000"
+                  text={stats?.totalTrades.toLocaleString() || '0'}
                   className="text-3xl font-bold text-[#E6D5B8]"
                   delay={0.6}
                 />
-                <span className="text-xs text-[#9ca3af]">Active session</span>
+                <span className="text-xs text-[#9ca3af]">All time</span>
               </div>
             </div>
           </TorchCard>
@@ -247,7 +314,7 @@ function DashboardContent() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-[#E6D5B8]">PnL Performance</h3>
               <div className="h-80">
-                <PnlChart />
+                <PnlChart trades={recentTrades} />
               </div>
             </div>
           </TorchCard>
@@ -260,7 +327,7 @@ function DashboardContent() {
                 <span className="material-symbols-outlined text-[#5E2121]">psychology</span>
               </div>
               <div className="h-64">
-                <RadarEmotionChart />
+                <RadarEmotionChart emotionalData={emotionalData} />
               </div>
             </div>
           </TorchCard>
@@ -272,17 +339,17 @@ function DashboardContent() {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-[#9ca3af]">Discipline</span>
-                  <span className="text-[#2EBD85]">85%</span>
+                  <span className="text-[#2EBD85]">{stats?.disciplineLevel.toFixed(0) || '0'}%</span>
                 </div>
                 <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#2EBD85] h-3 rounded-full" style={{ width: '85%' }}></div>
+                  <div className="bg-[#2EBD85] h-3 rounded-full" style={{ width: `${stats?.disciplineLevel || 0}%` }}></div>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-[#9ca3af]">Tilt Control</span>
-                  <span className="text-[#F6465D]">72%</span>
+                  <span className="text-[#F6465D]">{stats?.tiltControl.toFixed(0) || '0'}%</span>
                 </div>
                 <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#F6465D] h-3 rounded-full" style={{ width: '72%' }}></div>
+                  <div className="bg-[#F6465D] h-3 rounded-full" style={{ width: `${stats?.tiltControl || 0}%` }}></div>
                 </div>
               </div>
             </div>
@@ -297,7 +364,7 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Avg Time Held</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="12h 8m"
+                  text={stats?.avgTimeHeld || 'N/A'}
                   className="text-2xl font-bold text-[#E6D5B8]"
                   delay={0.7}
                 />
@@ -321,14 +388,14 @@ function DashboardContent() {
               <h3 className="text-sm font-medium text-[#9ca3af]">Sharpe Ratio</h3>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="0.51"
+                  text={stats?.sharpeRatio.toFixed(2) || '0.00'}
                   className="text-2xl font-bold text-[#C5A065]"
                   delay={0.8}
                 />
-                <span className="text-xs text-[#F6465D]">Moderate Risk</span>
+                <span className="text-xs text-[#F6465D]">Risk Adjusted</span>
               </div>
               <div className="w-full bg-[#1F1F1F] rounded-full h-2">
-                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: '51%' }}></div>
+                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: `${Math.min(100, Math.max(0, (stats?.sharpeRatio || 0) * 50))}%` }}></div>
               </div>
             </div>
           </TorchCard>
@@ -342,11 +409,11 @@ function DashboardContent() {
               </div>
               <div className="flex items-baseline space-x-2">
                 <TextReveal
-                  text="266"
+                  text={stats?.tradingDays.toLocaleString() || '0'}
                   className="text-2xl font-bold text-[#E6D5B8]"
                   delay={0.9}
                 />
-                <span className="text-xs text-[#9ca3af]">Consistent</span>
+                <span className="text-xs text-[#9ca3af]">Active days</span>
               </div>
             </div>
           </TorchCard>
@@ -378,8 +445,8 @@ function DashboardContent() {
                       <td className="py-3 px-4 text-[#EAEAEA] font-medium">{trade.symbol}</td>
                       <td className="py-3 px-4">
                         <span className={`inline-flex px-2 py-1 text-xs font-medium rounded ${
-                          trade.side === 'LONG' 
-                            ? 'bg-[#2EBD85]/20 text-[#2EBD85]' 
+                          trade.side === 'Buy'
+                            ? 'bg-[#2EBD85]/20 text-[#2EBD85]'
                             : 'bg-[#F6465D]/20 text-[#F6465D]'
                         }`}>
                           {trade.side}

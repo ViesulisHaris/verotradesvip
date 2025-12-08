@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-12-08T17:23:17.016Z",
+  "summary": {
+    "passed": 16,
+    "failed": 1,
+    "successRate": "94.1"
+  },
+  "details": [
+    "✅ Navigation to dashboard successful",
+    "✅ Header component present",
+    "✅ VeroTrade logo present",
+    "✅ Navigation icons present: 7",
+    "✅ Dashboard title present",
+    "✅ Key metrics cards present: 11",
+    "✅ All expected metrics found",
+    "✅ PnL Chart present and rendered",
+    "✅ Radar Emotion Chart present and rendered",
+    "✅ Discipline Level section present",
+    "✅ Recent Trades table present",
+    "✅ Table headers correct",
+    "✅ Table has data rows: 3",
+    "✅ No layout conflicts",
+    "❌ Card hover effects not working",
+    "✅ Navigation links present",
+    "✅ Animations present and working"
+  ]
+}

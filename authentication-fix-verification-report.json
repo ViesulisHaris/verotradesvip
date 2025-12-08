@@ -1,0 +1,67 @@
+{
+  "startTime": "2025-12-08T18:29:27.219Z",
+  "tests": [
+    {
+      "testName": "Main URL Loading",
+      "status": "PASS",
+      "timestamp": "2025-12-08T18:29:29.720Z",
+      "message": "Page loaded in 1675ms without authentication hang",
+      "loadTime": 1675,
+      "authInitComplete": true
+    },
+    {
+      "testName": "Login Page Loading",
+      "status": "PASS",
+      "timestamp": "2025-12-08T18:29:32.083Z",
+      "message": "Login page loaded successfully with all form elements",
+      "authInitComplete": true
+    },
+    {
+      "testName": "Register Page Loading",
+      "status": "PASS",
+      "timestamp": "2025-12-08T18:29:33.892Z",
+      "message": "Register page loaded successfully with all form elements",
+      "authInitComplete": true
+    },
+    {
+      "testName": "Protected Route Redirect",
+      "status": "FAIL",
+      "timestamp": "2025-12-08T18:29:45.274Z",
+      "message": "Protected route failed to load or authentication hung",
+      "loadTime": 1007,
+      "authInitComplete": false,
+      "currentUrl": "http://localhost:3000/dashboard"
+    },
+    {
+      "testName": "Infinite Loops Detection",
+      "status": "PASS",
+      "timestamp": "2025-12-08T18:29:45.388Z",
+      "message": "No hook-related or authentication errors detected",
+      "totalErrors": 0,
+      "totalWarnings": 0
+    },
+    {
+      "testName": "Site Navigation",
+      "status": "PASS",
+      "timestamp": "2025-12-08T18:29:48.726Z",
+      "message": "All test pages loaded successfully without authentication issues",
+      "pagesTested": 3,
+      "pagesPassed": 3
+    },
+    {
+      "testName": "Authentication State Consistency",
+      "status": "FAIL",
+      "timestamp": "2025-12-08T18:29:50.387Z",
+      "error": "SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'a[href*=\"login\"], button:contains(\"Login\")' is not a valid selector.",
+      "message": "Failed to verify authentication state consistency"
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 5,
+    "failed": 2,
+    "warnings": 0
+  },
+  "endTime": "2025-12-08T18:29:50.830Z",
+  "duration": 23611
+}

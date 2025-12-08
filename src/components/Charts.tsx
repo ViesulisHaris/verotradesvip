@@ -15,6 +15,13 @@ import {
 import { Line, Radar } from 'react-chartjs-2';
 import { useEffect } from 'react';
 
+// Extend Window interface to include Chart
+declare global {
+  interface Window {
+    Chart: typeof ChartJS;
+  }
+}
+
 // Register Chart.js components
 ChartJS.register(
   CategoryScale,
@@ -31,10 +38,50 @@ ChartJS.register(
 defaults.font.family = 'Inter';
 defaults.color = '#555';
 
+// Make Chart available globally for testing
+if (typeof window !== 'undefined') {
+  window.Chart = ChartJS;
+}
+
 // PnlChart component
-export const PnlChart = () => {
-  const data = [10000, 25000, 42000, 58000, 80000, 95000, 115000, 128000, 142000, 150000, 152000, 156670];
-  const labels = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'];
+export const PnlChart = ({ trades = [] }: { trades?: any[] }) => {
+  // Process trades to create cumulative P&L data
+  const processTradesForChart = (trades: any[]) => {
+    if (!trades || trades.length === 0) {
+      return {
+        data: [0],
+        labels: ['No Data']
+      };
+    }
+
+    // Sort trades by date
+    const sortedTrades = [...trades].sort((a, b) =>
+      new Date(a.trade_date).getTime() - new Date(b.trade_date).getTime()
+    );
+
+    // Calculate cumulative P&L
+    let cumulativePnL = 0;
+    const cumulativeData: number[] = [0];
+    const labels: string[] = ['Start'];
+
+    sortedTrades.forEach((trade, index) => {
+      cumulativePnL += trade.pnl || 0;
+      cumulativeData.push(cumulativePnL);
+      
+      // Format date label
+      const date = new Date(trade.trade_date);
+      const monthLabel = date.toLocaleDateString('en-US', { month: 'short' });
+      const dayLabel = date.getDate();
+      labels.push(`${monthLabel} ${dayLabel}`);
+    });
+
+    return {
+      data: cumulativeData,
+      labels
+    };
+  };
+
+  const { data, labels } = processTradesForChart(trades);
 
   const chartData = {
     labels,
@@ -111,9 +158,34 @@ export const PnlChart = () => {
 };
 
 // RadarEmotionChart component
-export const RadarEmotionChart = () => {
-  const data = [5, 3, 7, 8, 4, 9, 3, 4];
-  const labels = ['Neutral', 'Tilt', 'Discipline', 'Confident', 'FOMO', 'Patience', 'Revenge', 'Regret'];
+export const RadarEmotionChart = ({ emotionalData = [] }: { emotionalData?: any[] }) => {
+  // Process emotional data for radar chart
+  const processEmotionalData = (emotionalData: any[]) => {
+    if (!emotionalData || emotionalData.length === 0) {
+      return {
+        data: [0, 0, 0, 0, 0, 0, 0, 0],
+        labels: ['Neutral', 'Tilt', 'Discipline', 'Confident', 'FOMO', 'Patience', 'Revenge', 'Regret']
+      };
+    }
+
+    // Map emotional data to radar chart format
+    const emotionOrder = ['NEUTRAL', 'TILT', 'DISCIPLINE', 'CONFIDENT', 'FOMO', 'PATIENCE', 'REVENGE', 'REGRET'];
+    const data = emotionOrder.map(emotion => {
+      const emotionData = emotionalData.find(d => d.subject === emotion);
+      return emotionData ? (emotionData.value / 100) * 10 : 0; // Convert percentage to 0-10 scale
+    });
+
+    const labels = emotionOrder.map(emotion =>
+      emotion.charAt(0) + emotion.slice(1).toLowerCase()
+    );
+
+    return {
+      data,
+      labels
+    };
+  };
+
+  const { data, labels } = processEmotionalData(emotionalData);
 
   const chartData = {
     labels,

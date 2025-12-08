@@ -3,7 +3,6 @@
 import AuthGuard from '@/components/AuthGuard';
 import { usePathname } from 'next/navigation';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
-import { AuthContextProviderSimple } from '@/contexts/AuthContext-simple';
 
 export default function AuthLayout({
   children,
@@ -24,26 +23,26 @@ export default function AuthLayout({
                            pathname.includes('/confluence') ||
                            pathname.includes('/settings');
   
-  console.log('🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering with AuthContextProviderSimple', {
+  console.log('🔍 [AUTH_LAYOUT_DEBUG] AuthLayout rendering without AuthContextProviderSimple', {
     pathname,
     requireAuth,
     needsUnifiedLayout,
     timestamp: new Date().toISOString()
   });
   
-  // CRITICAL FIX: Ensure AuthContextProviderSimple wraps all components in auth route group
-  // This fixes the "AuthContext is undefined" issue by guaranteeing provider availability
+  // CRITICAL FIX: Removed AuthContextProviderSimple import and usage
+  // RootLayout already provides AuthContextProviderSimple, so we don't need it here
+  // This fixes the "Rendered more hooks than during the previous render" error
+  // and eliminates the duplicate AuthContextProvider instances causing initialization loops
   return (
-    <AuthContextProviderSimple>
-      <AuthGuard requireAuth={requireAuth}>
-        {needsUnifiedLayout ? (
-          <UnifiedLayout>
-            {children}
-          </UnifiedLayout>
-        ) : (
-          children
-        )}
-      </AuthGuard>
-    </AuthContextProviderSimple>
+    <AuthGuard requireAuth={requireAuth}>
+      {needsUnifiedLayout ? (
+        <UnifiedLayout>
+          {children}
+        </UnifiedLayout>
+      ) : (
+        children
+      )}
+    </AuthGuard>
   );
 }

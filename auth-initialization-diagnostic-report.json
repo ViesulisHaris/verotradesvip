@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-12-08T18:32:47.003Z",
+  "authState": {
+    "hasAuthElements": false,
+    "initializingText": false,
+    "pageContent": "VeroTrade\ndashboard\nanalytics\nhistory\nsettings\nlogout\nLogout\nTrading Dashboard\n\nTrack your performance and analyze your trading patterns\n\nTotal PnL\n$156,670\n+2.4% today\nProfit Factor\n3.25\nOptimal range\nWin Rate\n68.0%\nTotal Trades\n1,000\nActive session\nPnL Performance\nEmotional Analysis\npsychology\nDiscipline Level\nDiscipline\n85%\nTilt Control\n72%\nAvg Time Held\n12h 8m\nShort\nMedium\nLong\nSharpe Ratio\n0.51\nModerate Risk\nTrading Days\ncalendar_today\n266\nConsistent\nRecent Trades\nDate\tSymbol\tSide\tEntry\tExi",
+    "url": "http://localhost:3000/"
+  },
+  "loginAuthState": {
+    "initializingText": false,
+    "hasLoginForm": true,
+    "hasEmailInput": true,
+    "hasPasswordInput": true,
+    "url": "http://localhost:3000/login"
+  },
+  "dashboardState": {
+    "loadTime": 911,
+    "initializingText": true,
+    "currentUrl": "http://localhost:3000/dashboard",
+    "pageTitle": "VeroTrade - Professional Trading Journal",
+    "pageContent": "Initializing authentication..."
+  },
+  "authLogs": [
+    {
+      "type": "log",
+      "text": "✅ [AGGRESSIVE_FIX] Client auth object available",
+      "timestamp": "2025-12-08T18:32:43.471Z"
+    },
+    {
+      "type": "warn",
+      "text": "⚠️ [AUTH_CONTEXT_HYDRATION_DEBUG] Critical timeout reached - checking state JSHandle@object",
+      "timestamp": "2025-12-08T18:32:44.536Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering - START JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.577Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering Provider JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.577Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering - START JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.578Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_DEBUG] AuthContextProviderSimple rendering Provider JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.578Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.580Z"
+    },
+    {
+      "type": "log",
+      "text": "🔍 [AUTH_GUARD_DEBUG] AuthGuard rendering JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.580Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] AuthContext useEffect starting JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.587Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.587Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:46.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_FIX] Clearing auth data keys: JSHandle@array",
+      "timestamp": "2025-12-08T18:32:46.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Fetching session attempt 1/3 JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] AuthContext useEffect starting JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:46.592Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_FIX] Clearing auth data keys: JSHandle@array",
+      "timestamp": "2025-12-08T18:32:46.592Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Fetching session attempt 1/3 JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.592Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Session fetch result 1/3 JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.597Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Session fetch result 1/3 JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.599Z"
+    }
+  ],
+  "errorLogs": [],
+  "warningLogs": [],
+  "initLogs": [
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:36.191Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:36.192Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:36.221Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:36.221Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Forcing initialization due to timeout JSHandle@object",
+      "timestamp": "2025-12-08T18:32:41.229Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:42.527Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:42.527Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:42.532Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:42.532Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.587Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:46.590Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Client-side detected - proceeding with initialization JSHandle@object",
+      "timestamp": "2025-12-08T18:32:46.591Z"
+    },
+    {
+      "type": "log",
+      "text": "🔧 [AUTH_CONTEXT_HYDRATION_DEBUG] Starting auth initialization",
+      "timestamp": "2025-12-08T18:32:46.592Z"
+    }
+  ]
+}
