@@ -176,6 +176,11 @@ export default function LogTradePage() {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
+    
+    // Always return a cleanup function
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [strategyDropdownOpen, sideDropdownOpen, emotionDropdownOpen]);
 
   // Toast notification system

@@ -1,398 +1,404 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { formatCurrency } from '@/lib/utils';
-import { fetchTradesForDashboard } from '@/lib/optimized-queries';
-import { useAuth } from '@/contexts/AuthContext-simple';
+import React, { useState, useEffect, useRef } from 'react';
+import TextReveal from '@/components/TextReveal';
+import TorchCard from '@/components/TorchCard';
+import { PnlChart, RadarEmotionChart } from '@/components/Charts';
 import AuthGuard from '@/components/AuthGuard';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
-import EmotionRadar from '@/components/EmotionRadar';
-import PnLChart from '@/components/charts/PnLChart';
-import { TrendingUp, DollarSign, Target, Calendar, Clock, BarChart3, AlertCircle } from 'lucide-react';
 
 interface Trade {
-  id: string;
+  id: number;
+  date: string;
   symbol: string;
-  side: 'Buy' | 'Sell';
-  quantity: number;
-  entry_price: number;
-  exit_price?: number;
-  pnl?: number;
-  trade_date: string;
-  entry_time?: string;
-  exit_time?: string;
-  emotional_state?: string;
-  strategies?: {
-    id: string;
-    name: string;
-    rules?: string[];
-  };
-  notes?: string;
-  market?: string;
+  side: 'LONG' | 'SHORT';
+  entry: number;
+  exit: number;
+  return: number;
 }
 
-interface DashboardStats {
-  totalPnL: number;
-  winrate: number;
-  profitFactor: number;
-  totalTrades: number;
-  avgTimeHeld: number;
-  sharpeRatio: number;
-}
+function DashboardContent() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
-interface EmotionData {
-  subject: string;
-  value: number;
-  fullMark: number;
-  percent: string;
-}
-
-function Dashboard() {
-  const { user } = useAuth();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [trades, setTrades] = useState<Trade[]>([]);
-  const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [emotionData, setEmotionData] = useState<EmotionData[]>([]);
-  const [chartData, setChartData] = useState<any[]>([]);
-
-  useEffect(() => {
-    if (!user) return;
-
-    // Prevent multiple simultaneous data fetches
-    let isMounted = true;
-    
-    const loadDashboardData = async () => {
-      try {
-        if (!isMounted) return;
-        
-        setLoading(true);
-        setError(null);
-        
-        const result = await fetchTradesForDashboard(user.id);
-        
-        if (!isMounted) return;
-        
-        setTrades(result.trades);
-        setStats(result.summary);
-
-        // Process emotional data for radar chart
-        const emotionCounts: Record<string, number> = {};
-        let totalEmotions = 0;
-
-        result.trades.forEach(trade => {
-          if (trade.emotional_state) {
-            let emotions: string[] = [];
-            
-            if (Array.isArray(trade.emotional_state)) {
-              emotions = trade.emotional_state.filter(e => typeof e === 'string' && e.trim());
-            } else if (typeof trade.emotional_state === 'string') {
-              const trimmed = trade.emotional_state.trim();
-              if (trimmed) {
-                if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
-                  try {
-                    const parsed = JSON.parse(trimmed);
-                    if (Array.isArray(parsed)) {
-                      emotions = parsed.map(e => typeof e === 'string' ? e.trim().toUpperCase() : e);
-                    } else if (typeof parsed === 'string') {
-                      emotions = [parsed.trim().toUpperCase()];
-                    }
-                  } catch {
-                    emotions = [trimmed.toUpperCase()];
-                  }
-                } else {
-                  emotions = [trimmed.toUpperCase()];
-                }
-              }
-            }
-
-            emotions.forEach(emotion => {
-              emotionCounts[emotion] = (emotionCounts[emotion] || 0) + 1;
-              totalEmotions++;
-            });
-          }
-        });
-
-        const radarData: EmotionData[] = Object.entries(emotionCounts).map(([emotion, count]) => ({
-          subject: emotion,
-          value: Math.round((count / totalEmotions) * 100),
-          fullMark: 100,
-          percent: `${Math.round((count / totalEmotions) * 100)}%`
-        }));
-
-        if (!isMounted) return;
-        setEmotionData(radarData);
-
-        // Process chart data for P&L chart
-        const sortedTrades = [...result.trades].sort((a, b) =>
-          new Date(a.trade_date).getTime() - new Date(b.trade_date).getTime()
-        );
-
-        let cumulative = 0;
-        const processedChartData = sortedTrades.map(trade => {
-          const pnl = trade.pnl || 0;
-          cumulative += pnl;
-          return {
-            date: trade.trade_date,
-            pnl: pnl,
-            cumulative: cumulative
-          };
-        });
-
-        if (!isMounted) return;
-        setChartData(processedChartData);
-
-      } catch (err) {
-        if (isMounted) {
-          console.error('Error loading dashboard data:', err);
-          setError('Failed to load dashboard data');
-        }
-      } finally {
-        if (isMounted) {
-          setLoading(false);
-        }
-      }
-    };
-
-    loadDashboardData();
-    
-    return () => {
-      isMounted = false;
-    };
-  }, [user?.id]); // Only depend on user.id to prevent unnecessary re-fetches
-
-  const formatTime = (minutes: number) => {
-    if (minutes < 60) {
-      return `${Math.round(minutes)}m`;
-    } else {
-      const hours = Math.floor(minutes / 60);
-      const remainingMinutes = Math.round(minutes % 60);
-      return `${hours}h ${remainingMinutes}m`;
+  // Sample trade data
+  const recentTrades: Trade[] = [
+    {
+      id: 1,
+      date: '2024-11-15',
+      symbol: 'AAPL',
+      side: 'LONG',
+      entry: 175.20,
+      exit: 182.45,
+      return: 4.14
+    },
+    {
+      id: 2,
+      date: '2024-11-14',
+      symbol: 'TSLA',
+      side: 'SHORT',
+      entry: 245.80,
+      exit: 238.90,
+      return: 2.81
+    },
+    {
+      id: 3,
+      date: '2024-11-13',
+      symbol: 'NVDA',
+      side: 'LONG',
+      entry: 485.20,
+      exit: 512.75,
+      return: 5.68
     }
+  ];
+
+  // Handle mouse move for flashlight effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      
+      // Update CSS variables for all flashlight cards
+      const flashlightCards = document.querySelectorAll('.flashlight-card');
+      flashlightCards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        // Clamp values to prevent overflow
+        const clampedX = Math.max(0, Math.min(100, x));
+        const clampedY = Math.max(0, Math.min(100, y));
+        
+        (card as HTMLElement).style.setProperty('--mouse-x', `${clampedX}%`);
+        (card as HTMLElement).style.setProperty('--mouse-y', `${clampedY}%`);
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Handle scroll reveal animations with IntersectionObserver
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px' // Trigger slightly before element comes into view
+    };
+
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add 'in-view' class to trigger animation
+          entry.target.classList.add('in-view');
+          
+          // Find TextReveal components within this element and trigger their animations
+          const textRevealElements = entry.target.querySelectorAll('.text-reveal-letter');
+          textRevealElements.forEach((el, index) => {
+            setTimeout(() => {
+              (el as HTMLElement).style.animationPlayState = 'running';
+            }, index * 50); // Stagger the text reveals
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with scroll-item class
+    const scrollItems = document.querySelectorAll('.scroll-item');
+    scrollItems.forEach((item) => {
+      observerRef.current?.observe(item);
+    });
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    // In a real app, this would handle actual logout logic
+    window.location.href = '/login';
   };
-
-  if (loading) {
-    return (
-      <div className="verotrade-content-wrapper">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="flex flex-col items-center gap-4">
-            <div
-              className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin"
-              style={{ borderColor: 'var(--dusty-gold) transparent' }}
-            ></div>
-            <div className="body-text">Loading dashboard...</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="verotrade-content-wrapper">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="dashboard-card p-8 max-w-md text-center">
-            <AlertCircle className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--rust-red)' }} />
-            <h2 className="h2-section mb-4">Error Loading Dashboard</h2>
-            <p className="body-text mb-6">{error}</p>
-            <button
-              onClick={() => {
-                // Reset error state and retry
-                setError(null);
-                setLoading(true);
-                // Force a re-fetch by changing the user state slightly
-                if (user) {
-                  // This will trigger the useEffect to run again
-                  setTimeout(() => setLoading(false), 100);
-                }
-              }}
-              className="button-primary"
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
-    <div className="verotrade-content-wrapper">
-      <div className="mb-section">
-        {/* Header */}
-        <div className="mb-component">
-          <h1 className="h1-dashboard mb-element">Trading Dashboard</h1>
-          <p className="body-text mb-element">Overview of your trading performance and emotional analysis</p>
-        </div>
+    <div className="min-h-screen bg-[#050505] text-[#EAEAEA] font-['Inter']">
+      {/* Navigation Section */}
+      <nav className="border-b border-[#1F1F1F] bg-[#0B0B0B] backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* VeroTrade Branding */}
+            <div className="flex items-center space-x-8">
+              <h1 className="text-2xl font-serif font-bold text-[#E6D5B8]">
+                VeroTrade
+              </h1>
+              <div className="hidden md:flex items-center space-x-6">
+                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
+                  <span className="material-symbols-outlined text-[#C5A065]">dashboard</span>
+                </button>
+                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
+                  <span className="material-symbols-outlined text-[#C5A065]">analytics</span>
+                </button>
+                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
+                  <span className="material-symbols-outlined text-[#C5A065]">history</span>
+                </button>
+                <button className="p-2 rounded-lg hover:bg-[#1F1F1F] transition-colors">
+                  <span className="material-symbols-outlined text-[#C5A065]">settings</span>
+                </button>
+              </div>
+            </div>
 
-        {/* Key Metrics */}
-        {(stats || true) && (
-          <div className="key-metrics-grid mb-component" data-testid="metrics-container">
-            <div className="dashboard-card" data-testid="metrics-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Total P&L</h3>
-              </div>
-              <p className={`metric-value ${(stats?.totalPnL || 0) >= 0 ? '' : 'text-rust-red'}`}
-                 style={{ color: (stats?.totalPnL || 0) >= 0 ? 'var(--warm-off-white)' : 'var(--rust-red)' }}>
-                {formatCurrency(stats?.totalPnL || 0)}
-              </p>
-            </div>
-            
-            <div className="dashboard-card" data-testid="metrics-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Win Rate</h3>
-              </div>
-              <p className="metric-value">{(stats?.winrate || 0).toFixed(1)}%</p>
-            </div>
-            
-            <div className="dashboard-card" data-testid="metrics-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Profit Factor</h3>
-              </div>
-              <p className="metric-value">{(stats?.profitFactor || 0).toFixed(2)}</p>
-            </div>
-            
-            <div className="dashboard-card" data-testid="metrics-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Total Trades</h3>
-              </div>
-              <p className="metric-value">{stats?.totalTrades || 0}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Charts Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-component mb-component" data-testid="chart-container">
-          {/* P&L Chart */}
-          <div className="dashboard-card">
-            <div className="card-header mb-4">
-              <h2 className="h2-section">P&L Performance</h2>
-              <p className="body-text text-sm">Profit & loss over time with cumulative total</p>
-            </div>
-            <PnLChart data={chartData} height={300} />
-          </div>
-
-          {/* Emotional Analysis */}
-          <div className="dashboard-card">
-            <div className="card-header mb-4">
-              <h2 className="h2-section">Emotional Analysis</h2>
-              <p className="body-text text-sm">Distribution of emotional states during trades</p>
-            </div>
-            {emotionData.length > 0 ? (
-              <EmotionRadar data={emotionData} />
-            ) : (
-              <div className="flex items-center justify-center h-[300px]">
-                <div className="text-center">
-                  <div className="secondary-text mb-2">No emotional data available</div>
-                  <p className="body-text text-sm">Start logging emotions with your trades to see analysis</p>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Additional Stats */}
-        {stats && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-component mb-component">
-            <div className="dashboard-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Avg Time Held</h3>
-              </div>
-              <p className="metric-value">{formatTime(stats?.avgTimeHeld || 0)}</p>
-            </div>
-            
-            <div className="dashboard-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Sharpe Ratio</h3>
-              </div>
-              <p className="metric-value">{(stats?.sharpeRatio || 0).toFixed(2)}</p>
-            </div>
-            
-            <div className="dashboard-card">
-              <div className="card-header">
-                <h3 className="h3-metric-label">Trading Days</h3>
-              </div>
-              <p className="metric-value">
-                {trades.length > 0 ? new Set(trades.map(t => t.trade_date)).size : 0}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Recent Trades Table */}
-        <div className="dashboard-card" data-testid="recent-trades-table">
-          <div className="card-header mb-4">
-            <h2 className="h2-section">Recent Trades</h2>
-            <p className="body-text text-sm">Your latest trading activity</p>
-          </div>
-          
-          {trades.length === 0 ? (
-            <div className="text-center py-8">
-              <TrendingUp className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--muted-gray)' }} />
-              <h3 className="h2-section mb-2">No trades yet</h3>
-              <p className="body-text mb-4">Start logging your trades to see them here</p>
-              <button
-                onClick={() => window.location.href = '/log-trade'}
-                className="button-primary"
+            {/* Beam Button Logout */}
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={handleLogout}
+                className="beam-button px-4 py-2 rounded-lg border border-[#1F1F1F] hover:border-[#C5A065] transition-all duration-300"
               >
-                Log Your First Trade
+                <span className="beam-button-content flex items-center space-x-2">
+                  <span className="material-symbols-outlined text-[#C5A065]">logout</span>
+                  <span className="text-[#C5A065]">Logout</span>
+                </span>
               </button>
             </div>
-          ) : (
+          </div>
+        </div>
+      </nav>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        {/* Hero Header */}
+        <div className="text-center space-y-4 scroll-item">
+          <TextReveal
+            text="Trading Dashboard"
+            className="text-5xl font-bold text-[#E6D5B8] font-serif"
+            delay={0.2}
+          />
+          <p className="text-xl text-[#9ca3af] fade-in">
+            Track your performance and analyze your trading patterns
+          </p>
+        </div>
+
+        {/* Key Metrics Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Total PnL */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-1">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Total PnL</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="$156,670"
+                  className="text-3xl font-bold text-[#2EBD85]"
+                  delay={0.3}
+                />
+                <span className="text-sm text-[#2EBD85]">+2.4% today</span>
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Profit Factor */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-2">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Profit Factor</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="3.25"
+                  className="text-3xl font-bold text-[#E6D5B8]"
+                  delay={0.4}
+                />
+                <span className="text-xs text-[#9ca3af]">Optimal range</span>
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Win Rate */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-3">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Win Rate</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="68.0%"
+                  className="text-3xl font-bold text-[#C5A065]"
+                  delay={0.5}
+                />
+              </div>
+              <div className="w-full bg-[#1F1F1F] rounded-full h-2">
+                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: '68%' }}></div>
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Total Trades */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-4">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Total Trades</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="1,000"
+                  className="text-3xl font-bold text-[#E6D5B8]"
+                  delay={0.6}
+                />
+                <span className="text-xs text-[#9ca3af]">Active session</span>
+              </div>
+            </div>
+          </TorchCard>
+        </div>
+
+        {/* Charts Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-8 gap-6">
+          {/* PnL Performance Chart */}
+          <TorchCard className="lg:col-span-8 p-6 rounded-lg scroll-item scroll-animate stagger-delay-5">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-[#E6D5B8]">PnL Performance</h3>
+              <div className="h-80">
+                <PnlChart />
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Emotional Analysis Radar Chart */}
+          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-6 relative">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <h3 className="text-lg font-semibold text-[#E6D5B8]">Emotional Analysis</h3>
+                <span className="material-symbols-outlined text-[#5E2121]">psychology</span>
+              </div>
+              <div className="h-64">
+                <RadarEmotionChart />
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Discipline/Tilt Progress Bar */}
+          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-7">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-[#E6D5B8]">Discipline Level</h3>
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-[#9ca3af]">Discipline</span>
+                  <span className="text-[#2EBD85]">85%</span>
+                </div>
+                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
+                  <div className="bg-[#2EBD85] h-3 rounded-full" style={{ width: '85%' }}></div>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-[#9ca3af]">Tilt Control</span>
+                  <span className="text-[#F6465D]">72%</span>
+                </div>
+                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
+                  <div className="bg-[#F6465D] h-3 rounded-full" style={{ width: '72%' }}></div>
+                </div>
+              </div>
+            </div>
+          </TorchCard>
+        </div>
+
+        {/* Secondary Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Avg Time Held */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-8">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Avg Time Held</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="12h 8m"
+                  className="text-2xl font-bold text-[#E6D5B8]"
+                  delay={0.7}
+                />
+              </div>
+              <div className="flex space-x-1">
+                <div className="flex-1 bg-[#2EBD85] h-2 rounded-l"></div>
+                <div className="flex-1 bg-[#C5A065] h-2"></div>
+                <div className="flex-1 bg-[#F6465D] h-2 rounded-r"></div>
+              </div>
+              <div className="flex justify-between text-xs text-[#9ca3af]">
+                <span>Short</span>
+                <span>Medium</span>
+                <span>Long</span>
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Sharpe Ratio */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-9">
+            <div className="space-y-2">
+              <h3 className="text-sm font-medium text-[#9ca3af]">Sharpe Ratio</h3>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="0.51"
+                  className="text-2xl font-bold text-[#C5A065]"
+                  delay={0.8}
+                />
+                <span className="text-xs text-[#F6465D]">Moderate Risk</span>
+              </div>
+              <div className="w-full bg-[#1F1F1F] rounded-full h-2">
+                <div className="bg-[#C5A065] h-2 rounded-full" style={{ width: '51%' }}></div>
+              </div>
+            </div>
+          </TorchCard>
+
+          {/* Trading Days */}
+          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-10">
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <h3 className="text-sm font-medium text-[#9ca3af]">Trading Days</h3>
+                <span className="material-symbols-outlined text-[#C5A065] text-sm">calendar_today</span>
+              </div>
+              <div className="flex items-baseline space-x-2">
+                <TextReveal
+                  text="266"
+                  className="text-2xl font-bold text-[#E6D5B8]"
+                  delay={0.9}
+                />
+                <span className="text-xs text-[#9ca3af]">Consistent</span>
+              </div>
+            </div>
+          </TorchCard>
+        </div>
+
+        {/* Recent Trades Table */}
+        <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-11">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-[#E6D5B8]">Recent Trades</h3>
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b" style={{ borderColor: 'var(--border-primary)' }}>
-                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Date</th>
-                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Symbol</th>
-                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Side</th>
-                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Entry</th>
-                    <th className="text-left py-3 px-4 body-text text-sm font-medium">Exit</th>
-                    <th className="text-right py-3 px-4 body-text text-sm font-medium">P&L</th>
+                  <tr className="border-b border-[#1F1F1F]">
+                    <th className="text-left py-3 px-4 font-medium text-[#9ca3af]">Date</th>
+                    <th className="text-left py-3 px-4 font-medium text-[#9ca3af]">Symbol</th>
+                    <th className="text-left py-3 px-4 font-medium text-[#9ca3af]">Side</th>
+                    <th className="text-left py-3 px-4 font-medium text-[#9ca3af]">Entry</th>
+                    <th className="text-left py-3 px-4 font-medium text-[#9ca3af]">Exit</th>
+                    <th className="text-right py-3 px-4 font-medium text-[#9ca3af]">Return</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {trades.slice(0, 10).map((trade, index) => (
-                    <tr key={`${trade.id}-${index}`} className="border-b hover:bg-opacity-5 transition-colors"
-                        style={{ borderColor: 'var(--border-primary)' }}>
-                      <td className="py-3 px-4 body-text text-sm">
-                        {new Date(trade.trade_date).toLocaleDateString()}
-                      </td>
-                      <td className="py-3 px-4 body-text text-sm font-medium">{trade.symbol}</td>
+                  {recentTrades.map((trade) => (
+                    <tr 
+                      key={trade.id} 
+                      className="border-b border-[#1F1F1F] hover:bg-[#1F1F1F] transition-colors"
+                    >
+                      <td className="py-3 px-4 text-[#EAEAEA]">{trade.date}</td>
+                      <td className="py-3 px-4 text-[#EAEAEA] font-medium">{trade.symbol}</td>
                       <td className="py-3 px-4">
-                        <span className={`text-sm font-medium ${
-                          trade.side === 'Buy' ? 'text-dusty-gold' : 'text-rust-red'
-                        }`} style={{ color: trade.side === 'Buy' ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
+                        <span className={`inline-flex px-2 py-1 text-xs font-medium rounded ${
+                          trade.side === 'LONG' 
+                            ? 'bg-[#2EBD85]/20 text-[#2EBD85]' 
+                            : 'bg-[#F6465D]/20 text-[#F6465D]'
+                        }`}>
                           {trade.side}
                         </span>
                       </td>
-                      <td className="py-3 px-4 body-text text-sm">${trade.entry_price}</td>
-                      <td className="py-3 px-4 body-text text-sm">
-                        {trade.exit_price ? `$${trade.exit_price}` : '-'}
-                      </td>
+                      <td className="py-3 px-4 text-[#EAEAEA]">${trade.entry.toFixed(2)}</td>
+                      <td className="py-3 px-4 text-[#EAEAEA]">${trade.exit.toFixed(2)}</td>
                       <td className={`py-3 px-4 text-right font-medium ${
-                        (trade.pnl || 0) >= 0 ? 'text-dusty-gold' : 'text-rust-red'
-                      }`} style={{ color: (trade.pnl || 0) >= 0 ? 'var(--dusty-gold)' : 'var(--rust-red)' }}>
-                        {formatCurrency(trade.pnl || 0)}
+                        trade.return > 0 ? 'text-[#2EBD85]' : 'text-[#F6465D]'
+                      }`}>
+                        {trade.return > 0 ? '+' : ''}{trade.return.toFixed(2)}%
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              
-              {trades.length > 10 && (
-                <div className="text-center mt-4">
-                  <button
-                    onClick={() => window.location.href = '/trades'}
-                    className="button-secondary"
-                  >
-                    View All Trades ({trades.length} total)
-                  </button>
-                </div>
-              )}
             </div>
-          )}
-        </div>
+          </div>
+        </TorchCard>
       </div>
     </div>
   );
@@ -403,7 +409,7 @@ function DashboardWithAuth() {
   return (
     <AuthGuard requireAuth={true}>
       <UnifiedLayout>
-        <Dashboard />
+        <DashboardContent />
       </UnifiedLayout>
     </AuthGuard>
   );

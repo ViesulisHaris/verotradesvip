@@ -2328,48 +2328,69 @@ html body div[data-testid*="dropdown-menu"] {
 }
 
 /* Enhanced scroll animations with intersection observer support */
+.scroll-item {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(4px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
+  filter: blur(4px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-animate.visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0px);
 }
 
 .scroll-animate-left {
   opacity: 0;
   transform: translateX(-30px);
+  filter: blur(4px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-animate-left.visible {
   opacity: 1;
   transform: translateX(0);
+  filter: blur(0px);
 }
 
 .scroll-animate-right {
   opacity: 0;
   transform: translateX(30px);
+  filter: blur(4px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-animate-right.visible {
   opacity: 1;
   transform: translateX(0);
+  filter: blur(0px);
 }
 
 .scroll-animate-scale {
   opacity: 0;
   transform: scale(0.9);
+  filter: blur(4px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-animate-scale.visible {
   opacity: 1;
   transform: scale(1);
+  filter: blur(0px);
 }
 
 /* Staggered animation delays */

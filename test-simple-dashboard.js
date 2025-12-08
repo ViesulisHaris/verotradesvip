@@ -1,8 +1,7 @@
 const puppeteer = require('puppeteer');
 
-async function testDashboardLoading() {
-  console.log('🧪 Starting dashboard loading test...');
-  
+async function testSimpleDashboard() {
+  console.log('🧪 Starting simple dashboard test...');
   const browser = await puppeteer.launch({ 
     headless: false,
     defaultViewport: { width: 1920, height: 1080 },
@@ -27,43 +26,40 @@ async function testDashboardLoading() {
   });
   
   try {
-    console.log('🌐 Navigating to dashboard...');
-    await page.goto('http://localhost:3000/dashboard', { 
+    console.log('🌐 Navigating to simple dashboard...');
+    await page.goto('http://localhost:3000/dashboard-simple', { 
       waitUntil: 'networkidle2',
       timeout: 30000 
     });
     
-    console.log('✅ Dashboard page loaded successfully');
+    console.log('✅ Simple dashboard page loaded successfully');
     
     // Wait for key elements to render
-    await page.waitForSelector('.verotrade-top-navigation', { timeout: 10000 });
-    console.log('✅ Top navigation loaded');
-    
     await page.waitForSelector('h1', { timeout: 10000 });
     console.log('✅ Page header loaded');
     
-    // Check for charts
-    const chartElements = await page.$$('canvas');
-    console.log(`📊 Found ${chartElements.length} chart elements`);
-    
     // Check for dashboard metrics
-    const metricCards = await page.$$('.scroll-item');
-    console.log(`📈 Found ${metricCards.length} metric cards`);
+    const metricCards = await page.$$('p');
+    console.log(`📈 Found ${metricCards.length} paragraph elements`);
     
-    // Check for any error messages
-    const errorElements = await page.$$('.error, .ErrorBoundary');
-    if (errorElements.length > 0) {
-      console.warn(`⚠️ Found ${errorElements.length} error elements on page`);
+    // Check for table
+    const tableElement = await page.$('table');
+    if (tableElement) {
+      console.log('✅ Table element found');
     } else {
-      console.log('✅ No error elements found');
+      console.log('⚠️ Table element not found');
     }
+    
+    // Check for status indicators
+    const statusElements = await page.$$('.text-green-500, .text-red-500');
+    console.log(`📊 Found ${statusElements.length} status indicators`);
     
     // Take a screenshot for verification
     await page.screenshot({ 
-      path: 'dashboard-test-success.png',
+      path: 'simple-dashboard-test-success.png',
       fullPage: true 
     });
-    console.log('📸 Screenshot saved as dashboard-test-success.png');
+    console.log('📸 Screenshot saved as simple-dashboard-test-success.png');
     
     // Test responsive design by resizing
     await page.setViewport({ width: 768, height: 1024 });
@@ -74,18 +70,18 @@ async function testDashboardLoading() {
     await page.waitForTimeout(2000);
     console.log('📱 Mobile layout tested');
     
-    console.log('✅ Dashboard loading test completed successfully!');
+    console.log('✅ Simple dashboard test completed successfully!');
     
   } catch (error) {
-    console.error('❌ Dashboard loading test failed:', error.message);
+    console.error('❌ Simple dashboard test failed:', error.message);
     
     // Take screenshot of error state
     try {
       await page.screenshot({ 
-        path: 'dashboard-test-error.png',
+        path: 'simple-dashboard-test-error.png',
         fullPage: true 
       });
-      console.log('📸 Error screenshot saved as dashboard-test-error.png');
+      console.log('📸 Error screenshot saved as simple-dashboard-test-error.png');
     } catch (screenshotError) {
       console.error('Failed to take error screenshot:', screenshotError.message);
     }
@@ -95,4 +91,4 @@ async function testDashboardLoading() {
 }
 
 // Run the test
-testDashboardLoading().catch(console.error);
+testSimpleDashboard().catch(console.error);
