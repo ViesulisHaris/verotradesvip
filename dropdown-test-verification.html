@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Fix Verification</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+        }
+        
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(18, 18, 18, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(197, 160, 101, 0.3);
+        }
+        
+        .dropdown-trigger {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(197, 160, 101, 0.5);
+            border-radius: 0.5rem;
+            color: #ffffff;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-trigger:hover {
+            border-color: rgba(197, 160, 101, 0.8);
+            background: rgba(197, 160, 101, 0.1);
+        }
+        
+        /* Apply the exact same CSS fixes from globals.css */
+        [data-testid*="dropdown-menu"] {
+            position: fixed !important;
+            z-index: 99999 !important;
+            background-color: rgb(10, 10, 10) !important;
+            background: linear-gradient(135deg, rgb(10, 10, 10) 0%, rgb(18, 18, 18) 100%) !important;
+            border: 1px solid rgba(197, 160, 101, 0.5) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+            max-height: 250px !important;
+            overflow-y: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            transform: none !important;
+            filter: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            clip-path: none !important;
+            mask: none !important;
+            -webkit-mask: none !important;
+            isolation: auto !important;
+            border-radius: 0.5rem !important;
+            pointer-events: auto !important;
+        }
+        
+        .dropdown-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(197, 160, 101, 0.2);
+        }
+        
+        .status {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .status.success {
+            background: rgba(46, 189, 133, 0.2);
+            border: 1px solid rgba(46, 189, 133, 0.5);
+            color: #2ebd85;
+        }
+        
+        .status.error {
+            background: rgba(246, 70, 109, 0.2);
+            border: 1px solid rgba(246, 70, 109, 0.5);
+            color: #f64656d;
+        }
+        
+        .instructions {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(197, 160, 101, 0.1);
+            border-radius: 0.5rem;
+            border-left: 4px solid rgba(197, 160, 101, 0.8);
+        }
+        
+        .instructions h3 {
+            margin: 0 0 1rem 0;
+            color: rgba(197, 160, 101, 0.9);
+        }
+        
+        .instructions p {
+            margin: 0;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 style="text-align: center; margin-bottom: 2rem; color: rgba(197, 160, 101, 0.9);">
+            🔧 Dropdown Visibility Fix Verification
+        </h1>
+        
+        <div class="instructions">
+            <h3>Test Instructions:</h3>
+            <p>
+                1. Click each button below to open dropdown<br>
+                2. Verify that dropdown appears above all content<br>
+                3. Check that dropdown has solid dark background<br>
+                4. Confirm items are clickable and visible<br>
+                5. Test scrolling if content overflows
+            </p>
+        </div>
+        
+        <button class="dropdown-trigger" onclick="toggleDropdown('test1')">
+            📋 Test Dropdown 1 - Strategy
+        </button>
+        
+        <div id="test1" data-testid="strategy-dropdown-menu" style="display: none;">
+            <div class="dropdown-item">Trend Breakout</div>
+            <div class="dropdown-item">Mean Reversion</div>
+            <div class="dropdown-item">Quick Scalp</div>
+            <div class="dropdown-item">Swing Setup</div>
+            <div class="dropdown-item">Gap Fill</div>
+            <div class="dropdown-item">Momentum Play</div>
+            <div class="dropdown-item">Support Resistance</div>
+            <div class="dropdown-item">Volume Analysis</div>
+            <div class="dropdown-item">Options Strategy</div>
+            <div class="dropdown-item">News Trading</div>
+        </div>
+        
+        <button class="dropdown-trigger" onclick="toggleDropdown('test2')">
+            📈 Test Dropdown 2 - Side
+        </button>
+        
+        <div id="test2" data-testid="side-dropdown-menu" style="display: none;">
+            <div class="dropdown-item">Long / Buy</div>
+            <div class="dropdown-item">Short / Sell</div>
+        </div>
+        
+        <button class="dropdown-trigger" onclick="toggleDropdown('test3')">
+            😊 Test Dropdown 3 - Emotion
+        </button>
+        
+        <div id="test3" data-testid="emotion-dropdown-menu" style="display: none;">
+            <div class="dropdown-item">Neutral</div>
+            <div class="dropdown-item">Greed</div>
+            <div class="dropdown-item">Fear</div>
+            <div class="dropdown-item">Confidence</div>
+            <div class="dropdown-item">Frustration</div>
+            <div class="dropdown-item">Discipline</div>
+            <div class="dropdown-item">Impatience</div>
+            <div class="dropdown-item">Euphoria</div>
+        </div>
+        
+        <div id="status" class="status" style="display: none;">
+            Status: Testing...
+        </div>
+    </div>
+
+    <script>
+        let openDropdown = null;
+        
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const status = document.getElementById('status');
+            
+            // Close any open dropdown
+            if (openDropdown && openDropdown !== dropdown) {
+                openDropdown.style.display = 'none';
+            }
+            
+            // Toggle current dropdown
+            if (dropdown.style.display === 'none') {
+                dropdown.style.display = 'block';
+                openDropdown = dropdown;
+                
+                // Position dropdown below button
+                const button = event.target;
+                const rect = button.getBoundingClientRect();
+                const scrollY = window.pageYOffset;
+                const scrollX = window.pageXOffset;
+                
+                dropdown.style.left = rect.left + scrollX + 'px';
+                dropdown.style.top = (rect.bottom + scrollY + 8) + 'px';
+                dropdown.style.width = rect.width + 'px';
+                
+                // Test visibility
+                setTimeout(() => {
+                    const computed = window.getComputedStyle(dropdown);
+                    const isVisible = computed.display !== 'none' && 
+                                    computed.visibility !== 'hidden' && 
+                                    computed.opacity !== '0' &&
+                                    computed.backgroundColor !== 'rgba(0, 0, 0, 0)' &&
+                                    computed.backgroundColor !== 'transparent';
+                    
+                    status.style.display = 'block';
+                    if (isVisible) {
+                        status.className = 'status success';
+                        status.innerHTML = '✅ SUCCESS: Dropdown is visible with solid background!';
+                    } else {
+                        status.className = 'status error';
+                        status.innerHTML = '❌ ERROR: Dropdown is still transparent or hidden!';
+                        console.error('Dropdown computed styles:', {
+                            display: computed.display,
+                            visibility: computed.visibility,
+                            opacity: computed.opacity,
+                            backgroundColor: computed.backgroundColor,
+                            zIndex: computed.zIndex,
+                            position: computed.position
+                        });
+                    }
+                }, 100);
+                
+            } else {
+                dropdown.style.display = 'none';
+                openDropdown = null;
+                status.style.display = 'none';
+            }
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown-trigger') && 
+                !event.target.closest('[data-testid*="dropdown-menu"]')) {
+                if (openDropdown) {
+                    openDropdown.style.display = 'none';
+                    openDropdown = null;
+                    document.getElementById('status').style.display = 'none';
+                }
+            }
+        });
+        
+        // Log page load
+        console.log('🔧 Dropdown Test Page Loaded');
+        console.log('CSS Rules Applied:', document.styleSheets[0]?.cssRules?.length || 'No CSS rules found');
+    </script>
+</body>
+</html>

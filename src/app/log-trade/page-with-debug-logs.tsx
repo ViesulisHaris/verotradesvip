@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { supabase } from '@/supabase/client';
 import { useRouter } from 'next/navigation';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
@@ -43,18 +43,10 @@ interface Toast {
 export default function LogTradePage() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toasts, setToasts] = useState<Toast[]>([]);
-  
-  // Use refs to track dropdown state more reliably
-  const strategyDropdownRef = useRef<HTMLButtonElement>(null);
-  const sideDropdownRef = useRef<HTMLButtonElement>(null);
-  const emotionDropdownRef = useRef<HTMLButtonElement>(null);
-  const dropdownStateRef = useRef({
-    strategy: false,
-    side: false,
-    emotion: false
-  });
+  const spotlightRef = useRef<HTMLDivElement>(null);
   
   // Form state
   const [form, setForm] = useState<FormState>({
@@ -72,7 +64,7 @@ export default function LogTradePage() {
     emotional_state: 'Neutral',
   });
 
-  // Dropdown states - keep for compatibility but use ref for actual state
+  // Dropdown states
   const [strategyDropdownOpen, setStrategyDropdownOpen] = useState(false);
   const [sideDropdownOpen, setSideDropdownOpen] = useState(false);
   const [emotionDropdownOpen, setEmotionDropdownOpen] = useState(false);
@@ -84,31 +76,122 @@ export default function LogTradePage() {
   const sideOptions = ['Buy', 'Sell'];
   const emotionOptions = ['Neutral', 'Greed', 'Fear', 'Confidence', 'Frustration', 'Discipline', 'Impatience', 'Euphoria'];
 
+  // DEBUG: Enhanced dropdown state change handlers with logging
+  const handleStrategyDropdownToggle = useCallback(() => {
+    console.log('🔍 DEBUG: Strategy dropdown toggle clicked');
+    console.log('🔍 DEBUG: Current state:', strategyDropdownOpen);
+    const newState = !strategyDropdownOpen;
+    setStrategyDropdownOpen(newState);
+    console.log('🔍 DEBUG: New state:', newState);
+    
+    // Log DOM element after state change
+    setTimeout(() => {
+      const dropdownElement = document.querySelector('[data-testid="strategy-dropdown-menu"]');
+      console.log('🔍 DEBUG: Strategy dropdown element in DOM:', !!dropdownElement);
+      if (dropdownElement) {
+        const computedStyles = window.getComputedStyle(dropdownElement);
+        console.log('🔍 DEBUG: Strategy dropdown computed styles:', {
+          position: computedStyles.position,
+          zIndex: computedStyles.zIndex,
+          opacity: computedStyles.opacity,
+          visibility: computedStyles.visibility,
+          display: computedStyles.display,
+          backgroundColor: computedStyles.backgroundColor,
+          transform: computedStyles.transform,
+          filter: computedStyles.filter
+        });
+        
+        const rect = dropdownElement.getBoundingClientRect();
+        console.log('🔍 DEBUG: Strategy dropdown position:', {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+          bottom: rect.bottom,
+          right: rect.right
+        });
+      }
+    }, 100);
+  }, [strategyDropdownOpen]);
+
+  const handleSideDropdownToggle = useCallback(() => {
+    console.log('🔍 DEBUG: Side dropdown toggle clicked');
+    console.log('🔍 DEBUG: Current state:', sideDropdownOpen);
+    const newState = !sideDropdownOpen;
+    setSideDropdownOpen(newState);
+    console.log('🔍 DEBUG: New state:', newState);
+    
+    // Log DOM element after state change
+    setTimeout(() => {
+      const dropdownElement = document.querySelector('[data-testid="side-dropdown-menu"]');
+      console.log('🔍 DEBUG: Side dropdown element in DOM:', !!dropdownElement);
+      if (dropdownElement) {
+        const computedStyles = window.getComputedStyle(dropdownElement);
+        console.log('🔍 DEBUG: Side dropdown computed styles:', {
+          position: computedStyles.position,
+          zIndex: computedStyles.zIndex,
+          opacity: computedStyles.opacity,
+          visibility: computedStyles.visibility,
+          display: computedStyles.display,
+          backgroundColor: computedStyles.backgroundColor,
+          transform: computedStyles.transform,
+          filter: computedStyles.filter
+        });
+        
+        const rect = dropdownElement.getBoundingClientRect();
+        console.log('🔍 DEBUG: Side dropdown position:', {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+          bottom: rect.bottom,
+          right: rect.right
+        });
+      }
+    }, 100);
+  }, [sideDropdownOpen]);
+
+  const handleEmotionDropdownToggle = useCallback(() => {
+    console.log('🔍 DEBUG: Emotion dropdown toggle clicked');
+    console.log('🔍 DEBUG: Current state:', emotionDropdownOpen);
+    const newState = !emotionDropdownOpen;
+    setEmotionDropdownOpen(newState);
+    console.log('🔍 DEBUG: New state:', newState);
+    
+    // Log DOM element after state change
+    setTimeout(() => {
+      const dropdownElement = document.querySelector('[data-testid="emotion-dropdown-menu"]');
+      console.log('🔍 DEBUG: Emotion dropdown element in DOM:', !!dropdownElement);
+      if (dropdownElement) {
+        const computedStyles = window.getComputedStyle(dropdownElement);
+        console.log('🔍 DEBUG: Emotion dropdown computed styles:', {
+          position: computedStyles.position,
+          zIndex: computedStyles.zIndex,
+          opacity: computedStyles.opacity,
+          visibility: computedStyles.visibility,
+          display: computedStyles.display,
+          backgroundColor: computedStyles.backgroundColor,
+          transform: computedStyles.transform,
+          filter: computedStyles.filter
+        });
+        
+        const rect = dropdownElement.getBoundingClientRect();
+        console.log('🔍 DEBUG: Emotion dropdown position:', {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height,
+          bottom: rect.bottom,
+          right: rect.right
+        });
+      }
+    }, 100);
+  }, [emotionDropdownOpen]);
+
   // Handle mount for animations
   useEffect(() => {
     setMounted(true);
-    
-    // Add CSS debugging
-    setTimeout(() => {
-      console.log('🔍 [CSS_DEBUG] Checking dropdown CSS rules...');
-      const styleSheets = document.styleSheets;
-      for (let i = 0; i < styleSheets.length; i++) {
-        try {
-          const sheet = styleSheets[i];
-          if (sheet && sheet.cssRules) {
-            const rules = sheet.cssRules;
-            for (let j = 0; j < rules.length; j++) {
-              const rule = rules[j];
-              if (rule && rule.cssText && rule.cssText.includes('custom-select-options')) {
-                console.log('🔍 [CSS_DEBUG] Found dropdown CSS rule:', rule.cssText);
-              }
-            }
-          }
-        } catch (e) {
-          console.log('🔍 [CSS_DEBUG] Error accessing stylesheet:', e);
-        }
-      }
-    }, 1000);
+    console.log('🔍 DEBUG: Component mounted');
   }, []);
 
   // Load strategies from Supabase
@@ -147,7 +230,7 @@ export default function LogTradePage() {
     }
   }, [strategies.length]);
 
-  // Handle clicks outside dropdowns to close them - FIXED VERSION
+  // Handle clicks outside dropdowns to close them
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -160,9 +243,9 @@ export default function LogTradePage() {
       const emotionDropdown = target.closest('[data-testid="emotion-dropdown"]');
       const emotionMenu = target.closest('[data-testid="emotion-dropdown-menu"]');
       
-      // Only close dropdowns if click is truly outside all dropdown elements
+      // If click is not on any dropdown element, close all dropdowns
       if (!strategyDropdown && !strategyMenu && !sideDropdown && !sideMenu && !emotionDropdown && !emotionMenu) {
-        // Close all dropdowns using state setters
+        console.log('🔍 DEBUG: Click outside detected, closing all dropdowns');
         setStrategyDropdownOpen(false);
         setSideDropdownOpen(false);
         setEmotionDropdownOpen(false);
@@ -178,8 +261,19 @@ export default function LogTradePage() {
     }
   }, [strategyDropdownOpen, sideDropdownOpen, emotionDropdownOpen]);
 
+  // Mouse tracking for spotlight effect
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!spotlightRef.current) return;
+    
+    const rect = spotlightRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    
+    setMousePosition({ x, y });
+  }, []);
+
   // Toast notification system
-  const addToast = (message: string, type: 'success' | 'error' | 'info' = 'info', duration = 3000) => {
+  const addToast = useCallback((message: string, type: 'success' | 'error' | 'info' = 'info', duration = 3000) => {
     const id = Date.now().toString();
     const newToast: Toast = { id, message, type, duration };
     
@@ -188,12 +282,12 @@ export default function LogTradePage() {
     setTimeout(() => {
       setToasts(prev => prev.filter(toast => toast.id !== id));
     }, duration);
-  };
+  }, []);
 
   // Remove toast
-  const removeToast = (id: string) => {
+  const removeToast = useCallback((id: string) => {
     setToasts(prev => prev.filter(toast => toast.id !== id));
-  };
+  }, []);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -315,7 +409,7 @@ export default function LogTradePage() {
   return (
     <UnifiedLayout>
       <div className="min-h-screen p-6 relative">
-        {/* Toast Notifications */}
+        {/* Toast Notifications - Highest z-index */}
         <div className="fixed top-4 right-4 z-[100] space-y-2">
           {toasts.map(toast => (
             <div
@@ -341,7 +435,7 @@ export default function LogTradePage() {
 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto relative z-1">
-          {/* Page Title */}
+          {/* Page Title with Text Reveal Animation */}
           <div className={`text-center mb-8 ${mounted ? 'text-reveal-animation' : 'opacity-0'}`}>
             <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-[var(--gold-light)] via-[var(--gold)] to-[var(--gold-dim)] bg-clip-text text-transparent">
               Log New Trade
@@ -349,11 +443,31 @@ export default function LogTradePage() {
             <p className="text-gray-400 text-lg">Record your trading activity with precision</p>
           </div>
 
-          {/* Form Card */}
-          <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md overflow-hidden">
-            <form onSubmit={handleSubmit} className="relative p-8 space-y-8">
+          {/* Spotlight Wrapper Card */}
+          <div
+            ref={spotlightRef}
+            className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md overflow-hidden"
+            style={{
+              '--mouse-x': `${mousePosition.x}%`,
+              '--mouse-y': `${mousePosition.y}%`,
+              zIndex: '1',
+              isolation: 'isolate',
+              transform: 'translateZ(0)',
+              position: 'relative'
+            } as React.CSSProperties}
+          >
+            {/* Spotlight Effect */}
+            <div
+              className="spotlight-effect absolute inset-0 pointer-events-none"
+              style={{
+                background: `radial-gradient(800px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(197, 160, 101, 0.08) 0%, rgba(197, 160, 101, 0.04) 20%, transparent 50%)`
+              }}
+            />
+
+            {/* Form Content */}
+            <form onSubmit={handleSubmit} className="relative p-8 space-y-8" style={{ zIndex: '1', isolation: 'isolate' }}>
               {/* Market Context Section */}
-              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`}>
+              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ pointerEvents: 'auto' }}>
                 <h2 className="text-2xl font-semibold text-white mb-4 flex items-center">
                   <span className="material-symbols-outlined mr-3 text-[var(--gold)]">trending_up</span>
                   Market Context
@@ -386,7 +500,7 @@ export default function LogTradePage() {
                   </div>
                 </div>
 
-                {/* Symbol and Strategy */}
+                {/* Symbol Input */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -409,26 +523,11 @@ export default function LogTradePage() {
                       <span className="material-symbols-outlined text-sm mr-2 align-middle">strategy</span>
                       Strategy
                     </label>
-                    <div className="relative group" style={{ zIndex: 50 }}>
+                    <div className="relative" style={{ isolation: 'isolate' }}>
                       <button
                         type="button"
                         data-testid="strategy-dropdown"
-                        ref={strategyDropdownRef}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          
-                          // Close other dropdowns first
-                          setSideDropdownOpen(false);
-                          setEmotionDropdownOpen(false);
-                          dropdownStateRef.current.side = false;
-                          dropdownStateRef.current.emotion = false;
-                          
-                          // Toggle this dropdown
-                          const newState = !strategyDropdownOpen;
-                          setStrategyDropdownOpen(newState);
-                          dropdownStateRef.current.strategy = newState;
-                        }}
+                        onClick={handleStrategyDropdownToggle}
                         className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
                       >
                         <span>{form.strategy_id ? strategies.find(s => s.id === form.strategy_id)?.name || 'Select Strategy' : 'Select Strategy'}</span>
@@ -439,13 +538,33 @@ export default function LogTradePage() {
                      
                       {strategyDropdownOpen && (
                         <div
+                          ref={(el) => {
+                            if (el && strategyDropdownOpen) {
+                              const button = document.querySelector('[data-testid="strategy-dropdown"]');
+                              if (button) {
+                                const rect = button.getBoundingClientRect();
+                                el.style.width = `${rect.width}px`;
+                                el.style.left = `${rect.left}px`;
+                                el.style.top = `${rect.bottom + 8}px`;
+                                console.log('🔍 DEBUG: Strategy dropdown positioned at:', {
+                                  left: rect.left,
+                                  top: rect.bottom + 8,
+                                  width: rect.width
+                                });
+                              }
+                            }
+                          }}
                           data-testid="strategy-dropdown-menu"
-                          className="absolute top-full left-0 right-0 mt-1 bg-[var(--surface)] border border-[rgba(197,160,101,0.3)] rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
-                          style={{ zIndex: 9999 }}
+                          className="fixed z-[9999] max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar"
+                          style={{
+                            backgroundColor: '#0A0A0A',
+                            background: 'linear-gradient(135deg, #0A0A0A 0%, #121212 100%)'
+                          }}
                         >
                           <div
-                            className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-gray-400 transition-colors"
+                            className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-gray-400"
                             onClick={() => {
+                              console.log('🔍 DEBUG: Strategy "No Strategy" clicked');
                               handleInputChange('strategy_id', '');
                               setStrategyDropdownOpen(false);
                             }}
@@ -455,8 +574,10 @@ export default function LogTradePage() {
                           {strategies.map(strategy => (
                             <div
                               key={strategy.id}
-                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white transition-colors"
+                              data-testid={`strategy-option-${strategy.id}`}
+                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white"
                               onClick={() => {
+                                console.log('🔍 DEBUG: Strategy selected:', strategy.name);
                                 handleInputChange('strategy_id', strategy.id);
                                 setStrategyDropdownOpen(false);
                               }}
@@ -472,7 +593,7 @@ export default function LogTradePage() {
               </div>
 
               {/* Execution Details Section */}
-              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.1s' }}>
+              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.1s', pointerEvents: 'auto' }}>
                 <h2 className="text-2xl font-semibold text-white mb-4 flex items-center">
                   <span className="material-symbols-outlined mr-3 text-[var(--gold)]">swap_horiz</span>
                   Execution Details
@@ -485,26 +606,11 @@ export default function LogTradePage() {
                       <span className="material-symbols-outlined text-sm mr-2 align-middle">call_made</span>
                       Side
                     </label>
-                    <div className="relative group" style={{ zIndex: 50 }}>
+                    <div className="relative" style={{ isolation: 'isolate' }}>
                       <button
                         type="button"
                         data-testid="side-dropdown"
-                        ref={sideDropdownRef}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          
-                          // Close other dropdowns first
-                          setStrategyDropdownOpen(false);
-                          setEmotionDropdownOpen(false);
-                          dropdownStateRef.current.strategy = false;
-                          dropdownStateRef.current.emotion = false;
-                          
-                          // Toggle this dropdown
-                          const newState = !sideDropdownOpen;
-                          setSideDropdownOpen(newState);
-                          dropdownStateRef.current.side = newState;
-                        }}
+                        onClick={handleSideDropdownToggle}
                         className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
                       >
                         <span className="flex items-center gap-2">
@@ -520,15 +626,35 @@ export default function LogTradePage() {
                      
                       {sideDropdownOpen && (
                         <div
+                          ref={(el) => {
+                            if (el && sideDropdownOpen) {
+                              const button = document.querySelector('[data-testid="side-dropdown"]');
+                              if (button) {
+                                const rect = button.getBoundingClientRect();
+                                el.style.width = `${rect.width}px`;
+                                el.style.left = `${rect.left}px`;
+                                el.style.top = `${rect.bottom + 8}px`;
+                                console.log('🔍 DEBUG: Side dropdown positioned at:', {
+                                  left: rect.left,
+                                  top: rect.bottom + 8,
+                                  width: rect.width
+                                });
+                              }
+                            }
+                          }}
                           data-testid="side-dropdown-menu"
-                          className="absolute top-full left-0 right-0 mt-1 bg-[var(--surface)] border border-[rgba(197,160,101,0.3)] rounded-lg shadow-lg z-50"
-                          style={{ zIndex: 9999 }}
+                          className="fixed z-[9999] max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar"
+                          style={{
+                            backgroundColor: '#0A0A0A',
+                            background: 'linear-gradient(135deg, #0A0A0A 0%, #121212 100%)'
+                          }}
                         >
                           {sideOptions.map(side => (
                             <div
                               key={side}
-                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white flex items-center gap-2 transition-colors"
+                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white flex items-center gap-2"
                               onClick={() => {
+                                console.log('🔍 DEBUG: Side selected:', side);
                                 handleInputChange('side', side);
                                 setSideDropdownOpen(false);
                               }}
@@ -608,7 +734,7 @@ export default function LogTradePage() {
               </div>
 
               {/* Risk & Outcome Section */}
-              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.2s' }}>
+              <div className={`space-y-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.2s', pointerEvents: 'auto' }}>
                 <h2 className="text-2xl font-semibold text-white mb-4 flex items-center">
                   <span className="material-symbols-outlined mr-3 text-[var(--gold)]">analytics</span>
                   Risk & Outcome
@@ -675,26 +801,11 @@ export default function LogTradePage() {
                       <span className="material-symbols-outlined text-sm mr-2 align-middle">mood</span>
                       Emotional State
                     </label>
-                    <div className="relative group" style={{ zIndex: 50 }}>
+                    <div className="relative" style={{ isolation: 'isolate' }}>
                       <button
                         type="button"
                         data-testid="emotion-dropdown"
-                        ref={emotionDropdownRef}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          
-                          // Close other dropdowns first
-                          setStrategyDropdownOpen(false);
-                          setSideDropdownOpen(false);
-                          dropdownStateRef.current.strategy = false;
-                          dropdownStateRef.current.side = false;
-                          
-                          // Toggle this dropdown
-                          const newState = !emotionDropdownOpen;
-                          setEmotionDropdownOpen(newState);
-                          dropdownStateRef.current.emotion = newState;
-                        }}
+                        onClick={handleEmotionDropdownToggle}
                         className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
                       >
                         <span>{form.emotional_state}</span>
@@ -705,15 +816,35 @@ export default function LogTradePage() {
                      
                       {emotionDropdownOpen && (
                         <div
+                          ref={(el) => {
+                            if (el && emotionDropdownOpen) {
+                              const button = document.querySelector('[data-testid="emotion-dropdown"]');
+                              if (button) {
+                                const rect = button.getBoundingClientRect();
+                                el.style.width = `${rect.width}px`;
+                                el.style.left = `${rect.left}px`;
+                                el.style.top = `${rect.bottom + 8}px`;
+                                console.log('🔍 DEBUG: Emotion dropdown positioned at:', {
+                                  left: rect.left,
+                                  top: rect.bottom + 8,
+                                  width: rect.width
+                                });
+                              }
+                            }
+                          }}
                           data-testid="emotion-dropdown-menu"
-                          className="absolute top-full left-0 right-0 mt-1 bg-[var(--surface)] border border-[rgba(197,160,101,0.3)] rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
-                          style={{ zIndex: 9999 }}
+                          className="fixed z-[9999] max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar"
+                          style={{
+                            backgroundColor: '#0A0A0A',
+                            background: 'linear-gradient(135deg, #0A0A0A 0%, #121212 100%)'
+                          }}
                         >
                           {emotionOptions.map(emotion => (
                             <div
                               key={emotion}
-                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white transition-colors"
+                              className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white"
                               onClick={() => {
+                                console.log('🔍 DEBUG: Emotion selected:', emotion);
                                 handleInputChange('emotional_state', emotion);
                                 setEmotionDropdownOpen(false);
                               }}
@@ -728,8 +859,8 @@ export default function LogTradePage() {
                 </div>
               </div>
 
-              {/* Save Button */}
-              <div className={`pt-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.3s' }}>
+              {/* Save Button with Border Beam Effect */}
+              <div className={`pt-6 ${mounted ? 'scroll-item scroll-item-visible' : 'scroll-item'}`} style={{ animationDelay: '0.3s', pointerEvents: 'auto' }}>
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -748,11 +879,22 @@ export default function LogTradePage() {
                       </>
                     )}
                   </span>
+                   
+                  {/* Border beam effect */}
+                  <div className="absolute inset-0 rounded-lg">
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" 
+                         style={{ 
+                           animation: 'border-beam-spin 3s linear infinite',
+                           background: 'conic-gradient(from 0deg, transparent 0deg, var(--gold) 45deg, transparent 90deg, transparent 270deg, var(--gold) 315deg, transparent 360deg)'
+                         }} />
+                  </div>
                 </button>
               </div>
             </form>
           </div>
         </div>
+
+        {/* No overlay needed - using click-outside handler instead */}
       </div>
     </UnifiedLayout>
   );

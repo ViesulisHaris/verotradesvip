@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-12-08T09:48:28.439Z",
+  "summary": {
+    "allPassed": true,
+    "totalTests": 7,
+    "passedTests": 7
+  },
+  "results": {
+    "transparency": [
+      {
+        "dropdown": "strategy",
+        "hasSolidBackground": true,
+        "opacity": "1",
+        "details": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "zIndex": "9999"
+        }
+      },
+      {
+        "dropdown": "side",
+        "hasSolidBackground": true,
+        "opacity": "1",
+        "details": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "zIndex": "9999"
+        }
+      },
+      {
+        "dropdown": "emotion",
+        "hasSolidBackground": true,
+        "opacity": "1",
+        "details": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "zIndex": "9999"
+        }
+      }
+    ],
+    "zindex": [
+      {
+        "element": "emotion-dropdown-menu",
+        "zIndex": 9999,
+        "isHighEnough": true
+      }
+    ],
+    "functionality": [
+      {
+        "dropdown": "Strategy",
+        "opens": true,
+        "closes": true,
+        "clickable": true,
+        "valueSelected": true,
+        "selectedValue": "Test Strategy 1 - Momentum"
+      },
+      {
+        "dropdown": "Side",
+        "opens": true,
+        "closes": true,
+        "clickable": true,
+        "valueSelected": true,
+        "selectedValue": "trending_upBuy"
+      },
+      {
+        "dropdown": "Emotion",
+        "opens": true,
+        "closes": true,
+        "clickable": true,
+        "valueSelected": true,
+        "selectedValue": "Neutral"
+      }
+    ],
+    "responsiveness": [],
+    "accessibility": []
+  }
+}

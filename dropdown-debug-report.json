@@ -1,0 +1,240 @@
+{
+  "timestamp": "2025-12-08T10:17:59.841Z",
+  "testResults": {
+    "strategyDropdown": {
+      "buttonExists": true,
+      "menuExists": false,
+      "menuVisible": false
+    },
+    "sideDropdown": {
+      "buttonExists": true,
+      "menuExists": false,
+      "menuVisible": false
+    },
+    "emotionDropdown": {
+      "buttonExists": true,
+      "menuExists": false,
+      "menuVisible": false
+    }
+  },
+  "cssAnalysis": {
+    "dropdowns": [],
+    "overlays": [
+      {
+        "tagName": "next-route-announcer",
+        "className": "",
+        "zIndex": "auto",
+        "position": "absolute",
+        "rect": {
+          "x": 0,
+          "y": 1288.800048828125,
+          "width": 0,
+          "height": 0,
+          "top": 1288.800048828125,
+          "right": 0,
+          "bottom": 1288.800048828125,
+          "left": 0
+        }
+      }
+    ],
+    "viewportWidth": 1920,
+    "viewportHeight": 1080,
+    "pageYOffset": 0,
+    "pageXOffset": 0
+  },
+  "debugMessages": [
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown toggle clicked",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1355,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Current emotionDropdownOpen state: false",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1356,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Setting emotionDropdownOpen to: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1357,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown ref called with element: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1406,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: emotionDropdownOpen state in ref: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1407,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Positioning emotion dropdown",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1409,
+        "columnNumber": 92
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion button found: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1411,
+        "columnNumber": 92
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion button measurements: {rect: Object, scrollY: 0, scrollX: 0, viewportHeight: 1080, viewportWidth: 1920}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1418,
+        "columnNumber": 96
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Adjusting emotion dropdown top to prevent overflow, new top: 576",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1439,
+        "columnNumber": 100
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown final styles applied: {width: 260.8px, left: 537.2px, top: 576px, position: fixed, zIndex: 99999}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1449,
+        "columnNumber": 96
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Dropdown states changed {strategyDropdownOpen: false, sideDropdownOpen: false, emotionDropdownOpen: true, strategiesCount: 3}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 116,
+        "columnNumber": 16
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Adding handleClickOutside listener",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 168,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown final computed styles: {display: block, visibility: visible, opacity: 1, position: absolute, zIndex: 9999}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1459,
+        "columnNumber": 100
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown element in DOM: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1362,
+        "columnNumber": 92
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown computed styles: {display: block, visibility: visible, opacity: 1, position: absolute, zIndex: 9999}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1365,
+        "columnNumber": 96
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: handleClickOutside triggered {target: DIV, targetClass: px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white, targetText: Neutral}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 133,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Click target analysis {strategyDropdown: false, strategyMenu: false, sideDropdown: false, sideMenu: false, emotionDropdown: false}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 145,
+        "columnNumber": 20
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Emotion dropdown ref called with element: false",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1406,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: emotionDropdownOpen state in ref: true",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 1407,
+        "columnNumber": 88
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Removing handleClickOutside listener",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 171,
+        "columnNumber": 24
+      }
+    },
+    {
+      "type": "log",
+      "text": "🔍 DEBUG: Dropdown states changed {strategyDropdownOpen: false, sideDropdownOpen: false, emotionDropdownOpen: false, strategiesCount: 3}",
+      "location": {
+        "url": "webpack-internal:///(app-pages-browser)/./src/app/log-trade/page.tsx",
+        "lineNumber": 116,
+        "columnNumber": 16
+      }
+    }
+  ],
+  "screenshots": [
+    "dropdown-debug-full-page.png",
+    "dropdown-debug-form-area.png"
+  ]
+}

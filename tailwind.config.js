@@ -9,7 +9,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Vero Color Palette - Clean naming without duplicates
+        // VeroTrade Design System - Exact HTML specification colors
+        background: '#050505',
+        card: '#0B0B0B',
+        border: '#1F1F1F',
+        
+        // Gold color palette - Exact specification
+        gold: {
+          DEFAULT: '#E6D5B8',
+          dim: '#8A7E68',
+          dark: '#4A4030',
+          highlight: '#F4E8D3',
+        },
+        
+        // Accent colors - Exact specification
+        accent: {
+          red: '#5E2121',
+          brown: '#3D2B1F',
+        },
+        
+        // Legacy compatibility - Keep existing colors
         vero: {
           950: '#050505', // Deep black
           900: '#0a0a0a', // Card bg
@@ -24,18 +43,8 @@ module.exports = {
         'vero-blue': '#2563eb',
         
         // Design System Colors - Primary colors
-        background: '#050505',
         surface: '#0A0A0A',
         'surface-highlight': '#121212', // Fixed naming convention
-        border: '#1E1E1E',
-        
-        // Gold variants - Consistent naming
-        gold: {
-          DEFAULT: '#C5A065',
-          dim: '#8C7040',
-          light: '#E5C585',
-          dark: '#8A6D3B',
-        },
         
         // Trading status colors
         profit: '#2EBD85',
@@ -113,9 +122,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        // Clean font families without duplicates
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        // Exact HTML specification font families
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"Inter"', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       fontSize: {
@@ -163,6 +172,7 @@ module.exports = {
         'shadow-lg': '0 10px 15px rgba(0, 0, 0, 0.3)',
         'shadow-xl': '0 20px 25px rgba(0, 0, 0, 0.25)',
         'shadow-2xl': '0 25px 50px rgba(0, 0, 0, 0.2)',
+        'glow': '0 0 20px rgba(230, 213, 184, 0.05)', // Exact HTML specification
       },
       transitionDuration: {
         'duration-fast': '150ms', // Clean naming

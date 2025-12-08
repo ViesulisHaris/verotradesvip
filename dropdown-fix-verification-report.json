@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-12-08T10:20:49.320Z",
+  "strategyDropdown": {
+    "menuExists": true,
+    "menuVisible": true,
+    "working": true
+  },
+  "sideDropdown": {
+    "menuExists": true,
+    "menuVisible": true,
+    "working": true
+  },
+  "emotionDropdown": {
+    "menuExists": true,
+    "menuVisible": true,
+    "working": true
+  },
+  "overallSuccess": true
+}
