@@ -121,6 +121,15 @@ body {
   background-color: var(--background);
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
+  /* Custom background with radial gradient and grid pattern */
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(197, 160, 101, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(197, 160, 101, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(197, 160, 101, 0.02) 0%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
 }
 
 /* Simple button styles */
@@ -741,12 +750,12 @@ body {
   }
 }
 
-.text-reveal {
+.text-reveal-animation {
   animation: text-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Character reveal animation for text */
-@keyframes textReveal {
+@keyframes text-reveal-character {
   from {
     opacity: 0;
     transform: translateY(110%);
@@ -767,6 +776,44 @@ body {
 
 .text-reveal-delay-3 {
   animation-delay: 0.3s;
+}
+
+/* Text reveal animation helper classes */
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 101, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: reveal-shimmer 2s infinite;
+}
+
+@keyframes reveal-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.text-gradient-reveal {
+  background: linear-gradient(90deg, var(--verotrade-text-primary), var(--gold), var(--verotrade-text-primary));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-reveal 3s ease infinite;
+}
+
+@keyframes gradient-reveal {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Flashlight Effect - Updated from target design */
@@ -815,6 +862,34 @@ body {
 
 .flashlight-container:hover .flashlight-bg,
 .flashlight-container:hover .flashlight-border {
+  opacity: 1;
+}
+
+/* Spotlight wrapper with mouse-tracking effects */
+.spotlight-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(197, 160, 101, 0.08) 0%,
+    rgba(197, 160, 101, 0.04) 20%,
+    transparent 50%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.spotlight-wrapper:hover .spotlight-effect {
   opacity: 1;
 }
 
@@ -872,6 +947,44 @@ body {
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Border beam animation for hover effects */
+.border-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-beam::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--gold) 45deg,
+    transparent 90deg,
+    transparent 270deg,
+    var(--gold) 315deg,
+    transparent 360deg
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: border-beam-spin 3s linear infinite;
+}
+
+.border-beam:hover::before {
+  opacity: 1;
+}
+
+@keyframes border-beam-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Scroll Entry Animations */
 .scroll-entry {
   opacity: 0;
@@ -917,29 +1030,30 @@ body {
   transform: scale(1);
 }
 
-/* Custom Input Styles (input-dark) */
+/* Custom Input Styles (input-dark) - Consolidated definition */
 .input-dark {
-  background-color: var(--verotrade-tertiary-black);
-  border: 1px solid var(--verotrade-border-primary);
-  color: var(--verotrade-text-primary);
+  background: transparent;
+  border: 1px solid #2A2A2A;
+  color: #C0C0C0;
   padding: var(--spacing-3) var(--spacing-4);
   border-radius: var(--verotrade-radius-md);
   font-size: var(--verotrade-base);
-  transition: all var(--verotrade-transition-normal);
+  transition: all 0.3s ease;
   outline: none;
 }
 
 .input-dark:focus {
-  border-color: var(--verotrade-gold-primary);
-  box-shadow: 0 0 0 2px rgba(184, 155, 94, 0.2);
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(197, 160, 101, 0.1);
 }
 
 .input-dark::placeholder {
-  color: var(--verotrade-text-secondary);
+  color: #555;
 }
 
 .input-dark:hover {
-  border-color: rgba(184, 155, 94, 0.4);
+  border-color: rgba(197, 160, 101, 0.4);
 }
 
 /* Accordion Transition Styles - Updated from target design */
@@ -1077,6 +1191,23 @@ body {
 /* Material Symbols Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0');
 
+/* Material Symbols CSS Rules */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 /* Typography System */
 .font-serif {
   font-family: 'Playfair Display', serif;
@@ -1086,23 +1217,7 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Custom Input Styles - Updated from target design */
-.input-dark {
-  background: transparent;
-  border: 1px solid #2A2A2A;
-  color: #C0C0C0;
-  transition: all 0.3s ease;
-}
-
-.input-dark:focus {
-  outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 15px rgba(197, 160, 101, 0.1);
-}
-
-.input-dark::placeholder {
-  color: #555;
-}
+/* Duplicate input-dark styles removed - consolidated above */
 
 /* Select Chevron */
 select {
@@ -1122,7 +1237,7 @@ select {
 }
 
 /* Make scroll items visible by default after a short delay */
-.scroll-item.visible {
+.scroll-item-visible {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(0);
@@ -1238,7 +1353,7 @@ select {
 }
 
 /* Most critical fix - ensure scroll items are visible */
-.scroll-item {
+.scroll-item.scroll-item-visible {
   opacity: 1 !important;
   filter: blur(0px) !important;
   transform: translateY(0) !important;
@@ -1285,4 +1400,300 @@ select {
   display: block !important;
   position: relative !important;
   z-index: 10 !important;
+}
+
+/* Custom scrollbar styles for dropdowns */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 101, 0.3);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 101, 0.5);
+}
+
+/* Custom dropdown styling with transitions and hover effects */
+.custom-dropdown {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--verotrade-radius-md);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.custom-dropdown:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(197, 160, 101, 0.1);
+}
+
+.custom-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.custom-dropdown-content.show {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.custom-dropdown-item {
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-dropdown-item:hover {
+  background-color: rgba(197, 160, 101, 0.1);
+}
+
+/* Enhanced input styling for date/time pickers in dark mode */
+.input-date-time {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--verotrade-text-primary);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--verotrade-radius-md);
+  font-size: var(--verotrade-base);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-date-time:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(197, 160, 101, 0.2);
+}
+
+.input-date-time::placeholder {
+  color: var(--verotrade-text-secondary);
+}
+
+.input-date-time:hover {
+  border-color: rgba(197, 160, 101, 0.4);
+}
+
+/* Fix for Webkit browsers (Chrome, Safari, Edge) */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator,
+input[type="time"]:hover::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]:hover::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+}
+
+input[type="date"]:focus::-webkit-calendar-picker-indicator,
+input[type="time"]:focus::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]:focus::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+/* Fix for Firefox */
+input[type="date"]::-moz-calendar-picker-indicator,
+input[type="time"]::-moz-calendar-picker-indicator,
+input[type="datetime-local"]::-moz-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+input[type="date"]:hover::-moz-calendar-picker-indicator,
+input[type="time"]:hover::-moz-calendar-picker-indicator,
+input[type="datetime-local"]:hover::-moz-calendar-picker-indicator {
+  filter: invert(0.7);
+}
+
+input[type="date"]:focus::-moz-calendar-picker-indicator,
+input[type="time"]:focus::-moz-calendar-picker-indicator,
+input[type="datetime-local"]:focus::-moz-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+/* ===== COMPREHENSIVE DROPDOWN FIXES ===== */
+/* High z-index stack for dropdowns to appear above all content */
+.dropdown-high-z {
+  z-index: 10020 !important;
+}
+
+.dropdown-higher-z {
+  z-index: 10030 !important;
+}
+
+.dropdown-highest-z {
+  z-index: 10050 !important;
+}
+
+.dropdown-overlay-z {
+  z-index: 10010 !important;
+}
+
+/* Solid background fallbacks for dropdowns */
+.dropdown-solid-bg {
+  background-color: #0A0A0A !important;
+  background: linear-gradient(135deg, #0A0A0A 0%, #121212 100%) !important;
+}
+
+/* Force solid backgrounds for all dropdown containers */
+[class*="z-"][class*="absolute"][class*="top-full"] {
+  background-color: #0A0A0A !important;
+  background: linear-gradient(135deg, #0A0A0A 0%, #121212 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Ensure dropdown items have proper contrast */
+[class*="z-"][class*="absolute"][class*="top-full"] > div {
+  background-color: transparent !important;
+  position: relative !important;
+  z-index: inherit !important;
+}
+
+/* Fix dropdown hover states */
+[class*="z-"][class*="absolute"][class*="top-full"] > div:hover {
+  background-color: rgba(197, 160, 101, 0.1) !important;
+}
+
+/* Override any transparent backgrounds */
+.bg-transparent.absolute[class*="z-"] {
+  background-color: #0A0A0A !important;
+}
+
+/* Ensure dropdown borders are visible */
+[class*="z-"][class*="absolute"][class*="top-full"] {
+  border: 1px solid rgba(197, 160, 101, 0.5) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix dropdown text visibility */
+[class*="z-"][class*="absolute"][class*="top-full"] .text-white,
+[class*="z-"][class*="absolute"][class*="top-full"] .text-gray-400 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+[class*="z-"][class*="absolute"][class*="top-full"] .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Ensure dropdown scrollbars work */
+[class*="z-"][class*="absolute"][class*="top-full"].custom-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(197, 160, 101, 0.5) #0A0A0A !important;
+}
+
+[class*="z-"][class*="absolute"][class*="top-full"].custom-scrollbar::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+[class*="z-"][class*="absolute"][class*="top-full"].custom-scrollbar::-webkit-scrollbar-track {
+  background: #0A0A0A !important;
+}
+
+[class*="z-"][class*="absolute"][class*="top-full"].custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 101, 0.5) !important;
+  border-radius: 3px !important;
+}
+
+/* Fix dropdown positioning and layering */
+.absolute.top-full.left-0.right-0 {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Override any conflicting animations that might affect transparency */
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[class*="z-"][class*="absolute"][class*="top-full"] {
+  animation: dropdown-fade-in 0.2s ease-out !important;
+}
+
+/* Ensure dropdown containers are not affected by parent opacity */
+[class*="spotlight-wrapper"] [class*="z-"][class*="absolute"][class*="top-full"] {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Fix for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    background-color: #0A0A0A !important;
+    background: #0A0A0A !important;
+  }
+}
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    background-color: #0A0A0A !important;
+    background: #0A0A0A !important;
+  }
+}
+
+/* Safari specific fixes */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    -webkit-backdrop-filter: none !important;
+    background-color: #0A0A0A !important;
+  }
+}
+
+/* Edge specific fixes */
+@supports (-ms-ime-align: auto) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    background-color: #0A0A0A !important;
+    background: #0A0A0A !important;
+  }
+}
+
+/* Mobile dropdown fixes */
+@media (max-width: 768px) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    max-height: 40vh !important;
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    border: 2px solid #ffffff !important;
+    background-color: #000000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  [class*="z-"][class*="absolute"][class*="top-full"] {
+    animation: none !important;
+    transition: none !important;
+  }
 }

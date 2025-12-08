@@ -1,223 +1,250 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import UnifiedLayout from '@/components/layout/UnifiedLayout';
 
-export default function DropdownDebugTest() {
-  const [testResults, setTestResults] = useState<any[]>([]);
-  const [isRunning, setIsRunning] = useState(false);
+export default function DropdownDebugPage() {
+  const [mounted, setMounted] = useState(false);
+  const [testResults, setTestResults] = useState<string[]>([]);
+  const [strategyDropdownOpen, setStrategyDropdownOpen] = useState(false);
+  const [sideDropdownOpen, setSideDropdownOpen] = useState(false);
+  const [emotionDropdownOpen, setEmotionDropdownOpen] = useState(false);
 
-  const addTestResult = (testName: string, result: any) => {
-    setTestResults(prev => [...prev, { testName, result, timestamp: new Date().toISOString() }]);
+  useEffect(() => {
+    setMounted(true);
+    runDiagnostics();
+  }, []);
+
+  const addTestResult = (test: string, passed: boolean, details: string = '') => {
+    const result = `✅ ${test} ${passed ? 'PASSED' : 'FAILED'}${details ? ` - ${details}` : ''}`;
+    setTestResults(prev => [...prev, result]);
   };
 
-  const testDropdownStyling = () => {
-    setIsRunning(true);
-    
-    // Test 1: Check if dropdown-enhanced class exists
-    const dropdownElements = document.querySelectorAll('.dropdown-enhanced');
-    addTestResult('Dropdown Elements Found', {
-      count: dropdownElements.length,
-      elements: Array.from(dropdownElements).map(el => ({
-        tagName: el.tagName,
-        className: el.className,
-        id: el.id
-      }))
-    });
+  const runDiagnostics = () => {
+    // Test 1: Check CSS Variables
+    const rootElement = document.documentElement;
+    const surfaceColor = getComputedStyle(rootElement).getPropertyValue('--surface');
+    addTestResult('CSS Variable --surface exists', !!surfaceColor, surfaceColor);
 
-    // Test 2: Check computed styles for dropdown container
-    dropdownElements.forEach((dropdown, index) => {
-      const styles = window.getComputedStyle(dropdown);
-      addTestResult(`Dropdown ${index} Container Styles`, {
-        backgroundColor: styles.backgroundColor,
-        color: styles.color,
-        backdropFilter: styles.backdropFilter,
-        zIndex: styles.zIndex,
-        position: styles.position,
-        border: styles.border,
-        borderRadius: styles.borderRadius
+    // Test 2: Check z-index values
+    const dropdowns = document.querySelectorAll('[class*="z-"]');
+    addTestResult('Elements with z-index found', dropdowns.length > 0, `Found ${dropdowns.length} elements`);
+
+    // Test 3: Check backdrop filter support
+    const testElement = document.createElement('div');
+    testElement.style.backdropFilter = 'blur(10px)';
+    const backdropFilterSupported = testElement.style.backdropFilter !== '';
+    addTestResult('Backdrop filter supported', backdropFilterSupported);
+
+    // Test 4: Check computed styles for dropdown backgrounds
+    setTimeout(() => {
+      const dropdownElements = document.querySelectorAll('.dropdown-test');
+      dropdownElements.forEach((el, index) => {
+        const styles = getComputedStyle(el);
+        const backgroundColor = styles.backgroundColor;
+        const opacity = styles.opacity;
+        const zIndex = styles.zIndex;
+        
+        addTestResult(`Dropdown ${index + 1} background`, backgroundColor !== 'rgba(0, 0, 0, 0)', backgroundColor);
+        addTestResult(`Dropdown ${index + 1} opacity`, opacity === '1', opacity);
+        addTestResult(`Dropdown ${index + 1} z-index`, parseInt(zIndex) > 0, zIndex);
       });
-    });
-
-    // Test 3: Check option elements styling
-    const allOptions = document.querySelectorAll('.dropdown-enhanced option');
-    addTestResult('Option Elements Found', {
-      count: allOptions.length,
-      elements: Array.from(allOptions).map((option, index) => {
-        const styles = window.getComputedStyle(option);
-        return {
-          index,
-          value: (option as HTMLOptionElement).value,
-          text: option.textContent,
-          backgroundColor: styles.backgroundColor,
-          color: styles.color,
-          visibility: styles.visibility,
-          display: styles.display,
-          padding: styles.padding,
-          fontSize: styles.fontSize
-        };
-      })
-    });
-
-    // Test 4: Check browser support for option styling
-    const testOption = document.createElement('option');
-    testOption.style.backgroundColor = 'red';
-    testOption.style.color = 'blue';
-    testOption.style.padding = '20px';
-    document.body.appendChild(testOption);
-    const computedTest = window.getComputedStyle(testOption);
-    addTestResult('Browser Option Styling Support', {
-      originalBg: 'red',
-      computedBg: computedTest.backgroundColor,
-      originalColor: 'blue',
-      computedColor: computedTest.color,
-      originalPadding: '20px',
-      computedPadding: computedTest.padding,
-      bgApplied: computedTest.backgroundColor.includes('red') || computedTest.backgroundColor.includes('255, 0, 0'),
-      colorApplied: computedTest.color.includes('blue') || computedTest.color.includes('0, 0, 255'),
-      paddingApplied: computedTest.padding !== '0px'
-    });
-    document.body.removeChild(testOption);
-
-    // Test 5: Check if CSS variables are applied
-    const rootStyles = window.getComputedStyle(document.documentElement);
-    addTestResult('CSS Variables Check', {
-      hasInterFont: rootStyles.fontFamily.includes('Inter'),
-      bodyBg: window.getComputedStyle(document.body).background,
-      bodyColor: window.getComputedStyle(document.body).color
-    });
-
-    // Test 6: Test dropdown visibility by simulating focus
-    const firstDropdown = dropdownElements[0] as HTMLSelectElement;
-    if (firstDropdown) {
-      firstDropdown.focus();
-      setTimeout(() => {
-        const options = firstDropdown.options;
-        const optionData = Array.from(options).map((option, index) => {
-          const styles = window.getComputedStyle(option);
-          return {
-            index,
-            text: option.textContent,
-            visible: styles.visibility !== 'hidden',
-            displayed: styles.display !== 'none',
-            bgColor: styles.backgroundColor,
-            textColor: styles.color,
-            contrast: styles.backgroundColor === styles.color ? 'POOR' : 'GOOD'
-          };
-        });
-        addTestResult('Dropdown Options Visibility Test', optionData);
-        setIsRunning(false);
-      }, 100);
-    } else {
-      setIsRunning(false);
-    }
+    }, 100);
   };
 
-  const clearResults = () => {
-    setTestResults([]);
-  };
+  const sideOptions = ['Buy', 'Sell'];
+  const emotionOptions = ['Neutral', 'Greed', 'Fear', 'Confidence', 'Frustration', 'Discipline', 'Impatience', 'Euphoria'];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Dropdown Debug Test Page</h1>
-        
-        <div className="mb-8">
-          <button
-            onClick={testDropdownStyling}
-            disabled={isRunning}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-6 py-3 rounded-lg mr-4"
-          >
-            {isRunning ? 'Running Tests...' : 'Run Dropdown Tests'}
-          </button>
-          <button
-            onClick={clearResults}
-            className="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg"
-          >
-            Clear Results
-          </button>
-        </div>
+    <UnifiedLayout>
+      <div className="min-h-screen p-6">
+        <div className="max-w-6xl mx-auto space-y-8">
+          {/* Page Title */}
+          <div className={`text-center mb-8 ${mounted ? 'text-reveal-animation' : 'opacity-0'}`}>
+            <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-[var(--gold-light)] via-[var(--gold)] to-[var(--gold-dim)] bg-clip-text text-transparent">
+              Dropdown Debugging Test Page
+            </h1>
+            <p className="text-gray-400 text-lg">Comprehensive dropdown transparency and z-index testing</p>
+          </div>
 
-        {/* Test Dropdowns */}
-        <div className="mb-8 p-6 bg-gray-800 rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Test Dropdowns</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">Market Dropdown</label>
-              <select className="dropdown-enhanced w-full px-4 py-3">
-                <option value="">All Markets</option>
-                <option value="Stock">Stock</option>
-                <option value="Crypto">Crypto</option>
-                <option value="Forex">Forex</option>
-                <option value="Futures">Futures</option>
-              </select>
+          {/* Test Results */}
+          <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">Diagnostic Results</h2>
+            <div className="space-y-2 max-h-64 overflow-y-auto custom-scrollbar">
+              {testResults.map((result, index) => (
+                <div key={index} className="text-sm font-mono text-gray-300">
+                  {result}
+                </div>
+              ))}
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Strategy Dropdown</label>
-              <select className="dropdown-enhanced w-full px-4 py-3">
-                <option value="">All Strategies</option>
-                <option value="strategy1">Strategy 1</option>
-                <option value="strategy2">Strategy 2</option>
-                <option value="strategy3">Strategy 3</option>
-              </select>
+            <button 
+              onClick={runDiagnostics}
+              className="mt-4 px-4 py-2 bg-[var(--gold)] text-black rounded-lg hover:bg-[var(--gold-light)] transition-colors"
+            >
+              Re-run Diagnostics
+            </button>
+          </div>
+
+          {/* Dropdown Test Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Strategy Dropdown Test */}
+            <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+              <h3 className="text-lg font-semibold text-white mb-4">Strategy Dropdown</h3>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setStrategyDropdownOpen(!strategyDropdownOpen)}
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
+                >
+                  <span>Select Strategy</span>
+                  <span className="material-symbols-outlined transition-transform duration-200" style={{ transform: strategyDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                    expand_more
+                  </span>
+                </button>
+                
+                {strategyDropdownOpen && (
+                  <div className="dropdown-test absolute top-full left-0 right-0 z-50 w-full mt-2 max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar">
+                    <div className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-gray-400">
+                      No Strategy
+                    </div>
+                    <div className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white">
+                      Strategy 1
+                    </div>
+                    <div className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white">
+                      Strategy 2
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Side Dropdown</label>
-              <select className="dropdown-enhanced w-full px-4 py-3">
-                <option value="">All Sides</option>
-                <option value="Buy">Buy</option>
-                <option value="Sell">Sell</option>
-              </select>
+
+            {/* Side Dropdown Test */}
+            <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+              <h3 className="text-lg font-semibold text-white mb-4">Side Dropdown</h3>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setSideDropdownOpen(!sideDropdownOpen)}
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
+                >
+                  <span>Buy</span>
+                  <span className="material-symbols-outlined transition-transform duration-200" style={{ transform: sideDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                    expand_more
+                  </span>
+                </button>
+                
+                {sideDropdownOpen && (
+                  <div className="dropdown-test absolute top-full left-0 right-0 z-30 w-full mt-2 max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar">
+                    {sideOptions.map(side => (
+                      <div key={side} className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white flex items-center gap-2">
+                        <span className={`material-symbols-outlined ${side === 'Buy' ? 'text-green-400' : 'text-red-400'}`}>
+                          {side === 'Buy' ? 'trending_up' : 'trending_down'}
+                        </span>
+                        {side}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Sort Dropdown</label>
-              <select className="dropdown-enhanced w-full px-4 py-3">
-                <option value="">Default</option>
-                <option value="trade_date-asc">Date (Oldest)</option>
-                <option value="trade_date-desc">Date (Newest)</option>
-                <option value="pnl-desc">P&L (High to Low)</option>
-                <option value="pnl-asc">P&L (Low to High)</option>
-              </select>
+
+            {/* Emotion Dropdown Test */}
+            <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+              <h3 className="text-lg font-semibold text-white mb-4">Emotion Dropdown</h3>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setEmotionDropdownOpen(!emotionDropdownOpen)}
+                  className="w-full px-4 py-3 rounded-lg border border-[rgba(197,160,101,0.3)] bg-[var(--surface)] text-white text-left flex items-center justify-between hover:border-[var(--gold)] transition-all duration-300"
+                >
+                  <span>Neutral</span>
+                  <span className="material-symbols-outlined transition-transform duration-200" style={{ transform: emotionDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                    expand_more
+                  </span>
+                </button>
+                
+                {emotionDropdownOpen && (
+                  <div className="dropdown-test absolute top-full left-0 right-0 z-20 w-full mt-2 max-h-60 overflow-y-auto rounded-lg shadow-2xl border border-[rgba(197,160,101,0.5)] bg-[#0A0A0A] custom-scrollbar">
+                    {emotionOptions.map(emotion => (
+                      <div key={emotion} className="px-4 py-3 cursor-pointer hover:bg-[rgba(197,160,101,0.1)] text-white">
+                        {emotion}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Z-Index Layer Visualization */}
+          <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">Z-Index Layer Visualization</h2>
+            <div className="relative h-64 bg-[rgba(0,0,0,0.3)] rounded-lg overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold">
+                Z-Index Stack Test
+              </div>
+              {/* Different z-index layers */}
+              <div className="absolute top-4 left-4 w-20 h-20 bg-red-500/50" style={{ zIndex: 10 }}>z-10</div>
+              <div className="absolute top-8 left-8 w-20 h-20 bg-green-500/50" style={{ zIndex: 20 }}>z-20</div>
+              <div className="absolute top-12 left-12 w-20 h-20 bg-blue-500/50" style={{ zIndex: 30 }}>z-30</div>
+              <div className="absolute top-16 left-16 w-20 h-20 bg-yellow-500/50" style={{ zIndex: 40 }}>z-40</div>
+              <div className="absolute top-20 left-20 w-20 h-20 bg-purple-500/50" style={{ zIndex: 50 }}>z-50</div>
+            </div>
+          </div>
+
+          {/* CSS Specificity Tests */}
+          <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">CSS Specificity Tests</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[rgba(197,160,101,0.3)]">
+                <h4 className="text-white font-semibold mb-2">Inline Style</h4>
+                <div className="px-4 py-2 bg-[#1A1A1A] rounded text-white" style={{ backgroundColor: '#FF0000' }}>
+                  Should be red (inline style)
+                </div>
+              </div>
+              <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[rgba(197,160,101,0.3)]">
+                <h4 className="text-white font-semibold mb-2">CSS Class</h4>
+                <div className="px-4 py-2 bg-blue-500 rounded text-white">
+                  Should be blue (CSS class)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Browser Compatibility Info */}
+          <div className="spotlight-wrapper relative rounded-2xl border border-[rgba(197,160,101,0.2)] bg-[rgba(18,18,18,0.4)] backdrop-blur-md p-6">
+            <h2 className="text-2xl font-semibold text-white mb-4">Browser Compatibility</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="p-4 bg-[#0A0A0A] rounded-lg">
+                <h4 className="text-white font-semibold mb-2">User Agent</h4>
+                <p className="text-gray-300">{typeof window !== 'undefined' ? navigator.userAgent : 'Server-side'}</p>
+              </div>
+              <div className="p-4 bg-[#0A0A0A] rounded-lg">
+                <h4 className="text-white font-semibold mb-2">Viewport</h4>
+                <p className="text-gray-300">{typeof window !== 'undefined' ? `${window.innerWidth}x${window.innerHeight}` : 'Server-side'}</p>
+              </div>
+              <div className="p-4 bg-[#0A0A0A] rounded-lg">
+                <h4 className="text-white font-semibold mb-2">CSS Support</h4>
+                <p className="text-gray-300">Backdrop Filter: {typeof document !== 'undefined' && CSS.supports('backdrop-filter', 'blur(10px)') ? 'Yes' : 'No'}</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Test Results */}
-        <div className="bg-gray-800 rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Test Results</h2>
-          
-          {testResults.length === 0 ? (
-            <p className="text-gray-400">No tests run yet. Click "Run Dropdown Tests" to start.</p>
-          ) : (
-            <div className="space-y-4">
-              {testResults.map((result, index) => (
-                <div key={index} className="bg-gray-700 rounded p-4">
-                  <h3 className="font-semibold mb-2">{result.testName}</h3>
-                  <pre className="text-sm text-gray-300 overflow-x-auto">
-                    {JSON.stringify(result.result, null, 2)}
-                  </pre>
-                  <p className="text-xs text-gray-500 mt-2">{result.timestamp}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Manual Testing Instructions */}
-        <div className="mt-8 bg-gray-800 rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Manual Testing Instructions</h2>
-          <ol className="list-decimal list-inside space-y-2 text-gray-300">
-            <li>Click on each dropdown above to open it</li>
-            <li>Observe if the options are visible or appear white/invisible</li>
-            <li>Check if you can hover over and select options</li>
-            <li>Note any differences between browsers</li>
-            <li>Run the automated tests and review the results</li>
-          </ol>
-        </div>
+        {/* Close dropdowns when clicking outside */}
+        {(strategyDropdownOpen || sideDropdownOpen || emotionDropdownOpen) && (
+          <div
+            className="fixed inset-0 z-15 bg-transparent"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setStrategyDropdownOpen(false);
+              setSideDropdownOpen(false);
+              setEmotionDropdownOpen(false);
+            }}
+          />
+        )}
       </div>
-    </div>
+    </UnifiedLayout>
   );
 }

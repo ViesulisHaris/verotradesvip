@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Trade Fixes Test</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #EAEAEA;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: rgba(31, 41, 55, 0.8);
+            border: 1px solid rgba(197, 160, 101, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .test-title {
+            color: #C5A065;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .test-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .pass {
+            background: #2EBD85;
+            color: white;
+        }
+        .fail {
+            background: #F6465D;
+            color: white;
+        }
+        .pending {
+            background: #9ca3af;
+            color: white;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid rgba(197, 160, 101, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .instructions {
+            background: rgba(197, 160, 101, 0.1);
+            border: 1px solid rgba(197, 160, 101, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Log Trade Page Fixes Verification</h1>
+    
+    <div class="instructions">
+        <h2>Manual Testing Instructions</h2>
+        <p>This page helps you verify the fixes for the log-trade page. Open the log-trade page in the iframe below and perform the following tests:</p>
+        
+        <h3>1. Market Type Selector Test</h3>
+        <ul>
+            <li>Click on "Stock" - only Stock should be selected</li>
+            <li>Click on "Crypto" - Crypto should be selected and Stock should be deselected</li>
+            <li>Click on the selected market again - it should be deselected</li>
+        </ul>
+        
+        <h3>2. Dropdown Transparency & Scrolling Test</h3>
+        <ul>
+            <li>Click on "Select Strategy" - dropdown should be visible with solid background</li>
+            <li>Click outside the dropdown - it should close</li>
+            <li>Click on "Buy" side dropdown - should be visible with solid background</li>
+            <li>Click on "Neutral" emotion dropdown - should be visible with solid background</li>
+            <li>Check that dropdowns have proper hover states on options</li>
+        </ul>
+        
+        <p>After testing, click the "Run Automated Tests" button below to run JavaScript tests.</p>
+    </div>
+    
+    <div class="test-section">
+        <div class="test-title">Automated Test Results</div>
+        <div id="test-results">
+            <div class="test-item">
+                <span class="status pending" id="market-test">?</span>
+                <span>Market Type Selector - Single Selection</span>
+            </div>
+            <div class="test-item">
+                <span class="status pending" id="dropdown-visibility">?</span>
+                <span>Dropdown Visibility - No Transparency Issues</span>
+            </div>
+            <div class="test-item">
+                <span class="status pending" id="dropdown-scrolling">?</span>
+                <span>Dropdown Scrolling - overflow-y-auto Applied</span>
+            </div>
+            <div class="test-item">
+                <span class="status pending" id="dropdown-zindex">?</span>
+                <span>Dropdown Z-Index - Proper Stacking</span>
+            </div>
+            <div class="test-item">
+                <span class="status pending" id="click-outside">?</span>
+                <span>Click Outside - Dropdown Closes</span>
+            </div>
+        </div>
+        <button onclick="runTests()" style="margin-top: 15px; padding: 10px 20px; background: #C5A065; color: #050505; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+            Run Automated Tests
+        </button>
+    </div>
+    
+    <div class="iframe-container">
+        <iframe src="http://localhost:3000/log-trade" id="test-frame"></iframe>
+    </div>
+    
+    <script>
+        let testFrame;
+        
+        function updateStatus(testId, passed) {
+            const element = document.getElementById(testId);
+            element.textContent = passed ? '✓' : '✗';
+            element.className = `status ${passed ? 'pass' : 'fail'}`;
+        }
+        
+        async function runTests() {
+            testFrame = document.getElementById('test-frame');
+            
+            // Wait for frame to load
+            if (testFrame.contentWindow.document.readyState !== 'complete') {
+                await new Promise(resolve => {
+                    testFrame.onload = resolve;
+                });
+            }
+            
+            const frameWindow = testFrame.contentWindow;
+            const frameDocument = frameWindow.document;
+            
+            try {
+                // Test 1: Market Type Selector
+                console.log('Testing Market Type Selector...');
+                const marketButtons = frameDocument.querySelectorAll('.grid button[type="button"]');
+                if (marketButtons.length >= 4) {
+                    // Click first button (Stock)
+                    marketButtons[0].click();
+                    setTimeout(() => {
+                        const stockSelected = frameWindow.getComputedStyle(marketButtons[0]).backgroundColor.includes('197, 160, 101');
+                        const cryptoSelected = frameWindow.getComputedStyle(marketButtons[1]).backgroundColor.includes('197, 160, 101');
+                        
+                        // Click second button (Crypto)
+                        marketButtons[1].click();
+                        setTimeout(() => {
+                            const cryptoSelectedAfter = frameWindow.getComputedStyle(marketButtons[1]).backgroundColor.includes('197, 160, 101');
+                            const stockSelectedAfter = frameWindow.getComputedStyle(marketButtons[0]).backgroundColor.includes('197, 160, 101');
+                            
+                            const marketTestPassed = stockSelected && !cryptoSelected && cryptoSelectedAfter && !stockSelectedAfter;
+                            updateStatus('market-test', marketTestPassed);
+                            
+                            // Test 2: Dropdown Visibility
+                            console.log('Testing Dropdown Visibility...');
+                            const strategyButton = frameDocument.querySelector('button:has-text("Select Strategy")') || 
+                                                Array.from(frameDocument.querySelectorAll('button')).find(btn => btn.textContent.includes('Select Strategy'));
+                            
+                            if (strategyButton) {
+                                strategyButton.click();
+                                setTimeout(() => {
+                                    const dropdown = frameDocument.querySelector('.absolute.z-50');
+                                    if (dropdown) {
+                                        const styles = frameWindow.getComputedStyle(dropdown);
+                                        const visible = styles.display !== 'none' && 
+                                                       styles.opacity !== '0' && 
+                                                       styles.backgroundColor !== 'transparent';
+                                        
+                                        updateStatus('dropdown-visibility', visible);
+                                        
+                                        // Test 3: Dropdown Scrolling
+                                        const hasScrolling = dropdown.classList.contains('overflow-y-auto');
+                                        updateStatus('dropdown-scrolling', hasScrolling);
+                                        
+                                        // Test 4: Z-Index
+                                        const zIndex = styles.zIndex;
+                                        updateStatus('dropdown-zindex', parseInt(zIndex) >= 50);
+                                        
+                                        // Test 5: Click Outside
+                                        const clickOutsideLayer = frameDocument.querySelector('.fixed.inset-0.z-40');
+                                        if (clickOutsideLayer) {
+                                            clickOutsideLayer.click();
+                                            setTimeout(() => {
+                                                const dropdownClosed = !dropdown || frameWindow.getComputedStyle(dropdown).display === 'none';
+                                                updateStatus('click-outside', dropdownClosed);
+                                            }, 100);
+                                        } else {
+                                            updateStatus('click-outside', false);
+                                        }
+                                    } else {
+                                        updateStatus('dropdown-visibility', false);
+                                        updateStatus('dropdown-scrolling', false);
+                                        updateStatus('dropdown-zindex', false);
+                                        updateStatus('click-outside', false);
+                                    }
+                                }, 100);
+                            } else {
+                                updateStatus('dropdown-visibility', false);
+                                updateStatus('dropdown-scrolling', false);
+                                updateStatus('dropdown-zindex', false);
+                                updateStatus('click-outside', false);
+                            }
+                        }, 100);
+                    }, 100);
+                } else {
+                    updateStatus('market-test', false);
+                }
+            } catch (error) {
+                console.error('Test error:', error);
+                updateStatus('market-test', false);
+                updateStatus('dropdown-visibility', false);
+                updateStatus('dropdown-scrolling', false);
+                updateStatus('dropdown-zindex', false);
+                updateStatus('click-outside', false);
+            }
+        }
+    </script>
+</body>
+</html>

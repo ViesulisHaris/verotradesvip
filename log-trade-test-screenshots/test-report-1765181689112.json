@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-12-08T08:14:49.111Z",
+  "summary": {
+    "totalTests": 28,
+    "passedTests": 16,
+    "failedTests": 12,
+    "issues": [
+      "Section reveal animations on scroll: Cannot read properties of undefined (reading 'contains')\npptr:evaluate;Object.test%20(c%3A%5CUsers%5Charal%5CDesktop%5Ctrading%20journal%20web%5Cverotradesvip%5Ccomprehensive-log-trade-test.js%3A164%3A47):3:31",
+      "Strategy dropdown opens/closes: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Select Strategy\")' is not a valid selector.",
+      "Side dropdown opens/closes: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Buy\"), button:has-text(\"Sell\")' is not a valid selector.",
+      "Emotional state dropdown opens/closes: SyntaxError: Failed to execute 'querySelector' on 'Document': 'button:has-text(\"Neutral\")' is not a valid selector."
+    ]
+  },
+  "details": {
+    "visualDesign": {
+      "Vero colors applied correctly": "PASS",
+      "Dark backgrounds applied": "PASS",
+      "Spotlight effect follows mouse": "PASS",
+      "Border beam animation on save button": "PASS",
+      "Text reveal animations for title": "FAIL",
+      "Section reveal animations on scroll": "ERROR"
+    },
+    "interactiveElements": {
+      "Market type selector buttons work": "FAIL",
+      "Strategy dropdown opens/closes": "ERROR",
+      "Side dropdown opens/closes": "ERROR",
+      "Emotional state dropdown opens/closes": "ERROR",
+      "Form inputs accept text": "PASS",
+      "PnL input changes color based on value": "FAIL"
+    },
+    "formFunctionality": {
+      "Form submission with sample data": "PASS",
+      "Toast notifications appear": "PASS",
+      "Form validation works": "PASS",
+      "Form reset after successful submission": "FAIL"
+    },
+    "responsiveDesign": {
+      "Desktop": {
+        "Desktop layout adapts properly": "PASS",
+        "Desktop navigation works": "PASS"
+      },
+      "Tablet": {
+        "Tablet layout adapts properly": "PASS",
+        "Tablet navigation works": "PASS"
+      },
+      "Mobile": {
+        "Mobile layout adapts properly": "PASS",
+        "Mobile navigation works": "FAIL"
+      }
+    },
+    "integration": {
+      "Authentication protection works": "FAIL",
+      "Navigation integration works": "PASS",
+      "Page fits within existing layout": "FAIL"
+    },
+    "browserCompatibility": {
+      "No console errors": "PASS",
+      "CSS animations work smoothly": "PASS",
+      "JavaScript functionality works": "FAIL"
+    }
+  }
+}
