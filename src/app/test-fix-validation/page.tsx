@@ -30,7 +30,7 @@ export default function ComprehensiveFixTestPage() {
       addTestResult('AuthContext Safety', true, `Auth data available: ${!!authData}`);
     } catch (error) {
       console.error('🔧 [FIX-TEST] AuthContext test failed:', error);
-      addTestResult('AuthContext Safety', false, `Error: ${error.message}`);
+      addTestResult('AuthContext Safety', false, `Error: ${error instanceof Error ? error.message : String(error)}`);
     }
     
     // Test 2: Supabase client safety
@@ -40,7 +40,7 @@ export default function ComprehensiveFixTestPage() {
       addTestResult('Supabase Client', true, `Client created: ${!!supabase?.auth}`);
     } catch (error) {
       console.error('🔧 [FIX-TEST] Supabase client test failed:', error);
-      addTestResult('Supabase Client', false, `Error: ${error.message}`);
+      addTestResult('Supabase Client', false, `Error: ${error instanceof Error ? error.message : String(error)}`);
     }
     
     // Test 3: Hydration safety
@@ -51,19 +51,19 @@ export default function ComprehensiveFixTestPage() {
       addTestResult('Hydration Safety', true, `Client: ${isClient}, Document: ${hasDocument}`);
     } catch (error) {
       console.error('🔧 [FIX-TEST] Hydration test failed:', error);
-      addTestResult('Hydration Safety', false, `Error: ${error.message}`);
+      addTestResult('Hydration Safety', false, `Error: ${error instanceof Error ? error.message : String(error)}`);
     }
     
     // Test 4: Error handling
     try {
       console.log('🔧 [FIX-TEST] Testing error handling...');
       // Simulate potential error condition
-      const testObject = null;
+      const testObject: any = null;
       const result = testObject ? testObject.property : 'safe-fallback';
       addTestResult('Error Handling', true, `Safe fallback working: ${result}`);
     } catch (error) {
       console.error('🔧 [FIX-TEST] Error handling test failed:', error);
-      addTestResult('Error Handling', false, `Error: ${error.message}`);
+      addTestResult('Error Handling', false, `Error: ${error instanceof Error ? error.message : String(error)}`);
     }
     
     setIsRunning(false);

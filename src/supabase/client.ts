@@ -216,3 +216,18 @@ export const clearCorruptedAuthData = () => {
     });
   }
 };
+
+// Clear Supabase cache function
+export const clearSupabaseCache = async () => {
+  try {
+    if (supabaseClient) {
+      // Clear any cached data
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) {
+        console.error('Error clearing cache:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Unexpected error clearing cache:', error);
+  }
+};

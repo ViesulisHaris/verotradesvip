@@ -65,7 +65,7 @@ const formatEmotionsAsBoxes = (emotionalState: string[] | null | string) => {
         return (
           <div
             key={index}
-            className={`px-2 py-1 rounded-md ${emotionColor.bg} ${emotionColor.text} text-xs border ${emotionColor.border}`}
+            className={`px-2 py-1 rounded-md ${emotionColor?.bg || 'bg-gray-500/20'} ${emotionColor?.text || 'text-gray-400'} text-xs border ${emotionColor?.border || 'border-gray-500/50'}`}
           >
             {emotion}
           </div>
@@ -165,10 +165,10 @@ const calculateTradeDuration = (entryTime?: string, exitTime?: string): string |
     const [exitHours, exitMinutes] = exitTime.split(':').map(Number);
     
     const entryDate = new Date();
-    entryDate.setHours(entryHours, entryMinutes, 0, 0);
+    entryDate.setHours(entryHours || 0, entryMinutes || 0, 0, 0);
     
     const exitDate = new Date();
-    exitDate.setHours(exitHours, exitMinutes, 0, 0);
+    exitDate.setHours(exitHours || 0, exitMinutes || 0, 0, 0);
     
     let durationMs = exitDate.getTime() - entryDate.getTime();
     

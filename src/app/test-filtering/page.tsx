@@ -56,7 +56,7 @@ const formatEmotionsAsBoxes = (emotionalState: string[] | null | string) => {
         return (
           <div
             key={index}
-            className={`px-2 py-1 rounded-md ${emotionColor.bg} ${emotionColor.text} text-xs border ${emotionColor.border}`}
+            className={`px-2 py-1 rounded-md ${emotionColor?.bg || 'bg-gray-500/20'} ${emotionColor?.text || 'text-gray-400'} text-xs border ${emotionColor?.border || 'border-gray-500/50'}`}
           >
             {emotion}
           </div>

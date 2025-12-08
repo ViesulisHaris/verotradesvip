@@ -133,9 +133,11 @@ export default function TestMaxDrawdown() {
     // Find recovery date (if any)
     let recoveryDate: string | undefined;
     if (maxDrawdown > 0) {
-      for (let i = troughIndex + 1; i < tradesWithPnL.length; i++) {
-        if (drawdownHistory[i].cumulative >= drawdownHistory[troughIndex].peak) {
-          recoveryDate = tradesWithPnL[i].trade_date;
+      for (let i = troughIndex + 1; i < tradesWithPnL.length && i < drawdownHistory.length; i++) {
+        const currentDrawdown = drawdownHistory[i];
+        const troughDrawdown = drawdownHistory[troughIndex];
+        if (currentDrawdown && troughDrawdown && currentDrawdown.cumulative >= troughDrawdown.peak) {
+          recoveryDate = tradesWithPnL[i]?.trade_date;
           break;
         }
       }

@@ -136,9 +136,9 @@ export default function TestModernNavigation() {
       results.push({
         name: `Tab Navigation ${i + 1}`,
         status: focusedElement === expectedLink ? 'pass' : 'fail',
-        details: focusedElement === expectedLink ? 
-          `Correctly focused on: ${expectedLink.textContent}` : 
-          `Expected: ${expectedLink.textContent}, Got: ${focusedElement?.textContent}`
+        details: focusedElement === expectedLink ?
+          `Correctly focused on: ${expectedLink?.textContent || 'unknown'}` :
+          `Expected: ${expectedLink?.textContent || 'unknown'}, Got: ${focusedElement?.textContent || 'unknown'}`
       });
     }
 

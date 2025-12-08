@@ -52,7 +52,7 @@ export default function GlobalAuthFixTestPage() {
         status,
         message,
         details
-      };
+      } as TestResult;
       return updated;
     });
   };

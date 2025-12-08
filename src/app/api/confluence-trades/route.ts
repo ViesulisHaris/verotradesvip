@@ -55,6 +55,8 @@ export async function GET(request: Request) {
     const dateTo = searchParams.get('dateTo') || undefined;
     const pnlFilter = searchParams.get('pnlFilter') as 'all' | 'profitable' | 'lossable' || 'all';
     const side = searchParams.get('side') as 'Buy' | 'Sell' | '' || '';
+    const sortBy = searchParams.get('sortBy') || 'trade_date';
+    const sortOrder = searchParams.get('sortOrder') as 'asc' | 'desc' || 'desc';
 
     // Initialize Supabase client
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -177,9 +179,14 @@ export async function GET(request: Request) {
       dateTo,
       pnlFilter,
       side,
+      sortBy,
+      sortOrder,
       page,
       limit
     });
+
+    // Apply sorting
+    query = query.order(sortBy, { ascending: sortOrder === 'asc' });
 
     // Execute query to get all trades (we'll filter emotional states client-side for now)
     const { data: allTrades, error: fetchError, count } = await query;

@@ -37,7 +37,7 @@ export default function TestStrategyPerformanceNavigation() {
 
       // Get stats for each strategy
       const strategiesWithStats = await Promise.all(
-        strategiesData.map(async (strategy) => {
+        strategiesData.map(async (strategy: any) => {
           const { data: statsData } = await supabase
             .from('strategy_stats')
             .select('*')

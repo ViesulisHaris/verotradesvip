@@ -100,6 +100,11 @@ export default function TestTradeDeletionSync() {
     try {
       // Select a trade to delete (the first one)
       const tradeToDelete = trades[0];
+      if (!tradeToDelete) {
+        addTestResult('❌ No trade available for deletion', 'error');
+        setIsTestRunning(false);
+        return;
+      }
       addTestResult(`📝 Selected trade: ${tradeToDelete.symbol} (${tradeToDelete.side})`, 'info');
 
       // Record initial state

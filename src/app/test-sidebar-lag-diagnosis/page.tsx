@@ -48,14 +48,16 @@ export default function TestSidebarLagDiagnosisPage() {
     
     // Test 1: Check for excessive RAF calls
     const analysis = window.sidebarDiagnostics.analyze();
-    if (analysis.eventCounts['REQUEST_ANIMATION_FRAME'] > 50) {
+    const rafCount = analysis.eventCounts?.['REQUEST_ANIMATION_FRAME'] || 0;
+    if (rafCount > 50) {
       addTestResult('⚠️ HIGH: Excessive RAF calls detected');
     } else {
       addTestResult('✅ RAF calls within normal range');
     }
 
     // Test 2: Check for resize event storms
-    if (analysis.eventCounts['WINDOW_RESIZE'] > 10) {
+    const resizeCount = analysis.eventCounts?.['WINDOW_RESIZE'] || 0;
+    if (resizeCount > 10) {
       addTestResult('⚠️ HIGH: Resize event storm detected');
     } else {
       addTestResult('✅ Resize events within normal range');

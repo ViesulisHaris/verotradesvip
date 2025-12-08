@@ -44,7 +44,7 @@ export default function TestMarketChart() {
     ]
   ];
 
-  const currentData = dataSets[dataSet];
+  const currentData = dataSets[dataSet] || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-8">
@@ -71,7 +71,7 @@ export default function TestMarketChart() {
           <div className="mb-6 p-4 bg-black/20 rounded-lg">
             <h3 className="text-lg font-semibold text-white mb-2">Current Data Distribution:</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {currentData.map((item) => (
+              {currentData?.map((item) => (
                 <div key={item.market} className="text-center">
                   <div className="text-sm text-white/70">{item.market}</div>
                   <div className="text-lg font-bold text-white">{item.count}</div>

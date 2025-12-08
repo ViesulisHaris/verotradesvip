@@ -261,25 +261,25 @@ export default function TestTradeDateUserPerspective() {
         addTestResult('Date Ordering', 'fail', 'Failed to order trades by trade_date', orderError);
       } else {
         // Check if they are properly ordered
-        const isCorrectlyOrdered = orderedTrades?.every((trade, index) => {
+        const isCorrectlyOrdered = orderedTrades?.every((trade: any, index: number) => {
           if (index === 0) return true;
           return new Date(trade.trade_date) <= new Date(orderedTrades[index - 1].trade_date);
         });
 
         if (isCorrectlyOrdered) {
           addTestResult('Date Ordering', 'pass', 'Successfully ordered trades by trade_date', {
-            trades: orderedTrades?.map(t => ({ symbol: t.symbol, trade_date: t.trade_date }))
+            trades: orderedTrades?.map((t: any) => ({ symbol: t.symbol, trade_date: t.trade_date }))
           });
         } else {
           addTestResult('Date Ordering', 'fail', 'Trades not properly ordered by trade_date', {
-            trades: orderedTrades?.map(t => ({ symbol: t.symbol, trade_date: t.trade_date }))
+            trades: orderedTrades?.map((t: any) => ({ symbol: t.symbol, trade_date: t.trade_date }))
           });
         }
       }
 
       // Clean up
       if (insertedTrades) {
-        await supabase.from('trades').delete().in('id', insertedTrades.map(t => t.id));
+        await supabase.from('trades').delete().in('id', insertedTrades.map((t: any) => t.id));
       }
     } catch (error) {
       addTestResult('Date Ordering', 'error', 'Exception during date ordering test', error);

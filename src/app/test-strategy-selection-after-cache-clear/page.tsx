@@ -29,7 +29,15 @@ export default function TestStrategySelectionAfterCacheClear() {
   const updateTestResult = (index: number, result: Partial<TestResult>) => {
     setTestResults(prev => {
       const updated = [...prev];
-      updated[index] = { ...updated[index], ...result };
+      if (updated[index]) {
+        updated[index] = {
+          testName: updated[index].testName,
+          status: updated[index].status,
+          details: updated[index].details,
+          error: updated[index].error,
+          ...result
+        };
+      }
       return updated;
     });
   };

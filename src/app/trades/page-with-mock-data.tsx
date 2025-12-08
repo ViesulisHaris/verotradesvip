@@ -738,7 +738,7 @@ const TradesPageContent = memo(function TradesPageContent() {
                         <div className="col-span-2 flex justify-end items-center gap-3">
                              <div className={`w-2 h-2 rounded-full ${isWin ? 'bg-profit shadow-[0_0_8px_rgba(46,189,133,0.5)]' : 'bg-loss shadow-[0_0_8px_rgba(246,70,93,0.5)]'}`}></div>
                              <span className={`material-symbols-outlined text-gray-600 chevron-icon ${expandedTrades.has(trade.id) ? 'rotate' : ''}`}>
-                               expand_more
+                               click to expand
                              </span>
                         </div>
                       </div>

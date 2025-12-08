@@ -14,11 +14,11 @@ export default function SidebarVerificationPage() {
     const checkSidebar = () => {
       // Check if sidebar element exists
       const sidebarElement = document.querySelector('.verotrade-sidebar-overlay');
-      const isSidebarVisible = sidebarElement && 
+      const isSidebarVisible = sidebarElement &&
                             window.getComputedStyle(sidebarElement).display !== 'none' &&
                             window.getComputedStyle(sidebarElement).visibility !== 'hidden';
       
-      setSidebarVisible(isSidebarVisible);
+      setSidebarVisible(isSidebarVisible || false);
       
       const results = [
         {

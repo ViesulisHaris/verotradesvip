@@ -74,12 +74,14 @@ export default function StrategiesNavigationTestPage() {
   const updateTestResult = (index: number, status: 'running' | 'passed' | 'failed', details: string) => {
     setTestResults(prev => {
       const updated = [...prev];
-      updated[index] = {
-        ...updated[index],
-        status,
-        details,
-        timestamp: status === 'passed' || status === 'failed' ? new Date().toLocaleTimeString() : undefined
-      };
+      if (updated[index]) {
+        updated[index] = {
+          testName: updated[index].testName,
+          status,
+          details,
+          timestamp: status === 'passed' || status === 'failed' ? new Date().toLocaleTimeString() : undefined
+        };
+      }
       return updated;
     });
   };
@@ -163,11 +165,14 @@ export default function StrategiesNavigationTestPage() {
       await runTest(i);
       
       // Count results
-      const updatedResults = testResults[i];
-      if (updatedResults.status === 'passed') passed++;
-      else if (updatedResults.status === 'failed') failed++;
-      
-      setTestSummary({ passed, failed, total: testResults.length });
+      setTestResults(currentResults => {
+        const updatedResults = currentResults[i];
+        if (updatedResults?.status === 'passed') passed++;
+        else if (updatedResults?.status === 'failed') failed++;
+        
+        setTestSummary({ passed, failed, total: testResults.length });
+        return currentResults;
+      });
     }
 
     setIsTestRunning(false);

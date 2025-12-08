@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/supabase/client';
+import { supabase, clearSupabaseCache } from '@/supabase/client';
 import { validateSchema } from '@/lib/schema-validation';
 
 export default function TestFinalFixes() {
@@ -82,8 +82,7 @@ export default function TestFinalFixes() {
     addTestResult('Cache Clear Test', 'info', 'Starting cache clear test...');
     
     try {
-      // Import and test cache clear function
-      const { clearSupabaseCache } = await import('@/supabase/client');
+      // Test cache clear function
       await clearSupabaseCache();
       
       addTestResult('Cache Clear Test', 'success', '✅ Cache clear function executed successfully');

@@ -17,17 +17,10 @@ module.exports = {
         
         // Gold variants
         gold: {
-          50: '#FFFDF7',
-          100: '#FEFAE7',
-          200: '#FCF2D1',
-          300: '#F8E6B0',
-          400: '#F2D47A',
-          500: '#E6B84F',
-          600: '#D4A038',
-          700: '#B89B5E',
-          800: '#9C7E47',
-          900: '#7D6339',
-          950: '#4A3822',
+          DEFAULT: '#C5A065',
+          dim: '#8C7040',
+          light: '#E5C585',
+          dark: '#8A6D3B',
         },
         
         // Trading status colors

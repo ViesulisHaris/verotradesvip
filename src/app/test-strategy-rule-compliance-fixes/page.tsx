@@ -35,7 +35,16 @@ export default function TestStrategyRuleComplianceFixes() {
   const updateTestResult = (index: number, result: Partial<TestResult>) => {
     setTestResults(prev => {
       const updated = [...prev];
-      updated[index] = { ...updated[index], ...result };
+      if (updated[index]) {
+        updated[index] = {
+          name: updated[index].name,
+          status: updated[index].status,
+          message: updated[index].message,
+          details: updated[index].details,
+          duration: updated[index].duration,
+          ...result
+        };
+      }
       return updated;
     });
   };

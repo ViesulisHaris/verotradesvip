@@ -31,7 +31,14 @@ export default function TestMultipleMarketsFix() {
   const updateTestResult = (index: number, result: Partial<TestResult>) => {
     setTestResults(prev => {
       const updated = [...prev];
-      updated[index] = { ...updated[index], ...result };
+      if (updated[index]) {
+        updated[index] = {
+          testName: updated[index].testName,
+          status: updated[index].status,
+          details: updated[index].details,
+          ...result
+        };
+      }
       return updated;
     });
   };
@@ -198,11 +205,14 @@ export default function TestMultipleMarketsFix() {
       } else {
         const marketStats: { [key: string]: { count: number; totalPnL: number } } = {};
         tradesForStats?.forEach((trade: any) => {
-          if (!marketStats[trade.market]) {
-            marketStats[trade.market] = { count: 0, totalPnL: 0 };
+          const market = trade.market;
+          if (market) {
+            if (!marketStats[market]) {
+              marketStats[market] = { count: 0, totalPnL: 0 };
+            }
+            marketStats[market].count++;
+            marketStats[market].totalPnL += trade.pnl || 0;
           }
-          marketStats[trade.market].count++;
-          marketStats[trade.market].totalPnL += trade.pnl || 0;
         });
 
         updateTestResult(5, { 

@@ -94,10 +94,10 @@ export default function TestStrategyDiagnosisPage() {
       if (strategiesWithStats && strategiesWithStats.length > 0) {
         addLog(`✅ getStrategiesWithStats returned ${strategiesWithStats.length} strategies`);
         const firstStrategy = strategiesWithStats[0];
-        addLog(`   First strategy: ${firstStrategy.name}`);
-        addLog(`   Has stats: ${firstStrategy.stats ? 'Yes' : 'No'}`);
+        addLog(`   First strategy: ${firstStrategy?.name || 'Unknown'}`);
+        addLog(`   Has stats: ${firstStrategy?.stats ? 'Yes' : 'No'}`);
         
-        if (firstStrategy.stats) {
+        if (firstStrategy?.stats) {
           addLog(`   Stats keys: ${Object.keys(firstStrategy.stats).join(', ')}`);
         }
       } else {
@@ -107,14 +107,17 @@ export default function TestStrategyDiagnosisPage() {
       // Test 6: Test calculateStrategyStats function
       if (strategiesWithStats && strategiesWithStats.length > 0) {
         addLog('\n🔍 Test 6: Testing calculateStrategyStats function...');
-        const calculatedStats = await calculateStrategyStats(strategiesWithStats[0].id);
-        
-        if (calculatedStats) {
-          addLog(`✅ calculateStrategyStats returned stats`);
-          addLog(`   Total trades: ${calculatedStats.total_trades}`);
-          addLog(`   Win rate: ${calculatedStats.winrate?.toFixed(1)}%`);
-        } else {
-          addLog(`❌ calculateStrategyStats returned null (no trades?)`);
+        const firstStrategyId = strategiesWithStats[0]?.id;
+        if (firstStrategyId) {
+          const calculatedStats = await calculateStrategyStats(firstStrategyId);
+          
+          if (calculatedStats) {
+            addLog(`✅ calculateStrategyStats returned stats`);
+            addLog(`   Total trades: ${calculatedStats.total_trades}`);
+            addLog(`   Win rate: ${calculatedStats.winrate?.toFixed(1)}%`);
+          } else {
+            addLog(`❌ calculateStrategyStats returned null (no trades?)`);
+          }
         }
       }
       
