@@ -16,6 +16,8 @@ interface Trade {
   entry: number;
   exit: number;
   return: number;
+  pnl?: number;
+  trade_date?: string;
 }
 
 interface DashboardStats {
@@ -50,6 +52,7 @@ function DashboardContent() {
   // State for real data
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [recentTrades, setRecentTrades] = useState<Trade[]>([]);
+  const [allTrades, setAllTrades] = useState<Trade[]>([]); // For PnL chart
   const [emotionalData, setEmotionalData] = useState<EmotionalData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -67,8 +70,8 @@ function DashboardContent() {
         setLoading(true);
         setError(null);
 
-        // Fetch stats and recent trades in parallel
-        const [statsResponse, tradesResponse] = await Promise.all([
+        // Fetch stats, recent trades, and all trades for PnL chart in parallel
+        const [statsResponse, tradesResponse, allTradesResponse] = await Promise.all([
           fetch('/api/confluence-stats', {
             headers: {
               'Authorization': `Bearer ${session.access_token}`,
@@ -81,14 +84,21 @@ function DashboardContent() {
               'Content-Type': 'application/json',
             },
           }),
+          fetch('/api/confluence-trades?limit=2000&sortBy=trade_date&sortOrder=asc', {
+            headers: {
+              'Authorization': `Bearer ${session.access_token}`,
+              'Content-Type': 'application/json',
+            },
+          }),
         ]);
 
-        if (!statsResponse.ok || !tradesResponse.ok) {
+        if (!statsResponse.ok || !tradesResponse.ok || !allTradesResponse.ok) {
           throw new Error('Failed to fetch dashboard data');
         }
 
         const statsData = await statsResponse.json();
         const tradesData = await tradesResponse.json();
+        const allTradesData = await allTradesResponse.json();
 
         // Process stats data
         const processedStats: DashboardStats = {
@@ -104,7 +114,7 @@ function DashboardContent() {
           tiltControl: calculateTiltControl(statsData.emotionalData || []),
         };
 
-        // Process trades data
+        // Process recent trades data (for table)
         const processedTrades: Trade[] = (tradesData.trades || []).map((trade: any) => ({
           id: trade.id,
           date: new Date(trade.trade_date).toLocaleDateString(),
@@ -113,10 +123,30 @@ function DashboardContent() {
           entry: trade.entry_price,
           exit: trade.exit_price || 0,
           return: trade.pnl || 0,
+          // Add pnl field for PnlChart compatibility
+          pnl: trade.pnl || 0,
+          // Add trade_date for PnlChart compatibility
+          trade_date: trade.trade_date,
+        }));
+
+        // Process all trades data (for PnL chart)
+        const processedAllTrades: Trade[] = (allTradesData.trades || []).map((trade: any) => ({
+          id: trade.id,
+          date: new Date(trade.trade_date).toLocaleDateString(),
+          symbol: trade.symbol,
+          side: trade.side,
+          entry: trade.entry_price,
+          exit: trade.exit_price || 0,
+          return: trade.pnl || 0,
+          // Add pnl field for PnlChart compatibility
+          pnl: trade.pnl || 0,
+          // Add trade_date for PnlChart compatibility
+          trade_date: trade.trade_date,
         }));
 
         setStats(processedStats);
         setRecentTrades(processedTrades);
+        setAllTrades(processedAllTrades);
         setEmotionalData(statsData.emotionalData || []);
 
       } catch (err) {
@@ -314,7 +344,7 @@ return (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-[#E6D5B8]">PnL Performance</h3>
               <div className="h-80">
-                <PnlChart trades={recentTrades} />
+                <PnlChart trades={allTrades} />
               </div>
             </div>
           </TorchCard>

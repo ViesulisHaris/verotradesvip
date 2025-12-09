@@ -103,8 +103,8 @@ export const PnlChart = ({ trades = [] }: { trades?: any[] }) => {
         pointBackgroundColor: '#E6D5B8',
         pointBorderColor: '#E6D5B8',
         pointBorderWidth: 2,
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: 0,
+        pointHoverRadius: 0,
       }
     ]
   };
