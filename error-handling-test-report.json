@@ -1,0 +1,1329 @@
+{
+  "timestamp": "2025-12-09T20:21:31.336Z",
+  "testConfiguration": {
+    "baseUrl": "http://localhost:3000",
+    "timeout": 10000,
+    "retryAttempts": 3,
+    "testResults": {
+      "passed": 22,
+      "failed": 7,
+      "warnings": 1,
+      "total": 30,
+      "details": [
+        {
+          "testName": "Null/Undefined Emotional Data Handling",
+          "category": "Data Validation",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:26.221Z",
+          "details": {
+            "expectedStatus": [
+              401,
+              422
+            ],
+            "actualStatus": 401,
+            "hasErrorHandling": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Malformed JSON Handling",
+          "category": "Data Validation",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:26.293Z",
+          "details": {
+            "expectedStatus": [
+              400,
+              422
+            ],
+            "actualStatus": 405,
+            "hasErrorHandling": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Invalid Emotion Names Handling",
+          "category": "Data Validation",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:26.358Z",
+          "details": {
+            "expectedStatus": [
+              400,
+              422
+            ],
+            "actualStatus": 405,
+            "hasValidationErrors": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Extreme Emotion Values Handling",
+          "category": "Data Validation",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:26.413Z",
+          "details": {
+            "expectedStatus": [
+              400,
+              422
+            ],
+            "actualStatus": 405
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Circular Reference Objects Handling",
+          "category": "Data Validation",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:26.415Z",
+          "details": {
+            "circularErrorDetected": true
+          },
+          "error": "Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle",
+          "stack": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle\n    at JSON.stringify (<anonymous>)\n    at testDataValidationEdgeCases (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:257:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runComprehensiveErrorHandlingTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:1227:5)"
+        },
+        {
+          "testName": "Database Connection Failure Handling",
+          "category": "API Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:26.687Z",
+          "details": {
+            "expectedStatus": [
+              401,
+              500,
+              503
+            ],
+            "actualStatus": 401,
+            "hasErrorHandling": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Network Timeout Handling",
+          "category": "API Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:26.847Z",
+          "details": {
+            "expectedTimeout": 100,
+            "actualTime": 160,
+            "responseStatus": 401,
+            "timeoutHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Malformed Request Headers Handling",
+          "category": "API Error",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:26.847Z",
+          "details": {
+            "expectedStatus": [
+              400,
+              422
+            ],
+            "actualStatus": 0,
+            "hasErrorHandling": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Rate Limiting Implementation",
+          "category": "API Error",
+          "status": "WARN",
+          "timestamp": "2025-12-09T20:21:27.418Z",
+          "details": {
+            "totalRequests": 10,
+            "rateLimitedResponses": 0,
+            "rateLimitingDetected": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Corrupted Database Data Handling",
+          "category": "API Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:27.557Z",
+          "details": {
+            "responseStatus": 401,
+            "hasValidationWarnings": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Calculation Function Crash Handling",
+          "category": "Frontend Error",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:27.603Z",
+          "details": {
+            "expectedStatus": [
+              400,
+              422
+            ],
+            "actualStatus": 405,
+            "hasErrorHandling": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Invalid API Response Handling",
+          "category": "Frontend Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:27.765Z",
+          "details": {
+            "responseStatus": 401,
+            "isResponseObject": true,
+            "hasValidation": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Memory Exhaustion Scenario Handling",
+          "category": "Frontend Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:27.924Z",
+          "details": {
+            "payloadSize": 11175710,
+            "responseStatus": 405,
+            "processingTime": 115,
+            "memoryPressureHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Infinite Loop Prevention",
+          "category": "Frontend Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:27.925Z",
+          "details": {
+            "infiniteLoopErrorHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Stack Overflow Protection",
+          "category": "Frontend Error",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:27.974Z",
+          "details": {
+            "processingTime": 49,
+            "responseStatus": 405,
+            "stackOverflowPrevented": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Error Display When API Fails",
+          "category": "UI Error Recovery",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:28.655Z",
+          "details": {
+            "responseStatus": 200,
+            "pageLoads": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Retry Mechanisms",
+          "category": "UI Error Recovery",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.147Z",
+          "details": {
+            "retryAttempts": [
+              401,
+              401,
+              401
+            ],
+            "consistentHandling": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Fallback Values Display",
+          "category": "UI Error Recovery",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.304Z",
+          "details": {
+            "responseStatus": 401,
+            "hasFallbackData": "Authentication required",
+            "fallbackMechanism": "Authentication required"
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Error State Accessibility",
+          "category": "UI Error Recovery",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.421Z",
+          "details": {
+            "responseStatus": 200,
+            "pageAccessible": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Error Logging Functionality",
+          "category": "UI Error Recovery",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.577Z",
+          "details": {
+            "responseStatus": 401,
+            "hasErrorData": true,
+            "errorLogged": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Division by Zero Scenarios",
+          "category": "Mathematical Edge Cases",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.652Z",
+          "details": {
+            "responseStatus": 405,
+            "hasErrorHandling": false,
+            "divisionByZeroHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Floating Point Precision Issues",
+          "category": "Mathematical Edge Cases",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.717Z",
+          "details": {
+            "responseStatus": 405,
+            "hasErrorHandling": false,
+            "floatingPointHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Overflow/Underflow Conditions",
+          "category": "Mathematical Edge Cases",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:29.776Z",
+          "details": {
+            "responseStatus": 405,
+            "hasErrorHandling": false,
+            "overflowHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "NaN and Infinity Handling",
+          "category": "Mathematical Edge Cases",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:29.821Z",
+          "details": {
+            "responseStatus": 405,
+            "hasErrorHandling": false,
+            "nanInfinityHandled": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Mathematical Coupling with Invalid Inputs",
+          "category": "Mathematical Edge Cases",
+          "status": "FAIL",
+          "timestamp": "2025-12-09T20:21:29.879Z",
+          "details": {
+            "responseStatus": 405,
+            "hasErrorHandling": false,
+            "invalidCouplingHandled": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Authentication Token Expiration",
+          "category": "System Integration Errors",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:30.041Z",
+          "details": {
+            "responseStatus": 401,
+            "hasErrorHandling": true,
+            "expiredTokenHandled": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Concurrent Request Conflicts",
+          "category": "System Integration Errors",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:30.243Z",
+          "details": {
+            "totalRequests": 5,
+            "responseStatuses": [
+              401,
+              401,
+              401,
+              401,
+              401
+            ],
+            "consistentResponses": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Memory Leaks During Calculations",
+          "category": "System Integration Errors",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:30.809Z",
+          "details": {
+            "iterations": 10,
+            "avgResponseTime": 56.5,
+            "maxResponseTime": 62,
+            "memoryLeakDetected": false
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Browser Compatibility Issues",
+          "category": "System Integration Errors",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:30.907Z",
+          "details": {
+            "responseStatus": 200,
+            "userAgent": "IE11",
+            "browserCompatible": true
+          },
+          "error": null,
+          "stack": null
+        },
+        {
+          "testName": "Network Interruption Handling",
+          "category": "System Integration Errors",
+          "status": "PASS",
+          "timestamp": "2025-12-09T20:21:31.335Z",
+          "details": {
+            "responseStatus": 404,
+            "hasErrorHandling": false,
+            "networkInterruptionHandled": true
+          },
+          "error": null,
+          "stack": null
+        }
+      ]
+    }
+  },
+  "summary": {
+    "totalTests": 30,
+    "passed": 22,
+    "failed": 7,
+    "warnings": 1,
+    "successRate": "73.33%"
+  },
+  "categories": {
+    "Data Validation": [
+      {
+        "testName": "Null/Undefined Emotional Data Handling",
+        "category": "Data Validation",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:26.221Z",
+        "details": {
+          "expectedStatus": [
+            401,
+            422
+          ],
+          "actualStatus": 401,
+          "hasErrorHandling": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Malformed JSON Handling",
+        "category": "Data Validation",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:26.293Z",
+        "details": {
+          "expectedStatus": [
+            400,
+            422
+          ],
+          "actualStatus": 405,
+          "hasErrorHandling": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Invalid Emotion Names Handling",
+        "category": "Data Validation",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:26.358Z",
+        "details": {
+          "expectedStatus": [
+            400,
+            422
+          ],
+          "actualStatus": 405,
+          "hasValidationErrors": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Extreme Emotion Values Handling",
+        "category": "Data Validation",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:26.413Z",
+        "details": {
+          "expectedStatus": [
+            400,
+            422
+          ],
+          "actualStatus": 405
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Circular Reference Objects Handling",
+        "category": "Data Validation",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:26.415Z",
+        "details": {
+          "circularErrorDetected": true
+        },
+        "error": "Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle",
+        "stack": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle\n    at JSON.stringify (<anonymous>)\n    at testDataValidationEdgeCases (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:257:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runComprehensiveErrorHandlingTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:1227:5)"
+      }
+    ],
+    "API Error": [
+      {
+        "testName": "Database Connection Failure Handling",
+        "category": "API Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:26.687Z",
+        "details": {
+          "expectedStatus": [
+            401,
+            500,
+            503
+          ],
+          "actualStatus": 401,
+          "hasErrorHandling": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Network Timeout Handling",
+        "category": "API Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:26.847Z",
+        "details": {
+          "expectedTimeout": 100,
+          "actualTime": 160,
+          "responseStatus": 401,
+          "timeoutHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Malformed Request Headers Handling",
+        "category": "API Error",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:26.847Z",
+        "details": {
+          "expectedStatus": [
+            400,
+            422
+          ],
+          "actualStatus": 0,
+          "hasErrorHandling": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Rate Limiting Implementation",
+        "category": "API Error",
+        "status": "WARN",
+        "timestamp": "2025-12-09T20:21:27.418Z",
+        "details": {
+          "totalRequests": 10,
+          "rateLimitedResponses": 0,
+          "rateLimitingDetected": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Corrupted Database Data Handling",
+        "category": "API Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:27.557Z",
+        "details": {
+          "responseStatus": 401,
+          "hasValidationWarnings": false
+        },
+        "error": null,
+        "stack": null
+      }
+    ],
+    "Frontend Error": [
+      {
+        "testName": "Calculation Function Crash Handling",
+        "category": "Frontend Error",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:27.603Z",
+        "details": {
+          "expectedStatus": [
+            400,
+            422
+          ],
+          "actualStatus": 405,
+          "hasErrorHandling": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Invalid API Response Handling",
+        "category": "Frontend Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:27.765Z",
+        "details": {
+          "responseStatus": 401,
+          "isResponseObject": true,
+          "hasValidation": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Memory Exhaustion Scenario Handling",
+        "category": "Frontend Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:27.924Z",
+        "details": {
+          "payloadSize": 11175710,
+          "responseStatus": 405,
+          "processingTime": 115,
+          "memoryPressureHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Infinite Loop Prevention",
+        "category": "Frontend Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:27.925Z",
+        "details": {
+          "infiniteLoopErrorHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Stack Overflow Protection",
+        "category": "Frontend Error",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:27.974Z",
+        "details": {
+          "processingTime": 49,
+          "responseStatus": 405,
+          "stackOverflowPrevented": true
+        },
+        "error": null,
+        "stack": null
+      }
+    ],
+    "UI Error Recovery": [
+      {
+        "testName": "Error Display When API Fails",
+        "category": "UI Error Recovery",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:28.655Z",
+        "details": {
+          "responseStatus": 200,
+          "pageLoads": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Retry Mechanisms",
+        "category": "UI Error Recovery",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.147Z",
+        "details": {
+          "retryAttempts": [
+            401,
+            401,
+            401
+          ],
+          "consistentHandling": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Fallback Values Display",
+        "category": "UI Error Recovery",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.304Z",
+        "details": {
+          "responseStatus": 401,
+          "hasFallbackData": "Authentication required",
+          "fallbackMechanism": "Authentication required"
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Error State Accessibility",
+        "category": "UI Error Recovery",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.421Z",
+        "details": {
+          "responseStatus": 200,
+          "pageAccessible": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Error Logging Functionality",
+        "category": "UI Error Recovery",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.577Z",
+        "details": {
+          "responseStatus": 401,
+          "hasErrorData": true,
+          "errorLogged": true
+        },
+        "error": null,
+        "stack": null
+      }
+    ],
+    "Mathematical Edge Cases": [
+      {
+        "testName": "Division by Zero Scenarios",
+        "category": "Mathematical Edge Cases",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.652Z",
+        "details": {
+          "responseStatus": 405,
+          "hasErrorHandling": false,
+          "divisionByZeroHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Floating Point Precision Issues",
+        "category": "Mathematical Edge Cases",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.717Z",
+        "details": {
+          "responseStatus": 405,
+          "hasErrorHandling": false,
+          "floatingPointHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Overflow/Underflow Conditions",
+        "category": "Mathematical Edge Cases",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:29.776Z",
+        "details": {
+          "responseStatus": 405,
+          "hasErrorHandling": false,
+          "overflowHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "NaN and Infinity Handling",
+        "category": "Mathematical Edge Cases",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:29.821Z",
+        "details": {
+          "responseStatus": 405,
+          "hasErrorHandling": false,
+          "nanInfinityHandled": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Mathematical Coupling with Invalid Inputs",
+        "category": "Mathematical Edge Cases",
+        "status": "FAIL",
+        "timestamp": "2025-12-09T20:21:29.879Z",
+        "details": {
+          "responseStatus": 405,
+          "hasErrorHandling": false,
+          "invalidCouplingHandled": false
+        },
+        "error": null,
+        "stack": null
+      }
+    ],
+    "System Integration Errors": [
+      {
+        "testName": "Authentication Token Expiration",
+        "category": "System Integration Errors",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:30.041Z",
+        "details": {
+          "responseStatus": 401,
+          "hasErrorHandling": true,
+          "expiredTokenHandled": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Concurrent Request Conflicts",
+        "category": "System Integration Errors",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:30.243Z",
+        "details": {
+          "totalRequests": 5,
+          "responseStatuses": [
+            401,
+            401,
+            401,
+            401,
+            401
+          ],
+          "consistentResponses": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Memory Leaks During Calculations",
+        "category": "System Integration Errors",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:30.809Z",
+        "details": {
+          "iterations": 10,
+          "avgResponseTime": 56.5,
+          "maxResponseTime": 62,
+          "memoryLeakDetected": false
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Browser Compatibility Issues",
+        "category": "System Integration Errors",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:30.907Z",
+        "details": {
+          "responseStatus": 200,
+          "userAgent": "IE11",
+          "browserCompatible": true
+        },
+        "error": null,
+        "stack": null
+      },
+      {
+        "testName": "Network Interruption Handling",
+        "category": "System Integration Errors",
+        "status": "PASS",
+        "timestamp": "2025-12-09T20:21:31.335Z",
+        "details": {
+          "responseStatus": 404,
+          "hasErrorHandling": false,
+          "networkInterruptionHandled": true
+        },
+        "error": null,
+        "stack": null
+      }
+    ]
+  },
+  "detailedResults": [
+    {
+      "testName": "Null/Undefined Emotional Data Handling",
+      "category": "Data Validation",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:26.221Z",
+      "details": {
+        "expectedStatus": [
+          401,
+          422
+        ],
+        "actualStatus": 401,
+        "hasErrorHandling": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Malformed JSON Handling",
+      "category": "Data Validation",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:26.293Z",
+      "details": {
+        "expectedStatus": [
+          400,
+          422
+        ],
+        "actualStatus": 405,
+        "hasErrorHandling": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid Emotion Names Handling",
+      "category": "Data Validation",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:26.358Z",
+      "details": {
+        "expectedStatus": [
+          400,
+          422
+        ],
+        "actualStatus": 405,
+        "hasValidationErrors": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Extreme Emotion Values Handling",
+      "category": "Data Validation",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:26.413Z",
+      "details": {
+        "expectedStatus": [
+          400,
+          422
+        ],
+        "actualStatus": 405
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Circular Reference Objects Handling",
+      "category": "Data Validation",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:26.415Z",
+      "details": {
+        "circularErrorDetected": true
+      },
+      "error": "Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle",
+      "stack": "TypeError: Converting circular structure to JSON\n    --> starting at object with constructor 'Object'\n    --- property 'self' closes the circle\n    at JSON.stringify (<anonymous>)\n    at testDataValidationEdgeCases (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:257:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runComprehensiveErrorHandlingTests (c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\test-error-handling-comprehensive.js:1227:5)"
+    },
+    {
+      "testName": "Database Connection Failure Handling",
+      "category": "API Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:26.687Z",
+      "details": {
+        "expectedStatus": [
+          401,
+          500,
+          503
+        ],
+        "actualStatus": 401,
+        "hasErrorHandling": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Network Timeout Handling",
+      "category": "API Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:26.847Z",
+      "details": {
+        "expectedTimeout": 100,
+        "actualTime": 160,
+        "responseStatus": 401,
+        "timeoutHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Malformed Request Headers Handling",
+      "category": "API Error",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:26.847Z",
+      "details": {
+        "expectedStatus": [
+          400,
+          422
+        ],
+        "actualStatus": 0,
+        "hasErrorHandling": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Rate Limiting Implementation",
+      "category": "API Error",
+      "status": "WARN",
+      "timestamp": "2025-12-09T20:21:27.418Z",
+      "details": {
+        "totalRequests": 10,
+        "rateLimitedResponses": 0,
+        "rateLimitingDetected": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Corrupted Database Data Handling",
+      "category": "API Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:27.557Z",
+      "details": {
+        "responseStatus": 401,
+        "hasValidationWarnings": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Calculation Function Crash Handling",
+      "category": "Frontend Error",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:27.603Z",
+      "details": {
+        "expectedStatus": [
+          400,
+          422
+        ],
+        "actualStatus": 405,
+        "hasErrorHandling": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid API Response Handling",
+      "category": "Frontend Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:27.765Z",
+      "details": {
+        "responseStatus": 401,
+        "isResponseObject": true,
+        "hasValidation": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Memory Exhaustion Scenario Handling",
+      "category": "Frontend Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:27.924Z",
+      "details": {
+        "payloadSize": 11175710,
+        "responseStatus": 405,
+        "processingTime": 115,
+        "memoryPressureHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Infinite Loop Prevention",
+      "category": "Frontend Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:27.925Z",
+      "details": {
+        "infiniteLoopErrorHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Stack Overflow Protection",
+      "category": "Frontend Error",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:27.974Z",
+      "details": {
+        "processingTime": 49,
+        "responseStatus": 405,
+        "stackOverflowPrevented": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Error Display When API Fails",
+      "category": "UI Error Recovery",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:28.655Z",
+      "details": {
+        "responseStatus": 200,
+        "pageLoads": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Retry Mechanisms",
+      "category": "UI Error Recovery",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.147Z",
+      "details": {
+        "retryAttempts": [
+          401,
+          401,
+          401
+        ],
+        "consistentHandling": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Fallback Values Display",
+      "category": "UI Error Recovery",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.304Z",
+      "details": {
+        "responseStatus": 401,
+        "hasFallbackData": "Authentication required",
+        "fallbackMechanism": "Authentication required"
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Error State Accessibility",
+      "category": "UI Error Recovery",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.421Z",
+      "details": {
+        "responseStatus": 200,
+        "pageAccessible": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Error Logging Functionality",
+      "category": "UI Error Recovery",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.577Z",
+      "details": {
+        "responseStatus": 401,
+        "hasErrorData": true,
+        "errorLogged": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Division by Zero Scenarios",
+      "category": "Mathematical Edge Cases",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.652Z",
+      "details": {
+        "responseStatus": 405,
+        "hasErrorHandling": false,
+        "divisionByZeroHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Floating Point Precision Issues",
+      "category": "Mathematical Edge Cases",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.717Z",
+      "details": {
+        "responseStatus": 405,
+        "hasErrorHandling": false,
+        "floatingPointHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Overflow/Underflow Conditions",
+      "category": "Mathematical Edge Cases",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:29.776Z",
+      "details": {
+        "responseStatus": 405,
+        "hasErrorHandling": false,
+        "overflowHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "NaN and Infinity Handling",
+      "category": "Mathematical Edge Cases",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:29.821Z",
+      "details": {
+        "responseStatus": 405,
+        "hasErrorHandling": false,
+        "nanInfinityHandled": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Mathematical Coupling with Invalid Inputs",
+      "category": "Mathematical Edge Cases",
+      "status": "FAIL",
+      "timestamp": "2025-12-09T20:21:29.879Z",
+      "details": {
+        "responseStatus": 405,
+        "hasErrorHandling": false,
+        "invalidCouplingHandled": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Authentication Token Expiration",
+      "category": "System Integration Errors",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:30.041Z",
+      "details": {
+        "responseStatus": 401,
+        "hasErrorHandling": true,
+        "expiredTokenHandled": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Concurrent Request Conflicts",
+      "category": "System Integration Errors",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:30.243Z",
+      "details": {
+        "totalRequests": 5,
+        "responseStatuses": [
+          401,
+          401,
+          401,
+          401,
+          401
+        ],
+        "consistentResponses": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Memory Leaks During Calculations",
+      "category": "System Integration Errors",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:30.809Z",
+      "details": {
+        "iterations": 10,
+        "avgResponseTime": 56.5,
+        "maxResponseTime": 62,
+        "memoryLeakDetected": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Browser Compatibility Issues",
+      "category": "System Integration Errors",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:30.907Z",
+      "details": {
+        "responseStatus": 200,
+        "userAgent": "IE11",
+        "browserCompatible": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Network Interruption Handling",
+      "category": "System Integration Errors",
+      "status": "PASS",
+      "timestamp": "2025-12-09T20:21:31.335Z",
+      "details": {
+        "responseStatus": 404,
+        "hasErrorHandling": false,
+        "networkInterruptionHandled": true
+      },
+      "error": null,
+      "stack": null
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "Critical Issues",
+      "description": "Fix 7 failing test(s) that could cause system crashes",
+      "tests": [
+        "Malformed JSON Handling",
+        "Invalid Emotion Names Handling",
+        "Extreme Emotion Values Handling",
+        "Malformed Request Headers Handling",
+        "Calculation Function Crash Handling",
+        "NaN and Infinity Handling",
+        "Mathematical Coupling with Invalid Inputs"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Improvements Needed",
+      "description": "Address 1 warning(s) to improve robustness",
+      "tests": [
+        "Rate Limiting Implementation"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "category": "Data Validation",
+      "description": "Strengthen input validation and sanitization",
+      "suggestion": "Implement comprehensive validation middleware for all API endpoints"
+    },
+    {
+      "priority": "HIGH",
+      "category": "API Error Handling",
+      "description": "Improve API error response consistency",
+      "suggestion": "Standardize error response format across all endpoints"
+    },
+    {
+      "priority": "HIGH",
+      "category": "Mathematical Calculations",
+      "description": "Add robust mathematical edge case handling",
+      "suggestion": "Implement safe math functions with proper NaN, Infinity, and overflow checks"
+    }
+  ]
+}

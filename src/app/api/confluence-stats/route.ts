@@ -1,6 +1,16 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { validateUUID } from '@/lib/uuid-validation';
+import {
+  validatePsychologicalMetrics,
+  validateEmotionalData,
+  validateApiResponse,
+  performComprehensiveValidation,
+  createValidationContext,
+  finalizeValidationContext,
+  logValidationResults,
+  DEFAULT_VALIDATION_CONFIG
+} from '@/lib/psychological-metrics-validation';
 
 // Define the valid emotions from the TradeForm
 const VALID_EMOTIONS = ['FOMO', 'REVENGE', 'TILT', 'OVERRISK', 'PATIENCE', 'REGRET', 'DISCIPLINE', 'CONFIDENT', 'ANXIOUS', 'NEUTRAL'];
@@ -20,6 +30,80 @@ interface ConfluenceStatsResponse {
     leaningValue?: number;
     totalTrades?: number;
   }>;
+  psychologicalMetrics?: {
+    disciplineLevel: number;
+    tiltControl: number;
+  };
+  validationWarnings?: string[];
+}
+
+/**
+ * Calculates psychological metrics from emotional data
+ * This is a server-side implementation for validation purposes
+ */
+function calculatePsychologicalMetrics(emotionalData: any[]): { disciplineLevel: number; tiltControl: number } {
+  // Handle edge cases: empty or invalid data
+  if (!emotionalData || emotionalData.length === 0) {
+    return { disciplineLevel: 50, tiltControl: 50 };
+  }
+
+  try {
+    // Define emotion categories with their weights
+    const positiveEmotions = ['DISCIPLINE', 'CONFIDENCE', 'PATIENCE'];
+    const negativeEmotions = ['TILT', 'REVENGE', 'IMPATIENCE'];
+    const neutralEmotions = ['NEUTRAL', 'ANALYTICAL'];
+    
+    // Calculate weighted scores for each emotion category
+    let positiveScore = 0;
+    let negativeScore = 0;
+    let neutralScore = 0;
+    
+    emotionalData.forEach(emotion => {
+      const emotionName = emotion.subject?.toUpperCase();
+      const emotionValue = emotion.value || 0;
+      
+      if (positiveEmotions.includes(emotionName)) {
+        positiveScore += emotionValue;
+      } else if (negativeEmotions.includes(emotionName)) {
+        negativeScore += emotionValue;
+      } else if (neutralEmotions.includes(emotionName)) {
+        neutralScore += emotionValue;
+      }
+    });
+    
+    // Normalize scores to 0-100 range
+    const maxPossibleScore = emotionalData.length * 100;
+    positiveScore = (positiveScore / maxPossibleScore) * 100;
+    negativeScore = (negativeScore / maxPossibleScore) * 100;
+    neutralScore = (neutralScore / maxPossibleScore) * 100;
+    
+    // Calculate Emotional State Score (ESS) with weighted formula
+    const ess = (positiveScore * 2.0) + (neutralScore * 1.0) - (negativeScore * 1.5);
+    
+    // Calculate Psychological Stability Index (PSI) - normalized to 0-100 scale
+    const psi = Math.max(0, Math.min(100, (ess + 100) / 2));
+    
+    // Calculate Discipline Level based on emotion scoring
+    // Higher positive emotions and lower negative emotions result in higher discipline
+    let disciplineLevel = psi;
+    
+    // Ensure discipline level is within 0-100 range
+    disciplineLevel = Math.max(0, Math.min(100, disciplineLevel));
+    
+    // Calculate Tilt Control as the exact complement of Discipline Level
+    // This ensures they always sum to exactly 100%
+    const tiltControl = 100 - disciplineLevel;
+    
+    return {
+      disciplineLevel: Math.round(disciplineLevel * 100) / 100,
+      tiltControl: Math.round(tiltControl * 100) / 100,
+      psychologicalStabilityIndex: Math.round(psi * 100) / 100
+    };
+    
+  } catch (error) {
+    console.error('Error calculating psychological metrics:', error);
+    return { disciplineLevel: 50, tiltControl: 50, psychologicalStabilityIndex: 50 };
+  }
 }
 
 export async function GET(request: Request) {
@@ -87,6 +171,7 @@ export async function GET(request: Request) {
       authError = result.error;
     }
     
+    // Enhanced authentication with fallback for development
     if (authError || !user) {
       console.error(`❌ [CONFLUENCE_STATS:${requestId}] Authentication failed:`, {
         error: authError?.message,
@@ -95,6 +180,28 @@ export async function GET(request: Request) {
         authErrorDetails: authError,
         timestamp: new Date().toISOString()
       });
+      
+      // For development: return mock data if auth fails
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`⚠️ [CONFLUENCE_STATS:${requestId}] Development mode: Returning mock data due to auth failure`);
+        return NextResponse.json({
+          totalTrades: 0,
+          totalPnL: 0,
+          winRate: 0,
+          avgTradeSize: 0,
+          lastSyncTime: Date.now(),
+          emotionalData: [],
+          psychologicalMetrics: {
+            disciplineLevel: 50,
+            tiltControl: 50
+          },
+          validationWarnings: ['Development mode: Using mock data due to authentication failure'],
+          requestId,
+          processingTime: Date.now() - startTime,
+          mockData: true
+        });
+      }
+      
       return NextResponse.json({
         error: 'Authentication required',
         details: authError?.message,
@@ -360,23 +467,93 @@ export async function GET(request: Request) {
       };
     });
 
+    // Create validation context
+    const validationContext = createValidationContext(requestId, user.id);
+    
+    // Calculate psychological metrics for validation
+    const psychologicalMetrics = calculatePsychologicalMetrics(emotionalData);
+    const { disciplineLevel, tiltControl } = psychologicalMetrics;
+    
+    // Perform comprehensive validation
+    const endTime = Date.now();
+    const duration = endTime - startTime;
+    
+    const validationResults = performComprehensiveValidation(
+      disciplineLevel,
+      tiltControl,
+      emotionalData,
+      duration,
+      duration,
+      undefined,
+      {
+        totalTrades,
+        totalPnL,
+        winRate,
+        avgTradeSize,
+        lastSyncTime: Date.now(),
+        emotionalData
+      }
+    );
+    
+    // Finalize validation context
+    const finalizedContext = finalizeValidationContext(validationContext);
+    
+    // Log validation results
+    logValidationResults(finalizedContext, validationResults);
+    
+    // Check if validation passed
+    if (!validationResults.overall.isValid) {
+      console.error(`❌ [CONFLUENCE_STATS:${requestId}] Validation failed:`, {
+        errors: validationResults.overall.errors,
+        warnings: validationResults.overall.warnings,
+        timestamp: new Date().toISOString()
+      });
+      
+      // Return error response if critical validation failed
+      return NextResponse.json({
+        error: 'Data validation failed',
+        details: validationResults.overall.errors,
+        warnings: validationResults.overall.warnings,
+        requestId,
+        processingTime: duration
+      }, { status: 422 }); // Unprocessable Entity
+    }
+    
+    // Apply corrections if available
+    let finalEmotionalData = emotionalData;
+    let correctedMetrics = { disciplineLevel, tiltControl };
+    
+    if (validationResults.psychologicalMetrics.correctedData) {
+      correctedMetrics = {
+        disciplineLevel: validationResults.psychologicalMetrics.disciplineLevel!,
+        tiltControl: validationResults.psychologicalMetrics.tiltControl!
+      };
+      
+      // Log the correction
+      console.warn(`⚠️ [CONFLUENCE_STATS:${requestId}] Applied automatic corrections:`, {
+        original: { disciplineLevel, tiltControl },
+        corrected: correctedMetrics,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
     const response: ConfluenceStatsResponse = {
       totalTrades,
       totalPnL,
       winRate,
       avgTradeSize,
       lastSyncTime: Date.now(),
-      emotionalData
+      emotionalData: finalEmotionalData,
+      psychologicalMetrics: correctedMetrics
     };
-
-    const endTime = Date.now();
-    const duration = endTime - startTime;
     
     console.log(`✅ [CONFLUENCE_STATS:${requestId}] Statistics calculated successfully:`, {
       totalTrades,
       totalPnL,
       winRate: winRate.toFixed(1) + '%',
       emotionsProcessed: emotionalData.filter(d => d.totalTrades! > 0).length,
+      psychologicalMetrics: correctedMetrics,
+      validationWarnings: validationResults.overall.warnings.length,
       filtersApplied: {
         emotionalStates,
         strategyId,
@@ -393,6 +570,8 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       ...response,
+      psychologicalMetrics: correctedMetrics,
+      validationWarnings: validationResults.overall.warnings,
       requestId,
       processingTime: duration
     });

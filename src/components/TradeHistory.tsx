@@ -8,6 +8,7 @@ import { ChevronDown, ChevronUp, TrendingUp, Calendar, DollarSign, Target, Timer
 import { validateUUID } from '@/lib/uuid-validation';
 import { useAuth } from '@/contexts/AuthContext-simple';
 import { EditTradeModal, DeleteTradeModal } from '@/components/modals';
+import { fetchWithJWTValidation, validateJWTWithLogging } from '@/lib/jwt-validation';
 
 // Trade interface
 interface Trade {
@@ -363,6 +364,16 @@ const TradeHistory = () => {
     if (!user || !session) return [];
 
     try {
+      // DEBUG: Log JWT token details before large request
+      const token = session.access_token;
+      console.log('🔍 [JWT_DEBUG] fetchAllTradesForStats - Token analysis:', {
+        tokenLength: token?.length || 0,
+        tokenSegments: token?.split('.').length || 0,
+        tokenStart: token?.substring(0, 20) + '...',
+        tokenEnd: '...' + token?.substring(token.length - 20),
+        timestamp: new Date().toISOString()
+      });
+
       // Build query parameters to get all trades
       const params = new URLSearchParams({
         page: '1',
@@ -371,11 +382,24 @@ const TradeHistory = () => {
         sortOrder: 'desc'
       });
       
-      const response = await fetch(`/api/confluence-trades?${params.toString()}`, {
-        headers: {
-          'Authorization': `Bearer ${session.access_token}`,
-          'Content-Type': 'application/json'
-        }
+      const requestStartTime = Date.now();
+      const response = await fetchWithJWTValidation(
+        `/api/confluence-trades?${params.toString()}`,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        },
+        'fetchAllTradesForStats'
+      );
+      const requestDuration = Date.now() - requestStartTime;
+      
+      console.log('🔍 [JWT_DEBUG] fetchAllTradesForStats - Request completed:', {
+        requestDuration: `${requestDuration}ms`,
+        responseStatus: response.status,
+        responseOk: response.ok,
+        timestamp: new Date().toISOString()
       });
 
       if (!response.ok) {
@@ -422,6 +446,16 @@ const TradeHistory = () => {
       setLoading(true);
       setError(null);
       
+      // DEBUG: Log JWT token details before small request
+      const token = session.access_token;
+      console.log('🔍 [JWT_DEBUG] fetchTrades - Token analysis:', {
+        tokenLength: token?.length || 0,
+        tokenSegments: token?.split('.').length || 0,
+        tokenStart: token?.substring(0, 20) + '...',
+        tokenEnd: '...' + token?.substring(token.length - 20),
+        timestamp: new Date().toISOString()
+      });
+      
       // Build query parameters
       const params = new URLSearchParams({
         page: (page || pagination.currentPage).toString(),
@@ -430,11 +464,24 @@ const TradeHistory = () => {
         sortOrder: sortOrder || sorting.sortOrder
       });
       
-      const response = await fetch(`/api/confluence-trades?${params.toString()}`, {
-        headers: {
-          'Authorization': `Bearer ${session.access_token}`,
-          'Content-Type': 'application/json'
-        }
+      const requestStartTime = Date.now();
+      const response = await fetchWithJWTValidation(
+        `/api/confluence-trades?${params.toString()}`,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        },
+        'fetchTrades'
+      );
+      const requestDuration = Date.now() - requestStartTime;
+      
+      console.log('🔍 [JWT_DEBUG] fetchTrades - Request completed:', {
+        requestDuration: `${requestDuration}ms`,
+        responseStatus: response.status,
+        responseOk: response.ok,
+        timestamp: new Date().toISOString()
       });
 
       if (!response.ok) {
@@ -539,13 +586,17 @@ const TradeHistory = () => {
     if (!deletingTradeId || !session) return;
 
     try {
-      const response = await fetch(`/api/trades/${deletingTradeId}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${session.access_token}`,
-          'Content-Type': 'application/json'
-        }
-      });
+      const response = await fetchWithJWTValidation(
+        `/api/trades/${deletingTradeId}`,
+        {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        },
+        'deleteTrade'
+      );
 
       if (!response.ok) {
         throw new Error(`Failed to delete trade: ${response.statusText}`);
@@ -569,14 +620,18 @@ const TradeHistory = () => {
     if (!editingTrade || !session) return;
 
     try {
-      const response = await fetch(`/api/trades/${editingTrade.id}`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${session.access_token}`,
-          'Content-Type': 'application/json'
+      const response = await fetchWithJWTValidation(
+        `/api/trades/${editingTrade.id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedTrade)
         },
-        body: JSON.stringify(updatedTrade)
-      });
+        'updateTrade'
+      );
 
       if (!response.ok) {
         throw new Error(`Failed to update trade: ${response.statusText}`);

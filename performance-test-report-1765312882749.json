@@ -1,0 +1,235 @@
+{
+  "summary": {
+    "totalTestTime": 5453.0604,
+    "timestamp": "2025-12-09T20:41:22.748Z",
+    "performanceTargets": {
+      "apiResponseTime": 500,
+      "calculationTime": 50,
+      "memoryUsage": 52428800,
+      "concurrentRequests": 10,
+      "largeDatasetSize": 1000
+    }
+  },
+  "results": {
+    "largeDataset": {
+      "stats": {
+        "min": 0.06569999999999254,
+        "max": 0.5451999999999657,
+        "avg": 0.18189999999997516,
+        "median": 0.12059999999996762,
+        "p95": 0.5451999999999657,
+        "p99": 0.5451999999999657
+      },
+      "details": [
+        {
+          "dataSize": 10,
+          "responseTime": 0.5451999999999657,
+          "calculationTime": 0.10860000000002401,
+          "memoryUsage": {
+            "heapUsed": 12344,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        },
+        {
+          "dataSize": 50,
+          "responseTime": 0.12059999999996762,
+          "calculationTime": 0.04009999999999536,
+          "memoryUsage": {
+            "heapUsed": 2424,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        },
+        {
+          "dataSize": 100,
+          "responseTime": 0.06569999999999254,
+          "calculationTime": 0.022499999999979536,
+          "memoryUsage": {
+            "heapUsed": 2248,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        },
+        {
+          "dataSize": 500,
+          "responseTime": 0.12559999999996307,
+          "calculationTime": 0.04609999999996717,
+          "memoryUsage": {
+            "heapUsed": 2248,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        },
+        {
+          "dataSize": 1000,
+          "responseTime": 0.1168999999999869,
+          "calculationTime": 0.030199999999979354,
+          "memoryUsage": {
+            "heapUsed": 2808,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        },
+        {
+          "dataSize": 2000,
+          "responseTime": 0.11739999999997508,
+          "calculationTime": 0.034199999999998454,
+          "memoryUsage": {
+            "heapUsed": 2664,
+            "heapTotal": 0
+          },
+          "withinTarget": true,
+          "calculationWithinTarget": true,
+          "memoryWithinTarget": true
+        }
+      ],
+      "passed": true
+    },
+    "concurrentRequests": {
+      "stats": {
+        "min": 17.318200000000047,
+        "max": 85.3815,
+        "avg": 53.20259666666667,
+        "median": 49.0734,
+        "p95": 85.3815,
+        "p99": 85.3815
+      },
+      "details": [
+        {
+          "concurrencyLevel": 1,
+          "totalTime": 17.891899999999964,
+          "averageResponseTime": 17.318200000000047,
+          "minResponseTime": 17.318200000000047,
+          "maxResponseTime": 17.318200000000047,
+          "successRate": 1,
+          "requestsPerSecond": 55.89121334235056,
+          "withinTarget": true
+        },
+        {
+          "concurrencyLevel": 5,
+          "totalTime": 107.71440000000001,
+          "averageResponseTime": 85.3815,
+          "minResponseTime": 44.77190000000002,
+          "maxResponseTime": 107.49220000000003,
+          "successRate": 1,
+          "requestsPerSecond": 46.41904889225581,
+          "withinTarget": true
+        },
+        {
+          "concurrencyLevel": 10,
+          "totalTime": 91.06799999999998,
+          "averageResponseTime": 68.76435000000001,
+          "minResponseTime": 30.83620000000002,
+          "maxResponseTime": 90.07009999999997,
+          "successRate": 1,
+          "requestsPerSecond": 109.8080555189529,
+          "withinTarget": true
+        },
+        {
+          "concurrencyLevel": 15,
+          "totalTime": 107.63689999999997,
+          "averageResponseTime": 45.47553333333333,
+          "minResponseTime": 14.61609999999996,
+          "maxResponseTime": 106.83979999999997,
+          "successRate": 1,
+          "requestsPerSecond": 139.35741367505014,
+          "withinTarget": true
+        },
+        {
+          "concurrencyLevel": 20,
+          "totalTime": 106.6558,
+          "averageResponseTime": 49.0734,
+          "minResponseTime": 13.03830000000005,
+          "maxResponseTime": 106.21660000000008,
+          "successRate": 1,
+          "requestsPerSecond": 187.51910350866996,
+          "withinTarget": true
+        }
+      ],
+      "passed": true
+    },
+    "calculationBenchmarks": {
+      "stats": {
+        "min": 0.004925699999999211,
+        "max": 0.004925699999999211,
+        "avg": 0.004925699999999211,
+        "median": 0.004925699999999211,
+        "p95": 0.004925699999999211,
+        "p99": 0.004925699999999211
+      },
+      "details": [
+        {
+          "totalIterations": 1000,
+          "validCalculations": 1000,
+          "successRate": 1,
+          "averageCalculationTime": 0.004925699999999211,
+          "minCalculationTime": 0.001299999999901047,
+          "maxCalculationTime": 0.8614999999999782,
+          "calculationsPerSecond": 203016.83009524742,
+          "withinTarget": true
+        }
+      ],
+      "passed": true
+    },
+    "memoryUsage": {
+      "stats": {
+        "min": 97456,
+        "max": 1622632,
+        "avg": 737562,
+        "median": 814848,
+        "p95": 1622632,
+        "p99": 1622632
+      },
+      "details": [
+        [
+          {
+            "dataSize": 100,
+            "memoryUsed": 97456,
+            "memoryTotal": 0,
+            "memoryPerTrade": 974.56,
+            "withinTarget": true
+          },
+          {
+            "dataSize": 500,
+            "memoryUsed": 415312,
+            "memoryTotal": 0,
+            "memoryPerTrade": 830.624,
+            "withinTarget": true
+          },
+          {
+            "dataSize": 1000,
+            "memoryUsed": 814848,
+            "memoryTotal": 0,
+            "memoryPerTrade": 814.848,
+            "withinTarget": true
+          },
+          {
+            "dataSize": 2000,
+            "memoryUsed": 1622632,
+            "memoryTotal": 0,
+            "memoryPerTrade": 811.316,
+            "withinTarget": true
+          },
+          {
+            "operations": 100,
+            "memoryGrowth": 382288,
+            "memoryPerOperation": 3822.88,
+            "potentialLeak": false
+          }
+        ]
+      ],
+      "passed": true
+    }
+  }
+}

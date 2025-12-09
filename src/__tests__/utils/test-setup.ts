@@ -204,9 +204,16 @@ jest.mock('@/lib/supabase', () => ({
 }));
 
 // Mock environment variables
-process.env.NODE_ENV = 'test';
-process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://test.supabase.co';
-process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-anon-key';
+// Note: Using Object.defineProperty to avoid read-only property errors
+Object.defineProperty(process, 'env', {
+  value: {
+    ...process.env,
+    NODE_ENV: 'test',
+    NEXT_PUBLIC_SUPABASE_URL: 'https://test.supabase.co',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: 'test-anon-key',
+  },
+  writable: true,
+});
 
 // Performance testing utilities
 export const createPerformanceTimer = () => {
@@ -246,7 +253,8 @@ export const testUtils = {
 jest.setTimeout(10000);
 
 // Configure Jest to handle async operations properly
-jest.useFakeTimers();
+// Note: Commented out due to read-only property issue with performance
+// jest.useFakeTimers();
 
 // Export for use in tests
 export {};

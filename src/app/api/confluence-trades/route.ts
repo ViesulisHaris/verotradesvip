@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { validateUUID } from '@/lib/uuid-validation';
+import { validateJWTWithLogging } from '@/lib/jwt-validation';
 
 interface ConfluenceTradesResponse {
   trades: Array<{
@@ -68,8 +69,37 @@ export async function GET(request: Request) {
     let user = null;
     let authError = null;
     
+    // DEBUG: Enhanced JWT token analysis
+    console.log(`🔍 [JWT_DEBUG:${requestId}] Token analysis:`, {
+      hasAuthHeader: !!authHeader,
+      authHeaderType: authHeader?.startsWith('Bearer ') ? 'Bearer' : 'Other',
+      tokenLength: authHeader?.substring(7).length || 0,
+      tokenSegments: authHeader?.substring(7).split('.').length || 0,
+      tokenStart: authHeader?.substring(7, 27) + '...',
+      tokenEnd: '...' + authHeader?.substring(authHeader.length - 20),
+      timestamp: new Date().toISOString()
+    });
+    
     if (authHeader && authHeader.startsWith('Bearer ')) {
       const token = authHeader.substring(7);
+      
+      // Use enhanced JWT validation
+      const validation = validateJWTWithLogging(token, `confluence-trades-${requestId}`);
+      
+      if (!validation.isValid) {
+        console.error(`❌ [JWT_DEBUG:${requestId}] JWT validation failed:`, {
+          error: validation.error,
+          tokenLength: validation.tokenLength,
+          segments: validation.segments,
+          timestamp: new Date().toISOString()
+        });
+        
+        return NextResponse.json({
+          error: 'Invalid JWT token',
+          details: validation.error,
+          requestId
+        }, { status: 401 });
+      }
       
       supabase = createClient(supabaseUrl, supabaseAnonKey, {
         auth: {
@@ -83,9 +113,21 @@ export async function GET(request: Request) {
         }
       });
       
+      const authStartTime = Date.now();
       const result = await supabase.auth.getUser();
+      const authDuration = Date.now() - authStartTime;
+      
       user = result.data?.user;
       authError = result.error;
+      
+      console.log(`🔍 [JWT_DEBUG:${requestId}] Supabase auth result:`, {
+        authDuration: `${authDuration}ms`,
+        userFound: !!user,
+        userId: user?.id,
+        authError: authError?.message,
+        errorDetails: authError,
+        timestamp: new Date().toISOString()
+      });
     } else {
       supabase = createClient(supabaseUrl, supabaseAnonKey, {
         auth: {
@@ -99,6 +141,7 @@ export async function GET(request: Request) {
       authError = result.error;
     }
     
+    // Enhanced authentication with fallback for development
     if (authError || !user) {
       console.error(`❌ [CONFLUENCE_TRADES:${requestId}] Authentication failed:`, {
         error: authError?.message,
@@ -107,6 +150,23 @@ export async function GET(request: Request) {
         authErrorDetails: authError,
         timestamp: new Date().toISOString()
       });
+      
+      // For development: return mock data if auth fails
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`⚠️ [CONFLUENCE_TRADES:${requestId}] Development mode: Returning mock data due to auth failure`);
+        return NextResponse.json({
+          trades: [],
+          totalCount: 0,
+          currentPage: page,
+          totalPages: 0,
+          hasNextPage: false,
+          hasPreviousPage: false,
+          requestId,
+          processingTime: Date.now() - startTime,
+          mockData: true
+        });
+      }
+      
       return NextResponse.json({
         error: 'Authentication required',
         details: authError?.message,
@@ -188,7 +248,7 @@ export async function GET(request: Request) {
     // Apply sorting
     query = query.order(sortBy, { ascending: sortOrder === 'asc' });
 
-    // Execute query to get all trades (we'll filter emotional states client-side for now)
+    // Execute query to get all trades
     const { data: allTrades, error: fetchError, count } = await query;
 
     if (fetchError) {

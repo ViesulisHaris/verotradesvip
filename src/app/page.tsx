@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import TextReveal from '@/components/TextReveal';
 import TorchCard from '@/components/TorchCard';
 import { PnlChart, RadarEmotionChart } from '@/components/Charts';
+import './dashboard/psychological-metrics.css';
 
 interface Trade {
   id: number;
@@ -52,6 +53,88 @@ export default function Dashboard() {
     }
   ];
 
+  // Sample emotional data for demonstration
+  const sampleEmotionalData = [
+    { subject: 'DISCIPLINE', value: 75, fullMark: 100, leaning: 'positive', side: 'discipline' },
+    { subject: 'CONFIDENCE', value: 80, fullMark: 100, leaning: 'positive', side: 'confidence' },
+    { subject: 'PATIENCE', value: 70, fullMark: 100, leaning: 'positive', side: 'patience' },
+    { subject: 'TILT', value: 30, fullMark: 100, leaning: 'negative', side: 'tilt' },
+    { subject: 'REVENGE', value: 20, fullMark: 100, leaning: 'negative', side: 'revenge' },
+    { subject: 'IMPATIENCE', value: 25, fullMark: 100, leaning: 'negative', side: 'impatience' },
+    { subject: 'NEUTRAL', value: 50, fullMark: 100, leaning: 'neutral', side: 'neutral' },
+    { subject: 'ANALYTICAL', value: 65, fullMark: 100, leaning: 'neutral', side: 'analytical' }
+  ];
+
+  // Calculate psychological metrics using complementary calculation
+  const calculatePsychologicalMetrics = (emotionalData: any[]): { disciplineLevel: number; tiltControl: number; psychologicalStabilityIndex: number } => {
+    // Handle edge cases: empty or invalid data
+    if (!emotionalData || emotionalData.length === 0) {
+      return { disciplineLevel: 50, tiltControl: 50, psychologicalStabilityIndex: 50 };
+    }
+
+    try {
+      // Define emotion categories with their weights
+      const positiveEmotions = ['DISCIPLINE', 'CONFIDENCE', 'PATIENCE'];
+      const negativeEmotions = ['TILT', 'REVENGE', 'IMPATIENCE'];
+      const neutralEmotions = ['NEUTRAL', 'ANALYTICAL'];
+      
+      // Calculate weighted scores for each emotion category
+      let positiveScore = 0;
+      let negativeScore = 0;
+      let neutralScore = 0;
+      
+      emotionalData.forEach(emotion => {
+        const emotionName = emotion.subject?.toUpperCase();
+        const emotionValue = emotion.value || 0;
+        
+        if (positiveEmotions.includes(emotionName)) {
+          positiveScore += emotionValue;
+        } else if (negativeEmotions.includes(emotionName)) {
+          negativeScore += emotionValue;
+        } else if (neutralEmotions.includes(emotionName)) {
+          neutralScore += emotionValue;
+        }
+      });
+      
+      // Normalize scores to 0-100 range
+      const maxPossibleScore = emotionalData.length * 100;
+      positiveScore = (positiveScore / maxPossibleScore) * 100;
+      negativeScore = (negativeScore / maxPossibleScore) * 100;
+      neutralScore = (neutralScore / maxPossibleScore) * 100;
+      
+      // Calculate Emotional State Score (ESS) with weighted formula
+      const ess = (positiveScore * 2.0) + (neutralScore * 1.0) - (negativeScore * 1.5);
+      
+      // Calculate Psychological Stability Index (PSI) - normalized to 0-100 scale
+      const psi = Math.max(0, Math.min(100, (ess + 100) / 2));
+      
+      // Calculate Discipline Level based on emotion scoring
+      // Higher positive emotions and lower negative emotions result in higher discipline
+      let disciplineLevel = psi;
+      
+      // Ensure discipline level is within 0-100 range
+      disciplineLevel = Math.max(0, Math.min(100, disciplineLevel));
+      
+      // Calculate Tilt Control as the exact complement of Discipline Level
+      // This ensures they always sum to exactly 100%
+      const tiltControl = 100 - disciplineLevel;
+      
+      return {
+        disciplineLevel: Math.round(disciplineLevel * 100) / 100, // Round to 2 decimal places
+        tiltControl: Math.round(tiltControl * 100) / 100,
+        psychologicalStabilityIndex: Math.round(psi * 100) / 100 // Include PSI in return
+      };
+      
+    } catch (error) {
+      console.error('Error calculating psychological metrics:', error);
+      // Return default values on error
+      return { disciplineLevel: 50, tiltControl: 50, psychologicalStabilityIndex: 50 };
+    }
+  };
+
+  // Calculate the metrics
+  const { disciplineLevel, tiltControl, psychologicalStabilityIndex } = calculatePsychologicalMetrics(sampleEmotionalData);
+
   // Handle mouse move for flashlight effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -77,40 +160,7 @@ export default function Dashboard() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Handle scroll reveal animations with IntersectionObserver
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before element comes into view
-    };
-
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add 'in-view' class to trigger animation
-          entry.target.classList.add('in-view');
-          
-          // Find TextReveal components within this element and trigger their animations
-          const textRevealElements = entry.target.querySelectorAll('.text-reveal-letter');
-          textRevealElements.forEach((el, index) => {
-            setTimeout(() => {
-              (el as HTMLElement).style.animationPlayState = 'running';
-            }, index * 50); // Stagger the text reveals
-          });
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with scroll-item class
-    const scrollItems = document.querySelectorAll('.scroll-item');
-    scrollItems.forEach((item) => {
-      observerRef.current?.observe(item);
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
+  // Removed scroll reveal animations - elements now appear immediately
 
   // Handle logout
   const handleLogout = () => {
@@ -163,13 +213,13 @@ export default function Dashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Hero Header */}
-        <div className="text-center space-y-4 scroll-item">
+        <div className="text-center space-y-4">
           <TextReveal
             text="Trading Dashboard"
             className="text-5xl font-bold text-[#E6D5B8] font-serif"
             delay={0.2}
           />
-          <p className="text-xl text-[#9ca3af] fade-in">
+          <p className="text-xl text-[#9ca3af]">
             Track your performance and analyze your trading patterns
           </p>
         </div>
@@ -177,7 +227,7 @@ export default function Dashboard() {
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Total PnL */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-1">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Total PnL</h3>
               <div className="flex items-baseline space-x-2">
@@ -192,7 +242,7 @@ export default function Dashboard() {
           </TorchCard>
 
           {/* Profit Factor */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-2">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Profit Factor</h3>
               <div className="flex items-baseline space-x-2">
@@ -207,7 +257,7 @@ export default function Dashboard() {
           </TorchCard>
 
           {/* Win Rate */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-3">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Win Rate</h3>
               <div className="flex items-baseline space-x-2">
@@ -224,7 +274,7 @@ export default function Dashboard() {
           </TorchCard>
 
           {/* Total Trades */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-4">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Total Trades</h3>
               <div className="flex items-baseline space-x-2">
@@ -242,17 +292,21 @@ export default function Dashboard() {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-8 gap-6">
           {/* PnL Performance Chart */}
-          <TorchCard className="lg:col-span-8 p-6 rounded-lg scroll-item scroll-animate stagger-delay-5">
+          <TorchCard className="lg:col-span-8 p-6 rounded-lg">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-[#E6D5B8]">PnL Performance</h3>
               <div className="h-80">
+                {(() => {
+                  console.log('🔍 [MainPage] Rendering PnlChart WITHOUT trades data (static page)');
+                  return null;
+                })()}
                 <PnlChart />
               </div>
             </div>
           </TorchCard>
 
           {/* Emotional Analysis Radar Chart */}
-          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-6 relative">
+          <TorchCard className="lg:col-span-4 p-6 rounded-lg relative">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <h3 className="text-lg font-semibold text-[#E6D5B8]">Emotional Analysis</h3>
@@ -264,24 +318,87 @@ export default function Dashboard() {
             </div>
           </TorchCard>
 
-          {/* Discipline/Tilt Progress Bar */}
-          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-7">
+          {/* Psychological Metrics - Coupled Display */}
+          <TorchCard className={`lg:col-span-4 p-6 rounded-lg psychological-metrics-card`}>
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-[#E6D5B8]">Discipline Level</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-[#9ca3af]">Discipline</span>
-                  <span className="text-[#2EBD85]">85%</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-lg font-semibold text-[#E6D5B8]">Psychological Metrics</h3>
+                  <div className="relative group">
+                    <span className="material-symbols-outlined text-[#C5A065] text-sm cursor-help">info</span>
+                    <div className="absolute left-0 top-6 w-64 p-3 bg-[#1F1F1F] border border-[#2F2F2F] rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 pointer-events-none">
+                      <p className="text-xs text-[#9ca3af]">
+                        Discipline Level and Tilt Control are complementary metrics calculated from emotional analysis. These metrics provide insights into trading psychology and behavior patterns.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#2EBD85] h-3 rounded-full" style={{ width: '85%' }}></div>
+              </div>
+              
+              {/* Metrics Visual Display */}
+              <div className="space-y-6">
+                  {/* Discipline Level */}
+                  <div className="metric-container group" data-metric="discipline">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="material-symbols-outlined text-[#2EBD85] text-sm">psychology</span>
+                        <span className="text-sm font-medium text-[#9ca3af]">Discipline Level</span>
+                      </div>
+                      <span className="text-sm font-bold text-[#2EBD85]">{disciplineLevel.toFixed(1)}%</span>
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-[#1F1F1F] rounded-full h-3 overflow-hidden">
+                        <div
+                          className="h-3 rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#2EBD85] to-[#2EBD85]/80 relative overflow-hidden"
+                          style={{ width: `${disciplineLevel}%` }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </div>
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-[#2EBD85]/20 border border-[#2EBD85]/40 rounded text-xs text-[#2EBD85] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                        Reflects emotional consistency and trading adherence
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Tilt Control */}
+                  <div className="metric-container group" data-metric="tilt-control">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="material-symbols-outlined text-[#F6465D] text-sm">balance</span>
+                        <span className="text-sm font-medium text-[#9ca3af]">Tilt Control</span>
+                      </div>
+                      <span className="text-sm font-bold text-[#F6465D]">{tiltControl.toFixed(1)}%</span>
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-[#1F1F1F] rounded-full h-3 overflow-hidden">
+                        <div
+                          className="h-3 rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#F6465D] to-[#F6465D]/80 relative overflow-hidden"
+                          style={{ width: `${tiltControl}%` }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </div>
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-[#F6465D]/20 border border-[#F6465D]/40 rounded text-xs text-[#F6465D] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                        Measures emotional regulation and impulse control
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              
+              {/* Psychological Stability Score */}
+              <div className="mt-4 p-3 bg-[#1F1F1F]/50 rounded-lg border border-[#2F2F2F]">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#9ca3af]">Psychological Stability Index</span>
+                  <span className="text-sm font-bold text-[#C5A065]">{psychologicalStabilityIndex.toFixed(1)}%</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-[#9ca3af]">Tilt Control</span>
-                  <span className="text-[#F6465D]">72%</span>
-                </div>
-                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#F6465D] h-3 rounded-full" style={{ width: '72%' }}></div>
+                <div className="w-full bg-[#1F1F1F] rounded-full h-2 mt-2">
+                  <div
+                    className="h-2 rounded-full bg-gradient-to-r from-[#2EBD85] via-[#C5A065] to-[#F6465D] transition-all duration-500 ease-out"
+                    style={{ width: `${psychologicalStabilityIndex}%` }}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -291,7 +408,7 @@ export default function Dashboard() {
         {/* Secondary Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Avg Time Held */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-8">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Avg Time Held</h3>
               <div className="flex items-baseline space-x-2">
@@ -315,7 +432,7 @@ export default function Dashboard() {
           </TorchCard>
 
           {/* Sharpe Ratio */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-9">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Sharpe Ratio</h3>
               <div className="flex items-baseline space-x-2">
@@ -333,7 +450,7 @@ export default function Dashboard() {
           </TorchCard>
 
           {/* Trading Days */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-10">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <h3 className="text-sm font-medium text-[#9ca3af]">Trading Days</h3>
@@ -352,7 +469,7 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Trades Table */}
-        <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-11">
+        <TorchCard className="p-6 rounded-lg">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-[#E6D5B8]">Recent Trades</h3>
             <div className="overflow-x-auto">

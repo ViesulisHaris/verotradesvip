@@ -1,0 +1,334 @@
+{
+  "summary": {
+    "totalTests": 26,
+    "passedTests": 7,
+    "failedTests": 19,
+    "totalDuration": 6076,
+    "averageTestDuration": 233.69230769230768,
+    "timestamp": "2025-12-09T19:59:27.059Z"
+  },
+  "testSuite": "API Confluence Stats Comprehensive Test",
+  "version": "1.0.0",
+  "environment": {
+    "apiUrl": "http://localhost:3000",
+    "endpoint": "/api/confluence-stats",
+    "nodeVersion": "v22.14.0",
+    "platform": "win32"
+  },
+  "results": [
+    {
+      "testName": "No Authentication",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:22.993Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasAuthError": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid Token",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:23.555Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasAuthError": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Valid Authentication",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:23.743Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasData": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "User Data Isolation",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:23.743Z",
+      "duration": 0,
+      "details": {
+        "note": "Requires multiple test users for complete validation"
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Valid Emotional States",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:23.955Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasEmotionalData": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid Emotional States",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.111Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesInvalidGracefully": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Empty Emotional States",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.249Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesEmptyStates": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Extreme Values Handling",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.393Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasPsychologicalMetrics": false,
+        "metricsInRange": false
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Psychological Metrics Available",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.553Z",
+      "duration": 0,
+      "details": {
+        "status": 401
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Emotional States Filter",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.707Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasFilteredData": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Date Range Filter",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.840Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesDateRange": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Symbol Filter",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:24.981Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesSymbolFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Market Filter",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.123Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesMarketFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "P&L Filter (Profitable)",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.262Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesPnlFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "P&L Filter (Lossable)",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.413Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesPnlFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Side Filter (Buy)",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.542Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesSideFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Side Filter (Sell)",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.672Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesSideFilter": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Combined Filters",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:25.811Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesCombinedFilters": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Time < 500ms",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:25.946Z",
+      "duration": 0,
+      "details": {
+        "responseTime": 135,
+        "status": 401
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Concurrent Requests",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:26.463Z",
+      "duration": 0,
+      "details": {
+        "concurrentRequests": 10,
+        "successfulConcurrent": 0,
+        "averageTime": 51.3
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Size Reasonable",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:26.463Z",
+      "duration": 0,
+      "details": {
+        "responseSizeBytes": 167
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Large Dataset Handling",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:26.593Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "responseTime": 129
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Malformed URL Parameters",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:26.714Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesGracefully": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Request Timeout Handling",
+      "passed": true,
+      "timestamp": "2025-12-09T19:59:26.857Z",
+      "duration": 0,
+      "details": {
+        "completedInTime": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid JSON Handling",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:26.894Z",
+      "duration": 0,
+      "details": {
+        "status": 0
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid Date Parameter",
+      "passed": false,
+      "timestamp": "2025-12-09T19:59:27.059Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasErrorData": true
+      },
+      "error": null,
+      "stack": null
+    }
+  ],
+  "recommendations": [
+    "Address failed tests to improve API reliability",
+    "Consider optimizing API response times",
+    "Review authentication implementation"
+  ]
+}

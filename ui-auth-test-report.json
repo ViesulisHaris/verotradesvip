@@ -1,0 +1,328 @@
+{
+  "summary": {
+    "total": 41,
+    "passed": 33,
+    "failed": 8,
+    "passRate": "80.49%",
+    "duration": "37.12s",
+    "authenticated": true
+  },
+  "details": [
+    {
+      "test": "Existing session found",
+      "passed": false,
+      "details": "No valid session found",
+      "timestamp": "2025-12-09T20:10:51.959Z"
+    },
+    {
+      "test": "Login page loads correctly",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:10:55.125Z"
+    },
+    {
+      "test": "Authentication successful",
+      "passed": true,
+      "details": "Redirected to dashboard",
+      "timestamp": "2025-12-09T20:11:03.814Z"
+    },
+    {
+      "test": "Psychological metrics card exists",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.258Z"
+    },
+    {
+      "test": "Discipline level metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.274Z"
+    },
+    {
+      "test": "Tilt control metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.274Z"
+    },
+    {
+      "test": "Coupling indicator displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.274Z"
+    },
+    {
+      "test": "Progress bars are present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.300Z"
+    },
+    {
+      "test": "Psychological Stability Index displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.307Z"
+    },
+    {
+      "test": "Coupling indicator exists",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.589Z"
+    },
+    {
+      "test": "Coupling indicators have animations",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.593Z"
+    },
+    {
+      "test": "Connection line visualization visible",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.598Z"
+    },
+    {
+      "test": "Coupling dots are animated",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.601Z"
+    },
+    {
+      "test": "Tooltips test",
+      "passed": false,
+      "details": "Cannot read properties of undefined (reading 'length')",
+      "timestamp": "2025-12-09T20:11:07.846Z"
+    },
+    {
+      "test": "Progress bars exist",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.867Z"
+    },
+    {
+      "test": "Progress bars have animations",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.868Z"
+    },
+    {
+      "test": "Progress bars have valid values",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:07.870Z"
+    },
+    {
+      "test": "Error handling implemented",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:08.154Z"
+    },
+    {
+      "test": "Retry functionality available",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:08.157Z"
+    },
+    {
+      "test": "Validation warnings display",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:08.160Z"
+    },
+    {
+      "test": "Loading indicators exist",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:09.054Z"
+    },
+    {
+      "test": "Content loads after loading state",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:12.069Z"
+    },
+    {
+      "test": "Card properly sized for Mobile",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:13.292Z"
+    },
+    {
+      "test": "Card properly sized for Tablet",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:14.381Z"
+    },
+    {
+      "test": "Card properly sized for Desktop",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:15.528Z"
+    },
+    {
+      "test": "Real-time update transition classes present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.103Z"
+    },
+    {
+      "test": "Psychological Stability Index displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.104Z"
+    },
+    {
+      "test": "Focusable elements exist for keyboard navigation",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.357Z"
+    },
+    {
+      "test": "ARIA labels are present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.360Z"
+    },
+    {
+      "test": "Color contrast elements present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.361Z"
+    },
+    {
+      "test": "Reduced motion support implemented",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.362Z"
+    },
+    {
+      "test": "Mathematical coupling visualization present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.596Z"
+    },
+    {
+      "test": "Connection lines between metrics",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.597Z"
+    },
+    {
+      "test": "Animated coupling dots present",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.598Z"
+    },
+    {
+      "test": "Total PnL metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.860Z"
+    },
+    {
+      "test": "Profit Factor metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.860Z"
+    },
+    {
+      "test": "Win Rate metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.860Z"
+    },
+    {
+      "test": "Total Trades metric displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.860Z"
+    },
+    {
+      "test": "PnL Chart displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.894Z"
+    },
+    {
+      "test": "Emotional Analysis Chart displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.898Z"
+    },
+    {
+      "test": "Recent Trades table displays",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:11:23.904Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "test": "login-page-loaded",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-login-page-loaded-2025-12-09T20-10-55-125Z.png"
+    },
+    {
+      "test": "login-form-filled",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-login-form-filled-2025-12-09T20-11-00-399Z.png"
+    },
+    {
+      "test": "dashboard-after-login",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-dashboard-after-login-2025-12-09T20-11-06-816Z.png"
+    },
+    {
+      "test": "psychological-metrics-card-display",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-psychological-metrics-card-display-2025-12-09T20-11-07-308Z.png"
+    },
+    {
+      "test": "coupling-indicators",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-coupling-indicators-2025-12-09T20-11-07-601Z.png"
+    },
+    {
+      "test": "progress-animations",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-progress-animations-2025-12-09T20-11-07-870Z.png"
+    },
+    {
+      "test": "error-state-check",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-error-state-check-2025-12-09T20-11-08-160Z.png"
+    },
+    {
+      "test": "loading-state",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-loading-state-2025-12-09T20-11-12-069Z.png"
+    },
+    {
+      "test": "responsive-mobile",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-responsive-mobile-2025-12-09T20-11-13-292Z.png"
+    },
+    {
+      "test": "responsive-tablet",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-responsive-tablet-2025-12-09T20-11-14-381Z.png"
+    },
+    {
+      "test": "responsive-desktop",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-responsive-desktop-2025-12-09T20-11-15-528Z.png"
+    },
+    {
+      "test": "real-time-update",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-real-time-update-2025-12-09T20-11-23-104Z.png"
+    },
+    {
+      "test": "accessibility-features",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-accessibility-features-2025-12-09T20-11-23-362Z.png"
+    },
+    {
+      "test": "mathematical-coupling",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-mathematical-coupling-2025-12-09T20-11-23-598Z.png"
+    },
+    {
+      "test": "dashboard-metrics",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-auth-test-dashboard-metrics-2025-12-09T20-11-23-904Z.png"
+    }
+  ],
+  "timestamp": "2025-12-09T20:11:24.226Z",
+  "recommendations": [
+    "Review failed tests and fix identified issues",
+    "Improve overall UI component reliability",
+    "Add more comprehensive accessibility testing",
+    "Implement automated visual regression testing",
+    "Add performance testing for animations"
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "summary": {
+    "totalTests": 28,
+    "passedTests": 26,
+    "failedTests": 2,
+    "totalDuration": 10569,
+    "averageTestDuration": 377.4642857142857,
+    "timestamp": "2025-12-09T20:00:59.060Z"
+  },
+  "testSuite": "API Confluence Stats Auth-Fixed Test",
+  "version": "2.0.0",
+  "environment": {
+    "apiUrl": "http://localhost:3000",
+    "endpoint": "/api/confluence-stats",
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "hasSupabase": true,
+    "hasAuthToken": true
+  },
+  "results": [
+    {
+      "testName": "No Authentication",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:50.751Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasAuthError": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid Token",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:51.109Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "hasAuthError": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Mock Token Authentication",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:51.395Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesGracefully": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Real Authentication",
+      "passed": false,
+      "timestamp": "2025-12-09T20:00:51.829Z",
+      "duration": 0,
+      "details": {
+        "note": "Real authentication not available - using mock"
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "API Structure Validation",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:52.252Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "hasErrorStructure": false,
+        "hasRequestId": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Parameter Parsing",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:52.554Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesParameters": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Malformed Parameters",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:52.932Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesMalformed": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Extreme Parameter Values",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:53.273Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesExtremeValues": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Structure",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:53.542Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "hasError": false,
+        "hasDataStructure": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Error Handling",
+      "passed": false,
+      "timestamp": "2025-12-09T20:00:53.840Z",
+      "duration": 0,
+      "details": {
+        "status": 500,
+        "hasGracefulError": false,
+        "hasErrorMessage": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Request ID Generation",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:54.144Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "requestId": "bwppqi",
+        "hasRequestId": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Headers",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:54.446Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "contentType": "application/json"
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Time Measurement",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:54.761Z",
+      "duration": 0,
+      "details": {
+        "responseTime": 315,
+        "status": 200
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Concurrent Requests",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:55.381Z",
+      "duration": 0,
+      "details": {
+        "concurrentRequests": 5,
+        "successfulConcurrent": 5,
+        "averageTime": 123.2
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Response Size Analysis",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:55.381Z",
+      "duration": 0,
+      "details": {
+        "responseSizeBytes": 1480
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Memory Usage Estimation",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:55.381Z",
+      "duration": 0,
+      "details": {
+        "heapUsedMB": 10,
+        "heapTotalMB": 15
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Very Long URL",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:55.757Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesLongURL": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Special Characters",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:56.095Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesSpecialChars": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Empty Parameters",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:56.486Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "handlesEmptyParams": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Invalid HTTP Method",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:56.523Z",
+      "duration": 0,
+      "details": {
+        "status": 0,
+        "handlesInvalidMethod": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Large Request Headers",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:56.563Z",
+      "duration": 0,
+      "details": {
+        "status": 401,
+        "handlesLargeHeaders": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "SQL Injection Prevention: '; DROP TABLE trades...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:56.863Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsSQLInjection": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "SQL Injection Prevention: 1' OR '1'='1...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:57.217Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsSQLInjection": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "SQL Injection Prevention: UNION SELECT * FROM ...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:57.524Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsSQLInjection": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "XSS Prevention: <script>alert(\"xss\")...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:57.782Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsXSS": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "XSS Prevention: javascript:alert(\"xs...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:58.114Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsXSS": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "XSS Prevention: <img src=x onerror=a...",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:58.446Z",
+      "duration": 0,
+      "details": {
+        "status": 200,
+        "preventsXSS": true
+      },
+      "error": null,
+      "stack": null
+    },
+    {
+      "testName": "Rate Limiting",
+      "passed": true,
+      "timestamp": "2025-12-09T20:00:59.060Z",
+      "duration": 0,
+      "details": {
+        "totalRequests": 10,
+        "rateLimitedResponses": 0,
+        "hasRateLimiting": false
+      },
+      "error": null,
+      "stack": null
+    }
+  ],
+  "recommendations": [
+    "Address failed tests to improve API reliability",
+    "Review authentication implementation and test user setup"
+  ]
+}

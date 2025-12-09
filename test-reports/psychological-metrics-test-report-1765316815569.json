@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-12-09T21:46:55.569Z",
+  "testConfig": {
+    "baseUrl": "http://localhost:3000",
+    "timeout": 10000,
+    "retries": 3,
+    "screenshotDir": "./test-screenshots",
+    "reportDir": "./test-reports"
+  },
+  "results": {
+    "calculationLogic": {
+      "passed": 11,
+      "failed": 0,
+      "details": [
+        {
+          "test": "Complementary test - Empty data",
+          "passed": true,
+          "details": "Sum: 100%, Expected: 100%"
+        },
+        {
+          "test": "Complementary test - Positive-heavy data",
+          "passed": true,
+          "details": "Sum: 100%, Expected: 100%"
+        },
+        {
+          "test": "Complementary test - Negative-heavy data",
+          "passed": true,
+          "details": "Sum: 100%, Expected: 100%"
+        },
+        {
+          "test": "Complementary test - Balanced data",
+          "passed": true,
+          "details": "Sum: 100%, Expected: 100%"
+        },
+        {
+          "test": "Complementary test - Extreme values",
+          "passed": true,
+          "details": "Sum: 100%, Expected: 100%"
+        },
+        {
+          "test": "Edge case - Null data",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Edge case - Undefined data",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Edge case - Empty array",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Edge case - Invalid emotion names",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Edge case - Missing values",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Edge case - Zero values",
+          "passed": true,
+          "details": ""
+        }
+      ]
+    },
+    "uiComponents": {
+      "passed": 8,
+      "failed": 2,
+      "details": [
+        {
+          "test": "Coupling animations removed",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Tooltip positioning styles",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Responsive design styles",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Discipline Level green color",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Tilt Control red color",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Coupling references removed from dashboard",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Tooltip implementation in dashboard",
+          "passed": false,
+          "details": ""
+        },
+        {
+          "test": "Error handling in dashboard",
+          "passed": false,
+          "details": ""
+        },
+        {
+          "test": "Consistent calculation in home page",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Consistent UI structure in home page",
+          "passed": true,
+          "details": ""
+        }
+      ]
+    },
+    "apiEndpoints": {
+      "passed": 4,
+      "failed": 0,
+      "details": [
+        {
+          "test": "Psychological metrics in API response",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Complementary relationship in API",
+          "passed": true,
+          "details": "Sum: 100%"
+        },
+        {
+          "test": "Validation warnings structure",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Emotional data structure",
+          "passed": true,
+          "details": ""
+        }
+      ]
+    },
+    "visualConsistency": {
+      "passed": 6,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Consistent calculation function usage",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Consistent color schemes",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Consistent CSS class names",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Consistent tooltip implementation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Hover states implemented",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Animations implemented",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Proper spacing",
+          "passed": false,
+          "details": ""
+        }
+      ]
+    },
+    "errorHandling": {
+      "passed": 5,
+      "failed": 1,
+      "details": [
+        {
+          "test": "Error handling - Circular reference",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Error handling - Large number",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Error handling - Negative infinity",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "Error handling - NaN value",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "test": "API authentication error handling",
+          "passed": false,
+          "details": ""
+        },
+        {
+          "test": "Large dataset performance (1000 items)",
+          "passed": true,
+          "details": "Duration: 0.25ms"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "totalPassed": 34,
+    "totalFailed": 4,
+    "overallSuccessRate": "89.5"
+  }
+}

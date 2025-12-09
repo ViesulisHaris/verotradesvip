@@ -1,0 +1,174 @@
+/* Psychological Metrics - Enhanced Visual Relationship Styles */
+
+.psychological-metrics-card {
+  position: relative;
+  overflow: visible;
+}
+
+/* Ensure metric containers within the card are visible */
+.psychological-metrics-card .metric-container {
+  position: relative;
+}
+
+
+/* Metric Container Styles */
+.metric-container {
+  position: relative;
+}
+
+.metric-container:hover {
+  transform: translateX(4px);
+}
+
+/* Progress Bar Enhancements */
+.metric-container .relative {
+  position: relative;
+}
+
+/* Removed animated gradient overlay for progress bars */
+
+
+
+/* Psychological Stability Index Styles */
+.psychological-metrics-card .border-\[\#2F2F2F\] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Removed animated sweep effect */
+
+/* Tooltip Enhancements */
+.metric-container .absolute .group-hover\:opacity-100 {
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+/* Tooltip positioning fixes */
+.metric-container .relative {
+  overflow: visible;
+}
+
+/* Ensure tooltips appear above other elements */
+.metric-container .absolute.z-10 {
+  z-index: 30;
+}
+
+/* Tooltip arrow for better visual indication */
+.metric-container .absolute.z-10::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid currentColor;
+}
+
+.metric-container .absolute.z-10[class*="border-[#2EBD85]"]::before {
+  border-bottom-color: rgba(46, 189, 133, 0.4);
+}
+
+.metric-container .absolute.z-10[class*="border-[#F6465D]"]::before {
+  border-bottom-color: rgba(246, 70, 93, 0.4);
+}
+
+/* Error State Styles */
+.psychological-metrics-card.error-state {
+  border: 1px solid rgba(246, 70, 93, 0.3);
+  background: rgba(246, 70, 93, 0.05);
+}
+
+.psychological-metrics-card.error-state .metric-container {
+  opacity: 0.6;
+}
+
+/* Loading State Styles */
+.psychological-metrics-card.loading-state .metric-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Removed loading shimmer animation */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .psychological-metrics-card .absolute .bg-gradient-to-b {
+    opacity: 0.2;
+  }
+  
+  .metric-container:hover {
+    transform: none;
+  }
+  
+  /* Adjust tooltip positioning for mobile */
+  .metric-container .absolute.z-10 {
+    position: fixed;
+    top: auto !important;
+    bottom: 20px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    max-width: 90vw;
+    width: auto;
+    white-space: normal;
+    text-align: center;
+    z-index: 50;
+  }
+  
+  /* Hide tooltip arrow on mobile */
+  .metric-container .absolute.z-10::before {
+    display: none;
+  }
+}
+
+/* Ensure tooltips don't cause overflow on small screens */
+@media (max-width: 480px) {
+  .metric-container .absolute.z-10 {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    max-width: 85vw;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .psychological-metrics-card {
+    background: linear-gradient(135deg, 
+      rgba(5, 5, 5, 0.9), 
+      rgba(11, 11, 11, 0.9));
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .metric-container .animate-pulse,
+  .psychological-metrics-card .border-\[\#2F2F2F\]::before,
+  .psychological-metrics-card.loading-state .metric-container::after {
+    animation: none;
+  }
+  
+  .metric-container:hover {
+    transform: none;
+  }
+}
+
+/* Focus States for Accessibility */
+.metric-container:focus-within {
+  outline: 2px solid rgba(197, 160, 101, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .psychological-metrics-card {
+    border: 2px solid currentColor;
+  }
+  
+  .metric-container {
+    border: 1px solid currentColor;
+  }
+}

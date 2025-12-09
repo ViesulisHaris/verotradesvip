@@ -1,0 +1,171 @@
+{
+  "summary": {
+    "total": 23,
+    "passed": 3,
+    "failed": 20,
+    "passRate": "13.04%",
+    "duration": "644.33s"
+  },
+  "details": [
+    {
+      "test": "Psychological metrics card exists",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:05:34.253Z"
+    },
+    {
+      "test": "Coupling indicator exists",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:05:34.261Z"
+    },
+    {
+      "test": "Coupling indicators have animations",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:05:34.263Z"
+    },
+    {
+      "test": "Connection line visualization visible",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:05:34.263Z"
+    },
+    {
+      "test": "Coupling dots are animated",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:05:34.264Z"
+    },
+    {
+      "test": "Coupling indicators test",
+      "passed": false,
+      "details": "Page.captureScreenshot timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.",
+      "timestamp": "2025-12-09T20:08:34.279Z"
+    },
+    {
+      "test": "Tooltip triggers exist",
+      "passed": false,
+      "details": "No tooltip triggers found",
+      "timestamp": "2025-12-09T20:08:34.284Z"
+    },
+    {
+      "test": "Progress bars exist",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:08:34.322Z"
+    },
+    {
+      "test": "Error handling implemented",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:08:34.327Z"
+    },
+    {
+      "test": "Retry functionality available",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:08:34.330Z"
+    },
+    {
+      "test": "Loading indicators exist",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:08:38.804Z"
+    },
+    {
+      "test": "Content loads after loading state",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:08:46.824Z"
+    },
+    {
+      "test": "Loading states test",
+      "passed": false,
+      "details": "Page.captureScreenshot timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.",
+      "timestamp": "2025-12-09T20:11:46.835Z"
+    },
+    {
+      "test": "Real-time update transition classes present",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:12:24.222Z"
+    },
+    {
+      "test": "Psychological Stability Index displays",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:12:24.225Z"
+    },
+    {
+      "test": "Real-time updates test",
+      "passed": false,
+      "details": "Page.captureScreenshot timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.",
+      "timestamp": "2025-12-09T20:15:24.228Z"
+    },
+    {
+      "test": "Focusable elements exist for keyboard navigation",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:24.235Z"
+    },
+    {
+      "test": "ARIA labels are present",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:24.244Z"
+    },
+    {
+      "test": "Color contrast elements present",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:24.246Z"
+    },
+    {
+      "test": "Reduced motion support implemented",
+      "passed": true,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:24.277Z"
+    },
+    {
+      "test": "Mathematical coupling visualization present",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:27.705Z"
+    },
+    {
+      "test": "Connection lines between metrics",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:27.709Z"
+    },
+    {
+      "test": "Animated coupling dots present",
+      "passed": false,
+      "details": "",
+      "timestamp": "2025-12-09T20:15:27.713Z"
+    }
+  ],
+  "screenshots": [
+    {
+      "test": "error-state-check",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-test-error-state-check-2025-12-09T20-08-34-330Z.png"
+    },
+    {
+      "test": "accessibility-features",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-test-accessibility-features-2025-12-09T20-15-24-277Z.png"
+    },
+    {
+      "test": "mathematical-coupling",
+      "path": "c:\\Users\\haral\\Desktop\\trading journal web\\verotradesvip\\ui-test-mathematical-coupling-2025-12-09T20-15-27-713Z.png"
+    }
+  ],
+  "timestamp": "2025-12-09T20:16:02.819Z",
+  "recommendations": [
+    "Review failed tests and fix identified issues",
+    "Improve overall UI component reliability",
+    "Add more comprehensive accessibility testing",
+    "Implement automated visual regression testing",
+    "Add performance testing for animations"
+  ]
+}

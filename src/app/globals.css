@@ -718,115 +718,10 @@ body {
   --spacing-8: var(--verotrade-8);
 }
 
-/* Column Reveal Animation */
-@keyframes column-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Removed Column Reveal Animation - elements now appear immediately */
+/* Removed Text Reveal Animation - elements now appear immediately */
 
-.column-reveal {
-  animation: column-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.column-reveal-delay-1 {
-  animation-delay: 0.1s;
-}
-
-.column-reveal-delay-2 {
-  animation-delay: 0.2s;
-}
-
-.column-reveal-delay-3 {
-  animation-delay: 0.3s;
-}
-
-.column-reveal-delay-4 {
-  animation-delay: 0.4s;
-}
-
-/* Text Reveal Animation */
-@keyframes text-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.text-reveal-animation {
-  animation: text-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Character reveal animation for text */
-@keyframes text-reveal-character {
-  from {
-    opacity: 0;
-    transform: translateY(110%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.text-reveal-delay-1 {
-  animation-delay: 0.1s;
-}
-
-.text-reveal-delay-2 {
-  animation-delay: 0.2s;
-}
-
-.text-reveal-delay-3 {
-  animation-delay: 0.3s;
-}
-
-/* Text reveal animation helper classes */
-.reveal-text {
-  position: relative;
-  overflow: hidden;
-}
-
-.reveal-text::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(197, 160, 101, 0.2), transparent);
-  transform: translateX(-100%);
-  animation: reveal-shimmer 2s infinite;
-}
-
-@keyframes reveal-shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.text-gradient-reveal {
-  background: linear-gradient(90deg, var(--verotrade-text-primary), var(--gold), var(--verotrade-text-primary));
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-reveal 3s ease infinite;
-}
-
-@keyframes gradient-reveal {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* Removed text reveal animation helper classes */
 
 /* Flashlight Effect - Updated from target design */
 .flashlight-container {
@@ -998,50 +893,7 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Scroll Entry Animations */
-.scroll-entry {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-entry.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scroll-entry-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-entry-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-entry-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-entry-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-entry-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-entry-scale.visible {
-  opacity: 1;
-  transform: scale(1);
-}
+/* Removed Scroll Entry Animations - elements now appear immediately */
 
 /* Custom Input Styles (input-dark) - Consolidated definition */
 .input-dark {
@@ -1099,47 +951,7 @@ body {
   transform: rotate(180deg);
 }
 
-/* Additional Animation Utilities */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.slide-up {
-  animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pulse-gold {
-  animation: pulseGold 2s infinite;
-}
-
-@keyframes pulseGold {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(184, 155, 94, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(184, 155, 94, 0);
-  }
-}
+/* Removed Additional Animation Utilities - elements now appear immediately */
 
 /* Hover Effects */
 .hover-lift {
@@ -1160,46 +972,9 @@ body {
   border-color: var(--verotrade-gold-primary);
 }
 
-/* Loading States */
-.loading-skeleton {
-  background: linear-gradient(90deg, var(--verotrade-quaternary-black) 25%, var(--verotrade-tertiary-black) 50%, var(--verotrade-quaternary-black) 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
+/* Removed Loading States animation */
 
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Responsive Animation Delays */
-@media (prefers-reduced-motion: reduce) {
-  .column-reveal,
-  .text-reveal,
-  .scroll-entry,
-  .scroll-entry-left,
-  .scroll-entry-right,
-  .scroll-entry-scale,
-  .fade-in,
-  .slide-up {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  
-  .button-border-beam,
-  .flashlight-border {
-    animation: none;
-  }
-  
-  .pulse-gold {
-    animation: none;
-  }
-}
+/* Responsive Animation Delays - no longer needed since animations are removed */
 
 /* Material Symbols Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0');
@@ -1350,27 +1125,9 @@ select {
   grid-column: span 2 / span 2;
 }
 
-/* Character reveal animation for text */
-.char-wrapper {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  padding-bottom: 2px; /* Fix clipping descenders */
-}
+/* Removed Character reveal animation for text */
 
-.char {
-  display: inline-block;
-  transform: translateY(110%);
-  opacity: 0;
-  will-change: transform;
-}
-
-/* Most critical fix - ensure scroll items are visible */
-.scroll-item.scroll-item-visible {
-  opacity: 1 !important;
-  filter: blur(0px) !important;
-  transform: translateY(0) !important;
-}
+/* Removed scroll item visibility fixes - elements now appear immediately */
 
 /* Fix flashlight effect z-index stacking */
 .flashlight-bg {
@@ -2202,16 +1959,7 @@ html body div[data-testid*="dropdown-menu"] {
   animation-delay: 0.25s;
 }
 
-/* Enhanced Flashlight card effects */
-@keyframes flashlight-pulse {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
+/* Enhanced Flashlight card effects - removed animations */
 .flashlight-card {
   position: relative;
   overflow: hidden;
@@ -2269,16 +2017,7 @@ html body div[data-testid*="dropdown-menu"] {
   opacity: 1;
 }
 
-/* Beam button animations */
-@keyframes beam-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Beam button animations - removed rotation animation */
 .beam-button {
   position: relative;
   background: var(--card);
@@ -2303,7 +2042,6 @@ html body div[data-testid*="dropdown-menu"] {
     var(--gold) 315deg,
     transparent 360deg
   );
-  animation: beam-rotate 3s linear infinite;
   transform: translate(-50%, -50%);
   z-index: 0;
   opacity: 0;
@@ -2327,99 +2065,11 @@ html body div[data-testid*="dropdown-menu"] {
   justify-content: center;
 }
 
-/* Enhanced scroll animations with intersection observer support */
-.scroll-item {
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(4px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Removed Enhanced scroll animations - elements now appear immediately */
 
-.scroll-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0px);
-}
+/* Removed Staggered animation delays */
 
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(4px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0px);
-}
-
-.scroll-animate-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  filter: blur(4px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-animate-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0px);
-}
-
-.scroll-animate-right {
-  opacity: 0;
-  transform: translateX(30px);
-  filter: blur(4px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-animate-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0px);
-}
-
-.scroll-animate-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  filter: blur(4px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-animate-scale.visible {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0px);
-}
-
-/* Staggered animation delays */
-.stagger-delay-1 { animation-delay: 0.1s; }
-.stagger-delay-2 { animation-delay: 0.2s; }
-.stagger-delay-3 { animation-delay: 0.3s; }
-.stagger-delay-4 { animation-delay: 0.4s; }
-.stagger-delay-5 { animation-delay: 0.5s; }
-.stagger-delay-6 { animation-delay: 0.6s; }
-.stagger-delay-7 { animation-delay: 0.7s; }
-.stagger-delay-8 { animation-delay: 0.8s; }
-
-/* Responsive animation considerations */
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal,
-  .text-reveal-letter,
-  .flashlight-card::before,
-  .flashlight-card::after,
-  .beam-button::before,
-  .scroll-animate,
-  .scroll-animate-left,
-  .scroll-animate-right,
-  .scroll-animate-scale {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
+/* Responsive animation considerations - no longer needed since animations are removed */
 
 /* Fix for main element padding-top issue - Maximum specificity */
 html body div main.verotrade-main-content {

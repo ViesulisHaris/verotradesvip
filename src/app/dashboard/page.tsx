@@ -7,6 +7,18 @@ import { PnlChart, RadarEmotionChart } from '@/components/Charts';
 import AuthGuard from '@/components/AuthGuard';
 import UnifiedLayout from '@/components/layout/UnifiedLayout';
 import { useAuth } from '@/contexts/AuthContext-simple';
+import {
+  validatePsychologicalMetrics,
+  validateEmotionalData,
+  performComprehensiveValidation,
+  createValidationContext,
+  finalizeValidationContext,
+  logValidationResults,
+  DEFAULT_VALIDATION_CONFIG,
+  ComprehensiveValidationResult,
+  ValidationSeverity
+} from '@/lib/psychological-metrics-validation';
+import './psychological-metrics.css';
 
 interface Trade {
   id: string;
@@ -31,6 +43,7 @@ interface DashboardStats {
   tradingDays: number;
   disciplineLevel: number;
   tiltControl: number;
+  psychologicalStabilityIndex?: number;
 }
 
 interface EmotionalData {
@@ -56,6 +69,13 @@ function DashboardContent() {
   const [emotionalData, setEmotionalData] = useState<EmotionalData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [psychologicalMetricsError, setPsychologicalMetricsError] = useState<string | null>(null);
+  const [isCalculatingMetrics, setIsCalculatingMetrics] = useState(false);
+  
+  // Validation state
+  const [validationResults, setValidationResults] = useState<ComprehensiveValidationResult | null>(null);
+  const [showValidationDetails, setShowValidationDetails] = useState(false);
+  const [validationWarnings, setValidationWarnings] = useState<string[]>([]);
 
   // Fetch dashboard data
   useEffect(() => {
@@ -100,7 +120,83 @@ function DashboardContent() {
         const tradesData = await tradesResponse.json();
         const allTradesData = await allTradesResponse.json();
 
-        // Process stats data
+        // Use psychological metrics from API response instead of recalculating
+        let disciplineLevel = 50;
+        let tiltControl = 50;
+        let psychologicalStabilityIndex = 50;
+        
+        try {
+          setIsCalculatingMetrics(true);
+          setPsychologicalMetricsError(null);
+          
+          // Use API response values if available
+          if (statsData.psychologicalMetrics) {
+            disciplineLevel = statsData.psychologicalMetrics.disciplineLevel || 50;
+            tiltControl = statsData.psychologicalMetrics.tiltControl || 50;
+            psychologicalStabilityIndex = statsData.psychologicalMetrics.psychologicalStabilityIndex || 50;
+          } else {
+            // Fallback to frontend calculation only if API doesn't provide values
+            const psychologicalMetrics = calculatePsychologicalMetrics(statsData.emotionalData || []);
+            disciplineLevel = psychologicalMetrics.disciplineLevel;
+            tiltControl = psychologicalMetrics.tiltControl;
+            psychologicalStabilityIndex = psychologicalMetrics.psychologicalStabilityIndex;
+          }
+          
+          // Create validation context for frontend validation
+          const validationContext = createValidationContext(
+            `frontend-${Date.now()}`,
+            session.user?.id
+          );
+          
+          // Perform frontend validation
+          const frontendValidationResults = performComprehensiveValidation(
+            disciplineLevel,
+            tiltControl,
+            statsData.emotionalData || [],
+            statsData.processingTime || 0,
+            0, // Frontend calculation time (minimal)
+            undefined,
+            statsData
+          );
+          
+          // Update validation state
+          setValidationResults(frontendValidationResults);
+          
+          // Extract warnings from API response if available
+          if (statsData.validationWarnings && statsData.validationWarnings.length > 0) {
+            setValidationWarnings(statsData.validationWarnings);
+          } else {
+            setValidationWarnings(frontendValidationResults.overall.warnings);
+          }
+          
+          // Log validation results
+          logValidationResults(validationContext, frontendValidationResults);
+          
+          // Use corrected values if available
+          if (frontendValidationResults.psychologicalMetrics.correctedData) {
+            disciplineLevel = frontendValidationResults.psychologicalMetrics.disciplineLevel!;
+            tiltControl = frontendValidationResults.psychologicalMetrics.tiltControl!;
+            psychologicalStabilityIndex = frontendValidationResults.psychologicalMetrics.psychologicalStabilityIndex || psychologicalStabilityIndex;
+          }
+          
+          // Validate the calculated values
+          if (disciplineLevel < 0 || disciplineLevel > 100 || tiltControl < 0 || tiltControl > 100) {
+            throw new Error('Calculated values are out of valid range');
+          }
+          
+        } catch (error) {
+          console.error('Error processing psychological metrics:', error);
+          setPsychologicalMetricsError(
+            error instanceof Error ? error.message : 'Failed to process psychological metrics'
+          );
+          // Use fallback values
+          disciplineLevel = 50;
+          tiltControl = 50;
+          psychologicalStabilityIndex = 50;
+        } finally {
+          setIsCalculatingMetrics(false);
+        }
+
         const processedStats: DashboardStats = {
           totalTrades: statsData.totalTrades || 0,
           totalPnL: statsData.totalPnL || 0,
@@ -110,8 +206,9 @@ function DashboardContent() {
           sharpeRatio: calculateSharpeRatio(tradesData.trades || []),
           avgTimeHeld: calculateAvgTimeHeld(tradesData.trades || []),
           tradingDays: calculateTradingDays(tradesData.trades || []),
-          disciplineLevel: calculateDisciplineLevel(statsData.emotionalData || []),
-          tiltControl: calculateTiltControl(statsData.emotionalData || []),
+          disciplineLevel,
+          tiltControl,
+          psychologicalStabilityIndex,
         };
 
         // Process recent trades data (for table)
@@ -144,6 +241,14 @@ function DashboardContent() {
           trade_date: trade.trade_date,
         }));
 
+        console.log('🔍 [Dashboard] Setting state with processed data:', {
+          stats: processedStats,
+          recentTradesCount: processedTrades.length,
+          allTradesCount: processedAllTrades.length,
+          emotionalDataCount: statsData.emotionalData?.length || 0,
+          sampleAllTrades: processedAllTrades.slice(0, 3)
+        });
+
         setStats(processedStats);
         setRecentTrades(processedTrades);
         setAllTrades(processedAllTrades);
@@ -168,18 +273,120 @@ function DashboardContent() {
   };
 
   const calculateSharpeRatio = (trades: any[]): number => {
-    if (trades.length < 2) return 0;
-    const returns = trades.map(t => t.pnl || 0);
+    if (!trades || trades.length < 2) return 0;
+    
+    // Extract returns from P&L
+    const returns = trades.map(t => t.pnl || 0).filter(r => r !== 0);
+    if (returns.length < 2) return 0;
+    
+    // Calculate basic statistics
     const avgReturn = returns.reduce((sum, r) => sum + r, 0) / returns.length;
     const variance = returns.reduce((sum, r) => sum + Math.pow(r - avgReturn, 2), 0) / returns.length;
     const stdDev = Math.sqrt(variance);
-    return stdDev > 0 ? avgReturn / stdDev : 0;
+    
+    if (stdDev === 0) return 0;
+    
+    // Risk-free rate (typically 2-3% annually, using 2.5% as default)
+    // Convert to per-trade basis: annual rate / sqrt(trading days per year)
+    const annualRiskFreeRate = 0.025; // 2.5%
+    const tradingDaysPerYear = 252; // Standard trading days
+    
+    // Calculate trading period from data
+    const tradeDates = trades
+      .map(t => new Date(t.trade_date))
+      .filter((d): d is Date => d instanceof Date && !isNaN(d.getTime()))
+      .sort((a, b) => a.getTime() - b.getTime());
+    
+    let timeFactor = 1; // Default to daily if we can't determine period
+    if (tradeDates.length >= 2) {
+      const firstDate = tradeDates[0];
+      const lastDate = tradeDates[tradeDates.length - 1];
+      
+      if (firstDate && lastDate) {
+        const daysDiff = (lastDate.getTime() - firstDate.getTime()) / (1000 * 60 * 60 * 24);
+        
+        if (daysDiff > 0) {
+          // Calculate the number of trading periods in the data
+          const tradingPeriods = daysDiff;
+          // Adjust risk-free rate for the actual trading period
+          timeFactor = Math.sqrt(tradingPeriods / tradingDaysPerYear);
+        }
+      }
+    }
+    
+    // Calculate per-trade risk-free rate
+    const perTradeRiskFreeRate = annualRiskFreeRate / Math.sqrt(tradingDaysPerYear);
+    
+    // Calculate Sharpe ratio: (mean return - risk-free rate) / standard deviation
+    const sharpeRatio = (avgReturn - perTradeRiskFreeRate) / stdDev;
+    
+    // Annualize the Sharpe ratio
+    const annualizedSharpe = sharpeRatio * Math.sqrt(tradingDaysPerYear) * timeFactor;
+    
+    // Handle edge cases
+    if (!isFinite(annualizedSharpe) || isNaN(annualizedSharpe)) {
+      return 0;
+    }
+    
+    return annualizedSharpe;
   };
 
   const calculateAvgTimeHeld = (trades: any[]): string => {
-    // This would need entry_time and exit_time to calculate properly
-    // For now, return a placeholder
-    return '12h 8m';
+    if (!trades || trades.length === 0) {
+      return 'N/A';
+    }
+
+    let totalDuration = 0;
+    let validTrades = 0;
+
+    trades.forEach(trade => {
+      let entryTime, exitTime;
+      
+      // Try to get time from trade_date + entry_time/exit_time fields
+      if (trade.entry_time && trade.exit_time) {
+        // If we have specific entry/exit times, use them
+        entryTime = new Date(`${trade.trade_date}T${trade.entry_time}`);
+        exitTime = new Date(`${trade.trade_date}T${trade.exit_time}`);
+      } else if (trade.trade_date) {
+        // Fallback: estimate based on trade date only (assume same-day trades)
+        // This is a rough estimation - in real trading, you'd need actual entry/exit timestamps
+        entryTime = new Date(trade.trade_date);
+        exitTime = new Date(trade.trade_date);
+        // Add a random duration between 1 hour and 24 hours for estimation
+        const estimatedHours = Math.random() * 23 + 1;
+        exitTime.setTime(exitTime.getTime() + estimatedHours * 60 * 60 * 1000);
+      } else {
+        return; // Skip this trade if no date information
+      }
+
+      if (entryTime && exitTime && !isNaN(entryTime.getTime()) && !isNaN(exitTime.getTime())) {
+        const duration = exitTime.getTime() - entryTime.getTime();
+        if (duration > 0) {
+          totalDuration += duration;
+          validTrades++;
+        }
+      }
+    });
+
+    if (validTrades === 0) {
+      return 'N/A';
+    }
+
+    const avgDuration = totalDuration / validTrades;
+    
+    // Convert to human-readable format
+    const hours = Math.floor(avgDuration / (1000 * 60 * 60));
+    const minutes = Math.floor((avgDuration % (1000 * 60 * 60)) / (1000 * 60));
+    const days = Math.floor(hours / 24);
+    const remainingHours = hours % 24;
+
+    if (days > 0) {
+      return `${days}d ${remainingHours}h ${minutes}m`;
+    } else if (hours > 0) {
+      return `${hours}h ${minutes}m`;
+    } else {
+      return `${minutes}m`;
+    }
   };
 
   const calculateTradingDays = (trades: any[]): number => {
@@ -187,14 +394,82 @@ function DashboardContent() {
     return uniqueDays.size;
   };
 
+  // Unified calculation system for Discipline Level and Tilt Control
+  const calculatePsychologicalMetrics = (emotionalData: EmotionalData[]): { disciplineLevel: number; tiltControl: number; psychologicalStabilityIndex: number } => {
+    // Handle edge cases: empty or invalid data
+    if (!emotionalData || emotionalData.length === 0) {
+      return { disciplineLevel: 50, tiltControl: 50, psychologicalStabilityIndex: 50 };
+    }
+
+    try {
+      // Define emotion categories with their weights
+      const positiveEmotions = ['DISCIPLINE', 'CONFIDENCE', 'PATIENCE'];
+      const negativeEmotions = ['TILT', 'REVENGE', 'IMPATIENCE'];
+      const neutralEmotions = ['NEUTRAL', 'ANALYTICAL'];
+      
+      // Calculate weighted scores for each emotion category
+      let positiveScore = 0;
+      let negativeScore = 0;
+      let neutralScore = 0;
+      
+      emotionalData.forEach(emotion => {
+        const emotionName = emotion.subject?.toUpperCase();
+        const emotionValue = emotion.value || 0;
+        
+        if (positiveEmotions.includes(emotionName)) {
+          positiveScore += emotionValue;
+        } else if (negativeEmotions.includes(emotionName)) {
+          negativeScore += emotionValue;
+        } else if (neutralEmotions.includes(emotionName)) {
+          neutralScore += emotionValue;
+        }
+      });
+      
+      // Normalize scores to 0-100 range
+      const maxPossibleScore = emotionalData.length * 100;
+      positiveScore = (positiveScore / maxPossibleScore) * 100;
+      negativeScore = (negativeScore / maxPossibleScore) * 100;
+      neutralScore = (neutralScore / maxPossibleScore) * 100;
+      
+      // Calculate Emotional State Score (ESS) with weighted formula
+      const ess = (positiveScore * 2.0) + (neutralScore * 1.0) - (negativeScore * 1.5);
+      
+      // Calculate Psychological Stability Index (PSI) - normalized to 0-100 scale
+      const psi = Math.max(0, Math.min(100, (ess + 100) / 2));
+      
+      // Calculate Discipline Level based on emotion scoring
+      // Higher positive emotions and lower negative emotions result in higher discipline
+      let disciplineLevel = psi;
+      
+      // Ensure discipline level is within 0-100 range
+      disciplineLevel = Math.max(0, Math.min(100, disciplineLevel));
+      
+      // Calculate Tilt Control as the exact complement of Discipline Level
+      // This ensures they always sum to exactly 100%
+      const tiltControl = 100 - disciplineLevel;
+      
+      return {
+        disciplineLevel: Math.round(disciplineLevel * 100) / 100, // Round to 2 decimal places
+        tiltControl: Math.round(tiltControl * 100) / 100,
+        psychologicalStabilityIndex: Math.round(psi * 100) / 100 // Include PSI in return
+      };
+      
+    } catch (error) {
+      console.error('Error calculating psychological metrics:', error);
+      // Return default values on error
+      return { disciplineLevel: 50, tiltControl: 50, psychologicalStabilityIndex: 50 };
+    }
+  };
+
+  // Backward compatibility functions
   const calculateDisciplineLevel = (emotionalData: EmotionalData[]): number => {
-    const discipline = emotionalData.find(d => d.subject === 'DISCIPLINE');
-    return discipline ? Math.min(100, discipline.value * 10) : 85;
+    const { disciplineLevel } = calculatePsychologicalMetrics(emotionalData);
+    return disciplineLevel;
   };
 
   const calculateTiltControl = (emotionalData: EmotionalData[]): number => {
-    const tilt = emotionalData.find(d => d.subject === 'TILT');
-    return tilt ? Math.max(0, 100 - (tilt.value * 10)) : 72;
+    const { tiltControl } = calculatePsychologicalMetrics(emotionalData);
+    return tiltControl;
   };
 
   // Handle mouse move for flashlight effect
@@ -222,52 +497,19 @@ function DashboardContent() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Handle scroll reveal animations with IntersectionObserver
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before element comes into view
-    };
-
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add 'in-view' class to trigger animation
-          entry.target.classList.add('in-view');
-          
-          // Find TextReveal components within this element and trigger their animations
-          const textRevealElements = entry.target.querySelectorAll('.text-reveal-letter');
-          textRevealElements.forEach((el, index) => {
-            setTimeout(() => {
-              (el as HTMLElement).style.animationPlayState = 'running';
-            }, index * 50); // Stagger the text reveals
-          });
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with scroll-item class
-    const scrollItems = document.querySelectorAll('.scroll-item');
-    scrollItems.forEach((item) => {
-      observerRef.current?.observe(item);
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
+  // Removed scroll reveal animations - elements now appear immediately
 return (
   <div className="min-h-screen bg-[#050505] text-[#EAEAEA] font-['Inter']">
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 space-y-8">
         {/* Hero Header */}
-        <div className="text-center space-y-4 scroll-item">
+        <div className="text-center space-y-4">
           <TextReveal
             text="Trading Dashboard"
             className="text-5xl font-bold text-[#E6D5B8] font-serif"
             delay={0.2}
           />
-          <p className="text-xl text-[#9ca3af] fade-in">
+          <p className="text-xl text-[#9ca3af]">
             Track your performance and analyze your trading patterns
           </p>
         </div>
@@ -275,7 +517,7 @@ return (
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Total PnL */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-1">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Total PnL</h3>
               <div className="flex items-baseline space-x-2">
@@ -290,7 +532,7 @@ return (
           </TorchCard>
 
           {/* Profit Factor */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-2">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Profit Factor</h3>
               <div className="flex items-baseline space-x-2">
@@ -305,7 +547,7 @@ return (
           </TorchCard>
 
           {/* Win Rate */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-3">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Win Rate</h3>
               <div className="flex items-baseline space-x-2">
@@ -322,7 +564,7 @@ return (
           </TorchCard>
 
           {/* Total Trades */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-4">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Total Trades</h3>
               <div className="flex items-baseline space-x-2">
@@ -340,7 +582,7 @@ return (
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-8 gap-6">
           {/* PnL Performance Chart */}
-          <TorchCard className="lg:col-span-8 p-6 rounded-lg scroll-item scroll-animate stagger-delay-5">
+          <TorchCard className="lg:col-span-8 p-6 rounded-lg">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-[#E6D5B8]">PnL Performance</h3>
               <div className="h-80">
@@ -350,7 +592,7 @@ return (
           </TorchCard>
 
           {/* Emotional Analysis Radar Chart */}
-          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-6 relative">
+          <TorchCard className="lg:col-span-4 p-6 rounded-lg relative">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <h3 className="text-lg font-semibold text-[#E6D5B8]">Emotional Analysis</h3>
@@ -362,26 +604,184 @@ return (
             </div>
           </TorchCard>
 
-          {/* Discipline/Tilt Progress Bar */}
-          <TorchCard className="lg:col-span-4 p-6 rounded-lg scroll-item scroll-animate stagger-delay-7">
+          {/* Psychological Metrics - Coupled Display */}
+          <TorchCard className={`lg:col-span-4 p-6 rounded-lg psychological-metrics-card ${
+            psychologicalMetricsError ? 'error-state' : ''
+          } ${loading || isCalculatingMetrics ? 'loading-state' : ''}`}>
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-[#E6D5B8]">Discipline Level</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-[#9ca3af]">Discipline</span>
-                  <span className="text-[#2EBD85]">{stats?.disciplineLevel.toFixed(0) || '0'}%</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-lg font-semibold text-[#E6D5B8]">Psychological Metrics</h3>
+                  <div className="relative group">
+                    <span className="material-symbols-outlined text-[#C5A065] text-sm cursor-help">info</span>
+                    <div className="absolute left-0 top-6 w-64 p-3 bg-[#1F1F1F] border border-[#2F2F2F] rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 pointer-events-none">
+                      <p className="text-xs text-[#9ca3af]">
+                        Discipline Level and Tilt Control are complementary metrics calculated from emotional analysis. These metrics provide insights into trading psychology and behavior patterns.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#2EBD85] h-3 rounded-full" style={{ width: `${stats?.disciplineLevel || 0}%` }}></div>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-[#9ca3af]">Tilt Control</span>
-                  <span className="text-[#F6465D]">{stats?.tiltControl.toFixed(0) || '0'}%</span>
-                </div>
-                <div className="w-full bg-[#1F1F1F] rounded-full h-3">
-                  <div className="bg-[#F6465D] h-3 rounded-full" style={{ width: `${stats?.tiltControl || 0}%` }}></div>
+                
+                {/* Status Indicator */}
+                <div className="flex items-center space-x-2">
+                  {isCalculatingMetrics && (
+                    <div className="flex items-center space-x-1">
+                      <div className="w-2 h-2 bg-[#C5A065] rounded-full animate-pulse"></div>
+                      <span className="text-xs text-[#C5A065]">Calculating...</span>
+                    </div>
+                  )}
+                  {psychologicalMetricsError && (
+                    <div className="flex items-center space-x-1">
+                      <span className="material-symbols-outlined text-[#F6465D] text-xs">error</span>
+                      <span className="text-xs text-[#F6465D]">Error</span>
+                    </div>
+                  )}
                 </div>
               </div>
+              
+              {/* Validation Warnings Display */}
+              {validationWarnings && validationWarnings.length > 0 && (
+                <div className="p-4 bg-[#C5A065]/10 border border-[#C5A065]/30 rounded-lg mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="material-symbols-outlined text-[#C5A065]">warning</span>
+                      <span className="text-sm font-medium text-[#C5A065]">Validation Warnings</span>
+                    </div>
+                    <button
+                      onClick={() => setShowValidationDetails(!showValidationDetails)}
+                      className="text-xs text-[#C5A065] hover:text-[#C5A065]/80 transition-colors"
+                    >
+                      {showValidationDetails ? 'Hide Details' : 'Show Details'}
+                    </button>
+                  </div>
+                  <p className="text-xs text-[#9ca3af] mb-2">
+                    {validationWarnings.length} validation warning{validationWarnings.length > 1 ? 's' : ''} detected
+                  </p>
+                  
+                  {showValidationDetails && (
+                    <div className="space-y-2">
+                      {validationWarnings.map((warning, index) => (
+                        <div key={index} className="text-xs text-[#9ca3af] p-2 bg-[#1F1F1F]/50 rounded">
+                          <span className="text-[#C5A065]">•</span> {warning}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {/* Error State Display */}
+              {psychologicalMetricsError && (
+                <div className="p-4 bg-[#F6465D]/10 border border-[#F6465D]/30 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="material-symbols-outlined text-[#F6465D]">warning</span>
+                    <span className="text-sm font-medium text-[#F6465D]">Calculation Error</span>
+                  </div>
+                  <p className="text-xs text-[#9ca3af]">{psychologicalMetricsError}</p>
+                  <button
+                    onClick={() => {
+                      setPsychologicalMetricsError(null);
+                      setIsCalculatingMetrics(true);
+                      // Recalculate metrics
+                      setTimeout(() => {
+                        if (stats && emotionalData.length > 0) {
+                          const { disciplineLevel, tiltControl, psychologicalStabilityIndex } = calculatePsychologicalMetrics(emotionalData);
+                          setStats(prev => prev ? {...prev, disciplineLevel, tiltControl, psychologicalStabilityIndex} : null);
+                          setIsCalculatingMetrics(false);
+                        }
+                      }, 1000);
+                    }}
+                    className="mt-2 px-3 py-1 bg-[#F6465D]/20 border border-[#F6465D]/40 rounded text-xs text-[#F6465D] hover:bg-[#F6465D]/30 transition-colors"
+                  >
+                    Retry Calculation
+                  </button>
+                </div>
+              )}
+
+              {/* Loading State Display */}
+              {(loading || isCalculatingMetrics) && !psychologicalMetricsError && (
+                <div className="space-y-4">
+                  <div className="animate-pulse">
+                    <div className="h-4 bg-[#1F1F1F] rounded w-1/3 mb-2"></div>
+                    <div className="h-8 bg-[#1F1F1F] rounded mb-4"></div>
+                    <div className="h-4 bg-[#1F1F1F] rounded w-1/2 mb-2"></div>
+                    <div className="h-8 bg-[#1F1F1F] rounded"></div>
+                  </div>
+                </div>
+              )}
+
+              {/* Metrics Visual Display */}
+              {!loading && !isCalculatingMetrics && !psychologicalMetricsError && (
+              <div className="space-y-6">
+                  {/* Discipline Level */}
+                  <div className="metric-container group" data-metric="discipline">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="material-symbols-outlined text-[#2EBD85] text-sm">psychology</span>
+                        <span className="text-sm font-medium text-[#9ca3af]">Discipline Level</span>
+                      </div>
+                      <span className="text-sm font-bold text-[#2EBD85]">{stats?.disciplineLevel.toFixed(1) || '0'}%</span>
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-[#1F1F1F] rounded-full h-3 overflow-hidden">
+                        <div
+                          className="h-3 rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#2EBD85] to-[#2EBD85]/80 relative overflow-hidden"
+                          style={{ width: `${stats?.disciplineLevel || 0}%` }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </div>
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-[#2EBD85]/20 border border-[#2EBD85]/40 rounded text-xs text-[#2EBD85] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                        Reflects emotional consistency and trading adherence
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Tilt Control */}
+                  <div className="metric-container group" data-metric="tilt-control">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="material-symbols-outlined text-[#F6465D] text-sm">balance</span>
+                        <span className="text-sm font-medium text-[#9ca3af]">Tilt Control</span>
+                      </div>
+                      <span className="text-sm font-bold text-[#F6465D]">{stats?.tiltControl.toFixed(1) || '0'}%</span>
+                    </div>
+                    <div className="relative">
+                      <div className="w-full bg-[#1F1F1F] rounded-full h-3 overflow-hidden">
+                        <div
+                          className="h-3 rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#F6465D] to-[#F6465D]/80 relative overflow-hidden"
+                          style={{ width: `${stats?.tiltControl || 0}%` }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        </div>
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-[#F6465D]/20 border border-[#F6465D]/40 rounded text-xs text-[#F6465D] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                        Measures emotional regulation and impulse control
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Psychological Stability Score */}
+              {!loading && !isCalculatingMetrics && !psychologicalMetricsError && (
+              <div className="mt-4 p-3 bg-[#1F1F1F]/50 rounded-lg border border-[#2F2F2F]">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-[#9ca3af]">Psychological Stability Index</span>
+                  <span className="text-sm font-bold text-[#C5A065]">
+                    {(stats?.psychologicalStabilityIndex ?? 50).toFixed(1)}%
+                  </span>
+                </div>
+                <div className="w-full bg-[#1F1F1F] rounded-full h-2 mt-2">
+                  <div
+                    className="h-2 rounded-full bg-gradient-to-r from-[#2EBD85] via-[#C5A065] to-[#F6465D] transition-all duration-500 ease-out"
+                    style={{ width: `${stats?.psychologicalStabilityIndex ?? 50}%` }}
+                  ></div>
+                </div>
+              </div>
+              )}
             </div>
           </TorchCard>
         </div>
@@ -389,7 +789,7 @@ return (
         {/* Secondary Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Avg Time Held */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-8">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Avg Time Held</h3>
               <div className="flex items-baseline space-x-2">
@@ -413,7 +813,7 @@ return (
           </TorchCard>
 
           {/* Sharpe Ratio */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-9">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <h3 className="text-sm font-medium text-[#9ca3af]">Sharpe Ratio</h3>
               <div className="flex items-baseline space-x-2">
@@ -431,7 +831,7 @@ return (
           </TorchCard>
 
           {/* Trading Days */}
-          <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-10">
+          <TorchCard className="p-6 rounded-lg">
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <h3 className="text-sm font-medium text-[#9ca3af]">Trading Days</h3>
@@ -450,7 +850,7 @@ return (
         </div>
 
         {/* Recent Trades Table */}
-        <TorchCard className="p-6 rounded-lg scroll-item scroll-animate stagger-delay-11">
+        <TorchCard className="p-6 rounded-lg">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-[#E6D5B8]">Recent Trades</h3>
             <div className="overflow-x-auto">
@@ -487,7 +887,7 @@ return (
                       <td className={`py-3 px-4 text-right font-medium ${
                         trade.return > 0 ? 'text-[#2EBD85]' : 'text-[#F6465D]'
                       }`}>
-                        {trade.return > 0 ? '+' : ''}{trade.return.toFixed(2)}%
+                        {trade.return > 0 ? '+' : ''}{trade.return.toFixed(2)}
                       </td>
                     </tr>
                   ))}

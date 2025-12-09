@@ -1,0 +1,3299 @@
+{
+  "timestamp": "2025-12-09T20:54:10.324Z",
+  "summary": {
+    "totalTests": 31,
+    "passedTests": 28,
+    "failedTests": 3,
+    "criticalFailures": 1,
+    "highSeverityFailures": 1,
+    "successRate": "90.3"
+  },
+  "categories": {
+    "dataBoundary": {
+      "totalTests": 6,
+      "passedTests": 6,
+      "failedTests": 0,
+      "successRate": "100.0",
+      "tests": [
+        {
+          "category": "dataBoundary",
+          "name": "Exactly 0% Values",
+          "description": "Test with exactly 0% values for all metrics",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 65,
+              "tiltControl": 65
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [
+                "Psychological Stability Index (0.0%) is below minimum threshold (20%)"
+              ],
+              "disciplineLevel": 0,
+              "tiltControl": 0,
+              "psychologicalStabilityIndex": 0,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 0,
+                "tiltControl": 0,
+                "psychologicalStabilityIndex": 0
+              }
+            },
+            "withinBounds": true,
+            "validNumbers": true
+          },
+          "duration": 0.7019999999999982,
+          "timestamp": "2025-12-09T20:53:25.849Z"
+        },
+        {
+          "category": "dataBoundary",
+          "name": "Exactly 100% Values",
+          "description": "Test with exactly 100% values for all metrics",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 76.56,
+              "tiltControl": 76.56
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [],
+              "disciplineLevel": 100,
+              "tiltControl": 100,
+              "psychologicalStabilityIndex": 100,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 100,
+                "tiltControl": 100,
+                "psychologicalStabilityIndex": 100
+              }
+            },
+            "withinBounds": true,
+            "validNumbers": true
+          },
+          "duration": 0.27490000000000236,
+          "timestamp": "2025-12-09T20:53:25.857Z"
+        },
+        {
+          "category": "dataBoundary",
+          "name": "Floating Point Precision Extremes",
+          "description": "Test with extreme floating point values",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "testCase": 0,
+                "inputValue": 0.30000000000000004,
+                "result": {
+                  "disciplineLevel": 86.35,
+                  "tiltControl": 86.35
+                },
+                "valid": true
+              },
+              {
+                "testCase": 1,
+                "inputValue": 5e-324,
+                "result": {
+                  "disciplineLevel": 86.25,
+                  "tiltControl": 86.25
+                },
+                "valid": true
+              },
+              {
+                "testCase": 2,
+                "inputValue": 1.7976931348623157e+308,
+                "result": {
+                  "disciplineLevel": 100,
+                  "tiltControl": 100
+                },
+                "valid": true
+              },
+              {
+                "testCase": 3,
+                "inputValue": 2.220446049250313e-16,
+                "result": {
+                  "disciplineLevel": 86.25,
+                  "tiltControl": 86.25
+                },
+                "valid": true
+              },
+              {
+                "testCase": 4,
+                "inputValue": 123456789012345000000,
+                "result": {
+                  "disciplineLevel": 100,
+                  "tiltControl": 100
+                },
+                "valid": true
+              },
+              {
+                "testCase": 5,
+                "inputValue": 1.23456789012345e-20,
+                "result": {
+                  "disciplineLevel": 86.25,
+                  "tiltControl": 86.25
+                },
+                "valid": true
+              }
+            ],
+            "allValid": true
+          },
+          "duration": 0.325800000000001,
+          "timestamp": "2025-12-09T20:53:25.858Z"
+        },
+        {
+          "category": "dataBoundary",
+          "name": "Negative Percentages",
+          "description": "Test with negative percentage values",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 22.21,
+              "tiltControl": 22.21
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Discipline Level must be between 0-100%",
+                "Tilt Control must be between 0-100%"
+              ],
+              "warnings": [
+                "Psychological Stability Index (-17.5%) is below minimum threshold (20%)"
+              ],
+              "disciplineLevel": 0,
+              "tiltControl": 0,
+              "psychologicalStabilityIndex": -17.5,
+              "deviation": 15,
+              "correctedData": {
+                "disciplineLevel": 0,
+                "tiltControl": 0,
+                "psychologicalStabilityIndex": 0
+              }
+            },
+            "normalizedCorrectly": true,
+            "validationErrorsDetected": true
+          },
+          "duration": 0.19480000000000075,
+          "timestamp": "2025-12-09T20:53:25.858Z"
+        },
+        {
+          "category": "dataBoundary",
+          "name": "Values Exceeding 100%",
+          "description": "Test with values exceeding 100%",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 86.25,
+              "tiltControl": 86.25
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Discipline Level must be between 0-100%",
+                "Tilt Control must be between 0-100%"
+              ],
+              "warnings": [
+                "Large deviation (50.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+              ],
+              "disciplineLevel": 100,
+              "tiltControl": 100,
+              "psychologicalStabilityIndex": 175,
+              "deviation": 50,
+              "correctedData": {
+                "disciplineLevel": 100,
+                "tiltControl": 100,
+                "psychologicalStabilityIndex": 100
+              }
+            },
+            "normalizedCorrectly": true,
+            "validationErrorsDetected": true
+          },
+          "duration": 0.1280000000000001,
+          "timestamp": "2025-12-09T20:53:25.859Z"
+        },
+        {
+          "category": "dataBoundary",
+          "name": "Decimal Precision Edge Cases",
+          "description": "Test with extreme decimal precision values",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 100,
+              "tiltControl": 100
+            },
+            "validNumbers": true,
+            "withinBounds": true
+          },
+          "duration": 0.10829999999999984,
+          "timestamp": "2025-12-09T20:53:25.859Z"
+        }
+      ]
+    },
+    "emotionalData": {
+      "totalTests": 5,
+      "passedTests": 5,
+      "failedTests": 0,
+      "successRate": "100.0",
+      "tests": [
+        {
+          "category": "emotionalData",
+          "name": "Empty Emotion Arrays",
+          "description": "Test with empty emotional data arrays",
+          "severity": "CRITICAL",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "testCase": 0,
+                "inputType": "empty array",
+                "result": {
+                  "disciplineLevel": 50,
+                  "tiltControl": 50
+                },
+                "validation": {
+                  "isValid": true,
+                  "errors": [],
+                  "warnings": [
+                    "Emotional data array is empty"
+                  ],
+                  "validEmotions": [],
+                  "invalidEmotions": [],
+                  "totalEmotions": 0,
+                  "duplicateEmotions": []
+                },
+                "passed": true
+              },
+              {
+                "testCase": 1,
+                "inputType": "null",
+                "result": {
+                  "disciplineLevel": 50,
+                  "tiltControl": 50
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Emotional data is null or undefined"
+                  ],
+                  "warnings": [],
+                  "validEmotions": [],
+                  "invalidEmotions": [],
+                  "totalEmotions": 0,
+                  "duplicateEmotions": []
+                },
+                "passed": true
+              },
+              {
+                "testCase": 2,
+                "inputType": "undefined",
+                "result": {
+                  "disciplineLevel": 50,
+                  "tiltControl": 50
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Emotional data is null or undefined"
+                  ],
+                  "warnings": [],
+                  "validEmotions": [],
+                  "invalidEmotions": [],
+                  "totalEmotions": 0,
+                  "duplicateEmotions": []
+                },
+                "passed": true
+              }
+            ],
+            "allHandledCorrectly": true
+          },
+          "duration": 0.3160000000000025,
+          "timestamp": "2025-12-09T20:53:25.860Z"
+        },
+        {
+          "category": "emotionalData",
+          "name": "Duplicate Emotion Entries",
+          "description": "Test with duplicate emotion entries",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 99.39,
+              "tiltControl": 99.39
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [
+                "Duplicate emotion found: DISCIPLINE",
+                "Unknown emotion: CONFIDENCE",
+                "Duplicate emotion found: CONFIDENCE",
+                "Unknown emotion: CONFIDENCE"
+              ],
+              "validEmotions": [
+                "DISCIPLINE",
+                "DISCIPLINE",
+                "TILT"
+              ],
+              "invalidEmotions": [
+                "CONFIDENCE",
+                "CONFIDENCE"
+              ],
+              "totalEmotions": 5,
+              "duplicateEmotions": [
+                "DISCIPLINE",
+                "CONFIDENCE"
+              ]
+            },
+            "handledGracefully": true,
+            "duplicatesDetected": true
+          },
+          "duration": 0.2259999999999991,
+          "timestamp": "2025-12-09T20:53:25.860Z"
+        },
+        {
+          "category": "emotionalData",
+          "name": "Invalid Emotion Names",
+          "description": "Test with invalid emotion names",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 50,
+              "tiltControl": 50
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Emotion at index 1 has invalid or missing subject field",
+                "Emotion at index 2 has invalid or missing subject field",
+                "Emotion at index 3 has invalid or missing subject field",
+                "Emotion at index 4 has invalid or missing subject field"
+              ],
+              "warnings": [
+                "Unknown emotion: INVALID_EMOTION"
+              ],
+              "validEmotions": [
+                "DISCIPLINE"
+              ],
+              "invalidEmotions": [
+                "INVALID_EMOTION"
+              ],
+              "totalEmotions": 6,
+              "duplicateEmotions": []
+            },
+            "handledGracefully": true,
+            "invalidEmotionsDetected": true
+          },
+          "duration": 1.0885000000000034,
+          "timestamp": "2025-12-09T20:53:25.862Z"
+        },
+        {
+          "category": "emotionalData",
+          "name": "Missing Required Emotion Fields",
+          "description": "Test with missing required emotion fields",
+          "severity": "CRITICAL",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 72.92,
+              "tiltControl": 72.92
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Emotion CONFIDENCE has invalid value: undefined",
+                "Emotion at index 2 has invalid or missing subject field",
+                "Emotion at index 3 has invalid or missing subject field",
+                "Emotion TILT has invalid value: null",
+                "Emotion REVENGE has invalid value: undefined"
+              ],
+              "warnings": [
+                "Unknown emotion: CONFIDENCE"
+              ],
+              "validEmotions": [
+                "DISCIPLINE",
+                "TILT",
+                "REVENGE"
+              ],
+              "invalidEmotions": [
+                "CONFIDENCE"
+              ],
+              "totalEmotions": 6,
+              "duplicateEmotions": []
+            },
+            "handledGracefully": true,
+            "validationErrorsDetected": true
+          },
+          "duration": 0.2506000000000057,
+          "timestamp": "2025-12-09T20:53:25.862Z"
+        },
+        {
+          "category": "emotionalData",
+          "name": "Circular Reference Emotions",
+          "description": "Test with circular reference structures in emotional data",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 89.06,
+              "tiltControl": 89.06
+            },
+            "error": null,
+            "handledGracefully": true,
+            "detectedCircularReference": false
+          },
+          "duration": 0.11650000000000205,
+          "timestamp": "2025-12-09T20:53:25.863Z"
+        }
+      ]
+    },
+    "mathematicalCoupling": {
+      "totalTests": 5,
+      "passedTests": 4,
+      "failedTests": 1,
+      "successRate": "80.0",
+      "tests": [
+        {
+          "category": "mathematicalCoupling",
+          "name": "Coupling Factor at Boundaries",
+          "description": "Test coupling factor at boundary values (0, 1, negative)",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "couplingFactor": 0,
+                "description": "No coupling",
+                "result": {
+                  "disciplineLevel": 88.75,
+                  "tiltControl": 88.75
+                },
+                "valid": true
+              },
+              {
+                "couplingFactor": 0.5,
+                "description": "Medium coupling",
+                "result": {
+                  "disciplineLevel": 93.74,
+                  "tiltControl": 93.74
+                },
+                "valid": true
+              },
+              {
+                "couplingFactor": 1,
+                "description": "Maximum coupling",
+                "result": {
+                  "disciplineLevel": 98.73,
+                  "tiltControl": 98.73
+                },
+                "valid": true
+              },
+              {
+                "couplingFactor": -0.5,
+                "description": "Negative coupling",
+                "result": {
+                  "disciplineLevel": 83.76,
+                  "tiltControl": 83.76
+                },
+                "valid": true
+              }
+            ],
+            "allValid": true
+          },
+          "duration": 0.4796000000000049,
+          "timestamp": "2025-12-09T20:53:25.863Z"
+        },
+        {
+          "category": "mathematicalCoupling",
+          "name": "Maximum Deviation at Exact Limits",
+          "description": "Test maximum deviation constraint at exact limits",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "result": {
+              "disciplineLevel": 100,
+              "tiltControl": 100
+            },
+            "deviation": 0,
+            "maxDeviationRespected": true,
+            "withinBounds": true
+          },
+          "duration": 0.11549999999999727,
+          "timestamp": "2025-12-09T20:53:25.864Z"
+        },
+        {
+          "category": "mathematicalCoupling",
+          "name": "Identical Discipline/Tilt Values",
+          "description": "Test with identical discipline and tilt control values",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "testCase": {
+                  "discipline": 0,
+                  "tilt": 0
+                },
+                "validation": {
+                  "isValid": true,
+                  "errors": [],
+                  "warnings": [
+                    "Psychological Stability Index (0.0%) is below minimum threshold (20%)"
+                  ],
+                  "disciplineLevel": 0,
+                  "tiltControl": 0,
+                  "psychologicalStabilityIndex": 0,
+                  "deviation": 0,
+                  "correctedData": {
+                    "disciplineLevel": 0,
+                    "tiltControl": 0,
+                    "psychologicalStabilityIndex": 0
+                  }
+                },
+                "deviation": 0,
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 50,
+                  "tilt": 50
+                },
+                "validation": {
+                  "isValid": true,
+                  "errors": [],
+                  "warnings": [],
+                  "disciplineLevel": 50,
+                  "tiltControl": 50,
+                  "psychologicalStabilityIndex": 50,
+                  "deviation": 0,
+                  "correctedData": {
+                    "disciplineLevel": 50,
+                    "tiltControl": 50,
+                    "psychologicalStabilityIndex": 50
+                  }
+                },
+                "deviation": 0,
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 100,
+                  "tilt": 100
+                },
+                "validation": {
+                  "isValid": true,
+                  "errors": [],
+                  "warnings": [],
+                  "disciplineLevel": 100,
+                  "tiltControl": 100,
+                  "psychologicalStabilityIndex": 100,
+                  "deviation": 0,
+                  "correctedData": {
+                    "disciplineLevel": 100,
+                    "tiltControl": 100,
+                    "psychologicalStabilityIndex": 100
+                  }
+                },
+                "deviation": 0,
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 25.5,
+                  "tilt": 25.5
+                },
+                "validation": {
+                  "isValid": true,
+                  "errors": [],
+                  "warnings": [],
+                  "disciplineLevel": 25.5,
+                  "tiltControl": 25.5,
+                  "psychologicalStabilityIndex": 25.5,
+                  "deviation": 0,
+                  "correctedData": {
+                    "disciplineLevel": 25.5,
+                    "tiltControl": 25.5,
+                    "psychologicalStabilityIndex": 25.5
+                  }
+                },
+                "deviation": 0,
+                "passed": true
+              }
+            ],
+            "allIdentical": true
+          },
+          "duration": 0.18679999999999808,
+          "timestamp": "2025-12-09T20:53:25.864Z"
+        },
+        {
+          "category": "mathematicalCoupling",
+          "name": "Extreme Ratio Scenarios",
+          "description": "Test with extreme discipline/tilt ratios",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "testCase": {
+                  "discipline": 100,
+                  "tilt": 0
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Impossible psychological state detected: Very high discipline with very low tilt control"
+                  ],
+                  "warnings": [
+                    "Large deviation (100.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+                  ],
+                  "disciplineLevel": 100,
+                  "tiltControl": 85,
+                  "psychologicalStabilityIndex": 50,
+                  "deviation": 100,
+                  "correctedData": {
+                    "disciplineLevel": 100,
+                    "tiltControl": 85,
+                    "psychologicalStabilityIndex": 92.5
+                  }
+                },
+                "ratio": "Infinity",
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 0,
+                  "tilt": 100
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Impossible psychological state detected: Very low discipline with very high tilt control"
+                  ],
+                  "warnings": [
+                    "Large deviation (100.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+                  ],
+                  "disciplineLevel": 85,
+                  "tiltControl": 100,
+                  "psychologicalStabilityIndex": 50,
+                  "deviation": 100,
+                  "correctedData": {
+                    "disciplineLevel": 85,
+                    "tiltControl": 100,
+                    "psychologicalStabilityIndex": 92.5
+                  }
+                },
+                "ratio": 0,
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 99.9,
+                  "tilt": 0.1
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Impossible psychological state detected: Very high discipline with very low tilt control"
+                  ],
+                  "warnings": [
+                    "Large deviation (99.8%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+                  ],
+                  "disciplineLevel": 99.9,
+                  "tiltControl": 84.9,
+                  "psychologicalStabilityIndex": 50,
+                  "deviation": 99.80000000000001,
+                  "correctedData": {
+                    "disciplineLevel": 99.9,
+                    "tiltControl": 84.9,
+                    "psychologicalStabilityIndex": 92.4
+                  }
+                },
+                "ratio": 999,
+                "passed": true
+              },
+              {
+                "testCase": {
+                  "discipline": 0.1,
+                  "tilt": 99.9
+                },
+                "validation": {
+                  "isValid": false,
+                  "errors": [
+                    "Impossible psychological state detected: Very low discipline with very high tilt control"
+                  ],
+                  "warnings": [
+                    "Large deviation (99.8%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+                  ],
+                  "disciplineLevel": 84.9,
+                  "tiltControl": 99.9,
+                  "psychologicalStabilityIndex": 50,
+                  "deviation": 99.80000000000001,
+                  "correctedData": {
+                    "disciplineLevel": 84.9,
+                    "tiltControl": 99.9,
+                    "psychologicalStabilityIndex": 92.4
+                  }
+                },
+                "ratio": 0.001001001001001001,
+                "passed": true
+              }
+            ],
+            "allHandledCorrectly": true
+          },
+          "duration": 0.2529000000000039,
+          "timestamp": "2025-12-09T20:53:25.864Z"
+        },
+        {
+          "category": "mathematicalCoupling",
+          "name": "NaN/Infinity Propagation",
+          "description": "Test with NaN and Infinity values in calculations",
+          "severity": "CRITICAL",
+          "passed": false,
+          "details": {
+            "result": {
+              "disciplineLevel": null,
+              "tiltControl": null
+            },
+            "validNumbers": false,
+            "finiteValues": false,
+            "withinBounds": false
+          },
+          "duration": 0.1180000000000021,
+          "timestamp": "2025-12-09T20:53:25.865Z"
+        }
+      ]
+    },
+    "systemIntegration": {
+      "totalTests": 5,
+      "passedTests": 4,
+      "failedTests": 1,
+      "successRate": "80.0",
+      "tests": [
+        {
+          "category": "systemIntegration",
+          "name": "Expired Authentication Tokens",
+          "description": "Test with expired authentication tokens",
+          "severity": "HIGH",
+          "details": {
+            "statusCode": 200,
+            "responseData": {
+              "totalTrades": 0,
+              "totalPnL": 0,
+              "winRate": 0,
+              "avgTradeSize": 0,
+              "lastSyncTime": 1765313607016,
+              "emotionalData": [],
+              "psychologicalMetrics": {
+                "disciplineLevel": 50,
+                "tiltControl": 50
+              },
+              "validationWarnings": [
+                "Development mode: Using mock data due to authentication failure"
+              ],
+              "requestId": "3qkvfp",
+              "processingTime": 222,
+              "mockData": true
+            },
+            "handledCorrectly": false
+          },
+          "duration": 1160.8139,
+          "timestamp": "2025-12-09T20:53:27.026Z"
+        },
+        {
+          "category": "systemIntegration",
+          "name": "Malformed Request Headers",
+          "description": "Test with malformed request headers",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "headers": {
+                  "Authorization": "InvalidFormat"
+                },
+                "statusCode": 200,
+                "responseData": {
+                  "totalTrades": 0,
+                  "totalPnL": 0,
+                  "winRate": 0,
+                  "avgTradeSize": 0,
+                  "lastSyncTime": 1765313607095,
+                  "emotionalData": [],
+                  "psychologicalMetrics": {
+                    "disciplineLevel": 50,
+                    "tiltControl": 50
+                  },
+                  "validationWarnings": [
+                    "Development mode: Using mock data due to authentication failure"
+                  ],
+                  "requestId": "mv6r79",
+                  "processingTime": 2,
+                  "mockData": true
+                },
+                "passed": true
+              },
+              {
+                "headers": {
+                  "Content-Type": null
+                },
+                "statusCode": 200,
+                "responseData": {
+                  "totalTrades": 0,
+                  "totalPnL": 0,
+                  "winRate": 0,
+                  "avgTradeSize": 0,
+                  "lastSyncTime": 1765313607161,
+                  "emotionalData": [],
+                  "psychologicalMetrics": {
+                    "disciplineLevel": 50,
+                    "tiltControl": 50
+                  },
+                  "validationWarnings": [
+                    "Development mode: Using mock data due to authentication failure"
+                  ],
+                  "requestId": "aue3j",
+                  "processingTime": 1,
+                  "mockData": true
+                },
+                "passed": true
+              },
+              {
+                "headers": {
+                  "User-Agent": 123
+                },
+                "statusCode": 200,
+                "responseData": {
+                  "totalTrades": 0,
+                  "totalPnL": 0,
+                  "winRate": 0,
+                  "avgTradeSize": 0,
+                  "lastSyncTime": 1765313607216,
+                  "emotionalData": [],
+                  "psychologicalMetrics": {
+                    "disciplineLevel": 50,
+                    "tiltControl": 50
+                  },
+                  "validationWarnings": [
+                    "Development mode: Using mock data due to authentication failure"
+                  ],
+                  "requestId": "xhrl0c",
+                  "processingTime": 4,
+                  "mockData": true
+                },
+                "passed": true
+              },
+              {
+                "headers": {},
+                "statusCode": 200,
+                "responseData": {
+                  "totalTrades": 0,
+                  "totalPnL": 0,
+                  "winRate": 0,
+                  "avgTradeSize": 0,
+                  "lastSyncTime": 1765313607293,
+                  "emotionalData": [],
+                  "psychologicalMetrics": {
+                    "disciplineLevel": 50,
+                    "tiltControl": 50
+                  },
+                  "validationWarnings": [
+                    "Development mode: Using mock data due to authentication failure"
+                  ],
+                  "requestId": "o4p26nr",
+                  "processingTime": 2,
+                  "mockData": true
+                },
+                "passed": true
+              }
+            ],
+            "allHandledCorrectly": true
+          },
+          "duration": 270.15689999999995,
+          "timestamp": "2025-12-09T20:53:27.297Z"
+        },
+        {
+          "category": "systemIntegration",
+          "name": "Extremely Large Request Payloads",
+          "description": "Test with extremely large request payloads",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "payloadSize": 2011849,
+            "statusCode": 405,
+            "responseData": {},
+            "handledCorrectly": true
+          },
+          "duration": 94.78710000000001,
+          "timestamp": "2025-12-09T20:53:27.392Z"
+        },
+        {
+          "category": "systemIntegration",
+          "name": "Concurrent Conflicting Requests",
+          "description": "Test with concurrent conflicting requests",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "numberOfRequests": 10,
+            "results": [
+              {
+                "requestIndex": 0,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 1,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 2,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 3,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 4,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 5,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 6,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 7,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 8,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              },
+              {
+                "requestIndex": 9,
+                "statusCode": 405,
+                "responseData": {},
+                "passed": true
+              }
+            ],
+            "allHandledCorrectly": true
+          },
+          "duration": 215.5897,
+          "timestamp": "2025-12-09T20:53:27.608Z"
+        },
+        {
+          "category": "systemIntegration",
+          "name": "Network Interruption Scenarios",
+          "description": "Test with network interruption scenarios",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "url": "http://localhost:3000/api/confluence-stats",
+                "statusCode": 200,
+                "passed": true,
+                "error": null
+              },
+              {
+                "url": "http://invalid-server-url/api/confluence-stats",
+                "passed": true,
+                "error": "This operation was aborted",
+                "errorType": "AbortError"
+              },
+              {
+                "url": "http://localhost:9999/api/confluence-stats",
+                "passed": true,
+                "error": "fetch failed",
+                "errorType": "TypeError"
+              }
+            ],
+            "allHandledGracefully": true
+          },
+          "duration": 1077.6391,
+          "timestamp": "2025-12-09T20:53:28.686Z"
+        }
+      ]
+    },
+    "userExperience": {
+      "totalTests": 5,
+      "passedTests": 4,
+      "failedTests": 1,
+      "successRate": "80.0",
+      "tests": [
+        {
+          "category": "userExperience",
+          "name": "Rapid Successive Calculations",
+          "description": "Test rapid successive psychological metrics calculations",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "iterations": 1000,
+            "totalDuration": 2.166500000000269,
+            "avgDuration": 0.0021665000000002693,
+            "maxDuration": 0.11819999999988795,
+            "minDuration": 0.0009000000000014552,
+            "allConsistent": true,
+            "performanceAcceptable": true
+          },
+          "duration": 2.6910000000002583,
+          "timestamp": "2025-12-09T20:53:28.689Z"
+        },
+        {
+          "category": "userExperience",
+          "name": "Browser Refresh During Calculations",
+          "description": "Test browser refresh behavior during calculations",
+          "severity": "MEDIUM",
+          "passed": false,
+          "details": {
+            "calculationInterrupted": false,
+            "resultBeforeInterruption": null,
+            "resultAfterInterruption": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "systemStable": true
+          },
+          "duration": 0.24219999999968422,
+          "timestamp": "2025-12-09T20:53:28.689Z"
+        },
+        {
+          "category": "userExperience",
+          "name": "Multiple Tabs Open",
+          "description": "Test behavior with multiple tabs open (simulated)",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "numberOfTabs": 10,
+            "tabCalculations": [
+              {
+                "tabId": 0,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 1,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 2,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 3,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 4,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 5,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 6,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 7,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 8,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              },
+              {
+                "tabId": 9,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "timestamp": 1765313608690
+              }
+            ],
+            "allConsistent": true,
+            "totalCalculations": 1000,
+            "avgTimePerCalculation": 0.001984899999999925,
+            "performanceAcceptable": true
+          },
+          "duration": 2.213000000000193,
+          "timestamp": "2025-12-09T20:53:28.692Z"
+        },
+        {
+          "category": "userExperience",
+          "name": "Mobile Device Limitations",
+          "description": "Test behavior under mobile device limitations (simulated)",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "iterations": 100,
+            "avgDuration": 0.003074000000015076,
+            "maxDuration": 0.034799999999904685,
+            "allConsistent": true,
+            "memoryUsage": 0,
+            "mobilePerformanceAcceptable": true
+          },
+          "duration": 263.7347,
+          "timestamp": "2025-12-09T20:53:28.956Z"
+        },
+        {
+          "category": "userExperience",
+          "name": "Accessibility Tool Interactions",
+          "description": "Test interactions with accessibility tools (simulated)",
+          "severity": "LOW",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "modification": {
+                  "type": "high_contrast",
+                  "description": "High contrast mode"
+                },
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74,
+                  "accessibilityAnnotations": {
+                    "disciplineLevel": "94.74% discipline level",
+                    "tiltControl": "94.74% tilt control",
+                    "readable": true
+                  }
+                },
+                "duration": 3.8216184114867646,
+                "accessible": true
+              },
+              {
+                "modification": {
+                  "type": "large_text",
+                  "description": "Large text mode"
+                },
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74,
+                  "accessibilityAnnotations": {
+                    "disciplineLevel": "94.74% discipline level",
+                    "tiltControl": "94.74% tilt control",
+                    "readable": true
+                  }
+                },
+                "duration": 2.4566786018713933,
+                "accessible": true
+              },
+              {
+                "modification": {
+                  "type": "screen_reader",
+                  "description": "Screen reader active"
+                },
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74,
+                  "accessibilityAnnotations": {
+                    "disciplineLevel": "94.74% discipline level",
+                    "tiltControl": "94.74% tilt control",
+                    "readable": true
+                  }
+                },
+                "duration": 7.583747110176896,
+                "accessible": true
+              },
+              {
+                "modification": {
+                  "type": "keyboard_navigation",
+                  "description": "Keyboard navigation"
+                },
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74,
+                  "accessibilityAnnotations": {
+                    "disciplineLevel": "94.74% discipline level",
+                    "tiltControl": "94.74% tilt control",
+                    "readable": true
+                  }
+                },
+                "duration": 2.524640395619931,
+                "accessible": true
+              },
+              {
+                "modification": {
+                  "type": "voice_control",
+                  "description": "Voice control"
+                },
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74,
+                  "accessibilityAnnotations": {
+                    "disciplineLevel": "94.74% discipline level",
+                    "tiltControl": "94.74% tilt control",
+                    "readable": true
+                  }
+                },
+                "duration": 8.547920958039926,
+                "accessible": true
+              }
+            ],
+            "allAccessible": true,
+            "avgDuration": 4.986921095438982,
+            "maxDuration": 8.547920958039926,
+            "accessibilityPerformanceAcceptable": true
+          },
+          "duration": 0.44450000000006185,
+          "timestamp": "2025-12-09T20:53:28.957Z"
+        }
+      ]
+    },
+    "productionEnvironment": {
+      "totalTests": 5,
+      "passedTests": 5,
+      "failedTests": 0,
+      "successRate": "100.0",
+      "tests": [
+        {
+          "category": "productionEnvironment",
+          "name": "Database Connection Limits",
+          "description": "Test behavior when database connection limits are reached (simulated)",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "scenario": {
+                  "connections": 1,
+                  "description": "Single connection"
+                },
+                "duration": 55.23640000000023,
+                "successfulConnections": 1,
+                "totalConnections": 1,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "connections": 10,
+                  "description": "Multiple connections"
+                },
+                "duration": 109.14499999999998,
+                "successfulConnections": 10,
+                "totalConnections": 10,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "connections": 100,
+                  "description": "High connection count"
+                },
+                "duration": 108.50590000000011,
+                "successfulConnections": 100,
+                "totalConnections": 100,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "connections": 1000,
+                  "description": "Connection limit reached"
+                },
+                "duration": 109.66499999999996,
+                "successfulConnections": 1000,
+                "totalConnections": 1000,
+                "passed": true
+              }
+            ],
+            "allScenariosHandled": true,
+            "maxConnectionsTested": 1000
+          },
+          "duration": 383.35149999999976,
+          "timestamp": "2025-12-09T20:53:29.340Z"
+        },
+        {
+          "category": "productionEnvironment",
+          "name": "Memory Pressure Scenarios",
+          "description": "Test behavior under memory pressure (simulated)",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "scenario": {
+                  "pressure": "low",
+                  "memoryUsage": 10485760
+                },
+                "memoryAllocated": 10485760,
+                "duration": 0.031300000000101136,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "pressure": "medium",
+                  "memoryUsage": 52428800
+                },
+                "memoryAllocated": 52428800,
+                "duration": 0.03949999999986176,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "pressure": "high",
+                  "memoryUsage": 104857600
+                },
+                "memoryAllocated": 104857600,
+                "duration": 0.08000000000038199,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "pressure": "extreme",
+                  "memoryUsage": 209715200
+                },
+                "memoryAllocated": 209715200,
+                "duration": 0.03670000000010987,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              }
+            ],
+            "allScenariosHandled": true,
+            "maxMemoryTested": 209715200
+          },
+          "duration": 336.77480000000014,
+          "timestamp": "2025-12-09T20:53:29.677Z"
+        },
+        {
+          "category": "productionEnvironment",
+          "name": "High CPU Usage Conditions",
+          "description": "Test behavior under high CPU usage (simulated)",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "cpuLoad": 0,
+                "duration": 0.006300000000010186,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "cpuLoad": 25,
+                "duration": 0.0037999999999556167,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "cpuLoad": 50,
+                "duration": 0.005000000000109139,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "cpuLoad": 75,
+                "duration": 0.002199999999902502,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              },
+              {
+                "cpuLoad": 90,
+                "duration": 0.0020000000004074536,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "passed": true
+              }
+            ],
+            "allScenariosHandled": true,
+            "maxDuration": 0.006300000000010186,
+            "performanceUnderLoadAcceptable": true
+          },
+          "duration": 0.8040999999998348,
+          "timestamp": "2025-12-09T20:53:29.679Z"
+        },
+        {
+          "category": "productionEnvironment",
+          "name": "Disk Space Limitations",
+          "description": "Test behavior under disk space limitations (simulated)",
+          "severity": "MEDIUM",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "scenario": {
+                  "available": "1GB",
+                  "size": 1073741824
+                },
+                "dataSize": 2232,
+                "duration": 0.027800000000297587,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "diskOperationSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "available": "100MB",
+                  "size": 104857600
+                },
+                "dataSize": 2232,
+                "duration": 0.0027000000000043656,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "diskOperationSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "available": "10MB",
+                  "size": 10485760
+                },
+                "dataSize": 2232,
+                "duration": 0.0015000000003055902,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "diskOperationSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "available": "1MB",
+                  "size": 1048576
+                },
+                "dataSize": 2232,
+                "duration": 0.0019999999999527063,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "diskOperationSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "available": "0KB",
+                  "size": 0
+                },
+                "error": "Insufficient disk space",
+                "diskErrorHandled": true,
+                "passed": true
+              }
+            ],
+            "allScenariosHandled": true,
+            "diskSpaceErrorsHandled": 1
+          },
+          "duration": 0.4885999999996784,
+          "timestamp": "2025-12-09T20:53:29.679Z"
+        },
+        {
+          "category": "productionEnvironment",
+          "name": "Network Latency Spikes",
+          "description": "Test behavior under network latency spikes (simulated)",
+          "severity": "HIGH",
+          "passed": true,
+          "details": {
+            "results": [
+              {
+                "scenario": {
+                  "latency": 0,
+                  "description": "No latency"
+                },
+                "totalDuration": 24010.7249,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "latency": 100,
+                  "description": "100ms latency"
+                },
+                "totalDuration": 114.72829999999885,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "latency": 500,
+                  "description": "500ms latency"
+                },
+                "totalDuration": 501.3316999999988,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "latency": 1000,
+                  "description": "1 second latency"
+                },
+                "totalDuration": 1000.4026000000013,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "latency": 5000,
+                  "description": "5 second latency"
+                },
+                "totalDuration": 5001.7323,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              },
+              {
+                "scenario": {
+                  "latency": 10000,
+                  "description": "10 second latency"
+                },
+                "totalDuration": 10012.669499999996,
+                "result": {
+                  "disciplineLevel": 94.74,
+                  "tiltControl": 94.74
+                },
+                "networkRequestSuccessful": true,
+                "passed": true
+              }
+            ],
+            "allScenariosHandled": true,
+            "maxLatencyHandled": 10000,
+            "totalTestDuration": 40641.58929999999
+          },
+          "duration": 40642.4398,
+          "timestamp": "2025-12-09T20:54:10.322Z"
+        }
+      ]
+    }
+  },
+  "detailedResults": [
+    {
+      "category": "dataBoundary",
+      "name": "Exactly 0% Values",
+      "description": "Test with exactly 0% values for all metrics",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 65,
+          "tiltControl": 65
+        },
+        "validation": {
+          "isValid": true,
+          "errors": [],
+          "warnings": [
+            "Psychological Stability Index (0.0%) is below minimum threshold (20%)"
+          ],
+          "disciplineLevel": 0,
+          "tiltControl": 0,
+          "psychologicalStabilityIndex": 0,
+          "deviation": 0,
+          "correctedData": {
+            "disciplineLevel": 0,
+            "tiltControl": 0,
+            "psychologicalStabilityIndex": 0
+          }
+        },
+        "withinBounds": true,
+        "validNumbers": true
+      },
+      "duration": 0.7019999999999982,
+      "timestamp": "2025-12-09T20:53:25.849Z"
+    },
+    {
+      "category": "dataBoundary",
+      "name": "Exactly 100% Values",
+      "description": "Test with exactly 100% values for all metrics",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 76.56,
+          "tiltControl": 76.56
+        },
+        "validation": {
+          "isValid": true,
+          "errors": [],
+          "warnings": [],
+          "disciplineLevel": 100,
+          "tiltControl": 100,
+          "psychologicalStabilityIndex": 100,
+          "deviation": 0,
+          "correctedData": {
+            "disciplineLevel": 100,
+            "tiltControl": 100,
+            "psychologicalStabilityIndex": 100
+          }
+        },
+        "withinBounds": true,
+        "validNumbers": true
+      },
+      "duration": 0.27490000000000236,
+      "timestamp": "2025-12-09T20:53:25.857Z"
+    },
+    {
+      "category": "dataBoundary",
+      "name": "Floating Point Precision Extremes",
+      "description": "Test with extreme floating point values",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "testCase": 0,
+            "inputValue": 0.30000000000000004,
+            "result": {
+              "disciplineLevel": 86.35,
+              "tiltControl": 86.35
+            },
+            "valid": true
+          },
+          {
+            "testCase": 1,
+            "inputValue": 5e-324,
+            "result": {
+              "disciplineLevel": 86.25,
+              "tiltControl": 86.25
+            },
+            "valid": true
+          },
+          {
+            "testCase": 2,
+            "inputValue": 1.7976931348623157e+308,
+            "result": {
+              "disciplineLevel": 100,
+              "tiltControl": 100
+            },
+            "valid": true
+          },
+          {
+            "testCase": 3,
+            "inputValue": 2.220446049250313e-16,
+            "result": {
+              "disciplineLevel": 86.25,
+              "tiltControl": 86.25
+            },
+            "valid": true
+          },
+          {
+            "testCase": 4,
+            "inputValue": 123456789012345000000,
+            "result": {
+              "disciplineLevel": 100,
+              "tiltControl": 100
+            },
+            "valid": true
+          },
+          {
+            "testCase": 5,
+            "inputValue": 1.23456789012345e-20,
+            "result": {
+              "disciplineLevel": 86.25,
+              "tiltControl": 86.25
+            },
+            "valid": true
+          }
+        ],
+        "allValid": true
+      },
+      "duration": 0.325800000000001,
+      "timestamp": "2025-12-09T20:53:25.858Z"
+    },
+    {
+      "category": "dataBoundary",
+      "name": "Negative Percentages",
+      "description": "Test with negative percentage values",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 22.21,
+          "tiltControl": 22.21
+        },
+        "validation": {
+          "isValid": false,
+          "errors": [
+            "Discipline Level must be between 0-100%",
+            "Tilt Control must be between 0-100%"
+          ],
+          "warnings": [
+            "Psychological Stability Index (-17.5%) is below minimum threshold (20%)"
+          ],
+          "disciplineLevel": 0,
+          "tiltControl": 0,
+          "psychologicalStabilityIndex": -17.5,
+          "deviation": 15,
+          "correctedData": {
+            "disciplineLevel": 0,
+            "tiltControl": 0,
+            "psychologicalStabilityIndex": 0
+          }
+        },
+        "normalizedCorrectly": true,
+        "validationErrorsDetected": true
+      },
+      "duration": 0.19480000000000075,
+      "timestamp": "2025-12-09T20:53:25.858Z"
+    },
+    {
+      "category": "dataBoundary",
+      "name": "Values Exceeding 100%",
+      "description": "Test with values exceeding 100%",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 86.25,
+          "tiltControl": 86.25
+        },
+        "validation": {
+          "isValid": false,
+          "errors": [
+            "Discipline Level must be between 0-100%",
+            "Tilt Control must be between 0-100%"
+          ],
+          "warnings": [
+            "Large deviation (50.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+          ],
+          "disciplineLevel": 100,
+          "tiltControl": 100,
+          "psychologicalStabilityIndex": 175,
+          "deviation": 50,
+          "correctedData": {
+            "disciplineLevel": 100,
+            "tiltControl": 100,
+            "psychologicalStabilityIndex": 100
+          }
+        },
+        "normalizedCorrectly": true,
+        "validationErrorsDetected": true
+      },
+      "duration": 0.1280000000000001,
+      "timestamp": "2025-12-09T20:53:25.859Z"
+    },
+    {
+      "category": "dataBoundary",
+      "name": "Decimal Precision Edge Cases",
+      "description": "Test with extreme decimal precision values",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 100,
+          "tiltControl": 100
+        },
+        "validNumbers": true,
+        "withinBounds": true
+      },
+      "duration": 0.10829999999999984,
+      "timestamp": "2025-12-09T20:53:25.859Z"
+    },
+    {
+      "category": "emotionalData",
+      "name": "Empty Emotion Arrays",
+      "description": "Test with empty emotional data arrays",
+      "severity": "CRITICAL",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "testCase": 0,
+            "inputType": "empty array",
+            "result": {
+              "disciplineLevel": 50,
+              "tiltControl": 50
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [
+                "Emotional data array is empty"
+              ],
+              "validEmotions": [],
+              "invalidEmotions": [],
+              "totalEmotions": 0,
+              "duplicateEmotions": []
+            },
+            "passed": true
+          },
+          {
+            "testCase": 1,
+            "inputType": "null",
+            "result": {
+              "disciplineLevel": 50,
+              "tiltControl": 50
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Emotional data is null or undefined"
+              ],
+              "warnings": [],
+              "validEmotions": [],
+              "invalidEmotions": [],
+              "totalEmotions": 0,
+              "duplicateEmotions": []
+            },
+            "passed": true
+          },
+          {
+            "testCase": 2,
+            "inputType": "undefined",
+            "result": {
+              "disciplineLevel": 50,
+              "tiltControl": 50
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Emotional data is null or undefined"
+              ],
+              "warnings": [],
+              "validEmotions": [],
+              "invalidEmotions": [],
+              "totalEmotions": 0,
+              "duplicateEmotions": []
+            },
+            "passed": true
+          }
+        ],
+        "allHandledCorrectly": true
+      },
+      "duration": 0.3160000000000025,
+      "timestamp": "2025-12-09T20:53:25.860Z"
+    },
+    {
+      "category": "emotionalData",
+      "name": "Duplicate Emotion Entries",
+      "description": "Test with duplicate emotion entries",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 99.39,
+          "tiltControl": 99.39
+        },
+        "validation": {
+          "isValid": true,
+          "errors": [],
+          "warnings": [
+            "Duplicate emotion found: DISCIPLINE",
+            "Unknown emotion: CONFIDENCE",
+            "Duplicate emotion found: CONFIDENCE",
+            "Unknown emotion: CONFIDENCE"
+          ],
+          "validEmotions": [
+            "DISCIPLINE",
+            "DISCIPLINE",
+            "TILT"
+          ],
+          "invalidEmotions": [
+            "CONFIDENCE",
+            "CONFIDENCE"
+          ],
+          "totalEmotions": 5,
+          "duplicateEmotions": [
+            "DISCIPLINE",
+            "CONFIDENCE"
+          ]
+        },
+        "handledGracefully": true,
+        "duplicatesDetected": true
+      },
+      "duration": 0.2259999999999991,
+      "timestamp": "2025-12-09T20:53:25.860Z"
+    },
+    {
+      "category": "emotionalData",
+      "name": "Invalid Emotion Names",
+      "description": "Test with invalid emotion names",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 50,
+          "tiltControl": 50
+        },
+        "validation": {
+          "isValid": false,
+          "errors": [
+            "Emotion at index 1 has invalid or missing subject field",
+            "Emotion at index 2 has invalid or missing subject field",
+            "Emotion at index 3 has invalid or missing subject field",
+            "Emotion at index 4 has invalid or missing subject field"
+          ],
+          "warnings": [
+            "Unknown emotion: INVALID_EMOTION"
+          ],
+          "validEmotions": [
+            "DISCIPLINE"
+          ],
+          "invalidEmotions": [
+            "INVALID_EMOTION"
+          ],
+          "totalEmotions": 6,
+          "duplicateEmotions": []
+        },
+        "handledGracefully": true,
+        "invalidEmotionsDetected": true
+      },
+      "duration": 1.0885000000000034,
+      "timestamp": "2025-12-09T20:53:25.862Z"
+    },
+    {
+      "category": "emotionalData",
+      "name": "Missing Required Emotion Fields",
+      "description": "Test with missing required emotion fields",
+      "severity": "CRITICAL",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 72.92,
+          "tiltControl": 72.92
+        },
+        "validation": {
+          "isValid": false,
+          "errors": [
+            "Emotion CONFIDENCE has invalid value: undefined",
+            "Emotion at index 2 has invalid or missing subject field",
+            "Emotion at index 3 has invalid or missing subject field",
+            "Emotion TILT has invalid value: null",
+            "Emotion REVENGE has invalid value: undefined"
+          ],
+          "warnings": [
+            "Unknown emotion: CONFIDENCE"
+          ],
+          "validEmotions": [
+            "DISCIPLINE",
+            "TILT",
+            "REVENGE"
+          ],
+          "invalidEmotions": [
+            "CONFIDENCE"
+          ],
+          "totalEmotions": 6,
+          "duplicateEmotions": []
+        },
+        "handledGracefully": true,
+        "validationErrorsDetected": true
+      },
+      "duration": 0.2506000000000057,
+      "timestamp": "2025-12-09T20:53:25.862Z"
+    },
+    {
+      "category": "emotionalData",
+      "name": "Circular Reference Emotions",
+      "description": "Test with circular reference structures in emotional data",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 89.06,
+          "tiltControl": 89.06
+        },
+        "error": null,
+        "handledGracefully": true,
+        "detectedCircularReference": false
+      },
+      "duration": 0.11650000000000205,
+      "timestamp": "2025-12-09T20:53:25.863Z"
+    },
+    {
+      "category": "mathematicalCoupling",
+      "name": "Coupling Factor at Boundaries",
+      "description": "Test coupling factor at boundary values (0, 1, negative)",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "couplingFactor": 0,
+            "description": "No coupling",
+            "result": {
+              "disciplineLevel": 88.75,
+              "tiltControl": 88.75
+            },
+            "valid": true
+          },
+          {
+            "couplingFactor": 0.5,
+            "description": "Medium coupling",
+            "result": {
+              "disciplineLevel": 93.74,
+              "tiltControl": 93.74
+            },
+            "valid": true
+          },
+          {
+            "couplingFactor": 1,
+            "description": "Maximum coupling",
+            "result": {
+              "disciplineLevel": 98.73,
+              "tiltControl": 98.73
+            },
+            "valid": true
+          },
+          {
+            "couplingFactor": -0.5,
+            "description": "Negative coupling",
+            "result": {
+              "disciplineLevel": 83.76,
+              "tiltControl": 83.76
+            },
+            "valid": true
+          }
+        ],
+        "allValid": true
+      },
+      "duration": 0.4796000000000049,
+      "timestamp": "2025-12-09T20:53:25.863Z"
+    },
+    {
+      "category": "mathematicalCoupling",
+      "name": "Maximum Deviation at Exact Limits",
+      "description": "Test maximum deviation constraint at exact limits",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "result": {
+          "disciplineLevel": 100,
+          "tiltControl": 100
+        },
+        "deviation": 0,
+        "maxDeviationRespected": true,
+        "withinBounds": true
+      },
+      "duration": 0.11549999999999727,
+      "timestamp": "2025-12-09T20:53:25.864Z"
+    },
+    {
+      "category": "mathematicalCoupling",
+      "name": "Identical Discipline/Tilt Values",
+      "description": "Test with identical discipline and tilt control values",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "testCase": {
+              "discipline": 0,
+              "tilt": 0
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [
+                "Psychological Stability Index (0.0%) is below minimum threshold (20%)"
+              ],
+              "disciplineLevel": 0,
+              "tiltControl": 0,
+              "psychologicalStabilityIndex": 0,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 0,
+                "tiltControl": 0,
+                "psychologicalStabilityIndex": 0
+              }
+            },
+            "deviation": 0,
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 50,
+              "tilt": 50
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [],
+              "disciplineLevel": 50,
+              "tiltControl": 50,
+              "psychologicalStabilityIndex": 50,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 50,
+                "tiltControl": 50,
+                "psychologicalStabilityIndex": 50
+              }
+            },
+            "deviation": 0,
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 100,
+              "tilt": 100
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [],
+              "disciplineLevel": 100,
+              "tiltControl": 100,
+              "psychologicalStabilityIndex": 100,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 100,
+                "tiltControl": 100,
+                "psychologicalStabilityIndex": 100
+              }
+            },
+            "deviation": 0,
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 25.5,
+              "tilt": 25.5
+            },
+            "validation": {
+              "isValid": true,
+              "errors": [],
+              "warnings": [],
+              "disciplineLevel": 25.5,
+              "tiltControl": 25.5,
+              "psychologicalStabilityIndex": 25.5,
+              "deviation": 0,
+              "correctedData": {
+                "disciplineLevel": 25.5,
+                "tiltControl": 25.5,
+                "psychologicalStabilityIndex": 25.5
+              }
+            },
+            "deviation": 0,
+            "passed": true
+          }
+        ],
+        "allIdentical": true
+      },
+      "duration": 0.18679999999999808,
+      "timestamp": "2025-12-09T20:53:25.864Z"
+    },
+    {
+      "category": "mathematicalCoupling",
+      "name": "Extreme Ratio Scenarios",
+      "description": "Test with extreme discipline/tilt ratios",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "testCase": {
+              "discipline": 100,
+              "tilt": 0
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Impossible psychological state detected: Very high discipline with very low tilt control"
+              ],
+              "warnings": [
+                "Large deviation (100.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+              ],
+              "disciplineLevel": 100,
+              "tiltControl": 85,
+              "psychologicalStabilityIndex": 50,
+              "deviation": 100,
+              "correctedData": {
+                "disciplineLevel": 100,
+                "tiltControl": 85,
+                "psychologicalStabilityIndex": 92.5
+              }
+            },
+            "ratio": "Infinity",
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 0,
+              "tilt": 100
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Impossible psychological state detected: Very low discipline with very high tilt control"
+              ],
+              "warnings": [
+                "Large deviation (100.0%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+              ],
+              "disciplineLevel": 85,
+              "tiltControl": 100,
+              "psychologicalStabilityIndex": 50,
+              "deviation": 100,
+              "correctedData": {
+                "disciplineLevel": 85,
+                "tiltControl": 100,
+                "psychologicalStabilityIndex": 92.5
+              }
+            },
+            "ratio": 0,
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 99.9,
+              "tilt": 0.1
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Impossible psychological state detected: Very high discipline with very low tilt control"
+              ],
+              "warnings": [
+                "Large deviation (99.8%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+              ],
+              "disciplineLevel": 99.9,
+              "tiltControl": 84.9,
+              "psychologicalStabilityIndex": 50,
+              "deviation": 99.80000000000001,
+              "correctedData": {
+                "disciplineLevel": 99.9,
+                "tiltControl": 84.9,
+                "psychologicalStabilityIndex": 92.4
+              }
+            },
+            "ratio": 999,
+            "passed": true
+          },
+          {
+            "testCase": {
+              "discipline": 0.1,
+              "tilt": 99.9
+            },
+            "validation": {
+              "isValid": false,
+              "errors": [
+                "Impossible psychological state detected: Very low discipline with very high tilt control"
+              ],
+              "warnings": [
+                "Large deviation (99.8%) detected between Discipline Level and Tilt Control. Maximum allowed: 15%"
+              ],
+              "disciplineLevel": 84.9,
+              "tiltControl": 99.9,
+              "psychologicalStabilityIndex": 50,
+              "deviation": 99.80000000000001,
+              "correctedData": {
+                "disciplineLevel": 84.9,
+                "tiltControl": 99.9,
+                "psychologicalStabilityIndex": 92.4
+              }
+            },
+            "ratio": 0.001001001001001001,
+            "passed": true
+          }
+        ],
+        "allHandledCorrectly": true
+      },
+      "duration": 0.2529000000000039,
+      "timestamp": "2025-12-09T20:53:25.864Z"
+    },
+    {
+      "category": "mathematicalCoupling",
+      "name": "NaN/Infinity Propagation",
+      "description": "Test with NaN and Infinity values in calculations",
+      "severity": "CRITICAL",
+      "passed": false,
+      "details": {
+        "result": {
+          "disciplineLevel": null,
+          "tiltControl": null
+        },
+        "validNumbers": false,
+        "finiteValues": false,
+        "withinBounds": false
+      },
+      "duration": 0.1180000000000021,
+      "timestamp": "2025-12-09T20:53:25.865Z"
+    },
+    {
+      "category": "systemIntegration",
+      "name": "Expired Authentication Tokens",
+      "description": "Test with expired authentication tokens",
+      "severity": "HIGH",
+      "details": {
+        "statusCode": 200,
+        "responseData": {
+          "totalTrades": 0,
+          "totalPnL": 0,
+          "winRate": 0,
+          "avgTradeSize": 0,
+          "lastSyncTime": 1765313607016,
+          "emotionalData": [],
+          "psychologicalMetrics": {
+            "disciplineLevel": 50,
+            "tiltControl": 50
+          },
+          "validationWarnings": [
+            "Development mode: Using mock data due to authentication failure"
+          ],
+          "requestId": "3qkvfp",
+          "processingTime": 222,
+          "mockData": true
+        },
+        "handledCorrectly": false
+      },
+      "duration": 1160.8139,
+      "timestamp": "2025-12-09T20:53:27.026Z"
+    },
+    {
+      "category": "systemIntegration",
+      "name": "Malformed Request Headers",
+      "description": "Test with malformed request headers",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "headers": {
+              "Authorization": "InvalidFormat"
+            },
+            "statusCode": 200,
+            "responseData": {
+              "totalTrades": 0,
+              "totalPnL": 0,
+              "winRate": 0,
+              "avgTradeSize": 0,
+              "lastSyncTime": 1765313607095,
+              "emotionalData": [],
+              "psychologicalMetrics": {
+                "disciplineLevel": 50,
+                "tiltControl": 50
+              },
+              "validationWarnings": [
+                "Development mode: Using mock data due to authentication failure"
+              ],
+              "requestId": "mv6r79",
+              "processingTime": 2,
+              "mockData": true
+            },
+            "passed": true
+          },
+          {
+            "headers": {
+              "Content-Type": null
+            },
+            "statusCode": 200,
+            "responseData": {
+              "totalTrades": 0,
+              "totalPnL": 0,
+              "winRate": 0,
+              "avgTradeSize": 0,
+              "lastSyncTime": 1765313607161,
+              "emotionalData": [],
+              "psychologicalMetrics": {
+                "disciplineLevel": 50,
+                "tiltControl": 50
+              },
+              "validationWarnings": [
+                "Development mode: Using mock data due to authentication failure"
+              ],
+              "requestId": "aue3j",
+              "processingTime": 1,
+              "mockData": true
+            },
+            "passed": true
+          },
+          {
+            "headers": {
+              "User-Agent": 123
+            },
+            "statusCode": 200,
+            "responseData": {
+              "totalTrades": 0,
+              "totalPnL": 0,
+              "winRate": 0,
+              "avgTradeSize": 0,
+              "lastSyncTime": 1765313607216,
+              "emotionalData": [],
+              "psychologicalMetrics": {
+                "disciplineLevel": 50,
+                "tiltControl": 50
+              },
+              "validationWarnings": [
+                "Development mode: Using mock data due to authentication failure"
+              ],
+              "requestId": "xhrl0c",
+              "processingTime": 4,
+              "mockData": true
+            },
+            "passed": true
+          },
+          {
+            "headers": {},
+            "statusCode": 200,
+            "responseData": {
+              "totalTrades": 0,
+              "totalPnL": 0,
+              "winRate": 0,
+              "avgTradeSize": 0,
+              "lastSyncTime": 1765313607293,
+              "emotionalData": [],
+              "psychologicalMetrics": {
+                "disciplineLevel": 50,
+                "tiltControl": 50
+              },
+              "validationWarnings": [
+                "Development mode: Using mock data due to authentication failure"
+              ],
+              "requestId": "o4p26nr",
+              "processingTime": 2,
+              "mockData": true
+            },
+            "passed": true
+          }
+        ],
+        "allHandledCorrectly": true
+      },
+      "duration": 270.15689999999995,
+      "timestamp": "2025-12-09T20:53:27.297Z"
+    },
+    {
+      "category": "systemIntegration",
+      "name": "Extremely Large Request Payloads",
+      "description": "Test with extremely large request payloads",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "payloadSize": 2011849,
+        "statusCode": 405,
+        "responseData": {},
+        "handledCorrectly": true
+      },
+      "duration": 94.78710000000001,
+      "timestamp": "2025-12-09T20:53:27.392Z"
+    },
+    {
+      "category": "systemIntegration",
+      "name": "Concurrent Conflicting Requests",
+      "description": "Test with concurrent conflicting requests",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "numberOfRequests": 10,
+        "results": [
+          {
+            "requestIndex": 0,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 1,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 2,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 3,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 4,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 5,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 6,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 7,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 8,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          },
+          {
+            "requestIndex": 9,
+            "statusCode": 405,
+            "responseData": {},
+            "passed": true
+          }
+        ],
+        "allHandledCorrectly": true
+      },
+      "duration": 215.5897,
+      "timestamp": "2025-12-09T20:53:27.608Z"
+    },
+    {
+      "category": "systemIntegration",
+      "name": "Network Interruption Scenarios",
+      "description": "Test with network interruption scenarios",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "url": "http://localhost:3000/api/confluence-stats",
+            "statusCode": 200,
+            "passed": true,
+            "error": null
+          },
+          {
+            "url": "http://invalid-server-url/api/confluence-stats",
+            "passed": true,
+            "error": "This operation was aborted",
+            "errorType": "AbortError"
+          },
+          {
+            "url": "http://localhost:9999/api/confluence-stats",
+            "passed": true,
+            "error": "fetch failed",
+            "errorType": "TypeError"
+          }
+        ],
+        "allHandledGracefully": true
+      },
+      "duration": 1077.6391,
+      "timestamp": "2025-12-09T20:53:28.686Z"
+    },
+    {
+      "category": "userExperience",
+      "name": "Rapid Successive Calculations",
+      "description": "Test rapid successive psychological metrics calculations",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "iterations": 1000,
+        "totalDuration": 2.166500000000269,
+        "avgDuration": 0.0021665000000002693,
+        "maxDuration": 0.11819999999988795,
+        "minDuration": 0.0009000000000014552,
+        "allConsistent": true,
+        "performanceAcceptable": true
+      },
+      "duration": 2.6910000000002583,
+      "timestamp": "2025-12-09T20:53:28.689Z"
+    },
+    {
+      "category": "userExperience",
+      "name": "Browser Refresh During Calculations",
+      "description": "Test browser refresh behavior during calculations",
+      "severity": "MEDIUM",
+      "passed": false,
+      "details": {
+        "calculationInterrupted": false,
+        "resultBeforeInterruption": null,
+        "resultAfterInterruption": {
+          "disciplineLevel": 94.74,
+          "tiltControl": 94.74
+        },
+        "systemStable": true
+      },
+      "duration": 0.24219999999968422,
+      "timestamp": "2025-12-09T20:53:28.689Z"
+    },
+    {
+      "category": "userExperience",
+      "name": "Multiple Tabs Open",
+      "description": "Test behavior with multiple tabs open (simulated)",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "numberOfTabs": 10,
+        "tabCalculations": [
+          {
+            "tabId": 0,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 1,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 2,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 3,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 4,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 5,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 6,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 7,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 8,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          },
+          {
+            "tabId": 9,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "timestamp": 1765313608690
+          }
+        ],
+        "allConsistent": true,
+        "totalCalculations": 1000,
+        "avgTimePerCalculation": 0.001984899999999925,
+        "performanceAcceptable": true
+      },
+      "duration": 2.213000000000193,
+      "timestamp": "2025-12-09T20:53:28.692Z"
+    },
+    {
+      "category": "userExperience",
+      "name": "Mobile Device Limitations",
+      "description": "Test behavior under mobile device limitations (simulated)",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "iterations": 100,
+        "avgDuration": 0.003074000000015076,
+        "maxDuration": 0.034799999999904685,
+        "allConsistent": true,
+        "memoryUsage": 0,
+        "mobilePerformanceAcceptable": true
+      },
+      "duration": 263.7347,
+      "timestamp": "2025-12-09T20:53:28.956Z"
+    },
+    {
+      "category": "userExperience",
+      "name": "Accessibility Tool Interactions",
+      "description": "Test interactions with accessibility tools (simulated)",
+      "severity": "LOW",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "modification": {
+              "type": "high_contrast",
+              "description": "High contrast mode"
+            },
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74,
+              "accessibilityAnnotations": {
+                "disciplineLevel": "94.74% discipline level",
+                "tiltControl": "94.74% tilt control",
+                "readable": true
+              }
+            },
+            "duration": 3.8216184114867646,
+            "accessible": true
+          },
+          {
+            "modification": {
+              "type": "large_text",
+              "description": "Large text mode"
+            },
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74,
+              "accessibilityAnnotations": {
+                "disciplineLevel": "94.74% discipline level",
+                "tiltControl": "94.74% tilt control",
+                "readable": true
+              }
+            },
+            "duration": 2.4566786018713933,
+            "accessible": true
+          },
+          {
+            "modification": {
+              "type": "screen_reader",
+              "description": "Screen reader active"
+            },
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74,
+              "accessibilityAnnotations": {
+                "disciplineLevel": "94.74% discipline level",
+                "tiltControl": "94.74% tilt control",
+                "readable": true
+              }
+            },
+            "duration": 7.583747110176896,
+            "accessible": true
+          },
+          {
+            "modification": {
+              "type": "keyboard_navigation",
+              "description": "Keyboard navigation"
+            },
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74,
+              "accessibilityAnnotations": {
+                "disciplineLevel": "94.74% discipline level",
+                "tiltControl": "94.74% tilt control",
+                "readable": true
+              }
+            },
+            "duration": 2.524640395619931,
+            "accessible": true
+          },
+          {
+            "modification": {
+              "type": "voice_control",
+              "description": "Voice control"
+            },
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74,
+              "accessibilityAnnotations": {
+                "disciplineLevel": "94.74% discipline level",
+                "tiltControl": "94.74% tilt control",
+                "readable": true
+              }
+            },
+            "duration": 8.547920958039926,
+            "accessible": true
+          }
+        ],
+        "allAccessible": true,
+        "avgDuration": 4.986921095438982,
+        "maxDuration": 8.547920958039926,
+        "accessibilityPerformanceAcceptable": true
+      },
+      "duration": 0.44450000000006185,
+      "timestamp": "2025-12-09T20:53:28.957Z"
+    },
+    {
+      "category": "productionEnvironment",
+      "name": "Database Connection Limits",
+      "description": "Test behavior when database connection limits are reached (simulated)",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "scenario": {
+              "connections": 1,
+              "description": "Single connection"
+            },
+            "duration": 55.23640000000023,
+            "successfulConnections": 1,
+            "totalConnections": 1,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "connections": 10,
+              "description": "Multiple connections"
+            },
+            "duration": 109.14499999999998,
+            "successfulConnections": 10,
+            "totalConnections": 10,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "connections": 100,
+              "description": "High connection count"
+            },
+            "duration": 108.50590000000011,
+            "successfulConnections": 100,
+            "totalConnections": 100,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "connections": 1000,
+              "description": "Connection limit reached"
+            },
+            "duration": 109.66499999999996,
+            "successfulConnections": 1000,
+            "totalConnections": 1000,
+            "passed": true
+          }
+        ],
+        "allScenariosHandled": true,
+        "maxConnectionsTested": 1000
+      },
+      "duration": 383.35149999999976,
+      "timestamp": "2025-12-09T20:53:29.340Z"
+    },
+    {
+      "category": "productionEnvironment",
+      "name": "Memory Pressure Scenarios",
+      "description": "Test behavior under memory pressure (simulated)",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "scenario": {
+              "pressure": "low",
+              "memoryUsage": 10485760
+            },
+            "memoryAllocated": 10485760,
+            "duration": 0.031300000000101136,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "scenario": {
+              "pressure": "medium",
+              "memoryUsage": 52428800
+            },
+            "memoryAllocated": 52428800,
+            "duration": 0.03949999999986176,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "scenario": {
+              "pressure": "high",
+              "memoryUsage": 104857600
+            },
+            "memoryAllocated": 104857600,
+            "duration": 0.08000000000038199,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "scenario": {
+              "pressure": "extreme",
+              "memoryUsage": 209715200
+            },
+            "memoryAllocated": 209715200,
+            "duration": 0.03670000000010987,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          }
+        ],
+        "allScenariosHandled": true,
+        "maxMemoryTested": 209715200
+      },
+      "duration": 336.77480000000014,
+      "timestamp": "2025-12-09T20:53:29.677Z"
+    },
+    {
+      "category": "productionEnvironment",
+      "name": "High CPU Usage Conditions",
+      "description": "Test behavior under high CPU usage (simulated)",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "cpuLoad": 0,
+            "duration": 0.006300000000010186,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "cpuLoad": 25,
+            "duration": 0.0037999999999556167,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "cpuLoad": 50,
+            "duration": 0.005000000000109139,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "cpuLoad": 75,
+            "duration": 0.002199999999902502,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          },
+          {
+            "cpuLoad": 90,
+            "duration": 0.0020000000004074536,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "passed": true
+          }
+        ],
+        "allScenariosHandled": true,
+        "maxDuration": 0.006300000000010186,
+        "performanceUnderLoadAcceptable": true
+      },
+      "duration": 0.8040999999998348,
+      "timestamp": "2025-12-09T20:53:29.679Z"
+    },
+    {
+      "category": "productionEnvironment",
+      "name": "Disk Space Limitations",
+      "description": "Test behavior under disk space limitations (simulated)",
+      "severity": "MEDIUM",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "scenario": {
+              "available": "1GB",
+              "size": 1073741824
+            },
+            "dataSize": 2232,
+            "duration": 0.027800000000297587,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "diskOperationSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "available": "100MB",
+              "size": 104857600
+            },
+            "dataSize": 2232,
+            "duration": 0.0027000000000043656,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "diskOperationSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "available": "10MB",
+              "size": 10485760
+            },
+            "dataSize": 2232,
+            "duration": 0.0015000000003055902,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "diskOperationSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "available": "1MB",
+              "size": 1048576
+            },
+            "dataSize": 2232,
+            "duration": 0.0019999999999527063,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "diskOperationSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "available": "0KB",
+              "size": 0
+            },
+            "error": "Insufficient disk space",
+            "diskErrorHandled": true,
+            "passed": true
+          }
+        ],
+        "allScenariosHandled": true,
+        "diskSpaceErrorsHandled": 1
+      },
+      "duration": 0.4885999999996784,
+      "timestamp": "2025-12-09T20:53:29.679Z"
+    },
+    {
+      "category": "productionEnvironment",
+      "name": "Network Latency Spikes",
+      "description": "Test behavior under network latency spikes (simulated)",
+      "severity": "HIGH",
+      "passed": true,
+      "details": {
+        "results": [
+          {
+            "scenario": {
+              "latency": 0,
+              "description": "No latency"
+            },
+            "totalDuration": 24010.7249,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "latency": 100,
+              "description": "100ms latency"
+            },
+            "totalDuration": 114.72829999999885,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "latency": 500,
+              "description": "500ms latency"
+            },
+            "totalDuration": 501.3316999999988,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "latency": 1000,
+              "description": "1 second latency"
+            },
+            "totalDuration": 1000.4026000000013,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "latency": 5000,
+              "description": "5 second latency"
+            },
+            "totalDuration": 5001.7323,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          },
+          {
+            "scenario": {
+              "latency": 10000,
+              "description": "10 second latency"
+            },
+            "totalDuration": 10012.669499999996,
+            "result": {
+              "disciplineLevel": 94.74,
+              "tiltControl": 94.74
+            },
+            "networkRequestSuccessful": true,
+            "passed": true
+          }
+        ],
+        "allScenariosHandled": true,
+        "maxLatencyHandled": 10000,
+        "totalTestDuration": 40641.58929999999
+      },
+      "duration": 40642.4398,
+      "timestamp": "2025-12-09T20:54:10.322Z"
+    }
+  ],
+  "systemStability": {
+    "crashPrevention": true,
+    "dataIntegrity": true,
+    "boundaryHandling": true
+  },
+  "performance": {
+    "averageDuration": 1434.098551612903,
+    "maximumDuration": 40642.4398,
+    "slowTests": 3
+  }
+}
