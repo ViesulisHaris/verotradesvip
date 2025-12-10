@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-12-10T07:47:54.808Z",
+  "summary": {
+    "totalTests": 3,
+    "passedTests": 3,
+    "failedTests": 0,
+    "successRate": "100.0%",
+    "overallStatus": "PASSED"
+  },
+  "testResults": {
+    "averageTimeHeld": {
+      "passed": true,
+      "details": [
+        "✅ Format is valid (e.g., \"1h 30m\", \"2d 5h 15m\")",
+        "✅ No longer using hardcoded placeholder",
+        "✅ Handles empty data correctly"
+      ],
+      "result": "1h 16m"
+    },
+    "sharpeRatio": {
+      "passed": true,
+      "details": [
+        "✅ Sharpe Ratio is a valid number",
+        "✅ Sharpe Ratio value is reasonable",
+        "✅ Handles insufficient data correctly",
+        "✅ Handles empty data correctly",
+        "✅ Sharpe ratio correctly positive for profitable sample"
+      ],
+      "result": 3.3245334057608122
+    },
+    "emotionalTooltips": {
+      "passed": true,
+      "details": [
+        "✅ DISCIPLINE: Decimals limited to 2 places",
+        "✅ CONFIDENT: Decimals limited to 2 places",
+        "✅ TILT: Decimals limited to 2 places",
+        "✅ PATIENCE: Decimals limited to 2 places",
+        "✅ NEUTRAL: Decimals limited to 2 places"
+      ],
+      "result": "All tooltip values formatted to 2 decimal places maximum"
+    },
+    "overall": {
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3
+    }
+  },
+  "recommendations": [
+    {
+      "category": "Overall",
+      "priority": "INFO",
+      "issue": "All tests passed successfully",
+      "recommendation": "Continue monitoring for any regressions in future updates"
+    }
+  ]
+}
